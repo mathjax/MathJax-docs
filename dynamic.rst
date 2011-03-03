@@ -133,7 +133,7 @@ IE+MathPlayer.
       }
     }
 
-**Source**: `mathjax_mathml.user.js <_statis/mathjax_mathml.user.js>`_
+**Source**: `mathjax_mathml.user.js <_static/mathjax_mathml.user.js>`_
 
 ----
 
@@ -178,4 +178,4 @@ converting the math images to their original TeX code.
       document.getElementsByTagName("head")[0].appendChild(script);
     }
 
-**Source**: `mathjax_wikipedia.user.js <_statis/mathjax_wikipedia.user.js>`_
+**Source**: `mathjax_wikipedia.user.js <_static/mathjax_wikipedia.user.js>`_
