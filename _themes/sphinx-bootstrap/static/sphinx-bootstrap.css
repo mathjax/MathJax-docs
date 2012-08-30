@@ -1,46 +1,13 @@
-@import "bootstrap.css";
+/* To change themes. Un-comment the theme you would like to use. */
 
-a {
-    color: #0E84B5;
-}
+@import "bootstrap-engineauth.min.css";
+/*@import "bootstrap-default.min.css";*/
+/*@import "bootstrap-sapling.css";*/
 
-a:hover, .nav a:hover {
-    color: #f26a1e;
-    cursor: pointer;
-}
-
-.navbar-inner {
-    background: #fff;
-    background-color: #fff;
-    height: 45px;
-}
+@import "bootstrap-responsive.min.css";
 
 .navbar .brand {
-    color: #0E84B5;
     font-size: 25px;
-    font-weight: normal;
-    /*font-family: 'Crete Round', "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-}
-
-.navbar .brand a:hover, .navbar ul .active > a {
-    color: #0E84B5;
-    text-decoration: none;
-}
-
-/*.navbar .brand {*/
-    /*float: left;*/
-    /*display: block;*/
-    /*padding: 8px 20px 12px;*/
-    /*margin-left: -20px;*/
-    /*font-size: 20px;*/
-    /*font-weight: 200;*/
-    /*line-height: 1;*/
-    /*color: #ffffff;*/
-/*}*/
-
-.nav a {
-    text-shadow: none;
-    color: #0E84B5;
 }
 
 .content {
@@ -48,7 +15,7 @@ a:hover, .nav a:hover {
 }
 
 .footer {
-    background-color: #eee;
+    /*background-color: #eee;*/
     padding: 30px 0;
     text-shadow: 0 1px 0 #fff;
     border-top: 1px solid #e5e5e5;
@@ -60,13 +27,8 @@ a:hover, .nav a:hover {
 .row-odd {
     background-color: #fafafa;
 }
-.footer p {
-    color: #555;
-}
 
 h1, h2, h3, h4, h5, h6 {
-    font-weight: normal;
-    /*font-family: 'Crete Round', "Helvetica Neue", Helvetica, Arial, sans-serif;*/
     padding-bottom: .3em;
 }
 
@@ -82,10 +44,6 @@ span.pre {
     font-family: monospace;
     color: #007000;
 }
-
-/*th, td {*/
-    /*border-top: 1px solid #efefef;*/
-/*}*/
 
 div.admonition {
     margin: 1em 0 0 0;
@@ -150,7 +108,6 @@ tr > td:nth-child(2) {
 }
 
 .quick-links {
-    background-color: #EEEEEE;
     border-radius: 3px 3px 3px 3px;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
     list-style: none outside none;
@@ -173,7 +130,6 @@ tr > td:nth-child(2) {
 }
 
 .quick-links strong {
-    color: #999999;
     font-weight: normal;
 }
 
@@ -197,7 +153,6 @@ input[type="submit"] {
     background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
     background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
     background-repeat: no-repeat;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
     border: 1px solid #ccc;
     border-bottom-color: #bbb;
     -webkit-border-radius: 4px;
