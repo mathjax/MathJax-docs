@@ -4,25 +4,10 @@
 Using MathJax in popular web platforms
 ======================================
 
-MathJax plugins are available for a growing number of wikis, blogs,
-and other content-management systems.  These include WordPress,
-Blogger, Sphinx, TiddlyWiki, and MathEL-Wiki.  A list of these is
-available in the `web applications
-<http://www.mathjax.org/community/mathjax-in-use>`_ list of the
-`MathJax web site <http://www.mathjax.org>`_.
-
-If the program you are using is not one of these, you may still be able to 
-use MathJax by modifying the theme or template for your wiki or blog,
-as explained below.
-
-
-Using MathJax in a Theme File
-=============================
-
 Most web-based content-management systems include a theme or template
 layer that determines how the pages look, and that loads information
 common to all pages.  Such theme files provide one popular way to
-include MathJax in your web templates in the absence of
+include MathJax in your web templates in the absense of
 MathJax-specific plugins for the system you are using.  To take
 advantage of this approach, you will need access to your theme files,
 which probably means you need to be an administrator for the site; if
@@ -31,11 +16,12 @@ you.
 
 To enable MathJax in your web platform, add the line::
 
-    <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="path-to-MathJax/MathJax.js"></script>
 
-either just before the ``</head>`` tag in your theme file, or at the end of
-the file if it contains no ``</head>``.
+(where ``path-to-MathJax`` is the web-address of the main MathJax
+directory for your server) either just before the ``</head>`` tag in
+your theme file, or at the end of the file if it contains no
+``</head>``.
 
 The theme files for various popular platforms are:
 
@@ -65,8 +51,8 @@ theme/template only.  If you change themes or update your theme, you
 will have to repeat these steps.
 
 
-Instructions for Specific Platforms
-===================================
+Insructions for Specific Platforms
+==================================
 
 Some programs, such as WordPress and Moveable Type, allow you to edit
 template files from inside their administrator interfaces.  Specific

@@ -4,6 +4,9 @@
 Using MathJax in Movable Type
 =============================
 
+These instructions assume you already have placed the MathJax files on
+your server (see :ref:`Installing and Testing MathJax <installation>`).
+
 1. Open Moveable Type Admin interface for the site on which you want to enable
    MathJax.
 
@@ -22,17 +25,17 @@ Using MathJax in Movable Type
 
    .. code-block:: html
 
-       <script type="text/javascript"
-         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-       </script>
+       <script type="text/javascript"  src="path-to-MathJax/MathJax.js"></script>
 
-   to load MathJax from our distributed network service.
+   where ``path-to-MathJax`` is replaced by the web-address of the
+   main MathJax dorectory on your server.
  
      .. image:: ../images/mt_head.png
 
-5. Save the file.  This will enable MathJax with both TeX and MathML
-   input, so you should be able to start adding mathematical content to
-   your pages.  If you need to adjust the configuration, see
-   :ref:`Configuring MathJax <loading>` for more details.
+5. Save the file.  This should enable MathJax, so you should be able
+   to start adding mathematical content to your pages.  Use the
+   ``config/MathJas.js`` file in the MathJax directory to configure
+   MathJax to your needs (see :ref:`Configuring MathJax
+   <configuration>` for details).
 
 

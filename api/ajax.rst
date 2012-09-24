@@ -35,7 +35,7 @@ Properties
     Number of milliseconds to wait for a file to load before
     it is considered to have failed to load.
         
-    *Default:* 15 seconds
+    *Default:* 20 seconds
 
 .. describe:: STATUS.OK
 
@@ -59,12 +59,6 @@ Properties
     An object containing the files that are currently loading, the
     callbacks that are to be run when they load or timeout, and
     additional internal data.
-
-.. describe:: loadHooks
-
-    An object containing the load hooks for the various files, set up by
-    the :meth:`LoadHook()` method, or by the
-    :meth:`MathJax.Hub.Register.LoadHook()` method.
 
 
 Methods
@@ -112,9 +106,9 @@ Methods
     file has been completely loaded and initialized.  The `file`
     parameter is the name of the file that has been loaded.  This
     routine will cause any callback functions registered for the file
-    or included in the :meth:`MathJax.Ajax.Require()` calls to be
-    executed, passing them the status of the load
-    (``MathJax.Ajax.STATUS.OK`` or ``MathJax.Ajax.STATUS.ERROR``) as
+    or included in the :meth:``MathJax.Ajax.Require()`` calls to be
+    executed, passing them the status or the load
+    (`MathJax.Ajax.STATUS.OK`` or ``MathJax.Ajax.STATUS.ERROR``) as
     their last parameter.
 
     :Parameters:
@@ -142,10 +136,10 @@ Methods
         - **file** --- the name of the file that failed to load
     :Returns: ``null``
 
-.. method:: LoadHook(file,callback)
+.. method:: loadHook(file,callback)
 
     Registers a callback to be executed when the given file is
-    loaded.  The file load operation needs to be started when this
+    loaded.  The file load operation need to be started when this
     method is called, so it can be used to register a hook for a file
     that may be loaded in the future.
 
@@ -153,18 +147,6 @@ Methods
         - **file** --- the name of the file to wait for
         - **callback** --- the callback specification
     :Returns: the callback object
-
-.. method:: Preloading(file1[,file2...])
-
-    Used with combined configuration files to indicate what files are 
-    in the configuration file.  Marks the files as loading (since there 
-    will never be an explicit :meth:`Load()` or :meth:`Require()` call for 
-    them), so that load-hooks and other load-related events can be 
-    properly processed when the :meth:`loadComplete()` occurs.
-
-    :Parameters:
-        - **file1, file2, ...** --- the names of the files in the combined file
-    :Returns: ``null``
 
 .. method:: Styles(styles[,callback])
 

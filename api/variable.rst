@@ -19,12 +19,12 @@ Main MathJax Components
 .. describe:: MathJax.Ajax
 
     Contains the code for loading external modules and creating
-    stylesheets.  Most of the code that causes MathJax to
+    stylesheets.  Most of the code that causes most of MathJax to
     operate asynchronously is handled here.
 
 .. describe:: MathJax.Message
 
-   Contains the code to handle the intermittent message window that
+   Contains the code to handle the intermittant message window that
    periodically appears in the lower left-hand corner of the window.
 
 .. describe:: MathJax.HTML
@@ -37,16 +37,11 @@ Main MathJax Components
     Contains the code for managing MathJax callbacks, queues and
     signals.
 
-.. describe:: MathJax.Extension
+.. describe:: MathJax.Extensions
 
     Initially empty, this is where extensions can load their code.
     For example, the `tex2jax` preprocessor creates
-    ``MathJax.Extension.tex2jax`` for its code and variables.
-
-.. describe:: MathJax.Menu
-
-    Initially null, this is where the MathJax contextual menu is
-    stored, when ``extensions/MathMenu.js`` is loaded.
+    ``MathJax.Extensions.tex2jax`` for its code and variables.
 
 .. describe:: MathJax.Object
 
@@ -70,7 +65,7 @@ Main MathJax Components
 .. describe:: MathJax.ElementJax
 
     The base class for all element `jax` objects.  Subclasses for
-    specific element jax are created as sub-objects of
+    specific element jax are creates as sub-objects of
     ``MathJax.ElementJax``.  For example, the mml element jax loads
     itself as ``MathJax.ElementJax.mml``.
 
@@ -80,11 +75,7 @@ Properties
 
 .. describe:: MathJax.version
 
-    The version number of the MathJax library as a whole.
-
-.. describe:: MathJax.fileversion
-
-    The version number of the ``MathJax.js`` file specifically.
+    The version number of the MathJax library.
 
 .. describe:: MathJax.isReady
 

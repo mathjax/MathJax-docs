@@ -24,7 +24,7 @@ that class.
 Class Properties
 ================
 
-.. describe:: id
+.. describe:: name
 
     The name of the jax.
 
@@ -34,7 +34,7 @@ Class Properties
 
 .. describe:: directory
 
-    The directory where the jax files are stored (e.g., ``"[MathJax]/jax/element/mml"``).
+    The directory where the jax files are stored (e.g., ``"[MathJax]/jax/element/mml"``);
 
 
 Instance Properties
@@ -42,11 +42,11 @@ Instance Properties
 
 .. describe:: inputJax
 
-    The name of the input jax that created the element.
+    A reference to the input jax that created the element.
  
 .. describe:: outputJax
 
-    The name of the output jax that has processed this element.
+    A reference to the output jax that has processed this element.
  
 .. describe:: inputID
 
@@ -61,8 +61,7 @@ Instance Properties
 .. describe:: originalText
 
     A string indicating the original input text that was processed for
-    this element.  (In the future, this may be managed by the input jax 
-    rather than ``MathJax.Hub``.)
+    this element.
 
 .. describe:: mimeType
 
@@ -78,34 +77,22 @@ Methods
 .. Method:: Text(text[,callback])
 
     Sets the input text for this element to the given text and
-    reprocesses the mathematics.  (I.e., updates the equation to the
+    reprocesses the mathematics.  (I.e., update the equation to the
     new one given by `text`).  When the processing is complete, the
     `callback`, if any, is called.
 
     :Parameters:
-        - **text** --- the new mathematics source string for the element
+        - **text** --- the new mathematic source string for the element
 	- **callback** --- the callback specification
     :Returns: the callback object
  
-.. Method:: Rerender([callback])
-    :noindex:
-
-    Removes the output and produces it again (for example, if CSS has
-    changed that would alter the spacing of the mathematics).  Note
-    that the internal representation isn't regenerated; only the
-    output is.  The `callback`, if any, is called when the process
-    completes.
- 
-    :Parameters:
-	- **callback** --- the callback specification
-    :Returns: the callback object
-
 .. Method:: Reprocess([callback])
     :noindex:
 
-    Removes the output and then retranslates the input into the
-    internal form and reredners the output again.  The `callback`, if
-    any, is called when the process completes.
+    Remove the output and produce it again.  This may be necessary if
+    there are changes to the CSS styles that would affect the layout
+    of the mathematics, for example.  The `callback`, if any, is
+    called when the process completes.
  
     :Parameters:
 	- **callback** --- the callback specification
@@ -127,16 +114,6 @@ Methods
     associated to this element jax.
 
     :Returns: the ``<script>`` element
-
-.. Method:: needsUpdate()
-
-    Indicates whether the mathematics has changed so that its output
-    needs to be updated.
-
-    :Returns: ``true`` if the mathematics needs to be reprocessed,
-              ``false`` otherwise
-
-
 
 Output jax may add new methods to the base element jax class to
 perform exporting to other formats.  For example, a MathML output jax

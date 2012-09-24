@@ -63,10 +63,11 @@ pushed into the queue:
 2.  Perform the configuration actions:
 
     - Post the ``Begin Config`` startup signal
-    - Load any configuration files specified via ``config=`` as a script parameter
-    - Execute the content of the ``<script>`` that loaded MathJax, if it is not empty
-    - Wait for the ``delayStartupUntil`` condition to be met, if one was specified
-    - Execute any ``text/x-mathjax-config`` script blocks
+    - Execute the content of the ``<script>`` that loaded MathJax,
+      or load the ``config/MathJax.js`` file if the ``<script>``
+      is empty
+    - If the ``MathJax.Hub.config.delayStartupUntil`` value is set,
+      wait until its condition is met
     - load the files listed in the ``MathJax.Hub.config.config`` array
     - Post the ``End Config`` startup signal
 
@@ -90,12 +91,7 @@ pushed into the queue:
 
 ..
 
-5.  Initialize the Message system (the grey information box in the
-    lower left)
-
-..
-
-6.  Load the jax configuration files:
+5.  Load the jax configuration files:
 
     - Post the ``Begin Jax`` startup signal
     - Load the jax config files from the ``MathJax.Hub.config.jax`` array
@@ -106,35 +102,28 @@ pushed into the queue:
 
 ..
 
-7.  Load the extension files:
+6.  Load the extension files:
 
-    - Post the ``Begin Extensions`` startup signal
+    - Post the ``Begin Extension`` startup signal
     - Load the files from the ``MathJax.Hub.config.extensions`` array
 
-      - Most extensions will post a ``[name] Ready`` or ``Extension
-        [name] Ready`` startup message when they are loaded (where
-        ``[name]`` is the name of the extension)
+      - Most extensions will post a ``Extension [name] Ready``
+        startup message when they are loaded (where ``[name]`` is
+        the name of the extension)
 
-    - Post the ``End Extensions`` startup signal
-
-..
-
-8.  Set the MathJax menu's renderer value based on the jax that have been 
-    loaded
+    - Post the ``End Extension`` startup signal
 
 ..
 
-9.  Wait for the onload handler to fire (in MathJax v2.0 this can
-    occur on the ``DOMContentLoaded`` event rather than the page's
-    ``onload`` event, so processing of mathematics can start earlier)
+7.  Wait for the onload handler to fire
 
 ..
 
-10. Set ``MathJax.isReady`` to ``true``
+8.  Set ``MathJax.isReady`` to ``true``
 
 ..
 
-11. Perform the typesetting pass (preprocessors and processors)
+9.  Perform the typesetting pass (preprocessors and processors)
 
     - Post the ``Begin Typeset`` startup signal
     - Post the ``Begin PreProcess`` hub signal
@@ -144,12 +133,6 @@ pushed into the queue:
     - Post the ``Begin Process`` hub signal
     - Process the math script elements on the page
 
-      - There are a number of Hub signals generated during math
-        processing, including a signal that a ``Math`` action is
-        starting (with a parameter indicating what action that is),
-        ``Begin`` and ``End Math Input`` messages, and ``Begin`` and
-        ``End Math Output`` signals.
-
       - Each new math element generates a ``New Math`` hub signal
         with the math element's ID
 
@@ -158,29 +141,12 @@ pushed into the queue:
 
 ..
 
-12. Jump to the location specified in the URL's hash reference, if
-    any.
-
-..
-
-13. Initiate timers to load the zoom and menu code, if it hasn't
-    already been loading in the configuration (so it will be ready
-    when the user needs it).
-
-..
-
-14. Post the ``End`` startup signal
+10. Post the ``End`` startup signal
 
 
-The loading of the jax and extensions in steps 5 and 6 are now done in 
-parallel, rather than sequentially.  That is, all the jax and extensions 
-are requested simultaneously, so they load concurrently.  That means they 
-can load in any order, and that the begin and end signals for the jax and 
-extensions can be intermixed.  (In general, you will get `Begin Jax` 
-followed by `Begin Extensions`, but the order of `End Jax` and `End 
-Extensions` will depend on the files being loaded.)  Both 5 and 6 must 
-complete, however, before 7 will be performed.
 
-See the `test/sample-signals.html
-<http://cdn.mathjax.org/mathjax/latest/test/sample-signals.html>`_ file
-to see the signals in action.
+
+
+
+
+

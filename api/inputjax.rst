@@ -35,7 +35,7 @@ that class.
 Properties
 ==========
 
-.. describe:: id
+.. describe:: name
 
     The name of the jax.
 
@@ -45,53 +45,24 @@ Properties
 
 .. describe:: directory
 
-    The directory where the jax files are stored (e.g., ``"[MathJax]/jax/input/TeX"``).
-
-.. describe:: elementJax
-
-    The name of the ElementJax class that this input jax will produce 
-    (typically ``mml``, as that is the only ElementJax at the moment).
+    The directory where the jax files are stored (e.g., ``"[MathJax]/jax/input/TeX"``);
 
 
 Methods
 =======
 
-.. Method:: Process(script,state)
+.. Method:: Translate(script)
     :noindex:
 
-    This is the method that the ``MathJax.Hub`` calls when it needs
-    the input jax to process the given math ``<script>``.  Its default
-    action is to do the following:
-
-    1. Start loading any element jax  specified in the ``elementJax`` array;
-    2. Start loading the jax's ``jax.js`` file;
-    3. Start loading the required output jax (so it is ready when needed); and
-    4. Redefine itself to simply return the callback for the load operation 
-       (so that further calls to it will cause the processing to wait for the 
-       callback).
-
-    Once the ``jax.js`` file has loaded, this method is replaced by
-    the jax's ``Translate()`` method (see below), so that
-    subsequent calls to ``Process()`` will perform the appropriate
-    translation.
-
-    :Parameters:
-        - **script** --- reference to the DOM ``<script>`` object for
-                         the mathematics to be translated
-        - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
-                        (internal use)
-    :Returns: an `ElementJax` object, or ``null``
-
-.. Method:: Translate(script,state)
-    :noindex:
-
-    This is the main routine called by MathJax when a ``<script>`` of the
-    appropriate type is found.  The default :meth:`Translate()` method
-    throws an error indicating that :meth:`Translate()` hasn't been
-    defined, so when the ``jax.js`` file loads, it should override the
-    default :meth:`Translate()` with its own version that does the actual
-    translation. 
+    This is the main routine called by MathJax when a ``<script>`` of
+    the appropriate type is found.  The default :meth:`Translate()`
+    method simply loads the ``jax.js`` file and returns that callback
+    for that load function so that MathJax will know when to try
+    the :meth:`Translate()` action again.  When the ``jax.js`` file
+    loads, it should override the default :meth:`Translate()` with its
+    own version that does the actual translation; that way, when the
+    second Translate call is made, it will be to the actual
+    translation routine rather than the default loader.
 
     The translation process should include the creation of an
     :ref:`Element Jax <api-element-jax>` that stores the data needed
@@ -99,9 +70,6 @@ Methods
 
     :Parameters:
         - **script**  --- the ``<script>`` element to be translated
-        - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
-                        (internal use)
     :Returns: the `element jax` resulting from the translation
  
 .. Method:: Register(mimetype)
@@ -116,15 +84,3 @@ Methods
     :Parameters:
         - **mimetype** --- the MIME-type of the input this jax processes
     :Returns: ``null``
-
-.. Method:: needsUpdate(jax)
-    :noindex:
-
-    This implements the element jax's ``needsUpdate()`` method, and
-    returns ``true`` if the ``jax`` needs to be rerendered (i.e., the
-    text has changed), and ``false`` otherwise.
-
-    :Perameters:
-        - **jax** --- the element jax to be checked
-    :Returns: ``true`` if the jax's text has changed, ``false`` otherwise
-
