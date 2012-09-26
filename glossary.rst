@@ -89,12 +89,12 @@ Glossary
         format that allows images to be described as a collection of
         graphics objects (like lines, rectangles, etc) rather than as
         a bitmap of colored pixels.  MathJax can use this format to
-        display mathematics as an alterantive to its HTML-CSS or
+        display mathematics as an alternative to its HTML-CSS or
         NativeMML output.
 
 	.. seealso::
 
-	    `SVG Wilipedia entry <http://en.wikipedia.org/wiki/Scalable_Vector_Graphics>`_
+	    `SVG Wikipedia entry <http://en.wikipedia.org/wiki/Scalable_Vector_Graphics>`_
 
     TeX
         A document markup language with robust math markup commands
