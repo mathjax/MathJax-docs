@@ -3,7 +3,7 @@ MathJax Documentation
 #####################
 
 MathJax is an open-source JavaScript display engine for LaTeX,
-MathML, and AsciiMath notaion that works in all modern browsers.
+MathML, and AsciiMath notation that works in all modern browsers.
 
 Basic Usage
 ===========
