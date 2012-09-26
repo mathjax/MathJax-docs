@@ -186,7 +186,7 @@ Many new TeX additions and enhancements
 * Safer implementation of ``\require`` that only allows loading from
   extensions directory.
 
-* Allow ``\newcomand`` to provide a default parameter.
+* Allow ``\newcommand`` to provide a default parameter.
 
 * Allow ``\\`` to take an optional argument that specifies additional
   space between lines.
