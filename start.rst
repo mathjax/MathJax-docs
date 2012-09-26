@@ -92,8 +92,7 @@ We recommend using the CDN service if you can, but you can also install
 MathJax on your own server, or locally on your own hard disk.  To do
 so you will need to do the following things:
 
-1.  Obtain a copy of MathJax and make it available on your server or
-hard disk.
+1.  Obtain a copy of MathJax and make it available on your server or hard disk.
 
 2.  Configure MathJax to suit the needs of your site.
 
