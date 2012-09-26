@@ -12,7 +12,7 @@ constitute a full object-oriented programming model, so MathJax
 implements its own object library.  This means there is an ambiguity
 when we speak of an "object", as it could be either a native
 JavaScript object, or a MathJax object.  When the distinction is
-importat, we will use `Object` (capitalized) or `MathJax.Object` for
+important, we will use `Object` (capitalized) or `MathJax.Object` for
 the latter; the javascript object will always be listed in lower
 case.
 
