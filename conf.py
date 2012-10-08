@@ -100,6 +100,7 @@ html_theme = 'sphinx-bootstrap'
 # documentation.
 html_theme_options = {
     'analytics_code': 'UA-15609829-1',
+    'analytics_domain': 'mathjax.org',
     'github_user': 'mathjax',
     'github_repo': 'mathjax',
     'twitter_username': 'mathjax',
