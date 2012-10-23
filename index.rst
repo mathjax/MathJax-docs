@@ -41,6 +41,7 @@ Upgrading MathJax
 .. toctree::
     :maxdepth: 1
 
+    What's New in MathJax v2.1 <whats-new-2.1>
     What's New in MathJax v2.0 <whats-new-2.0>
     What's New in MathJax v1.1 <whats-new-1.1>
     Migrating from MathJax v1.0 to v1.1 <upgrade>
