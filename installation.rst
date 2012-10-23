@@ -96,20 +96,20 @@ to get a list of the available branches.  There are separate branches
 for the main releases, but with ``-latest`` appended.  These contain
 all the patches for that particular release.  You can check out one of
 the branches just as you would a tagged copy.  For example, the branch
-for the ``v2.0`` tagged release is ``v2.0-latest``.  To get this
+for the ``v2.1`` tagged release is ``v2.1-latest``.  To get this
 release, use
 
 .. code-block:: sh
 
     cd MathJax
-    git checkout v2.0-latest
+    git checkout v2.1-latest
 
 and to update it when changes occur, use
 
 .. code-block:: sh
 
     cd MathJax
-    git pull origin v2.0-latest
+    git pull origin v2.1-latest
 
 
 .. _getting-mathjax-svn:
@@ -161,7 +161,7 @@ then use
     svn checkout http://github.com/mathjax/MathJax/branch/[name] MathJax
 
 where ``[name]`` is replaced by the name of the branch you want to
-check out; e.g., ``2.0-latest``.  The branch names can be found on the
+check out; e.g., ``2.1-latest``.  The branch names can be found on the
 `GitHub MathJax page <http://github.com/mathjax/MathJax/>`_ under the
 `branches <https://github.com/mathjax/MathJax/branches>`_ tab.
 
@@ -177,8 +177,8 @@ Release versions of MathJax are available in archive files from the
 "zip" button, or the "downloads" tab), where you can download the archive
 that you need.
 
-You should download the v2.0 archive (which will get you a file with a
-name like ``mathjax-MathJax-v2.0-X-XXXXXXXX.zip``, where the X's are
+You should download the v2.1 archive (which will get you a file with a
+name like ``mathjax-MathJax-v2.1-X-XXXXXXXX.zip``, where the X's are
 some sequence of random-looking letters and numbers), then simply unzip
 it.  Once the MathJax directory is unpacked, you should move it to the
 desired location on your server (or your hard disk, if you are using
@@ -199,7 +199,7 @@ the ``.zip`` file in the download list will be the original release
 version, not the patched version.  To obtain the patched version, use
 the `Branches` drop down menu (at the far left of the menus within the
 page) to select the release branch that you want (for example
-``v2.0-latest``), and then use the "zip" button just above it to get
+``v2.1-latest``), and then use the "zip" button just above it to get
 the latest patched version of that release.
 
 
