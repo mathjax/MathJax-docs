@@ -105,10 +105,10 @@ so you will need to do the following things:
 Obtaining and Installing MathJax
 --------------------------------
 
-The easiest way to set up MathJax is to obtain the v2.0 archive from
+The easiest way to set up MathJax is to obtain the v2.1 archive from
 the `MathJax download page <http://www.mathjax.org/download/>`_ (you
 should obtain a file named something like
-``mathjax-MathJax-v2.0-X-XXXXXXXX.zip`` where the X's are random
+``mathjax-MathJax-v2.1-X-XXXXXXXX.zip`` where the X's are random
 looking numbers and letters).  This archive includes both the MathJax
 code and the MathJax webfonts, so it is the only file you need.  Note
 that this is different from v1.0 and earlier releases, which had the
@@ -271,7 +271,7 @@ dollar-sign delimiters.
 
 Here is a complete sample page containing TeX mathematics (also
 available in the `test/sample-tex.html
-<http://cdn.mathjax.org/mathjax/2.0-latest/test/sample-tex.html>`_
+<http://cdn.mathjax.org/mathjax/2.1-latest/test/sample-tex.html>`_
 file):
 
 .. code-block:: html
@@ -359,7 +359,7 @@ situations.
 
 Here is a complete sample page containing MathML mathematics (also
 available in the `test/sample-mml.html
-<http://cdn.mathjax.org/mathjax/2.0-latest/test/sample-mml.html>`_
+<http://cdn.mathjax.org/mathjax/2.1-latest/test/sample-mml.html>`_
 file):
 
 .. code-block:: html
@@ -441,13 +441,13 @@ MathJax's MathML support.
 AsciiMath input
 ---------------
 
-MathJax v2.0 includes a new input format: :term:`AsciiMath` notation.
+MathJax v2.0 introduced a new input format: :term:`AsciiMath` notation.
 For mathematics written in this form, you mark your mathematical
 expressions by surrounding them in "back-ticks", i.e., ```...```.
 
 Here is a complete sample page containing AsciiMath notation (also
 available in the `test/sample-asciimath.html
-<http://cdn.mathjax.org/mathjax/2.0-latest/test/sample-asciimath.html>`_
+<http://cdn.mathjax.org/mathjax/2.1-latest/test/sample-asciimath.html>`_
 file):
 
 .. code-block:: html
