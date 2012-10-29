@@ -223,7 +223,7 @@ comments explaining them.  The others are what are called `combined
 configuration files`, which not only configure MathJax, but also pre-load the 
 various files that the configuration requires.  (The contents of these 
 files are explained in more detail in the `Common Configurations 
-<config-files>`_ section.)
+<common-configurations>`_ section.)
 
 Usually, MathJax loads its components only when they are needed, but each
 component will require a separate file to be loaded, and that can cause
