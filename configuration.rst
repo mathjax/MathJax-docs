@@ -222,8 +222,7 @@ contains nearly all the configuration options that MathJax allows, and has
 comments explaining them.  The others are what are called `combined 
 configuration files`, which not only configure MathJax, but also pre-load the 
 various files that the configuration requires.  (The contents of these 
-files are explained in more detail in the `Common Configurations 
-<common-configurations>`_ section.)
+files are explained in more detail in the :ref:`Common Configurations <common-configurations>` section.)
 
 Usually, MathJax loads its components only when they are needed, but each
 component will require a separate file to be loaded, and that can cause
