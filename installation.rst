@@ -29,7 +29,7 @@ The easiest way to get MathJax and keep it up to date is to use the `Git
 
 .. code-block:: sh
 
-    git clone https://github.com/mathjax/MathJax.git MathJax
+    git clone git://github.com/mathjax/MathJax.git MathJax
 
 to obtain and set up a copy of MathJax.  (Note that there is no longer
 a ``fonts.zip`` file, as there was in v1.0, and that the ``fonts``
