@@ -276,7 +276,7 @@ Configuration File with the CDN <local-config-files>` for details.
 
 .. _tex-eq-numbers:
 
-Automatic Equation Numering
+Automatic Equation Numbering
 ===========================
 
 New in MathJax v2.0 is the ability to have equations be numbered
@@ -320,7 +320,7 @@ will be numbered, while
 .. code-block::  latex
 
     \begin{equation*}
-       e^{\pi i} - 1 = 0
+       e^{\pi i} + 1 = 0
     \end{equation*}
 
 won't be numbered (when ``autoNumber`` is ``"AMS"``).
