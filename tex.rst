@@ -277,7 +277,7 @@ Configuration File with the CDN <local-config-files>` for details.
 .. _tex-eq-numbers:
 
 Automatic Equation Numbering
-===========================
+============================
 
 New in MathJax v2.0 is the ability to have equations be numbered
 automatically.  This functionality is turned off by default, so 
