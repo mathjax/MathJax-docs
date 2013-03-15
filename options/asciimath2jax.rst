@@ -31,7 +31,7 @@ preprocessor to include dollar signs as well as back-ticks.
 
     .. code-block:: javascript
 
-        inlineMath: [ ['$','$'], ['`','`'] ]
+        delimiters: [ ['$','$'], ['`','`'] ]
 
     would cause `asciimath2jax` to look for ``$...$`` and ```...``` as
     delimiters for inline mathematics.  (Note that the single dollar
