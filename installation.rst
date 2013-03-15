@@ -158,7 +158,7 @@ then use
 
 .. code-block:: sh
 
-    svn checkout http://github.com/mathjax/MathJax/branches/[name] MathJax
+    svn checkout https://github.com/mathjax/MathJax/branches/[name] MathJax
 
 where ``[name]`` is replaced by the name of the branch you want to
 check out; e.g., ``2.1-latest``.  The branch names can be found on the
