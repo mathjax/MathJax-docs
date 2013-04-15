@@ -100,9 +100,9 @@ get.  The CDN has the following directory structure:
 
     mathjax/         # project-name
        1.0-latest/
-       1.1-latest/   # the 1.1 release with any ciritical patches
-       2.0-latest/   # the 2.0 release with any ciritical patches
-       2.1-latest/   # the 2.1 release with any ciritical patches
+       1.1-latest/   # the 1.1 release with any critical patches
+       2.0-latest/   # the 2.0 release with any critical patches
+       2.1-latest/   # the 2.1 release with any critical patches
        ...
        latest/       # the most current version (2.1-latest in this case)
 
