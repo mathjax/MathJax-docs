@@ -31,6 +31,7 @@ Basic Usage
     :maxdepth: 1
 
     MathJax Localization <localization>
+    MathJax Safe-mode <safe-mode>
 
 .. toctree::
     :maxdepth: 1
