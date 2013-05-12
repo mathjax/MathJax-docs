@@ -30,6 +30,11 @@ Basic Usage
 .. toctree::
     :maxdepth: 1
 
+    MathJax Localization <localization>
+
+.. toctree::
+    :maxdepth: 1
+
     The MathJax Community <community>
 
 
