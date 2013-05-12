@@ -511,7 +511,7 @@ To use this extension in your own configurations, add it to the
     }
 
 Alternatively, if the extension hasn't been loaded in the
-configuration, you can use `\require{AMScd}` to load it from within a
+configuration, you can use ``\require{AMScd}`` to load it from within a
 TeX expression.  Note that you only need to include this once on the
 page, not every time the `CD` environment is used.
 
