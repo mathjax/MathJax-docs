@@ -9,11 +9,11 @@ languages other than English.  This includes all inforamtion strings,
 menu items, warning messages, and so on.  To make this possible, each
 string is given an ID that is used to obtain the localized version of
 the string.  So the "File not found" message might have the ID
-`NotFound`.  The localization data for each language associates the ID
-`NotFound` with the proper translation of the English phrase "File not
+``NotFound``.  The localization data for each language associates the ID
+``NotFound`` with the proper translation of the English phrase "File not
 found".
 
-Some of MathJax's functions, like ``MathJax.Message.Set()`` can accept
+Some of MathJax's functions, like ``MathJax.Message.Set()``, can accept
 localized strings as their parameters. To use a localized string in
 this case, use an array consisting of the ID followed by the English
 string (followed by any substitution arguments for the string, see
@@ -34,6 +34,9 @@ still accept unlocalized strings, as it has traditionally:
 
 Here the message will always be in English, regardless of the selected
 language.
+
+MathJax's localization system is documented more fully in
+the :ref:`Localization API <_api-localization>` documentation.
 
 
 Parameter Substitution
@@ -63,9 +66,9 @@ Plural forms
 ------------
 
 Some languages handle plural forms differently from how English does.
-In English, there are two forms:  the one used for a single item, and
+In English, there are two forms: the one used for a single item, and
 the one used for everything else.  For example, you would say "You
-have one new message" for a single message, but "You have three
+have one new message" for a single message, but "You have three new
 messages" of there were three messages (or two, or zero, or anything
 other than one).
 
@@ -88,7 +91,7 @@ strings is handled by the translation data for the selected language.
 
 As an example, you might use
 
-.. code-block: javascript
+.. code-block:: javascript
 
     MathJax.Message.Set(["NewMessages","You have %1 new %{plural:%1|message|messages}",n]);
 
@@ -126,7 +129,7 @@ literal close brace, it can be quoted with a percent.  For instance,
 would produce ``One {only}`` when the first argument is 1, and ``Two {or
 more}`` otherwise.
 
-If a string needs to include a literal string that looks like one of
+If a message needs to include a literal string that looks like one of
 these selectors, the original ``%`` can be quoted. So ``%%{plural:%%1|A|B}``
 would be the literal string ``%{plural:%1|A|B}``.
 
@@ -134,12 +137,12 @@ would be the literal string ``%{plural:%1|A|B}``.
 ID's and Domains
 ----------------
 
-Because MathJax consists of a number of separate components, and can
+Because MathJax consists of a number of separate components and can
 be extended by third party code, it is possible for two different
 components to want to use the same ID value for a string, leading to
-an ID name collision.  To help avoid this, MathJax uses identifier
-`domains` that are used to isolate collections of identifiers for one
-component of MathJax from those for another component. For example,
+an ID name collision.  To help avoid this, MathJax allows identifier
+*domains* that are used to isolate collections of identifiers for one
+component from those for another component. For example,
 each input jax has its own domain, as do many of the MathJax
 extensions. This means you only have to worry about collisions within
 your own domain, and so can more easily manage the uniqueness if the
@@ -175,7 +178,7 @@ HTML Snippets
 MathJax provides a means of specifiying HTML code in javascript called
 :ref:`HTML snippets <html-snippets>`.  These frequently include text
 that needs to be localized, so you can include localization strings
-like those described above within an HTML snippet in any location
+(like those described above) within an HTML snippet in any location
 where you would normally have a regular text string.  For example, the
 snippet
 
@@ -253,13 +256,35 @@ processed with default domain ``domain``.  E.g.
 would create two undordered lists, one with translations from the
 ``TeX`` domain, and one from the ``MathML`` domain.
 
+To summarize the format of an HTML snippet, it is an array
+with each entry being one of the following:
+
+*  A text string, which becomes text in the resulting HTML; this is
+   untranslated.
+
+*  An array of the form ``["tag"]``, ``["tag",{properties}]``, or
+   ``["tag",{properties},HTML-snippet]``, which becomes the given HTML
+   tag, with the given properties, containing the given HTML-snippet
+   as its children.
+
+*  An array of the form ``[id,message]`` or
+   ``[id,message,parameters]``, which is first translated, then
+   parameter substitution performed, and the result added to the
+   HTML (either as text or as HTML tags if the message included
+   Markdown syntax).  Note that the ``id`` can be either an id or an
+   array ``[domain,id]``, and that the parameters could be HTML
+   snippets themselves.
+
+*  An array of the form ``[domain,HTML-snippet]``, which becomes
+   the HTML-snippet with its localizations done from the given domain.
+
 
 Markdown Notation
 -----------------
 
-HTML snippets allow you to create styled markup, like bold an italics,
-but this requires breaking the text up into smaller strings (that fall
-in between HTML tags).  That makes it hard to translate, since the
+HTML snippets allow you to create styled markup, like bold or italics,
+but this requires breaking the text up into smaller strings that fall
+in between HTML tags.  That makes it hard to translate, since the
 strings are not full phrases.  To make the creation of strings with
 bold, italics, and hyperlinks easier to localize, MathJax allows the
 strings within HTML snippets to be written in a limited Markdown
