@@ -76,11 +76,11 @@ Methods
     translation.
 
     :Parameters:
-        - **script** --- reference to the DOM ``<script>`` object for
-                         the mathematics to be translated
-        - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
-                        (internal use)
+        - **script**  --- reference to the DOM ``<script>`` object for
+                          the mathematics to be translated
+        - **state**   --- a structure containing information about the
+                          current proccessing state of the mathematics
+                          (internal use)
     :Returns: an `ElementJax` object, or ``null``
 
 .. Method:: Translate(script,state)
@@ -99,9 +99,9 @@ Methods
 
     :Parameters:
         - **script**  --- the ``<script>`` element to be translated
-        - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
-                        (internal use)
+        - **state**   --- a structure containing information about the
+                          current proccessing state of the mathematics
+                          (internal use)
     :Returns: the `element jax` resulting from the translation
  
 .. Method:: Register(mimetype)
@@ -114,7 +114,7 @@ Methods
     of the various types from one another.
 
     :Parameters:
-        - **mimetype** --- the MIME-type of the input this jax processes
+        - **mimetype**  --- the MIME-type of the input this jax processes
     :Returns: ``null``
 
 .. Method:: needsUpdate(jax)
@@ -125,6 +125,6 @@ Methods
     text has changed), and ``false`` otherwise.
 
     :Perameters:
-        - **jax** --- the element jax to be checked
+        - **jax**  --- the element jax to be checked
     :Returns: ``true`` if the jax's text has changed, ``false`` otherwise
 

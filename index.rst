@@ -81,6 +81,7 @@ Reference Pages
 
     HTML snippets <HTML-snippets>
     CSS style objects <CSS-styles>
+    Localization strings <localization-strings>
     Glossary <glossary>
 
 * :ref:`Search <search>`
