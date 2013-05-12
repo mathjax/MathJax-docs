@@ -22,7 +22,7 @@ expressions.
 Similarly, MathJax provides an HTML extension for the TeX language
 that allows you to include hyperlinks in your TeX formulas:
 
-.. code-block: latex
+.. code-block:: latex
 
     $E \href{javascript:alert("Einstein says so!"){=} mc^2$
 
@@ -35,13 +35,13 @@ features can be used to produce interactive mathematical expressions
 to help your exposition, improve student learning, and so on.
 
 If you are using MathJax in a community setting, however, like a
-question-and-answer forum, or a wiki, or a blog with user comments, or
+question-and-answer forum, a wiki, a blog with user comments, or
 other situations where your readers can enter mathematics, then your
 readers would be able to use such powerful tools to corrupt the page,
 or fool other readers into giving away sensitive information, or
 interrupt their reading experience in other ways.  In such
 environments, you may want to limit these abilities so that your
-readers are protected form these kinds of malicious users.
+readers are protected form these kinds of malicious actions.
 
 (Authors who are writing pages that don't allow users to enter data on
 the site do not have to worry about such problems, as the only
