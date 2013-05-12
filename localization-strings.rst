@@ -264,7 +264,7 @@ strings are not full phrases.  To make the creation of strings with
 bold, italics, and hyperlinks easier to localize, MathJax allows the
 strings within HTML snippets to be written in a limited Markdown
 syntax (*very* limited).  You can use ``*bold*``, ``**italics**``,
-``***bold-italics***``, ``[link-text](url)``, and `` `code` `` to
+``***bold-italics***``, ``[link-text](url)``, and ```code``` to
 obtain bold, italics, bold-italics, hyperlinks, and code blocks.  For
 instance, the link example above could be more easily handled via
 
