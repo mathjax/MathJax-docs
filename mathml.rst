@@ -55,7 +55,7 @@ If you must use named entities, you may need to declare them in the
 `DOCTYPE` declaration by hand.
 
 When you use MathML in an HTML document rather than an XHTML one
-(MathJax will work woth both), you should not use the "self-closing"
+(MathJax will work with both), you should not use the "self-closing"
 form for tags with no content, but should use separate open and close
 tags.  That is, use
 
@@ -74,6 +74,31 @@ that should be avoided.  Modern browsers that support HTML5 should be
 able to handle self-closing tags, but older browsers have problems
 with them, so if you want your mathematics to be visible to the widest
 audience, do not use the self-closing form in HTML documents.
+
+
+Content MathML
+==============
+
+New in version 2.2 is experimental support for Content MathML.  This
+uses an XSL style sheet developed by David Carlisle to convert Content
+MathML to Presentation MathML, which is then processed by MathJax.
+
+To use Content MathML in your documents, simply include
+``"content-mathml.js"`` in the ``extensions`` array of your MathML
+configuration block.  For example
+
+.. code-block:: html
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      MathML: {
+        extensions: ["content-mathml.js"]
+      }
+    });
+    </script>
+
+Note that this script tag must come *before* the script that loads
+``MathJax.js`` itself.
 
 
 Supported MathML commands
