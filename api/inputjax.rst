@@ -77,10 +77,9 @@ Methods
 
     :Parameters:
         - **script**  --- reference to the DOM ``<script>`` object for
-                          the mathematics to be translated
+          the mathematics to be translated
         - **state**   --- a structure containing information about the
-                          current proccessing state of the mathematics
-                          (internal use)
+          current proccessing state of the mathematics (internal use)
     :Returns: an `ElementJax` object, or ``null``
 
 .. Method:: Translate(script,state)
@@ -100,8 +99,7 @@ Methods
     :Parameters:
         - **script**  --- the ``<script>`` element to be translated
         - **state**   --- a structure containing information about the
-                          current proccessing state of the mathematics
-                          (internal use)
+          current proccessing state of the mathematics (internal use)
     :Returns: the `element jax` resulting from the translation
  
 .. Method:: Register(mimetype)

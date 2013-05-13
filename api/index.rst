@@ -31,7 +31,7 @@ on the main MathJax documentation page.
     The MathJax.CallBack class <callback>
     The MathJax.CallBack.Queue class <queue>
     The MathJax.CallBack.Signal class <signal>
-    The MathJax.Localization class <localization>
+    The MathJax.Localization object <localization>
 
 .. toctree::
     :maxdepth: 1

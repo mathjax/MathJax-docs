@@ -42,7 +42,7 @@ data has failed to load.  Providing the English string in addition to
 the ID guarantees that a fallback is available.
 
 MathJax's localization system is documented more fully in
-the :ref:`Localization API <_api-localization>` documentation.
+the :ref:`Localization API <api-localization>` documentation.
 
 
 Parameter Substitution

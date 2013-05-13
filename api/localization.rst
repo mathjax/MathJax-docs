@@ -339,8 +339,8 @@ The methods in ``MathJax.Localization`` include:
 
     :Parameters:
         - **id** --- the ID of the message to translate, or an array ``[domain,ID]``
-        - **message** --- the English phrase to use as fallback if there is no translation,
-                          or an HTML snippet to be localized
+        - **message** --- the English phrase to use as fallback if
+          there is no translation, or an HTML snippet to be localized
         - **arguments** --- values to be inserted into the translated string
     :Returns: the translated string or HTML snippet
 
@@ -442,7 +442,7 @@ The methods in ``MathJax.Localization`` include:
 
     :Parameters:
         - **fn** --- a callback specification for a function that
-                     uses localization data
+          uses localization data
     :Returns: ``null``
 
 
