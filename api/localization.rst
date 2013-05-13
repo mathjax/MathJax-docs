@@ -411,7 +411,7 @@ The methods in ``MathJax.Localization`` include:
     otherwise it defaults to the English version.
 
 
-..method:: loadDomain(domain[,callback])
+.. method:: loadDomain(domain[,callback])
 
     This causes MathJax to load the data file for the given `domain`
     in the current language, and calls the `callback` when that is
@@ -427,7 +427,7 @@ The methods in ``MathJax.Localization`` include:
     :Returns: the callback object (or a blank one if none specified)
 
 
-..method:: Try(fn)
+.. method:: Try(fn)
 
     This method runs the function `fn` with error trapping and if an
     asynchronous file load is performed (for loading localizaton
