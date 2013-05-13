@@ -17,12 +17,13 @@ contextual menu.  It includes a `Language` submenu that lists the
 available languages; selecting one will change the MathJax user
 interface to use that language.
 
-The list includes those languages that are provided by MathJax, but
-third party developers may produce translations that have not yet been
-incorporated into an official MathJax release.  If you know the
-location of such a translation, you can use the `Load from URL...`
-item at the bottom of the language menu to provide a URL for the data
-file for that language (this will be supplied by the third party).
+.. The list includes those languages that are provided by MathJax, but
+   third party developers may produce translations that have not yet
+   been incorporated into an official MathJax release.  If you know
+   the location of such a translation, you can use the `Load from
+   URL...` item at the bottom of the language menu to provide a URL
+   for the data file for that language (this will be supplied by the
+   third party).
 
 Page authors can select a default language for MathJax so that, for
 example, a page that is written in French will have MathJax's user
