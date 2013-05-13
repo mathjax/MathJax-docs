@@ -24,8 +24,8 @@ issues are described in more detail in the :ref:`Localization Strings
 <localization-strings>` documentation.
 
 A number of MathJax's messaging functions handle localization of their
-messages automatically.  For example, the ``MathJax.Message.Set()``
-function and the TeX input jax's ``Error()`` function both will look
+messages automatically.  For example, the :meth:`MathJax.Message.Set()`
+function and the TeX input jax's :meth:`Error()` function both will look
 up localization strings automatically. 
 
 Because the localization data needs to be downloaded over the network,
@@ -137,7 +137,7 @@ HTML Snippets
 MathJax allows you to encode HTML snippets using javascript data (see
 the :ref:`HTML snippets <HTML-snippets>` documentation for details),
 and these often contain textual data that needs to be localized.  You
-can pass HTML snippets to the ``_()`` function and a domain in which
+can pass HTML snippets to the :meth:`_()` function and a domain in which
 the strings are to be looked up.  You then use a localization string
 (an array consisting of the ID and string, plus optional parameters to
 be substituted into the string) in place of a normal string in teh
@@ -176,7 +176,7 @@ Synchronization Issues
 Because the translation data are stored in files that are loaded only
 when they are needed, and since file loading in MathJax is
 asynchronous, you need to take this loading process into account when
-you use ``_()` to obtain a localized string.  If this is the first
+you use :meth:`_()` to obtain a localized string.  If this is the first
 string obtained from the language, or the first one from the requested
 domain, MathJax may have to load the data file or that language or
 domain (or both).  In that case, you need to be prepared to wait for
@@ -185,13 +185,13 @@ The localization system provides you with two functions to make this
 easier, but you do have to keep in mind that obtaining translation
 strings may be an asynchronous action.
 
-The first method is ``MathJax.Localization.loadDomain()``, which takes a
+The first method is :meth:`MathJax.Localization.loadDomain()`, which takes a
 domain name and an optional callback, and forces MathJax to load the
 language data for that domain (and the main language data file, if
 needed), then calls the callback.  In this way, the callback function
 knows that the localization data that it needs will be available, and
-it doesn't have to worry about the possibility that ``_()`` will start
-a file loading operation.  The ``loadDomain()`` function returns the
+it doesn't have to worry about the possibility that :meth:`_()` will start
+a file loading operation.  The :meth:`loadDomain()` function returns the
 callback object, which can be used in callback queues, for example, to
 coordinate further actions.
 
@@ -213,12 +213,12 @@ and want to localize the error message.  The naive approach would be
       url = null;
     }
 
-(provided you have defined ``_()`` for your domain as described
-above).  The problem is that ``_()`` might need to load the language
-data for your message, and that causes ``_()`` to throw a restart
+(provided you have defined :meth:`_()` for your domain as described
+above).  The problem is that :meth:`_()` might need to load the language
+data for your message, and that causes :meth:`_()` to throw a restart
 error.  That would cause an error message to appear on the javascript
 console, and your alert would never occur.  Instead, you want to make
-sure that the localization data are available before calling ``_()``.
+sure that the localization data are available before calling :meth:`_()`.
 
 Suppose the domain for your message ID is ``myDomain``, then one way
 to do this would be
@@ -233,7 +233,7 @@ to do this would be
     }
 
 This uses ``loadDomain`` to force the ``myDomain`` data to be loaded
-before attemptin the ``_()`` call, so you are sure the call will
+before attemptin the :meth:`_()` call, so you are sure the call will
 succeed.  If several localized string are needed, you may want to use
 ``loadDomain`` around the entire function:
 
@@ -250,7 +250,7 @@ succeed.  If several localized string are needed, you may want to use
       }
     });
 
-It is also possible to use ``loadDomain()`` as part of a callback
+It is also possible to use :meth:`loadDomain()` as part of a callback
 queue:
 
 .. code-block:: javascript
@@ -269,17 +269,17 @@ Here the function will not be performed until after the ``myDomain``
 domain is loaded.
 
 The second tool for synchronizing with the localization system is the
-``MathJax.Localization.Try()`` function.  This method takes a callback
+:meth:`MathJax.Localization.Try()` function.  This method takes a callback
 specification (for example, a function, though it could be any valid
 callback data) and runs the callback with error trapping.  If the
 callback throws a restart error (due to loading a localization data
-file), ``Try()`` will wait for that file to load, then rerun the
+file), :meth:`Try()` will wait for that file to load, then rerun the
 callback (and will continue to do so if there are additional file
 loads).
 
 Using this approach, you don't have to worry about loading the domains
-explicitly, as ``_()`` will throw a restart error when one is needed,
-and ``Try()`` will catch it and restart after the load.  For example,
+explicitly, as :meth:`_()` will throw a restart error when one is needed,
+and :meth:`Try()` will catch it and restart after the load.  For example,
 
 .. code-block:: javascript
 
@@ -290,7 +290,7 @@ and ``Try()`` will catch it and restart after the load.  For example,
       }
     });
 
-Note that, as with ``loadDomain()``, ``Try()`` may return before the
+Note that, as with :meth:`loadDomain()`, :meth:`Try()` may return before the
 callback has been run successfully, so you should consider this to be
 an asynchronous function.  You can use callbacks to synchronize with
 other actions, if needed.
@@ -300,24 +300,24 @@ succeeds (if localization data needs to be loaded).  So you need to
 write the function in such a way that it doesn't matter if it gets
 partway through and fails.  For example, you might not want to create
 structures or modify values that affect what happens if the function
-has to be rerun from the beginning when one of its ``_()`` causes a
+has to be rerun from the beginning when one of its :meth:`_()` causes a
 file load.
 
 A number of functions in MathJax are able to accept localization
 strings as their inputs, and these already take care of the
 synchronization issues for you.  For example,
-``MathJax.Message.Set()`` can accept either a plain (untranslated)
+:meth:`MathJax.Message.Set()` can accept either a plain (untranslated)
 string, or a localization string (array with ID, string, and
-substitution parameters).  It uses ``Try()`` internally to make sure
+substitution parameters).  It uses :meth:`Try()` internally to make sure
 your message is properly translated before posting it to the screen.
 That means you don't have to worry about that yourself when you use
-``MathJax.Message.Set()``, though you shoud be aware that the posting
+:meth:`MathJax.Message.Set()`, though you shoud be aware that the posting
 of the message may be asynchronous, so the message might not be
-visible when ``Set()`` returns.  Fortunately,
-``MathJax.Message.Clear()`` coordinates with ``Set()`` so that even if
-you call ``Clear()`` before the original message posts, MathJax won't
-get confused).  Similarly, the TeX input jax's ``Error()`` function
-handles the calling of ``_()`` and its synchronization for you.
+visible when :meth:`Set()` returns.  Fortunately,
+:meth:`MathJax.Message.Clear()` coordinates with :meth:`Set()` so that even if
+you call :meth:`Clear()` before the original message posts, MathJax won't
+get confused).  Similarly, the TeX input jax's :meth:`Error()` function
+handles the calling of :meth:`_()` and its synchronization for you.
 
 
 The Localization Data
@@ -400,14 +400,14 @@ The methods in ``MathJax.Localization`` include:
     The method that returns the index into the list of plural texts
     for the value `n`.  See the [CLDR
     rules](http://unicode.org/cldr/charts/supplemental/language_plural_rules.html)
-    for more information.  This calls the locale's ``plural()``
+    for more information.  This calls the locale's :meth:`plural()`
     method, if there is one, otherwise it defaults to the English version.
 
 
 .. method:: number(n)
 
     The method that returns the localized version of the number `n`.
-    This calls the locale's ``number()` method, if there is one,
+    This calls the locale's :meth:`number()` method, if there is one,
     otherwise it defaults to the English version.
 
 
@@ -435,7 +435,7 @@ The methods in ``MathJax.Localization`` include:
     you synchronize actions that require localization with the loading
     of the needed data (see the section on synchronization above for
     details).  Note that the function should be one that can be run
-    multiple times, if needed.  Also note that ``Try()`` can return
+    multiple times, if needed.  Also note that :meth:`Try()` can return
     *before* the `fn` has been completed, so you should consider `fn`
     to be running asynchronously (you ca use callbacks to synchronize
     with other actions, if needed).
@@ -569,21 +569,21 @@ The fields have the following meanings:
 
     This is an optional function that returns the index into the list
     of plural values apropriate for the given integer n.  If not
-    provided, the English ``plural()`` function is used.
+    provided, the English :meth:`plural()` function is used.
 
 
 .. describe:: plural(n)
 
     This is an optional function that returns the index into the list
     of plural values apropriate for the given integer `n`.  If not
-    provided, the English ``plural()`` function is used.
+    provided, the English :meth:`plural()` function is used.
 
 
 .. describe:: number(n)
 
     This is an optional function that returns the a string
     representing the decimal number `n` in the format used by the
-    given locale.  If not provided, the English ``number()`` function
+    given locale.  If not provided, the English :meth:`number()` function
     is used.
 
 

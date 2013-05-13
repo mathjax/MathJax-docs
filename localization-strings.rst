@@ -13,7 +13,7 @@ the string.  So the "File not found" message might have the ID
 ``NotFound`` with the proper translation of the English phrase "File not
 found".
 
-Some of MathJax's functions, like ``MathJax.Message.Set()``, can accept
+Some of MathJax's functions, like :meth:`MathJax.Message.Set()`, can accept
 localized strings as their parameters. To use a localized string in
 this case, use an array consisting of the ID followed by the English
 string (followed by any substitution arguments for the string, see
@@ -25,7 +25,7 @@ below).  For example,
 
 would cause the "File not found" message to be displayed (in the
 currently selected language) in the MathJax message area at the bottom
-of left of the browser window.  Note that `MathJax.Message.Set()` can
+of left of the browser window.  Note that :meth:`MathJax.Message.Set()` can
 still accept unlocalized strings, as it has traditionally:
 
 .. code-block:: javascript
@@ -193,7 +193,7 @@ would set the message to the translation associated with the ID
 
 Some functions that take localization strings automatically prepend the
 domain to the ID (if one isn't already given).  For example, the
-``Error()`` function of the TeX input jax uses the ``TeX`` domain if
+:meth:`Error()` function of the TeX input jax uses the ``TeX`` domain if
 one isn't supplied, so
 
 .. code-block:: javascript
