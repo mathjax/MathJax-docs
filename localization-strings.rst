@@ -35,6 +35,12 @@ still accept unlocalized strings, as it has traditionally:
 Here the message will always be in English, regardless of the selected
 language.
 
+The reason that the English string is also given (in addition to the
+ID), is because MathJax needs to have a fallback string to use in case
+the localzation data doesn't translate that ID, or if the localization
+data has failed to load.  Providing the English string in addition to
+the ID guarantees that a fallback is available.
+
 MathJax's localization system is documented more fully in
 the :ref:`Localization API <_api-localization>` documentation.
 
@@ -60,6 +66,16 @@ inserted into the localized string at the location of the ``%1``.
 Note that the localized string could use the parameters in a different
 order from how they appear in English, so MathJax can handle languages
 where the word order is different.
+
+Although it would be rare to need more than 9 substitution parameters,
+you can use ``%10``, ``%11``, etc., to get the 10-th, 11-th, and so
+on. If you need a parameter to be followed directly by a number, use
+``%{1}0`` (rather than ``%10``) to get the first parameter followed
+directly by a zero.
+
+A ``%`` followed by anything other than a number or a ``{`` generates
+just the character following the percent sign, so ``%%`` would produce
+a single ``%``, and ``%:`` would produce just ``:``.
 
 
 Plural forms
@@ -115,7 +131,6 @@ the original English one doesn't. For example
 could be translated into French by
 
 .. code-block:: javascript
-
    
     "Nous sommes %1 dans cette famille mais %{plural:%1|seul|seuls} en ce monde."
 
@@ -132,6 +147,23 @@ more}`` otherwise.
 If a message needs to include a literal string that looks like one of
 these selectors, the original ``%`` can be quoted. So ``%%{plural:%%1|A|B}``
 would be the literal string ``%{plural:%1|A|B}``.
+
+
+Number forms
+------------
+
+Decimal numbers are represented differently in different languages.
+For example, 3.14159 is an English representation of an approximation
+to the mathematical constant pi, while in European countries, it would
+be written 3,14159.  MathJax will convert a number to the proper
+format before inserting it into a localized string.  For example
+
+.. code-block:: javascript
+
+    MathJax.Message.Set(["pi","The value of pi is approximately %1",3.14159]);
+
+would show the value as ``3.14159`` in Enlish, but ``3,14159`` if
+French is the selected language.
 
 
 ID's and Domains
