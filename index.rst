@@ -88,12 +88,6 @@ Reference Pages
 
 * :ref:`Search <search>`
 
-* `User Help Pages <http://www.mathjax.org/help/user>`_:
-
-  + `MathJax Font Help <http://www.mathjax.org/help/fonts>`_
-  + `MathJax Contextual Menu <http://www.mathjax.org/help/menu>`_
-  + `MathJax Zoom Feature <http://www.mathjax.org/help/zoom>`_
-
 --------
 
 This version of the documentation was built |today|.
