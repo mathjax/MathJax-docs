@@ -30,6 +30,12 @@ Basic Usage
 .. toctree::
     :maxdepth: 1
 
+    MathJax Localization <localization>
+    MathJax Safe-mode <safe-mode>
+
+.. toctree::
+    :maxdepth: 1
+
     The MathJax Community <community>
 
 
@@ -41,6 +47,7 @@ Upgrading MathJax
 .. toctree::
     :maxdepth: 1
 
+    What's New in MathJax v2.2 <whats-new-2.2>
     What's New in MathJax v2.1 <whats-new-2.1>
     What's New in MathJax v2.0 <whats-new-2.0>
     What's New in MathJax v1.1 <whats-new-1.1>
@@ -76,15 +83,10 @@ Reference Pages
 
     HTML snippets <HTML-snippets>
     CSS style objects <CSS-styles>
+    Localization strings <localization-strings>
     Glossary <glossary>
 
 * :ref:`Search <search>`
-
-* `User Help Pages <http://www.mathjax.org/help/user>`_:
-
-  + `MathJax Font Help <http://www.mathjax.org/help/fonts>`_
-  + `MathJax Contextual Menu <http://www.mathjax.org/help/menu>`_
-  + `MathJax Zoom Feature <http://www.mathjax.org/help/zoom>`_
 
 --------
 

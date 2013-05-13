@@ -81,3 +81,7 @@ which is equivalent to
     This is bold text shown in red
     </span>
 
+Since HTML snippets contain text that is displayed to users, it may be
+important to localize those strings to be in the language selected by
+the user.  See the :ref:`Localization Strings <localization-strings>`
+documentation for details of how to accomplish that.
