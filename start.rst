@@ -48,7 +48,7 @@ that well enough, and otherwise use HTML-with-CSS to display the
 mathematics.  This is one of the most general configurations, and
 should suffice for most people's needs.  Other configurations are
 available, however, and you can also provide additional configuration
-parameters to taylor one of the configurations to your needs.  More
+parameters to tailor one of the configurations to your needs.  More
 details can be found in the :ref:`Loading and Configuring MathJax
 <loading>` instructions.
 
