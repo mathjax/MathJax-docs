@@ -493,6 +493,33 @@ Both extensions are included in all the combined configuration files
 that load the TeX input processor.
 
 
+AMScd
+-----
+
+The `AMScd` extensions implements the `CD` environment for commutative
+diagrams.  See the `AMScd guide
+<http://www.jmilne.org/not/Mamscd.pdf>`_ for more information on how
+to use the `CD` environment.
+
+To use this extension in your own configurations, add it to the
+`extensions` array in the TeX block.
+
+.. code-block:: javascript
+
+    TeX: {
+      extensions: ["AMScd.js"]
+    }
+
+Alternatively, if the extension hasn't been loaded in the
+configuration, you can use ``\require{AMScd}`` to load it from within a
+TeX expression.  Note that you only need to include this once on the
+page, not every time the `CD` environment is used.
+
+This extension is **not** included in any of the combined configurations,
+and will not be loaded automatically, so you must include it
+explicitly in your configuration if you wish to use these commands.
+
+
 Autobold
 --------
 
@@ -1988,6 +2015,7 @@ provided where ``XXX`` is one of the following:
     bmatrix
 
     cases
+    CD                      AMSmath
 
     eqnarray
     eqnarray*

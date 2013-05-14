@@ -97,7 +97,7 @@ Methods
 
     :Parameters:
         - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
+          current proccessing state of the mathematics
     :Returns: ``null``
 
 .. Method:: Translate(script,state)
@@ -122,7 +122,7 @@ Methods
     :Parameters:
         - **script**  --- the ``<script>`` element to be translated
         - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
+          current proccessing state of the mathematics
     :Returns: the `element jax` resulting from the translation
  
 .. Method:: postTranslate(state)
@@ -140,7 +140,7 @@ Methods
 
     :Parameters:
         - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
+          current proccessing state of the mathematics
     :Returns: ``null``
 
 .. Method:: Register(mimetype)
@@ -184,7 +184,7 @@ the following methods.
 
     :Parameters:
         - **math** --- a DOM element that triggered a DOM event
-                       (e.g., a mouse click)
+          (e.g., a mouse click)
     :Returns: the `ElementJax` structure associated with the DOM element
 
 .. Method:: Zoom(jax,span,math,Mw,Mh)

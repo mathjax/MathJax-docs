@@ -61,6 +61,9 @@ Methods
     cleared.  If `delay` is not provided, the message will not be
     removed automatically; you must call the
     :meth:`MathJax.Messsage.Clear()` method by hand to remove it.
+    If `message` is an array, then it represents a localizable string,
+    as described in the :ref:`Localization strings
+    <localization-strings>` documentation.
 
     :Parameters:
         - **message** --- the text to display in the message area

@@ -86,7 +86,7 @@ Methods
 
     :Parameters:
         - **script** --- reference to the DOM ``<script>`` object for
-                         the mathematics to be translated
+          the mathematics to be translated
     :Returns: an `ElementJax` object, or ``null``
 
 .. Method:: Register(mimetype)

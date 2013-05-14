@@ -158,7 +158,7 @@ To use the MathJax CDN service, simply load MathJax as follows:
     </scrip>
 
 Of course, you can load any configuration file that you wish, or use a 
-``text/x=mathajx-config`` block to configure MathJax in-line. 
+``text/x-mathajx-config`` block to configure MathJax in-line. 
 :ref:`More details <loading-CDN>` are available, if you need them.
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service

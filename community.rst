@@ -18,13 +18,13 @@ Forums
 
 If you need help using MathJax or you have solutions you want to share, please
 use the `MathJax Users Google Group
-<http://groups.google.com/group/mathjax-users>`_. We try hard to answer
+<https://groups.google.com/forum/#!forum/mathjax-users>`_. We try hard to answer
 questions quickly, and users are welcome to help with that as well. Also, users
 can post code snippets showing how they have used MathJax, so it may be a good
 place to find the examples you are looking for.
 
 If you want to discuss MathJax development, please use the `MathJax Dev Google
-Group <http://groups.google.com/group/mathjax-dev>`_. We made this group
+Group <https://groups.google.com/forum/#!forum/mathjax-dev>`_. We made this group
 to discuss anything beyond what an end-user might be interested in, so if you
 have any suggestions or questions about MathJax performance, technology, or
 design, feel free to submit it to the group.

@@ -91,5 +91,6 @@ are categorized by the component they affect.
     The MathZoom options <MathZoom>
     The MathEvents options <MathEvents>
     The FontWarnings options <FontWarnings>
+    The Safe options <Safe>
 
     

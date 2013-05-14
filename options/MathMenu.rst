@@ -42,12 +42,22 @@ would set the ``delay`` option to 600 milliseconds.
    
 .. describe:: showFontMenu: false
 
-   This controls whether the "Font Preference" item will be displayed
-   in the "Math Settings" submenu of the MathJax contextual menu.
-   This submenu lets the user select what font to use in the
-   mathematics produced by the `HTML-CSS` output processor.  Note that
-   changing the selection in the font menu will cause the page to
-   reload.  Set to ``false`` to prevent this menu item from showing.
+    This controls whether the "Font Preference" item will be displayed
+    in the "Math Settings" submenu of the MathJax contextual menu.
+    This submenu lets the user select what font to use in the
+    mathematics produced by the `HTML-CSS` output processor.  Note that
+    changing the selection in the font menu will cause the page to
+    reload.  Set to ``false`` to prevent this menu item from showing.
+
+.. describe:: showLocale: true
+
+    This controls whether the "Language" item will be displayed in the
+    MathJax contextual menu.  This submenu allows the user to select
+    the language to use for the MathJax user interface, including the
+    contextual menu, the about and help dialogs, the message box at
+    the lower left, and any warning messages produced by MathJax.  Set
+    this to ``false`` to prevent this menu item from showing.  This
+    will force the user to use the language you have set for MathJax.
 
 .. describe:: showMathPlayer: true
 
@@ -57,7 +67,7 @@ would set the ``delay`` option to 600 milliseconds.
     the `MathPlayer plugin
     <http://www.dessci.com/en/products/mathplayer/>`_, when it is
     present.  Mouse events can be passed on (so that clicks will be
-    processed by MathPlayer rather than MathJax), and emnu events can
+    processed by MathPlayer rather than MathJax), and menu events can
     be passed on (to allow the user access to the MathPlayer menu).
     Set to ``false`` to prevent this menu item from showing.
    
