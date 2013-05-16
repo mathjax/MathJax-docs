@@ -11,7 +11,7 @@ Currently, there are translations into French and German, but we hope
 that other languages will follow soon.  Users who wish to help in the
 translation process should contact the MathJax team via the
 :ref:`MathJax development forum <community-forums>`. A quick guide to 
-translating Mathjax is available in the `development wiki`.
+translating Mathjax is available in the `Development wiki <http://github.com/mathjax/MathJax/wiki>`_.
 
 The language used by MathJax can be selected using the MathJax
 contextual menu.  It includes a `Language` submenu that lists the
@@ -41,6 +41,4 @@ will load MathJax using the French language.  Users can still override
 this setting using the `Language` submenu of the MathJax contextual
 menu.  This submenu can be disabled, however, using the
 :ref:`MathMenu configuration options <configure-MathMenu>`.
-
-.. _our developer wiki: https://github.com/mathjax/MathJax/wiki
 
