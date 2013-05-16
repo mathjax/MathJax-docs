@@ -10,7 +10,8 @@ all be localized to appear in languages other than English.
 Currently, there are translations into French and German, but we hope
 that other languages will follow soon.  Users who wish to help in the
 translation process should contact the MathJax team via the
-:ref:`MathJax development forum <community-forums>`.
+:ref:`MathJax development forum <community-forums>`. A quick guide to 
+translating Mathjax is available in the `development wiki`.
 
 The language used by MathJax can be selected using the MathJax
 contextual menu.  It includes a `Language` submenu that lists the
@@ -41,4 +42,5 @@ this setting using the `Language` submenu of the MathJax contextual
 menu.  This submenu can be disabled, however, using the
 :ref:`MathMenu configuration options <configure-MathMenu>`.
 
+.. _our developer wiki: https://github.com/mathjax/MathJax/wiki
 
