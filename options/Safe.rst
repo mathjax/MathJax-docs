@@ -94,7 +94,7 @@ The Safe extension affects both the TeX input and MathML input jax.
 
     This is the minimum font size (in em's) that the TeX input jax
     will allow when ``fontsize`` is set to ``"safe"`` above.  The
-    default is the size of ``\scriptsize``.  Values less then this are
+    default is the size of ``\scriptsize``.  Values less than this are
     set to this value.
 
 .. describe:: sizeMax: 1.44

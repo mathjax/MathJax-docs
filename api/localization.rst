@@ -38,7 +38,7 @@ be aware of when using localized message strings.  There are support
 routines to help make this easier (these are described in more detail
 below).
 
-Finally, MathJax consists of a number of reatively separate
+Finally, MathJax consists of a number of relatively separate
 components, and can be extended by third-party plug-ins, it is
 possible that there would be name collisions with the ID's used to
 identify localizable strings. To make it easier to manage the string
@@ -112,8 +112,8 @@ Parameter Substitution
 ======================
 
 Some messages may want to include values (like file names, or TeX
-macro names) as part of their strings.  The MathJax localizaiton
-system provides a means of including such values n the translated
+macro names) as part of their strings.  The MathJax localization
+system provides a means of including such values in the translated
 strings.  In addition to the ID and message strings, you pass the
 values that need to be substituted into the message, and use the
 special sequences ``%1``, ``%2``, etc. to indicate where they go
@@ -124,7 +124,7 @@ within the message.  For example
     MathJax.Localization._("NotFound","File %1 not found",filename)
 
 would obtain the translation for "File %1 not found" and insert the
-filename at the locatino of `%1` in the translated string.
+filename at the location of `%1` in the translated string.
 
 There are also mechanisms of handling plural forms (which differ from
 language to language) and number forms.  See the :ref:`Localization
@@ -140,7 +140,7 @@ and these often contain textual data that needs to be localized.  You
 can pass HTML snippets to the :meth:`_()` function and a domain in which
 the strings are to be looked up.  You then use a localization string
 (an array consisting of the ID and string, plus optional parameters to
-be substituted into the string) in place of a normal string in teh
+be substituted into the string) in place of a normal string in the
 HTML snippet.  For example,
 
 .. code-block:: javascript
@@ -431,13 +431,13 @@ The methods in ``MathJax.Localization`` include:
 
     This method runs the function `fn` with error trapping and if an
     asynchronous file load is performed (for loading localizaton
-    data), reruns the function again afterthe file loads.  This lets
+    data), reruns the function again after the file loads.  This lets
     you synchronize actions that require localization with the loading
     of the needed data (see the section on synchronization above for
     details).  Note that the function should be one that can be run
     multiple times, if needed.  Also note that :meth:`Try()` can return
     *before* the `fn` has been completed, so you should consider `fn`
-    to be running asynchronously (you ca use callbacks to synchronize
+    to be running asynchronously (you can use callbacks to synchronize
     with other actions, if needed).
 
     :Parameters:
@@ -709,7 +709,7 @@ A third party extension could include
       file: "http://myserver.com/MathJax/localization/myExtension/fr.js"
     });
 
-to add french translations for the ``myExtension`` domain (used by the
+to add French translations for the ``myExtension`` domain (used by the
 extension) so that they would be obtained from the third-party server
 when needed.
 
@@ -756,4 +756,4 @@ files needed by MathJax, but these programs are not yet ready.
 In addition, there will be a program that scans the MathJax files to
 obtain the ID's and English strings that are needed for the
 translation files.  This will make maintenance of language files
-easier in teh future, but these are not available yet.
+easier in the future, but these are not available yet.
