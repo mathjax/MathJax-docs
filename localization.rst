@@ -10,8 +10,9 @@ all be localized to appear in languages other than English.
 Currently, there are translations into French and German, but we hope
 that other languages will follow soon.  Users who wish to help in the
 translation process should contact the MathJax team via the
-:ref:`MathJax development forum <community-forums>`. A quick guide to 
-translating Mathjax is available in the `Development wiki <http://github.com/mathjax/MathJax/wiki>`_.
+:ref:`MathJax development forum <community-forums>`. A quick guide to
+translating MathJax is available in the `Development wiki
+<http://github.com/mathjax/MathJax/wiki>`_.
 
 The language used by MathJax can be selected using the MathJax
 contextual menu.  It includes a `Language` submenu that lists the
