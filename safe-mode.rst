@@ -27,7 +27,7 @@ that allows you to include hyperlinks in your TeX formulas:
     $E \href{javascript:alert("Einstein says so!"){=} mc^2$
 
 Here the equal sign will be a link that pops up the message about
-Einstien.
+Einstein.
 
 Both MathML and the HTML extension for TeX allow you to add CSS
 styles, classes, and id's to your math elements as well.  These

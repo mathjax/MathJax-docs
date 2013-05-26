@@ -5,7 +5,7 @@ Localization Strings
 ********************
 
 In MathJax v2.2 and later, the user interface can be localized to use
-languages other than English.  This includes all inforamtion strings,
+languages other than English.  This includes all information strings,
 menu items, warning messages, and so on.  To make this possible, each
 string is given an ID that is used to obtain the localized version of
 the string.  So the "File not found" message might have the ID
@@ -37,7 +37,7 @@ language.
 
 The reason that the English string is also given (in addition to the
 ID), is because MathJax needs to have a fallback string to use in case
-the localzation data doesn't translate that ID, or if the localization
+the localization data doesn't translate that ID, or if the localization
 data has failed to load.  Providing the English string in addition to
 the ID guarantees that a fallback is available.
 
@@ -162,7 +162,7 @@ format before inserting it into a localized string.  For example
 
     MathJax.Message.Set(["pi","The value of pi is approximately %1",3.14159]);
 
-would show the value as ``3.14159`` in Enlish, but ``3,14159`` if
+would show the value as ``3.14159`` in English, but ``3,14159`` if
 French is the selected language.
 
 
