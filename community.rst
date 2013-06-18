@@ -56,10 +56,10 @@ Documentation
 =============
 
 The source for this documentation can be found 
-`on github <https://github.com/mathjax/mathjax-docs/>_`.
+`on github <https://github.com/mathjax/mathjax-docs/>`_.
 You can file bug  reports on the documentation's 
-`bug tracker <https://github.com/mathjax/mathjax-docs/issues>_` and actively
-contribut to the public `documentation wiki <https://github.com/mathjax/mathjax-docs/wiki>_`.
+`bug tracker <https://github.com/mathjax/mathjax-docs/issues>`_ and actively
+contribut to the public `documentation wiki <https://github.com/mathjax/mathjax-docs/wiki>`_.
 
 
 .. _badge:
