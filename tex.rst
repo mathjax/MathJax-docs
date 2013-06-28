@@ -649,7 +649,7 @@ color of everything that follows it.
 
 The `color` extension changes the ``\color`` command to be compatible
 with the LaTeX implementation, and also defines ``\colorbox``,
-``\fcolorbox``, and ``\DefineColor``, as in the LaTeX color package.
+``\fcolorbox``, and ``\definecolor``, as in the LaTeX color package.
 It defines the standard set of colors (Apricot, Aquamarine,
 Bittersweet, and so on), and provides the RGB and grey-scale color
 spaces in addition to named colors.
@@ -1263,7 +1263,7 @@ D
     \ddot
     \ddots
     \DeclareMathOperator    AMSmath
-    \DefineColor            color
+    \definecolor            color
     \def                   [newcommand]
     \deg
     \Delta
