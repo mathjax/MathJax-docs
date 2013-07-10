@@ -24,7 +24,7 @@ that allows you to include hyperlinks in your TeX formulas:
 
 .. code-block:: latex
 
-    $E \href{javascript:alert("Einstein says so!"){=} mc^2$
+    $E \href{javascript:alert("Einstein says so!")}{=} mc^2$
 
 Here the equal sign will be a link that pops up the message about
 Einstein.
