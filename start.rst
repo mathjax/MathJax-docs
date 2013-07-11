@@ -79,7 +79,7 @@ following ``<script>`` tag instead of the one listed above:
       src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-Currently, the Amazon Cloudfront service used by the MathJax CDN does
+Currently, the Rackspace service used by the MathJax CDN does
 not support the use of a human-friendly name like ``cdn.mathjax.org``
 for secure connections; however, the address given above is stable and
 safe to use.
