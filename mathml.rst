@@ -63,7 +63,7 @@ tags.  That is, use
 
     <mspace width="thinmathspace"></mspace>
 
-rather than ``<mspace width="thinmathspace />``.  This is because HTML
+rather than ``<mspace width="thinmathspace" />``.  This is because HTML
 (prior to HTML5) does not have self-closing tags, and some browsers
 will get the nesting of tags wrong if you attempt to use them.  For
 example, with ``<mspace width="1em" />``, since there is no closing
