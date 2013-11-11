@@ -104,8 +104,9 @@ get.  The CDN has the following directory structure:
        2.0-latest/   # the 2.0 release with any critical patches
        2.1-latest/   # the 2.1 release with any critical patches
        2.2-latest/   # the 2.2 release with any critical patches
+       2.3-latest/   # the 2.3 release with any critical patches
        ...
-       latest/       # the most current version (2.2-latest in this case)
+       latest/       # the most current version (2.3-latest in this case)
 
 Each directory corresponds to an official MathJax release; however,
 hotfixes (urgent bug fixes) will be applied in each release branch as
@@ -132,8 +133,8 @@ versions are released, while
 
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
-will always be the most current stable release, so it will go from v2.2 to 
-v2.3 automatically when that is released.  Note that all the versions 
+will always be the most current stable release, so it will go from v2.3 to
+the next version automatically when that is released.  Note that all the versions 
 available on the CDN are stable versions; the development version is not 
 hosted on the CDN.  (If you wish to use the development version of
 MathJax, you will need to install your own copy; see :ref:`Installing
