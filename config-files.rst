@@ -297,7 +297,7 @@ The ``Accessible`` configuration file
 This configuration file is essentially the same as 
 ``TeX-AMS-MML_HTMLorMML`` except that it includes options that are 
 designed for assistive technology, particularly for those with visual 
-challenged.  *This file is deprecated* since the controls that make
+challenges.  *This file is deprecated* since the controls that make
 MathJax work with screen readers are now available in the MathJax
 contextual menu, and so there is no need to set them in the
 configuration file any longer.  So you can use any of the other
@@ -328,7 +328,7 @@ This turns off the MathJax contextual menu for IE when MathPlayer is
 active, and passes mouse events on to MathPlayer to allow screen
 readers full access to MathPlayer.  It also sets the zoom trigger 
 to double-click, so that readers can see a larger version of the 
-mathematics but double-clicking on any equation.
+mathematics by double-clicking on any equation.
 
 In addition, it loads the mml Element Jax, the TeX and MathML input jax
 main code (not just the definition files), as well as the `toMathML`

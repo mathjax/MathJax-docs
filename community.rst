@@ -13,6 +13,7 @@ with MathJax in your environment.
 
 .. _community-forums:
 
+
 Forums
 ======
 
@@ -47,6 +48,18 @@ Before you create a new issue, however, please search the issues to see if it
 has already been reported. You could also be using an outdated version of
 MathJax, so be sure to :ref:`upgrade your copy <getting-mathjax-git>` to verify
 that the problem persists in the latest version.
+
+
+.. _community-documentation:
+
+Documentation
+=============
+
+The source for this documentation can be found 
+`on github <https://github.com/mathjax/mathjax-docs/>`_.
+You can file bug  reports on the documentation's 
+`bug tracker <https://github.com/mathjax/mathjax-docs/issues>`_ and actively
+contribut to the public `documentation wiki <https://github.com/mathjax/mathjax-docs/wiki>`_.
 
 
 .. _badge:
