@@ -39,8 +39,10 @@ would set the ``scale`` option to 120%.
 
 .. describe:: font: "TeX"
 
-    This is the font to use for rendering the mathematics.  Note that
-    currently only the `TeX` font is available.
+    This is the font to use for rendering the mathematics.  The possible
+    values are
+    `TeX`, `STIX-Web`, `Asana-Math`, `Neo-Euler`, `Gyre-Pagella`, `Gyre-Termes`
+    and `Latin-Modern`.
 
 .. describe:: blacker: 10
 

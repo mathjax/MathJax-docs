@@ -52,14 +52,16 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
 .. describe:: preferredFont: "TeX"
 
     Which font to prefer out of the ``availableFonts`` list, when more
-    than one is available on the user's computer.
+    than one is available on the user's computer. Set it to ``null`` if you
+    want MathJax to use web-based or image fonts.
 
 .. describe:: webFont: "TeX"
 
     This is the web-based font to use when none of the fonts listed
-    above are available on the user's computer.  Note that currently
-    only the `TeX` font is available in a web-based form (they are
-    stored in the ``fonts/HTML-CSS`` folder in the MathJax directory).
+    above are available on the user's computer. The possible values are
+    `TeX`, `STIX-Web`, `Asana-Math`, `Neo-Euler`, `Gyre-Pagella`, `Gyre-Termes`
+    and `Latin-Modern`. These fonts are
+    stored in the ``fonts/HTML-CSS`` folder in the MathJax directory.
     Set this to ``null`` to disable web fonts.
     
 .. describe:: imageFont: "TeX"
