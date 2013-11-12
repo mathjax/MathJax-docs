@@ -122,6 +122,11 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
     ``EqnChunkDelay`` to 10 to get the behavior from MathJax v1.1 and
     below.
 
+.. describe:: matchFontHeight: true
+
+    This option indicates whether MathJax should try to correct the
+    x-height of equations to match the size of the surrounding text.
+
 .. describe:: linebreaks: {}
 
     This is an object that configures automatic linebreaking in the

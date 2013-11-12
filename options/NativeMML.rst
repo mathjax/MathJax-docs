@@ -37,6 +37,11 @@ would set the ``scale`` option to 105 percent.
    MathJax to match the equation to the surrounding text.  This will 
    prevent MathJax from making the mathematics too small.
 
+.. describe:: matchFontHeight: true
+
+    This option indicates whether MathJax should try to correct the
+    x-height of equations to match the size of the surrounding text.
+
 .. describe:: showMathMath: true
               showMathMenuMSIE: true
 
