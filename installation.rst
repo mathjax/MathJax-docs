@@ -202,6 +202,17 @@ page) to select the release branch that you want (for example
 ``v2.1-latest``), and then use the "zip" button just above it to get
 the latest patched version of that release.
 
+Obtaining MathJax via Bower
+===========================
+
+Starting with version 2.3, it is possible to use `Bower
+<http://github.com/mathjax/mathjax/downloads>`_ to install MathJax. Assuming
+Bower is installed on your system, just execute the following command:
+
+.. code-block:: sh
+
+    bower install MathJax
+
 
 Testing your installation
 =========================
@@ -225,7 +236,6 @@ the permissions allow the server to access the files and folders that
 are part of the MathJax directory (be sure to verify the MathJax
 folder's permissions as well).  Checking the server logs may help
 locate problems with the installation.
-
 
 .. _cross-domain-linking:
 
