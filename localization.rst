@@ -6,13 +6,12 @@ MathJax Localization
 
 As of version 2.2, MathJax's user interface (including its contextual
 menu, its help and about dialog boxes, and its warning messages) can
-all be localized to appear in languages other than English.
-Currently, there are translations into French and German, but we hope
-that other languages will follow soon.  Users who wish to help in the
-translation process should contact the MathJax team via the
-:ref:`MathJax development forum <community-forums>`. A quick guide to
-translating MathJax is available in the `Development wiki
-<http://github.com/mathjax/MathJax/wiki>`_.
+all be localized to appear in languages other than English. Users who wish to
+help in the translation process should use the `TranslateWiki.net interface
+<https://translatewiki.net/wiki/Translating:MathJax>`_.  The page
+`localization.html
+<http://cdn.mathjax.org/mathjax/latest/test/localization.html>`_
+is a convenient way to check the different translations.
 
 The language used by MathJax can be selected using the MathJax
 contextual menu.  It includes a `Language` submenu that lists the
