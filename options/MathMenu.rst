@@ -79,6 +79,16 @@ would set the ``delay`` option to 600 milliseconds.
     browser's default contextual menu will be shown when the context
     menu click occurs over mathematics typeset by MathJax.  Set to
     ``false`` to prevent this menu item from showing.
+
+.. describe:: semanticsAnnotations: { ... }
+
+    These are the settings for the Annotation menu. If the `<math>` root has
+    a `<semantics>` child that contains one of the following annotation
+    formats, the source will be available via the "Show Math As" menu.
+    Each format has a list of possible encodings. For example
+    ̀`"TeX": ["TeX", "LaTeX", "application/x-tex"]`` will map the annotations
+    with encoding `"TeX"`, `"LaTeX"` and `"application/x-tex"` to the `"TeX"`
+    menu.
    
 .. describe:: windowSettings: { ... }
 
