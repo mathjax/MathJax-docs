@@ -92,5 +92,5 @@ are categorized by the component they affect.
     The MathEvents options <MathEvents>
     The FontWarnings options <FontWarnings>
     The Safe options <Safe>
-
+    The MatchWebFonts options <MatchWebFonts>
     

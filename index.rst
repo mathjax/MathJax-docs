@@ -32,6 +32,7 @@ Basic Usage
 
     MathJax Localization <localization>
     MathJax Safe-mode <safe-mode>
+    MathJax Match-Web-Fonts <match-web-fonts>
 
 .. toctree::
     :maxdepth: 1

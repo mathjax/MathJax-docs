@@ -126,6 +126,8 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
 
     This option indicates whether MathJax should try to correct the
     x-height of equations to match the size of the surrounding text.
+    See the :ref:`MatchWebFonts options <configure-MatchWebFonts>` for finer
+    control, especially if you are using Web fonts.
 
 .. describe:: linebreaks: {}
 
