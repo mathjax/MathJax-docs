@@ -47,7 +47,10 @@ The startup process performs the following actions:
 
 ..
 
-- MathJax set up the ``MathJax.Hub.queue`` command queue, and
+- MathJax executes the ``AuthorInit()`` function specified from in-line
+  ``MathJax = {...}`` configuration.
+
+- MathJax sets up the ``MathJax.Hub.queue`` command queue, and
   populates it with the commands MathJax runs at startup.  This
   includes creating the ``MathJax.Hub.Startup.onload`` onload
   handler that is used to synchronize MathJax's action with the
@@ -56,13 +59,12 @@ The startup process performs the following actions:
 Once the ``MathJax.Hub.queue`` is created, the following actions are
 pushed into the queue:
 
-1.  Execute ``AuthorInit()`` from in-line ``MathJax = {...}`` configuration.
 
-2.  Post the ``Begin`` startup signal
+1.  Post the ``Begin`` startup signal
 
 ..
 
-3.  Perform the configuration actions:
+2.  Perform the configuration actions:
 
     - Post the ``Begin Config`` startup signal
     - Load any configuration files specified via ``config=`` as a script parameter
@@ -75,7 +77,7 @@ pushed into the queue:
 
 ..
 
-4.  Load the cookie values:
+3.  Load the cookie values:
 
     - Post the ``Begin Cookie`` startup signal
     - Load the menu cookie values
@@ -84,7 +86,7 @@ pushed into the queue:
 
 ..
 
-5.  Define the MathJax styles:
+4.  Define the MathJax styles:
 
     - Post the ``Begin Styles`` startup signal
     - Load the stylesheet files from the ``MathJax.Hub.config.stylesheets`` array
@@ -93,12 +95,12 @@ pushed into the queue:
 
 ..
 
-6.  Initialize the Message system (the grey information box in the
+5.  Initialize the Message system (the grey information box in the
     lower left)
 
 ..
 
-7.  Load the jax configuration files:
+6.  Load the jax configuration files:
 
     - Post the ``Begin Jax`` startup signal
     - Load the jax config files from the ``MathJax.Hub.config.jax`` array
@@ -109,7 +111,7 @@ pushed into the queue:
 
 ..
 
-8.  Load the extension files:
+7.  Load the extension files:
 
     - Post the ``Begin Extensions`` startup signal
     - Load the files from the ``MathJax.Hub.config.extensions`` array
@@ -122,22 +124,22 @@ pushed into the queue:
 
 ..
 
-9.  Set the MathJax menu's renderer value based on the jax that have been 
+8.  Set the MathJax menu's renderer value based on the jax that have been 
     loaded
 
 ..
 
-10.  Wait for the onload handler to fire (in MathJax v2.0 this can
+9.  Wait for the onload handler to fire (in MathJax v2.0 this can
     occur on the ``DOMContentLoaded`` event rather than the page's
     ``onload`` event, so processing of mathematics can start earlier)
 
 ..
 
-11. Set ``MathJax.isReady`` to ``true``
+10. Set ``MathJax.isReady`` to ``true``
 
 ..
 
-12. Perform the typesetting pass (preprocessors and processors)
+11. Perform the typesetting pass (preprocessors and processors)
 
     - Post the ``Begin Typeset`` startup signal
     - Post the ``Begin PreProcess`` hub signal
@@ -161,18 +163,18 @@ pushed into the queue:
 
 ..
 
-13. Jump to the location specified in the URL's hash reference, if
+12. Jump to the location specified in the URL's hash reference, if
     any.
 
 ..
 
-14. Initiate timers to load the zoom and menu code, if it hasn't
+13. Initiate timers to load the zoom and menu code, if it hasn't
     already been loading in the configuration (so it will be ready
     when the user needs it).
 
 ..
 
-15. Post the ``End`` startup signal
+14. Post the ``End`` startup signal
 
 
 The loading of the jax and extensions in steps 5 and 6 are now done in 
