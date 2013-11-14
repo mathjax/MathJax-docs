@@ -16,7 +16,6 @@ Basic Usage
     Installing and Testing MathJax <installation>
     Loading and Configuring MathJax <configuration>
     Common MathJax Configurations <config-files>
-    MathJax Configuration Options <options/index>
     Using MathJax in Web Platforms <platforms/index>
 
 .. toctree::
