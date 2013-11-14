@@ -48,41 +48,41 @@ MathJax Configuration Options
 .. toctree::
     :maxdepth: 1
 
-    The configuration objects <configuration>
+    The configuration objects <options/index>
 
 .. toctree::
     :maxdepth: 1
 
-    The core options <hub>
+    The core options <options/hub>
 
 .. toctree::
     :maxdepth: 1
 
-    The tex2jax preprocessor options <tex2jax>
-    The mml2jax preprocessor options <mml2jax>
-    The asciimath2jax preprocessor options <asciimath2jax>
-    The jsMath2jax preprocessor options <jsMath2jax>
+    The tex2jax preprocessor options <options/tex2jax>
+    The mml2jax preprocessor options <options/mml2jax>
+    The asciimath2jax preprocessor options <options/asciimath2jax>
+    The jsMath2jax preprocessor options <options/jsMath2jax>
 
 .. toctree::
     :maxdepth: 1
 
-    The TeX input processor options <TeX>
-    The MathML input processor options <MathML>
-    The AsciiMath input processor options <AsciiMath>
-    The HTML-CSS output processor options <HTML-CSS>
-    The NativeMML output processor options <NativeMML>
-    The SVG output processor options <SVG>
-    The MMLorHTML configuration options <MMLorHTML>
+    The TeX input processor options <options/TeX>
+    The MathML input processor options <options/MathML>
+    The AsciiMath input processor options <options/AsciiMath>
+    The HTML-CSS output processor options <options/HTML-CSS>
+    The NativeMML output processor options <options/NativeMML>
+    The SVG output processor options <options/SVG>
+    The MMLorHTML configuration options <options/MMLorHTML>
     
 .. toctree::
     :maxdepth: 1
 
-    The MathMenu options <MathMenu>
-    The MathZoom options <MathZoom>
-    The MathEvents options <MathEvents>
-    The FontWarnings options <FontWarnings>
-    The Safe options <Safe>
-    The MatchWebFonts options <MatchWebFonts>
+    The MathMenu options <options/MathMenu>
+    The MathZoom options <options/MathZoom>
+    The MathEvents options <options/MathEvents>
+    The FontWarnings options <options/FontWarnings>
+    The Safe options <options/Safe>
+    The MatchWebFonts options <options/MatchWebFonts>
     
 
 
