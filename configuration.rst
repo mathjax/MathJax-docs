@@ -391,7 +391,7 @@ in this example:
     <script type="text/javascript" src="path-to-MathJax/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
-Starting with MathJax version 2.3, it is possible to set window.MathJax to
+Starting with MathJax version 2.3, it is possible to ``set window.MathJax`` to
 a configuration object in any Javascript code before MathJax's startup.
 MathJax will then use that object for its initial configuration. For instance
 the previous example becomes:
@@ -412,6 +412,8 @@ the previous example becomes:
 Similarly to ``text/x-mathjax-config``, you can enter arbitrary code to execute
 during the configuration phase. You just need to put that code in an
 ``AuthorInit`` function member:
+
+.. code-block:: html
 
     <script type="text/javascript">
       window.MathJax = {
