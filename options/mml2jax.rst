@@ -24,8 +24,8 @@ would set the ``preview`` parameter to ``"mathml"``.
 
     This controls whether `mml2jax` inserts ``MathJax_Preview`` spans to make a
     preview available, and what preview to use, when it locates
-    mathematics on the page. Possible values are: ``"mathml"``,``"alttext"``,
-    ,``"altimg"``, ``"none"`` or an HTML snippet.
+    mathematics on the page. Possible values are: ``"mathml"``, ``"alttext"``,
+    , ``"altimg"``, ``"none"`` or an HTML snippet.
     
     The default is ``"mathml"`` in which case MathJax keeps the content of the
     ``<math>`` tag as the preview (until it is processed by MathJax).
