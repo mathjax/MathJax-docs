@@ -132,5 +132,5 @@ Starting with MathJax version 2.3, some popular annotations like TeX,
 Maple or Content MathML that are often included in the MathML source via the
 ``semantics`` element are accessible from the ``"Show Math As"`` menu.
 See the `MathML Annotation Framework 
-<http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>_ and
+<http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_ and
 the :ref:`configure-MathMenu` for details.
