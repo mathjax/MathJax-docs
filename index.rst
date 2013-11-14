@@ -50,9 +50,6 @@ MathJax Configuration Options
 
     The configuration objects <configuration>
 
-The individual options are explained in the following sections, which
-are categorized by the component they affect.
-
 .. toctree::
     :maxdepth: 1
 
