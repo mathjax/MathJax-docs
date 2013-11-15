@@ -87,7 +87,7 @@
     {%- if word != 'index' -%}
         {%- if word != '' -%}
             /{{ word }}
-        {% elif word != '' %}
+        {% elif word = '' %}
             .html
         {%- endif -%}
     {%- endif -%}
