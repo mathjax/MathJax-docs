@@ -29,7 +29,7 @@ Features:
 * Miscellaneous improvements. A new extension ``MatchWebFonts`` 
   improves the interaction with the surrounding content. A new
   configuration method allows configurations by using a regular
-  JavaScript variable``window.MathJax``.
+  JavaScript variable ``window.MathJax``.
   
 * MathJax is now available as a Bower package thanks to 
   community contributions.
@@ -83,7 +83,6 @@ Interface:
 
 * Fix Double-Click zoom trigger 
   (`Issue #590 <https://github.com/mathjax/MathJax/issues/590>`_)
-* 
 
 Miscellaneous:
 ==============
