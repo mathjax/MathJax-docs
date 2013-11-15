@@ -82,15 +82,17 @@
         <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
     {%- endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="http://docs.mathjax.org/en/latest/
+    <link rel="canonical" href="http://docs.mathjax.org/en/latest
 {%- for word in pagename.split('/') -%}
     {%- if word != 'index' -%}
         {%- if word != '' -%}
-            {{ word }}/
+            /{{ word }}
+        {% elif word != '' %}
+            .html
         {%- endif -%}
     {%- endif -%}
 {%- endfor -%}
-.html">
+">
     <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css"/>
     <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css"/>
