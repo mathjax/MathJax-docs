@@ -6,12 +6,9 @@ MathJax Localization
 
 As of version 2.2, MathJax's user interface (including its contextual
 menu, its help and about dialog boxes, and its warning messages) can
-all be localized to appear in languages other than English. Users who wish to
-help in the translation process should use the `TranslateWiki.net interface
-<https://translatewiki.net/wiki/Translating:MathJax>`_.  The page
-`localization.html
-<http://cdn.mathjax.org/mathjax/latest/test/localization.html>`_
-is a convenient way to check the different translations.
+all be localized to appear in languages other than English. For the 
+available language options, see the `TranslateWiki.net interface
+<https://translatewiki.net/wiki/Translating:MathJax>`_.
 
 The language used by MathJax can be selected using the MathJax
 contextual menu.  It includes a `Language` submenu that lists the
@@ -30,8 +27,8 @@ Page authors can select a default language for MathJax so that, for
 example, a page that is written in French will have MathJax's user
 interface also in French.  To do this, add ``&locale=XX`` after the
 configuration file in the ``<script>`` tag that loads the MathJax.js
-file, where ``XX`` is the two-letter code for the language.  Currently
-the choices are ``en``, ``fr``, and ``de``.  For example:
+file, where ``XX`` is the two-letter code for the language.For 
+example:
 
 .. code-block:: html
 
@@ -42,3 +39,9 @@ this setting using the `Language` submenu of the MathJax contextual
 menu.  This submenu can be disabled, however, using the
 :ref:`MathMenu configuration options <configure-MathMenu>`.
 
+If you want to help in the translation process, please visit the 
+`TranslateWiki.net interface
+<https://translatewiki.net/wiki/Translating:MathJax>`_.  The page
+`localization.html
+<http://cdn.mathjax.org/mathjax/latest/test/localization.html>`_
+is a convenient way to check the different translations.
