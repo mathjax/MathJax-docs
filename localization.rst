@@ -27,7 +27,7 @@ Page authors can select a default language for MathJax so that, for
 example, a page that is written in French will have MathJax's user
 interface also in French.  To do this, add ``&locale=XX`` after the
 configuration file in the ``<script>`` tag that loads the MathJax.js
-file, where ``XX`` is the two-letter code for the language.For 
+file, where ``XX`` is the two-letter code for the language. For 
 example:
 
 .. code-block:: html

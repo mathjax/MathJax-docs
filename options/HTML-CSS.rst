@@ -58,11 +58,16 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
 .. describe:: webFont: "TeX"
 
     This is the web-based font to use when none of the fonts listed
-    above are available on the user's computer. The possible values are
-    `TeX`, `STIX-Web`, `Asana-Math`, `Neo-Euler`, `Gyre-Pagella`, `Gyre-Termes`
-    and `Latin-Modern`. These fonts are
-    stored in the ``fonts/HTML-CSS`` folder in the MathJax directory.
-    Set this to ``null`` to disable web fonts.
+    above are available on the user's computer. The possible values
+    are ``TeX``, ``STIX-Web``, ``Asana-Math``, ``Neo-Euler``,
+    ``Gyre-Pagella``, ``Gyre-Termes`` and ``Latin-Modern``. Note that
+    not all mathematical characters are available in all fonts (e.g.,
+    Neo-Euler does not include italic characters), so some mathematics
+    may work better in some fonts than in others.  The ``STIX-Web``
+    font is the most complete.
+
+    These fonts are stored in the ``fonts/HTML-CSS`` folder in the
+    MathJax directory.  Set this to ``null`` to disable web fonts.
     
 .. describe:: imageFont: "TeX"
 
@@ -124,8 +129,8 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
 
 .. describe:: matchFontHeight: true
 
-    This option indicates whether MathJax should try to correct the
-    x-height of equations to match the size of the surrounding text.
+    This option indicates whether MathJax should try to adjust the
+    x-height of equations to match the x-height of the surrounding text.
     See the :ref:`MatchWebFonts options <configure-MatchWebFonts>` for finer
     control, especially if you are using Web fonts.
 
