@@ -391,7 +391,7 @@ in this example:
     <script type="text/javascript" src="path-to-MathJax/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
-Starting with MathJax version 2.3, it is possible to ``set window.MathJax`` to
+Starting with MathJax version 2.3, it is possible to set ``window.MathJax`` to
 a configuration object in any Javascript code before MathJax's startup.
 MathJax will then use that object for its initial configuration. For instance
 the previous example becomes:
@@ -411,7 +411,7 @@ the previous example becomes:
 
 Similarly to ``text/x-mathjax-config``, you can enter arbitrary code to execute
 during the configuration phase. You just need to put that code in an
-``AuthorInit`` function member:
+``AuthorInit`` function:
 
 .. code-block:: html
 
@@ -422,6 +422,26 @@ during the configuration phase. You just need to put that code in an
         }
       };
     </script>
+
+Note that this initialization code runs before the
+``MathJax.Hub.queue`` is set up, so if you want to queue additional
+actions during the `AuthorInit` function, use
+
+.. code-block:: html
+
+    <script type="text/javascript">
+      window.MathJax = {
+        AuthorInit: function () {
+          MathJax.Hub.Register.StartupHook("Begin",function () {
+            MathJax.Hub.Queue(
+              ... your actions here ...
+            )
+          });
+        }
+      };
+    </script>
+
+
 
 .. _delayStartupUntil:
 
@@ -497,7 +517,8 @@ important to know how they interact.  The configuration actions are the
 following:
 
 1.  Execute ``AuthorInit()`` from in-line ``MathJax = {...}``.
-2.  Process any configuration file explicitly specified as a script parameter.
+2.  Process any configuration file explicitly specified as a script 
+    parameter via `config=`.
 3.  Perform author configuration from in-line ``MathJax = {...}``
 4.  Process the in-line script body (deprecated), if present.
 5.  If delayed startup is requested, wait for the indicated signal.
@@ -505,11 +526,13 @@ following:
 7.  Process any config files queued in the configuration's `config` array 
     by earlier config code.
 
-Note that ``text/x-mathjax-config`` script blocks must either precede the
-``MathJax.js`` script element, or startup must be delayed.  Otherwise, blocks
-that follow the ``MathJax.js`` script element may or may not be available 
-when MathJax runs, and browser-dependent erratic behavior will result.
-Similarly, ``window.MathJax is`` must be created before ``MathJax.js`` is
-executed.
+Note that ``text/x-mathjax-config`` script blocks must either precede
+the ``MathJax.js`` script element, or you must request a delayed
+startup.  Otherwise, blocks that follow the ``MathJax.js`` script
+element may or may not be available when MathJax runs, and
+browser-dependent erratic behavior will result.  Similarly,
+``window.MathJax`` must be created before ``MathJax.js`` is loaded.
+If you set the ``MathJax`` variable afterward, you will disable
+MathJax entirely!
 
 

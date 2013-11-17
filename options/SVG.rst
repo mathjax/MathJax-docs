@@ -39,10 +39,14 @@ would set the ``scale`` option to 120%.
 
 .. describe:: font: "TeX"
 
-    This is the font to use for rendering the mathematics.  The possible
-    values are
-    `TeX`, `STIX-Web`, `Asana-Math`, `Neo-Euler`, `Gyre-Pagella`, `Gyre-Termes`
-    and `Latin-Modern`.
+    This is the font to use for rendering the mathematics.  The
+    possible values are ``TeX``, ``STIX-Web``, ``Asana-Math``,
+    ``Neo-Euler``, ``Gyre-Pagella``, ``Gyre-Termes`` and
+    ``Latin-Modern``.  Note that not all mathematical characters are
+    available in all fonts (e.g., Neo-Euler does not include italic
+    characters), so some mathematics may work better in some fonts
+    than in others.  The ``STIX-Web`` font is the most complete.
+
 
 .. describe:: blacker: 10
 
@@ -102,8 +106,8 @@ would set the ``scale`` option to 120%.
 
 .. describe:: matchFontHeight: true
 
-    This option indicates whether MathJax should try to correct the
-    x-height of equations to match the size of the surrounding text.
+    This option indicates whether MathJax should try to adjust the
+    x-height of equations to match the x-height of the surrounding text.
     See the :ref:`MatchWebFonts options <configure-MatchWebFonts>` for finer
     control, especially if you are using Web fonts.
 

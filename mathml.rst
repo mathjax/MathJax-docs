@@ -125,12 +125,13 @@ The deficiencies include:
 See the `results of the MathML3.0 test suite
 <http://www.w3.org/Math/testsuite/results/tests.html>`_ for details.
 
+
 Semantics and Annotations
 =====================
 
-Starting with MathJax version 2.3, some popular annotations like TeX,
-Maple or Content MathML that are often included in the MathML source via the
+Starting with MathJax version 2.3, some popular annotation formats like TeX,
+Maple, or Content MathML that are often included in the MathML source via the
 ``semantics`` element are accessible from the ``"Show Math As"`` menu.
 See the `MathML Annotation Framework 
 <http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_ and
-the :ref:`configure-MathMenu` for details.
+the :ref:`configure-MathMenu` documentation for details.

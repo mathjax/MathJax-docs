@@ -20,6 +20,7 @@ The startup process performs the following actions:
   - ``MathJax.Callback`` (callbacks, signals, and queues)
   - ``MathJax.Ajax`` (file-loading and style-creation code)
   - ``MathJax.HTML`` (support code for creating HTML elements)
+  - ``MathJax.Localization`` (alternative language support)
   - ``MathJax.Message`` (manages the menu line in the lower left)
   - ``MathJax.Hub`` (the core MathJax functions)
 
@@ -49,6 +50,8 @@ The startup process performs the following actions:
 
 - MathJax executes the ``AuthorInit()`` function specified from in-line
   ``MathJax = {...}`` configuration.
+
+..
 
 - MathJax sets up the ``MathJax.Hub.queue`` command queue, and
   populates it with the commands MathJax runs at startup.  This
@@ -177,14 +180,14 @@ pushed into the queue:
 14. Post the ``End`` startup signal
 
 
-The loading of the jax and extensions in steps 5 and 6 are now done in 
+The loading of the jax and extensions in steps 6 and 7 are now done in 
 parallel, rather than sequentially.  That is, all the jax and extensions 
 are requested simultaneously, so they load concurrently.  That means they 
 can load in any order, and that the begin and end signals for the jax and 
 extensions can be intermixed.  (In general, you will get `Begin Jax` 
 followed by `Begin Extensions`, but the order of `End Jax` and `End 
-Extensions` will depend on the files being loaded.)  Both 5 and 6 must 
-complete, however, before 7 will be performed.
+Extensions` will depend on the files being loaded.)  Both 6 and 7 must 
+complete, however, before 8 will be performed.
 
 See the `test/sample-signals.html
 <http://cdn.mathjax.org/mathjax/latest/test/sample-signals.html>`_ file
