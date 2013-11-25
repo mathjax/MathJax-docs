@@ -206,8 +206,8 @@ Obtaining MathJax via Bower
 ===========================
 
 Starting with version 2.3, it is possible to use `Bower
-<http://github.com/mathjax/mathjax/downloads>`_ to install MathJax. Assuming
-Bower is installed on your system, just execute the following command:
+<http://bower.io/>`_ to install MathJax. Assuming Bower is installed
+on your system, just execute the following command:
 
 .. code-block:: sh
 
