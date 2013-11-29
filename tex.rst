@@ -134,7 +134,7 @@ management systems that have their own document processing commands
 that are interpreted before the HTML page is created.  For example,
 many blogs and wikis use formats like :term:`Markdown` to allow you to
 create the content of you pages.  In Markdown, the underscore is used
-to indicate italics, and this usage will conflict with MathJax's ise
+to indicate italics, and this usage will conflict with MathJax's use
 of the underscore to indicate a subscript.  Since Markdown is applied
 to the page first, it will convert your subscripts markers into
 italics (inserting ``<i>`` tags into your mathematics, which will
