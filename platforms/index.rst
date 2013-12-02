@@ -10,7 +10,7 @@ and other content-management systems.
 -  `MathJax-LaTeX`_, `Simple-MathJax`_ plug-ins for `WordPress`_.
 -  `MathJax plugin for Drupal`_.
 -  `Concrete5 MathJax plugin`_.
--  `KaTeX`_, MathJax plugin for `Joomla`_.
+-  ``MathJax plugins`_ for `Joomla`_.
 -  `Sphinx extension: MathJax`_
 -  `MathJax plugin for DokuWiki`_
 -  `MediaWiki math extension used on Wikipedia`_, using MathJax since
@@ -34,7 +34,7 @@ and other content-management systems.
 .. _SVG edit: https://code.google.com/p/svg-edit/
 .. _Instantbird Extension: https://addons.instantbird.org/en-US/instantbird/addon/340
 .. _Tiddlywiki plugin: http://www.guyrutenberg.com/2011/06/25/latex-for-tiddlywiki-a-mathjax-plugin/
-.. _KaTeX: http://extensions.joomla.org/extensions/extension-specific/kunena-forum-extensions/23540
+.. _MathJax plugins: http://extensions.joomla.org/search?q=mathjax
 .. _Joomla: http://www.joomla.org/
 .. _WordPress: http://www.wordpress.org/
 
