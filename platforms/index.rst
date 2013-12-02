@@ -10,7 +10,7 @@ and other content-management systems.
 -  `MathJax-LaTeX`_, `Simple-MathJax`_ plug-ins for `WordPress`_.
 -  `MathJax plugin for Drupal`_.
 -  `Concrete5 MathJax plugin`_.
--  ``MathJax plugins`_ for `Joomla`_.
+-  `MathJax plugins`_ for `Joomla`_.
 -  `Sphinx extension: MathJax`_
 -  `MathJax plugin for DokuWiki`_
 -  `MediaWiki math extension used on Wikipedia`_, using MathJax since
