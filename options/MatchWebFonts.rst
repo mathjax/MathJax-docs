@@ -14,13 +14,15 @@ For example
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      matchFor: {
-        "HTML-CSS": true,
-        NativeMML: false,
-        SVG: false
-      },
-      fontCheckDelay: 2000,
-      fontCheckTimeout: 30 * 1000
+      MatchWebFonts: {
+        matchFor: {
+          "HTML-CSS": true,
+          NativeMML: false,
+          SVG: false
+        },
+        fontCheckDelay: 2000,
+        fontCheckTimeout: 30 * 1000
+      }
     });
 
 would ask to apply font size matching for the `HTML-CSS` output mode
