@@ -9,13 +9,12 @@ processor that is run when you include ``"output/SVG"`` in the
 `jax` array of your configuration or load a combined configuration
 file that includes the SVG output jax.  They are listed with their default
 values.  To set any of these options, include an ``SVG`` section
-in your :meth:`MathJax.Hub.Config()` call.  Note that, because of the
-dash, you need to enclose the name in quotes.  For example
+in your :meth:`MathJax.Hub.Config()` call.  For example
 
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      "SVG": {
+      SVG: {
         scale: 120
       }
     });
