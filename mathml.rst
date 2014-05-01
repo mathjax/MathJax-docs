@@ -127,7 +127,7 @@ See the `results of the MathML3.0 test suite
 
 
 Semantics and Annotations
-=====================
+=========================
 
 Starting with MathJax version 2.3, some popular annotation formats like TeX,
 Maple, or Content MathML that are often included in the MathML source via the
