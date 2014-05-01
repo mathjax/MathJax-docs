@@ -25,7 +25,7 @@ sys.path.append(os.path.abspath('.'))
 extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+#templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -93,23 +93,16 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  Major themes that come with
 # Sphinx are currently 'default' and 'sphinxdoc'.
-html_theme = 'sphinx-bootstrap'
+html_theme = 'default'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-html_theme_options = {
-    'analytics_code': 'UA-15609829-1',
-    'analytics_domain': 'mathjax.org',
-    'github_user': 'mathjax',
-    'github_repo': 'mathjax',
-    'twitter_username': 'mathjax',
-    'home_url': 'http://www.mathjax.org',
-    'disqus_shortname': 'mathjax',
-}
+#html_theme_options = {
+#}
 
 # Add any paths that contain custom themes here, relative to this directory.
-html_theme_path = ['_themes']
+#html_theme_path = ['_themes']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
