@@ -437,18 +437,15 @@ Action
 The `action` extension gives you access to the MathML ``<maction>``
 element.  It defines three new non-standard macros:
 
-.. code-block:: latex
-   \\mathtip{math}{tip}
+.. describe:: \\mathtip{math}{tip}
 
     Use ``tip`` (in math mode) as tooltip for ``math``.
 
-.. code-block:: latex
-   \\texttip{math}{tip}
+.. describe:: \\texttip{math}{tip}
 
     Use ``tip`` (in text mode) as tooltip for ``math``.
 
-.. code-block:: latex
-   \\toggle{math1}{math2}...\\endtoggle
+.. describe:: \\toggle{math1}{math2}...\\endtoggle
 
     Show ``math1``, and when clicked, show ``math2``, and so on.
     When the last one is clicked, go back to math1.   
