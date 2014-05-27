@@ -24,14 +24,24 @@ setup for your pages.
 Using the MathJax Content Delivery Network (CDN)
 ================================================
 
+The easiest way to use MathJax is to link directly to the public
+installation available through the MathJax Content Distribution Network
+(CDN).  When you use the MathJax CDN, there is no need to install
+MathJax yourself, and you can begin using MathJax right away.
+
+The CDN will automatically arrange for your readers to download MathJax
+files from a fast, nearby server.  And since bug fixes and patches are
+deployed to the CDN as soon as they become available, your pages will
+always be up to date with the latest browser and devices.
+
 To use MathJax from our server, you need to do two things:
 
-1.  Link MathJax into the web pages that are to include mathematics.
+1.  Link to MathJax in the web pages that are to include mathematics.
 
 2.  Put mathematics into your web pages so that MathJax can display
     it.
 
-You accomplish the first step by putting 
+To jump start, you accomplish the first step by putting 
 
 .. code-block:: html
 
@@ -45,12 +55,17 @@ load the latest version of MathJax from the distributed server, and
 configure it to recognize mathematics in both TeX and MathML notation,
 and ask it to generate its output using MathML if the browser supports
 that well enough, and otherwise use HTML-with-CSS to display the
-mathematics.  This is one of the most general configurations, and
-should suffice for most people's needs.  Other configurations are
-available, however, and you can also provide additional configuration
-parameters to tailor one of the configurations to your needs.  More
-details can be found in the :ref:`Loading and Configuring MathJax
-<loading>` instructions.
+mathematics.  
+
+**Note** The ``TeX-AMS-MML_HTMLorMML`` configuration is one of the most general 
+(and largest) configuration files, and is listed here because it will suffice for 
+most people's needs and quickly get you started using MathJax. 
+Other :ref:`combined configuration files <config-files>` are available, however, 
+and you can also provide additional configuration parameters to tailor one of the 
+combined configurations to your needs.  
+
+More details about the configuration process can be found in the 
+:ref:`Loading and Configuring MathJax <loading>` instructions.
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service
 <http://www.mathjax.org/download/mathjax-cdn-terms-of-service/>`_, so be
@@ -76,13 +91,18 @@ following ``<script>`` tag instead of the one listed above:
 .. code-block:: html
 
     <script type="text/javascript"
-      src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-Currently, the Rackspace service used by the MathJax CDN does
-not support the use of a human-friendly name like ``cdn.mathjax.org``
-for secure connections; however, the address given above is stable and
-safe to use.
+Alternatively, the following code block will work in both http and https settings
+
+.. code-block:: html
+
+    <script type="text/javascript"
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+Note that this block will not work if the page is opened accessed locally via ``file://``
 
 
 Installing Your Own Copy of MathJax
@@ -102,33 +122,19 @@ so you will need to do the following things:
     it.
 
 
-Obtaining and Installing MathJax
+Downloading and Installing MathJax
 --------------------------------
 
-The easiest way to set up MathJax is to obtain the v2.1 archive from
-the `MathJax download page <http://www.mathjax.org/download/>`_ (you
-should obtain a file named something like
-``mathjax-MathJax-v2.1-X-XXXXXXXX.zip`` where the X's are random
-looking numbers and letters).  This archive includes both the MathJax
-code and the MathJax webfonts, so it is the only file you need.  Note
-that this is different from v1.0 and earlier releases, which had the
-fonts separate from the rest of the code.
-
-Unpack the archive and place the resulting MathJax folder onto your
+The MathJax source code is `hosted on
+GitHub <(https://github.com/mathjax/MathJax/>`_.
+To install MathJax on your own server, download the 
+`the latest distribution <https://github.com/mathjax/MathJax/zipball/latest>`_ and
+unpack the archive and place the resulting MathJax folder onto your
 web server at a convenient location where you can include it into your
 web pages.  For example, making ``MathJax`` a top-level directory on
 your server would be one natural way to do this.  That would let you
 refer to the main MathJax file via the URL ``/MathJax/MathJax.js``
 from within any page on your server.
-
-**Note:** While this is the easiest way to set up MathJax initially, there
-is a better way to do it if you want to be able to keep your copy of
-MathJax up-to-date. That uses the `Git <http://git-scm.com/>`_ version
-control system, and is described in the :ref:`Installing MathJax
-<getting-mathjax-git>` document. If you prefer using `Subversion
-<http://subversion.apache.org/>`_, you can also use that to get a copy
-of MathJax (see :ref:`Installing MathJax via SVN
-<getting-mathjax-svn>`).
 
 Once you have MathJax set up on your server, you can test it using the
 files in the ``MathJax/test`` directory.  If you are putting MathJax
@@ -143,6 +149,8 @@ access the files and folders that are part of the MathJax directory.
 the server log files for any errors that pertain to the MathJax
 installation; this may help locate problems in the permission or
 locations of files.
+
+For more details (such as version control access) see `the installation instructions <installation>`.
 
 
 Configuring your copy of MathJax
