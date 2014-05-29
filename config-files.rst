@@ -28,8 +28,8 @@ combined configuration files that include not just configuration
 parameters but also the files that MathJax would need to load for
 those configurations; you can browse the directory on `Github
 <https://github.com/mathjax/MathJax/tree/master/config/>`_.  This 
-means MathJax will have to load fewerfiles, and since each file access requires 
-establishing connectionsover the network, it can be faster to load one larger 
+means MathJax will have to load fewer files, and since each file access requires 
+establishing connections over the network, it can be faster to load one larger 
 file than several smaller ones.  See :ref:`Loading and Configuring MathJax
 <loading>` for more details about how to load configurations, and how
 to modify the parameters for a configuration file.
