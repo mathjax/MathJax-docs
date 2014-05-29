@@ -123,6 +123,17 @@ Advanced Topics
     Details of the MathJax API<api/index>
 
 
+Miscellanea
+===============
+
+.. toctree::
+    :maxdepth: 1
+
+    MathJax FAQ <misc/faq>
+    Browser Compatibility <misc/browser-compatibility>
+    MathJax Badges and Logo <misc/badges>    
+    Articles and Presentations <misc/articles>
+
 Reference Pages
 ===============
 

@@ -18,6 +18,56 @@ recommend ``git`` or ``svn``, as it is easier to keep your
 installation up to date with these tools.
 
 
+.. _getting-mathjax-zip:
+
+Obtaining MathJax via an archive
+================================
+
+Release versions of MathJax are available in archive files from the
+`MathJax GitHub page <http://github.com/mathjax/mathjax/>`_ (via the
+"zip" button, or the "downloads" tab), where you can download the archive
+that you need.
+
+    **Current Version**:  `MathJax-2.4 <https://github.com/mathjax/MathJax/zipball/v2.4-latest>`_ (32.9MB)
+
+Consult the `change log <whats-new-2.4>`_ for what’s new in version 2.4.
+
+For previous versions, see
+
+-  `MathJax-2.3 <https://github.com/mathjax/MathJax/zipball/v2.3-latest>`_ (32.9MB)
+-  `MathJax-2.2 <https://github.com/mathjax/MathJax/zipball/v2.2-latest>`_ (17.0MB)
+-  `MathJax-2.1 <https://github.com/mathjax/MathJax/zipball/v2.1-latest>`_ (17.1MB)
+-  `MathJax-2.0  <https://github.com/mathjax/MathJax/zipball/v2.0-latest>`_ (17.6MB)
+-  `MathJax-1.1a  <https://github.com/mathjax/MathJax/zipball/v1.1a>`_ (15.4MB)
+-  `MathJax-1.1 <https://github.com/mathjax/MathJax/zipball/v1.1>`_ (16.4MB)
+-  `MathJax v1.0.1a Download Instructions <http://www.mathjax.org/download/mathjax-v1-0-1a-download-instructions/>`_.
+
+
+You should download the archive of the branch corresponding to the version 
+you need then simply unzip it.  
+Once the MathJax directory is unpacked, you should move it to the
+desired location on your server (or your hard disk, if you are using
+it locally rather then through a web server).  One natural location is
+to put it at the top level of your web server's hierarchy.  That would
+let you refer to the main MathJax file as ``/MathJax/MathJax.js`` from
+within any page on your server.
+
+From the `MathJax GitHub download link
+<http://github.com/mathjax/mathjax/downloads>`_, you can also select
+the ``Download .tar.gz`` or ``Download .zip`` buttons to get a copy of
+the current development version of MathJax that contains all the
+latest changes and bug-fixes.
+
+If a packaged release receives any important updates, then those
+updates will be part of the `branch` for that version.  The link to
+the ``.zip`` file in the download list will be the original release
+version, not the patched version.  To obtain the patched version, use
+the `Branches` drop down menu (at the far left of the menus within the
+page) to select the release branch that you want (for example
+``v2.1-latest``), and then use the "zip" button just above it to get
+the latest patched version of that release.
+
+
 .. _getting-mathjax-git:
 
 Obtaining MathJax via Git
@@ -165,42 +215,6 @@ check out; e.g., ``2.1-latest``.  The branch names can be found on the
 `GitHub MathJax page <http://github.com/mathjax/MathJax/>`_ under the
 `branches <https://github.com/mathjax/MathJax/branches>`_ tab.
 
-
-.. _getting-mathjax-zip:
-
-Obtaining MathJax via an archive
-================================
-
-Release versions of MathJax are available in archive files from the
-`MathJax download page <http://www.mathjax.org/download/>`_ or the
-`MathJax GitHub page <http://github.com/mathjax/mathjax/>`_ (via the
-"zip" button, or the "downloads" tab), where you can download the archive
-that you need.
-
-You should download the v2.1 archive (which will get you a file with a
-name like ``mathjax-MathJax-v2.1-X-XXXXXXXX.zip``, where the X's are
-some sequence of random-looking letters and numbers), then simply unzip
-it.  Once the MathJax directory is unpacked, you should move it to the
-desired location on your server (or your hard disk, if you are using
-it locally rather then through a web server).  One natural location is
-to put it at the top level of your web server's hierarchy.  That would
-let you refer to the main MathJax file as ``/MathJax/MathJax.js`` from
-within any page on your server.
-
-From the `MathJax GitHub download link
-<http://github.com/mathjax/mathjax/downloads>`_, you can also select
-the ``Download .tar.gz`` or ``Download .zip`` buttons to get a copy of
-the current development version of MathJax that contains all the
-latest changes and bug-fixes.
-
-If a packaged release receives any important updates, then those
-updates will be part of the `branch` for that version.  The link to
-the ``.zip`` file in the download list will be the original release
-version, not the patched version.  To obtain the patched version, use
-the `Branches` drop down menu (at the far left of the menus within the
-page) to select the release branch that you want (for example
-``v2.1-latest``), and then use the "zip" button just above it to get
-the latest patched version of that release.
 
 Obtaining MathJax via Bower
 ===========================
