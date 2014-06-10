@@ -28,7 +28,7 @@ Release versions of MathJax are available in archive files from the
 "zip" button, or the "downloads" tab), where you can download the archive
 that you need.
 
-    **Current Version**:  `MathJax-2.4 <https://github.com/mathjax/MathJax/zipball/v2.4-latest>`_ (32.9MB)
+    **Current Version**:  `MathJax-2.4 <https://github.com/mathjax/MathJax/zipball/v2.4-latest>`_ (32.6MB)
 
 Consult the `change log <whats-new-2.4>`_ for what’s new in version 2.4.
 
