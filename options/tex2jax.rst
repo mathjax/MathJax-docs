@@ -81,6 +81,11 @@ preprocessor.
     can type ``\$`` and `tex2jax` will convert it to a regular dollar
     sign in the rendered document.
 
+.. describe:: processRefs: true
+
+    When set to ``true``, MathJax will process ``\ref{...}`` outside 
+    of math mode.
+
 .. describe:: processEnvironments: true
 
     When ``true``, `tex2jax` looks not only for the in-line and
