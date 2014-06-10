@@ -25,6 +25,7 @@ Basic Usage
     MathJax MathML Support <mathml>
     MathJax AsciiMath Support <asciimath>
     MathJax Output Formats <output>
+    MathJax Font Support <font-support>
 
 .. toctree::
     :maxdepth: 1
