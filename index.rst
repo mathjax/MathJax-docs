@@ -125,6 +125,17 @@ Upgrading MathJax
     Converting to MathJax from jsMath <jsMath>
 
 
+Miscellanea
+===============
+
+.. toctree::
+    :maxdepth: 1
+
+    MathJax FAQ <misc/faq>
+    Browser Compatibility <misc/browser-compatibility>
+    MathJax Badges and Logo <misc/badges>    
+    Articles and Presentations <misc/articles>
+
 Reference Pages
 ===============
 
