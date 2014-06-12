@@ -83,14 +83,9 @@ output](http://docs.mathjax.org/en/latest/options/HTML-CSS.html) and
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
 
-The MathJax CDN utilizes Rackspace’s CDN service. Unfortunately, this
-currently does not offer ``https`` support for the default address
-``cdn.mathjax.org``. However, as an alternative, you can use the
-following unmapped address:
-``https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js`` While
-not as appealing as ``cdn.mathjax.org``, this address is stable and safe
-to use. For more information, see [our
-documentation](http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn).
+The MathJax CDN can be accessed via ``https``. We advise using the protocol 
+agnostic ``//cdn.mathjax.org/mathjax/latest/MathJax.js``. For more 
+information, see [our documentation](http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn).
 
 My mathematics is private. Is it safe to use MathJax?
 -----------------------------------------------------
@@ -115,7 +110,7 @@ Does MathJax support Presentation and/or Content MathML?
 
 MathML comes in two types: Presentation MathML, which describes what an
 equation looks like, and Content MathML, which describes what an
-equation means. At the moment, MathJax works with Presentation MathML
+equation means. By default, MathJax works with Presentation MathML
 and offers an extension for Content MathML, see [the
 documentation on MathML
 support](http://docs.mathjax.org/en/latest/mathml.html#content-mathml).
@@ -241,11 +236,10 @@ guide](https://github.com/mathjax/MathJax-docs/wiki/Guide%3A-reducing-size-of-a-
 Why is MathJax using image fonts instead of web fonts?
 ------------------------------------------------------
 
-Web fonts are supported by the most recent version of almost all popular
-browsers (IE, Firefox, Chrome, Safari, Opera...) and they are scalable,
-which means much better display and print quality. Clearly, you want to
-make sure this is working on your install of MathJax. Here are several
-reasons web fonts might not be working for you:
+Web fonts are supported by all popular browsers (IE, Firefox, Chrome, Safari, 
+Opera...) and they are scalable, which means much better display and print 
+quality. Clearly, you want to make sure this is working on your install of 
+MathJax. Here are several reasons web fonts might not be working for you:
 
 -  **Config not specifying web fonts:** Web fonts are enabled by
    default, but double check your MathJax configuration if you have done
@@ -337,28 +331,19 @@ online, you should use a TeX to HTML converter like
 realize that TeX conversion tools will never produce results as good as
 controlling the HTML and CSS source yourself.
 
-MathJax is slow in IE8 under standards mode. Can I fix this?
-------------------------------------------------------------
+What should IE's X-UA-Compatible meta tag be set to?
+--------------------------------------------------------------
 
-This is an Internet Explorer problem, not a MathJax one. IE8 in
-"standards" mode is an order of magnitude slower than other versions of
-IE, including IE8 in IE7 emulation mode. This suggests that IE8
-standards mode is doing something very time-consuming that the other
-modes aren't, like reflowing the entire page every time an element is
-added to it. Since MathJax adds a lot of elements in order to typeset
-the mathematics, it runs slowly in IE8 when the "standards" mode has
-been triggered. Luckily, there is a way to force IE8 out of "standards"
-mode. Just put the following code into the document's ``<head>`` block.
+We strongly suggest to follow Microsoft's suggestion to use ``IE=edge``. That 
+is, in the document ``<head>`` include
 
 ::
 
-     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-This will force IE8 into IE7 emulation mode, which is much faster. Be
-sure to put this tag *above* any other tags in the document ``<head>``
-(other than the ``<title>`` or other ``<meta>`` tags). See the
-`Microsoft documentation on compatibility
-modes <http://msdn.microsoft.com/en-us/library/cc288325(v=vs.85).aspx#SetMode>`__.
+This will force all IE versions to use their latest engine which is the 
+optimal setting for MathJax. For more information, see the `Microsoft 
+documentation on compatibility modes <http://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible>`__.
 
 Does MathJax support TeX macros?
 --------------------------------
