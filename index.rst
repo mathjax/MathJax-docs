@@ -28,7 +28,7 @@ Basic Usage
     MathJax Font Support <font-support>
 
 .. toctree::
-    :maxdepth: 1
+      :maxdepth: 1
 
     MathJax Localization <localization>
     MathJax Safe-mode <safe-mode>
@@ -85,8 +85,6 @@ MathJax Configuration Options
     The MatchWebFonts options <options/MatchWebFonts>
     
 
-
-
 .. _advanced-topics:
 
 Advanced Topics
@@ -100,6 +98,8 @@ Advanced Topics
     Synchronizing Your Code with MathJax <synchronize>
     Loading MathJax Dynamically <dynamic>
     Modifying Math on the Page <typeset>
+    Obtaining the MathML for an Expression <toMathML>
+
 
 .. toctree::
     :maxdepth: 1
@@ -108,6 +108,18 @@ Advanced Topics
 
 
 .. _upgrading-MathJax:
+
+
+Miscellanea
+===============
+
+.. toctree::
+    :maxdepth: 1
+
+    MathJax FAQ <misc/faq>
+    Browser Compatibility <misc/browser-compatibility>
+    MathJax Badges and Logo <misc/badges>    
+    Articles and Presentations <misc/articles>
 
 Upgrading MathJax
 =================
@@ -123,18 +135,6 @@ Upgrading MathJax
     What's New in MathJax v1.1 <whats-new-1.1>
     Migrating from MathJax v1.0 to v1.1 <upgrade>
     Converting to MathJax from jsMath <jsMath>
-
-
-Miscellanea
-===============
-
-.. toctree::
-    :maxdepth: 1
-
-    MathJax FAQ <misc/faq>
-    Browser Compatibility <misc/browser-compatibility>
-    MathJax Badges and Logo <misc/badges>    
-    Articles and Presentations <misc/articles>
 
 Reference Pages
 ===============
