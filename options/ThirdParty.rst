@@ -33,7 +33,6 @@ or equivalently,
         AuthorInit: function () {
               MathJax.Ajax.config.path["Extra"] = "http://my.extra.com/mathjax/extra";
             }
-        }
       };
     </script>
 
@@ -84,6 +83,5 @@ or equivalently,
         AuthorInit: function () {
               MathJax.Ajax.config.path["Contrib"] = "//cdn.mathjax.org/mathjax/contrib";
             }
-        }
       };
     </script>
