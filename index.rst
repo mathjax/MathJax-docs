@@ -84,7 +84,10 @@ MathJax Configuration Options
     The Safe options <options/Safe>
     The MatchWebFonts options <options/MatchWebFonts>
     
+.. toctree::
+    :maxdepth: 1
 
+    Third-party extensions <options/ThirdParty>
 .. _advanced-topics:
 
 Advanced Topics
