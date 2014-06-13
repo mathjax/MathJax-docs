@@ -219,7 +219,7 @@ available throughout the rest of the page.
 You can include macro definitions in the `Macros` section of the `TeX`
 blocks of your configuration, but they must be represented as
 JavaScript objects.  For example, the two macros above can be
-pre-defined in the configuraiton by
+pre-defined in the configuration by
 
 .. code-block:: javascript
 
