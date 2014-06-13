@@ -35,6 +35,8 @@ Interface
    and MathZoom extensions loading when ``showMathMenu`` set to false.
 -  `#734 <https://github.com/mathjax/MathJax/issues/734>`__ compress
    menu PNGs.
+-  `#814 <https://github.com/mathjax/MathJax/issues/814>`__ add
+   TeX/Asciimath as annotation-xml to MathML output.
 
 Line-breaking
 =============
