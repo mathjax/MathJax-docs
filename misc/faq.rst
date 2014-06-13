@@ -207,16 +207,17 @@ across multiple browsers).  Since the image fonts are intended as a last
 resort for browsers whose functionality is not well behaved, relying on
 fancy CSS tricks to clip large images is not going to be a viable
 strategy.  This approach also has performance and printing problems.
- The single-glyph-per-file approach has proven to be the only truly
+
+The single-glyph-per-file approach has proven to be the only truly
 reliable and maintainable approach that we have found. If you want to
 disable image fonts altogether, however, in order to save space, you
-can. **Warning:** If you disable image fonts, MathJax will not work on
+can. **Note:** If you disable image fonts, MathJax might not work on
 some users' browsers. With image fonts disabled, users must either have
 the MathJax or STIX fonts on their computer or their browser must
 support the @font-face CSS directive. This means IE6+, Chrome, Safari
 3.1+, Firefox 3.5+, and Opera 10+, or other browsers based on their
-rendering engines. On earlier browsers running on computers without the
-special fonts, MathJax will not be able to render math reliably (though
+rendering engines. On earlier browsers (without local fonts) or if 
+webfonts are blocked , MathJax will not be able to render math reliably (though
 it will try its best). To disable image fonts, edit the MathJax config
 file at ``[MathJax]/config/MathJax.js`` or the custom config inside your
 template's ``<script>`` tag and set imageFont to null.
@@ -250,7 +251,7 @@ MathJax. Here are several reasons web fonts might not be working for you:
    This will make MathJax try to load the TeX web font from the fonts
    folder.
 -  **MathJax times out waiting for fonts to arrive:** You can tell by
-   entering ``javascript:alert(MathJax.Message.Log()) `` into the URL
+   entering ``javascript:alert(MathJax.Message.Log())`` into the URL
    location type-in area (and pressing RETURN), and checking if there is
    a message about switching to image fonts. This can happen in
    particular if your network connection is relatively slow. In v2.0,

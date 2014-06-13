@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32em" height="8em">
+  <rect width="10em" height="2em" style="fill: none; stroke: blue;"></rect>
+  <text x=".5em" y="1em">TeX Input</text>
+  <rect y="2.5em" width="10em" height="2em" style="fill: none; stroke: blue;"></rect>
+  <text x=".5em" y="3.5em">MathML Input</text>
+  <rect y="5em" width="10em" height="2em" style="fill: none; stroke: blue;"></rect>
+  <text x=".5em" y="6em">ASCIIMath Input</text>
+  <line x1="10em" x2="11em" y1="1em" y2="3.5em" style="stroke: black"></line>
+  <line x1="10em" x2="11em" y1="3.5em" y2="3.5em" style="stroke: black"></line>
+  <line x1="10em" x2="11em" y1="6em" y2="3.5em" style="stroke: black"></line>
+  <rect x="11em" y="2.5em" width="10em" height="2em" style="fill: none; stroke: red;"></rect>
+  <text x="11.5em" y="3.5em">MathML Element</text>
+  <rect x="22em" width="10em" height="2em" style="fill: none; stroke: green;"></rect>
+  <text x="22.5em" y="1em">MathML Output</text>
+  <rect x="22em" y="2.5em" width="10em" height="2em" style="fill: none; stroke: green;"></rect>
+  <text x="22.5em" y="3.5em">HTML+CSS Output</text>
+  <rect x="22em" y="5em" width="10em" height="2em" style="fill: none; stroke: green;"></rect>
+  <text x="22.5em" y="6em">SVG Output</text>
+  <line x1="22em" x2="21em" y1="1em" y2="3.5em" style="stroke: black"></line>
+  <line x1="22em" x2="21em" y1="3.5em" y2="3.5em" style="stroke: black"></line>
+  <line x1="22em" x2="21em" y1="6em" y2="3.5em" style="stroke: black"></line>
+</svg>
+

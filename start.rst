@@ -123,7 +123,7 @@ so you will need to do the following things:
 
 
 Downloading and Installing MathJax
---------------------------------
+----------------------------------
 
 The MathJax source code is `hosted on
 GitHub <(https://github.com/mathjax/MathJax/>`_.
