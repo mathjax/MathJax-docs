@@ -16,13 +16,27 @@ example
 
     MathJax.Hub.Config({
       AsciiMath: {
-        displaystyle: false
+        fixphi: true, 
+        useMathMLspacing: true,
+        displaystyle: false,
+        decimalsign: "."
       }
     });
 
 would set the ``displaystyle`` configuration option so that the limits
 for operators like summation symbols will appear next to them rather
 than above and below.
+
+.. describe:: fixphi: true
+
+    Determines whether MathJax will switch the Unicode values
+    for ``phi`` and ``varphii``. If set to ``true`` MathJax will
+    use the TeX mapping, otherwise the Unicode mapping.
+
+.. describe:: useMathMLspacing: true
+
+    Determines whether MathJax will use MathML spacing. Set to
+    ``false`` to get TeX-like spacing.
 
 .. describe:: displaystyle: true
 
@@ -33,7 +47,7 @@ than above and below.
     better suited to in-line equations so that they don't interfere
     with the line spacing so much.
 
-.. describe:: decimal: "."
+.. describe:: decimalsign: "."
 
     This is the character to be used for decimal points in numbers.
     if you change this to ``","``, then you need to be careful about

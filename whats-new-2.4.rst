@@ -125,7 +125,7 @@ TeX emulation
    for ``\bmod``.
 
 Asciimath
-========-
+=========
 
 -  `#353 <https://github.com/mathjax/MathJax/issues/353>`__ add option
    for TeX-like ``\phi`` and ``\varphii`` behavior.
