@@ -101,7 +101,7 @@ Advanced Topics
     Loading MathJax Dynamically <dynamic>
     Modifying Math on the Page <typeset>
     Obtaining the MathML for an Expression <toMathML>
-
+    Writing MathJax Extensions <extension-writing>
 
 .. toctree::
     :maxdepth: 1
