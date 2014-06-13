@@ -28,11 +28,10 @@ Basic Usage
     MathJax Font Support <font-support>
 
 .. toctree::
-      :maxdepth: 1
+    :maxdepth: 1
 
     MathJax Localization <localization>
     MathJax Safe-mode <safe-mode>
-    MathJax Match-Web-Fonts <match-web-fonts>
 
 .. toctree::
     :maxdepth: 1
