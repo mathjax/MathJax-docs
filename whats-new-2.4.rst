@@ -27,6 +27,8 @@ Interface
    ``Show Math as`` window crashing in IE8.
 -  `#559 <https://github.com/mathjax/MathJax/issues/559>`__ remove user
    cookie configuration.
+-  `#821 <https://github.com/mathjax/MathJax/issues/821>`__ resolve 
+   cookie-related error in sandboxed iframes on Chrome.
 -  `#623 <https://github.com/mathjax/MathJax/issues/623>`__ fix
    localization on IE6--8.
 -  `#685 <https://github.com/mathjax/MathJax/issues/685>`__ fix MathMenu
@@ -53,7 +55,8 @@ HTML-CSS/SVG/nativeMML display
    linebreaking within fractions in SVG output.
 -  `#423 <https://github.com/mathjax/MathJax/issues/423>`__,
    `#460 <https://github.com/mathjax/MathJax/issues/460>`__,
-   `#749 <https://github.com/mathjax/MathJax/issues/749>`__ Zoom
+   `#749 <https://github.com/mathjax/MathJax/issues/749>`__,
+   `#824 <https://github.com/mathjax/MathJax/issues/824>`__ Zoom
    improvements: fix zoom box overflow in mobile Safari, fix zoom box
    for widths in ``px``, fix zoom box overlay in Chrome.
 -  `#470 <https://github.com/mathjax/MathJax/issues/470>`__ fix AMScd
@@ -79,6 +82,10 @@ HTML-CSS/SVG/nativeMML display
    symbol rendering in ever-changing but always buggy Chrome.
 -  `#770 <https://github.com/mathjax/MathJax/issues/770>`__ add support
    for dotted borders to SVG output.
+-  `#820 <https://github.com/mathjax/MathJax/issues/820>`__ fix integral
+   overlapping with superscript using STIX fonts.
+-  `#813 <https://github.com/mathjax/MathJax/issues/813>`__ remove
+   some redundant fixes for Native MML on Firefox 29+.
 
 TeX emulation
 =============
