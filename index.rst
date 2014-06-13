@@ -25,9 +25,10 @@ Basic Usage
     MathJax MathML Support <mathml>
     MathJax AsciiMath Support <asciimath>
     MathJax Output Formats <output>
+    MathJax Font Support <font-support>
 
 .. toctree::
-    :maxdepth: 1
+      :maxdepth: 1
 
     MathJax Localization <localization>
     MathJax Safe-mode <safe-mode>
@@ -83,26 +84,10 @@ MathJax Configuration Options
     The Safe options <options/Safe>
     The MatchWebFonts options <options/MatchWebFonts>
     
-
-
-
-.. _upgrading-MathJax:
-
-Upgrading MathJax
-=================
-
 .. toctree::
     :maxdepth: 1
 
-    What's New in MathJax v2.3 <whats-new-2.3>
-    What's New in MathJax v2.2 <whats-new-2.2>
-    What's New in MathJax v2.1 <whats-new-2.1>
-    What's New in MathJax v2.0 <whats-new-2.0>
-    What's New in MathJax v1.1 <whats-new-1.1>
-    Migrating from MathJax v1.0 to v1.1 <upgrade>
-    Converting to MathJax from jsMath <jsMath>
-
-
+    Third-party extensions <options/ThirdParty>
 .. _advanced-topics:
 
 Advanced Topics
@@ -116,12 +101,43 @@ Advanced Topics
     Synchronizing Your Code with MathJax <synchronize>
     Loading MathJax Dynamically <dynamic>
     Modifying Math on the Page <typeset>
+    Obtaining the MathML for an Expression <toMathML>
+
 
 .. toctree::
     :maxdepth: 1
 
     Details of the MathJax API<api/index>
 
+
+.. _upgrading-MathJax:
+
+
+Miscellanea
+===============
+
+.. toctree::
+    :maxdepth: 1
+
+    MathJax FAQ <misc/faq>
+    Browser Compatibility <misc/browser-compatibility>
+    MathJax Badges and Logo <misc/badges>    
+    Articles and Presentations <misc/articles>
+
+Upgrading MathJax
+=================
+
+.. toctree::
+    :maxdepth: 1
+
+    What's New in MathJax v2.4 <whats-new-2.4>
+    What's New in MathJax v2.3 <whats-new-2.3>
+    What's New in MathJax v2.2 <whats-new-2.2>
+    What's New in MathJax v2.1 <whats-new-2.1>
+    What's New in MathJax v2.0 <whats-new-2.0>
+    What's New in MathJax v1.1 <whats-new-1.1>
+    Migrating from MathJax v1.0 to v1.1 <upgrade>
+    Converting to MathJax from jsMath <jsMath>
 
 Reference Pages
 ===============
