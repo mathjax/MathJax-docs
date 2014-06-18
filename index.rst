@@ -120,6 +120,7 @@ Miscellanea
 
     MathJax FAQ <misc/faq>
     Browser Compatibility <misc/browser-compatibility>
+    EPUB3 Reading Systems <misc/epub>
     MathJax Badges and Logo <misc/badges>    
     Articles and Presentations <misc/articles>
 
