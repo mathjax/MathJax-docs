@@ -28,18 +28,18 @@ Release versions of MathJax are available in archive files from the
 "zip" button, or the "downloads" tab), where you can download the archive
 that you need.
 
-    **Current Version**:  `MathJax-2.4 <https://github.com/mathjax/MathJax/archive/v2.4-latest>`_ (32.6MB)
+    **Current Version**:  `MathJax-2.4 <https://github.com/mathjax/MathJax/archive/v2.4-latest.zip>`_ (32.6MB)
 
 Consult the `change log <whats-new-2.4>`_ for what’s new in version 2.4.
 
 For previous versions, see
 
--  `MathJax-2.3 <https://github.com/mathjax/MathJax/archive/v2.3-latest>`_ (32.9MB)
--  `MathJax-2.2 <https://github.com/mathjax/MathJax/archive/v2.2-latest>`_ (17.0MB)
--  `MathJax-2.1 <https://github.com/mathjax/MathJax/archive/v2.1-latest>`_ (17.1MB)
--  `MathJax-2.0  <https://github.com/mathjax/MathJax/archive/v2.0-latest>`_ (17.6MB)
--  `MathJax-1.1a  <https://github.com/mathjax/MathJax/archive/v1.1a>`_ (15.4MB)
--  `MathJax-1.1 <https://github.com/mathjax/MathJax/archive/v1.1>`_ (16.4MB)
+-  `MathJax-2.3 <https://github.com/mathjax/MathJax/archive/v2.3-latest.zip>`_ (32.9MB)
+-  `MathJax-2.2 <https://github.com/mathjax/MathJax/archive/v2.2-latest.zip>`_ (17.0MB)
+-  `MathJax-2.1 <https://github.com/mathjax/MathJax/archive/v2.1-latest.zip>`_ (17.1MB)
+-  `MathJax-2.0  <https://github.com/mathjax/MathJax/archive/v2.0-latest.zip>`_ (17.6MB)
+-  `MathJax-1.1a  <https://github.com/mathjax/MathJax/archive/v1.1a.zip>`_ (15.4MB)
+-  `MathJax-1.1 <https://github.com/mathjax/MathJax/archive/v1.1.zip>`_ (16.4MB)
 -  `MathJax v1.0.1a Download Instructions <http://www.mathjax.org/download/mathjax-v1-0-1a-download-instructions/>`_.
 
 
