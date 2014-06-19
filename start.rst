@@ -87,7 +87,7 @@ Alternatively, the following code block will work in both http and https setting
       src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-Note that this block will not work if the page is opened accessed locally via ``file://``
+Note that this block will not work if the page is accessed locally via ``file://``
 
 
 Installing Your Own Copy of MathJax
