@@ -76,13 +76,18 @@ following ``<script>`` tag instead of the one listed above:
 .. code-block:: html
 
     <script type="text/javascript"
-      src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-Currently, the Rackspace service used by the MathJax CDN does
-not support the use of a human-friendly name like ``cdn.mathjax.org``
-for secure connections; however, the address given above is stable and
-safe to use.
+Alternatively, the following code block will work in both http and https settings
+
+.. code-block:: html
+
+    <script type="text/javascript"
+      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+Note that this block will not work if the page is opened accessed locally via ``file://``
 
 
 Installing Your Own Copy of MathJax
