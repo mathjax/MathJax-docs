@@ -180,7 +180,7 @@ macros. Consider the following example:
       //unpacked/extensions/TeX/Taylor.js
 
       MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-        MathJax.InputJax.TeX.Definitions.mAdd({
+        MathJax.InputJax.TeX.Definitions.Add({
           macros: {
             expexpansion: ["Macro", "\\sum_{n=0}^{+\\infty} \\frac{x^n}{n!}"],
             taylor: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{#1}^{(n)} \\left({#2}\\right)}{n!} {\\left( {#3} - {#2} \\right)}^n", 3],
@@ -250,7 +250,7 @@ appropriate place for that is of course after the macros are defined:
       // unpacked/extensions/TeX/Taylor.js
 
       MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
-        MathJax.InputJax.TeX.Definitions.mAdd({
+        MathJax.InputJax.TeX.Definitions.Add({
     ...
         });
     MathJax.Hub.Startup.signal.Post("TeX Taylor Ready");
