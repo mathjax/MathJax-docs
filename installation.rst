@@ -30,7 +30,7 @@ that you need.
 
     **Current Version**:  `MathJax-2.4 <https://github.com/mathjax/MathJax/archive/v2.4-latest.zip>`_ (32.6MB)
 
-Consult the `change log <whats-new-2.4>`_ for what’s new in version 2.4.
+Consult the :ref:`change log <whats-new-2.4>` for what’s new in version 2.4.
 
 For previous versions, see
 
