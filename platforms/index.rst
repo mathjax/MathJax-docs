@@ -9,6 +9,7 @@ and other content-management systems.
 
 -  `MathJax-LaTeX`_, `Simple-MathJax`_ plug-ins for `WordPress`_.
 -  `MathJax plugin for Drupal`_.
+-  `MathJax integration for Plone`_.
 -  `Concrete5 MathJax plugin`_.
 -  `MathJax plugins`_ for `Joomla`_.
 -  `Sphinx extension: MathJax`_
@@ -25,6 +26,7 @@ and other content-management systems.
 .. _MathJax-LaTeX: http://wordpress.org/extend/plugins/mathjax-latex/
 .. _Simple-MathJax: http://wordpress.org/extend/plugins/simple-mathjax/
 .. _MathJax plugin for Drupal: http://drupal.org/project/mathjax
+.. _MathJax integration for Plone: http://drupal.org/project/mathjax
 .. _MathJax plugin for DokuWiki: https://www.dokuwiki.org/plugin:mathjax
 .. _Concrete5 MathJax plugin: http://www.concrete5.org/marketplace/addons/load-mathjax/
 .. _PluginMathJax: http://myweb.dal.ca/haines/#PluginMathJax
