@@ -48,7 +48,7 @@ can set a preference via the ``availableFonts`` and
 ``preferredFont`` options and they can configure the webfont via the 
 ``webFont`` option. Please note that except for STIX General, the usual 
 distributions of the supported fonts do not work for technical reasons. You can
-download the webftons from the `MathJax repository 
+download the webfonts from the `MathJax repository 
 <https://github.com/mathjax/MathJax/tree/master/fonts/HTML-CSS>`_.
 
 The :ref:`SVG output processor <configure-SVG>` will not use fonts directly but
