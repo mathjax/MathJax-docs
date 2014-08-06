@@ -120,15 +120,15 @@ so you will need to do the following things:
 
 4.  Put mathematics into your web pages so that MathJax can display
     it.
-
+    
 
 Downloading and Installing MathJax
 ----------------------------------
 
 The MathJax source code is `hosted on
-GitHub <(https://github.com/mathjax/MathJax/>`_.
+GitHub <https://github.com/mathjax/MathJax/>`_.
 To install MathJax on your own server, download the 
-`the latest distribution <https://github.com/mathjax/MathJax/zipball/latest>`_ and
+`the latest distribution <https://github.com/mathjax/MathJax/archive/master.zip>`_ and
 unpack the archive and place the resulting MathJax folder onto your
 web server at a convenient location where you can include it into your
 web pages.  For example, making ``MathJax`` a top-level directory on
