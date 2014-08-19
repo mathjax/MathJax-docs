@@ -77,7 +77,7 @@ mathematics in a web page`_ below.
 Secure Access to the CDN
 ------------------------
 
-When the the MathJax CDN is accessed via the address
+When the MathJax CDN is accessed via the address
 ``http://cdn.mathjax.org``, data is downloaded over a regular, insecure
 HTTP connection.  This introduces a security risk, since it is
 possible a hostile 3rd party could intercept the MathJax program data,
