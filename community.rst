@@ -69,4 +69,4 @@ contribut to the public `documentation wiki <https://github.com/mathjax/mathjax-
 
 If you are using MathJax and want to show your support, please consider using
 our `"Powered by MathJax" badge
-<http://www.mathjax.org/community/mathjax-badge>`_.
+<mathjax-badges>`.
