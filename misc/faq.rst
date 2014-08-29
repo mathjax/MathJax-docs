@@ -23,8 +23,8 @@ will be about 14.4KB. The configuration file can vary greatly in size
 depending on what is included; minimal configurations can be as small as
 3.7KB, reasonable configurations vary between 25KB and 40KB -- bringing
 us to a total of 18KB to 55KB, i.e., roughly a small to medium sized
-image. To learn more about configuring MathJax, see [our
-documentation](http://docs.mathjax.org/en/latest/configuration.html).
+image. To learn more about configuring MathJax, see `our
+documentation <http://docs.mathjax.org/en/latest/configuration.html>`__.
 
 Mathematics is not rendering properly in IE. How do I fix that?
 ---------------------------------------------------------------
@@ -33,8 +33,9 @@ First, please open the MathJax homepage at
 `www.mathjax.org <http://www.mathjax.org>`__ in IE to see if that loads
 correctly. If it does, this indicates that there may be something wrong
 with the webpage you were trying to view initially. If appropriate,
-upgrade the website to [the latest version of
-MathJax](http://www.mathjax.org/download/). If the MathJax homepage does
+upgrade the website to `the latest version of
+MathJax <http://www.mathjax.org/download/>`__. If the MathJax homepage 
+does
 not display mathematics properly, there may be an issue with your
 security settings in Internet Explorer. Please check the following
 settings:
@@ -76,16 +77,16 @@ displayed with more space and slightly larger fonts. The standard
 delimiters for inline equations are ``\\(...\\)``, while for paragraph
 equations they are ``$$...$$`` or ``\\[...\\]``, but they can be
 customized. For how to configure MathJax to scale all mathematics
-relative to the surrounding text, check our documentation for [the HTML
-output](http://docs.mathjax.org/en/latest/options/HTML-CSS.html) and
-[the SVG output](http://docs.mathjax.org/en/latest/options/SVG.html).
+relative to the surrounding text, check our documentation for `the HTML
+output <http://docs.mathjax.org/en/latest/options/HTML-CSS.html>`__ and
+`the SVG output <http://docs.mathjax.org/en/latest/options/SVG.html>`__.
 
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
 
 The MathJax CDN can be accessed via ``https``. We advise using the protocol 
 agnostic ``//cdn.mathjax.org/mathjax/latest/MathJax.js``. For more 
-information, see [our documentation](http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn).
+information, see `our documentation <http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn>`__.
 
 My mathematics is private. Is it safe to use MathJax?
 -----------------------------------------------------
@@ -102,8 +103,8 @@ the default url ``cdn.mathjax.org`` - see `this FAQ <#problem-https>`__
 for more background and an alternative url). Or, if you prefer, you can
 also install MathJax on your own web server. MathJax does not reference
 script codes on other websites. The code is, of course, open source
-which means that you can [review it and inspect its
-integrity](https://github.com/mathjax/mathjax).
+which means that you can `review it and inspect its
+integrity <https://github.com/mathjax/mathjax>`__.
 
 Does MathJax support Presentation and/or Content MathML?
 --------------------------------------------------------
@@ -111,9 +112,9 @@ Does MathJax support Presentation and/or Content MathML?
 MathML comes in two types: Presentation MathML, which describes what an
 equation looks like, and Content MathML, which describes what an
 equation means. By default, MathJax works with Presentation MathML
-and offers an extension for Content MathML, see [the
+and offers an extension for Content MathML, see `the
 documentation on MathML
-support](http://docs.mathjax.org/en/latest/mathml.html#content-mathml).
+support <http://docs.mathjax.org/en/latest/mathml.html#content-mathml>`__.
 You can also convert your Content MathML expressions to
 Presentation MathML yourself. A good way to do this conversion is with
 an XSL transformation tool, see for example the `web-xslt
@@ -231,8 +232,8 @@ will no longer look for them. You can then delete the
 ``[MathJax]/fonts/HTML-CSS/TeX/png/`` directory, which takes up the most
 space in the fonts folder.  Do ***not*** delete the other directories,
 as they are needed to handle @font-face for other browsers. For more
-information, see [this
-guide](https://github.com/mathjax/MathJax-docs/wiki/Guide%3A-reducing-size-of-a-mathjax-installation).
+information, see `this
+guide <https://github.com/mathjax/MathJax-docs/wiki/Guide%3A-reducing-size-of-a-mathjax-installation>`__.
 
 Why is MathJax using image fonts instead of web fonts?
 ------------------------------------------------------
@@ -354,5 +355,5 @@ with ``\newcommand{cmd}{args}{def}``. An example is
 ``\newcommand{\water}{H_{2}O}``, which will output the chemical formula
 for water when you use the ``\water`` command. ``\renewcommand`` works
 as well. You can also store macros in the MathJax configuration. For
-more information, see [the
-documentation](http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros).
+more information, see `the
+documentation <http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros>`__.
