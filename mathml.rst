@@ -27,22 +27,88 @@ details and examples.
 
 Of course it is also possible to use all three components together.
 It may seem strange to go through an internal format just to return to
-MathML in the end, but this is actually what makes it possible to view
+MathML in the end, but there are two important advantages to this. 
+First, on legacy (pre-HTML5) browsers, this is the easiest way to use
 MathML within an HTML page (rather than an XHTML page), without
 the complications of handling special MIME-types for the document, or
 any of the other setup issues that make using native MathML
-difficult.  MathJax handles the setup and properly marks the
-mathematics so that the browser will render it as MathML.  In
-addition, MathJax provides its contextual menu for the MathML, which
+difficult. MathJax handles the setup and properly marks the
+mathematics so that the browser will render it as MathML.  
+Second, MathJax will tweak the native MathML output depending 
+on the browser. This compensates for missing features and improves
+rendering quality in native browser implementations. 
+In addition, MathJax provides its contextual menu for the MathML, which
 lets the user zoom the mathematics for easier reading, get and copy
 the source markup, and so on, so there is added value to using MathJax
 even with a pure MathML workflow.
 
 
-MathML in HTML pages
-====================
 
-For MathML that is handled via the preprocessor, you should not use
+Supported MathML commands
+=========================
+
+MathJax supports the `MathML3.0 <http://www.w3.org/TR/MathML3/>`_
+content and presentation mathematics tags, with some limitations.  The MathML
+support is still under active development, so some tags are not yet
+implemented, and some features are not fully developed, but are
+coming.
+
+The deficiencies include:
+
+- No support for the elementary math tags: ``mstack``, ``mlongdiv``,
+  ``msgroup``, ``msrow``, ``mscarries``, and ``mscarry``.
+
+- No support for alignment groups in tables.
+
+- No support for right-to-left rendering.
+
+- Not all attributes are supported for tables.  E.g., ``columnspan``
+  and ``rowspan`` are not implemented yet.
+
+See the `results of the MathML3.0 test suite
+<http://www.w3.org/Math/testsuite/results/tests.html>`_ for details.
+
+Content MathML
+~~~~~~~~~~~~~~
+
+Since version 2.2, MathJax provides support for Content MathML.  This
+is based on an XSL style sheet developed by David Carlisle to convert Content
+MathML to Presentation MathML, which is then processed by MathJax.
+
+To use Content MathML in your documents, simply include
+``"content-mathml.js"`` in the ``extensions`` array of your MathML
+configuration block.  For example
+
+.. code-block:: html
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      MathML: {
+        extensions: ["content-mathml.js"]
+      }
+    });
+    </script>
+
+Note that this script tag must come *before* the script that loads
+``MathJax.js`` itself.
+
+
+Semantics and Annotations
+=========================
+
+Starting with MathJax version 2.3, some popular annotation formats like TeX,
+Maple, or Content MathML that are often included in the MathML source via the
+``semantics`` element are accessible from the ``"Show Math As"`` menu.
+See the `MathML Annotation Framework 
+<http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_ and
+the :ref:`configure-MathMenu` documentation for details.
+
+
+MathML in legacy browsers
+=========================
+
+For legacy (pre-HTML5) browsers, any MathML that is handled via the 
+preprocessor, you should not use 
 named MathML entities, but rather use numeric entities like
 ``&#x221A;`` or unicode characters embedded in the page itself.  The
 reason is that entities are replaced by the browser before MathJax
@@ -74,64 +140,3 @@ that should be avoided.  Modern browsers that support HTML5 should be
 able to handle self-closing tags, but older browsers have problems
 with them, so if you want your mathematics to be visible to the widest
 audience, do not use the self-closing form in HTML documents.
-
-
-Content MathML
-==============
-
-New in version 2.2 is experimental support for Content MathML.  This
-uses an XSL style sheet developed by David Carlisle to convert Content
-MathML to Presentation MathML, which is then processed by MathJax.
-
-To use Content MathML in your documents, simply include
-``"content-mathml.js"`` in the ``extensions`` array of your MathML
-configuration block.  For example
-
-.. code-block:: html
-
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      MathML: {
-        extensions: ["content-mathml.js"]
-      }
-    });
-    </script>
-
-Note that this script tag must come *before* the script that loads
-``MathJax.js`` itself.
-
-
-Supported MathML commands
-=========================
-
-MathJax supports the `MathML3.0 <http://www.w3.org/TR/MathML3/>`_
-presentation mathematics tags, with some limitations.  The MathML
-support is still under active development, so some tags are not yet
-implemented, and some features are not fully developed, but are
-coming.
-
-The deficiencies include:
-
-- No support for the elementary math tags: ``mstack``, ``mlongdiv``,
-  ``msgroup``, ``msrow``, ``mscarries``, and ``mscarry``.
-
-- No support for alignment groups in tables.
-
-- No support for right-to-left rendering.
-
-- Not all attributes are supported for tables.  E.g., ``columnspan``
-  and ``rowspan`` are not implemented yet.
-
-See the `results of the MathML3.0 test suite
-<http://www.w3.org/Math/testsuite/results/tests.html>`_ for details.
-
-
-Semantics and Annotations
-=========================
-
-Starting with MathJax version 2.3, some popular annotation formats like TeX,
-Maple, or Content MathML that are often included in the MathML source via the
-``semantics`` element are accessible from the ``"Show Math As"`` menu.
-See the `MathML Annotation Framework 
-<http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_ and
-the :ref:`configure-MathMenu` documentation for details.
