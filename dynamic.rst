@@ -74,7 +74,7 @@ major browsers:
 - Firefox: `GreaseMonkey <http://addons.mozilla.org/firefox/addon/748>`_
 - Safari: `GreaseKit <http://8-p.info/greasekit/>`_ (also requires `SIMBL <http://www.culater.net/software/SIMBL/SIMBL.php>`_)
 - Opera: Built-in (`instructions <http://www.ghacks.net/2008/08/10/greasemonkey-in-opera/>`_)
-- Internet Explorer: `IEPro7 <http://www.ie7pro.com/>`_
+- Internet Explorer: `IEPro7 <http://ie7pro.blogspot.co.uk/>`_
 - Chrome: Built-in for recent releases
 
 Note, however, that most browsers don't allow you to insert a script

@@ -23,8 +23,8 @@ will be about 14.4KB. The configuration file can vary greatly in size
 depending on what is included; minimal configurations can be as small as
 3.7KB, reasonable configurations vary between 25KB and 40KB -- bringing
 us to a total of 18KB to 55KB, i.e., roughly a small to medium sized
-image. To learn more about configuring MathJax, see `our
-documentation <http://docs.mathjax.org/en/latest/configuration.html>`__.
+image. To learn more about configuring MathJax, see :doc:`our
+documentation </configuration>`.
 
 Mathematics is not rendering properly in IE. How do I fix that?
 ---------------------------------------------------------------
@@ -77,16 +77,16 @@ displayed with more space and slightly larger fonts. The standard
 delimiters for inline equations are ``\\(...\\)``, while for paragraph
 equations they are ``$$...$$`` or ``\\[...\\]``, but they can be
 customized. For how to configure MathJax to scale all mathematics
-relative to the surrounding text, check our documentation for `the HTML
-output <http://docs.mathjax.org/en/latest/options/HTML-CSS.html>`__ and
-`the SVG output <http://docs.mathjax.org/en/latest/options/SVG.html>`__.
+relative to the surrounding text, check our documentation for :doc:`the HTML
+output </options/HTML-CSS>` and
+:doc:`the SVG output </options/SVG>`.
 
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
 
 The MathJax CDN can be accessed via ``https``. We advise using the protocol 
 agnostic ``//cdn.mathjax.org/mathjax/latest/MathJax.js``. For more 
-information, see `our documentation <http://docs.mathjax.org/en/latest/start.html#secure-access-to-the-cdn>`__.
+information, see :ref:`our documentation <secure-cdn-access>`.
 
 My mathematics is private. Is it safe to use MathJax?
 -----------------------------------------------------
@@ -112,9 +112,9 @@ Does MathJax support Presentation and/or Content MathML?
 MathML comes in two types: Presentation MathML, which describes what an
 equation looks like, and Content MathML, which describes what an
 equation means. By default, MathJax works with Presentation MathML
-and offers an extension for Content MathML, see `the
+and offers an extension for Content MathML, see :ref:`the
 documentation on MathML
-support <http://docs.mathjax.org/en/latest/mathml.html#content-mathml>`__.
+support <content-mathml>`.
 You can also convert your Content MathML expressions to
 Presentation MathML yourself. A good way to do this conversion is with
 an XSL transformation tool, see for example the `web-xslt
@@ -293,9 +293,9 @@ MathJax. Here are several reasons web fonts might not be working for you:
    fonts. If you are using IIS, you can enable the delivery of these
    file types by setting a custom mimetype configuration. See, for
    example, `Mads Kristensen's
-   blog <http://madskristensen.net/post/Prepare-webconfig-for-HTML5-and-CSS3.aspx>`__
+   blog <http://madskristensen.net/post/Prepare-webconfig-for-HTML5-and-CSS3>`__
    and `Paul Irish's
-   blog <http://paulirish.com/2010/font-face-gotchas/>`__ for
+   blog <http://www.paulirish.com/2010/font-face-gotchas/>`__ for
    instructions on how to do this (as well as more background
    information).
 -  **Cross-domain access on shared installations:** When you are using a
@@ -303,21 +303,21 @@ MathJax. Here are several reasons web fonts might not be working for you:
    than the webpages using it, Firefox’s and IE9’s same-origin security
    policy for cross-domain scripting may prevent MathJax from loading
    web fonts. This specific problem, and a possible resolution, are
-   described in more detail in these `installation
-   instructions <http://www.mathjax.org/docs/1.1/installation.html#notes-about-shared-installations>`__.
+   described in more detail in these :ref:`installation
+   instructions <cross-domain-linking>`.
 -  **Local pages on IE9:** IE9’s same-origin security policy, which also
    affects shared installations (see above), has implications for the
    viewing of local files (with a ``file://[filename]`` URL). See these
-   `installation
-   instructions <http://www.mathjax.org/docs/1.1/installation.html#ie9-and-remote-fonts>`__
+   :ref:`installation
+   instructions <ie9-local-fonts-solution>`
    for details and a suggested resolution.
 
 Why doesn't the TeX macro ``\something`` work?
 ----------------------------------------------
 
 It really depends on what ``\something`` is. We have a full list of the
-`supported TeX
-commands </resources/docs/?tex.html#supported-latex-commands>`__. If the
+:ref:`supported TeX
+commands <tex-commands>`. If the
 command you want to use is not in this list, you may be able to define a
 TeX macro for it, or if you want to get really advanced, you can define
 custom JavaScript that implements it (see the files in the extensions
@@ -345,7 +345,7 @@ is, in the document ``<head>`` include
 
 This will force all IE versions to use their latest engine which is the 
 optimal setting for MathJax. For more information, see the `Microsoft 
-documentation on compatibility modes <http://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible>`__.
+documentation on compatibility modes <https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible>`__.
 
 Does MathJax support TeX macros?
 --------------------------------
@@ -355,5 +355,5 @@ with ``\newcommand{cmd}{args}{def}``. An example is
 ``\newcommand{\water}{H_{2}O}``, which will output the chemical formula
 for water when you use the ``\water`` command. ``\renewcommand`` works
 as well. You can also store macros in the MathJax configuration. For
-more information, see `the
-documentation <http://docs.mathjax.org/en/latest/tex.html#defining-tex-macros>`__.
+more information, see :ref:`the
+documentation <tex-macros>`.

@@ -12,7 +12,7 @@ Articles
 ========
 
 -  `MathML forges
-   on <http://programming.oreilly.com/2013/11/mathml-forges-on.html>`__
+   on <http://radar.oreilly.com/2013/11/mathml-forges-on.html>`__
    by Peter Krautzberger, *MathJax*, *2014*
 -  `Accessible Pages with
    MathJax <http://www.mathjax.org/resources/articles-and-presentations/accessible-pages-with-mathjax/>`__
