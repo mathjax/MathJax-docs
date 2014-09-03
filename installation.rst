@@ -24,7 +24,7 @@ Obtaining MathJax via an archive
 ================================
 
 Release versions of MathJax are available in archive files from the
-`MathJax GitHub page <http://github.com/mathjax/mathjax/>`_ (via the
+`MathJax GitHub page <https://github.com/mathjax/mathjax/>`_ (via the
 "zip" button, or the "downloads" tab), where you can download the archive
 that you need.
 
@@ -53,7 +53,7 @@ let you refer to the main MathJax file as ``/MathJax/MathJax.js`` from
 within any page on your server.
 
 From the `MathJax GitHub download link
-<http://github.com/mathjax/mathjax/downloads>`_, you can also select
+<https://github.com/mathjax/mathjax/downloads>`_, you can also select
 the ``Download .tar.gz`` or ``Download .zip`` buttons to get a copy of
 the current development version of MathJax that contains all the
 latest changes and bug-fixes.
@@ -75,7 +75,7 @@ Obtaining MathJax via Git
 
 The easiest way to get MathJax and keep it up to date is to use the `Git
 <http://git-scm.com/>`_ version control system to access our `GitHub repository
-<http://github.com/mathjax/MathJax>`_. Use the command
+<https://github.com/mathjax/MathJax>`_. Use the command
 
 .. code-block:: sh
 
@@ -212,7 +212,7 @@ then use
 
 where ``[name]`` is replaced by the name of the branch you want to
 check out; e.g., ``2.1-latest``.  The branch names can be found on the
-`GitHub MathJax page <http://github.com/mathjax/MathJax/>`_ under the
+`GitHub MathJax page <https://github.com/mathjax/MathJax/>`_ under the
 `branches <https://github.com/mathjax/MathJax/branches>`_ tab.
 
 
@@ -344,6 +344,7 @@ the fonts from ``MathJax/fonts/HTML-CSS/TeX/otf`` into your systems fonts
 directory and restart your browser (see the `MathJax fonts help page 
 <http://www.mathjax.org/help/fonts>`_ for details).
 
+.. _ie9-local-fonts-solution:
 
 IE9 and remote fonts
 ====================

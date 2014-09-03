@@ -74,6 +74,8 @@ sure to read that before linking to the MathJax CDN server.
 To see how to enter mathematics in your web pages, see `Putting
 mathematics in a web page`_ below.
 
+.. _secure-cdn-access:
+
 Secure Access to the CDN
 ------------------------
 

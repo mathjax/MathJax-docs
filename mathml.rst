@@ -75,6 +75,7 @@ able to handle self-closing tags, but older browsers have problems
 with them, so if you want your mathematics to be visible to the widest
 audience, do not use the self-closing form in HTML documents.
 
+.. _content-mathml:
 
 Content MathML
 ==============
