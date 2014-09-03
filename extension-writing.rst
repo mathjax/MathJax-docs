@@ -94,11 +94,11 @@ typeset the page. First we create the following Javascript file:
        MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
 
 The first line is just using the convenient
-:doc:`MathJax.HTML <api/html>` to
+:ref:`MathJax.HTML <api-html>` to
 create a ``<div style="color: red;">Hello World!</div>`` element. The
 second line will tell to MathJax that ``measureTime.js`` has been
-successfully loaded. Again, we refer to :doc:`Synchronizing your code with
-MathJax <synchronize>` for
+successfully loaded. Again, we refer to :ref:`Synchronizing your code with
+MathJax <synchronization>` for
 details. Now modify test0.html and insert a ``text/x-mathjax-config``
 script just before the one loading MathJax. Use that to add
 ``measureTime.js`` to the list of extensions to load:
@@ -120,8 +120,8 @@ render the same as ``test0.html``, except that a red "Hello World!"
 message is appended at the end of the page!
 
 Our goal is now to replace that message by something like "Typeset by
-MathJax in 2 second(s)". A quick look at the :doc:`MathJax Startup
-Sequence <startup>` shows that the
+MathJax in 2 second(s)". A quick look at the :ref:`MathJax Startup
+Sequence <startup-sequence>` shows that the
 extensions are loaded before the typesetting pass. Also, the typesetting
 starts with a "Begin Typeset" signal and ends by a "End Typeset" signal.
 The startup sequence ends by a final "End" signal. In order to add
@@ -311,8 +311,8 @@ More Advanced Extensions
 ------------------------
 
 In general, writing more sophisticated extensions require a good
-understanding of the MathJax codebase. Although the :doc:`public MathJax
-API <api/index>` is available in the
+understanding of the MathJax codebase. Although the :ref:`public MathJax
+API <mathjax-api>` is available in the
 documentation, this is not always the case of the internal code. The
 rule of thumb is thus to read the relevant ``jax.js`` files in
 ``unpacked/jax`` (if necessary the Javascript file they can load too)

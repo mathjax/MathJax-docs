@@ -23,8 +23,8 @@ will be about 14.4KB. The configuration file can vary greatly in size
 depending on what is included; minimal configurations can be as small as
 3.7KB, reasonable configurations vary between 25KB and 40KB -- bringing
 us to a total of 18KB to 55KB, i.e., roughly a small to medium sized
-image. To learn more about configuring MathJax, see :doc:`our
-documentation </configuration>`.
+image. To learn more about configuring MathJax, see :ref:`our
+documentation <loading>`.
 
 Mathematics is not rendering properly in IE. How do I fix that?
 ---------------------------------------------------------------
@@ -77,9 +77,9 @@ displayed with more space and slightly larger fonts. The standard
 delimiters for inline equations are ``\\(...\\)``, while for paragraph
 equations they are ``$$...$$`` or ``\\[...\\]``, but they can be
 customized. For how to configure MathJax to scale all mathematics
-relative to the surrounding text, check our documentation for :doc:`the HTML
-output </options/HTML-CSS>` and
-:doc:`the SVG output </options/SVG>`.
+relative to the surrounding text, check our documentation for :ref:`the HTML
+output <configure-HTML-CSS>` and
+:ref:`the SVG output <configure-SVG>`.
 
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
