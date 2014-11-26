@@ -250,7 +250,7 @@ behavior of MathJax.  They are given with their default values.
         If these are included, then you can take the output from 
         "Show Math as ⇒ MathML" and put it into a page that uses 
         MathJax's MathML input jax and allow users to access 
-        the original inpu via "Show Math as ⇒ Annotation".
+        the original input via "Show Math as ⇒ Annotation".
 
     There are also settings for ``format``, ``renderer``, ``font``,
     ``mpContext``, and ``mpMouse``, but these are maintained by
