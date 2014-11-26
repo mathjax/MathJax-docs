@@ -235,13 +235,22 @@ behavior of MathJax.  They are given with their default values.
 
     .. describe:: texHints: true
 
-        This controls whether the "Show Source" menu item includes
+        This controls whether the "Show Math as" menu item includes
         special class names that help MathJax to typeset the
         mathematics that was produced by the TeX input jax.  If these
-        are included, then you can take the output from "Show Source"
+        are included, then you can take the output from "Show Math as"
         and put it into a page that uses MathJax's MathML input jax
         and expect to get the same results as the original TeX.
         (Without this, there may be some spacing differences.)
+
+    .. describe:: semantics: false
+
+        This controls whether the "Show Math as ⇒ MathML Code" menu 
+        item includes the TeX or AsciiMath input as annotations.  
+        If these are included, then you can take the output from 
+        "Show Math as ⇒ MathML" and put it into a page that uses 
+        MathJax's MathML input jax and allow users to access 
+        the original TeX via "Show Math as ⇒ Annotation".
 
     There are also settings for ``format``, ``renderer``, ``font``,
     ``mpContext``, and ``mpMouse``, but these are maintained by
