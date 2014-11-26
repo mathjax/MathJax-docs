@@ -21,6 +21,8 @@ and other content-management systems.
 -  `MathJax Extension`_ for the webbased SVG editor `SVG edit`_.
 -  `Instantbird Extension`_ adds MathJax to the Mozilla-based chat
    client.
+-  `MathJax plugin for
+   Trac <https://trac-hacks.orgwiki/TracMathJaxPlugin>`__
 
 .. _WikidPad: http://trac.wikidpad2.webfactional.com/wiki/MathJaxPlugin
 .. _MathJax-LaTeX: http://wordpress.org/extend/plugins/mathjax-latex/
@@ -43,6 +45,44 @@ and other content-management systems.
 If the program you are using is not one of these, you might be able to 
 use MathJax by modifying the theme or template for your wiki or blog,
 as explained below.
+
+
+
+Unofficial Tutorials
+====================
+
+-  `One Mathematical Cat's 
+   tutorial <http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`__
+-  `Using MathJax on almost all blogging platforms
+   <http://checkmyworking.com/2012/01/how-to-get-beautifully-typeset-maths-on-your-blog/>`__
+   by Christian Perfect.
+-  `Using Jekyll to generate fallback images in
+   RSS <http://noamross.net/blog/2012/4/4/math-in-rss-feeds.html>`__ and
+   use MathJax in html.
+-  Using `MathJax on
+   Posterous <http://korchkidu.posterous.com/test-mathjax>`__.
+-  `Using MathJax in
+   Blogger <http://holdenweb.blogspot.com/2011/11/blogging-mathematics.html>`__
+-  `Using MathJax with Google Web Toolkit
+   widgets <http://cs.jsu.edu/wordpress/?p=55>`__
+-  `Using MathJax with
+   Markdown <http://www.leancrew.com/all-this/2010/09/php-markdown-extra-math-mathjax-and-wordpress>`__.
+   See also `notepag.es <http://notepag.es/introduction#>`__ for writing
+   Markdown+MathJax.
+-  `Posting to WordPress from LaTeX, using
+   MathJax <http://www.russet.org.uk/blog/2010/08/latex-to-wordpress/>`__
+-  `Converting Javadocs from LaTeXlet to
+   MathJax <http://www.opengamma.com/blog/2012/04/12/converting-javadocs-from-latexlet-to-mathjax>`__
+-  `Using iPython Notebooks with
+   Mathjax+Markdown <http://williewong.wordpress.com/2012/07/24/using-ipython-notebook-for-manual-computations/>`__
+-  `deck.js with MathJax
+   <http://checkmyworking.com/2012/04/slides-about-the-princess-on-a-castle-puzzle/>`__
+   (slide show / presentation software)
+-  `Example of MathJax in Google’s
+   html5slides <http://naoyat.github.io/slides/memo/html5slides%2BMathJax.html#1>`__,
+   source `on
+   github <https://github.com/naoyat/slides/tree/gh-pages/memo>`__
+
 
 
 Using MathJax in a Theme File

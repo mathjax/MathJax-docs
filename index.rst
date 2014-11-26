@@ -16,7 +16,6 @@ Basic Usage
     Installing and Testing MathJax <installation>
     Loading and Configuring MathJax <configuration>
     Common MathJax Configurations <config-files>
-    Using MathJax in Web Platforms <platforms/index>
 
 .. toctree::
     :maxdepth: 1
@@ -123,6 +122,8 @@ Miscellanea
     EPUB3 Reading Systems <misc/epub>
     MathJax Badges and Logo <misc/badges>    
     Articles and Presentations <misc/articles>
+    Using MathJax in Web Platforms <misc/platforms>
+    MathJax in Use <misc/mathjax-in-use>
 
 Upgrading MathJax
 =================
