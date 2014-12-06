@@ -38,7 +38,7 @@ The extension can be used by developers to access the MathML representation of a
         //    call this routine again after waiting for the
         //    the asynchronous action to finish.
         //
-        return MathJax.Callback.After([toMathML,jax,callback],err.restart);
+        return MathJax.Callback.After([getMathML,jax,callback],err.restart);
       }
       //
       //  Pass the MathML to the user's callback
