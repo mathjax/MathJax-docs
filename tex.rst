@@ -685,7 +685,7 @@ your mathematics.  It defines the following non-standard macro:
     (e.g., ``mathcolor="red"``, ``mathbackground="yellow"``), and
     ``math`` is the mathematics to be enclosed. See the `MathML 3 
     specification <http://www.w3.org/TR/MathML/chapter3.html#presm.menclose>`_
-    for more details on ``<menclose>``
+    for more details on ``<menclose>``.
 
 For example
 
