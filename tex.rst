@@ -683,7 +683,9 @@ your mathematics.  It defines the following non-standard macro:
     ``updiagonalstrike``, ``longdiv``, etc.), ``attributes`` are
     MathML attribute values allowed on the ``<menclose>`` element
     (e.g., ``mathcolor="red"``, ``mathbackground="yellow"``), and
-    ``math`` is the mathematics to be enclosed.
+    ``math`` is the mathematics to be enclosed. See the `MathML 3 
+    specification <http://www.w3.org/TR/MathML/chapter3.html#presm.menclose>`_
+    for more details on m``<menclose>``
 
 For example
 
