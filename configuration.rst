@@ -358,6 +358,7 @@ For instance,
       });
     </script>
     <script type="text/javascript" src="path-to-MathJax/MathJax.js">
+    </script>
 
 This example includes the `tex2jax` preprocessor and configures it to use
 both the standard :term:`TeX` and :term:`LaTeX` math delimiters.  It uses
