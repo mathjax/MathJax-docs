@@ -67,9 +67,14 @@ MathJax Configuration Options
     The TeX input processor options <options/TeX>
     The MathML input processor options <options/MathML>
     The AsciiMath input processor options <options/AsciiMath>
+
+.. toctree::
+    :maxdepth: 1
+
     The HTML-CSS output processor options <options/HTML-CSS>
     The NativeMML output processor options <options/NativeMML>
     The SVG output processor options <options/SVG>
+    The CommonHTML output processor options <options/CommonHTML>
     The MMLorHTML configuration options <options/MMLorHTML>
     
 .. toctree::
@@ -81,6 +86,7 @@ MathJax Configuration Options
     The FontWarnings options <options/FontWarnings>
     The Safe options <options/Safe>
     The MatchWebFonts options <options/MatchWebFonts>
+    The CHTML-preview options <options/CHTML-preview>
     
 .. toctree::
     :maxdepth: 1
@@ -131,6 +137,7 @@ Upgrading MathJax
 .. toctree::
     :maxdepth: 1
 
+    What's New in MathJax v2.5 <whats-new-2.5>
     What's New in MathJax v2.4 <whats-new-2.4>
     What's New in MathJax v2.3 <whats-new-2.3>
     What's New in MathJax v2.2 <whats-new-2.2>
