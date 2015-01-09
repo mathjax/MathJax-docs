@@ -15,7 +15,7 @@ Basic Usage
     Getting Started with MathJax <start>
     Installing and Testing MathJax <installation>
     Loading and Configuring MathJax <configuration>
-    Common MathJax Configurations <config-files>
+    Combined MathJax Configurations <config-files>
 
 .. toctree::
     :maxdepth: 1
