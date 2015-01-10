@@ -80,13 +80,19 @@ MathJax Configuration Options
 .. toctree::
     :maxdepth: 1
 
+    The CHTML-preview options <options/CHTML-preview>
+    The Content MathML options <options/Content-MathML>
+    The experimental MML3 extension <options/MML3>
+
+.. toctree::
+    :maxdepth: 1
+
     The MathMenu options <options/MathMenu>
     The MathZoom options <options/MathZoom>
     The MathEvents options <options/MathEvents>
     The FontWarnings options <options/FontWarnings>
     The Safe options <options/Safe>
     The MatchWebFonts options <options/MatchWebFonts>
-    The CHTML-preview options <options/CHTML-preview>
     
 .. toctree::
     :maxdepth: 1
