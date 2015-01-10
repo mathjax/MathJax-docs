@@ -16,7 +16,7 @@ call. For example,
       }
     });
 
-The extension has no configuration options. 
-
 The extension provides experimental support for the so-called elementary math 
 elements as well as experimental support for bidirectional math.
+
+The extension has no configuration options. 

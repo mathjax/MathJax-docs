@@ -80,6 +80,7 @@ MathJax Configuration Options
 .. toctree::
     :maxdepth: 1
 
+    The HTML-CSS floats extension <options/floats>
     The CHTML-preview options <options/CHTML-preview>
     The Content MathML options <options/Content-MathML>
     The experimental MML3 extension <options/MML3>
