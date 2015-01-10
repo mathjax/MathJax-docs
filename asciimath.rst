@@ -12,15 +12,13 @@ later processing by MathJax.  The AsciiMath input processor is what
 converts the AsciiMath notation into MathJax's internal format, where
 one of MathJax's output processors then displays it in the web page.
 
-The AsciiMath input jax actually includes a copy of Peter Jipsen's
-``ASCIIMathML.js`` file (see the `AsciiMath home page
-<http://www1.chapman.edu/~jipsen/mathml/asciimath.html>`_ for
-details), and is included by permission of the author.  This means
-that the results of MathJax's AsciiMath processing should be the same
-as using the actual ``ASCIIMathML.js`` package (at least as far as the
+The AsciiMath input jax actually includes a copy of ``ASCIIMathML.js`` itselt 
+(see the `AsciiMath home page <http://asciimath.org>`_ for details).  
+This means that the results of MathJax's AsciiMath processing should be the 
+same as using the actual ``ASCIIMathML.js`` package (at least as far as the
 MathML that it generates is concerned).  Thanks go to David Lippman
 for writing the initial version of the AsciiMath preprocessor and
-input jax.
+input jax and for the ongoing improvements from the AsciiMath community.
 
 The `asciimath2jax` preprocessor can be configured to look for whatever
 markers you want to use for your math delimiters.  See the

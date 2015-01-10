@@ -4,7 +4,7 @@
 MathJax MathML Support
 **********************
 
-The support for :term:`MathML` in MathJax consists of three parts:  the
+The support for :term:`MathML` in MathJax comes in three parts:  the
 `mml2jax` preprocessor, the `MathML` input processor, and the `NativeMML`
 output processor.  The first of these looks for ``<math>`` tags within
 your document and marks them for later processing by MathJax.  The
@@ -22,16 +22,18 @@ MathML available in browsers that don't have native MathML support.
 It is also possible to have MathJax select the output processor for
 you so that MathML is used in those browsers that support it well
 enough, while HTML-CSS is used for those that don't.  See the
-:ref:`common configurations <common-configurations>` section for
+:ref:`combined configurations <common-configurations>` section for
 details and examples.
 
 Of course it is also possible to use all three components together.
 It may seem strange to go through an internal format just to return to
 MathML in the end, but this is actually what makes it possible to view
-MathML within an HTML4 page (rather than an XHTML page), without
-the complications of handling special MIME-types for the document, or
-any of the other setup issues that make using native MathML
-difficult.  MathJax handles the setup and properly marks the
+MathML within an HTML4 page (rather than an XHTML page), in particular in older
+browsers, without the complications of handling special MIME-types for the 
+document, or any of the other setup issues that make using native MathML
+difficult.  
+
+MathJax handles the setup and properly marks the
 mathematics so that the browser will render it as MathML.  In
 addition, MathJax provides its contextual menu for the MathML, which
 lets the user zoom the mathematics for easier reading, get and copy
@@ -54,7 +56,7 @@ browsers, so you should avoid the named entities whenever possible.
 If you must use named entities, you may need to declare them in the
 `DOCTYPE` declaration by hand.
 
-When you use MathML in an HTML document rather than an XHTML one
+When you use MathML in an HTML4 document rather than an XHTML one
 (MathJax will work with both), you should not use the "self-closing"
 form for tags with no content, but should use separate open and close
 tags.  That is, use
