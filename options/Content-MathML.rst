@@ -13,7 +13,7 @@ set any of these options, include a ``Content-MathML`` section in your
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      content-mathml: {
+      "content-mathml": {
         collapsePlusMinus: true,
         cistyles: {
           vector: 'bold-italic',
