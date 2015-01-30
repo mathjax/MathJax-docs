@@ -54,6 +54,8 @@ HTML-CSS/SVG/nativeMML display
 *   `#931 <https://github.com/mathjax/MathJax/issues/931>`__ Fix baseline alignment in Safari 6.2/7.1/8.0.
 *   `#937 <https://github.com/mathjax/MathJax/issues/937>`__ Fix incorrect width in MathJax font data affecting underlining.
 *   `#966 <https://github.com/mathjax/MathJax/issues/966>`__ Fix SVG output overlapping when using prefix notation.
+*   `#993 <https://github.com/mathjax/MathJax/issues/993>`__ Add workaround for Native MathML in Gecko to re-enable ``mlabeledtr`` etc.
+*   `#1002 <https://github.com/mathjax/MathJax/issues/1002>`__ Enable SVG output to inherit surrounding text color.
 
 TeX emulation
 -------------
@@ -75,6 +77,7 @@ TeX emulation
 *   `#375 <https://github.com/mathjax/MathJax/issues/475>`__ Add ``\{``, ``\}``, and ``\\`` to macros working within ``\text{}`` etc.
 *   `#969 <https://github.com/mathjax/MathJax/issues/969>`__ Fix incorrect spacing with some ``\frac`` constructs.
 *   `#982 <https://github.com/mathjax/MathJax/issues/982>`__ Fix incorrect spacing in ``aligned`` environments.
+*   `#1013 <https://github.com/mathjax/MathJax/issues/1013>`__ Fix processing error caused by ``'`` in commutative diagrams using ``AMScd.js``.
 
 Asciimath
 ---------
@@ -117,3 +120,4 @@ Misc.
 -----
 
 *   `#872 <https://github.com/mathjax/MathJax/issues/872>`__ Add small delay between input and output phase to prevent performance degredation.
+*   `#1016 <https://github.com/mathjax/MathJax/issues/1016>`__ Fix bug related to ``<script>`` elements with namespace prefix, e.g., in xHTML.
