@@ -279,6 +279,14 @@ behavior of MathJax.  They are given with their default values.
         on :ref:`CSS style objects <css-style-objects>` for details on
         how these are specified in JavaScript.
 
+.. describe:: ignoreMMLattributes: { ... }
+
+    This block contains ``attributeName: boolean`` pairs that control 
+    which attributes should **not** be preserved from the 
+    original MathML. E.g., ``id:true`` will be ignored, while ``id:false`` will
+    preserve all ids even if other criteria would normally prevent some ids
+    from being copied to the output; use false carefully.
+
 .. describe:: v1.0-compatible: true
 
     This controls whether MathJax issues the warning about not having an 

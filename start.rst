@@ -46,7 +46,7 @@ To jump start, you accomplish the first step by putting
 .. code-block:: html
 
     <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
@@ -58,11 +58,13 @@ that well enough, and otherwise use HTML-with-CSS to display the
 mathematics.  
 
 **Note** The ``TeX-AMS-MML_HTMLorMML`` configuration is one of the most general 
-(and largest) configuration files, and is listed here because it will suffice for 
-most people's needs and quickly get you started using MathJax. 
-Other :ref:`combined configuration files <config-files>` are available, however, 
-and you can also provide additional configuration parameters to tailor one of the 
-combined configurations to your needs.  
+(and thus largest) configuration files. We list it here because it will 
+quickly get you started using MathJax. It is probably not the most efficient
+configuration for your purposes and other 
+:ref:`combined configuration files <config-files>` are available. You can 
+also provide additional configuration parameters to tailor one of the 
+combined configurations to your needs or use our development tools to generate
+your own combined configuration file.
 
 More details about the configuration process can be found in the 
 :ref:`Loading and Configuring MathJax <loading>` instructions.

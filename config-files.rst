@@ -1,12 +1,12 @@
 .. _common-configurations:
 
-*********************
-Common Configurations
-*********************
+***********************
+Combined Configurations
+***********************
 
-MathJax comes with a number of pre-defined configuration files in the
-``MathJax/config`` directory.  The ``default.js`` file contains nearly all
-the possible configuration options together with comments explaining them, 
+MathJax comes with a number of pre-defined and pre-compiled configuration files
+in the ``MathJax/config`` directory.  The ``default.js`` file contains nearly 
+all the possible configuration options together with comments explaining them, 
 so you can use that file to customize MathJax to your needs.  Simply load 
 it via
 
@@ -60,8 +60,8 @@ following configuration:
 
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
-      jax: ["input/TeX","input/MathML","input/AsciiMath","output/HTML-CSS","output/NativeMML"],
-      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js"],
+      jax: ["input/TeX","input/MathML","input/AsciiMath","output/HTML-CSS","output/NativeMML", "output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -70,8 +70,8 @@ following configuration:
 In addition, it loads the mml Element Jax, the TeX, MathML, and
 AsciiMath input jax main code (not just the definition files), as well
 as the `toMathML` extension, which is used by the Show Source option
-in the MathJax contextual menu.  The `-full` version also loads both the
-HTML-CSS and NativeMML output jax main code, plus the HTML-CSS
+in the MathJax contextual menu.  The `-full` version also loads the HTML-CSS, 
+CommonHTML, and NativeMML output jax main code, plus the HTML-CSS
 `mtable` extension, which is normally loaded on demand.
 
 See the :ref:`tex2jax configuration <configure-tex2jax>` section for
@@ -107,8 +107,8 @@ configuration:
 
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
-      jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+      jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -117,8 +117,8 @@ configuration:
 In addition, it loads the mml Element Jax, the TeX and MathML input
 jax main code (not just the definition files), as well as the
 `toMathML` extension, which is used by the Show Source option in the
-MathJax contextual menu.  The ``-full`` version also loads both the
-HTML-CSS and NativeMML output jax main code, plus the HTML-CSS
+MathJax contextual menu.  The ``-full`` version also loads the HTML-CSS, 
+CommonHTML, and NativeMML output jax main code, plus the HTML-CSS
 `mtable` extension, which is normally loaded on demand.
 
 See the :ref:`tex2jax configuration <configure-tex2jax>` section for
@@ -153,8 +153,8 @@ extensions.  It is equivalent to the following configuration:
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      jax: ["input/TeX","output/HTML-CSS"],
-      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js"],
+      jax: ["input/TeX","output/HTML-CSS", "output/CommonHTML"],
+      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -163,8 +163,8 @@ extensions.  It is equivalent to the following configuration:
 In addition, it loads the mml Element Jax and the TeX input jax main code
 (not just the definition file), as well as the `toMathML` extension, which
 is used by the Show Source option in the MathJax contextual menu.  The ``-full``
-version also loads the HTML-CSS output jax main code, plus the HTML-CSS
-`mtable` extension, which is normally loaded on demand.
+version also loads the HTML-CSS and CommonHTML output jax main code, plus the 
+HTML-CSS `mtable` extension, which is normally loaded on demand.
 
 See the :ref:`tex2jax configuration <configure-tex2jax>` section for
 other configuration options for the ``tex2jax`` preprocessor, and the
@@ -191,16 +191,16 @@ and MathZoom extensions.  It is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
-      jax: ["input/MathML","output/HTML-CSS","output/NativeMML"],
-      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js"]
+      jax: ["input/MathML","output/HTML-CSS","output/NativeMML", "output/CommonHTML"],
+      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"]
     });
 
 In addition, it loads the mml Element Jax and the MathML input jax main
 code (not just the definition file), as well as the `toMathML` extension,
 which is used by the Show Source option in the MathJax contextual menu.
-The ``-full`` version also loads both the HTML-CSS and NativeMML output jax main
-code files, plus the HTML-CSS `mtable` extension, which is normally loaded
-on demand.
+The ``-full`` version also loads the HTML-CSS, CommonHTML, and NativeMML output
+jax main code files, plus the HTML-CSS `mtable` extension, which is normally 
+loaded on demand.
 
 See the :ref:`mml2jax configuration <configure-mml2jax>` section for
 other configuration options for the ``mml2jax`` preprocessor, and the
@@ -230,15 +230,15 @@ equivalent to the following configuration:
 
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
-      jax: ["input/AsciiMath","output/HTML-CSS","output/NativeMML"],
-      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js"]
+      jax: ["input/AsciiMath","output/HTML-CSS","output/NativeMML", "output/CommonHTML"],
+      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"]
     });
 
 In addition, it loads the mml Element Jax and the TeX input jax main code
 (not just the definition file), as well as the `toMathML` extension, which
 is used by the Show Source option in the MathJax contextual menu.  The ``-full``
-version also loads the HTML-CSS output jax main code, plus the HTML-CSS
-`mtable` extension, which is normally loaded on demand.
+version also loads the HTML-CSS and CommonHTML output jax main code, plus the 
+HTML-CSS `mtable` extension, which is normally loaded on demand.
 
 See the :ref:`asciimath2jax configuration <configure-asciimath2jax>`
 section for other configuration options for the ``asciimath2jax``
@@ -265,8 +265,8 @@ is equivalent to the following configuration:
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      jax: ["input/TeX","input/MathML","output/SVG"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+      jax: ["input/TeX","input/MathML","output/SVG", "output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -275,8 +275,8 @@ is equivalent to the following configuration:
 In addition, it loads the mml Element Jax, the TeX and MathML input
 jax main code (not just the definition files), as well as the
 `toMathML` extension, which is used by the Show Source option in the
-MathJax contextual menu.  The ``-full`` version also loads both the
-SVG output jax main code, plus the SVG `mtable` extension, which
+MathJax contextual menu.  The ``-full`` version also loads the SVG and 
+CommonHTML output jax main code, plus the SVG `mtable` extension, which
 is normally loaded on demand.
 
 See the :ref:`tex2jax configuration <configure-tex2jax>` section for
@@ -311,8 +311,8 @@ The Accessible configuration is equivalent to the following:
 
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
-      jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js"],
+      jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/CommonHTML"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "CHTML-preview.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       },
@@ -333,7 +333,7 @@ mathematics by double-clicking on any equation.
 In addition, it loads the mml Element Jax, the TeX and MathML input jax
 main code (not just the definition files), as well as the `toMathML`
 extension, which is used by the Show Source option in the MathJax
-contextual menu.  The ``-full`` version also loads both the HTML-CSS and
-NativeMML output jax main code, plus the HTML-CSS `mtable` extension, which
+contextual menu.  The ``-full`` version also loads the HTML-CSS, CommomHTML,
+and NativeMML output jax main code, plus the HTML-CSS `mtable` extension, which
 is normally loaded on demand.
 

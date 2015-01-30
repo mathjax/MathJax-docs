@@ -227,6 +227,12 @@ on your system, just execute the following command:
 
     bower install MathJax
 
+Obtaining MathJax via Composer
+==============================
+
+Starting with version 2.5, it is possible to use `Composer
+<http://getcomposer.org//>`_ to install MathJax. See the `Composer 
+documentation <https://getcomposer.org/doc/00-intro.md>`_ to get started.
 
 Testing your installation
 =========================

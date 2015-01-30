@@ -15,7 +15,7 @@ Basic Usage
     Getting Started with MathJax <start>
     Installing and Testing MathJax <installation>
     Loading and Configuring MathJax <configuration>
-    Common MathJax Configurations <config-files>
+    Combined MathJax Configurations <config-files>
 
 .. toctree::
     :maxdepth: 1
@@ -67,11 +67,24 @@ MathJax Configuration Options
     The TeX input processor options <options/TeX>
     The MathML input processor options <options/MathML>
     The AsciiMath input processor options <options/AsciiMath>
+
+.. toctree::
+    :maxdepth: 1
+
     The HTML-CSS output processor options <options/HTML-CSS>
     The NativeMML output processor options <options/NativeMML>
     The SVG output processor options <options/SVG>
+    The CommonHTML output processor options <options/CommonHTML>
     The MMLorHTML configuration options <options/MMLorHTML>
     
+.. toctree::
+    :maxdepth: 1
+
+    The HTML-CSS floats extension <options/handle-floats>
+    The CHTML-preview options <options/CHTML-preview>
+    The Content MathML options <options/Content-MathML>
+    The experimental MML3 extension <options/MML3>
+
 .. toctree::
     :maxdepth: 1
 
@@ -131,6 +144,7 @@ Upgrading MathJax
 .. toctree::
     :maxdepth: 1
 
+    What's New in MathJax v2.5 <whats-new-2.5>
     What's New in MathJax v2.4 <whats-new-2.4>
     What's New in MathJax v2.3 <whats-new-2.3>
     What's New in MathJax v2.2 <whats-new-2.2>
