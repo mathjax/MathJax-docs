@@ -119,5 +119,6 @@ APIs
 Misc.
 -----
 
+*   `#870 <https://github.com/mathjax/MathJax/issues/870>`__ Add Composer package information.
 *   `#872 <https://github.com/mathjax/MathJax/issues/872>`__ Add small delay between input and output phase to prevent performance degredation.
 *   `#1016 <https://github.com/mathjax/MathJax/issues/1016>`__ Fix bug related to ``<script>`` elements with namespace prefix, e.g., in xHTML.
