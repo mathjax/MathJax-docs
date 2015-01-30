@@ -78,6 +78,7 @@ TeX emulation
 *   `#969 <https://github.com/mathjax/MathJax/issues/969>`__ Fix incorrect spacing with some ``\frac`` constructs.
 *   `#982 <https://github.com/mathjax/MathJax/issues/982>`__ Fix incorrect spacing in ``aligned`` environments.
 *   `#1013 <https://github.com/mathjax/MathJax/issues/1013>`__ Fix processing error caused by ``'`` in commutative diagrams using ``AMScd.js``.
+*   `#1005 <https://github.com/mathjax/MathJax/issues/1005>`__ Add ``wikipedia-texvc.js`` extension.
 
 Asciimath
 ---------
