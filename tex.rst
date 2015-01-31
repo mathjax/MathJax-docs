@@ -149,7 +149,7 @@ this for you, and you can find a MathJax plugin for your system on the
 <http://www.mathjax.org/community/mathjax-in-use/>`_ page.
 
 If there is no plugin for your system, or if it doesn't handle the
-subtleties of issolating the mathematics from the other markup that it
+subtleties of isolating the mathematics from the other markup that it
 supports, then you may have to "trick" it into leaving your
 mathematics untouched.  Most content-management systems provide some
 means of indicating text that should not be modified ("verbatim"
