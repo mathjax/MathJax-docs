@@ -165,7 +165,7 @@ Methods
     `type`, the `callback` will be called with the message as its
     parameter.
     
-    The following is an example for using the MessageHook to list to 
+    The following is an example for using the MessageHook to list 
     internal errors within MathJax which would otherwise be silent:
     
     .. code-block:: javascript
