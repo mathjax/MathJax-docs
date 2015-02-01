@@ -164,6 +164,19 @@ Methods
     `New Math` messages are sent).  When the message equals the
     `type`, the `callback` will be called with the message as its
     parameter.
+    
+    The following is an example for using the MessageHook to list to 
+    internal errors within MathJax which would otherwise be silent:
+    
+    .. code-block:: javascript
+    
+		MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+		// do something with the error.  message[1] will contain the data about the error.
+		});
+		
+		MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+		//  do something with the error.  message[2] is the Error object that records the problem.
+		});
 
     :Parameters:
         - **type** --- a string indicating the message to look for
