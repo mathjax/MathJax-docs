@@ -15,7 +15,7 @@ Features
 * *Improved elementary math support* The experimental support for elementary math elements has been significantly improved special thanks to David Carlisle.
 * *NodeJS compatibility*. Enable the implementation of a NodeJS API (released as `MathJax-node <https://github.com/mathjax/MathJax-node>`__).
 
-Numerous display bugs, line-breaking problems, and interface issues have been resolved; for a detailed listing please check the `release milestone <https://github.com/mathjax/MathJax/issues?milestone=2&state=closed>`__.
+Numerous display bugs, line-breaking problems, and interface issues have been resolved; for a detailed listing please check the `release milestone <https://github.com/mathjax/MathJax/issues?milestone=4&state=closed>`__.
 
 Interface
 ---------
