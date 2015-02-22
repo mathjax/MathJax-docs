@@ -105,10 +105,10 @@ get.  The CDN has the following directory structure:
        2.1-latest/   # the 2.1 release with any critical patches
        2.2-latest/   # the 2.2 release with any critical patches
        2.3-latest/   # the 2.3 release with any critical patches
-       2.4-latest/   # the 2.3 release with any critical patches
-       2.5-latest/   # the 2.3 release with any critical patches
+       2.4-latest/   # the 2.4 release with any critical patches
+       2.5-latest/   # the 2.5 release with any critical patches
        ...
-       latest/       # the most current version (2.5-latest at the time of this writing)
+       latest/       # the most current version (2.5-latest in this case)
 
 Each directory corresponds to an official MathJax release; however,
 hotfixes (urgent bug fixes) will be applied in each release branch as
