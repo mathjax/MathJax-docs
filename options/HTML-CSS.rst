@@ -203,3 +203,11 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
 
         These are the offset from the mouse position (in pixels) 
 	where the tooltip will be placed.
+
+.. describe:: noReflows: true
+
+    This value determines if the HTML-CSS output makes additional
+    measurements during layout for better layout quality, in 
+    particular with respect to unknown Unicode characters. As 
+    these measurements require reflow setting this to ``false`` 
+    will reduce performance but can help resolve layout issues.
