@@ -4,11 +4,11 @@
 MathJax In Use
 **********************************
 
-This is a selection of (web) applications using MathJax — 
+This is a historic selection of (web) applications using MathJax — 
 showcasing some interesting examples that may serve as inspiration.
 
-Please add your application!
-
+We keep this for historic purposes. We still highlight new examples
+in our commnunity news blog posts at mathjax.org.
 
 Authoring
 ~~~~~~~~~~~~
