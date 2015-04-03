@@ -283,7 +283,7 @@ dollar-sign delimiters.
 
 Here is a complete sample page containing TeX mathematics (also
 available in the `test/sample-tex.html
-<http://cdn.mathjax.org/mathjax/2.1-latest/test/sample-tex.html>`_
+<http://cdn.mathjax.org/mathjax/latest/test/sample-tex.html>`_
 file):
 
 .. code-block:: html
@@ -371,7 +371,7 @@ situations.
 
 Here is a complete sample page containing MathML mathematics (also
 available in the `test/sample-mml.html
-<http://cdn.mathjax.org/mathjax/2.1-latest/test/sample-mml.html>`_
+<http://cdn.mathjax.org/mathjax/latest/test/sample-mml.html>`_
 file):
 
 .. code-block:: html
@@ -459,7 +459,7 @@ expressions by surrounding them in "back-ticks", i.e., ```...```.
 
 Here is a complete sample page containing AsciiMath notation (also
 available in the `test/sample-asciimath.html
-<http://cdn.mathjax.org/mathjax/2.1-latest/test/sample-asciimath.html>`_
+<http://cdn.mathjax.org/mathjax/latest/test/sample-asciimath.html>`_
 file):
 
 .. code-block:: html
