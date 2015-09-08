@@ -94,7 +94,7 @@ example,
 
 	... when $x<y$ we have ...
 
-will cause a problem, because the brower will think ``<y`` is the
+will cause a problem, because the browser will think ``<y`` is the
 beginning of a tag named ``y`` (even though there is no such tag in
 HTML).  When this happens, the browser will think the tag continues up
 to the next ``>`` in the document (typically the end of the next
@@ -149,7 +149,7 @@ this for you, and you can find a MathJax plugin for your system on the
 <http://www.mathjax.org/community/mathjax-in-use/>`_ page.
 
 If there is no plugin for your system, or if it doesn't handle the
-subtleties of issolating the mathematics from the other markup that it
+subtleties of isolating the mathematics from the other markup that it
 supports, then you may have to "trick" it into leaving your
 mathematics untouched.  Most content-management systems provide some
 means of indicating text that should not be modified ("verbatim"

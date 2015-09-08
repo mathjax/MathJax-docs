@@ -95,9 +95,9 @@ The deficiencies include:
   and ``rowspan`` are not implemented yet.
 
 - Experimental support for the elementary math tags: ``mstack``, ``mlongdiv``,
-  ``msgroup``, ``msrow``, ``mscarries``, and ``mscarry``.
+  ``msgroup``, ``msrow``, ``mscarries``, and ``mscarry``. (Via the ``mml3`` extension, see below.)
 
-- Experimental support for bidirectional mathematics.
+- Experimental support for bidirectional mathematics. (Via the ``mml3`` extension, see below.)
 
 See the `results of the MathML3.0 test suite
 <http://www.w3.org/Math/testsuite/results/tests.html>`_ for details.

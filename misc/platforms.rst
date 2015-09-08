@@ -9,7 +9,6 @@ and other content-management systems.
 
 -  `MathJax-LaTeX`_, `Simple-MathJax`_ plug-ins for `WordPress`_.
 -  `MathJax plugin for Drupal`_.
--  `MathJax integration for Plone`_.
 -  `Concrete5 MathJax plugin`_.
 -  `MathJax plugins`_ for `Joomla`_.
 -  `Sphinx extension: MathJax`_
@@ -28,7 +27,6 @@ and other content-management systems.
 .. _MathJax-LaTeX: http://wordpress.org/extend/plugins/mathjax-latex/
 .. _Simple-MathJax: http://wordpress.org/extend/plugins/simple-mathjax/
 .. _MathJax plugin for Drupal: http://drupal.org/project/mathjax
-.. _MathJax integration for Plone: http://drupal.org/project/mathjax
 .. _MathJax plugin for DokuWiki: https://www.dokuwiki.org/plugin:mathjax
 .. _Concrete5 MathJax plugin: http://www.concrete5.org/marketplace/addons/load-mathjax/
 .. _PluginMathJax: http://myweb.dal.ca/haines/#PluginMathJax
@@ -102,7 +100,7 @@ consists of multiple files.
 To enable MathJax in your web platform, add the line::
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+       src="httpsp://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
 the file if it contains no ``</head>``. 
