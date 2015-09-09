@@ -81,24 +81,18 @@ mathematics in a web page`_ below.
 Secure Access to the CDN
 ------------------------
 
-When the MathJax CDN is accessed via the address
-``http://cdn.mathjax.org``, data is downloaded over a regular, insecure
-HTTP connection.  This introduces a security risk, since it is
-possible a hostile 3rd party could intercept the MathJax program data,
-and replace it.  This is sometimes called a
+If the MathJax CDN is accessed via the address ``http://cdn.mathjax.org`` (note
+the missing ``s`` after ``http``), the script is downloaded over a regular,
+insecure HTTP connection.  This poses a security risk as a malicious third
+party can intercept the MathJax script and replace it.  This is known as a
 `man-in-the-middle <http://en.wikipedia.org/wiki/Man-in-the-middle_attack>`_ attack.
+To prevent such attacks, one should access the MathJax CDN over a secure HTTPS
+connection, as demonstrated in the first example earlier.
 
-To prevent such attacks, it is necessary to access the MathJax CDN
-over a secure HTTPS connection.  This can be done easily by using the
-following ``<script>`` tag instead of the one listed above:
-
-.. code-block:: html
-
-    <script type="text/javascript"
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-
-Alternatively, the following code block will work in both http and https settings
+If the user wishes to use insecure HTTP to download the MathJax script if and
+only if the page itself is downloaded over insecure HTTP, then a
+protocol-relative address can be used to automatically switch between HTTP and
+HTTPS depending on what the current page uses:
 
 .. code-block:: html
 
@@ -106,7 +100,8 @@ Alternatively, the following code block will work in both http and https setting
       src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
-Note that this block will not work if the page is accessed locally via ``file://``
+Note that this trick will not work if the page is accessed locally via ``file://``
+as it will attempt to load from ``file://cdn.mathjax.org`` instead.
 
 
 Installing Your Own Copy of MathJax
