@@ -74,8 +74,8 @@ hard to maintain the inter-line spacing. This means things like
 fractions and roots are vertically compressed, and smaller fonts are
 used. Paragraph equations are shown as a separate paragraph and can be
 displayed with more space and slightly larger fonts. The standard
-delimiters for inline equations are ``\\(...\\)``, while for paragraph
-equations they are ``$$...$$`` or ``\\[...\\]``, but they can be
+delimiters for inline equations are ``\(...\)``, while for paragraph
+equations they are ``$$...$$`` or ``\[...\]``, but they can be
 customized. For how to configure MathJax to scale all mathematics
 relative to the surrounding text, check our documentation for :ref:`the HTML
 output <configure-HTML-CSS>` and
