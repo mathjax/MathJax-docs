@@ -66,7 +66,7 @@ rendered by the output modes (in green) located in
 components.
 
 
-.. image:: _static/components.svg
+.. image:: /_static/components.svg
    :width: 50%
    :alt: MathJax components
 
@@ -106,7 +106,7 @@ script just before the one loading MathJax. Use that to add
 .. code-block:: html
 
       <!-- MathJax/test/test1.html -->
-      
+
       ...
           <script type="text/x-mathjax-config">
              MathJax.Hub.config.extensions.push("measureTime.js");
@@ -144,17 +144,17 @@ Finally when we listen the final End signal, we append the desired div
       MathJax.Hub.Register.StartupHook("Begin Typeset", function () {
         MathJax.Extension.measureTime.startTime = (new Date()).getTime();
       });
-      
+
       MathJax.Hub.Register.StartupHook("End Typeset", function () {
         MathJax.Extension.measureTime.endTime = (new Date()).getTime();
       });
-      
+
       MathJax.Hub.Register.StartupHook("End", function () {
         var delta = (MathJax.Extension.measureTime.endTime - MathJax.Extension.measureTime.startTime) / 1000.;
         MathJax.HTML.addElement(document.body, "div", null,
                                 ["Typeset by MathJax in " + delta + " second(s)"]);
       });
-      
+
       MathJax.Ajax.loadComplete("[MathJax]/extensions/measureTime.js");
 
 Now load ``test1.html`` again (clearing the browser cache if necessary)
@@ -189,7 +189,7 @@ macros. Consider the following example:
           }
         });
       });
-      
+
       MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
 
 The structure is similar to the measureTime extension: we wait until the
@@ -223,7 +223,7 @@ You can finally use the Taylor extension in a test page:
     ...
 
     <body>
-    \[ \exp(x) = \expexpansion \] 
+    \[ \exp(x) = \expexpansion \]
 
     \[ f(x) = \taylor{f}{x}{a} \]
 
@@ -255,7 +255,7 @@ appropriate place for that is of course after the macros are defined:
         });
     MathJax.Hub.Startup.signal.Post("TeX Taylor Ready");
       });
-      
+
       MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
 
 Now define Taylor2.js as follows:
@@ -271,7 +271,7 @@ Now define Taylor2.js as follows:
           }
         });
       });
-      
+
       MathJax.Hub.Register.StartupHook("TeX Taylor Ready", function () {
         MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions, {
           macros: {
@@ -339,24 +339,24 @@ the TeX parser to understand how this extension is working.
         }, null, true);
         MathJax.InputJax.TeX.Parse.Augment({
           Frac: function (name) {
-      
+
             var old = this.stack.env.bevelled; this.stack.env.bevelled = true;
             var num = this.ParseArg(name);
             var den = this.ParseArg(name);
             this.stack.env.bevelled = old;
-      
+
             var frac = MathJax.ElementJax.mml.mfrac(num, den);
             frac.bevelled = this.stack.env.bevelled;
             this.Push(frac);
           },
           BFrac: function (name) {
-      
+
             var bevelled = this.GetBrackets(name);
             if (bevelled === "auto")
               bevelled = this.stack.env.bevelled;
             else
               bevelled = (bevelled !== "false");
-      
+
             var old = this.stack.env.bevelled; this.stack.env.bevelled = true;
             var num = this.ParseArg(name);
             var den = this.ParseArg(name);
@@ -367,12 +367,12 @@ the TeX parser to understand how this extension is working.
             this.Push(frac);
           }
         });
-      
+
       });
 
       MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/mfracBevelled.js");
-      
-Again you can use this command in a ``test4`` page. 
+
+Again you can use this command in a ``test4`` page.
 
 .. code-block:: html
 
@@ -394,4 +394,3 @@ Again you can use this command in a ``test4`` page.
     \[ \bfrac {\frac a b}{\bfrac[auto] a b} \]
 
     ...
-

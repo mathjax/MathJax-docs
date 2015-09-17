@@ -44,8 +44,8 @@ For previous versions, see
 -  `MathJax v1.0.1a Download Instructions <http://www.mathjax.org/download/mathjax-v1-0-1a-download-instructions/>`_.
 
 
-You should download the archive of the branch corresponding to the version 
-you need then simply unzip it.  
+You should download the archive of the branch corresponding to the version
+you need then simply unzip it.
 Once the MathJax directory is unpacked, you should move it to the
 desired location on your server (or your hard disk, if you are using
 it locally rather then through a web server).  One natural location is
@@ -112,7 +112,7 @@ sure this version is a stable and usable version of MathJax, it is under
 active development, and at times it may be less stable than the "release"
 version.  If you prefer to use the most stable version (that may not
 include all the latest patches and features), you will want to get one
-of the tagged releases.  Use 
+of the tagged releases.  Use
 
 .. code-block:: sh
 
@@ -132,11 +132,11 @@ the name of the tagged version you want to use.  When you want to
 upgrade to a new release, you will need to repeat this for the latest
 release tag.
 
-Each of the main releases also has a branch in which critical updates 
-are applied (we try hard not to patch the stable releases, but sometimes 
-there is a crucial change that needs to be made).  If you want to use the 
-patched version of a release, then check out the branch rather than the 
-tag.  Use 
+Each of the main releases also has a branch in which critical updates
+are applied (we try hard not to patch the stable releases, but sometimes
+there is a crucial change that needs to be made).  If you want to use the
+patched version of a release, then check out the branch rather than the
+tag.  Use
 
 .. code-block:: sh
 
@@ -228,11 +228,19 @@ on your system, just execute the following command:
 
     bower install MathJax
 
+For a slim copy without PNG fonts use
+
+.. code-block:: sh
+
+    bower install components/MathJax
+
+
+
 Obtaining MathJax via Composer
 ==============================
 
 Starting with version 2.5, it is possible to use `Composer
-<http://getcomposer.org//>`_ to install MathJax. See the `Composer 
+<http://getcomposer.org//>`_ to install MathJax. See the `Composer
 documentation <https://getcomposer.org/doc/00-intro.md>`_ to get started.
 
 Testing your installation
@@ -282,8 +290,8 @@ fonts come from the same server as the web page itself, so if you load
 MathJax (and hence its web fonts) from a different server, Firefox won't be
 able to access those web fonts.  In this case, MathJax will pause while
 waiting for the font to download (which will never happen); it will time
-out after about 5 seconds and switch to image fonts as a fallback.  
-Similarly, IE9 has a similar same-origin policy in its `IE9 standards 
+out after about 5 seconds and switch to image fonts as a fallback.
+Similarly, IE9 has a similar same-origin policy in its `IE9 standards
 mode`, so it exhibits this same behavior.
 
 There is a solution to this, however, if you manage the server where
@@ -348,7 +356,7 @@ One solution to this problem is to install the MathJax fonts locally, so
 that Firefox will not have to use web-based fonts in the first place.  To
 do that, either install the `STIX fonts <http://stixfonts.org>`_, or copy
 the fonts from ``MathJax/fonts/HTML-CSS/TeX/otf`` into your systems fonts
-directory and restart your browser (see the `MathJax fonts help page 
+directory and restart your browser (see the `MathJax fonts help page
 <http://www.mathjax.org/help/fonts>`_ for details).
 
 .. _ie9-local-fonts-solution:

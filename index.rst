@@ -71,19 +71,22 @@ MathJax Configuration Options
 .. toctree::
     :maxdepth: 1
 
+    The CommonHTML output processor options <options/CommonHTML>
     The HTML-CSS output processor options <options/HTML-CSS>
     The NativeMML output processor options <options/NativeMML>
     The SVG output processor options <options/SVG>
-    The CommonHTML output processor options <options/CommonHTML>
-    The MMLorHTML configuration options <options/MMLorHTML>
-    
+    The PreviewHTML output processor options <options/PreviewHTML>
+    The MMLorHTML configuration options [Deprecated] <options/MMLorHTML>
+
 .. toctree::
     :maxdepth: 1
 
-    The HTML-CSS floats extension <options/handle-floats>
-    The CHTML-preview options <options/CHTML-preview>
+    The AssistiveMML options <options/assistive-mml>
+    The fast-preview options <options/fast-preview>
     The Content MathML options <options/Content-MathML>
+    The HTML-CSS floats extension <options/handle-floats>
     The experimental MML3 extension <options/MML3>
+    The CHTML-preview options [Deprecated] <options/CHTML-preview>
 
 .. toctree::
     :maxdepth: 1
@@ -94,7 +97,7 @@ MathJax Configuration Options
     The FontWarnings options <options/FontWarnings>
     The Safe options <options/Safe>
     The MatchWebFonts options <options/MatchWebFonts>
-    
+
 .. toctree::
     :maxdepth: 1
 
@@ -107,13 +110,14 @@ Advanced Topics
 .. toctree::
     :maxdepth: 1
 
-    The MathJax Processing Model <model>
-    The MathJax Startup Sequence <startup>
-    Synchronizing Your Code with MathJax <synchronize>
-    Loading MathJax Dynamically <dynamic>
-    Modifying Math on the Page <typeset>
-    Obtaining the MathML for an Expression <toMathML>
-    Writing MathJax Extensions <extension-writing>
+    The MathJax Processing Model <advanced/model>
+    The MathJax Startup Sequence <advanced/startup>
+    Synchronizing Your Code with MathJax <advanced/synchronize>
+    Loading MathJax Dynamically <advanced/dynamic>
+    Modifying Math on the Page <advanced/typeset>
+    Obtaining the MathML for an Expression <advanced/toMathML>
+    Writing MathJax Extensions <advanced/extension-writing>
+    Debugging Tips <advanced/debugging-tips>
 
 .. toctree::
     :maxdepth: 1
@@ -133,7 +137,7 @@ Miscellanea
     MathJax FAQ <misc/faq>
     Browser Compatibility <misc/browser-compatibility>
     EPUB3 Reading Systems <misc/epub>
-    MathJax Badges and Logo <misc/badges>    
+    MathJax Badges and Logo <misc/badges>
     Articles and Presentations <misc/articles>
     Using MathJax in Web Platforms <misc/platforms>
     MathJax in Use <misc/mathjax-in-use>
@@ -144,6 +148,7 @@ Upgrading MathJax
 .. toctree::
     :maxdepth: 1
 
+    What's New in MathJax v2.6 <whats-new-2.6>
     What's New in MathJax v2.5 <whats-new-2.5>
     What's New in MathJax v2.4 <whats-new-2.4>
     What's New in MathJax v2.3 <whats-new-2.3>
@@ -160,10 +165,10 @@ Reference Pages
 .. toctree::
     :maxdepth: 1
 
-    HTML snippets <HTML-snippets>
-    CSS style objects <CSS-styles>
-    Localization strings <localization-strings>
-    Glossary <glossary>
+    HTML snippets <reference/HTML-snippets>
+    CSS style objects <reference/CSS-styles>
+    Localization strings <reference/localization-strings>
+    Glossary <reference/glossary>
 
 * :ref:`Search <search>`
 
