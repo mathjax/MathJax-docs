@@ -135,13 +135,13 @@ Miscellanea
 .. toctree::
     :maxdepth: 1
 
-    MathJax FAQ <misc/faq>
-    Assistive Technology support <misc/assistive-technology-support>
+    Accessibility features <misc/accessibility-features>
     Browser Compatibility <misc/browser-compatibility>
     EPUB3 Reading Systems <misc/epub>
     MathJax Badges and Logo <misc/badges>
     Articles and Presentations <misc/articles>
     Using MathJax in Web Platforms <misc/platforms>
+    MathJax FAQ <misc/faq>
     MathJax in Use <misc/mathjax-in-use>
 
 Upgrading MathJax
