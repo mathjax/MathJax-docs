@@ -49,13 +49,13 @@ computers but can use locally installed fonts instead.
 The **SVG output processor** uses `Scalable Vector Graphics` to render the mathematics on the page.
 SVG is supported in all the major browsers and most mobile devices;
 note, however, that Internet Explorer prior to IE9 does not support
-SVG, and IE9 only does in "IE9 standards mode", not its emulation
+SVG, and IE9 only does in "IE9 standards mode", nor its emulation
 modes for earlier versions.  The SVG output mode is high quality and
 slightly faster than HTML-CSS, and it does not suffer from some of the
 font-related issues that HTML-CSS does, so prints well in all
-browsers. The disadvantages of this mode are the following: first, it does not
+browsers. Since it uses SVG data instead of font files, it is not affected by user based web-font blocking. The disadvantages of this mode are the following: first, it does not
 take advantage of locally installed fonts, and so only has access to the characters
-in the web-based fonts, and second, its variable-width tables become
+in its (pseudo) web-based fonts, and second, its variable-width tables become
 fixed size once they are typeset, and don't rescale if the window size
 changes (for example).  Since equation numbers are handled through
 variable-width tables, that means equation numbers may not stay at the
@@ -136,6 +136,8 @@ If you are using :term:`MathML` as your input format, you can use the
 mathematics.
 
 
+.. _automatic-output-switch:
+
 Automatic Selection of the Output Processor
 ===========================================
 
@@ -176,7 +178,7 @@ This does essentially what the ``MMLorHTML`` configuration did in its default se
   </script>
 
 
-This illustrates using `BROWSER.versionAtLeast()` to make some decisions.  You can, of course, be as complicated as you like about making the choices.
+This illustrates using `BROWSER.versionAtLeast()` to make some decisions.  You can, of course, be as complicated as you like about making the choices. For example, you could detect if a user is blocking web-fonts and switch to SVG output (which does not rely on fonts but SVG data files).
 
 If you want something that is more backward compatible with `MMLorHTML` (i.e., if you have pages that configure `MMLorHTML` one way and other apges that configure it another way), here is a version that uses the old `MMLorHTML`'s `"prefer"` object, and only sets MathML mode if they browser can handle that.
 

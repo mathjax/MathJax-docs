@@ -118,6 +118,7 @@ Advanced Topics
     Obtaining the MathML for an Expression <advanced/toMathML>
     Writing MathJax Extensions <advanced/extension-writing>
     Debugging Tips <advanced/debugging-tips>
+    MathJax on NodeJS <advanced/mathjax-node>
 
 .. toctree::
     :maxdepth: 1
@@ -135,6 +136,7 @@ Miscellanea
     :maxdepth: 1
 
     MathJax FAQ <misc/faq>
+    Assistive Technology support <misc/assistive-technology-support>
     Browser Compatibility <misc/browser-compatibility>
     EPUB3 Reading Systems <misc/epub>
     MathJax Badges and Logo <misc/badges>

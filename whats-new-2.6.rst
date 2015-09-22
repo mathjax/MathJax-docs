@@ -9,13 +9,13 @@ MathJax v2.6 includes a number of new features, as well a more than 30 important
 Features
 --------
 
-* *New output.* The new CommonHTML output now provides the same layout quality and MathML support as the HTML-CSS and SVG output. It is on average 40% faster than the other outputs and the elements it produces are identical on all browsers and thus can also be pre-generated on the server via MathJax-node. The fast preview mechanism introduced in v2.5 will remain as a separate component.
+* *Improved CommonHTML output.* The CommonHTML output now provides the same layout quality and MathML support as the HTML-CSS and SVG output. It is on average 40% faster than the other outputs and the markup it produces are identical on all browsers and thus can also be pre-generated on the server via MathJax-node. The fast preview mechanism introduced in v2.5 continues to develop as a separate output as :ref:`PreviewHTML <configure-PreviewHTML>` and the :ref:`fast-preview <configure-fast-preview>` extension.
 * *Accessibility improvements.* We thank the AT community for their guidance, support, and feedback in our efforts towards making MathJax completely accessible to all users.
 
-  * *Screenreader compatibility.* The new ``AssistiveMML`` extension enables compatibility with most MathML-capable screenreaders by inserting visually-hidden MathML alongside MathJax's visual output. See `some link`_ for details on the expected behavior as well as background on the limitations due to lack of web standards and browser/OS technology.
-  * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily use access its features.
-* *Deprecated Feature: MMLorHTML extension.* We have deprecated the ``MMLorHTML`` extension. For a detailed guide on configuring MathJax to choose different outputs on different browsers, please see `some page `_
-* *Semi-slim MathJax repository for bower*. You can now use ``bower install components/MathJax`` for a clean fork without PNG fonts. Thanks to `@minrk https://github.com/minrk`__ from the IPython/Jupyter team and `components https://github.com/components`__!
+  * *Screenreader compatibility.* The new ``AssistiveMML`` extension enables compatibility with most MathML-capable screenreaders by inserting visually-hidden MathML alongside MathJax's visual output. See :ref:`screenreader support <screenreader-support>` for details on the expected behavior as well as background on the limitations due to lack of web standards and browser/OS technology.
+  * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily use access its features, cf. :ref:`MathJax UI <mathjax-ui-a11y>`.
+* *Semi-slim MathJax repository for bower*. You can now use ``bower install components/MathJax`` for a fork of MathJax without PNG fonts. **Many thanks** to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
+* *Deprecated: MMLorHTML extension.* We have deprecated the ``MMLorHTML`` extension. For a detailed guide on configuring MathJax to choose different outputs on different browsers, please see :ref:`Automatic Selection of the Output Processor <automatic-output-switch>` for more information.
 
 Numerous bugs and issues have also been resolved; for a detailed listing please check the `release milestone <https://github.com/mathjax/MathJax/issues?q=milestone%3A%22MathJax+v2.6%22+is%3Aclosed>`__.
 
@@ -23,10 +23,13 @@ Numerous bugs and issues have also been resolved; for a detailed listing please 
 Interface
 ---------
 
+*   `#938 <https://github.com/mathjax/MathJax/issues/938>`__ Expose MathML for accessibility; cf. :ref:`screenreader support <screenreader-support>`.
+*   `#939 <https://github.com/mathjax/MathJax/issues/939>`__ Make MathJax contextual menu properly accessible.
 *   `#1088 <https://github.com/mathjax/MathJax/issues/1088>`__  MathJax Menu: drop PNG images in menu.
+*   `#1210 <https://github.com/mathjax/MathJax/issues/1210>`__  Update ``MathZoom.js``: global border-box support. **Special thanks** to `@CalebKester <https://github.com/CalebKester>`__
 
 
-HTML-CSS/SVG/nativeMML display
+HTML/SVG/nativeMML display
 ------------------------------
 
 *   `#1095 <https://github.com/mathjax/MathJax/issues/1095>`__ HTML-CSS output: prevent collapse of table borders.
@@ -35,6 +38,7 @@ HTML-CSS/SVG/nativeMML display
 *   `#995 <https://github.com/mathjax/MathJax/issues/995>`__ SVG output: fix baseline alignment issues.
 *   `#995 <https://github.com/mathjax/MathJax/issues/995>`__ SVG output: fix failure to scale all but the first glyph in a fraction when ``useFontCache=false``.
 *   `#1233  <https://github.com/mathjax/MathJax/issues/1233>`__ SVG output: make maligngroup and malignmark produce no output.
+*   `#1035  <https://github.com/mathjax/MathJax/issues/1035>`__ PreviewHTML output: fix fractions formatting in WebKit and IE.
 
 TeX emulation
 -------------
@@ -54,8 +58,8 @@ Asciimath
 * `asciimath/#31 <https://github.com/asciimath/asciimathml/issues/31>`__ Add support for ``overparen``, ``underparen`` to produce ``mover`` and ``munder`` constructs.
 
 
-MathML Handling
----------------
+MathML
+------
 
 *   `#1072 <https://github.com/mathjax/MathJax/issues/1072>`__ Right-justify prescripts in ``mmultiscript`` elements (after clarification in MathML 3 editors' draft); cf. #956.
 *   `#1089  <https://github.com/mathjax/MathJax/issues/1089>`__ Fix ``toMathML`` from changing ``<maligngroup>`` to ``<malign>``
@@ -63,6 +67,7 @@ MathML Handling
 *   `#1231  <https://github.com/mathjax/MathJax/issues/1231>`__ Fix ``<math>`` element not being treated as an ``<mrow>`` for embellished operator spacing.
 *   `#1233  <https://github.com/mathjax/MathJax/issues/1233>`__ Make ``<maligngroup>`` and ``<malignmark>`` be self-closing in MathML input.
 *   `#1238  <https://github.com/mathjax/MathJax/issues/1238>`__ Fix Content MathML extension not handling namespace prefixes.
+*   `#1257  <https://github.com/mathjax/MathJax/issues/1257>`__ Improve ``mml3.js``: better RTL support in HTML-CSS; improved IE/Edge compatibility.
 
 Fonts
 -----
@@ -90,4 +95,5 @@ Misc.
 *   `#1155 <https://github.com/mathjax/MathJax/issues/1155>`__ Work around websites using user agent filtering
 *   `#1173 <https://github.com/mathjax/MathJax/issues/1173>`__ Avoid warning message in debug mode.
 *   `#1208 <https://github.com/mathjax/MathJax/issues/1208>`__ Fix CHTML preview from setting chunking parameters even when disabled.
-*   `#1214 <https://github.com/mathjax/MathJax/issues/1214>`__ semi-slim official MathJax repository for bower; use ``bower install components/MathJax`` for a copy without PNG fonts. Thanks to `@minrk https://github.com/minrk`__!
+*   `#1214 <https://github.com/mathjax/MathJax/issues/1214>`__ semi-slim official MathJax repository for bower; use ``bower install components/MathJax`` for a copy without PNG fonts. Special thanks to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
+*   `#1254 <https://github.com/mathjax/MathJax/issues/1254>`__ Improve examples in ``/test``: add viewport meta tags, improve dynamic examples.
