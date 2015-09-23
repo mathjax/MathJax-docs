@@ -92,17 +92,18 @@ The **PreviewHTML output processor** produces fast but low-quality output in all
 Automatic Line Breaking
 =======================
 
-The HTML-CSS and SVG output processors implement (most of) the MathML3
+The CommonHTML, HTML-CSS, and SVG output processors implement (most of) the MathML3
 automatic line-breaking specification.  (The NativeMML output
 processor relies on the browser's native MathML support to handle line
 breaking when it is used.)  Since line-breaking takes extra processing
 and so can slow down the mathematical output, it is off by default,
-but you can enable it by adding
+but you can enable it by adding, e.g.,
 
 .. code-block:: html
 
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+      CommonHTML: { linebreaks: { automatic: true } },
       "HTML-CSS": { linebreaks: { automatic: true } },
              SVG: { linebreaks: { automatic: true } }
     });
@@ -111,18 +112,21 @@ but you can enable it by adding
 to your page just before the ``<script>`` tag that loads
 ``MathJax.js`` itself.
 
-Note that line breaking only applies to displayed equations, not
-in-line equations (unless the in-line equation is itself longer than a
-line), and that the line-breaks are only computed once when the
-equation is initially typeset, and do not change if the user changes
-the window size, or if the container changes size for some other
-reason.
+.. note:: 
+
+    Line breaking only applies to displayed equations, not
+    in-line equations (unless the in-line equation is itself longer than a
+    line), and that the line-breaks are only computed once when the
+    equation is initially typeset, and do not change if the user changes
+    the window size, or if the container changes size for some other
+    reason.
 
 You can control what width is used to determine where the line breaks
 shoud occur using the ``container`` parameter of the ``linebreaks``
 block.  By default it is the width of the containing element, but you
 can make it a fixed width, or make it a percentage of the container.
-See the :ref:`HTML-CSS configuration <configure-HTML-CSS>` or
+See the :ref:`CommonHTML configuration <configure-CommonHTML>`, 
+:ref:`HTML-CSS configuration <configure-HTML-CSS>`, or
 :ref:`SVG configuration <configure-SVG>` pages for more details.
 
 The line-breaking algorithm uses the nesting depth, the type of
