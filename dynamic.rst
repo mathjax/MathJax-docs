@@ -40,7 +40,7 @@ MathJax's configuration script:
       script[(window.opera ? "innerHTML" : "text")] = 
         "MathJax.Hub.Config({\n" +
         "  tex2jax: { inlineMath: [['$','$'], ['\\\\(','\\\\)']] }\n" +
-        "});"
+        "});";
       head.appendChild(script);
       script = document.createElement("script");
       script.type = "text/javascript";
