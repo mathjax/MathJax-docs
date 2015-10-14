@@ -42,8 +42,8 @@ Getting traceback information
 MathJax stores the error object from the last `Math Processing Error` in `MathJax.Hub.lastError`. This allow developers to access the stack trace information when needed.
 
 
-Add listener for MatJax errors
-==============================
+Add listener for MathJax errors
+===============================
 
 MathJax provides a detailed signaling infrastructure which a developers can hook into.
 
