@@ -63,7 +63,7 @@ make this call.  That means that things like the size of the container
 for the mathematics may not yet reflect the size of the typeset
 mathematics.  If you need to perform actions that depend on the
 mathematics being typeset, you should push *those* actions onto the
-``MathJax.Hub.queue`` as well.  
+``MathJax.Hub.queue`` as well.
 
 This can be quite subtle, so you have to think carefully about the
 structure of your code that works with the typeset mathematics.  Also,
@@ -175,7 +175,7 @@ queue.  If your startup code performs the commands
       studentDisplay = MathJax.Hub.getAllJax("MathDiv")[0];
     });
 
-then you can use 
+then you can use
 
 .. code-block:: javascript
 
@@ -237,7 +237,7 @@ available in `test/sample-dynamic.html
       })();
     </script>
 
-    Type some TeX code: 
+    Type some TeX code:
     <input id="MathInput" size="50" onchange="UpdateMath(this.value)" />
     <p>
 
@@ -252,3 +252,22 @@ There are a number of additional example pages at `test/examples.html
 <http://cdn.mathjax.org/mathjax/latest/test/examples.html>`_ that
 illustrate how to call MathJax dynamically or perform other actions
 with MathJax.
+
+
+.. _reset-equation-numbers:
+
+Reset Automatic Equation Numbering
+==================================
+
+The :ref:`TeX input <TeX-support>` allows you to automatically number equations. When modifying a page, this can lead to problems as numbered equations may be removed and added; most commonly, duplicate labels (and thus ``id``'s in the DOM) lead to issues.
+
+You can reset equation numbering using the TeX Input's ``resetEquationNumbers`` but you will need to re-process the page to update the labels afterwards, e.g.,
+
+
+.. code-block:: javascript
+
+    MathJax.Hub.Queue(
+      ["resetEquationNumbers",MathJax.InputJax.TeX],
+      ["PreProcess",MathJax.Hub],
+      ["Reprocess",MathJax.Hub
+    );

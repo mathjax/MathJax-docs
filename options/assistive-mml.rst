@@ -36,4 +36,4 @@ For example
 
 would enable the extension and defines :ref:`CSS Style Objects <css-style-objects>` to define CSS applied to the MathML content embedded in the page.
 
-See also :ref:`Screenreader support <assistive-technology-support>`.
+See also :ref:`Screenreader support <screenreader-support>`.

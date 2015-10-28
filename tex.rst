@@ -39,10 +39,10 @@ you need a LaTeX-to-HTML converter, you should consider `other options
 TeX and LaTeX math delimiters
 =============================
 
-By default, the `tex2jax` preprocessor defines the LaTeX math delimiters, 
-which are ``\(...\)`` for in-line math, and ``\[...\]`` for displayed 
-equations.  It also defines the TeX delimiters ``$$...$$`` for displayed 
-equations, but it does **not** define ``$...$`` as in-line math 
+By default, the `tex2jax` preprocessor defines the LaTeX math delimiters,
+which are ``\(...\)`` for in-line math, and ``\[...\]`` for displayed
+equations.  It also defines the TeX delimiters ``$$...$$`` for displayed
+equations, but it does **not** define ``$...$`` as in-line math
 delimiters.  That is because dollar signs appear too often in
 non-mathematical settings, which could cause some text to be treated
 as mathematics unexpectedly.  For example, with single-dollar
@@ -280,7 +280,7 @@ Automatic Equation Numbering
 ============================
 
 New in MathJax v2.0 is the ability to have equations be numbered
-automatically.  This functionality is turned off by default, so 
+automatically.  This functionality is turned off by default, so
 that pages don't change
 when you update from v1.1 to v2.0, but it is easy to configure MathJax
 to produce automatic equation numbers by adding:
@@ -294,7 +294,7 @@ to produce automatic equation numbers by adding:
     </script>
 
 to your page just before the ``<script>`` tag that loads
-``MathJax.js`` itself.  
+``MathJax.js`` itself.
 
 Equations can be numbered in two ways: either number the AMSmath
 environments as LaTeX would, or number all displayed equations (the
@@ -334,7 +334,7 @@ as a reference. For example,
 
     In equation \eqref{eq:sample}, we find the value of an
     interesting integral:
-    
+
     \begin{equation}
       \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
       \label{eq:sample}
@@ -351,6 +351,7 @@ references to them are made using parameters in the ``equationNumbers``
 block of your ``TeX`` configuration.  See the :ref:`TeX configuration
 options <configure-TeX>` page for more details.
 
+If you are using automatic equation numbering and modifying the page dynamically, you can run into problems due to duplicate labels. See :ref:`Reset Automatic Equation Numbering <reset-equation-numbers>` for how to address this.
 
 .. _tex-extensions:
 
@@ -372,7 +373,7 @@ To enable any of the TeX extensions, simply add the appropriate string
 (e.g., ``"AMSmath.js"``) to the `extensions` array in the ``TeX`` block
 of your configuration.  If you use one of the combined configuration files,
 like ``TeX-AMS_HTML``, this will already include several of the extensions
-automatically, but you can include others using a mathjax configuration 
+automatically, but you can include others using a mathjax configuration
 script prior to loading MathJax.  For example
 
 .. code-block:: html
@@ -384,7 +385,7 @@ script prior to loading MathJax.  For example
         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
-will load the `autobold` TeX extension in addition to those already 
+will load the `autobold` TeX extension in addition to those already
 included in the ``TeX-AMS_HTML`` configuration file.
 
 You can also load these extensions from within a math expresion using
@@ -448,7 +449,7 @@ element.  It defines three new non-standard macros:
 .. describe:: \\toggle{math1}{math2}...\\endtoggle
 
     Show ``math1``, and when clicked, show ``math2``, and so on.
-    When the last one is clicked, go back to math1.   
+    When the last one is clicked, go back to math1.
 
 To use this extension in your own configurations, add it to the
 `extensions` array in the TeX block.
@@ -645,7 +646,7 @@ Color
 The ``\color`` command in the core TeX input jax is not standard in
 that it takes the mathematics to be colored as one of its parameters,
 whereas the LaTeX ``\color`` command is a switch that changes the
-color of everything that follows it.  
+color of everything that follows it.
 
 The `color` extension changes the ``\color`` command to be compatible
 with the LaTeX implementation, and also defines ``\colorbox``,
@@ -683,7 +684,7 @@ your mathematics.  It defines the following non-standard macro:
     ``updiagonalstrike``, ``longdiv``, etc.), ``attributes`` are
     MathML attribute values allowed on the ``<menclose>`` element
     (e.g., ``mathcolor="red"``, ``mathbackground="yellow"``), and
-    ``math`` is the mathematics to be enclosed. See the `MathML 3 
+    ``math`` is the mathematics to be enclosed. See the `MathML 3
     specification <http://www.w3.org/TR/MathML/chapter3.html#presm.menclose>`_
     for more details on ``<menclose>``.
 
@@ -786,7 +787,7 @@ For example:
 .. code-block:: latex
 
     x \href{why-equal.html}{=} y^2 + 1
-    
+
     (x+1)^2 = \class{hidden}{(x+1)(x+1)}
 
     (x+1)^2 = \cssId{step1}{\style{visibility:hidden}{(x+1)(x+1)}}
@@ -841,7 +842,7 @@ your own configuration, or to modify its parameters, add something like the
 following to your :meth:`MathJax.Hub.Config()` call:
 
 .. code-block:: javascript
- 
+
     TeX: {
       extensions: ["noErrors.js"],
       noErrors: {
@@ -858,7 +859,7 @@ following to your :meth:`MathJax.Hub.Config()` call:
         }
       }
     }
- 
+
 Display-style math is always shown in multi-line format, and without
 delimiters, as it will already be set off in its own centered
 paragraph, like standard display mathematics.
@@ -879,7 +880,7 @@ the paragraph, use
         }
       }
     }
-  
+
 You may also wish to set the font family or other CSS values here.
 
 If you are using a combined configuration file that loads the TeX
@@ -891,7 +892,7 @@ configuration:
 .. code-block:: javascript
 
     TeX: { noErrors: { disabled: true } }
-  
+
 Any math that includes errors will be replaced by an error message
 indicating what went wrong.
 
@@ -905,8 +906,8 @@ shown as their macro names rather than generating error messages. So
 text ``\xxx`` in red.
 
 This extension is loaded by all the combined configuration files that
-include the TeX input processor.  To enable the `noUndefined` extension 
-in your own configuration, or to modify its parameters, add something like 
+include the TeX input processor.  To enable the `noUndefined` extension
+in your own configuration, or to modify its parameters, add something like
 the following to your :meth:`MathJax.Hub.Config()` call:
 
 .. code-block:: javascript
@@ -937,7 +938,7 @@ use the following configuration:
 .. code-block:: javascript
 
     TeX: { noUndefined: { disabled: true } }
-  
+
 Any math that includes an undefined control sequence name will be
 replaced by an error message indicating what name was undefined.
 
@@ -950,17 +951,17 @@ that allows arbitrary unicode code points to be entered in your
 mathematics.  You can specify the height and depth of the character
 (the width is determined by the browser), and the default font from
 which to take the character.
-  
+
 Examples:
 
-.. code-block:: latex 
+.. code-block:: latex
 
     \unicode{65}                        % the character 'A'
     \unicode{x41}                       % the character 'A'
     \unicode[.55,0.05]{x22D6}           % less-than with dot, with height .55em and depth 0.05em
     \unicode[.55,0.05][Geramond]{x22D6} % same taken from Geramond font
     \unicode[Garamond]{x22D6}           % same, but with default height, depth of .8em,.2em
-    
+
 Once a size and font are provided for a given unicode point, they need
 not be specified again in subsequent ``\unicode{}`` calls for that
 character.
@@ -1057,7 +1058,7 @@ in MathJax
 
 Symbols
 -------
-    
+
 .. code-block:: latex
 
     #
@@ -1085,12 +1086,12 @@ Symbols
     \{
     \|
     \}
-   
+
 A
 -
 
 .. code-block:: latex
-    
+
     \above
     \abovewithdelims
     \acute
@@ -1117,7 +1118,7 @@ B
 -
 
 .. code-block:: latex
-    
+
     \backepsilon            AMSsymbols
     \backprime              AMSsymbols
     \backsim                AMSsymbols
@@ -1196,7 +1197,7 @@ C
 -
 
 .. code-block:: latex
-    
+
     \cal
     \cancel                 cancel
     \cancelto               cancel
@@ -1252,7 +1253,7 @@ D
 -
 
 .. code-block:: latex
-    
+
     \dagger
     \daleth                 AMSsymbols
     \dashleftarrow          AMSsymbols
@@ -1307,7 +1308,7 @@ E
 -
 
 .. code-block:: latex
-    
+
     \ell
     \emptyset
     \enclose                enclose         non-standard
@@ -1332,7 +1333,7 @@ F
 -
 
 .. code-block:: latex
-    
+
     \fallingdotseq          AMSsymbols
     \fbox
     \fcolorbox              color
@@ -1348,7 +1349,7 @@ G
 -
 
 .. code-block:: latex
-    
+
     \Game                   AMSsymbols
     \Gamma
     \gamma
@@ -1384,7 +1385,7 @@ H
 -
 
 .. code-block:: latex
-    
+
     \hat
     \hbar
     \hbox
@@ -1407,7 +1408,7 @@ I
 -
 
 .. code-block:: latex
-    
+
     \iff
     \iiiint                 AMSmath
     \iiint
@@ -1430,7 +1431,7 @@ J
 -
 
 .. code-block:: latex
-    
+
     \jmath
     \Join                   AMSsymbols
 
@@ -1438,7 +1439,7 @@ K
 -
 
 .. code-block:: latex
-    
+
     \kappa
     \ker
     \kern
@@ -1447,7 +1448,7 @@ L
 -
 
 .. code-block:: latex
-    
+
     \label                 [AMSmath]
     \Lambda
     \lambda
@@ -1536,7 +1537,7 @@ M
 -
 
 .. code-block:: latex
-    
+
     \maltese                AMSsymbols
     \mapsto
     \mathbb
@@ -1585,7 +1586,7 @@ N
 -
 
 .. code-block:: latex
-    
+
     \nabla
     \natural
     \ncong                  AMSsymbols
@@ -1650,7 +1651,7 @@ O
 -
 
 .. code-block:: latex
-    
+
     \odot
     \oint
     \oldstyle
@@ -1676,7 +1677,7 @@ P
 -
 
 .. code-block:: latex
-    
+
     \parallel
     \partial
     \perp
@@ -1711,7 +1712,7 @@ Q
 -
 
 .. code-block:: latex
-    
+
     \qquad
     \quad
 
@@ -1719,7 +1720,7 @@ R
 -
 
 .. code-block:: latex
-    
+
     \raise
     \rangle
     \rbrace
@@ -1763,7 +1764,7 @@ S
 -
 
 .. code-block:: latex
-    
+
     \S
     \scr
     \scriptscriptstyle
@@ -1839,7 +1840,7 @@ T
 -
 
 .. code-block:: latex
-    
+
     \tag                   [AMSmath]
     \tan
     \tanh
@@ -1881,7 +1882,7 @@ U
 -
 
 .. code-block:: latex
-    
+
     \ulcorner               AMSsymbols
     \underbrace
     \underleftarrow
@@ -1909,7 +1910,7 @@ V
 -
 
 .. code-block:: latex
-    
+
     \varDelta               AMSsymbols
     \varepsilon
     \varGamma               AMSsymbols
@@ -1959,7 +1960,7 @@ W
 -
 
 .. code-block:: latex
-    
+
     \wedge
     \widehat
     \widetilde
@@ -1970,7 +1971,7 @@ X
 -
 
 .. code-block:: latex
-    
+
     \Xi
     \xi
     \xcancel                cancel
@@ -1986,14 +1987,14 @@ Y
 -
 
 .. code-block:: latex
-    
+
     \yen                    AMSsymbols
 
 Z
 -
 
 .. code-block:: latex
-    
+
     \zeta
 
 

@@ -1,8 +1,8 @@
 .. _configure-PreviewHTML:
 
-*******************************
+********************************
 The PreviewHTML output processor
-*******************************
+********************************
 
 The options below control the operation of the PreviewHTML output
 processor that is run when you include ``"output/PreviewHTML"`` in the

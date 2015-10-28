@@ -13,7 +13,7 @@ Features
 * *Accessibility improvements.* We thank the AT community for their guidance, support, and feedback in our efforts towards making MathJax completely accessible to all users.
 
   * *Screenreader compatibility.* The new ``AssistiveMML`` extension enables compatibility with most MathML-capable screenreaders by inserting visually-hidden MathML alongside MathJax's visual output. See :ref:`screenreader support <screenreader-support>` for details on the expected behavior as well as background on the limitations due to lack of web standards and browser/OS technology.
-  * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily use access its features, cf. :ref:`MathJax UI <mathjax-ui-a11y>`.
+  * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily access its features, cf. :ref:`MathJax UI <mathjax-ui-a11y>`.
 * *Semi-slim MathJax repository for bower*. You can now use ``bower install components/MathJax`` for a fork of MathJax without PNG fonts. **Many thanks** to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
 * *Deprecated: MMLorHTML extension.* We have deprecated the ``MMLorHTML`` extension. For a detailed guide on configuring MathJax to choose different outputs on different browsers, please see :ref:`Automatic Selection of the Output Processor <automatic-output-switch>` for more information.
 
