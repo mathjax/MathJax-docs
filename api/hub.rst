@@ -57,7 +57,7 @@ Properties
 
     The name of the browser as determined by MathJax.  It will be one
     of ``Firefox``, ``Safari``, ``Chrome``, ``Opera``, ``MSIE``,
-    ``Konqueror``, or ``unkown``.  This is actually an object with
+    ``Konqueror``, or ``unknown``.  This is actually an object with
     additional properties and methods concerning the browser:
 
     .. describe:: version

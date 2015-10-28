@@ -22,9 +22,9 @@ The MathJax Menu also follows WCAG 2.0 guidelines. Each MathJax fragment is incl
 Screenreader Support
 ---------------------
 
-Many screenreaders support MathML, MathJax's internal format. Some screenreaders like ChromeVox, JAWS (on IE), and Texthelp support MathJax out of the box while other screenreaders can be supported via the :ref:`AssitiveMML extension <assistive-mml>`.
+Many screenreaders support MathML, MathJax's internal format. Some screenreaders like ChromeVox, JAWS (on IE), and Texthelp support MathJax out of the box while other screenreaders can be supported via the :ref:`AssistiveMML extension <assistive-mml>`.
 
-The ``AssitiveMML`` extension embeds visually hidden MathML alongside MathJax's visual rendering while hiding the visual rendering from assistive technology (AT) such as screenreaders. This allows most MathML-enabled screenreaders to read out the underlying mathematics. It's important to note that Presentation MathML is usually not expressive enough to voice it which is why screenreaders have to rely on heuristics to analyze the MathML semantically.
+The ``AssistiveMML`` extension embeds visually hidden MathML alongside MathJax's visual rendering while hiding the visual rendering from assistive technology (AT) such as screenreaders. This allows most MathML-enabled screenreaders to read out the underlying mathematics. It's important to note that Presentation MathML is usually not expressive enough to voice it which is why screenreaders have to rely on heuristics to analyze the MathML semantically.
 
 For lack of web standards, MathJax cannot (yet) make its visual output fully accessible, e.g., embed the MathML structure within its visual output to enable synchronized highlighting and exploration of the visual output. We continue to work on better solutions as well as on improving the existing web standards.
 
