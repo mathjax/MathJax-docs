@@ -269,5 +269,5 @@ You can reset equation numbering using the TeX Input's ``resetEquationNumbers`` 
     MathJax.Hub.Queue(
       ["resetEquationNumbers",MathJax.InputJax.TeX],
       ["PreProcess",MathJax.Hub],
-      ["Reprocess",MathJax.Hub
+      ["Reprocess",MathJax.Hub]
     );
