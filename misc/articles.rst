@@ -39,5 +39,5 @@ Presentations
    by `Davide P. Cervone <http://www.math.union.edu/~dpvc/>`__ *2010
    Joint Mathematics Meetings in San Francisco*
 -  `MathType, Math Markup, and the Goal of Cut and
-   Paste <http://www.mathjax.org/ext/miner-jmm2010/>`__ by Robert Miner *2010 Joint
+   Paste <https://rawgit.com/mathjax/papers/master/JMM/2010/miner-jmm2010/index.html>`__ by Robert Miner *2010 Joint
    Mathematics Meetings in San Francisco*
