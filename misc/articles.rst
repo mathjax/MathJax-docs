@@ -15,10 +15,10 @@ Articles
    on <http://radar.oreilly.com/2013/11/mathml-forges-on.html>`__
    by Peter Krautzberger, *MathJax*, *2014*
 -  `Accessible Pages with
-   MathJax <http://www.mathjax.org/resources/articles-and-presentations/accessible-pages-with-mathjax/>`__
+   MathJax <https://www.mathjax.org/accessible-pages-with-mathjax/>`__
    by Neil Soiffer *Design Science, Inc.*, *2010*
 -  `Mathematics E-learning Community Benefits from
-   MathJax <http://www.mathjax.org/resources/articles-and-presentations/mathematics-e-learning-community-benefits-from-mathjax/>`__
+   MathJax <https://www.mathjax.org/mathematics-e-learning-community-benefits-from-mathjax/>`__
    by Hylke Koers, *MathJax*, *2010*
 
 Presentations
