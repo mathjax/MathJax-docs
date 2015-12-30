@@ -76,6 +76,7 @@ MathJax Configuration Options
     The NativeMML output processor options <options/NativeMML>
     The SVG output processor options <options/SVG>
     The PreviewHTML output processor options <options/PreviewHTML>
+    The PlainSource output processor options <options/PlainSource>
     The MMLorHTML configuration options [Deprecated] <options/MMLorHTML>
 
 .. toctree::

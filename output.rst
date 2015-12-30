@@ -15,7 +15,7 @@ Currently, MathJax can render math in three ways:
 - Using :term:`SVG` to lay out the mathematics, or
 - Using a browser's native MathML support.
 
-These are implemented by the `CommonHTML`, `HTML-CSS`, and `PreviewHTML` output processors, the `SVG` output processor, and the `NativeMML` output processor respectively.
+These are implemented by the `CommonHTML`, `HTML-CSS`, and `PreviewHTML` output processors, the `SVG` output processor, and the `NativeMML` output processor respectively. In addition, the `PlainSource` output is a convenience and accessibility output, rendering the source as plain text.
 
 If you are using one of the combined configuration files, then this will
 select one of these output processors for you.  If the config file ends in
@@ -86,6 +86,7 @@ other rendering problems that are outside of MathJax's control.
 
 The **PreviewHTML output processor** produces fast but low-quality output in all modern browsers. It is designed to serve as a fast preview mode as its layout quality is nowhere near the quality of the CommonHTML, HTML-CSS, and SVG output processors. Its major advantage is its speed. Its browser supports starts with IE8. It uses locally installed Times-like fonts and does not load any webfonts.
 
+The **PlainSource output processor** injects the plain text source of the equations instead; if the input is MathML, the output processor will prefer TeX and AsciiMath notation (in that order) if it is available in ``<annotation>`` elements. This output is a convenience output for users who prefer raw source, e.g., users who need to copy&paste larger document fragments and users of assistive technologies.
 
 .. _automatic-linebreaking:
 
@@ -112,7 +113,7 @@ but you can enable it by adding, e.g.,
 to your page just before the ``<script>`` tag that loads
 ``MathJax.js`` itself.
 
-.. note:: 
+.. note::
 
     Line breaking only applies to displayed equations, not
     in-line equations (unless the in-line equation is itself longer than a
@@ -125,7 +126,7 @@ You can control what width is used to determine where the line breaks
 shoud occur using the ``container`` parameter of the ``linebreaks``
 block.  By default it is the width of the containing element, but you
 can make it a fixed width, or make it a percentage of the container.
-See the :ref:`CommonHTML configuration <configure-CommonHTML>`, 
+See the :ref:`CommonHTML configuration <configure-CommonHTML>`,
 :ref:`HTML-CSS configuration <configure-HTML-CSS>`, or
 :ref:`SVG configuration <configure-SVG>` pages for more details.
 
