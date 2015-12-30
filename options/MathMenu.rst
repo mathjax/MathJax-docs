@@ -27,11 +27,6 @@ would set the ``delay`` option to 600 milliseconds.
     label for this long, the menu will appear.  (The submenu also will
     appear if you click on its label.)
 
-.. describe:: helpURL: "http://www.mathjax.org/help/user/"
-
-    This is the URL for the MathJax Help menu item.  When the user
-    selects that item, the browser opens a new window with this URL.
-
 .. describe:: showRenderer: true
 
     This controls whether the "Math Renderer" item will be displayed
@@ -39,7 +34,7 @@ would set the ``delay`` option to 600 milliseconds.
     It allows the user to change between the `HTML-CSS`, `NativeMML`,
     and `SVG` output processors for the mathematics on the page.  Set
     to ``false`` to prevent this menu item from showing.
-   
+
 .. describe:: showFontMenu: false
 
     This controls whether the "Font Preference" item will be displayed
@@ -70,7 +65,7 @@ would set the ``delay`` option to 600 milliseconds.
     processed by MathPlayer rather than MathJax), and menu events can
     be passed on (to allow the user access to the MathPlayer menu).
     Set to ``false`` to prevent this menu item from showing.
-   
+
 .. describe:: showContext: false
 
     This controls whether the "Contextual Menu" item will be displayed
@@ -90,7 +85,7 @@ would set the ``delay`` option to 600 milliseconds.
     example, ``"TeX": ["TeX", "LaTeX", "application/x-tex"]`` will map
     an annotation with an encoding of ``"TeX"``, ``"LaTeX"``, or
     ``"application/x-tex"`` to the ``"TeX"`` menu.
-   
+
 .. describe:: windowSettings: { ... }
 
     These are the settings for the ``window.open()`` call that
@@ -105,4 +100,3 @@ would set the ``delay`` option to 600 milliseconds.
     details of what are defined by default.  See :ref:`CSS Style
     Objects <css-style-objects>` for details on how to specify CSS
     style in a JavaScript object.
-
