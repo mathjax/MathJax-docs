@@ -14,7 +14,9 @@ Features
 
   * *Screenreader compatibility.* The new ``AssistiveMML`` extension enables compatibility with most MathML-capable screenreaders by inserting visually-hidden MathML alongside MathJax's visual output. See :ref:`screenreader support <screenreader-support>` for details on the expected behavior as well as background on the limitations due to lack of web standards and browser/OS technology.
   * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily access its features, cf. :ref:`MathJax UI <mathjax-ui-a11y>`.
-* *Semi-slim MathJax repository for bower*. You can now use ``bower install components/MathJax`` for a fork of MathJax without PNG fonts. **Many thanks** to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
+* *PlainSource Output.* The new PlainSource output will revert the rendering back to the input format; in the case of MathML, the output will prefer TeX and AsciiMath from ``<annotation-xml>`` elements. This helps with accessibility and copy&paste of document fragments.
+* *Semi-slim MathJax repository for bower*. You can now use ``bower install components/MathJax`` to install a fork of MathJax without PNG fonts. **Many thanks** to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
+* *MathJax via npm*. You can now use ``npm install mathjax`` to install a copy of MathJax without PNG fonts.
 * *Deprecated: MMLorHTML extension.* We have deprecated the ``MMLorHTML`` extension. For a detailed guide on configuring MathJax to choose different outputs on different browsers, please see :ref:`Automatic Selection of the Output Processor <automatic-output-switch>` for more information.
 
 Numerous bugs and issues have also been resolved; for a detailed listing please check the `release milestone <https://github.com/mathjax/MathJax/issues?q=milestone%3A%22MathJax+v2.6%22+is%3Aclosed>`__.
@@ -27,6 +29,7 @@ Interface
 *   `#939 <https://github.com/mathjax/MathJax/issues/939>`__ Make MathJax contextual menu properly accessible.
 *   `#1088 <https://github.com/mathjax/MathJax/issues/1088>`__  MathJax Menu: drop PNG images in menu.
 *   `#1210 <https://github.com/mathjax/MathJax/issues/1210>`__  Update ``MathZoom.js``: global border-box support. **Special thanks** to `@CalebKester <https://github.com/CalebKester>`__
+*   `#1273 <https://github.com/mathjax/MathJax/issues/1273>`__  Improve handling of hash in URL.
 
 
 HTML/SVG/nativeMML display
@@ -37,8 +40,12 @@ HTML/SVG/nativeMML display
 *   `#994 <https://github.com/mathjax/MathJax/issues/994>`__ SVG Output: Change default ``blacker`` setting to `1`.
 *   `#995 <https://github.com/mathjax/MathJax/issues/995>`__ SVG output: fix baseline alignment issues.
 *   `#995 <https://github.com/mathjax/MathJax/issues/995>`__ SVG output: fix failure to scale all but the first glyph in a fraction when ``useFontCache=false``.
-*   `#1233  <https://github.com/mathjax/MathJax/issues/1233>`__ SVG output: make maligngroup and malignmark produce no output.
 *   `#1035  <https://github.com/mathjax/MathJax/issues/1035>`__ PreviewHTML output: fix fractions formatting in WebKit and IE.
+*   `#1233  <https://github.com/mathjax/MathJax/issues/1233>`__ SVG output: make maligngroup and malignmark produce no output.
+*   `#1282  <https://github.com/mathjax/MathJax/issues/1282>`__ HTML-CSS output: reduce "bumpiness" of focus outline.
+*   `#1314  <https://github.com/mathjax/MathJax/issues/1314>`__ HTML-CSS output: prevent clipping of extremely long strings.
+*   `#1316  <https://github.com/mathjax/MathJax/issues/1316>`__ SVG output: preserve non-breaking space in ``mtext`` elements.
+*   `#1332  <https://github.com/mathjax/MathJax/issues/1332>`__ HTML-CSS output: fix width calculations for mrows with embellished operators  that could stretch but don't actually.
 
 TeX emulation
 -------------
@@ -51,11 +58,17 @@ TeX emulation
 *   `#1224 <https://github.com/mathjax/MathJax/issues/1224>`__ Handle braces properly in text mode when looking for matching math delimiters.
 *   `#1225 <https://github.com/mathjax/MathJax/issues/1225>`__ Fix ``\operatorname`` not ignoring ``\limits`` that follow immediately after.
 *   `#1229 <https://github.com/mathjax/MathJax/issues/1229>`__ Fix wrong spacing of trailing binary operators.
+*   `#1272 <https://github.com/mathjax/MathJax/issues/1272>`__ Fix spacing of ``\eqnarray`` environment.
+*   `#1295 <https://github.com/mathjax/MathJax/issues/1295>`__ Handle ``scriptlevel`` set on arrays via an ``mstyle`` node (affects ``\smallmatrix``).
+*   `#1312 <https://github.com/mathjax/MathJax/issues/1312>`__ Improve heuristics for adding U+2061 (invisible function application).
 
 Asciimath
 ---------
 
 * `asciimath/#31 <https://github.com/asciimath/asciimathml/issues/31>`__ Add support for ``overparen``, ``underparen`` to produce ``mover`` and ``munder`` constructs.
+* `asciimath/#35 <https://github.com/asciimath/asciimathml/issues/35>`__ Add support for ``bowtie``, ``ltimes`` and ``rtimes``.
+* `asciimath/#40 <https://github.com/asciimath/asciimathml/issues/40>`__ Improve parsing of brackets within brackets.
+* `asciimath/#43 <https://github.com/asciimath/asciimathml/issues/43>`__ Improve detection of non-matrices.
 
 
 MathML
@@ -68,6 +81,7 @@ MathML
 *   `#1233  <https://github.com/mathjax/MathJax/issues/1233>`__ Make ``<maligngroup>`` and ``<malignmark>`` be self-closing in MathML input.
 *   `#1238  <https://github.com/mathjax/MathJax/issues/1238>`__ Fix Content MathML extension not handling namespace prefixes.
 *   `#1257  <https://github.com/mathjax/MathJax/issues/1257>`__ Improve ``mml3.js``: better RTL support in HTML-CSS; improved IE/Edge compatibility.
+*   `#1323  <https://github.com/mathjax/MathJax/issues/1323>`__ Content-mathml extension: improve handling of empty Presentation MathML nodes.
 
 Fonts
 -----
@@ -79,7 +93,7 @@ Fonts
 Localization
 ------------
 
-*   `#1248 <https://github.com/mathjax/MathJax/issues/1248>`__ Updated locales thanks to the contributors at Translatewiki.net; activate locales for Bulgarian, Sicilian, and Lithuanian.
+*   `#1248 <https://github.com/mathjax/MathJax/issues/1248>`__ Updated locales thanks to the contributors at Translatewiki.net; activate locales for Bulgarian, Sicilian, Lithuanian, and Laki.
 
 APIs
 -----
@@ -97,3 +111,4 @@ Misc.
 *   `#1208 <https://github.com/mathjax/MathJax/issues/1208>`__ Fix CHTML preview from setting chunking parameters even when disabled.
 *   `#1214 <https://github.com/mathjax/MathJax/issues/1214>`__ semi-slim official MathJax repository for bower; use ``bower install components/MathJax`` for a copy without PNG fonts. Special thanks to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
 *   `#1254 <https://github.com/mathjax/MathJax/issues/1254>`__ Improve examples in ``/test``: add viewport meta tags, improve dynamic examples.
+*   `#1328 <https://github.com/mathjax/MathJax/issues/1328>`__ Add package.json for publishing on npm, excluding PNG fonts.
