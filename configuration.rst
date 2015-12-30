@@ -175,59 +175,14 @@ below.
 Using a configuration file
 ==========================
 
-The first way to configure MathJax is to use a configuration file.
-MathJax comes with a number of pre-defined configuration files, which are
-stored in the ``MathJax/config`` directory.  Among these are the following
+The easiest way to configure MathJax is to use a configuration file.
+MathJax comes with a number of pre-defined and pre-combined configuration files,
+which are stored in the ``MathJax/config`` directory.
+The contents of these
+files are explained in more detail in the :ref:`Common Configurations <common-configurations>` section.
 
-.. describe:: default.js
-
-    A file that contains nearly all the configuration options with comments
-    describing them, which you can edit to suit your needs.
-
-.. describe:: TeX-AMS-MML_HTMLorMML.js
-
-    Allows math to be specified in :term:`TeX`, :term:`LaTeX`, or
-    :term:`MathML` notation, with the `AMSmath` and `AMSsymbols`
-    packages included, producing output using MathML if the browser
-    supports it sufficiently, and HTML-with-CSS otherwise.
-
-.. describe:: TeX-AMS_HTML.js
-
-    Allows math to be specified in :term:`TeX` or :term:`LaTeX` notation, with the
-    `AMSmath` and `AMSsymbols` packages included, and produces output
-    using the HTML-CSS output processor.
-
-.. describe:: MML_HTMLorMML.js
-
-    Allows math to be specified using :term:`MathML` notation, and produces MathML
-    output if the browser supports it sufficiently, or HTML-CSS output otherwise.
-
-.. describe:: AM_HTMLorMML.js
-
-    Allows math to be specified using :term:`AsciiMath` notation,
-    producing output in MathML if the browser supports it
-    sufficiently, or as HTML-with-CSS otherwise.
-
-.. describe:: TeX-AMS-MML_SVG.js
-
-    Allows math to be specified in :term:`TeX`, :term:`LaTeX`, or
-    :term:`MathML` notation, with the `AMSmath` and `AMSsymbols`
-    packages included, producing output using SVG.
-
-.. describe:: TeX-MML-AM_HTMLorMML.js
-
-    Allows math to be specified in :term:`TeX`, :term:`LaTeX`,
-    :term:`MathML`, or :term:`AsciiMath` notation, with the `AMSmath`
-    and `AMSsymbols` packages included, producing output using MathML
-    if the browser supports it sufficiently, and HTML-with-CSS
-    otherwise.
-
-The first of these is a file that you can edit to suit your needs.  It
-contains nearly all the configuration options that MathJax allows, and has
-comments explaining them.  The others are what are called `combined
-configuration files`, which not only configure MathJax, but also pre-load the
-various files that the configuration requires.  (The contents of these
-files are explained in more detail in the :ref:`Common Configurations <common-configurations>` section.)
+Considerations for using combined configuration files
+-----------------------------------------------------
 
 Usually, MathJax loads its components only when they are needed, but each
 component will require a separate file to be loaded, and that can cause
@@ -241,8 +196,8 @@ actually used; that is the trade off.
 Each of the combined configuration files comes in two flavors:  the ones
 listed above, which only configure the output processors but don't include
 the main code, and a "full" version, that also includes the complete
-output processors.  For example, with ``TeX-AMS_HTML.js`` and
-``TeX-AMS_HTML-full.js``, the latter includes the complete HTML-CSS output
+output processors.  For example, with ``TeX-AMS_CHTML.js`` and
+``TeX-AMS_CHTML-full.js``, the latter includes the complete CommonHTML output
 processor.  The "full" configuration files are substantially larger (on
 the order of 70KB more), so you need to decide whether it is worth loading the
 full configuration for your pages.
@@ -255,9 +210,9 @@ output processors are only loaded when they are actually needed, saving the
 loading of 70KB for pages that don't.  Of course, if your server is
 configured to compress the files it sends, the difference between the two
 is considerably reduced.  Furthermore, most browsers will cache the
-javascript they receive, so the download cost should only occur on the
+JavaScript they receive, so the download cost should only occur on the
 first page a user views, so it may be best to use the "full" version after
-all.  Note, however, that mobile devices sometimes have limits on the size
+all.  Note, however, that older mobile devices sometimes have limits on the size
 of files that they cache, so they may be forced to download the
 configuration on every page.  You need to keep these issues in mind as you
 decide on which configuration to use.
@@ -269,7 +224,7 @@ the ``MathJax.js`` file.  For example
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
 loads the ``config/TeX-AMS-MML_HTMLorMML.js`` configuration file from the
@@ -284,7 +239,7 @@ can use
 .. code-block:: html
 
     <script type="text/javascript"
-       src="path-to-MathJax/MathJax.js?config=TeX-AMS_HTML,local/local">
+       src="path-to-MathJax/MathJax.js?config=TeX-AMS_CHTML,local/local">
     </script>
 
 to first load the main configuration, then the local modifications.
