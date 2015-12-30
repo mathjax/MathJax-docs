@@ -42,41 +42,235 @@ The "best in class" / expected result for MathJax given the current state of tec
 
   * except in iOS VoiceOver, where this allows to hook into VoiceOver's exploration features.
 
-Test results
-------------
+Support Matrix
+--------------
 
 Below is a summary of results from our tests as well as user reports.
 
-* **NVDA**
+.. raw:: html
 
-  * *IE9*. The visually-hidden MathML is read out as MathML, can be navigated, and does not get an outline. Visual rendering is ignored correctly. No "clickable" etc is read.
-  * *IE10+ without MathPlayer*. The visually-hidden MathML is read out as plain text and does not get an outline. Visual rendering is ignored correctly. No "clickable" is read.
-  * *IE10+ with MathPlayer* (MathPlayer IE plugin should be disabled). The `aria-hidden` attribute is removed from the extension's output for unknown reasons, cf. `issue 1235 <https://github.com/mathjax/MathJax/issues/1235>`__. Accordingly, NVDA reads out both the visual rendering and the hidden MathML; the MathML is read correctly and no outlines are applied, no "clickable" is read.
-  * *Firefox*. The visually-hidden MathML is read out, can be navigated, and does not get an outline. Visual rendering is ignored correctly; "clickable" is read.
-  * *Chrome*. (Win7, Win8). Both the MathML and visual rendering is skipped completely.
+  <table>
+      <thead>
+          <tr>
+              <th>Screenreader</th>
+              <th>Browser</th>
+              <th>OS</th>
+              <th>Usable?</th>
+              <th>Bugs</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>ChromeVox</td>
+              <td>Chrome</td>
+              <td>any</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>any</td>
+              <td>WinXP</td>
+              <td>DNA</td>
+              <td><a href="https://github.com/nvaccess/nvda/issues/5555#issuecomment-160598962">MathPlayer 4 does not support WinXP</a></td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>Chrome</td>
+              <td>any</td>
+              <td>DNA</td>
+              <td><a href="https://github.com/nvaccess/nvda/issues/5555#issuecomment-160503827">Chrome issues prevent MathML support by NVDA</a></td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>Firefox</td>
+              <td>Win7</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>Firefox</td>
+              <td>Win8.1</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>Firefox</td>
+              <td>Win10</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>MS Edge</td>
+              <td>Win10</td>
+              <td>DNA</td>
+              <td><a href="https://github.com/nvaccess/nvda/issues/5555#issuecomment-160598962">Edge issues prevent MathML support by NVDA</a></td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>IE11</td>
+              <td>Win8.1</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>IE10</td>
+              <td>Win7</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>NVDA</td>
+              <td>IE9</td>
+              <td>Win7</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>any</td>
+              <td>WinXP</td>
+              <td>DNA</td>
+              <td><a href="http://www.freedomscientific.com/Downloads/jaws/jaws16features#JAWSXP">JAWS 15 was the last version to support Windows XP but MathML support in JAWS starts with JAWS 16</a></td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>Chrome</td>
+              <td>any</td>
+              <td>DNA</td>
+              <td><a href="http://www.freedomscientific.com/Downloads/jaws/jaws16features">JAWS only supports IE and Firefox</a></td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>Firefox</td>
+              <td>Win8.1</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>Firefox</td>
+              <td>Win7</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>Firefox</td>
+              <td>Win10</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>MS Edge</td>
+              <td>Win10</td>
+              <td>DNA</td>
+              <td><a href="http://www.freedomscientific.com/Downloads/jaws/jaws16features">JAWS only supports IE and Firefox</a></td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>IE11</td>
+              <td>Win8.1</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>IE10</td>
+              <td>Win7</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>JAWS</td>
+              <td>IE9</td>
+              <td>Win7</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>VoiceOver</td>
+              <td>Safari</td>
+              <td>OSX</td>
+              <td>+1</td>
+              <td>see notes below</td>
+          </tr>
+          <tr>
+              <td>VoiceOver</td>
+              <td>Chrome</td>
+              <td>OSX</td>
+              <td>DNA</td>
+              <td>Chrome and VoiceOver issues prevent MathML support in this combination.</td>
+          </tr>
+          <tr>
+              <td>VoiceOver</td>
+              <td>Firefox</td>
+              <td>OSX</td>
+              <td>DNA</td>
+              <td>Chrome and Firefox issues prevent MathML support in this combination.</td>
+          </tr>
+          <tr>
+              <td>Orca</td>
+              <td>Firefox</td>
+              <td>Ubuntu 15.10</td>
+              <td>+1</td>
+              <td>no bugs</td>
+          </tr>
+          <tr>
+              <td>Orca</td>
+              <td>Web</td>
+              <td>Ubuntu 15.10</td>
+              <td>DNA</td>
+              <td><a href="https://mail.gnome.org/archives/orca-list/2015-July/msg00010.html">Chrome issues prevent MathML support by ORCA</a></td>
+          </tr>
+          <tr>
+              <td>Orca</td>
+              <td>Chrome(ium)</td>
+              <td>Ubuntu 15.10</td>
+              <td>DNA</td>
+              <td><a href="https://mail.gnome.org/archives/orca-list/2015-July/msg00010.html">Chrome issues prevent MathML support by ORCA</a></td>
+          </tr>
+      </tbody>
+  </table>
 
-* **Jaws 16**
+Notes on Apple VoiceOver
+========================
 
-  * *IE11*. The visually-hidden MathML is read out as MathML and does not get an outline. Visual rendering is ignored correctly. No immediate keyboard navigation within the equation but invoking JAWS's math viewer allows exploration; tabular math is only summarized in the page ("table with two columns and three rows; math content"). No "clickable" is read.
-  * *Chrome*. MathJax output is skipped ("blank") during navigation. During JAWS say-all mode, the MathJax script-tag (with MathML/TeX/asciimath source) is sometimes read out.
-  * *Firefox*. The visually-hidden MathML is read out and does not get an outline. Visual rendering is ignored correctly. No immediate keyboard navigation within the page but invoking the math viewer allows tabular exploration; tabular math is only outlined in the page ("table with two columns and three rows; math content"). "Clickable" is read at the end of each equation.
+* **VoiceOver** on OSX
 
-* **ChromeVox**
-
-  * While exploring the page, the visually-hidden MathML is read out and gets an outline. Visual rendering is ignored correctly.
-  * When selecting a larger segment to read, both MathML and visual rendering is ignored.
-  * switching to semantic reading works on the hidden MathML.
-
-* **VoiceOver** (OSX)
-
-  *  *Safari*. The visually-hidden MathML is read out and gets an outline. Visual rendering is ignored correctly. VoiceOver somtimes drops parts of the equation (possibly due to its partial implementation).
+  *  *Safari*. The visually-hidden MathML is read out and gets an outline. Visual rendering is ignored correctly. VoiceOver somtimes drops parts of the equation due to its partial MathML support.
   * *Chrome*. The visually-hidden MathML is detected but VoiceOver does not read it correctly (only e.g., "4 items detected; math"; this seems like a VO bug); an outline is added. Visual rendering is ignored correctly.
   * *Firefox*. The visually-hidden MathML is only read as string of contained characters; an outline is added. Visual rendering is ignored correctly.
 
-* **VoiceOver** (iOS)
+* **VoiceOver** on iOS
 
-  * The "slide two fingers from top to read screen" method will read the visually-hidden MathML and give it an outline. Visual rendering is ignored correctly. The outline added to the visually-hidden MathML can be used to double-tap to open exploration mode. At that point, native Safari rendering takes over so visual rendering might be different.
+  * The "slide two fingers from top to read screen" method will read the visually-hidden MathML. Visual rendering is ignored correctly.
   * Manual exploration.
 
-    * Exploration by swiping left/right will read the visually-hidden MathML and give it an outline. Visual rendering is ignored correctly. The outline added to the visually-hidden MathML can be used to double-tap to open exploration mode. At that point, native Safari rendering takes over so visual rendering might be different.
+    * Exploration by swiping left/right will read the visually-hidden MathML. Visual rendering is ignored correctly.
     * Tapping on an equation does not work due to the visually-hidden MathML being placed in a 1px box.
+
+
+Notes on MathPlayer 4 and Internet Explorer 11
+==============================================
+
+Design Science suggests to always use IE's Enterprise mode for MathPlayer in IE11, `see their documentation <http://www.dessci.com/en/products/mathplayer/tech/default.htm#Enterprise_mode>`__.
+However, it seems that this is only required for MathPlayer's visual rendering
+to work and this additionally requires the MathPlayer BrowserHelperAddon to be
+active in IE.
+
+Unfortunately, the MathPlayer BrowserHelperAddon can lead to crashes. E.g., if
+you switch MathJax's output to the NativeMML output, MathPlayer will crash IE 11; you'll have to clear the MathJax cookie to reset things. Also, in a plain MathML sample (without MathJax), clicking on the MathPlayer rendering will crash
+IE11.
+
+Using IE's Enterprise mode should work with NVDA and the AssistiveMML extension
+but they don't seem to work with NVDA and plain MathML pages.
+
+We suggest you do not switch on IE's Enterprise mode on pages using MathJax and
+we also have to strongly suggest **not** to use the BrowserHelperAddon with MathJax
+on IE 11.
