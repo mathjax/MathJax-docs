@@ -20,7 +20,7 @@ distributed network service, the tag might be
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -49,7 +49,7 @@ typical invocation of MathJax would be
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -126,14 +126,14 @@ For example,
 
 .. code-block:: html
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js"></script>
 
 loads the v2.0 version, even after v2.1 or later 
 versions are released, while
 
 .. code-block:: html
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
 will always be the most current stable release, so it will go from v2.3 to
 the next version automatically when that is released.  Note that all the versions 
@@ -268,7 +268,7 @@ the ``MathJax.js`` file.  For example
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 loads the ``config/TeX-AMS-MML_HTMLorMML.js`` configuration file from the 
@@ -303,7 +303,7 @@ from the CDN and still use your configuration file as follows:
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
     </script>
 
 Because the ``local.js`` file is not on the CDN server, you must give

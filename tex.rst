@@ -145,8 +145,7 @@ appears between math delimiters.  That usually involves modifying the
 content-management system itself, which is beyond the means of most
 page authors.  If you are lucky, someone else will already have done
 this for you, and you can find a MathJax plugin for your system on the
-`MathJax-In-Use page
-<http://www.mathjax.org/community/mathjax-in-use/>`_ page.
+:ref:`MathJax-In-Use <mathjax-in-use>` page.
 
 If there is no plugin for your system, or if it doesn't handle the
 subtleties of isolating the mathematics from the other markup that it

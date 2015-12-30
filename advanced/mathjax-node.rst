@@ -9,7 +9,7 @@ library.
 
 To install via NPM use
 
-..code-block:: bash
+.. code-block:: bash
 
   npm install mathjax-node
 

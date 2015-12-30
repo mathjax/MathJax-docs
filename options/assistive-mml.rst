@@ -15,7 +15,7 @@ For example
 .. code-block:: javascript
 
   MathJax.Hub.Config({
-    "AssistiveMML.js": {
+    "AssistiveMML": {
       disabled: false,
       styles: {
         ".MJX_Assistive_MathML": {
