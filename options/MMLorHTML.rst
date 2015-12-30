@@ -1,8 +1,12 @@
 .. _configure-MMLorHTML:
 
-***********************************
-The MMLorHTML configuration options
-***********************************
+************************************************
+The MMLorHTML configuration options (Deprecated)
+************************************************
+
+.. warning::
+
+  This extension has been deprecated in MathJax v2.6.
 
 The options below control the operation of the MMLorHTML configuration
 file that is run when you include ``"MMLorHTML.js"`` in the `config`
@@ -54,5 +58,9 @@ configuration; `MMLorHTML` will fill that in for you.
    a different renderer after the default one has been chosen by
    ``MMLorHTML.js``.
 
-
-
+MathJax produces MathML that models the underlying mathematics as best
+it can, rather than using complicated hacks to improve output for a
+particular MathML implementation.  When you make the choice to use the
+NativeMML output processor, you are making a trade-off: gaining speed
+at the expense of quality and reliability, a decision that should not
+be taken lightly.

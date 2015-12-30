@@ -9,7 +9,7 @@ Which license is MathJax distributed under?
 -------------------------------------------
 
 MathJax is distributed under the `Apache License, Version
-2.0 <http://cdn.mathjax.org/mathjax/2.0-latest/LICENSE>`__.
+2.0 <https://github.com/mathjax/MathJax/blob/master/LICENSE>`__.
 
 Will MathJax make my page load slower even if there's no math?
 --------------------------------------------------------------
@@ -30,11 +30,11 @@ Mathematics is not rendering properly in IE. How do I fix that?
 ---------------------------------------------------------------
 
 First, please open the MathJax homepage at
-`www.mathjax.org <http://www.mathjax.org>`__ in IE to see if that loads
+`www.mathjax.org <https://www.mathjax.org>`__ in IE to see if that loads
 correctly. If it does, this indicates that there may be something wrong
 with the webpage you were trying to view initially. If appropriate,
 upgrade the website to `the latest version of
-MathJax <http://www.mathjax.org/download/>`__. If the MathJax homepage 
+MathJax <https://docs.mathjax.org/en/v2.6-latest/start.html#downloading-and-installing-mathjax>`__. If the MathJax homepage
 does
 not display mathematics properly, there may be an issue with your
 security settings in Internet Explorer. Please check the following
@@ -84,8 +84,7 @@ output <configure-HTML-CSS>` and
 How do I access the MathJax CDN using a https secure connection?
 ----------------------------------------------------------------
 
-The MathJax CDN can be accessed via ``https``. We advise using the protocol 
-agnostic ``//cdn.mathjax.org/mathjax/latest/MathJax.js``. For more 
+The MathJax CDN can be accessed via ``https``. We advise to always use ``https``. For more
 information, see :ref:`our documentation <secure-cdn-access>`.
 
 My mathematics is private. Is it safe to use MathJax?
@@ -98,9 +97,7 @@ interacts with a web server to get font data but this is all put
 together in the browser of the reader. In case you have concerns about
 cross-site scripting, you can access the MathJax CDN service using the
 secure ``https`` protocol to prevent tampering with the code between the
-CDN and a browser. (Note, though, that this currently does not work with
-the default url ``cdn.mathjax.org`` - see `this FAQ <#problem-https>`__
-for more background and an alternative url). Or, if you prefer, you can
+CDN and a browser. Or, if you prefer, you can
 also install MathJax on your own web server. MathJax does not reference
 script codes on other websites. The code is, of course, open source
 which means that you can `review it and inspect its
@@ -116,12 +113,11 @@ and offers an extension for Content MathML, see :ref:`the
 documentation on MathML
 support <content-mathml>`.
 You can also convert your Content MathML expressions to
-Presentation MathML yourself. A good way to do this conversion is with
-an XSL transformation tool, see for example the `web-xslt
-collection <http://code.google.com/p/web-xslt/wiki/Overview>`__. A more
+Presentation MathML using xslt, see for example David Carlisle's `web-xslt
+collection <https://github.com/davidcarlisle/web-xslt>`__. A more
 detailed explanation of the difference between Content and Presentation
 MathML can be found in the module `"Presentation MathML Versus Content
-MathML" <http://cnx.org/content/m31620/latest/>`__ at cnx.org.
+MathML" <https://cnx.org/content/m31620/latest/>`__ at cnx.org.
 
 How do I create mathematical expressions for display with MathJax?
 ------------------------------------------------------------------
@@ -146,7 +142,7 @@ supported by Computer Algebra Systems and can be created with a choice
 of authoring tools, including Microsoft Office with the
 `MathType <http://www.dessci.com/en/products/MathType/>`__ equation
 editor. A list of software the supports MathML may be found in `The W3C
-MathML software list <http://www.w3.org/Math/Software/>`__.
+MathML software list <http://www.w3.org/Math/wiki/Tools>`__.
 
 I ran into a problem with MathJax. How do I report it?
 ------------------------------------------------------
@@ -166,20 +162,20 @@ problem, please follow these steps:
 -  Have you turned of other extensions and plugins in your browser, and
    restarted it?
 -  Have a look at the math rendering examples on
-   `www.mathjax.org <http://www.mathjax.org>`__ to see if you experience
+   `www.mathjax.org <https://www.mathjax.org>`__ to see if you experience
    problems there as well. This might help you to determine the nature
    of your problem.
 -  If possible, check whether the problem has been solved in the latest
    MathJax release. The preferred way to do this is to invoke the most
    recent version of MathJax on the CDN by pointing to
-   http://cdn.mathjax.org/mathjax/latest/MathJax.js. If you need to work
+   https://cdn.mathjax.org/mathjax/latest/MathJax.js. If you need to work
    locally, try a fresh install of the `latest
-   release <http://www.mathjax.org/download/>`__.
+   release <https://www.mathjax.org/download/>`__.
 -  Search through the `MathJax User
-   Group <http://groups.google.com/group/mathjax-users>`__ to see if
+   Group <https://groups.google.com/group/mathjax-users>`__ to see if
    anyone else has come across the problem before.
 -  Found a real and new problem? Please report it to the `MathJax User
-   Group <http://groups.google.com/group/mathjax-users>`__ including the
+   Group <https://groups.google.com/group/mathjax-users>`__ including the
    following information:
 
    -  A detailed description of the problem. What exactly is not working
@@ -217,7 +213,7 @@ some users' browsers. With image fonts disabled, users must either have
 the MathJax or STIX fonts on their computer or their browser must
 support the @font-face CSS directive. This means IE6+, Chrome, Safari
 3.1+, Firefox 3.5+, and Opera 10+, or other browsers based on their
-rendering engines. On earlier browsers (without local fonts) or if 
+rendering engines. On earlier browsers (without local fonts) or if
 webfonts are blocked , MathJax will not be able to render math reliably (though
 it will try its best). To disable image fonts, edit the MathJax config
 file at ``[MathJax]/config/MathJax.js`` or the custom config inside your
@@ -230,17 +226,17 @@ template's ``<script>`` tag and set imageFont to null.
 This will tell MathJax that there are no image fonts available and it
 will no longer look for them. You can then delete the
 ``[MathJax]/fonts/HTML-CSS/TeX/png/`` directory, which takes up the most
-space in the fonts folder.  Do ***not*** delete the other directories,
+space in the fonts folder.  Do ***not*** delete the other font directories,
 as they are needed to handle @font-face for other browsers. For more
-information, see `this
-guide <https://github.com/mathjax/MathJax-docs/wiki/Guide%3A-reducing-size-of-a-mathjax-installation>`__.
+advanced reductions, see our `MathJax-grunt-cleaner <https://github.com/mathjax/MathJax-grunt-cleaner>`__ tool.
+
 
 Why is MathJax using image fonts instead of web fonts?
 ------------------------------------------------------
 
-Web fonts are supported by all popular browsers (IE, Firefox, Chrome, Safari, 
-Opera...) and they are scalable, which means much better display and print 
-quality. Clearly, you want to make sure this is working on your install of 
+Web fonts are supported by all popular browsers (IE, Firefox, Chrome, Safari,
+Opera...) and they are scalable, which means much better display and print
+quality. Clearly, you want to make sure this is working on your install of
 MathJax. Here are several reasons web fonts might not be working for you:
 
 -  **Config not specifying web fonts:** Web fonts are enabled by
@@ -329,23 +325,23 @@ you would like to convert full TeX documents into HTML to publish
 online, you should use a TeX to HTML converter like
 `LaTeXML <http://dlmf.nist.gov/LaTeXML/>`__,
 `Tralics <http://www-sop.inria.fr/apics/tralics/>`__ or
-`tex4ht <http://www.tug.org/applications/tex4ht/>`__, but you should
+`tex4ht <http://www.tug.org/applications/tex4ht/mn.html>`__, but you should
 realize that TeX conversion tools will never produce results as good as
 controlling the HTML and CSS source yourself.
 
 What should IE's X-UA-Compatible meta tag be set to?
 --------------------------------------------------------------
 
-We strongly suggest to follow Microsoft's suggestion to use ``IE=edge``. That 
+We strongly suggest to follow Microsoft's suggestion to use ``IE=edge``. That
 is, in the document ``<head>`` include
 
 ::
 
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-This will force all IE versions to use their latest engine which is the 
-optimal setting for MathJax. For more information, see the `Microsoft 
-documentation on compatibility modes <https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible>`__.
+This will force all IE versions to use their latest engine which is the
+optimal setting for MathJax. For more information, see the `Microsoft
+documentation on compatibility modes <https://msdn.microsoft.com/en-us/library/dn384051(v=vs.85).aspx>`__.
 
 Does MathJax support TeX macros?
 --------------------------------

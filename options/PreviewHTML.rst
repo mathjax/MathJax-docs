@@ -1,20 +1,20 @@
-.. _configure-CommonHTML:
+.. _configure-PreviewHTML:
 
-*******************************
-The CommonHTML output processor
-*******************************
+********************************
+The PreviewHTML output processor
+********************************
 
-The options below control the operation of the CommonHTML output
-processor that is run when you include ``"output/CommonHTML"`` in the
+The options below control the operation of the PreviewHTML output
+processor that is run when you include ``"output/PreviewHTML"`` in the
 `jax` array of your configuration or load a combined configuration
-file that includes the CommonHTML output jax.  They are listed with their default
-values.  To set any of these options, include an ``CommonHTML`` section
+file that includes the PreviewHTML output jax.  They are listed with their default
+values.  To set any of these options, include an ``PreviewHTML`` section
 in your :meth:`MathJax.Hub.Config()` call.  For example
 
 .. code-block:: javascript
 
     MathJax.Hub.Config({
-      CommonHTML: {
+      PreviewHTML: {
         scale: 120
       }
     });
@@ -24,7 +24,7 @@ would set the ``scale`` option to 120%.
 .. describe:: scale: 100
 
     The scaling factor (as a percentage) of math with respect to the
-    surrounding text.  The `CommonHTML` output processor tries to match
+    surrounding text.  The `PreviewHTML` output processor tries to match
     the ex-size of the mathematics with that of the text where it is
     placed, but you may want to adjust the results using this scaling
     factor.  The user can also adjust this value using the contextual
@@ -47,7 +47,7 @@ would set the ``scale`` option to 120%.
 .. describe:: linebreaks: {}
 
     This is an object that configures automatic linebreaking in the
-    CommonHTML output.  In order to be backward compatible with earlier
+    PreviewHTML output.  In order to be backward compatible with earlier
     versions of MathJax, only explicit line breaks are performed by
     default, so you must enable line breaks if you want automatic
     ones.  The object contains the following values:

@@ -14,13 +14,13 @@ section of your document:
     <script type="text/javascript" src="path-to-MathJax/MathJax.js"></script>
 
 where ``path-to-MathJax`` is replaced by the URL of the copy of MathJax
-that you are loading.  For example, if you are using the MathJax 
+that you are loading.  For example, if you are using the MathJax
 distributed network service, the tag might be
 
 .. code-block:: html
 
-    <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+    <script type="text/javascript"
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -48,8 +48,8 @@ typical invocation of MathJax would be
 
 .. code-block:: html
 
-    <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    <script type="text/javascript"
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -82,18 +82,18 @@ advanced topic, however; see :ref:`Loading MathJax Dynamically
 Loading MathJax from the CDN
 ============================
 
-MathJax is available as a web service from ``cdn.mathjax.org``, so you 
-can obtain MathJax from there without needing to install it on your own 
-server.  The CDN is part of a distributed "cloud" network, so it is 
-handled by servers around the world.  That means that you should get access 
+MathJax is available as a web service from ``cdn.mathjax.org``, so you
+can obtain MathJax from there without needing to install it on your own
+server.  The CDN is part of a distributed "cloud" network, so it is
+handled by servers around the world.  That means that you should get access
 to a server geographically near you, for a fast, reliable connection.
 
-The CDN hosts the most current version of MathJax, as well as older 
-versions, so you can either link to a version that stays up-to-date as 
-MathJax is improved, or you can stay with one of the release versions so 
+The CDN hosts the most current version of MathJax, as well as older
+versions, so you can either link to a version that stays up-to-date as
+MathJax is improved, or you can stay with one of the release versions so
 that your pages always use the same version of MathJax.
 
-The URL that you use to obtain MathJax determines the version that you 
+The URL that you use to obtain MathJax determines the version that you
 get.  The CDN has the following directory structure:
 
 .. code-block::  sh
@@ -107,8 +107,9 @@ get.  The CDN has the following directory structure:
        2.3-latest/   # the 2.3 release with any critical patches
        2.4-latest/   # the 2.4 release with any critical patches
        2.5-latest/   # the 2.5 release with any critical patches
+       2.6-latest/   # the 2.6 release with any critical patches
        ...
-       latest/       # the most current version (2.5-latest in this case)
+       latest/       # the most current version (2.6-latest in this case)
 
 Each directory corresponds to an official MathJax release; however,
 hotfixes (urgent bug fixes) will be applied in each release branch as
@@ -121,29 +122,29 @@ We may occasionally introduce directories for betas, as indicated above,
 but they will be temporary, and will be removed after the official
 release.
 
-To load from a particular release, use the directory for that release.  
+To load from a particular release, use the directory for that release.
 For example,
 
 .. code-block:: html
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js"></script>
 
-loads the v2.0 version, even after v2.1 or later 
+loads the v2.0 version, even after v2.1 or later
 versions are released, while
 
 .. code-block:: html
 
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 
 will always be the most current stable release, so it will go from v2.3 to
-the next version automatically when that is released.  Note that all the versions 
-available on the CDN are stable versions; the development version is not 
+the next version automatically when that is released.  Note that all the versions
+available on the CDN are stable versions; the development version is not
 hosted on the CDN.  (If you wish to use the development version of
 MathJax, you will need to install your own copy; see :ref:`Installing
 and Testing MathJax <installation>` for information on how to do that.)
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<http://www.mathjax.org/download/mathjax-cdn-terms-of-service/>`_, so be
+<https://www.mathjax.org/mathjax-cdn-terms-of-service.html>`_, so be
 sure to read that before linking to the MathJax CDN server.
 
 If you wish to use the MathJax CDN but use your own configuration file
@@ -155,17 +156,17 @@ end of the :ref:`Using a Local Configuration File
 Configuring MathJax
 ===================
 
-There are two ways to configure MathJax:  via a configuration file, or by 
-including configuration commands within the web page itself.  These can be 
-used independently, or in combination.  For example, you can load a main 
-pre-defined configuration file, but include in-line commands to 
+There are two ways to configure MathJax:  via a configuration file, or by
+including configuration commands within the web page itself.  These can be
+used independently, or in combination.  For example, you can load a main
+pre-defined configuration file, but include in-line commands to
 adjust the configuration to your needs.
 
 Note that you must use at least one of these two forms of configuration.
 Unlike MathJax v1.0, version 1.1 and higher does not load a default
 configuration file.  If you have been using version 1.0's
-``config/MathJax.js`` for your configuration, you will need to load that 
-configuration file explicitly via a ``config`` parameter, as described 
+``config/MathJax.js`` for your configuration, you will need to load that
+configuration file explicitly via a ``config`` parameter, as described
 below.
 
 
@@ -174,59 +175,14 @@ below.
 Using a configuration file
 ==========================
 
-The first way to configure MathJax is to use a configuration file.
-MathJax comes with a number of pre-defined configuration files, which are 
-stored in the ``MathJax/config`` directory.  Among these are the following
+The easiest way to configure MathJax is to use a configuration file.
+MathJax comes with a number of pre-defined and pre-combined configuration files,
+which are stored in the ``MathJax/config`` directory.
+The contents of these
+files are explained in more detail in the :ref:`Common Configurations <common-configurations>` section.
 
-.. describe:: default.js
-
-    A file that contains nearly all the configuration options with comments
-    describing them, which you can edit to suit your needs.
-
-.. describe:: TeX-AMS-MML_HTMLorMML.js
-
-    Allows math to be specified in :term:`TeX`, :term:`LaTeX`, or
-    :term:`MathML` notation, with the `AMSmath` and `AMSsymbols`
-    packages included, producing output using MathML if the browser
-    supports it sufficiently, and HTML-with-CSS otherwise.
-
-.. describe:: TeX-AMS_HTML.js
-
-    Allows math to be specified in :term:`TeX` or :term:`LaTeX` notation, with the 
-    `AMSmath` and `AMSsymbols` packages included, and produces output 
-    using the HTML-CSS output processor.
-
-.. describe:: MML_HTMLorMML.js
-
-    Allows math to be specified using :term:`MathML` notation, and produces MathML 
-    output if the browser supports it sufficiently, or HTML-CSS output otherwise.
-
-.. describe:: AM_HTMLorMML.js
-
-    Allows math to be specified using :term:`AsciiMath` notation,
-    producing output in MathML if the browser supports it
-    sufficiently, or as HTML-with-CSS otherwise.
-
-.. describe:: TeX-AMS-MML_SVG.js
-
-    Allows math to be specified in :term:`TeX`, :term:`LaTeX`, or
-    :term:`MathML` notation, with the `AMSmath` and `AMSsymbols`
-    packages included, producing output using SVG.
-
-.. describe:: TeX-MML-AM_HTMLorMML.js
-
-    Allows math to be specified in :term:`TeX`, :term:`LaTeX`,
-    :term:`MathML`, or :term:`AsciiMath` notation, with the `AMSmath`
-    and `AMSsymbols` packages included, producing output using MathML
-    if the browser supports it sufficiently, and HTML-with-CSS
-    otherwise.
-
-The first of these is a file that you can edit to suit your needs.  It 
-contains nearly all the configuration options that MathJax allows, and has 
-comments explaining them.  The others are what are called `combined 
-configuration files`, which not only configure MathJax, but also pre-load the 
-various files that the configuration requires.  (The contents of these 
-files are explained in more detail in the :ref:`Common Configurations <common-configurations>` section.)
+Considerations for using combined configuration files
+-----------------------------------------------------
 
 Usually, MathJax loads its components only when they are needed, but each
 component will require a separate file to be loaded, and that can cause
@@ -237,13 +193,13 @@ probably be getting the components that MathJax needs faster than you would
 without the combined file, but you may be loading components that are never
 actually used; that is the trade off.
 
-Each of the combined configuration files comes in two flavors:  the ones 
-listed above, which only configure the output processors but don't include 
-the main code, and a "full" version, that also includes the complete 
-output processors.  For example, with ``TeX-AMS_HTML.js`` and 
-``TeX-AMS_HTML-full.js``, the latter includes the complete HTML-CSS output 
-processor.  The "full" configuration files are substantially larger (on 
-the order of 70KB more), so you need to decide whether it is worth loading the 
+Each of the combined configuration files comes in two flavors:  the ones
+listed above, which only configure the output processors but don't include
+the main code, and a "full" version, that also includes the complete
+output processors.  For example, with ``TeX-AMS_CHTML.js`` and
+``TeX-AMS_CHTML-full.js``, the latter includes the complete CommonHTML output
+processor.  The "full" configuration files are substantially larger (on
+the order of 70KB more), so you need to decide whether it is worth loading the
 full configuration for your pages.
 
 If most of your pages include mathematics, then it is to your advantage to
@@ -254,9 +210,9 @@ output processors are only loaded when they are actually needed, saving the
 loading of 70KB for pages that don't.  Of course, if your server is
 configured to compress the files it sends, the difference between the two
 is considerably reduced.  Furthermore, most browsers will cache the
-javascript they receive, so the download cost should only occur on the
+JavaScript they receive, so the download cost should only occur on the
 first page a user views, so it may be best to use the "full" version after
-all.  Note, however, that mobile devices sometimes have limits on the size
+all.  Note, however, that older mobile devices sometimes have limits on the size
 of files that they cache, so they may be forced to download the
 configuration on every page.  You need to keep these issues in mind as you
 decide on which configuration to use.
@@ -267,11 +223,11 @@ the ``MathJax.js`` file.  For example
 
 .. code-block:: html
 
-    <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    <script type="text/javascript"
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
-loads the ``config/TeX-AMS-MML_HTMLorMML.js`` configuration file from the 
+loads the ``config/TeX-AMS-MML_HTMLorMML.js`` configuration file from the
 MathJax distributed network service.
 
 You can include more than one configuration file by separating them with
@@ -282,8 +238,8 @@ can use
 
 .. code-block:: html
 
-    <script type="text/javascript" 
-       src="path-to-MathJax/MathJax.js?config=TeX-AMS_HTML,local/local">
+    <script type="text/javascript"
+       src="path-to-MathJax/MathJax.js?config=TeX-AMS_CHTML,local/local">
     </script>
 
 to first load the main configuration, then the local modifications.
@@ -302,8 +258,8 @@ from the CDN and still use your configuration file as follows:
 
 .. code-block:: html
 
-    <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+    <script type="text/javascript"
+       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
     </script>
 
 Because the ``local.js`` file is not on the CDN server, you must give
@@ -328,12 +284,12 @@ location of your configuration file.
 Using in-line configuration options
 ===================================
 
-The second way to configure MathJax is through `in-line configuration`, 
-which puts the configuration options within the web page itself. The use 
-of in-line configuration with MathJax requires two separate  ``<script>`` 
-tags: one for specifying the configuration settings and one for loading of 
-MathJax.  Because MathJax starts its configuration process as soon as it is 
-loaded, the configuration script must come **before** the script tag that 
+The second way to configure MathJax is through `in-line configuration`,
+which puts the configuration options within the web page itself. The use
+of in-line configuration with MathJax requires two separate  ``<script>``
+tags: one for specifying the configuration settings and one for loading of
+MathJax.  Because MathJax starts its configuration process as soon as it is
+loaded, the configuration script must come **before** the script tag that
 loads ``MathJax.js`` itself.  You do this by including a ``<script>`` with
 ``type="text/x-mathjax-config"`` whose content will be run when
 MathJax performs its configuration.  Generally, this script will
@@ -369,15 +325,15 @@ HTML-CSS processor to use the TeX fonts rather than other locally installed
 fonts (e.g., :term:`STIX` fonts).  See the :ref:`configuration options
 <configuration>` section (or the comments in the ``config/default.js``
 file) for more information about the configuration options that you can
-include in the :meth:`MathJax.Hub.Config()` call.  This 
+include in the :meth:`MathJax.Hub.Config()` call.  This
 configuration does **not** load any pre-defined configuration file.
 
-Note that you can combine in-line configuration with file-based 
-configuration; simply include ``text/x-mathjax-config`` scripts as above, 
-but also include ``config=filename`` when you load the ``MathJax.js`` 
-file.  For example, the `tex2jax` preprocessor does **not** enable the TeX 
-single-dollar in-line math delimiters by default.  You can load one of the 
-pre-defined configuration files that includes the TeX preprocessor, and use 
+Note that you can combine in-line configuration with file-based
+configuration; simply include ``text/x-mathjax-config`` scripts as above,
+but also include ``config=filename`` when you load the ``MathJax.js``
+file.  For example, the `tex2jax` preprocessor does **not** enable the TeX
+single-dollar in-line math delimiters by default.  You can load one of the
+pre-defined configuration files that includes the TeX preprocessor, and use
 an in-line configuration block to enable the single-dollar signs, as
 in this example:
 
@@ -418,8 +374,8 @@ the previous example becomes:
     <script type="text/javascript" src="path-to-MathJax/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
-Similarly to scripts with the custom type ``text/x-mathjax-config``, you can 
-enter arbitrary code to execute during the configuration phase. You just 
+Similarly to scripts with the custom type ``text/x-mathjax-config``, you can
+enter arbitrary code to execute during the configuration phase. You just
 need to put that code in an ``AuthorInit`` function:
 
 .. code-block:: html
@@ -466,22 +422,22 @@ until later in the page.
 
 One such situation is when you have a site that loads MathJax as part of a
 theme or template, but want to be able to modify the configuration on
-specific pages of the site.  To accomplish this, you need to ask MathJax 
-to delay its startup configuration until some later time.  MathJax uses 
-the ``delayStartupUntil`` parameter to control the timing of the startup 
-sequence.  By default, it is set to ``none``, meaning there is no delay 
-and MathJax starts configuration right away.  
+specific pages of the site.  To accomplish this, you need to ask MathJax
+to delay its startup configuration until some later time.  MathJax uses
+the ``delayStartupUntil`` parameter to control the timing of the startup
+sequence.  By default, it is set to ``none``, meaning there is no delay
+and MathJax starts configuration right away.
 
 You can set ``delayStartupUntil=onload`` in order to prevent MathJax from
 continuing its startup process until the page's onLoad handler fires.  This
 allows MathJax to find the ``text/x-mathjax-config`` blocks that occur
 anywhere on the page, not just the ones that appear above the ``<script>``
-that loads ``MathJax.js``.  It also means that MathJax will not begin 
-loading any of the files that it needs until then as well, which may delay 
-the displaying of your mathematics, since the onLoad handler doesn't 
-execute until all the images and other media are available.  (If you have 
-used a combined configuration file, however, it already includes all the 
-main files that MathJax needs, so there is not much loss in delaying the 
+that loads ``MathJax.js``.  It also means that MathJax will not begin
+loading any of the files that it needs until then as well, which may delay
+the displaying of your mathematics, since the onLoad handler doesn't
+execute until all the images and other media are available.  (If you have
+used a combined configuration file, however, it already includes all the
+main files that MathJax needs, so there is not much loss in delaying the
 startup.)
 
 You can set ``delayStartupUntil=configured`` in order to delay the
@@ -521,18 +477,18 @@ MathJax will not process any of the math on the page.
 Details of the MathJax configuration process
 ============================================
 
-Since there are a number of different ways to configure MathJax, it is 
-important to know how they interact.  The configuration actions are the 
+Since there are a number of different ways to configure MathJax, it is
+important to know how they interact.  The configuration actions are the
 following:
 
 1.  Execute ``AuthorInit()`` from in-line ``MathJax = {...}``.
-2.  Process any configuration file explicitly specified as a script 
+2.  Process any configuration file explicitly specified as a script
     parameter via `config=`.
 3.  Perform author configuration from in-line ``MathJax = {...}``
 4.  Process the in-line script body (deprecated), if present.
 5.  If delayed startup is requested, wait for the indicated signal.
-6.  Process ``text/x-mathjax-config`` config blocks.  
-7.  Process any config files queued in the configuration's `config` array 
+6.  Process ``text/x-mathjax-config`` config blocks.
+7.  Process any config files queued in the configuration's `config` array
     by earlier config code.
 
 Note that ``text/x-mathjax-config`` script blocks must either precede
@@ -543,5 +499,3 @@ browser-dependent erratic behavior will result.  Similarly,
 ``window.MathJax`` must be created before ``MathJax.js`` is loaded.
 If you set the ``MathJax`` variable afterward, you will disable
 MathJax entirely!
-
-

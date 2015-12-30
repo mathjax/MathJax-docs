@@ -32,8 +32,8 @@ would set the ``scale`` option to 120%.
 
 .. describe:: minScaleAdjust: 50
 
-   This gives a minimum scale (as a percent) for the scaling used by 
-   MathJax to match the equation to the surrounding text.  This will 
+   This gives a minimum scale (as a percent) for the scaling used by
+   MathJax to match the equation to the surrounding text.  This will
    prevent MathJax from making the mathematics too small.
 
 .. describe:: font: "TeX"
@@ -53,7 +53,7 @@ would set the ``scale`` option to 120%.
     1000 units).  This is a cheap way of getting slightly lighter or
     darker characters, but remember that not all displays will act the
     same, so a value that is good for you may not be good for everyone.
-    
+
 .. describe:: undefinedFamily: "STIXGeneral, 'Arial Unicode MS', serif"
 
     This is the font-family CSS value used for characters that are not
@@ -79,6 +79,14 @@ would set the ``scale`` option to 120%.
     efficient markup, but if you want to use CSS to style the elements
     as if they were MathML, you might need to set this to true.
 
+.. describe:: useFontCache: true
+
+    This controls whether the SVG output uses ``<use>`` elements to re-use font paths rather than repeat paths every time. If ``useGlobalCache`` (see below) is set to ``false``, this will still reduce duplication of paths while keeping each SVG self-contained.
+
+.. describe:: useGlobalCache: true
+
+    When set to ``true`` the SVG Output stores paths (corresponding to "fonts" in the SVG output) in a global SVG object using ``<defs>`` elements so that it can re-use them in all equations  via ``<use>`` elements (much like a font file allows re-use of characters across the document). While set to ``true`` by default, it will have no effect if ``useFontCache`` is set to ``false``.
+
 .. describe:: EqnChunk: 50
               EqnChunkFactor: 1.5
 	      EqnChunkDelay: 100
@@ -86,19 +94,19 @@ would set the ``scale`` option to 120%.
     These values control how "chunky" the display of mathematical
     expressions will be; that is, how often the equations will be
     updated as they are processed.
-    
+
     ``EqnChunk`` is the number of equations that will be typeset before
     they appear on screen.  Larger values make for less visual flicker
     as the equations are drawn, but also mean longer delays before the
     reader sees anything.
-    
+
     ``EqChunkFactor`` is the factor by which the ``EqnChunk`` will
     grow after each chunk is displayed.
-    
+
     ``EqChunkDelay`` is the time (in milliseconds) to delay between
     chunks (to allow the browser to respond to other user
     interaction).
-    
+
     Set ``EqnChunk`` to 1, ``EqnChunkFactor`` to 1, and
     ``EqnChunkDelay`` to 10 to get the behavior from MathJax v1.1 and
     below.
@@ -128,13 +136,13 @@ would set the ``scale`` option to 120%.
     .. describe:: width: "container"
 
       This controls how wide the lines of mathematics can be.
-      
+
       Use an explicit width like ``"30em"`` for a fixed width.
       Use ``"container"`` to compute the size from the containing
       element.
       Use ``"nn% container"`` for a portion of the container.
       Use ``"nn%"`` for a portion of the window size.
-        
+
       The container-based widths may be slower, and may not produce
       the expected results if the layout width changes due to the
       removal of previews or inclusion of mathematics during
@@ -170,5 +178,5 @@ would set the ``scale`` option to 120%.
     .. describe:: offsetX: 10
                   offsetY: 5
 
-        These are the offset from the mouse position (in pixels) 
+        These are the offset from the mouse position (in pixels)
 	where the tooltip will be placed.

@@ -1,5 +1,8 @@
 # MathJax Documentation
 
+[![Documentation Status](https://readthedocs.org/projects/mathjax/badge/?version=latest)](https://docs.mathjax.org)
+
+
 ## Beautiful math in all browsers.
 
 MathJax is an open-source JavaScript display engine for LaTeX, MathML, and
@@ -18,7 +21,7 @@ See <http://www.mathjax.org/> or <https://github.com/mathjax/MathJax/> for addit
 ## Beautiful documentation.
 
 The MathJax installation and usage documentation is available in this repository. The documents are also
-available on the MathJax web site on line at <http://docs.mathjax.org>.  Please help us improve the documentation! 
+available on the MathJax web site on line at <http://docs.mathjax.org>.  Please help us improve the documentation!
 You can use the editor feature on github to to simplify this.
 
 ## Community
@@ -41,13 +44,13 @@ Also, please use the bug tracker for reporting bugs rather than the help forum.
 Just like MathJax, this documentation is license under Apache License, Version 2.0.
 
 > Copyright (c) 2009-2013 The MathJax Consortium
-> 
+>
 > Licensed under the Apache License, Version 2.0 (the "License");
 > you may not use this file except in compliance with the License.
 > You may obtain a copy of the License at
-> 
+>
 >  http://www.apache.org/licenses/LICENSE-2.0
-> 
+>
 > Unless required by applicable law or agreed to in writing, software
 > distributed under the License is distributed on an "AS IS" BASIS,
 > WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.

@@ -15,10 +15,10 @@ Articles
    on <http://radar.oreilly.com/2013/11/mathml-forges-on.html>`__
    by Peter Krautzberger, *MathJax*, *2014*
 -  `Accessible Pages with
-   MathJax <http://www.mathjax.org/resources/articles-and-presentations/accessible-pages-with-mathjax/>`__
+   MathJax <https://www.mathjax.org/accessible-pages-with-mathjax/>`__
    by Neil Soiffer *Design Science, Inc.*, *2010*
 -  `Mathematics E-learning Community Benefits from
-   MathJax <http://www.mathjax.org/resources/articles-and-presentations/mathematics-e-learning-community-benefits-from-mathjax/>`__
+   MathJax <https://www.mathjax.org/mathematics-e-learning-community-benefits-from-mathjax/>`__
    by Hylke Koers, *MathJax*, *2010*
 
 Presentations
@@ -39,5 +39,5 @@ Presentations
    by `Davide P. Cervone <http://www.math.union.edu/~dpvc/>`__ *2010
    Joint Mathematics Meetings in San Francisco*
 -  `MathType, Math Markup, and the Goal of Cut and
-   Paste <http://www.mathjax.org/ext/miner-jmm2010/>`__ by Robert Miner *2010 Joint
+   Paste <https://mathjax.github.io/papers/JMM/2010/miner-jmm2010/>`__ by Robert Miner *2010 Joint
    Mathematics Meetings in San Francisco*
