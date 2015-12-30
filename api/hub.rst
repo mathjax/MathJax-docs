@@ -28,11 +28,15 @@ Properties
     options and their default values are given in the :ref:`Core
     Options <configure-hub>` reference page.
 
+.. describe:: processSectionDelay: 50
+
+    The pause (in milliseconds) between input and output phases of MathJax's processing. Set this to ``0`` to avoid jitter when updating output frequently (e.g., in a live preview environment).
+
 .. describe:: processUpdateTime: 250
 
     The minimum time (in milliseconds) between updates of the
     "Processing Math" message.  After this amount of time has passed,
-    and after the next equation has finished being processed, 
+    and after the next equation has finished being processed,
     MathJax will stop processing momentarily so that the update
     message can be displayed, and so that the browser can handle user
     interaction.
@@ -50,7 +54,7 @@ Properties
 
 .. describe:: queue
 
-    MathJax's main processing queue.  Use :meth:`MathJax.Hub.Queue()` to push 
+    MathJax's main processing queue.  Use :meth:`MathJax.Hub.Queue()` to push
     callbacks onto this queue.
 
 .. describe:: Browser
@@ -88,7 +92,7 @@ Properties
         than 4.9, for example.  Similarly, 4.10 is different from 4.1,
         for instance.
 
-    .. describe:: Select(choices) 
+    .. describe:: Select(choices)
 
         This lets you perform browser-specific functions.  Here,
         `choices` is an object whose properties are the names of the
@@ -141,8 +145,8 @@ Methods
 .. describe:: Configured()
 
     When ``delayStartupUntil`` is specified in the configuration file or
-    in the script that loads ``MathJax.js``, MathJax's startup sequence is 
-    delayed until this routine is called.  See :ref:`Configuring MathJax 
+    in the script that loads ``MathJax.js``, MathJax's startup sequence is
+    delayed until this routine is called.  See :ref:`Configuring MathJax
     <configuration>` for details on how this is used.
 
     :Returns: ``null``
@@ -164,16 +168,16 @@ Methods
     `New Math` messages are sent).  When the message equals the
     `type`, the `callback` will be called with the message as its
     parameter.
-    
-    The following is an example for using the MessageHook to list 
+
+    The following is an example for using the MessageHook to list
     internal errors within MathJax which would otherwise be silent:
-    
+
     .. code-block:: javascript
-    
+
 		MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
 		// do something with the error.  message[1] will contain the data about the error.
 		});
-		
+
 		MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
 		//  do something with the error.  message[2] is the Error object that records the problem.
 		});
@@ -248,7 +252,7 @@ Methods
     `element` is either the DOM `id` of the element, a reference to the
     DOM element itself, or an array of id's or references.  The `callback`
     is called when the processing is complete.
-        
+
     :Parameters:
         - **element** --- the element to be preprocessed
         - **callback** --- the callback specification
@@ -261,7 +265,7 @@ Methods
     tags contain.  The `element` is either the DOM `id` of the element to
     scan, a reference to the DOM element itself, or an array of id's or
     references.  The `callback` is called when the processing is complete.
-        
+
     :Parameters:
         - **element** --- the element(s) to be processed
         - **callback** --- the callback specification
@@ -275,7 +279,7 @@ Methods
     they contain.  The `element` is either the DOM `id` of the element to
     scan, a reference to the DOM element itself, or an array of id's or
     references.  The `callback` is called when the processing is complete.
-        
+
     :Parameters:
         - **element** --- the element(s) to be updated
         - **callback** --- the callback specification
@@ -293,7 +297,7 @@ Methods
     to scan, a reference to the DOM element itself, or an array of
     id's or references.  The `callback` is called when the processing
     is complete.
-        
+
     :Parameters:
         - **element** --- the element(s) to be reprocessed
         - **callback** --- the callback specification
@@ -309,7 +313,7 @@ Methods
     reference to the DOM element itself, or an array of id's or
     references.  The `callback` is called when the processing is
     complete.
-        
+
     :Parameters:
         - **element** --- the element(s) to be reprocessed
         - **callback** --- the callback specification
@@ -320,7 +324,7 @@ Methods
     Returns a list of all the element jax in the document or a
     specific DOM element.  The `element` is either the DOM `id` of the
     element, or a reference to the DOM element itself.
-        
+
     :Parameters:
         - **element** --- the element to be searched
     :Returns: array of `element jax` objects
@@ -331,7 +335,7 @@ Methods
     document or a specific DOM element.  The `element` is either the
     DOM `id` of the element to search, or a reference to the DOM
     element itself.
-        
+
     :Parameters:
         - **type** --- MIME-type of `element jax` to find
         - **element** --- the element to be searched
@@ -344,7 +348,7 @@ Methods
     element or the whole document.  The `element` is either the DOM
     `id` of the element to search, or a reference to the DOM element
     itself.
-        
+
     :Parameters:
         - **type** --- MIME-type of input (e.g., ``"math/tex"``)
         - **element** --- the element to be searched
@@ -356,7 +360,7 @@ Methods
     element.  If the element does not have an associated element jax,
     ``null`` is returned.  The `element` is either the DOM `id` of the
     element, or a reference to the DOM element itself.
-        
+
     :Parameters:
         - **element** --- the element whose element jax is required
     :Returns: `element jax` object or ``null``
@@ -368,7 +372,7 @@ Methods
     if the element is an unprocessed ``<script>`` tag that could be
     handled by MathJax, and returns ``1`` if the element is a processed
     ``<script>`` tag or an element that is the result of an output jax.
-        
+
     :Parameters:
         - **element** --- the element to inspect
     :Returns: integer (-1, 0, 1)
