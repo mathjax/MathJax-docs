@@ -71,34 +71,6 @@ sure to read that before linking to the MathJax CDN server.
   To see how to enter mathematics in your web pages, see `Putting
   mathematics in a web page`_ below.
 
-.. _secure-cdn-access:
-
-Secure Access to the CDN
-------------------------
-
-If the MathJax CDN is accessed via the address ``https://cdn.mathjax.org`` (note
-the missing ``s`` after ``http``), the script is downloaded over a regular,
-insecure HTTP connection.  This poses a security risk as a malicious third
-party can intercept the MathJax script and replace it.  This is known as a
-`man-in-the-middle <https://en.wikipedia.org/wiki/Man-in-the-middle_attack>`_ attack.
-To prevent such attacks, one should access the MathJax CDN over a secure HTTPS
-connection, as demonstrated in the first example earlier.
-
-If the user wishes to use insecure HTTP to download the MathJax script if and
-only if the page itself is downloaded over insecure HTTP, then a
-protocol-relative address can be used to automatically switch between HTTP and
-HTTPS depending on what the current page uses:
-
-.. code-block:: html
-
-    <script type="text/javascript" async
-      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-
-Note that this trick will not work if the page is accessed locally via ``file://``
-as it will attempt to load from ``file://cdn.mathjax.org`` instead.
-
-
 Putting mathematics in a web page
 =================================
 
