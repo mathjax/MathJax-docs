@@ -76,7 +76,7 @@ sure to read that before linking to the MathJax CDN server.
 Secure Access to the CDN
 ------------------------
 
-If the MathJax CDN is accessed via the address ``https://cdn.mathjax.org`` (note
+If the MathJax CDN is accessed via the address ``http://cdn.mathjax.org`` (note
 the missing ``s`` after ``http``), the script is downloaded over a regular,
 insecure HTTP connection.  This poses a security risk as a malicious third
 party can intercept the MathJax script and replace it.  This is known as a
