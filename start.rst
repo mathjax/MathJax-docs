@@ -63,7 +63,7 @@ mathematics.
   More details about the configuration process can be found in the :ref:`Loading and Configuring MathJax <loading>` instructions.
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<https://www.mathjax.org/mathjax-cdn-terms-of-service.html>`_, so be
+<https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_, so be
 sure to read that before linking to the MathJax CDN server.
 
 .. note::
