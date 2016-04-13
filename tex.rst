@@ -1850,7 +1850,9 @@ T
     \textbf
     \textit
     \textrm
+    \textsf
     \textstyle
+    \texttt
     \texttip                action         non-standard
     \tfrac                  AMSmath
     \therefore              AMSsymbols
