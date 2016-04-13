@@ -130,15 +130,24 @@ See the :ref:`CommonHTML configuration <configure-CommonHTML>`,
 :ref:`HTML-CSS configuration <configure-HTML-CSS>`, or
 :ref:`SVG configuration <configure-SVG>` pages for more details.
 
+Note that breaks occur only at operations and relations or at 
+explicit space, but not, for example, in the middle two consecutive
+identifiers.
+
 The line-breaking algorithm uses the nesting depth, the type of
 operator, the size of spaces, and other factors to decide on the
 breakpoints, but it does not know the meaning of the mathematics, and
-may not choose the optimal breakpoints. We will continue to work on
+may not choose the optimal breakpoints. We continue to work on
 the algorithm as we gain information from its actual use in the field.
 If you are using :term:`MathML` as your input format, you can use the
-``linebreak="goodbreak"`` and ``linebreak="badbreak"`` attributes on
+``linebreak="goodbreak"``, ``linebreak="badbreak"``, and 
+``linebreak="nobreak"`` attributes on
 ``<mo>`` elements to help MathJax pick the best breakpoints for your
-mathematics.
+mathematics; nested ``<mrow>`` elements will reduce the risk of 
+breaking its children apart. For TeX input, you can use MathJax's 
+non-standard ``mmltoken`` macro (e.g., 
+``\mmlToken{mo}[linebreak="goodbreak"]{}``) to achieve the same 
+effect.
 
 
 .. _automatic-output-switch:
