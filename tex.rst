@@ -68,6 +68,12 @@ web page.  (Note that within TeX mathematics, ``\$`` always has this
 meaning; ``processEscapes`` only affects the treatment of the *opening*
 math delimiter.)
 
+Note that as opposed to true LaTeX, MathJax processes environments 
+when they are wrapped inside math delimiters. By defaut, MathJax will 
+also render environments outside of delimiters; this can be controlled
+via the ``processEnvironments`` option in the :ref:`tex2jax configuration
+options <configure-tex2jax>`.
+
 See the ``config/default.js`` file, or the :ref:`tex2jax configuration
 options <configure-tex2jax>` page, for additional configuration
 parameters that you can specify for the `tex2jax` preprocessor,
@@ -200,9 +206,9 @@ Defining TeX macros
 You can use the ``\def``, ``\newcommand``, ``\renewcommand``,
 ``\newenvironment``, ``\renewenvironment``, and ``\let`` commands to
 create your own macros and environments.  Unlike actual TeX, however,
-in order for MathJax to process these, they must be enclosed in math
-delimiters (since MathJax only processes macros in math-mode).  For
-example
+in order for MathJax to process macro definitions, they must be 
+enclosed in math delimiters (since MathJax only processes macros in 
+math-mode).  For example
 
 .. code-block:: latex
 
