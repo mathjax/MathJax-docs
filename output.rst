@@ -140,14 +140,14 @@ breakpoints, but it does not know the meaning of the mathematics, and
 may not choose the optimal breakpoints. We continue to work on
 the algorithm as we gain information from its actual use in the field.
 If you are using :term:`MathML` as your input format, you can use the
-``linebreak="goodbreak"``, ``linebreak="badbreak"``, and 
-``linebreak="nobreak"`` attributes on
+``linebreak="newline"``, ``linebreak="goodbreak"``, 
+``linebreak="badbreak"``, and ``linebreak="nobreak"`` attributes on
 ``<mo>`` elements to help MathJax pick the best breakpoints for your
 mathematics; nested ``<mrow>`` elements will reduce the risk of 
 breaking its children apart. For TeX input, you can use MathJax's 
 non-standard ``mmltoken`` macro (e.g., 
-``\mmlToken{mo}[linebreak="goodbreak"]{}``) to achieve the same 
-effect.
+``\mmlToken{mo}[linebreak="goodbreak"]{}``) and  braces ``{...}`` 
+respectively to achieve analoguous effects.
 
 
 .. _automatic-output-switch:
