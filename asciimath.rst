@@ -12,7 +12,7 @@ later processing by MathJax.  The AsciiMath input processor is what
 converts the AsciiMath notation into MathJax's internal format, where
 one of MathJax's output processors then displays it in the web page.
 
-The AsciiMath input jax actually includes a copy of ``ASCIIMathML.js`` itselt 
+The AsciiMath input jax actually includes a copy of ``ASCIIMathML.js`` itself 
 (see the `AsciiMath home page <http://asciimath.org>`_ for details).  
 This means that the results of MathJax's AsciiMath processing should be the 
 same as using the actual ``ASCIIMathML.js`` package (at least as far as the
