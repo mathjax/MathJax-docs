@@ -58,7 +58,7 @@ mathematics.
 
 .. warning::
 
-  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and thus largest) combined configuration files. We list it here because it will quickly get you started using MathJax. It is probably not the most efficient configuration for your purposes and other :ref:`combined configuration files <config-files>` are available. You can also provide additional configuration parameters to tailor one of the combined configurations to your needs or use our development tools to generate your own combined configuration file.
+  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and thus largest) combined configuration files. We list it here because it will quickly get you started using MathJax. It is probably not the most efficient configuration for your purposes and other :ref:`combined configuration files <common-configurations>` are available. You can also provide additional configuration parameters to tailor one of the combined configurations to your needs or use our development tools to generate your own combined configuration file.
 
   More details about the configuration process can be found in the :ref:`Loading and Configuring MathJax <loading>` instructions.
 
