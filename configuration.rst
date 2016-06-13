@@ -31,7 +31,7 @@ web server's directory hierarchy, you might use
 
 .. code-block:: html
 
-    <script type="text/javascript" src="/MathJax/MathJax.js"></script>
+    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
 to load MathJax.
 
