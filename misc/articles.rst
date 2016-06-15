@@ -45,6 +45,10 @@ Articles
 Presentations
 =============
 
+-  `Barrierereie Mathematik im Netz (in German) <http://pkra.github.io/slides-gaad16/>`__
+   by Peter Krautzberger, *MathJax*, *FernUni Hagen, Global Accessibility Awareness Day, 2016*
+-  `Evolving Math Web Standards from a Usability Perspective <https://pkra.github.io/slides-JMM16/>`__
+   by Peter Krautzberger, Davide Cervone, Volker Sorge, *MathJax*, *2016 Joint Mathematics Meetings in Seattle*
 -  `MathJax -- beautiful mathematics on the web <http://pkra.github.io/slides-mathjax/>`__
    by Peter Krautzberger, *MathJax*, *2014*
 -  `MathML: math made for the web and beyond <http://pkra.github.io/webinar-slides-aptara/>`__
