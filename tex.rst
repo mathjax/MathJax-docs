@@ -35,9 +35,14 @@ environments.  You must use HTML to handle such formatting tasks.  If
 you need a LaTeX-to-HTML converter, you should consider `other options
 <http://www.google.com/search?q=latex+to+html+converter>`_.
 
+There are two exception to this rule. First, MathJax supports the `\ref`
+macro outside of math-mode. Second, MathJax supports some macros that
+add text within math-mode (such as `\text{}`) as well as `$...$` 
+within such macros (to switch back into math-mode) and`\$` to escape. 
+
 .. note::
 
-  If you are not yet familiar with :term:`TeX`/:term:`LaTeX`, a good 
+  If you are not familiar with :term:`TeX`/:term:`LaTeX`, a good 
   starting point is the `LaTeX Wiki book
   <http://en.wikibooks.org/wiki/LaTeX>`__.
 
