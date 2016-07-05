@@ -452,7 +452,7 @@ The main extensions are described below.
 .. note::
 
   Additional third-party extensions are available through the 
-  :ref:`Third Party Extensions repository <_ThirdParty>`.
+  :ref:`Third Party Extensions repository <ThirdParty>`.
 
 
 Action
