@@ -35,6 +35,12 @@ environments.  You must use HTML to handle such formatting tasks.  If
 you need a LaTeX-to-HTML converter, you should consider `other options
 <http://www.google.com/search?q=latex+to+html+converter>`_.
 
+.. note::
+
+  If you are not yet familiar with :term:`TeX`/:term:`LaTeX`, a good 
+  starting point is the `LaTeX Wiki book
+  <http://en.wikibooks.org/wiki/LaTeX>`__.
+
 
 TeX and LaTeX math delimiters
 =============================
