@@ -243,7 +243,8 @@ pre-defined in the configuration by
       TeX: {
         Macros: {
 	  RR: "{\\bf R}",
-	  bold: ["{\\bf #1}",1]
+	  bold: ["{\\bf #1}",1],
+	  Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""]
 	}
       }
     });
@@ -252,7 +253,8 @@ Here you give the macro as a `name:value` pair, where the `name`
 is the name of the control sequence (without the backslash) that you
 are defining, and `value` is either the replacement string for the
 macro (when there are no arguments) or an array consisting of the
-replacement string followed by the number of arguments for the macro.
+replacement string followed by the number of arguments for the macro
+and, optionally, default values for optional arguments.
 
 Note that the replacement string is given as a JavaScript string
 literal, and the backslash has special meaning in JavaScript strings.
