@@ -373,8 +373,7 @@ One solution to this problem is to install the MathJax fonts locally, so
 that Firefox will not have to use web-based fonts in the first place.  To
 do that, either install the `STIX fonts <http://stixfonts.org>`_, or copy
 the fonts from ``MathJax/fonts/HTML-CSS/TeX/otf`` into your systems fonts
-directory and restart your browser (see the `MathJax fonts help page
-<http://www.mathjax.org/help/fonts>`_ for details).
+directory and restart your browser.
 
 .. _ie9-local-fonts-solution:
 
