@@ -218,7 +218,7 @@ Contact us about your site and we’ll mention you in our
    Bruzda, Wojciech Tadej and Karol Życzkowski.
 -  `Aorinevo.com <http://www.aorinevo.com/>`__, calculus course pages.
 
-**Q&A, Forums, Wiki’s**
+**Q&A platforms, Forums, Wikis**
 
 -  `Math Overflow <http://mathoverflow.net/>`__
 -  `math.stackexchange <http://math.stackexchange.com/>`__
