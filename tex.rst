@@ -35,6 +35,17 @@ environments.  You must use HTML to handle such formatting tasks.  If
 you need a LaTeX-to-HTML converter, you should consider `other options
 <http://www.google.com/search?q=latex+to+html+converter>`_.
 
+There are two exception to this rule. First, MathJax supports the `\ref`
+macro outside of math-mode. Second, MathJax supports some macros that
+add text within math-mode (such as `\text{}`) as well as `$...$` 
+within such macros (to switch back into math-mode) and`\$` to escape. 
+
+.. note::
+
+  If you are not familiar with :term:`TeX`/:term:`LaTeX`, a good 
+  starting point is the `LaTeX Wiki book
+  <http://en.wikibooks.org/wiki/LaTeX>`__.
+
 
 TeX and LaTeX math delimiters
 =============================
@@ -67,6 +78,12 @@ dollar sign from being treated as a math delimiter within the text of your
 web page.  (Note that within TeX mathematics, ``\$`` always has this
 meaning; ``processEscapes`` only affects the treatment of the *opening*
 math delimiter.)
+
+Note that, as opposed to true LaTeX, MathJax processes all environments 
+when wrapped inside math delimiters. By defaut, MathJax will 
+also render all environments outside of delimiters; this can be controlled
+via the ``processEnvironments`` option in the :ref:`tex2jax configuration
+options <configure-tex2jax>`.
 
 See the ``config/default.js`` file, or the :ref:`tex2jax configuration
 options <configure-tex2jax>` page, for additional configuration
@@ -200,9 +217,9 @@ Defining TeX macros
 You can use the ``\def``, ``\newcommand``, ``\renewcommand``,
 ``\newenvironment``, ``\renewenvironment``, and ``\let`` commands to
 create your own macros and environments.  Unlike actual TeX, however,
-in order for MathJax to process these, they must be enclosed in math
-delimiters (since MathJax only processes macros in math-mode).  For
-example
+in order for MathJax to process such definitions, they must be 
+enclosed in math delimiters (since MathJax only processes macros in 
+math-mode).  For example
 
 .. code-block:: latex
 
@@ -226,7 +243,8 @@ pre-defined in the configuration by
       TeX: {
         Macros: {
 	  RR: "{\\bf R}",
-	  bold: ["{\\bf #1}",1]
+	  bold: ["{\\bf #1}",1],
+	  Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""]
 	}
       }
     });
@@ -235,7 +253,8 @@ Here you give the macro as a `name:value` pair, where the `name`
 is the name of the control sequence (without the backslash) that you
 are defining, and `value` is either the replacement string for the
 macro (when there are no arguments) or an array consisting of the
-replacement string followed by the number of arguments for the macro.
+replacement string followed by the number of arguments for the macro
+and, optionally, default values for optional arguments.
 
 Note that the replacement string is given as a JavaScript string
 literal, and the backslash has special meaning in JavaScript strings.
@@ -429,6 +448,11 @@ defines such macros for *all* the extensions so that if you include
 it, MathJax will have access to all the macros it knows about.
 
 The main extensions are described below.
+
+.. note::
+
+  Additional third-party extensions are available through the 
+  :ref:`Third Party Extensions repository <ThirdParty>`.
 
 
 Action
@@ -1039,6 +1063,26 @@ the following
     });
     </script>
 
+mediawiki-texvc
+---------------
+
+The `mediawiki-texvc` extension predefines macros that match
+the behavior of the `MediaWiki Math Extension 
+<https://www.mediawiki.org/wiki/Extension:Math>`__.
+
+To use this extension in your own configurations, add it to the
+`extensions` array in the TeX block.
+
+.. code-block:: javascript
+
+    TeX: {
+      extensions: ["mediawiki-texvc.js"]
+    }
+
+This extension is **not** included in any of the combined configurations,
+and will not be loaded automatically, so you must include it
+explicitly in your configuration if you wish to use these commands.
+
 
 .. _tex-commands:
 
@@ -1091,13 +1135,18 @@ A
 
 .. code-block:: latex
 
+    \AA                     mediawiki-texvc
     \above
     \abovewithdelims
     \acute
+    \alef                   mediawiki-texvc
     \aleph
     \alpha
+    \Alpha                  mediawiki-texvc
     \amalg
     \And
+    \and                    mediawiki-texvc
+    \ang                    mediawiki-texvc
     \angle
     \approx
     \approxeq               AMSsymbols
@@ -1118,6 +1167,7 @@ B
 
 .. code-block:: latex
 
+    \Bbb                    mediawiki-texvc
     \backepsilon            AMSsymbols
     \backprime              AMSsymbols
     \backsim                AMSsymbols
@@ -1134,6 +1184,7 @@ B
     \begin
     \begingroup             begingroup      non-standard
     \beta
+    \Beta                   mediawiki-texvc
     \beth                   AMSsymbols
     \between                AMSsymbols
     \bf
@@ -1174,6 +1225,7 @@ B
     \blacktriangleleft      AMSsymbols
     \blacktriangleright     AMSsymbols
     \bmod
+    \bold                   mediawiki-texvc
     \boldsymbol            [boldsymbol]
     \bot
     \bowtie
@@ -1188,6 +1240,7 @@ B
     \brack
     \breve
     \buildrel
+    \bul                    mediawiki-texvc
     \bullet
     \Bumpeq                 AMSsymbols
     \bumpeq                 AMSsymbols
@@ -1197,6 +1250,7 @@ C
 
 .. code-block:: latex
 
+    \C                      mediawiki-texvc
     \cal
     \cancel                 cancel
     \cancelto               cancel
@@ -1214,6 +1268,7 @@ C
     \check
     \checkmark              AMSsymbols
     \chi
+    \Chi                    mediawiki-texvc
     \choose
     \circ
     \circeq                 AMSsymbols
@@ -1225,12 +1280,17 @@ C
     \circledR               AMSsymbols
     \circledS               AMSsymbols
     \class                 [HTML]           non-standard
+    \clubs                  mediawiki-texvc
     \clubsuit
+    \cnums                  mediawiki-texvc
     \colon
     \color                  color
     \colorbox               color
     \complement             AMSsymbols
+    \Complex                mediawiki-texvc
     \cong
+    \coppa                  mediawiki-texvc
+    \Coppa                  mediawiki-texvc
     \coprod
     \cos
     \cosh
@@ -1254,7 +1314,9 @@ D
 .. code-block:: latex
 
     \dagger
+    \Dagger                 mediawiki-texvc
     \daleth                 AMSsymbols
+    \Darr                   mediawiki-texvc
     \dashleftarrow          AMSsymbols
     \dashrightarrow         AMSsymbols
     \dashv
@@ -1276,8 +1338,10 @@ D
     \diagup                 AMSsymbols
     \diamond
     \Diamond                AMSsymbols
+    \diamonds               mediawiki-texvc
     \diamondsuit
     \digamma                AMSsymbols
+    \Digamma                mediawiki-texvc
     \dim
     \displaylines
     \displaystyle
@@ -1309,12 +1373,14 @@ E
 .. code-block:: latex
 
     \ell
+    \empty                  mediawiki-texvc
     \emptyset
     \enclose                enclose         non-standard
     \end
     \endgroup               begingroup      non-standard
     \enspace
     \epsilon
+    \Epsilon                mediawiki-texvc
     \eqalign
     \eqalignno
     \eqcirc                 AMSsymbols
@@ -1324,7 +1390,10 @@ E
     \eqslantless            AMSsymbols
     \equiv
     \eta
+    \Eta                    mediawiki-texvc
     \eth                    AMSsymbols
+    \euro                   mediawiki-texvc
+    \exist                  mediawiki-texvc
     \exists
     \exp
 
@@ -1355,6 +1424,9 @@ G
     \gcd
     \gdef                   begingroup
     \ge
+    \geneuro                mediawiki-texvc
+    \geneuronarrow          mediawiki-texvc
+    \geneurowide            mediawiki-texvc
     \genfrac                AMSmath
     \geq
     \geqq                   AMSsymbols
@@ -1385,10 +1457,15 @@ H
 
 .. code-block:: latex
 
+    \H                      mediawiki-texvc
+    \hAar                   mediawiki-texvc
+    \harr                   mediawiki-texvc
+    \Harr                   mediawiki-texvc
     \hat
     \hbar
     \hbox
     \hdashline
+    \hearts                 mediawiki-texvc
     \heartsuit
     \hline
     \hom
@@ -1413,17 +1490,21 @@ I
     \iiint
     \iint
     \Im
+    \image                  mediawiki-texvc
     \imath
     \impliedby              AMSsymbols
     \implies                AMSsymbols
     \in
     \inf
+    \infin                  mediawiki-texvc
     \infty
     \injlim                 AMSmath
     \int
     \intercal               AMSsymbols
     \intop
+    \isin                   mediawiki-texvc
     \iota
+    \Iota                   mediawiki-texvc
     \it
 
 J
@@ -1440,8 +1521,11 @@ K
 .. code-block:: latex
 
     \kappa
+    \Kappa                  mediawiki-texvc
     \ker
     \kern
+    \koppa                  mediawiki-texvc
+    \Koppa                  mediawiki-texvc
 
 L
 -
@@ -1452,10 +1536,14 @@ L
     \Lambda
     \lambda
     \land
+    \lang                   mediawiki-texvc
     \langle
     \LARGE
     \Large
     \large
+    \larr                   mediawiki-texvc
+    \Larr                   mediawiki-texvc
+    \lArr                   mediawiki-texvc
     \LaTeX
     \lbrace
     \lbrack
@@ -1523,6 +1611,9 @@ L
     \lor
     \lower
     \lozenge                AMSsymbols
+    \lrarr                  mediawiki-texvc
+    \Lrarr                  mediawiki-texvc
+    \lrArr                  mediawiki-texvc
     \lrcorner               AMSsymbols
     \Lsh                    AMSsymbols
     \lt
@@ -1579,6 +1670,7 @@ M
     \mskip
     \mspace
     \mu
+    \Mu                     mediawiki-texvc
     \multimap               AMSsymbols
 
 N
@@ -1586,8 +1678,10 @@ N
 
 .. code-block:: latex
 
+    \N                      mediawiki-texvc
     \nabla
     \natural
+    \natnums                mediawiki-texvc
     \ncong                  AMSsymbols
     \ne
     \nearrow
@@ -1640,6 +1734,7 @@ N
     \ntriangleright         AMSsymbols
     \ntrianglerighteq       AMSsymbols
     \nu
+    \Nu                     mediawiki-texvc
     \nVDash                 AMSsymbols
     \nVdash                 AMSsymbols
     \nvDash                 AMSsymbols
@@ -1651,15 +1746,19 @@ O
 
 .. code-block:: latex
 
+    \O                      mediawiki-texvc
     \odot
+    \officialeuro           mediawiki-texvc
     \oint
     \oldstyle
     \Omega
     \omega
     \omicron
+    \Omicron                mediawiki-texvc
     \ominus
     \operatorname           AMSmath
     \oplus
+    \or                     mediawiki-texvc
     \oslash
     \otimes
     \over
@@ -1677,7 +1776,10 @@ P
 
 .. code-block:: latex
 
+    \P                      mediawiki-texvc
+    \pagecolor              mediawiki-texvc
     \parallel
+    \part                   mediawiki-texvc
     \partial
     \perp
     \phantom
@@ -1686,6 +1788,7 @@ P
     \Pi
     \pi
     \pitchfork              AMSsymbols
+    \plusmn                 mediawiki-texvc
     \pm
     \pmatrix
     \pmb
@@ -1712,6 +1815,7 @@ Q
 
 .. code-block:: latex
 
+    \Q                      mediawiki-texvc
     \qquad
     \quad
 
@@ -1720,12 +1824,20 @@ R
 
 .. code-block:: latex
 
+    \R                      mediawiki-texvc
     \raise
+    \rang                   mediawiki-texvc
     \rangle
+    \rarr                   mediawiki-texvc
+    \Rarr                   mediawiki-texvc
+    \rArr                   mediawiki-texvc
     \rbrace
     \rbrack
     \rceil
     \Re
+    \real                   mediawiki-texvc
+    \reals                  mediawiki-texvc
+    \Reals                  mediawiki-texvc
     \ref                   [AMSmath]
     \renewcommand          [newcommand]
     \renewenvironment      [newcommand]
@@ -1735,6 +1847,7 @@ R
     \rgroup
     \rhd                    AMSsymbols
     \rho
+    \Rho                    mediawiki-texvc
     \right
     \Rightarrow
     \rightarrow
@@ -1765,11 +1878,15 @@ S
 .. code-block:: latex
 
     \S
+    \sampi                  mediawiki-texvc
+    \Sampi                  mediawiki-texvc
     \scr
     \scriptscriptstyle
     \scriptsize
     \scriptstyle
+    \sdot                   mediawiki-texvc
     \searrow
+    \sect                   mediawiki-texvc
     \sec
     \setminus
     \sf
@@ -1793,6 +1910,7 @@ S
     \smallsmile             AMSsymbols
     \smash
     \smile
+    \spades                 mediawiki-texvc
     \Space
     \space
     \spadesuit
@@ -1807,8 +1925,12 @@ S
     \square                 AMSsymbols
     \stackrel
     \star
+    \stigma                 mediawiki-texvc
+    \Stigma                 mediawiki-texvc
     \strut
     \style                 [HTML]          non-stanard
+    \sub                    mediawiki-texvc
+    \sube                   mediawiki-texvc
     \subset
     \Subset                 AMSsymbols
     \subseteq
@@ -1826,6 +1948,7 @@ S
     \succsim                AMSsymbols
     \sum
     \sup
+    \supe                   mediawiki-texvc
     \supset
     \Supset                 AMSsymbols
     \supseteq
@@ -1844,18 +1967,23 @@ T
     \tan
     \tanh
     \tau
+    \Tau                    mediawiki-texvc
     \tbinom                 AMSmath
     \TeX
     \text
     \textbf
     \textit
     \textrm
+    \textsf
     \textstyle
+    \texttt
     \texttip                action         non-standard
+    \textvisiblespace       mediawiki-texvc
     \tfrac                  AMSmath
     \therefore              AMSsymbols
     \Theta
     \theta
+    \thetasym               mediawiki-texvc
     \thickapprox            AMSsymbols
     \thicksim               AMSsymbols
     \thinspace
@@ -1882,6 +2010,9 @@ U
 
 .. code-block:: latex
 
+    \uarr                   mediawiki-texvc
+    \uArr                   mediawiki-texvc
+    \Uarr                   mediawiki-texvc
     \ulcorner               AMSsymbols
     \underbrace
     \underleftarrow
@@ -1910,6 +2041,7 @@ V
 
 .. code-block:: latex
 
+    \varcoppa               mediawiki-texvc
     \varDelta               AMSsymbols
     \varepsilon
     \varGamma               AMSsymbols
@@ -1930,6 +2062,7 @@ V
     \varrho
     \varsigma
     \varSigma               AMSsymbols
+    \varstigma              mediawiki-texvc
     \varsubsetneq           AMSsymbols
     \varsubsetneqq          AMSsymbols
     \varsupsetneq           AMSsymbols
@@ -1952,6 +2085,7 @@ V
     \verb                  [verb]
     \Vert
     \vert
+    \vline                  mediawiki-texvc
     \vphantom
     \Vvdash                 AMSsymbols
 
@@ -1961,6 +2095,7 @@ W
 .. code-block:: latex
 
     \wedge
+    \weierp                 mediawiki-texvc
     \widehat
     \widetilde
     \wp
@@ -1994,7 +2129,9 @@ Z
 
 .. code-block:: latex
 
+    \Z                      mediawiki-texvc
     \zeta
+    \Zeta                   mediawiki-texvc
 
 
 Environments

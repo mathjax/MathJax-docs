@@ -58,12 +58,12 @@ mathematics.
 
 .. warning::
 
-  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and thus largest) combined configuration files. We list it here because it will quickly get you started using MathJax. It is probably not the most efficient configuration for your purposes and other :ref:`combined configuration files <config-files>` are available. You can also provide additional configuration parameters to tailor one of the combined configurations to your needs or use our development tools to generate your own combined configuration file.
+  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and thus largest) combined configuration files. We list it here because it will quickly get you started using MathJax. It is probably not the most efficient configuration for your purposes and other :ref:`combined configuration files <common-configurations>` are available. You can also provide additional configuration parameters to tailor one of the combined configurations to your needs or use our development tools to generate your own combined configuration file.
 
   More details about the configuration process can be found in the :ref:`Loading and Configuring MathJax <loading>` instructions.
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<https://www.mathjax.org/mathjax-cdn-terms-of-service.html>`_, so be
+<https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_, so be
 sure to read that before linking to the MathJax CDN server.
 
 .. note::
@@ -76,7 +76,7 @@ sure to read that before linking to the MathJax CDN server.
 Secure Access to the CDN
 ------------------------
 
-If the MathJax CDN is accessed via the address ``https://cdn.mathjax.org`` (note
+If the MathJax CDN is accessed via the address ``http://cdn.mathjax.org`` (note
 the missing ``s`` after ``http``), the script is downloaded over a regular,
 insecure HTTP connection.  This poses a security risk as a malicious third
 party can intercept the MathJax script and replace it.  This is known as a
@@ -398,7 +398,7 @@ Downloading and Installing MathJax
 
 The MathJax source code is `hosted on
 GitHub <https://github.com/mathjax/MathJax/>`_.
-To install MathJax on your own server, download the
+To install MathJax on your own server, download
 `the latest distribution <https://github.com/mathjax/MathJax/archive/master.zip>`_ and
 unpack the archive and place the resulting MathJax folder onto your
 web server at a convenient location where you can include it into your
