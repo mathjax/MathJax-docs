@@ -108,6 +108,7 @@ get.  The CDN has the following directory structure:
        2.4-latest/   # the 2.4 release with any critical patches
        2.5-latest/   # the 2.5 release with any critical patches
        2.6-latest/   # the 2.6 release with any critical patches
+       2.7-latest/   # the 2.7 release with any critical patches
        ...
        latest/       # the most current version (2.6-latest in this case)
 
