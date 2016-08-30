@@ -9,6 +9,7 @@ MathJax v2.7 is primarily a bug-fix release with over 60 important bug fixes, in
 Features
 --------
 
+* *Common HTML output improvements* Several important bugs in the layout model have been fixed, in particular tabular layout is now much more robust.
 * *Accessibility improvements.* After the completion of the MathJax Accessibility Extensions, we are integrating the opt-in for the MathJax menu into the core distribution. We are grateful to the web accessibility community for their guidance, support, and feedback in our efforts towards making MathJax completely accessible to all users. This allows end-users to opt into the following features via the MathJax Menu:
 
   * *Responsive Equations.* An innovative responsive rendering of mathematical content through collapsing and exploration of subexpressions.
@@ -22,7 +23,7 @@ For a detailed listing please check the `release milestone <https://github.com/m
 Accessibility
 -------------
 
-* `mathajx-dev/#20 <https://github.com/mathjax/MathJax-dev/issues/20>`__ Add the Menu extension from the `MathJax Accessibility tools <https://github.com/mathjax/MathJax-a11y>`__` to all combined configuration files.
+* `mathajx-dev/#20 <https://github.com/mathjax/MathJax-dev/issues/20>`__ Add the Menu extension from the `MathJax Accessibility tools <https://github.com/mathjax/MathJax-a11y>`__ to all combined configuration files.
 * `#1465 <https://github.com/mathjax/MathJax/issues/1465>`__ CHTML and HTML-CSS output: do not add ``role=math`` by default.
 * `#1483 <https://github.com/mathjax/MathJax/issues/1483>`__ Catch IE8 errors with inserting MathML from AssistiveMML extension.
 * `#1513 <https://github.com/mathjax/MathJax/issues/1513>`__ Disable the AssistiveMML extension when the output renderer is PlainSource.
@@ -38,7 +39,7 @@ HTML/SVG/nativeMML display
 
 * `#1454 <https://github.com/mathjax/MathJax/issues/1454>`__ SVG output: Use full location URL for ``xlink`` references in SVG ``<use>`` elements.
 * `#1457 <https://github.com/mathjax/MathJax/issues/1457>`__ Common-HTML output: Fix problem with characters from Unicode Plane 1 not being mapped to the MathJax fonts properly
-* `#1458 <https://github.com/mathjax/MathJax/issues/1458>`__ Fix problem with container width in SVG when math is scaled.
+* `#1458 <https://github.com/mathjax/MathJax/issues/1458>`__ SVG output: Fix problem with container width when math is scaled.
 * `#1459 <https://github.com/mathjax/MathJax/issues/1459>`__ CommonHTML output: Improve ``getNode()`` to fix processing errors when line-breaking.
 * `#1460 <https://github.com/mathjax/MathJax/issues/1460>`__ HTML-CSS output: Adjust position of rule for square root when it is made via ``createRule()``.
 * `#1461 <https://github.com/mathjax/MathJax/issues/1461>`__ HTML-CSS output: Make sure ``0`` remains ``0`` when rounding to pixels (plus a bit).
