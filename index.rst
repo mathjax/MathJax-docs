@@ -82,6 +82,7 @@ MathJax Configuration Options
 .. toctree::
     :maxdepth: 1
 
+    The Accessibility Extensions options <options/a11y-extensions>
     The AssistiveMML options <options/assistive-mml>
     The fast-preview options <options/fast-preview>
     The Content MathML options <options/Content-MathML>
