@@ -849,6 +849,23 @@ This extension is **not** included in any of the combined configurations,
 and will not be loaded automatically, so you must include it
 explicitly in your configuration if you wish to use these commands.
 
+Beginning with v2.7, the extension provides a configuration option
+to switch to ``mhchem v3 <>``_, a complete refactor of mhchem contributed by 
+the author of the original LaTeX package.
+
+You can control this behavior using the ``legacy`` value which defaults
+to ``true``.
+
+.. code-block:: javascript
+
+    TeX: {
+      mhchem: { legacy: true }
+    }
+
+.. note::
+
+   The mhchem v3 extension is hosted on the third-party extension 
+   repository and loads via the ``[Contrib]`` path variable.
 
 noErrors
 --------
