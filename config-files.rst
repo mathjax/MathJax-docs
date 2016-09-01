@@ -59,7 +59,7 @@ following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/TeX","input/MathML","input/AsciiMath","output/CommonHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -103,7 +103,7 @@ following configuration:
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
       jax: ["input/TeX","input/MathML","input/AsciiMath","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -147,7 +147,7 @@ following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/TeX","input/MathML","input/AsciiMath","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","mml2jax.js","asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -192,7 +192,7 @@ configuration:
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
       jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -236,7 +236,7 @@ extensions.  It is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/TeX","output/CommonHTML"],
-      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -272,7 +272,7 @@ extensions.  It is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/TeX","output/SVG", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -311,7 +311,7 @@ extensions.  It is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/TeX","output/HTML-CSS", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -347,7 +347,7 @@ and MathZoom extensions.  It is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/MathML", "output/CommonHTML"],
-      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "AssistiveMML.js"]
+      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"]
     });
 
 In addition, it loads the mml Element Jax and the MathML input jax main
@@ -379,7 +379,7 @@ and MathZoom extensions.  It is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/MathML","output/SVG", "output/PreviewHTML"],
-      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"]
+      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"]
     });
 
 In addition, it loads the mml Element Jax and the MathML input jax main
@@ -415,7 +415,7 @@ and MathZoom extensions.  It is equivalent to the following configuration:
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
       jax: ["input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"]
+      extensions: ["mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"]
     });
 
 In addition, it loads the mml Element Jax and the MathML input jax main
@@ -452,7 +452,7 @@ equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/AsciiMath","output/CommonHTML"],
-      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js"]
+      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"]
     });
 
 In addition, it loads the mml Element Jax and the TeX input jax main code
@@ -487,7 +487,7 @@ equivalent to the following configuration:
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
       jax: ["input/AsciiMath","output/SVG", "output/PreviewHTML",
-      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js","AssistiveMML.js"]
+      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js","AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"]
     });
 
 In addition, it loads the mml Element Jax and the TeX input jax main code
@@ -523,7 +523,7 @@ equivalent to the following configuration:
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
       jax: ["input/AsciiMath","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"]
+      extensions: ["asciimath2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"]
     });
 
 In addition, it loads the mml Element Jax and the TeX input jax main code
@@ -558,7 +558,7 @@ is equivalent to the following configuration:
 
     MathJax.Hub.Config({
       jax: ["input/TeX","input/MathML","output/SVG", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       }
@@ -608,7 +608,7 @@ The Accessible configuration is equivalent to the following:
     MathJax.Hub.Config({
       config: ["MMLorHTML.js"],
       jax: ["input/TeX","input/MathML","output/HTML-CSS","output/NativeMML", "output/PreviewHTML"],
-      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js"],
+      extensions: ["tex2jax.js","mml2jax.js","MathMenu.js","MathZoom.js", "fast-preview.js", "AssistiveMML.js", "[Contrib]/a11y/accessibility-menu.js"],
       TeX: {
         extensions: ["AMSmath.js","AMSsymbols.js","noErrors.js","noUndefined.js"]
       },
