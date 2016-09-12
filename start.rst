@@ -6,7 +6,7 @@ Getting Started
 
 MathJax allows you to include mathematics in your web pages, either
 using LaTeX, MathML, or AsciiMath notation, and the mathematics
-will be processed using javascript to produce HTML, SVG or MathML
+will be processed using JavaScript to produce HTML, SVG or MathML
 equations for viewing in any modern browser.
 
 There are two ways to access MathJax: the easiest way is to use the
