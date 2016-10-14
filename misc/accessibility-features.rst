@@ -56,10 +56,10 @@ The expected result for MathJax given the current state of technology is roughly
 
   * except in iOS VoiceOver, where this allows to hook into VoiceOver's exploration features.
 
-Support Matrix
---------------
+Support Matrix (AssistiveMML.js)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Below is a summary of results from our tests as well as user reports.
+Below is a summary of results for MathML enabled screenreaders and the legacy AssistiveMML extension, based on tests as well as user reports.
 
 .. raw:: html
 
@@ -253,7 +253,7 @@ Below is a summary of results from our tests as well as user reports.
   </table>
 
 Notes on Apple VoiceOver
-========================
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **VoiceOver** on OSX
 
@@ -271,7 +271,7 @@ Notes on Apple VoiceOver
 
 
 Notes on MathPlayer 4 and Internet Explorer 11
-==============================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Design Science suggests to always use IE's Enterprise mode for MathPlayer in IE11, `see their documentation <http://www.dessci.com/en/products/mathplayer/tech/default.htm#Enterprise_mode>`__.
 However, it seems that this is only required for MathPlayer's visual rendering
