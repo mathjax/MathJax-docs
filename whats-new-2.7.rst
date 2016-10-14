@@ -33,6 +33,7 @@ Interface
 
 * `#1463 <https://github.com/mathjax/MathJax/issues/1463>`__ Reset message strings for ``messageStyle=simple`` for each typeset.
 * `#1556 <https://github.com/mathjax/MathJax/issues/1556>`__ Improve menu placement.
+* `#1627 <https://github.com/mathjax/MathJax/issues/1627>`__ Add Accessibility submenu.
 
 HTML/SVG/nativeMML display
 ------------------------------
