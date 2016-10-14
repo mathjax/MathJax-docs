@@ -66,22 +66,22 @@ The code of the repository is hosted on Github at `github.com/mathjax/MathJax-th
 is mirrored to the CDN at `cdn.mathjax.org/mathjax/contrib/ 
 <//cdn.mathjax.org/mathjax/contrib/>`_
 
-To add your extension, please follow the guidelines of the repository. To add the third party repository to your configuration use
+Beginning with MathJax v2.7, the third party repository URL 
+``https://cdn.mathjax.org/mathjax/contrib`` is stored in the 
+``[Contrib]`` path variable. This makes it easy to load extension in that 
+repository, e.g.,
 
 .. code-block:: javascript
 
-    <script type="text/x-mathjax-config">
-      MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
-    </script>
+    MathJax.Hub.Config({
+      extensions: ["[Contrib]/spiffy/spiffy.js"]
+    });
 
-or equivalently,
+For a list of available extensions available, please check the GitHub repo. 
 
-.. code-block:: javascript
+.. note::
 
-    <script type="text/javascript">
-      window.MathJax = {
-        AuthorInit: function () {
-              MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
-            }
-      };
-    </script>
+  You can disable the ``[Contrib]`` path by loading MathJax with 
+  ``noContrib`` in the query string, e.g., ``MathJax.js?config=...&noContrib``. 
+  This is particularly necessary when using your own copy of MathJax with
+  a combined configuration file bit without access to ``cdn.mathjax.org``.

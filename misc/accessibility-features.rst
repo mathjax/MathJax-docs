@@ -15,22 +15,36 @@ The MathJax user interface consists of the :ref:`MathJax Menu <configure-MathMen
 
 The user interface is localized to over 20 languages and many more partial localizations thanks to the fantastic support of `the community at TranslateWiki.net <https://translatewiki.net/wiki/Translating:MathJax>`__.
 
-The MathJax Menu also follows WCAG 2.0 guidelines. Each MathJax fragment is included in the tab order; the menu can be triggered via the space or menu key; and navigation in the menu is possible using the arrow keys
+The MathJax Menu also follows WCAG 2.0 guidelines. Each MathJax fragment is included in the tab order; the menu can be triggered via the space or menu key; and navigation in the menu is possible using the arrow keys.
+
+MathJax Accessibility Extensions
+--------------------------------
+
+The :ref:`MathJax Accessibility extensions <a11y-extensions>` provide several tools and features that enable universal rendering of mathematics on the web. They enhance rendering both visually and aurally. In particular:
+
+- An innovative responsive rendering of mathematical content through collapsing and exploration of subexpressions.
+- An aural rendering tool providing on-the-fly speech-text for mathematical content and its subexpressions using various rule sets.
+- An exploration tool, allowing for meaningful exploration of mathematical content including multiple highlighting features and synchronized aural rendering.
+
+The Accessibility Extensions support the widest selection of browsers, operating systems, and assistive technologies as they only require support for well-supported web standards such as WAI-ARIA, in particular labels and live regions.
+
+.. note::
+
+    We strongly suggest to use the MathJax Accessibility extensions to provide the best possible experience for all users.
+
 
 .. _screenreader-support:
 
-Screenreader Support
----------------------
+Legacy Support via AssistiveMML.js
+----------------------------------
 
-Many screenreaders support MathML, MathJax's internal format. Some screenreaders like ChromeVox, JAWS (on IE), and Texthelp support MathJax out of the box while other screenreaders can be supported via the :ref:`AssistiveMML extension <assistive-mml>`.
+Some screenreaders support MathML, MathJax's internal format. Screenreaders like ChromeVox, JAWS (on IE), and Texthelp support MathJax directly while other screenreaders can benefit from the :ref:`AssistiveMML extension <assistive-mml>`.
 
 The ``AssistiveMML`` extension embeds visually hidden MathML alongside MathJax's visual rendering while hiding the visual rendering from assistive technology (AT) such as screenreaders. This allows most MathML-enabled screenreaders to read out the underlying mathematics. It's important to note that Presentation MathML is usually not expressive enough to voice it which is why screenreaders have to rely on heuristics to analyze the MathML semantically.
 
-For lack of web standards, MathJax cannot (yet) make its visual output fully accessible, e.g., embed the MathML structure within its visual output to enable synchronized highlighting and exploration of the visual output. We continue to work on better solutions as well as on improving the existing web standards.
+The quality of MathML support in screenreaders varies greatly, with different levels of MathML feature support, different speech rule sets, and different voicing technologies.
 
-Effectively, there are three MathML screenreader engines: MathPlayer (as a third party library, e.g., JAWS, NVDA, Texthelp), Google ChromeVox (Chrome, ChromeOS, Android) and its improved derivative SpeechRuleEngine, as well as Apple VoiceOver (iOS, OSX). The quality of the voicing varies greatly among these tools with different levels of MathML feature support, different speech rule sets, and different voicing technologies.
-
-The "best in class" / expected result for MathJax given the current state of technology is roughly the following:
+The expected result for MathJax given the current state of technology is roughly the following:
 
 * the visually-hidden MathML is read out correctly by AT (i.e., not just the character strings but, e.g., ``<mfrac>`` leads to "fraction"; this will vary with the MathML support of the screenreader).
 * the visual rendering is not read out by AT
@@ -42,10 +56,10 @@ The "best in class" / expected result for MathJax given the current state of tec
 
   * except in iOS VoiceOver, where this allows to hook into VoiceOver's exploration features.
 
-Support Matrix
---------------
+Support Matrix (AssistiveMML.js)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Below is a summary of results from our tests as well as user reports.
+Below is a summary of results for MathML enabled screenreaders and the legacy AssistiveMML extension, based on tests as well as user reports.
 
 .. raw:: html
 
@@ -239,7 +253,7 @@ Below is a summary of results from our tests as well as user reports.
   </table>
 
 Notes on Apple VoiceOver
-========================
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 * **VoiceOver** on OSX
 
@@ -257,7 +271,7 @@ Notes on Apple VoiceOver
 
 
 Notes on MathPlayer 4 and Internet Explorer 11
-==============================================
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Design Science suggests to always use IE's Enterprise mode for MathPlayer in IE11, `see their documentation <http://www.dessci.com/en/products/mathplayer/tech/default.htm#Enterprise_mode>`__.
 However, it seems that this is only required for MathPlayer's visual rendering
