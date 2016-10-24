@@ -235,7 +235,7 @@ Methods
     array of elements), and then typesets any math elements within the
     element.  If no `element` is provided, the whole document is processed.
     The `element` is either the DOM `id` of the element, a reference to
-    the DOM element itself, or an array of id's or refereneces.  The
+    the DOM element itself, or an array of id's or references.  The
     `callback` is called when the process is complete.  See the
     :ref:`Modifying Math <typeset-math>` section for details of how to use
     this method properly.
