@@ -23,6 +23,7 @@ extension which provides opt-ins for end-users via the MathJax
 menu. 
 
 .. code-block:: javascript
+
   MathJax.Hub.Config({
     // ...your configuration options...
     extensions: ["[Contrib]/a11y/accessibility-menu.js"]
@@ -32,6 +33,7 @@ The accessibility menu extension can then be controlled in the
 configuration block for the MathJax menu, e.g.,
 
 .. code-block:: javascript
+
   MathJax.Hub.Config({
     // ...your configuration options...
     menuSettings: {
@@ -53,6 +55,7 @@ sub-expressions. It is the largest piece of the accessibility
 extensions, controlling highlighting, navigation and voicing.
 
 .. code-block:: javascript
+
   MathJax.Hub.Config({
     // ...your configuration options...
     explorer: {
@@ -78,6 +81,7 @@ It will automatically load ``collapsible.js`` (see below).
 
 
 .. code-block:: javascript
+
   MathJax.Hub.Config({
     // ...your configuration options...
     "auto-collapse": {
@@ -96,6 +100,7 @@ The extension only offers a configuration option to disable it.
 
 
 .. code-block:: javascript
+
   MathJax.Hub.Config({
     // ...your configuration options...
     collapsible: {
@@ -113,6 +118,7 @@ within the MathJax output for use by the other extensions.
 The extension only offers a configuration option to disable it.
 
 .. code-block:: javascript
+
   MathJax.Hub.Config({
     // ...your configuration options...
     "semantic-enrich": {
