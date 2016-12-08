@@ -16,7 +16,7 @@ Authoring
 -  `eLyxer <http://www.nongnu.org/elyxer/index.html>`__ (LyX to HTML
    converter; see the `Math
    Showcase <http://www.nongnu.org/elyxer/math-mathjax.html>`__)
--  `Fidus Writer <http://fiduswriter.com/>`__, an web based editor for
+-  `Fidus Writer <https://www.fiduswriter.org/>`__, an web based editor for
    collaborative academic writing.
 -  `Flatworld knowledge <http://www.flatworldknowledge.com/>`__ a free
    textbook publisher using MathJax in their web service.
