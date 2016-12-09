@@ -850,7 +850,8 @@ and will not be loaded automatically, so you must include it
 explicitly in your configuration if you wish to use these commands.
 
 Beginning with v2.7, the extension provides a configuration option
-to switch to ``mhchem v3 <>``_, a complete refactor of mhchem contributed by 
+to switch to `mhchem v3 <https://mhchem.github.io/MathJax-mhchem/>`_,
+a complete refactor of mhchem contributed by
 the author of the original LaTeX package.
 
 You can control this behavior using the ``legacy`` value which defaults
