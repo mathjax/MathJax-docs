@@ -4,6 +4,8 @@
 The PlainSource output processor
 ********************************
 
+The PlainSource output processor displays the input unmodified.
+
 The options below control the operation of the PlainSource output
 processor that is run when you include ``"output/PlainSource"`` in the
 `jax` array of your configuration.  They are listed with their default
