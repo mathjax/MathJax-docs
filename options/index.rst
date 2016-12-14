@@ -52,3 +52,15 @@ argument in bold face).
 
 The ``config/default.js`` file is another example that shows nearly
 all the configuration options for all of MathJax's components.
+
+.. toctree::
+    :maxdepth: 1
+
+    The core options <hub>
+    Proprocessor options <preprocessors/index>
+    Input processor options <input-processors/index>
+    Output processor options <output-processors/index>
+    Extension options <extensions/index>
+    Other options <other/index>
+    Third-party extensions <ThirdParty>
+

@@ -392,4 +392,5 @@ font to be accessed.
 
 One solution to this problem is to install the MathJax fonts locally so
 that MathJax doesn't have to use web-based fonts in the first place.  Your
-best bet is to install the `STIX fonts`_ on your system.
+best bet is to install the `STIX fonts`_ on your system (see the `MathJax
+fonts help page`_ for details).

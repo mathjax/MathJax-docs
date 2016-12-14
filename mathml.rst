@@ -125,7 +125,7 @@ configuration block.  For example
 Note that this script tag must come *before* the script that loads
 ``MathJax.js`` itself.
 
-For more information, see :doc:`options/Content-MathML`.
+For more information, see :doc:`options/extensions/Content-MathML`.
 
 
 .. _experimental-mathml:
@@ -150,7 +150,7 @@ configuration block.  For example
 Note that this script tag must come *before* the script that loads
 ``MathJax.js`` itself.
 
-For more information, see :doc:`options/MML3`.
+For more information, see :doc:`options/extensions/MML3`.
 
 Semantics and Annotations
 =========================
