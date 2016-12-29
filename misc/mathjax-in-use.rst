@@ -24,7 +24,7 @@ Authoring
    publishing platform.
 -  `jaxedit <http://code.google.com/p/jaxedit>`__ (on-line LaTeX editor
    with live preview)
--  `kramdown <https://rubyforge.org/projects/kramdown>`__ a markdown
+-  `kramdown <https://kramdown.gettalong.org/>`__ a markdown
    parser in ruby with MathJax support
 -  `MarkedApp <http://markedapp.com/>`__, a notetaking app for iOS with
    MathJax support.
