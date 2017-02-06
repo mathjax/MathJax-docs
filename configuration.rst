@@ -145,7 +145,7 @@ MathJax, you will need to install your own copy; see :ref:`Installing
 and Testing MathJax <installation>` for information on how to do that.)
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<https://www.mathjax.org/mathjax-cdn-terms-of-service.html>`_, so be
+<https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_, so be
 sure to read that before linking to the MathJax CDN server.
 
 If you wish to use the MathJax CDN but use your own configuration file
