@@ -12,13 +12,13 @@ Using unpacked resources
 
 MathJax provides both packged (minified) and unpacked versions of all its components. For debugging, it is useful to switch to an unpacked versions.
 
-For example, using the MathJax CDN just add `unpacked/` before `MathJax.js`, e.g., from
+For example, if your copy of MathJax lives at `https://example.com/MathJax.js` just add `unpacked/` before `MathJax.js`, e.g.,
 
 
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="https://example.com/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 to
@@ -27,7 +27,7 @@ to
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdn.mathjax.org/mathjax/latest/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="https://example.com/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 

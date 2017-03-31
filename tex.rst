@@ -360,8 +360,7 @@ as a reference. For example,
 
 includes a labeled equation and a reference to that equation.  Note
 that references can come before the corresponding formula as well as
-after them.  See the equation numbering links in the `MathJax examples
-page <https://cdn.mathjax.org/mathjax/latest/test/examples.html>`_ for
+after them.  See the equation numbering pages in the `MathJax examples at <https://github.com/mathjax/MathJax/blob/master/test/>`_ for
 more examples.
 
 You can configure the way that numbers are displayed and how the
@@ -400,7 +399,7 @@ script prior to loading MathJax.  For example
       MathJax.Hub.Config({ TeX: { extensions: ["autobold.js"] }});
     </script>
     <script type="text/javascript"
-        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+        src="https://example.com/MathJax.js?config=TeX-AMS_HTML">
     </script>
 
 will load the `autobold` TeX extension in addition to those already
@@ -442,7 +441,7 @@ to be loaded, redefining all four to their proper values.  Note that
 this may be better than loading the extension explicitly, since it
 avoids loading the extra file on pages where these macros are *not*
 used.  The `sample autoloading macros
-<https://cdn.mathjax.org/mathjax/latest/test/sample-autoload.html>`_
+<https://github.com/mathjax/MathJax/blob/master/test/sample-autoload.html>`_
 example page shows this in action.  The `autoload-all` extension below
 defines such macros for *all* the extensions so that if you include
 it, MathJax will have access to all the macros it knows about.
