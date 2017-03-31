@@ -32,7 +32,7 @@ example:
 
 .. code-block:: html
 
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML&locale=fr"></script>
+    <script src="https://example.com/MathJax.js?config=TeX-AMS_HTML&locale=fr"></script>
 
 will load MathJax using the French language.  Users can still override
 this setting using the `Language` submenu of the MathJax contextual
@@ -43,5 +43,5 @@ If you want to help in the translation process, please visit the
 `TranslateWiki.net interface
 <https://translatewiki.net/wiki/Translating:MathJax>`_.  The page
 `localization.html
-<http://cdn.mathjax.org/mathjax/latest/test/localization.html>`_
+<https://github.com/mathjax/MathJax/blob/master/test/localization.html>`_
 is a convenient way to check the different translations.

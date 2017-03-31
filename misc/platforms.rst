@@ -97,10 +97,10 @@ you are not, you may need to have an administrator do these steps for
 you. You will also have to identify the right file if the theme
 consists of multiple files.
 
-To enable MathJax in your web platform, add the line::
+To enable MathJax in your web platform using cdnjs, add the line:
 
     <script type="text/javascript" 
-       src="httpsp://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
 the file if it contains no ``</head>``. 

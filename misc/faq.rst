@@ -166,11 +166,7 @@ problem, please follow these steps:
    problems there as well. This might help you to determine the nature
    of your problem.
 -  If possible, check whether the problem has been solved in the latest
-   MathJax release. The preferred way to do this is to invoke the most
-   recent version of MathJax on the CDN by pointing to
-   https://cdn.mathjax.org/mathjax/latest/MathJax.js. If you need to work
-   locally, try a fresh install of the `latest
-   release <https://www.mathjax.org/download/>`__.
+   MathJax release, cf. :ref:`the installation instructions <installation>`.
 -  Search through the `MathJax User
    Group <https://groups.google.com/group/mathjax-users>`__ to see if
    anyone else has come across the problem before.

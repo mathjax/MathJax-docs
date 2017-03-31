@@ -17,7 +17,7 @@ it via
 where ``path-to-MathJax`` is the URL to the MathJax directory on your
 server or hard disk.  If you are using MathJax from the CDN, you can
 view the contents of `default.js
-<http://cdn.mathjax.org/mathjax/latest/config/default.js>`_ as a
+<https://github.com/mathjax/MathJax/blob/master/config/default.js>`_ as a
 reference, but you will not be able to edit the CDN copy.  It is
 possible to use the CDN copy of MathJax with your own configuration
 file, however; see :ref:`Using a Local Configuration File with the CDN
