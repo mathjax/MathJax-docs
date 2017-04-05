@@ -42,7 +42,7 @@ To use MathJax from a CDN, you need to do two things:
 .. warning:: 
 
   We retired our self-hosted CDN at `cdn.mathjax.org` in April, 2017.
-  We recommend using `cdnjs.com <cdnjs.com>`_ which uses the same provider.
+  We recommend using `cdnjs.com <https://cdnjs.com>`_ which uses the same provider.
   The use of ``cdn.mathjax.org`` was governed by its `terms of service
   <https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_.
 
