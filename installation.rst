@@ -5,7 +5,7 @@ Installing and Testing MathJax
 ******************************
 
 The easiest way to use MathJax is to link directly to the MathJax
-distributed network service (see :ref:`Using the MathJax CDN
+distributed network service (see :ref:`Using a CDN
 <mathjax-CDN>`).  In that case, there is no need to install MathJax
 yourself, and you can begin using MathJax right away; skip this document on
 installation and go directly to :ref:`Configuring MathJax <loading>`.
@@ -337,7 +337,7 @@ IE9 and remote fonts
 IE9's same-origin policy affects its ability to load web-based fonts, as
 described above.  This has implications not ony to cross-domain loading of
 MathJax, but also to the case where you view a local page (with a
-``file://`` URL) that accesses MathJax from a remote site such as the MathJax
+``file://`` URL) that accesses MathJax from a remote site such as a
 CDN service.  In this case, IE9 does **not** honor the
 ``Access-Control-Allow-Origin`` setting of the remote server (as it would
 if the web page came from an ``http://`` URL), and so it **never** allows the

@@ -189,7 +189,7 @@ however, that Internet Explorer does not fire the ``onchange`` event
 when you press RETURN, so this example does not work as expected in
 IE.  A more full-featured version that addresses this problem is
 available in `test/sample-dynamic.html
-<http://cdn.mathjax.org/mathjax/latest/test/sample-dynamic.html>`_.
+<https://github.com/mathjax/MathJax/blob/master/test/sample-dynamic.html>`_.
 
 .. code-block:: html
 
@@ -205,7 +205,7 @@ available in `test/sample-dynamic.html
       });
     </script>
     <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full">
+      src="https://example.com/MathJax.js?config=TeX-AMS_HTML-full">
     </script>
 
     </head>
@@ -249,6 +249,6 @@ available in `test/sample-dynamic.html
     </html>
 
 There are a number of additional example pages at `test/examples.html
-<http://cdn.mathjax.org/mathjax/latest/test/examples.html>`_ that
+<https://github.com/mathjax/MathJax/blob/master/test/examples.html>`_ that
 illustrate how to call MathJax dynamically or perform other actions
 with MathJax.
