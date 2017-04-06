@@ -13,7 +13,7 @@ In addition to these changes, MathJax.org now offers MathJax as a network
 service.  Instead of having to install MathJax on your own server, you can
 link to our content delivery network (CDN) to get fast access to 
 up-to-date and past versions of MathJax.  See :ref:`Loading MathJax from 
-the CDN <loading-CDN>` for more details.
+a CDN <loading-CDN>` for more details.
 
 The following sections outline the changes in v1.1:
 
@@ -36,7 +36,7 @@ Optimization
   to wait for *every* font to fail.
 
 * The MathJax files are now packed only with `yuicompressor` rather than a 
-  custom compressor.  The CDN serves gzipped versions, which end up being
+  custom compressor.  A CDN serves gzipped versions, which end up being
   smaller than the gzipped custom-packed files.
 
 * Improved rendering speed in IE by removing ``position:relative`` from 
