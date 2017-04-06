@@ -30,7 +30,7 @@ better choice than editing the theme directly.
    .. code-block:: html
 
        <script type="text/javascript" 
-          src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+          src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
        </script>
 
    just before that.  Otherwise, insert the same code at the very
