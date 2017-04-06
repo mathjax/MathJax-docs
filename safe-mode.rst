@@ -55,7 +55,7 @@ to add ``,Safe`` after the configuration file when you are loading
 
 .. code-block:: html
 
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,Safe"></script>
+    <script src="https://examples.com/MathJax.js?config=TeX-AMS_HTML,Safe"></script>
 
 This causes MathJax to load the ``TeX-AMS_HTML`` configuration file,
 and then the ``Safe`` configuration, which adds the Safe extension to
@@ -73,7 +73,7 @@ include ``"Safe.js"`` in your ``extensions`` array directly:
       extensions: ["tex2jax.js","Safe.js"]
     });
     </script>
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+    <script src="https://examples.com/MathJax.js"></script>
 
 The Safe extension has a number of configuration options that let you
 fine-tune what is allowed and what is not.  See the :ref:`Safe
