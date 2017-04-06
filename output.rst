@@ -25,14 +25,14 @@ select one of these output processors for you.  If the config file ends in
 
 If you are performing your own in-line or file-based configuration,
 you select which one you want to use by including either
-``"output/HTML-CSS"``, ``"output/SVG"``, or ``"output/NativeMML"`` in
+``"output/CommonHTML"``, ``"output/SVG"``, or ``"output/NativeMML"`` in
 the `jax` array of your MathJax configuration.  For example
 
 .. code-block:: javascript
 
-    jax: ["input/TeX","output/HTML-CSS"]
+    jax: ["input/TeX","output/CommonHTML"]
 
-would specify TeX input and HTML-with-CSS output for the mathematics
+would specify TeX input and CommonHTML output for the mathematics
 in your document.
 
 The **CommonHTML output processor** produces high-quality output in all modern browsers, with results that are consistent across browsers and operating systems.  This is MathJax's primary output mode since MathJax v2.6. Its major advantage is its quality, consistency, and speed as well as support for server-side generation. Its browser supports starts with IE9 and equivalent browsers and it degrades gracefully on older browsers.
@@ -40,7 +40,7 @@ The CommonHTML output uses web-based fonts so that users don't have to have math
 
 The **HTML-CSS output processor** produces high-quality output in all
 browsers, with results that are consistent across browsers and
-operating systems.  This is MathJax's primary output mode.  Its major
+operating systems.  This was MathJax's primary output mode prior to MathJax v2.6.  Its major
 advantage is its quality and consistency on legacy browsers starting with IE6.
 The HTML-CSS output uses web-based
 fonts so that users don't have to have math fonts installed on their
