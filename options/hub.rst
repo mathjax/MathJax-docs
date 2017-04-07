@@ -243,6 +243,15 @@ behavior of MathJax.  They are given with their default values.
         and expect to get the same results as the original TeX.
         (Without this, there may be some spacing differences.)
 
+    .. describe:: inTabOrder: true
+
+        This controls whether math elements should be included in the
+        tabindex. If set to ``true``, MathJax will add `tabindex=0`to
+        the output. If set to ``false``, it will add 
+        ``tabindex="-1"``. Developers are **strongly discouraged** 
+        from initially disabling this (by means of configuration) as 
+        it will render the menu inaccessible.
+
     .. describe:: semantics: false
 
         This controls whether the "Show Math as ⇒ MathML Code" menu 

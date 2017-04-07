@@ -47,7 +47,7 @@ would set the ``scale`` option to 120%.
     than in others.  The ``STIX-Web`` font is the most complete.
 
 
-.. describe:: blacker: 10
+.. describe:: blacker: 1
 
     This is the stroke width to use for all character paths (1em =
     1000 units).  This is a cheap way of getting slightly lighter or

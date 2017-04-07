@@ -21,7 +21,7 @@ configuration file, for example,
 .. code-block:: javascript
 
     <script type="text/x-mathjax-config">
-      MathJax.Ajax.config.path["Extra"] = "http://my.extra.com/mathjax/extra";
+      MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extra";
     </script>
 
 or equivalently,
@@ -31,7 +31,7 @@ or equivalently,
     <script type="text/javascript">
       window.MathJax = {
         AuthorInit: function () {
-              MathJax.Ajax.config.path["Extra"] = "http://my.extra.com/mathjax/extra";
+              MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extra";
             }
       };
     </script>
@@ -71,7 +71,7 @@ To add your extension, please follow the guidelines of the repository. To add th
 .. code-block:: javascript
 
     <script type="text/x-mathjax-config">
-      MathJax.Ajax.config.path["Contrib"] = "//cdn.mathjax.org/mathjax/contrib";
+      MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
     </script>
 
 or equivalently,
@@ -81,7 +81,7 @@ or equivalently,
     <script type="text/javascript">
       window.MathJax = {
         AuthorInit: function () {
-              MathJax.Ajax.config.path["Contrib"] = "//cdn.mathjax.org/mathjax/contrib";
+              MathJax.Ajax.config.path["Contrib"] = "https://cdn.mathjax.org/mathjax/contrib";
             }
       };
     </script>

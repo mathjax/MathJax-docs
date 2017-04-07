@@ -11,19 +11,44 @@ Articles and Presentations
 Articles
 ========
 
+-  `Towards Universal Rendering in MathJax (W4A 2016)
+   <https://github.com/mathjax/papers/blob/newpapers/W4A/w4a16-accessible.pdf>`__
+   by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
+-  `Towards ARIA Standards for Mathematical Markup (DEIMS 2016)
+   <https://github.com/mathjax/papers/blob/newpapers/DEIMS16/deims16.pdf>`__
+   by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
+-  `Employing Semantic Analysis for Enhanced Accessibility 
+   Features in MathJax (ADS, CCNC 2016)
+   <https://github.com/mathjax/papers/blob/newpapers/ads16/ads16.pdf>`__
+   by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
+-  `Whitepaper: Towards MathJax v3.0
+   <http://mathjax.github.io/papers/towards-v3/towards-mathjax-v3.html>`__
+   by Peter Krautzberger, Davide Cervone, Volker Sorge, *MathJax*, *2015*
+-  `Towards Meaningful Visual Abstraction of Mathematical Notation 
+   (MathUI, CICM 2015)
+   <https://github.com/mathjax/papers/blob/newpapers/MathUI15/mathui15.pdf>`__
+   by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
 -  `MathML forges
    on <http://radar.oreilly.com/2013/11/mathml-forges-on.html>`__
    by Peter Krautzberger, *MathJax*, *2014*
+-  `MathJax: A Platform for Mathematics on the Web", Notices of the AMS
+   <http://www.ams.org/notices/201202/rtx120200312p.pdf>`__
+   by Davide Cervone, *MathJax*, *2012*
 -  `Accessible Pages with
    MathJax <https://www.mathjax.org/accessible-pages-with-mathjax/>`__
    by Neil Soiffer *Design Science, Inc.*, *2010*
 -  `Mathematics E-learning Community Benefits from
    MathJax <https://www.mathjax.org/mathematics-e-learning-community-benefits-from-mathjax/>`__
    by Hylke Koers, *MathJax*, *2010*
+   
 
 Presentations
 =============
 
+-  `Barrierereie Mathematik im Netz (in German) <http://pkra.github.io/slides-gaad16/>`__
+   by Peter Krautzberger, *MathJax*, *FernUni Hagen, Global Accessibility Awareness Day, 2016*
+-  `Evolving Math Web Standards from a Usability Perspective <https://pkra.github.io/slides-JMM16/>`__
+   by Peter Krautzberger, Davide Cervone, Volker Sorge, *MathJax*, *2016 Joint Mathematics Meetings in Seattle*
 -  `MathJax -- beautiful mathematics on the web <http://pkra.github.io/slides-mathjax/>`__
    by Peter Krautzberger, *MathJax*, *2014*
 -  `MathML: math made for the web and beyond <http://pkra.github.io/webinar-slides-aptara/>`__
