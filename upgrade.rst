@@ -137,7 +137,7 @@ the inline math delimiters to include ``$...$`` in addition to
 ``\(...\)``, and would set the ``processEscapes`` parameter to ``true``.
 
 
-Loading MathJax from the CDN
+Loading MathJax from a cdn
 ============================
 
 The MathJax installation is fairly substantial (due to the large number of
@@ -149,12 +149,12 @@ the best way for you to obtain MathJax.  That way you can be sure you are
 using an up-to-date version of MathJax, and that the server will be fast
 and reliable.
 
-To use the MathJax CDN service, simply load MathJax as follows:
+To use a CDN service, simply load MathJax as follows:
 
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </scrip>
 
 Of course, you can load any configuration file that you wish, or use a
@@ -163,7 +163,7 @@ Of course, you can load any configuration file that you wish, or use a
 
 The use of ``cdn.mathjax.org`` is governed by its `terms of service
 <https://www.mathjax.org/mathjax-cdn-terms-of-service.html>`_, so be
-sure to read that before linking to the MathJax CDN server.
+sure to read that before linking to a CDN server.
 
 
 Change in default TeX delimiters
@@ -245,7 +245,7 @@ no longer be actively maintained (and hasn't been since November 2010), and
 so you will not be able to obtain updates through ``svn`` if you checked
 out MathJax from there.
 
-You may be able to switch to using the MathJax CDN (see above) rather than
+You may be able to switch to using a CDN (see above) rather than
 hosting your own copy of MathJax, and avoid the problem of updates all
 together.  If you must install your own copy, however, you should follow
 the instructions at :ref:`Installing and Testing MathJax <installation>`,

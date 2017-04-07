@@ -57,13 +57,13 @@ i.e., ``spiffy.js`` should end with
 MathJax Third-Party extension repository
 ----------------------------------------
 
-We host a third-party extension repository on the MathJax CDN. This repository 
+We host a third-party extension repository on a CDN. This repository 
 allows developers to make their custom extensions easily available to all
 MathJax users.
 
 The code of the repository is hosted on Github at `github.com/mathjax/MathJax-third-party-extensions 
 <https://github.com/mathjax/MathJax-third-party-extensions>`_ and 
-is mirrored to the CDN at `cdn.mathjax.org/mathjax/contrib/ 
+is mirrored to a cdn at `cdn.mathjax.org/mathjax/contrib/ 
 <//cdn.mathjax.org/mathjax/contrib/>`_
 
 To add your extension, please follow the guidelines of the repository. To add the third party repository to your configuration use
