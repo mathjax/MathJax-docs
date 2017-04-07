@@ -10,8 +10,8 @@ will be processed using javascript to produce HTML, SVG or MathML
 equations for viewing in any modern browser.
 
 There are two ways to access MathJax: the easiest way is to use the
-copy of MathJax available from our distributed network service at
-``cdn.mathjax.org``, but you can also download and install a copy of
+copy of MathJax available from a distributed network service such as
+``cdnjs.com``, but you can also download and install a copy of
 MathJax on your own server, or use it locally on your hard disk
 (with no need for network access).  All three of these are described
 below, with links to more detailed explanations.  This page gives the
@@ -21,96 +21,63 @@ setup for your pages.
 
 .. _mathjax-CDN:
 
-Using the MathJax Content Delivery Network (CDN)
-================================================
+Using a Content Delivery Network (CDN)
+======================================
 
-The easiest way to use MathJax is to link directly to the public
-installation available through the MathJax Content Distribution Network
-(CDN).  When you use the MathJax CDN, there is no need to install
+The easiest way to use MathJax is to link directly to a public
+installation available through a Content Distribution Network
+(CDN).  When you use a CDN, there is no need to install
 MathJax yourself, and you can begin using MathJax right away.
 
 The CDN will automatically arrange for your readers to download MathJax
-files from a fast, nearby server.  And since bug fixes and patches are
-deployed to the CDN as soon as they become available, your pages will
-always be up to date with the latest browser and devices.
+files from a fast, nearby server.
 
-To use MathJax from our server, you need to do two things:
+To use MathJax from a CDN, you need to do two things:
 
 1.  Link to MathJax in the web pages that are to include mathematics.
 
 2.  Put mathematics into your web pages so that MathJax can display
     it.
 
-To jump start, you accomplish the first step by putting 
+.. warning:: 
+
+  We retired our self-hosted CDN at `cdn.mathjax.org` in April, 2017.
+  We recommend using `cdnjs.com <https://cdnjs.com>`_ which uses the same provider.
+  The use of ``cdn.mathjax.org`` was governed by its `terms of service
+  <https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_.
+
+To jump start using `cdnjs`, you accomplish the first step by putting
 
 .. code-block:: html
 
-    <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
 ``<body>`` if necessary, but the head is to be preferred.)  This will
 load the latest version of MathJax from the distributed server, and
-configure it to recognize mathematics in both TeX and MathML notation,
-and ask it to generate its output using MathML if the browser supports
-that well enough, and otherwise use HTML-with-CSS to display the
-mathematics.  
+configure it to recognize mathematics in both TeX, MathML, and AsciiMath notation,
+and ask it to generate its output using HTML with CSS to display the
+mathematics.
 
-**Note** The ``TeX-AMS-MML_HTMLorMML`` configuration is one of the most general 
-(and largest) configuration files, and is listed here because it will suffice for 
-most people's needs and quickly get you started using MathJax. 
-Other :ref:`combined configuration files <config-files>` are available, however, 
-and you can also provide additional configuration parameters to tailor one of the 
-combined configurations to your needs.  
+.. warning::
 
-More details about the configuration process can be found in the 
-:ref:`Loading and Configuring MathJax <loading>` instructions.
+  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and thus largest) combined configuration files. We list it here because it will quickly get you started using MathJax. It is probably not the most efficient configuration for your purposes and other :ref:`combined configuration files <common-configurations>` are available. You can also provide additional configuration parameters to tailor one of the combined configurations to your needs or use our development tools to generate your own combined configuration file.
 
-The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<http://www.mathjax.org/download/mathjax-cdn-terms-of-service/>`_, so be
-sure to read that before linking to the MathJax CDN server.
+  More details about the configuration process can be found in the :ref:`Loading and Configuring MathJax <loading>` instructions.
 
-To see how to enter mathematics in your web pages, see `Putting
-mathematics in a web page`_ below.
+.. note::
+
+  To see how to enter mathematics in your web pages, see `Putting
+  mathematics in a web page`_ below.
 
 .. _secure-cdn-access:
-
-Secure Access to the CDN
-------------------------
-
-When the MathJax CDN is accessed via the address
-``http://cdn.mathjax.org``, data is downloaded over a regular, insecure
-HTTP connection.  This introduces a security risk, since it is
-possible a hostile 3rd party could intercept the MathJax program data,
-and replace it.  This is sometimes called a
-`man-in-the-middle <http://en.wikipedia.org/wiki/Man-in-the-middle_attack>`_ attack.
-
-To prevent such attacks, it is necessary to access the MathJax CDN
-over a secure HTTPS connection.  This can be done easily by using the
-following ``<script>`` tag instead of the one listed above:
-
-.. code-block:: html
-
-    <script type="text/javascript"
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-
-Alternatively, the following code block will work in both http and https settings
-
-.. code-block:: html
-
-    <script type="text/javascript"
-      src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-
-Note that this block will not work if the page is accessed locally via ``file://``
-
 
 Installing Your Own Copy of MathJax
 ===================================
 
-We recommend using the CDN service if you can, but you can also install
+We recommend using a cdn service if you can, but you can also install
 MathJax on your own server, or locally on your own hard disk.  To do
 so you will need to do the following things:
 
@@ -294,7 +261,7 @@ file):
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     </head>
     <body>
@@ -379,7 +346,7 @@ file):
     <head>
     <title>MathJax MathML Test Page</title>
     <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     </head>
     <body>
@@ -467,7 +434,7 @@ file):
     <head>
     <title>MathJax AsciiMath Test Page</title>
     <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+      src="https://example.com/MathJax.js?config=AM_HTMLorMML-full"></script>
     </head>
     <body>
     

@@ -24,7 +24,7 @@ Here is an example of how to load and configure MathJax dynamically:
     (function () {
       var script = document.createElement("script");
       script.type = "text/javascript";
-      script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      script.src  = "https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
       document.getElementsByTagName("head")[0].appendChild(script);
     })();
 
@@ -44,7 +44,7 @@ MathJax's configuration script:
       head.appendChild(script);
       script = document.createElement("script");
       script.type = "text/javascript";
-      script.src  = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      script.src  = "https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
       head.appendChild(script);
     })();
 
@@ -81,7 +81,7 @@ Note, however, that most browsers don't allow you to insert a script
 that loads a ``file://`` URL into a page that comes from the web (for
 security reasons).  That means that you can't have your GreaseMonkey
 script load a local copy of MathJax, so you have to refer to a
-server-based copy.  The MathJax CDN works nicely for this.
+server-based copy.  a cdn works nicely for this.
 
 ----
 
@@ -106,7 +106,7 @@ IE+MathPlayer.
           (document.getElementsByTagNameNS("http://www.w3.org/1998/Math/MathML","math").length > 0))) {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full";
+        script.src = "https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full";
         document.getElementsByTagName("head")[0].appendChild(script);
       }
     }
@@ -146,7 +146,7 @@ converting the math images to their original TeX code.
         //
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full";
+        script.src = "https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full";
         document.getElementsByTagName("head")[0].appendChild(script);
       }
     }

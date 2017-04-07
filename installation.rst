@@ -5,7 +5,7 @@ Installing and Testing MathJax
 ******************************
 
 The easiest way to use MathJax is to link directly to the MathJax
-distributed network service (see :ref:`Using the MathJax CDN
+distributed network service (see :ref:`Using a cdn
 <mathjax-CDN>`).  In that case, there is no need to install MathJax
 yourself, and you can begin using MathJax right away; skip this document on
 installation and go directly to :ref:`Configuring MathJax <loading>`.
