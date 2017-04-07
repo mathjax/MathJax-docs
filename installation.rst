@@ -82,7 +82,7 @@ The easiest way to get MathJax and keep it up to date is to use the `Git
 
 .. code-block:: sh
 
-    git clone git://github.com/mathjax/MathJax.git MathJax
+    git clone https://github.com/mathjax/MathJax.git MathJax
 
 to obtain and set up a copy of MathJax.  (Note that there is no longer
 a ``fonts.zip`` file, as there was in v1.0, and that the ``fonts``
@@ -373,8 +373,7 @@ One solution to this problem is to install the MathJax fonts locally, so
 that Firefox will not have to use web-based fonts in the first place.  To
 do that, either install the `STIX fonts <http://stixfonts.org>`_, or copy
 the fonts from ``MathJax/fonts/HTML-CSS/TeX/otf`` into your systems fonts
-directory and restart your browser (see the `MathJax fonts help page
-<http://www.mathjax.org/help/fonts>`_ for details).
+directory and restart your browser.
 
 .. _ie9-local-fonts-solution:
 
