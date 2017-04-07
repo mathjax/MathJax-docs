@@ -14,11 +14,11 @@ with MathJax in your environment.
 .. _community-forums:
 
 
-Forums
-======
+Mailing Lists
+=============
 
 If you need help using MathJax or you have solutions you want to share, please
-use the `MathJax Users Google Group
+post to the `MathJax Users Google Group
 <https://groups.google.com/forum/#!forum/mathjax-users>`_. We try hard to answer
 questions quickly, and users are welcome to help with that as well. Also, users
 can post code snippets showing how they have used MathJax, so it may be a good
@@ -33,6 +33,9 @@ design, feel free to submit it to the group.
 The community is only as good as the users who participate, so if
 you have something to offer, please take time to make a post on one of
 our groups.
+
+If you want to follow just our press releases, please subscribe to
+`our press list <http://eepurl.com/hqn6-/>`_.
 
 
 .. _community-tracker:
@@ -68,5 +71,5 @@ contribut to the public `documentation wiki <https://github.com/mathjax/mathjax-
 ====================
 
 If you are using MathJax and want to show your support, please consider using
-our `"Powered by MathJax" badge
+our  :ref:`"Powered by MathJax" badge
 <mathjax-badges>`.

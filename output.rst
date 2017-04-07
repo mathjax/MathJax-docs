@@ -179,7 +179,7 @@ to your page just before the ``<script>`` tag that loads
 ``MathJax.js`` itself.
 
 Note that line breaking only applies to displayed equations, not
-in-line equations (unless the in-line euqation is itself longer than a
+in-line equations (unless the in-line equation is itself longer than a
 line), and that the line-breaks are only computed once when the
 equation is initially typeset, and do not change if the user changes
 the window size, or if the container changes size for some other
@@ -192,7 +192,7 @@ can make it a fixed width, or make it a percentage of the container.
 See the :ref:`HTML-CSS configuration <configure-HTML-CSS>` or
 :ref:`SVG configuration <configure-SVG>` pages for more details.
 
-The linbe-breaking algorithm uses the nesting depth, the type of
+The line-breaking algorithm uses the nesting depth, the type of
 operator, the size of spaces, and other factors to decide on the
 breakpoints, but it does not know the meaning of the mathematics, and
 may not choose the optimal breakpoints. We will continue to work on
