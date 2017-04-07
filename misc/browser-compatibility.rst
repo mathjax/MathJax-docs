@@ -12,8 +12,8 @@ tested with MathJax. Please comment in the `MathJax User Group
 on GitHub <https://github.com/mathjax/MathJax/issues>`__ if you
 notice inaccuracies or problems.
 
-For screenshots, we suggest to visit `mathjax.org/demos/tex-samples/ 
-<http://www.mathjax.org/demos/tex-samples/>`_ using services such as 
+For screenshots, we suggest to visit `mathjax.org
+<http://www.mathjax.org/#modal-samples>`_ using services such as 
 `browsershots.org <http://browsershots.org>`_, 
 `saucelabs.com <http://saucelabs.com>`_, or `browserstack.com 
 <http://browserstack.com>`_.

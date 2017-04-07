@@ -96,7 +96,7 @@ example,
 
 	... when `x<y` we have ...
 
-will cause a problem, because the brower will think ``<y`` is the
+will cause a problem, because the browser will think ``<y`` is the
 beginning of a tag named ``y`` (even though there is no such tag in
 HTML).  When this happens, the browser will think the tag continues up
 to the next ``>`` in the document (typically the end of the next

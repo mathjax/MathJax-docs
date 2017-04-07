@@ -202,7 +202,7 @@ MathML tags into the page to represent the mathematics, while the
 HTML-CSS output jax uses HTML with CSS styling to lay out the
 mathematics so that it can be displayed even in browsers that don't
 understand MathML.  MathJax also has an :term:`SVG` output jax that
-will render the mathematics using scalable vector grtaphics.  Output
+will render the mathematics using scalable vector graphics.  Output
 jax could be produced that render the mathematics using HTML5 canvas
 elements, for example, or that speak an equation for blind users.  The
 MathJax contextual menu can be used to switch between the output jax
