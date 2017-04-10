@@ -97,7 +97,7 @@ Plugins, Helpers, & Demos
    including a WordPress Plugin, by Christian Perfect
 -  `MathJax
    Bookmarklet <http://checkmyworking.com/2011/09/a-bookmarklet-which-typesets-tex-on-any-page-using-mathjax/>`__
-   to call MathJax from the CDN on any page; by Christian Perfect.
+   to call MathJax from a CDN on any page; by Christian Perfect.
 -  `MathJax for SPIP <http://www.spip-contrib.net/MathJax-pour-SPIP>`__
 -  `MathJax-rails <https://github.com/sharespost/mathjax-rails>`__, a
    simple ruby gem to integrate MathJax with Rails3.

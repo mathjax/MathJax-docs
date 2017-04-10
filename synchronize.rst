@@ -51,7 +51,7 @@ type of signal and that signal has already occurred, you will be told
 about the past occurrences as well as any future ones.  See the
 :ref:`Signal Object <api-signal>` reference page for more details.
 See also the `test/sample-signals.html
-<http://cdn.mathjax.org/mathjax/latest/test/sample-signals.html>`_
+<https://github.com/mathjax/MathJax/blob/master/test/sample-signals.html>`_
 file in the MathJax ``test`` directory for a working example of using
 signals.
 
