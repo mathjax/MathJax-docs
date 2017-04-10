@@ -609,7 +609,7 @@ locale's domains object. These store the following information:
 
     If the domain data is stored in a separate file from the rest of
     the language's data (e.g., a third-party extension that is not
-    stored on the CDN may have translation data that is provied by the
+    stored on a cdn may have translation data that is provied by the
     thrid-party), this property tells where to obtain the translation
     data. In the example above, the data is provided by another
     company via a complete URL. The default value is the locale's
@@ -630,7 +630,7 @@ locale's domains object. These store the following information:
 Registering a Translation
 =========================
 
-Typically, for languages stored on the CDN, MathJax will register the
+Typically, for languages stored on a cdn, MathJax will register the
 language with a call like
 
 .. code-block:: javascript
@@ -714,7 +714,7 @@ extension) so that they would be obtained from the third-party server
 when needed.
 
 A third party could provide a translation for a language not covered
-by the MathJax CDN by using
+by a CDN by using
 
 .. code-block:: javascript
 

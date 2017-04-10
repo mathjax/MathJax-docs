@@ -15,12 +15,12 @@ it via
     <script type="text/javascript" src="path-to-MathJax/MathJax.js?config=default"></script>
 
 where ``path-to-MathJax`` is the URL to the MathJax directory on your
-server or hard disk.  If you are using MathJax from the CDN, you can
+server or hard disk.  If you are using MathJax from a cdn, you can
 view the contents of `default.js
 <http://cdn.mathjax.org/mathjax/latest/config/default.js>`_ as a
-reference, but you will not be able to edit the CDN copy.  It is
-possible to use the CDN copy of MathJax with your own configuration
-file, however; see :ref:`Using a Local Configuration File with the CDN
+reference, but you will not be able to edit a cdn copy.  It is
+possible to use a cdn copy of MathJax with your own configuration
+file, however; see :ref:`Using a Local Configuration File with a cdn
 <local-config-files>` for details.
 
 The remaining files in the ``MathJax/config`` directory are

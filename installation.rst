@@ -5,7 +5,7 @@ Installing and Testing MathJax
 ******************************
 
 The easiest way to use MathJax is to link directly to the MathJax
-distributed network service (see :ref:`Using the MathJax CDN
+distributed network service (see :ref:`Using a CDN
 <mathjax-CDN>`).  In that case, there is no need to install MathJax
 yourself, and you can begin using MathJax right away; skip this document on
 installation and go directly to :ref:`Configuring MathJax <loading>`.
@@ -44,7 +44,7 @@ For previous versions, see
 -  `MathJax-1.1 <https://github.com/mathjax/MathJax/archive/v1.1.zip>`_ (16.4MB)
 - ``MathJax v1.0.1a``
 
-  - To install MathJax v1.0.1a, you must download two files: `MathJax-v1.0.1a.zip <https://cdn.mathjax.org/mathjax/1.0-latest/zip/MathJax-v1.0.1a.zip>`__ and `MathJax-Font-Update.zip <https://cdn.mathjax.org/mathjax/1.0-latest/zip/MathJax-Font-Update.zip>`__. First install the `MathJax-v1.01a.zip` distribution. Then replace the ``MathJax/fonts/HTML-CSS/TeX/otf`` directory in the resulting MathJax installation with the `otf` directory contained in the ``MathJax-Font-Update.zip`` archive.
+  - To install MathJax v1.0.1a, you must download two files: `MathJax-v1.0.1a.zip <https://www.mathjax.org/1.0/MathJax-v1.0.1a.zip>`__ and `MathJax-Font-Update.zip <https://www.mathjax.org/1.0/MathJax-Font-Update.zip>`__. First install the `MathJax-v1.01a.zip` distribution. Then replace the ``MathJax/fonts/HTML-CSS/TeX/otf`` directory in the resulting MathJax installation with the `otf` directory contained in the ``MathJax-Font-Update.zip`` archive.
 
 You should download the archive of the branch corresponding to the version
 you need then simply unzip it.

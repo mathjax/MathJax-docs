@@ -25,56 +25,56 @@ The MathJax Badges
       <tbody>
       <tr>
       <td>
-      <a href="http://www.mathjax.org/"><br />
-      <img title="Powered by MathJax" src="//cdn.mathjax.org/mathjax/badge/badge.gif" border="0" alt="Powered by MathJax" /><br />
+      <a href="https://www.mathjax.org/"><br />
+      <img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax" /><br />
       </a>
       </td>
       <td>
-      <pre>&lt;a href="http://www.mathjax.org"&gt;
+      <pre>&lt;a href="https://www.mathjax.org"&gt;
           &lt;img title="Powered by MathJax"
-          src="http://cdn.mathjax.org/mathjax/badge/badge.gif"
+          src="https://www.mathjax.org/badge/badge.gif"
           border="0" alt="Powered by MathJax" /&gt;
       &lt;/a&gt;</pre>
       </td>
       </tr>
       <tr>
       <td>
-      <a href="http://www.mathjax.org"><br />
-      <img title="Powered by MathJax" src="//cdn.mathjax.org/mathjax/badge/badge-square.png" border="0" alt="Powered by MathJax" /><br />
+      <a href="https://www.mathjax.org"><br />
+      <img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge-square.png" border="0" alt="Powered by MathJax" /><br />
       </a>
       </td>
       <td>
-      <pre>&lt;a href="http://www.mathjax.org"&gt;
+      <pre>&lt;a href="https://www.mathjax.org"&gt;
           &lt;img title="Powered by MathJax"
-          src="http://cdn.mathjax.org/mathjax/badge/badge-square.png"
+          src="https://www.mathjax.org/badge/badge-square.png"
           border="0" alt="Powered by MathJax" /&gt;
       &lt;/a&gt;</pre>
       </td>
       </tr>
       <tr>
       <td>
-      <a href="http://www.mathjax.org"><br />
-      <img title="Powered by MathJax" src="//cdn.mathjax.org/mathjax/badge/badge-square-2.png" border="0" alt="Powered by MathJax" /><br />
+      <a href="https://www.mathjax.org"><br />
+      <img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge-square-2.png" border="0" alt="Powered by MathJax" /><br />
       </a>
       </td>
       <td>
-      <pre>&lt;a href="http://www.mathjax.org"&gt;
+      <pre>&lt;a href="https://www.mathjax.org"&gt;
           &lt;img title="Powered by MathJax"
-          src="//cdn.mathjax.org/mathjax/badge/badge-square-2.png"
+          src="https://www.mathjax.org/badge/badge-square-2.png"
           border="0" alt="Powered by MathJax" /&gt;
       &lt;/a&gt;</pre>
       </td>
       </tr>
       <tr>
       <td>
-      <a href="http://www.mathjax.org"><br />
-      <img title="Powered by MathJax" src="//cdn.mathjax.org/mathjax/badge/badge-square-3.png" border="0" alt="Powered by MathJax" /><br />
+      <a href="https://www.mathjax.org"><br />
+      <img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge-square-3.png" border="0" alt="Powered by MathJax" /><br />
       </a>
       </td>
       <td>
-      <pre>&lt;a href="http://www.mathjax.org"&gt;
+      <pre>&lt;a href="https://www.mathjax.org"&gt;
           &lt;img title="Powered by MathJax"
-          src="//cdn.mathjax.org/mathjax/badge/badge-square-3.png"
+          src="https://www.mathjax.org/badge/badge-square-3.png"
           border="0" alt="Powered by MathJax" /&gt;
       &lt;/a&gt;</pre>
       </td>
@@ -92,14 +92,14 @@ The MathJax Logo
       <table>
       <tr>
       <td>
-      <a href="http://www.mathjax.org"><br />
-      <img title="Powered by MathJax" src="//cdn.mathjax.org/mathjax/badge/mj_logo.png" border="0" alt="Powered by MathJax" /><br />
+      <a href="https://www.mathjax.org"><br />
+      <img title="Powered by MathJax" src="https://www.mathjax.org/badge/mj_logo.png" border="0" alt="Powered by MathJax" /><br />
       </a>
       </td>
       <td>
-      <pre>&lt;a href="http://www.mathjax.org"&gt;
+      <pre>&lt;a href="https://www.mathjax.org"&gt;
 	  &lt;img title="Powered by MathJax"
-	  src="//cdn.mathjax.org/mathjax/badge/mj_logo.png"
+	  src="https://www.mathjax.org/badge/mj_logo.png"
 	  border="0" alt="Powered by MathJax" /&gt;
       &lt;/a&gt;</pre>
       </td>
@@ -113,14 +113,14 @@ While we do not allow the modification of the badges or the logo, we are
 open to requests for different versions.
 
 -  An `SVG
-   version <//cdn.mathjax.org/mathjax/badge/badge-square.svg>`__ of
+   version <https://www.mathjax.org/badge/badge-square.svg>`__ of
    the square badge is available.
 -  Smaller versions of the main logo are available
 
-   -  `96x20 <//cdn.mathjax.org/mathjax/badge/logo2.png>`__
-   -  `60x20 <//cdn.mathjax.org/mathjax/badge/mj_logo_60x20.png>`__
-   -  `60x12 <//cdn.mathjax.org/mathjax/badge/mj_logo_60x12.png>`__
-   -  `60x12 <//cdn.mathjax.org/mathjax/badge/logo_60x12.gif>`__
+   -  `96x20 <https://www.mathjax.org/badge/logo2.png>`__
+   -  `60x20 <https://www.mathjax.org/badge/mj_logo_60x20.png>`__
+   -  `60x12 <https://www.mathjax.org/badge/mj_logo_60x12.png>`__
+   -  `60x12 <https://www.mathjax.org/badge/logo_60x12.gif>`__
       (gif)
 
 Rules

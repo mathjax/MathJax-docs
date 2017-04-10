@@ -18,7 +18,7 @@ MathJax loads components only when needed so there is a big difference
 between what is loaded on a page without mathematics and one that does
 include mathematics. On a page with no mathematics, loading MathJax
 requires two files: MathJax.js and a configuration file. If taken from
-the MathJax CDN, the actual (compressed) data transferred for MathJax.js
+a CDN, the actual (compressed) data transferred for MathJax.js
 will be about 14.4KB. The configuration file can vary greatly in size
 depending on what is included; minimal configurations can be as small as
 3.7KB, reasonable configurations vary between 25KB and 40KB -- bringing
@@ -81,10 +81,10 @@ relative to the surrounding text, check our documentation for :ref:`the HTML
 output <configure-HTML-CSS>` and
 :ref:`the SVG output <configure-SVG>`.
 
-How do I access the MathJax CDN using a https secure connection?
+How do I access a CDN using a https secure connection?
 ----------------------------------------------------------------
 
-The MathJax CDN can be accessed via ``https``. We advise to always use ``https``. For more
+a CDN can be accessed via ``https``. We advise to always use ``https``. For more
 information, see :ref:`our documentation <secure-cdn-access>`.
 
 My mathematics is private. Is it safe to use MathJax?
@@ -92,10 +92,10 @@ My mathematics is private. Is it safe to use MathJax?
 
 Yes. MathJax is JavaScript code that is run entirely within the browser
 of the user, and so your site's actual content never leaves the browser
-while MathJax is rendering. If you are using MathJax on the CDN, it
+while MathJax is rendering. If you are using MathJax on a cdn, it
 interacts with a web server to get font data but this is all put
 together in the browser of the reader. In case you have concerns about
-cross-site scripting, you can access the MathJax CDN service using the
+cross-site scripting, you can access a CDN service using the
 secure ``https`` protocol to prevent tampering with the code between the
 CDN and a browser. Or, if you prefer, you can
 also install MathJax on your own web server. MathJax does not reference
@@ -167,8 +167,8 @@ problem, please follow these steps:
    of your problem.
 -  If possible, check whether the problem has been solved in the latest
    MathJax release. The preferred way to do this is to invoke the most
-   recent version of MathJax on the CDN by pointing to
-   https://cdn.mathjax.org/mathjax/latest/MathJax.js. If you need to work
+   recent version of MathJax on a cdn by pointing to
+   https://example.com/MathJax.js. If you need to work
    locally, try a fresh install of the `latest
    release <https://www.mathjax.org/download/>`__.
 -  Search through the `MathJax User
