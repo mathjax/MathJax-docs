@@ -20,7 +20,7 @@ distributed network service, the tag might be
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
+       src="https://example.com/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -49,7 +49,7 @@ typical invocation of MathJax would be
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -79,72 +79,51 @@ advanced topic, however; see :ref:`Loading MathJax Dynamically
 
 .. _loading-CDN:
 
-Loading MathJax from the CDN
-============================
+Loading MathJax from a CDN
+==========================
 
-MathJax is available as a web service from ``cdn.mathjax.org``, so you 
-can obtain MathJax from there without needing to install it on your own 
-server.  The CDN is part of a distributed "cloud" network, so it is 
-handled by servers around the world.  That means that you should get access 
+MathJax is available as a web service from various free CDN providers, so you
+can obtain MathJax from there without needing to install it on your own
+server.  
+
+.. warning:: 
+
+  We retired our self-hosted CDN at `cdn.mathjax.org` in April, 2017.
+  We recommend using `cdnjs.com <cdnjs.com>`_ which uses the same provider.
+  The use of ``cdn.mathjax.org`` was governed by its `terms of service
+  <https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_.
+
+
+
+A CDN is part of a distributed "cloud" network, so it is
+handled by servers around the world.  That means that you should get access
 to a server geographically near you, for a fast, reliable connection.
 
-The CDN hosts the most current version of MathJax, as well as older 
-versions, so you can either link to a version that stays up-to-date as 
-MathJax is improved, or you can stay with one of the release versions so 
-that your pages always use the same version of MathJax.
+Most CDN services offer several versions of MathJax. For example, `cdnjs` 
+hosts all tagged versions since v1.1 so you can link to the version
+you prefer. 
 
-The URL that you use to obtain MathJax determines the version that you 
-get.  The CDN has the following directory structure:
+.. note:: 
+
+  There is currently no provider who offers a rolling release link, i.e,
+  a link that updates to each newer version of MathJax upon release.
+
+The URL that you use to obtain MathJax determines the version that you
+get. For example, `cdnjs` uses a URL that includes the version tag so 
+you can load the current version via
 
 .. code-block::  sh
 
-    mathjax/         # project-name
-       1.0-latest/
-       1.1-latest/   # the 1.1 release with any critical patches
-       2.0-latest/   # the 2.0 release with any critical patches
-       2.1-latest/   # the 2.1 release with any critical patches
-       2.2-latest/   # the 2.2 release with any critical patches
-       2.3-latest/   # the 2.3 release with any critical patches
-       ...
-       latest/       # the most current version (2.3-latest in this case)
+  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.4.0/MathJax.js   # the 2.4.0 release
 
-Each directory corresponds to an official MathJax release; however,
-hotfixes (urgent bug fixes) will be applied in each release branch as
-necessary, even if new releases are not prepared.  In other words,
-``1.1-latest`` will initially point to v1.1, but over time may be updated
-with patches that would correspond to releases that might be numbers 1.1a,
-1.1b, etc., even if such releases are not actually packaged for
-separate distribution (they likely won't be).
-We may occasionally introduce directories for betas, as indicated above,
-but they will be temporary, and will be removed after the official
-release.
+Pre-releases are also available on `cdnjs`.
 
-To load from a particular release, use the directory for that release.  
-For example,
+.. note:: 
+  If you wish to use the development version of
+  MathJax, you will need to install your own copy; see :ref:`Installing
+  and Testing MathJax <installation>` for information on how to do that.
 
-.. code-block:: html
-
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js"></script>
-
-loads the v2.0 version, even after v2.1 or later 
-versions are released, while
-
-.. code-block:: html
-
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
-
-will always be the most current stable release, so it will go from v2.3 to
-the next version automatically when that is released.  Note that all the versions 
-available on the CDN are stable versions; the development version is not 
-hosted on the CDN.  (If you wish to use the development version of
-MathJax, you will need to install your own copy; see :ref:`Installing
-and Testing MathJax <installation>` for information on how to do that.)
-
-The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<http://www.mathjax.org/download/mathjax-cdn-terms-of-service/>`_, so be
-sure to read that before linking to the MathJax CDN server.
-
-If you wish to use the MathJax CDN but use your own configuration file
+If you wish to use a CDN but use your own configuration file
 rather than one of the pre-defined ones, see the information at the
 end of the :ref:`Using a Local Configuration File
 <local-config-files>` section below.
@@ -266,7 +245,7 @@ the ``MathJax.js`` file.  For example
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 loads the ``config/TeX-AMS-MML_HTMLorMML.js`` configuration file from the 
@@ -289,22 +268,22 @@ to first load the main configuration, then the local modifications.
 
 .. _local-config-files:
 
-Using a local configuration file with the CDN
+Using a local configuration file with a cdn
 =============================================
 
-You can load MathJax from the MathJax CDN server but still use a
+You can load MathJax from a cdn server but still use a
 configuration from your own local server.  For example, suppose you
 have a configuration file called ``local.js`` on your own server, in a
 directory called ``MathJax/config/local``.  Then you can load MathJax
-from the CDN and still use your configuration file as follows:
+from a cdn and still use your configuration file as follows:
 
 .. code-block:: html
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+       src="https://example.com/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
     </script>
 
-Because the ``local.js`` file is not on the CDN server, you must give
+Because the ``local.js`` file is not on a cdn server, you must give
 the complete URL to the local configuration file.  Note that you also
 have to edit the :meth:`loadComplete()` call that is at the bottom of
 the configuration file to change it from
@@ -316,7 +295,7 @@ in the ``config`` parameter.  In the example above, it would be
     MathJax.Ajax.loadComplete("http://myserver.com/MathJax/config/local/local.js");
 
 That is because the ``[MathJax]`` in the original URL refers to the
-root directory where ``MathJax.js`` was loaded, which is on the CDN,
+root directory where ``MathJax.js`` was loaded, which is on a cdn,
 not your local server, and so you need to tell MathJax the actual
 location of your configuration file.
 

@@ -231,7 +231,7 @@ Font enhancements
    not in the MathJax fonts.
 
 *  Allow Firefox to use web-based fonts when a local URL uses MathJax
-   from the CDN (in the past it would force image fonts when that was
+   from a cdn (in the past it would force image fonts when that was
    not necessary).
 
 
