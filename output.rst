@@ -139,7 +139,7 @@ native MathML support rather than HTML-CSS output for Firefox:
       });
     </script>
     <script type="text/javascript"
-      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://examples.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 With this configuration, MathML output will be used for both Firefox

@@ -104,7 +104,7 @@ called when it arrives.  For example
 See the :ref:`MathJax Startup Sequence <startup-sequence>` page for
 details of the messages sent during startup.  See also the
 `test/sample-signals.html
-<http://cdn.mathjax.org/mathjax/latest/test/sample-signals.html>`_
+<https://github.com/mathjax/MathJax/tree/master/test/sample-signals.html>`_
 file (and its source) for examples of using signals.  This example
 lists all the signals that occur while MathJax is processing that
 page, so it gives useful information about the details of the signals
@@ -157,7 +157,7 @@ signal's :meth:`Interest()` method, as in the following example.
 This will cause an alert for every signal that MathJax produces.  You
 probably don't want to try this out, since it will produce a *lot* of
 them; instead, use the `test/sample-signals.html
-<http://cdn.mathjax.org/mathjax/latest/test/sample-signals.html>`_
+<https://github.com/mathjax/MathJax/tree/master/test/sample-signals.html>`_
 file, which displays them in the web page.
 
 See the :ref:`Signal Object <api-signal>` reference page for details on the

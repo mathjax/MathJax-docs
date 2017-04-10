@@ -137,8 +137,8 @@ the inline math delimiters to include ``$...$`` in addition to
 ``\(...\)``, and would set the ``processEscapes`` parameter to ``true``.
 
 
-Loading MathJax from the CDN
-============================
+Loading MathJax from a CDN
+==========================
 
 The MathJax installation is fairly substantial (due to the large number of 
 images needed for the image fonts), and so you may not want to (or be able 
@@ -149,22 +149,7 @@ the best way for you to obtain MathJax.  That way you can be sure you are
 using an up-to-date version of MathJax, and that the server will be fast 
 and reliable.
 
-To use the MathJax CDN service, simply load MathJax as follows:
-
-.. code-block:: html
-
-    <script type="text/javascript"
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </scrip>
-
-Of course, you can load any configuration file that you wish, or use a 
-``text/x-mathajx-config`` block to configure MathJax in-line. 
-:ref:`More details <loading-CDN>` are available, if you need them.
-
-The use of ``cdn.mathjax.org`` is governed by its `terms of service
-<http://www.mathjax.org/download/mathjax-cdn-terms-of-service/>`_, so be
-sure to read that before linking to the MathJax CDN server.
-
+See :ref:`Loading MathJax from a CDN <loading-CDN>` for more information.
 
 Change in default TeX delimiters
 ================================
