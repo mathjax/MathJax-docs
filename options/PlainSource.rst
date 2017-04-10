@@ -4,7 +4,10 @@
 The PlainSource output processor
 ********************************
 
-The PlainSource output processor displays the input unmodified.
+The PlainSource output processor displays plain text input when possible. 
+I.e., it will display the raw input data from TeX or Asciimath input, 
+embedded TeX or AsciiMath annotations from MathML input, and MathML if
+neither annotation format is found.
 
 The options below control the operation of the PlainSource output
 processor that is run when you include ``"output/PlainSource"`` in the
