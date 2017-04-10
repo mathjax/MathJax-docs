@@ -23,7 +23,7 @@ Using MathJax in Movable Type
    .. code-block:: html
 
        <script type="text/javascript"
-         src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+         src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
        </script>
 
    to load MathJax from our distributed network service.
