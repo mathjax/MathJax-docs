@@ -32,7 +32,7 @@ you.
 To enable MathJax in your web platform, add the line::
 
     <script type="text/javascript" 
-       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+       src="https://example.com/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
 the file if it contains no ``</head>``.

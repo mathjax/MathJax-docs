@@ -182,5 +182,5 @@ Extensions` will depend on the files being loaded.)  Both 5 and 6 must
 complete, however, before 7 will be performed.
 
 See the `test/sample-signals.html
-<http://cdn.mathjax.org/mathjax/latest/test/sample-signals.html>`_ file
+<https://github.com/mathjax/MathJax/tree/master/test/sample-signals.html>`_ file
 to see the signals in action.

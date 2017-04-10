@@ -88,7 +88,7 @@ to be defined within the TeX input processor.
         ``false``, use the equation number.
 
     See the `MathJax examples page
-    <http://cdn.mathjax.org/mathjax/latest/test/examples.html>`_ for
+    <https://github.com/mathjax/MathJax/tree/master/test/examples.html>`_ for
     some examples of equation numbering.
     
 .. describe:: Macros: {}
