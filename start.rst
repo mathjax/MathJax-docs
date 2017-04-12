@@ -464,8 +464,8 @@ to load MathJax in your page.  For example, your page could look like
   If you have installed MathJax on a server that is in a different
   domain from the one serving the page that loads MathJax, be sure to
   read the :ref:`Notes About Shared Servers <cross-domain-linking>` for
-  more details.  In that case, you may wish to consider using the
-  :ref:`MathJax CDN <mathjax-cdn>` rather than installing your own copy
+  more details.  In that case, you may wish to consider using MathJax via a
+  :ref:`CDN <mathjax-cdn>` rather than installing your own copy
   of MathJax.
 
 
