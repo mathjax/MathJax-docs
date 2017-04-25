@@ -100,7 +100,7 @@ consists of multiple files.
 To enable MathJax in your web platform using cdnjs, add the line:
 
     <script type="text/javascript" 
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
 the file if it contains no ``</head>``. 

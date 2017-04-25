@@ -862,10 +862,6 @@ to ``true``.
       mhchem: { legacy: true }
     }
 
-.. note::
-
-   The mhchem v3 extension is hosted on the third-party extension 
-   repository and loads via the ``[Contrib]`` path variable.
 
 noErrors
 --------
