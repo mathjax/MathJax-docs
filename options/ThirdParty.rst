@@ -70,6 +70,4 @@ allows developers to publicize their custom extensions easily.
 .. note::
 
   You can disable the ``[Contrib]`` path by loading MathJax with 
-  ``noContrib`` in the query string, e.g., ``MathJax.js?config=...&noContrib``. 
-  This is particularly necessary when using your own copy of MathJax with
-  a combined configuration file bit without access to ``cdn.mathjax.org``.
+  ``noContrib`` in the query string, e.g., ``MathJax.js?config=...&noContrib``

@@ -6,13 +6,12 @@ The Accessibility extensions
 
 MathJax maintains a set of extensions for providing advanced 
 accessibility features. These extensions are an official part
-of MathJax are but stored in a separate code repository as well as
-on the CDN at `cdn.mathjax.org/mathjax/contrib/a11y/`.
+of MathJax but are stored in a separate code repository.
 
 The full documentation is available `on GitHub <https://github.com/mathjax/MathJax-a11y/blob/master/docs/README.md>`_
 and we summarize the options below.
 
-Each accessibility extension can be loaded using the ``[Contrib]``
+Each accessibility extension can be loaded using the ``[a11y]``
 path variable. The following extensions have configuration options.
 
 accessibility-menu.js
@@ -26,7 +25,7 @@ menu.
 
   MathJax.Hub.Config({
     // ...your configuration options...
-    extensions: ["[Contrib]/a11y/accessibility-menu.js"]
+    extensions: ["[a11y]/accessibility-menu.js"]
   });
   
 The accessibility menu extension can then be controlled in the
