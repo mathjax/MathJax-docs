@@ -405,7 +405,7 @@ script prior to loading MathJax.  For example
 will load the `autobold` TeX extension in addition to those already
 included in the ``TeX-AMS_HTML`` configuration file.
 
-You can also load these extensions from within a math expresion using
+You can also load these extensions from within a math expression using
 the non-standard ``\require{extension}`` macro.  For example
 
 .. code-block:: latex
