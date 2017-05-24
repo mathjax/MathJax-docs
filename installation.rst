@@ -28,13 +28,13 @@ Release versions of MathJax are available in archive files from the
 "zip" button, or the "downloads" tab), where you can download the archive
 that you need.
 
-**Current Version**:  `MathJax-2.7 <https://github.com/mathjax/MathJax/archive/2.7.0.zip>`_ (33.0MB)
+**Current Version**:  `MathJax-2.7 <https://github.com/mathjax/MathJax/archive/2.7.1.zip>`_ (33.0MB)
 
 Consult the :ref:`change log <whats-new-2.7>` for what’s new in version 2.7.
 
-For previous versions, see
+For previous versions, see the `release page on GitHub <https://github.com/mathjax/MathJax/releases>`_ or for quick access
 
--  `MathJax-2.6 <https://github.com/mathjax/MathJax/archive/v2.6-latest.zip>`_ (33.0MB)
+-  `MathJax-2.6 <https://github.com/mathjax/MathJax/archive/v2.6-latest.zip>`_ (34.3MB)
 -  `MathJax-2.5 <https://github.com/mathjax/MathJax/archive/v2.5-latest.zip>`_ (33.0MB)
 -  `MathJax-2.4 <https://github.com/mathjax/MathJax/archive/v2.4-latest.zip>`_ (32.6MB)
 -  `MathJax-2.3 <https://github.com/mathjax/MathJax/archive/v2.3-latest.zip>`_ (32.9MB)
@@ -45,7 +45,7 @@ For previous versions, see
 -  `MathJax-1.1 <https://github.com/mathjax/MathJax/archive/v1.1.zip>`_ (16.4MB)
 - ``MathJax v1.0.1a``
 
-  - To install MathJax v1.0.1a, you must download two files: `MathJax-v1.0.1a.zip <https://cdn.mathjax.org/mathjax/1.0-latest/zip/MathJax-v1.0.1a.zip>`__ and `MathJax-Font-Update.zip <https://cdn.mathjax.org/mathjax/1.0-latest/zip/MathJax-Font-Update.zip>`__. First install the `MathJax-v1.01a.zip` distribution. Then replace the ``MathJax/fonts/HTML-CSS/TeX/otf`` directory in the resulting MathJax installation with the `otf` directory contained in the ``MathJax-Font-Update.zip`` archive.
+  - To install MathJax v1.0.1a, you must download two files: `MathJax-v1.0.1a.zip <https://www.mathjax.org/1.0/MathJax-v1.0.1a.zip>`__ and `MathJax-Font-Update.zip <https://www.mathjax.org/1.0/MathJax-Font-Update.zip>`__. First install the `MathJax-v1.01a.zip` distribution. Then replace the ``MathJax/fonts/HTML-CSS/TeX/otf`` directory in the resulting MathJax installation with the `otf` directory contained in the ``MathJax-Font-Update.zip`` archive.
 
 You should download the archive of the branch corresponding to the version
 you need then simply unzip it.

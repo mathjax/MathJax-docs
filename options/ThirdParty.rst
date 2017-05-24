@@ -57,31 +57,17 @@ i.e., ``spiffy.js`` should end with
 MathJax Third-Party extension repository
 ----------------------------------------
 
-We host a third-party extension repository on the MathJax CDN. This repository 
-allows developers to make their custom extensions easily available to all
-MathJax users.
+We collect a list of third-party extensions on Github at `github.com/mathjax/MathJax-third-party-extensions 
+<https://github.com/mathjax/MathJax-third-party-extensions>`_. This repository 
+allows developers to publicize their custom extensions easily.
 
-The code of the repository is hosted on Github at `github.com/mathjax/MathJax-third-party-extensions 
-<https://github.com/mathjax/MathJax-third-party-extensions>`_ and 
-is mirrored to the CDN at `cdn.mathjax.org/mathjax/contrib/ 
-<//cdn.mathjax.org/mathjax/contrib/>`_
+.. note:: 
 
-Beginning with MathJax v2.7, the third party repository URL 
-``https://cdn.mathjax.org/mathjax/contrib`` is stored in the 
-``[Contrib]`` path variable. This makes it easy to load extension in that 
-repository, e.g.,
+    The mirrored copy on the MathJax CDN at `cdn.mathjax.org/mathjax/contrib/ 
+    <//cdn.mathjax.org/mathjax/contrib/>`_ has been retired alongside the MathJax CDN.
 
-.. code-block:: javascript
-
-    MathJax.Hub.Config({
-      extensions: ["[Contrib]/spiffy/spiffy.js"]
-    });
-
-For a list of available extensions available, please check the GitHub repo. 
 
 .. note::
 
   You can disable the ``[Contrib]`` path by loading MathJax with 
-  ``noContrib`` in the query string, e.g., ``MathJax.js?config=...&noContrib``. 
-  This is particularly necessary when using your own copy of MathJax with
-  a combined configuration file bit without access to ``cdn.mathjax.org``.
+  ``noContrib`` in the query string, e.g., ``MathJax.js?config=...&noContrib``
