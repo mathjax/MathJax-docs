@@ -103,7 +103,7 @@ appear separated from the rest of the text on lines by themselves
 (displayed mathematics).
 
 The default math delimiters are ``$$...$$`` and ``\[...\]`` for
-displayed mathematics, and ``\(...\)`` for in-line mathematics.  Note
+displayed mathematics, and ``\\(...\\)`` for in-line mathematics.  Note
 in particular that the ``$...$`` in-line delimiters are **not** used
 by default.  That is because dollar signs appear too often in
 non-mathematical settings, which could cause some text to be treated
