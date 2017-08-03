@@ -8,7 +8,7 @@ MathML includes the ability to include hyperlinks within your
 mathematics, and such links *could* be made to ``javascript:`` URL's.
 For example, the expression
 
-.. code-block:: javascript
+.. code-block:: xml
 
     <math>
       <mtext href="javascript:alert('Hello!')">Click Me</mtext>
