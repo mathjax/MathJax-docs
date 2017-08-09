@@ -216,7 +216,7 @@ first time the jax is needed by MathJax to process some mathematics.
 Most of the combined configuration files include only the small
 configuration portion for the input and output jax, making the
 configuraiton file smaller and faster to load for those pages that
-don't actually incldue mathematics; the combined configurations that
+don't actually include mathematics; the combined configurations that
 end in ``-full`` include both parts of the jax, so there is no delay
 when the math is to be rendered, but at the expense of a larger
 initial download.
