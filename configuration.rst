@@ -20,7 +20,7 @@ distributed network service, the tag might be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -49,7 +49,7 @@ typical invocation of MathJax would be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -84,9 +84,9 @@ Loading MathJax from a CDN
 
 MathJax is available as a web service from various free CDN providers, so you
 can obtain MathJax from there without needing to install it on your own
-server.  
+server.
 
-.. warning:: 
+.. warning::
 
   We retired our self-hosted CDN at `cdn.mathjax.org` in April, 2017.
   We recommend using `cdnjs.com <https://cdnjs.com>`_ which uses the same provider.
@@ -99,29 +99,29 @@ A CDN is part of a distributed "cloud" network, so it is
 handled by servers around the world.  That means that you should get access
 to a server geographically near you, for a fast, reliable connection.
 
-Most CDN services offer several versions of MathJax. For example, `cdnjs` 
+Most CDN services offer several versions of MathJax. For example, `cdnjs`
 hosts all tagged versions since v1.1 so you can link to the version
-you prefer. 
+you prefer.
 
-.. note:: 
+.. note::
 
   There is currently no provider who offers a rolling release link, i.e,
   a link that updates to each newer version of MathJax upon release.
 
 The URL that you use to obtain MathJax determines the version that you
-get. For example, `cdnjs` uses a URL that includes the version tag so 
+get. For example, `cdnjs` uses a URL that includes the version tag so
 you can load the current version via
 
 .. code-block::  sh
 
-  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js   # the 2.7.1 release
+  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js   # the 2.7.2 release
 
 Pre-releases are also available on `cdnjs`.
 
-.. note:: 
+.. note::
   If you wish to use the development version of
   MathJax, you will need to install your own copy; see :ref:`Installing
-  and Testing MathJax <installation>` for information on how to do that. 
+  and Testing MathJax <installation>` for information on how to do that.
   Alternatively, you can load the ``develop`` branch via `rawgit.com <https://rawgit.com>`.
 
 If you wish to use a CDN but use your own configuration file

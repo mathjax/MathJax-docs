@@ -5,7 +5,7 @@ Using MathJax in popular web platforms
 ======================================
 
 MathJax plugins are available for a growing number of wikis, blogs,
-and other content-management systems.  
+and other content-management systems.
 
 -  `MathJax-LaTeX`_, `Simple-MathJax`_ plug-ins for `WordPress`_.
 -  `MathJax plugin for Drupal`_.
@@ -40,7 +40,7 @@ and other content-management systems.
 .. _Joomla: http://www.joomla.org/
 .. _WordPress: http://www.wordpress.org/
 
-If the program you are using is not one of these, you might be able to 
+If the program you are using is not one of these, you might be able to
 use MathJax by modifying the theme or template for your wiki or blog,
 as explained below.
 
@@ -49,7 +49,7 @@ as explained below.
 Unofficial Tutorials
 ====================
 
--  `One Mathematical Cat's 
+-  `One Mathematical Cat's
    tutorial <http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`__
 -  `Using MathJax on almost all blogging platforms
    <http://checkmyworking.com/2012/01/how-to-get-beautifully-typeset-maths-on-your-blog/>`__
@@ -99,11 +99,11 @@ consists of multiple files.
 
 To enable MathJax in your web platform using cdnjs, add the line:
 
-    <script type="text/javascript" 
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
-the file if it contains no ``</head>``. 
+the file if it contains no ``</head>``.
 
 Keep in mind that this will enable MathJax for your current
 theme/template only.  If you change themes or update your theme, you
