@@ -68,7 +68,7 @@ preprocessor.
         $y = x^2 \hbox{ when $x > 2$}$.
       
     will be properly handled as a single expression.  When ``false``,
-    it would be interpreted as two searpate expressions, each with
+    it would be interpreted as two separate expressions, each with
     improperly balanced braces.
 
 .. describe:: processEscapes: false
