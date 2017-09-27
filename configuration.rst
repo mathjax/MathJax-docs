@@ -451,6 +451,20 @@ you must make that call somewhere within the page yourself after the
 configuration blocks are set up.  If you do not execute this function,
 MathJax will not process any of the math on the page.
 
+.. _queryString:
+
+Additional query string options
+===============================
+
+MathJax will check the query string for several other parameters (beyond the ``config`` 
+and ``delayStartupUntil`` parameter).
+
+- ``locale=...`` (e.g., ``locale=fr``) determines the localization for the MathJax Menu.
+- ``noContrib``disables the ``[Contrib]`` prefix path for loading :ref:`third-party extensions
+<ThirdParty>` from the (retired) MathJax CDN.
+- ``noDOMContentEvent`` (obsolete) provided a work around for using the ``DOMContentLoaded`` event to start MathJax's processing phase
+- ``NoMathPlayer`` (obsolete) prevents MathJax from trying to use MathPlayer even if MathPlayer is available.
+
 
 Details of the MathJax configuration process
 ============================================
