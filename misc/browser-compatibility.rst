@@ -4,19 +4,56 @@
 Browser Compatibility
 **********************************
 
-Extensive browser support is an important goal for MathJax. At the same
-time, MathJax does require a certain minimum level of browser
-functionality. The following list describes the browsers that have been
-tested with MathJax. Please comment in the `MathJax User Group
+Extensive browser support is an important goal for MathJax. 
+At the same time, MathJax does require a certain minimum 
+level of browser functionality. 
+
+Our extensive `MathJax test suite <https://github.com/mathjax/MathJax-test/>`__ 
+tests every MathJax release for regressions on all major 
+browsers.
+
+Please comment in the `MathJax User Group
 <http://groups.google.com/group/mathjax-users/>`__  or `file issues
 on GitHub <https://github.com/mathjax/MathJax/issues>`__ if you
 notice inaccuracies or problems.
 
-For screenshots, we suggest to visit `mathjax.org
-<http://www.mathjax.org/#modal-samples>`_ using services such as 
+It usually helps to add screenshots for which we suggest 
+services such as 
 `browsershots.org <http://browsershots.org>`_, 
 `saucelabs.com <http://saucelabs.com>`_, or `browserstack.com 
 <http://browserstack.com>`_.
+
+
+---------------
+HTML-CSS Output
+---------------
+
+The HTML-CSS Output supports Internet Explorer 6 (and above) as well
+as all modern browsers (Firefox 3+, Safari 2+, Chrome 0.2+).
+
+
+-----------------
+CommonHTML Output
+-----------------
+
+The CommonHTML Output supports Internet Explorer 8 (and above) as well 
+as all modern browsers.
+
+
+----------
+SVG Output
+----------
+
+The SVG Output supports Internet Explorer 9 (and above) as well as all 
+modern browsers.
+
+
+--------------
+Legacy Results
+--------------
+
+The following list describes the browsers that were originally
+tested with MathJax's HTML-CSS output.
 
 +-------------------------------------------------------------------------------------+-----------------------------------------+-----------------------------------------------------------------------------------------------------------+
 | Browser                                                                             | Versions                                | Notes                                                                                                     |
