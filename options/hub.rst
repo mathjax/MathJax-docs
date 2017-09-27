@@ -296,6 +296,12 @@ behavior of MathJax.  They are given with their default values.
     preserve all ids even if other criteria would normally prevent some ids
     from being copied to the output; use false carefully.
 
+.. describe:: root: ""
+
+    This controls which URL base MathJax uses to load its components. 
+    By default it is empty (loading components relative to the URL of 
+    ``MathJax.js``).
+
 .. describe:: v1.0-compatible: true
 
     This controls whether MathJax issues the warning about not having an 
