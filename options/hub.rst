@@ -299,8 +299,8 @@ behavior of MathJax.  They are given with their default values.
 .. describe:: root: ""
 
     This controls which URL base MathJax uses to load its components. 
-    By default it is empty (loading components relative to the URL of 
-    ``MathJax.js``).
+    By default, it is empty and filled in during the initialization process
+    with the base URL from where ``MathJax.js`` was loaded.
 
 .. describe:: v1.0-compatible: true
 
