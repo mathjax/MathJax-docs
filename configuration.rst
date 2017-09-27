@@ -105,8 +105,9 @@ you prefer.
 
 .. note::
 
-  There is currently no provider who offers a rolling release link, i.e,
-  a link that updates to each newer version of MathJax upon release.
+  Some CDN providers :ref:`on our list <mathjax-CDN>` offer a 
+  "rolling release" link, i.e, a link that updates to each newer version
+  of MathJax upon release.
 
 The URL that you use to obtain MathJax determines the version that you
 get. For example, `cdnjs` uses a URL that includes the version tag so
