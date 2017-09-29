@@ -39,11 +39,13 @@ To use MathJax from a CDN, you need to do two things:
 2.  Put mathematics into your web pages so that MathJax can display
     it.
 
-There are many free CDN providers that provide copies of MathJax.
+There are many free CDN providers that provide copies of MathJax. Some
+provide "rolling releases", i.e., links that update to the latest
+available version upon release
 
 - `cdnjs.com <https://cdnjs.com>`_ (recommended)
-- `jsdelivr.com <https://jsdelivr.com>`_
-- `unpkg.com <https://unpkg.com/>`_
+- `jsdelivr.com <https://jsdelivr.com>`_  [rolling]
+- `unpkg.com <https://unpkg.com/>`_ [rolling]
 - `rawgit.com <https://rawgit.com/>`_
 - `gitcdn.xyz <http://gitcdn.xyz/>`_
 - `raw.githack.com <raw.githack.com>`_
