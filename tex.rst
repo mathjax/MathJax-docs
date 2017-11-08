@@ -25,9 +25,8 @@ few configuration options (see the :ref:`TeX options
 through the use of extensions that define additional functionality
 (see the :ref:`TeX and LaTeX extensions <tex-extensions>` below).
 
---------------------
 Differences
---------------------
+===========
 
 Since MathJax renders for the web and TeX is a print layout
 engine, there are natural limitations of which parts of TeX can be 
