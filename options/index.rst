@@ -57,7 +57,7 @@ all the configuration options for all of MathJax's components.
     :maxdepth: 1
 
     The core options <hub>
-    Proprocessor options <preprocessors/index>
+    Preprocessor options <preprocessors/index>
     Input processor options <input-processors/index>
     Output processor options <output-processors/index>
     Extension options <extensions/index>
