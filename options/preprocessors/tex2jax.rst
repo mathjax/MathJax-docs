@@ -56,21 +56,6 @@ preprocessor.
     the browser before MathJax has the chance to run.  You can only
     include text, not tags, as your math delimiters.
 
-.. describe:: balanceBraces: true,
-
-    This value determines whether `tex2jax` requires braces to be
-    balanced within math delimiters (which allows for nested dollar
-    signs).  Set to ``false`` to get pre-v2.0 compatibility.  When
-    ``true``,
-    
-    .. code-block:: latex
-
-        $y = x^2 \hbox{ when $x > 2$}$.
-      
-    will be properly handled as a single expression.  When ``false``,
-    it would be interpreted as two separate expressions, each with
-    improperly balanced braces.
-
 .. describe:: processEscapes: false
 
     When set to ``true``, you may use ``\$`` to represent a literal
