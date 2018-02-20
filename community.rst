@@ -49,7 +49,7 @@ and work hard to respond to problems quickly.
 
 Before you create a new issue, however, please search the issues to see if it
 has already been reported. You could also be using an outdated version of
-MathJax, so be sure to :ref:`upgrade your copy <getting-mathjax-git>` to verify
+MathJax, so be sure to `upgrade your copy <http://docs.mathjax.org/en/latest/installation.html#obtaining-mathjax-via-git>` to verify
 that the problem persists in the latest version.
 
 
@@ -71,5 +71,5 @@ contribut to the public `documentation wiki <https://github.com/mathjax/mathjax-
 ====================
 
 If you are using MathJax and want to show your support, please consider using
-our  :ref:`"Powered by MathJax" badge
-<mathjax-badges>`.
+our  `"Powered by MathJax" badge
+<http://docs.mathjax.org/en/latest/misc/badges.html>`.
