@@ -37,10 +37,10 @@ Authoring
    document converter with extensive MathJax support
 -  `Qute <https://github.com/fbreuer/qute-html5>`__, Gecko-based text
    editor with live-preview for Markdown and MathJax.
--  `ReText <http://sourceforge.net/p/retext/>`__ a RestructuredText and
+-  `ReText <https://github.com/retext-project/retext>`__ a RestructuredText and
    Markdown editor `with MathJax
    support <http://sourceforge.net/p/retext/wiki/Configuration%20file/>`__.
--  `StackEdit <http://benweet.github.io/stackedit/>`__, a versatile open
+-  `StackEdit <https://stackedit.io/>`__, a versatile open
    source markdown+MathJax editor webapp and blogging client using
    StackExchange’s PageDown library.
 
