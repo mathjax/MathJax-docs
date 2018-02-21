@@ -21,8 +21,8 @@ See <http://www.mathjax.org/> or <https://github.com/mathjax/MathJax/> for addit
 ## Beautiful documentation.
 
 The MathJax installation and usage documentation is available in this repository. The documents are also
-available on the MathJax web site on line at <http://docs.mathjax.org>.  Please help us improve the documentation!
-You can use the editor feature on github to to simplify this.
+available on the MathJax web site online at <http://docs.mathjax.org>.  Please help us improve the documentation!
+You can use the editor feature on github to simplify this.
 
 ## Community
 
