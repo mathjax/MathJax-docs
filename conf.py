@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'MathJax'
-copyright = u'2015 The MathJax Consortium'
+copyright = u'2018 The MathJax Consortium'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -94,6 +94,15 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  Major themes that come with
 # Sphinx are currently 'default' and 'sphinxdoc'.
 html_theme = 'sphinx_rtd_theme'
+
+#
+# DPVC:  Add cusotm css overrides
+#
+def setup(app):
+  app.add_stylesheet( "custom.css" )
+#
+# /DPVC
+#
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the

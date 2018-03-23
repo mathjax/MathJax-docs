@@ -1,0 +1,7 @@
+.rst-content code.literal {
+    color: inherit;
+    font-size: 85%;
+    border: none;
+    background: #F0F0F0;
+    padding: 2px 3px 1px;
+}
