@@ -48,6 +48,11 @@ Main MathJax Components
     Initially null, this is where the MathJax contextual menu is
     stored, when ``extensions/MathMenu.js`` is loaded.
 
+.. describe:: MathJax.Localization
+
+    Contains the code for handling localized strings for MathJax's interface.
+
+
 .. describe:: MathJax.Object
 
     Contains the code for the MathJax object-oriented programming model.

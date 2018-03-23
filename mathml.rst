@@ -31,7 +31,7 @@ MathML in the end, but this is actually what makes it possible to view
 MathML within an HTML4 page (rather than an XHTML page), in particular in older
 browsers, without the complications of handling special MIME-types for the 
 document, or any of the other setup issues that make using native MathML
-difficult.  
+difficult.  MathML in HTML5 documents is more natural, however.
 
 MathJax handles the setup and properly marks the
 mathematics so that the browser will render it as MathML.  In
@@ -56,7 +56,7 @@ browsers, so you should avoid the named entities whenever possible.
 If you must use named entities, you may need to declare them in the
 `DOCTYPE` declaration by hand.
 
-When you use MathML in an HTML4 document rather than an XHTML one
+When you use MathML in an HTML document rather than an XHTML one
 (MathJax will work with both), you should not use the "self-closing"
 form for tags with no content, but should use separate open and close
 tags.  That is, use

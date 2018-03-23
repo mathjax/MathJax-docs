@@ -46,7 +46,7 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
     ``jax/output/HTML-CSS/fonts`` directory, where MathJax stores data
     about the characters available in the fonts.  Set this to
     ``["TeX"]``, for example, to prevent the use of the :term:`STIX`
-    fonts, or set it to an empty list, `[]`, if you want to force
+    fonts, or set it to an empty list, ``[]``, if you want to force
     MathJax to use web-based or image fonts.
 
 .. describe:: preferredFont: "TeX"
@@ -68,6 +68,13 @@ would set the ``preferredFont`` option to the :term:`STIX` fonts.
 
     These fonts are stored in the ``fonts/HTML-CSS`` folder in the
     MathJax directory.  Set this to ``null`` to disable web fonts.
+
+.. describe:: fonts: ["TeX", "STIX"]
+
+    This is a shortcut to setting ``availableFonts``,
+    ``preferredFont``, and ``webFont`` all at once.  The list becomes
+    the ``availableFonts`` list, and the first one is used for the
+    ``preferrredFont`` and ``webFont`` values.
     
 .. describe:: imageFont: "TeX"
 

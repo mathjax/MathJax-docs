@@ -4,9 +4,14 @@
 Obtaining the MathML for an Expression
 **************************************
 
-The ``toMathML`` extension generates a string containing the MathML stored in MathJax's internal format. It is used in the MathJax Menu to generate MathML output for copy&paste under ``Show Math as -> MathML Code``. 
+The ``toMathML`` extension generates a string containing the MathML
+stored in MathJax's internal format. It is used in the MathJax Menu to
+generate MathML output for copy-and-paste under ``Show Math as -> MathML
+Code``.
 
-The ``toMathML`` extension generally works asynchronously because it potentially has to load additional files, in particular if the extension is used before MathJax has produced output rendering.
+The ``toMathML`` extension generally works asynchronously because it
+potentially has to load additional files, in particular if the
+extension is used before MathJax has produced output rendering.
 
 To use the extension, add ``"toMathML.js"`` to the `extensions` array of your configuration. For example,
 
@@ -17,7 +22,9 @@ To use the extension, add ``"toMathML.js"`` to the `extensions` array of your co
     });
 
 
-The extension can be used by developers to access the MathML representation of an equation (e.g., to be stored for later use). Here is an example of how to make use of the ``toMathML.js``.
+The extension can be used by developers to access the MathML
+representation of an equation (e.g., to be stored for later use). Here
+is an example of how to make use of the ``toMathML.js``.
 
 .. code-block:: javascript
 
@@ -46,11 +53,13 @@ The extension can be used by developers to access the MathML representation of a
     }
 
 
-This will give you a function that you can pass an Element Jax and a callback function to.  The callback will be called with the MathML from the element.
+This will give you a function that you can pass an Element Jax and a
+callback function to.  The callback will be called with the MathML
+from the element.
 
 Here is a complete example:
 
-.. code-block:: html
+.. code:: html
 
     <!DOCTYPE html>
     <html>
@@ -83,7 +92,7 @@ Here is a complete example:
         }
       );
     </script>
-    <script type="text/javascript" src="http://example.com/MathJax.js?config=TeX-AMS_HTML-full"></script>
+    <script type="text/javascript" src="http://example.com/MathJax.js?config=TeX-AMS_CHTML-full"></script>
     </head>
     <body>
     <p>
@@ -95,4 +104,8 @@ Here is a complete example:
 
 This example loops through the math elements on the page and displays the original TeX and the resulting MathML.
 
-Note that using the callbacks is the only safe way to do this, as the ``jax.root.toMathML()`` call may signal that it needs to load a file by throwing the reset error.  If you do not take this into account, your code may work most of the time, but will cause errors in isolated circumstances.
+Note that using the callbacks is the only safe way to do this, as the
+``jax.root.toMathML()`` call may signal that it needs to load a file
+by throwing the reset error.  If you do not take this into account,
+your code may work most of the time, but will cause errors in isolated
+circumstances.

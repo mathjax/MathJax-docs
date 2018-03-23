@@ -30,7 +30,7 @@ than above and below.
 .. describe:: fixphi: true
 
     Determines whether MathJax will switch the Unicode values
-    for ``phi`` and ``varphii``. If set to ``true`` MathJax will
+    for ``phi`` and ``varphi``. If set to ``true`` MathJax will
     use the TeX mapping, otherwise the Unicode mapping.
 
 .. describe:: useMathMLspacing: true

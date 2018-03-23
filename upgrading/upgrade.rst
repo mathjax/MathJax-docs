@@ -99,7 +99,7 @@ configuration file without the ``.js``) to the URL that loads
 
     <script type="text/javascript" src="/MathJax/MathJax.js">
       MathJax.Hub.Config({
-        jax: ["input/TeX","output/HTML-CSS"],
+        jax: ["input/TeX","output/CommonHTML"],
         extensions: ["tex2jax.js","AMSmath.js","AMSsymbols.js"]
       });
     </script>
@@ -108,7 +108,7 @@ could be replaced by the single line
 
 .. code-block:: html
 
-    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
 
 In this way, you don't have to include the in-line configuration, and all
 the needed files will be downloaded when MathJax starts up.  For complete
@@ -130,7 +130,7 @@ combination.  For example,
         }
       });
     </script>
-    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
 
 would load the ``TeX-AMS_HTML`` configuration file, but would reconfigure
 the inline math delimiters to include ``$...$`` in addition to
@@ -212,9 +212,9 @@ configuration file.  For example
         }
       });
     </script>
-    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script type="text/javascript" src="/MathJax/MathJax.js?config=TeX-AMS_CHTML"></script>
 
-will load the pre-defined ``TeX-AMS_HTML`` configuration, but will modify
+will load the pre-defined ``TeX-AMS_CHTML`` configuration, but will modify
 the settings to allow ``$...$`` delimiters, and to process ``\$`` to
 produce dollar signs within the text of the page.
 

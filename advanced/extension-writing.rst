@@ -4,14 +4,14 @@
 Tutorial: Extension writing
 ****************************
 
-MathJax is designed in a way that makes easy to write extensions.
+MathJax is designed in a way that makes it easy to write extensions.
 Examples can be found in the `MathJax third party
 extensions <https://github.com/mathjax/MathJax-third-party-extensions>`__
 repository; see also :ref:`ThirdParty`.
 
 In this tutorial, we are going to see how to write your own MathJax
 extension. No specific prerequisites are assumed, except that you
-already have a local :ref:`installation` and of course
+already have a local :ref:`installation <installation>` and of course
 some familiarity with how to use MathJax.
 
 The Big Picture
@@ -21,11 +21,11 @@ We suppose that you have a copy of MathJax in a ``MathJax/`` directory
 and that the URL ``http://localhost/MathJax/`` points to that directory.
 We also assume that you have a local Web server running at
 ``http://localhost/`` ; this is not mandatory but will avoid issues with
-the cross origin policy.
+the cross-origin security policy.
 
 First, note that the source code of MathJax is "packed" so that the
-Javascript files are smaller and take less time to download. These files
-are not easy to read and edit, so for development purpose we will work
+JavaScript files are smaller and take less time to download. These files
+are not easy to read and edit, so for development purposes we will work
 with the ``MathJax/unpacked/`` directory. Hence you should load the
 unpacked ``MathJax.js`` to run MathJax on your pages. For example if you
 write a file like
@@ -40,7 +40,7 @@ write a file like
            <title>testcase</title>
            <meta charset="utf-8">
            <script type="text/javascript"
-                   src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+                   src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
            </script>
          </head>
          <body>
@@ -54,16 +54,16 @@ then the page ``http://localhost/MathJax/unpacked/test0.html`` should
 contain formatted equations corresponding to the TeX, MathML and
 AsciiMath sources.
 
-``MathJax.js`` is the main file, initializes MathJax and loads all its
-components. The most important ones are represented in the diagram
-below. The input modes (in blue) are located in ``unpacked/jax/input/``
-and transform the corresponding given input text into MathJax's internal
-strutures (in red) located in ``unpacked/jax/element`` (only one format
-at the moment, essentially "MathML"). Then this internal structure is
-rendered by the output modes (in green) located in
-``unpacked/jax/output``. The MathJax extensions are located in
-``unpacked/extensions/`` and can modify or extend the MathJax
-components.
+``MathJax.js`` is the main file, which initializes MathJax and loads
+all its components. The most important ones are represented in the
+diagram below. The input modes (in blue) are located in
+``unpacked/jax/input/`` and transform the corresponding given input
+text into MathJax's internal strutures (in red) located in
+``unpacked/jax/element`` (only one format at the moment, essentially
+"MathML"). Then this internal structure is rendered by the output
+modes (in green) located in ``unpacked/jax/output``. The MathJax
+extensions are located in ``unpacked/extensions/`` and can modify or
+extend the MathJax components.
 
 
 .. image:: /_static/components.svg
@@ -96,7 +96,7 @@ typeset the page. First we create the following Javascript file:
 The first line is just using the convenient
 :ref:`MathJax.HTML <api-html>` to
 create a ``<div style="color: red;">Hello World!</div>`` element. The
-second line will tell to MathJax that ``measureTime.js`` has been
+second line will tell MathJax that ``measureTime.js`` has been
 successfully loaded. Again, we refer to :ref:`Synchronizing your code with
 MathJax <synchronization>` for
 details. Now modify test0.html and insert a ``text/x-mathjax-config``
@@ -112,7 +112,7 @@ script just before the one loading MathJax. Use that to add
              MathJax.Hub.config.extensions.push("measureTime.js");
           </script>
           <script type="text/javascript"
-                  src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_HTMLorMML">
+                  src="http://localhost/MathJax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
       ...
 
 The page ``http://localhost/MathJax/unpacked/test1.html`` should now
@@ -162,16 +162,16 @@ and verify if you see the desired "Typeset by MathJax in ... seconds"
 message.
 
 Note that this was a basic extension to demonstrate the extension
-mechanism but it obviously has some limitations e.g. only the typeset
+mechanism but it obviously has some limitations; e.g. only the typeset
 time is measured (not the whole MathJax execution time), the message is
 not updated when you switch the rendering mode via the menu, the message
-is not localizable etc
+is not localizable, etc.
 
 Extension to define TeX macros
 ------------------------------
 
 TeX already has a macro mechanism to define new commands from those
-already available. This mechanism exists in MathJax too and one can rely
+already available. This mechanism exists in MathJax, too, and one can rely
 on it to create a MathJax extension that defines a collection of TeX
 macros. Consider the following example:
 
@@ -201,16 +201,16 @@ the set of TeX macros with some definitions. For example
       expexpansion: ["Macro", "\\sum_{n=0}^{+\\infty} \\frac{x^n}{n!}"]
 
 will define a TeX command for the exponential series. Note these
-definitions are given in Javascript string so you need to escape some
+definitions are given in Javascript strings, so you need to escape some
 special characters: for example double backslashes are used. If your
-macro has parameters you must specify the expected number thus the
-"three" in
+macro has parameters, you must specify the expected number thus the
+3 at the end of the array in
 
 .. code-block:: javascript
 
       taylor: ["Macro","\\sum_{n=0}^{+\\infty} \\frac{{#1}^{(n)} \\left({#2}\\right)}{n!} {\\left( {#3} - {#2} \\right)}^n", 3],
 
-You can finally use the Taylor extension in a test page:
+Finally, you can use the Taylor extension in a test page:
 
 .. code-block:: html
 
@@ -228,7 +228,7 @@ You can finally use the Taylor extension in a test page:
     \[ f(x) = \taylor{f}{x}{a} \]
 
 
-    \[ \log(1+h) = \taylorlog{h} \text{ for } |h| < 1 \]
+    \[ \log(1+h) = \taylorlog{h} \text{ for } |h| \lt 1 \]
 
     \[ \sin\left(\frac{\epsilon}{3}\right) =
        \taylorsin{\left(\frac{\epsilon}{3}\right)} \]
@@ -251,9 +251,9 @@ appropriate place for that is of course after the macros are defined:
 
       MathJax.Hub.Register.StartupHook("TeX Jax Ready", function () {
         MathJax.InputJax.TeX.Definitions.Add({
-    ...
+          ...
         });
-    MathJax.Hub.Startup.signal.Post("TeX Taylor Ready");
+        MathJax.Hub.Startup.signal.Post("TeX Taylor Ready");
       });
 
       MathJax.Ajax.loadComplete("[MathJax]/extensions/TeX/Taylor.js");
@@ -284,10 +284,11 @@ Now define Taylor2.js as follows:
 
 When the input Jax is ready, ``\sinexpansion`` will be define as a
 function that loads the Taylor extension and restarts the processing
-afterward. When the Taylor extension is ready, ``\sinexpansion`` becomes
-the wanted ``\\taylorsin{x}`` definition. Now, you can use this command
-in a test3 page. Note that only only the Taylor2 extension is specified
-in the list of extension to load.
+afterward. When the Taylor extension is ready, ``\sinexpansion``
+becomes the wanted ``\\taylorsin{x}`` definition. Now, you can use
+this command in a test3 page. Note that only the Taylor2 extension is
+specified in the list of extensions to load (Taylor will be loaded
+when the `\sinexpansion` macro is first used).
 
 .. code-block:: html
 
@@ -304,7 +305,7 @@ in the list of extension to load.
     ...
 
 We won't give the details in this tutorial, but note that other MathJax
-components have similar methods to stop, wait for an extension and
+components have similar methods to stop, wait for an extension, and
 restart the execution again.
 
 More Advanced Extensions
@@ -313,9 +314,9 @@ More Advanced Extensions
 In general, writing more sophisticated extensions require a good
 understanding of the MathJax codebase. Although the :ref:`public MathJax
 API <mathjax-api>` is available in the
-documentation, this is not always the case of the internal code. The
+documentation, this is not always the case for the internal code. The
 rule of thumb is thus to read the relevant ``jax.js`` files in
-``unpacked/jax`` (if necessary the Javascript file they can load too)
+``unpacked/jax`` (if necessary the Javascript files they can load, too)
 and to make your extension redefine or expand the code.
 
 Here is an example. We modify the behavior of ``\frac`` so that the

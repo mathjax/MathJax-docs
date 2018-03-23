@@ -71,14 +71,14 @@ to be defined within the TeX input processor.
         for displaying as a tag for an equation.  This is what appears
 	in the margin of a tagged or numbered equation.
 
-    .. describe:: formatID: function {return 'mjx-eqn-'+String(n).replace(/[:'"<>&]/g,"")}
+    .. describe:: formatID: function {return 'mjx-eqn-'+String(n).replace(/\s/g,"_")}
 
         A function that rells MathJax what ID to use as an anchor for
         the equation (so that it can be used in URL references).
 
-    .. describe:: formatURL: function (id) {return '#'+escape(id)}
+    .. describe:: formatURL: function (id,base) {return base+'#'+encodeURIComponent(id)}
 
-        A function that takes an equation ID and returns the URL to
+        A function that takes an equation ID and base URL and returns the URL to
         link to it.
 
     .. describe:: useLabelIds: true

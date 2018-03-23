@@ -15,18 +15,26 @@ Currently, MathJax can render math in three ways:
 - Using :term:`SVG` to lay out the mathematics, or
 - Using a browser's native MathML support.
 
-These are implemented by the `CommonHTML`, `HTML-CSS`, and `PreviewHTML` output processors, the `SVG` output processor, and the `NativeMML` output processor respectively. In addition, the `PlainSource` output is a convenience and accessibility output, rendering the source as plain text.
+These are implemented by the `CommonHTML`, `HTML-CSS`, and
+`PreviewHTML` output processors, the `SVG` output processor, and the
+`NativeMML` output processor respectively. In addition, the
+`PlainSource` output is a convenience and accessibility output,
+rendering the source as plain text.
 
-If you are using one of the combined configuration files, then this will
-select one of these output processors for you.  If the config file ends in
-``_CHTML``, then it is the CommonHTML output processor, if it ends in ``_HTML``, then it is the HTML-CSS output processor, and if it ends in
-``_SVG`` then the SVG output processor will be used.  If it ends in
-``_HTMLorMML``, HTML-CSS output will be used except on Internet Explorer 9 or below with the MathPlayer plugin; cf. :ref:`mml-or-html`.
+If you are using one of the combined configuration files, then this
+will select one of these output processors for you.  If the config
+file ends in ``_CHTML``, then it is the CommonHTML output processor,
+if it ends in ``_HTML``, then it is the HTML-CSS output processor, and
+if it ends in ``_SVG`` then the SVG output processor will be used.  If
+it ends in ``_HTMLorMML``, HTML-CSS output will be used except on
+Internet Explorer 9 or below with the MathPlayer plugin;
+cf. :ref:`mml-or-html`.
 
 If you are performing your own in-line or file-based configuration,
 you select which one you want to use by including either
-``"output/CommonHTML"``, ``"output/SVG"``, or ``"output/NativeMML"`` in
-the `jax` array of your MathJax configuration.  For example
+``"output/CommonHTML"``, ``output/HTML-CSS``, ``"output/SVG"``, or
+``"output/NativeMML"`` in the `jax` array of your MathJax
+configuration.  For example
 
 .. code-block:: javascript
 
@@ -35,58 +43,79 @@ the `jax` array of your MathJax configuration.  For example
 would specify TeX input and CommonHTML output for the mathematics
 in your document.
 
-The **CommonHTML output processor** produces high-quality output in all modern browsers, with results that are consistent across browsers and operating systems.  This is MathJax's primary output mode since MathJax v2.6. Its major advantage is its quality, consistency, and speed as well as support for server-side generation. Its browser supports starts with IE9 and equivalent browsers and it degrades gracefully on older browsers.
-The CommonHTML output uses web-based fonts so that users don't have to have math fonts installed on their computers. It currently only supports MathJax's default TeX fonts.
+The **CommonHTML output processor** produces high-quality output in
+all modern browsers, with results that are consistent across browsers
+and operating systems.  This is MathJax's primary output mode since
+MathJax v2.6. Its major advantage is its quality, consistency, and
+speed as well as support for server-side generation. Its browser
+supports starts with IE9 and equivalent browsers and it degrades
+gracefully on older browsers.  The CommonHTML output uses web-based
+fonts so that users don't have to have math fonts installed on their
+computers, but will use locally installed ones if they are
+available. It currently only supports MathJax's default TeX fonts.
 
 The **HTML-CSS output processor** produces high-quality output in all
 browsers, with results that are consistent across browsers and
-operating systems.  This was MathJax's primary output mode prior to MathJax v2.6.  Its major
-advantage is its quality and consistency on legacy browsers starting with IE6.
-The HTML-CSS output uses web-based
+operating systems.  This was MathJax's primary output mode prior to
+MathJax v2.6.  Its major advantage is its quality and consistency on
+legacy browsers starting with IE6.  The HTML-CSS output uses web-based
 fonts so that users don't have to have math fonts installed on their
 computers but can use locally installed fonts instead.
 
-The **SVG output processor** uses `Scalable Vector Graphics` to render the mathematics on the page.
-SVG is supported in all the major browsers and most mobile devices;
-note, however, that Internet Explorer prior to IE9 does not support
-SVG, and IE9 only does in "IE9 standards mode", nor its emulation
-modes for earlier versions.  The SVG output mode is high quality and
-slightly faster than HTML-CSS, and it does not suffer from some of the
-font-related issues that HTML-CSS does, so prints well in all
-browsers. Since it uses SVG data instead of font files, it is not affected by user based web-font blocking. The disadvantages of this mode are the following: first, it does not
-take advantage of locally installed fonts, and so only has access to the characters
-in its (pseudo) web-based fonts, and second, its variable-width tables become
+The **SVG output processor** uses `Scalable Vector Graphics` to render
+the mathematics on the page.  SVG is supported in all the major
+browsers and most mobile devices; note, however, that Internet
+Explorer prior to IE9 does not support SVG, and IE9 only does in "IE9
+standards mode", not its emulation modes for earlier versions.  The
+SVG output mode is high quality and somewhat faster than HTML-CSS, and
+it does not suffer from some of the font-related issues that HTML-CSS
+does, so prints well in all browsers. Since it uses SVG data instead
+of font files, it is not affected by user based web-font blocking. One
+disadvantage of this mode is that its variable-width tables become
 fixed size once they are typeset, and don't rescale if the window size
 changes (for example).  Since equation numbers are handled through
 variable-width tables, that means equation numbers may not stay at the
-edge of the window if it is resized.
+edge of the window if it is resized.  Also, because its mathematical
+characters are produced by paths, not characters in a font, they can't
+be copy and pasted, as the output of the HTML-based processors can.
 
 The **NativeMML output processor** uses the browser's internal MathML
 support (if any) to render the mathematics.  Currently, Firefox has
 native support for MathML, and IE has the `MathPlayer plugin
 <http://www.dessci.com/en/products/mathplayer/>`_ for rendering
-MathML.  Opera has some built-in support for MathML that works well
-with simple equations, but fails with more complex formulas, so we
-don't recommend using the NativeMML output processor with Opera.
-Safari has some support for MathML since version 5.1, but the quality
-is not as high as either Firefox's implementation or IE with MathPlayer.
-Chrome, Konqueror, and most other browsers don't support MathML
-natively, but this may change in the future, since MathML is part of
-the HTML5 specification.
+MathML.  Safari has some support for MathML since version 5.1, but the
+quality is not as high as either Firefox's implementation or IE with
+MathPlayer.  Chrome, Konqueror, and most other browsers don't support
+MathML natively, but this may change in the future, since MathML is
+part of the HTML5 specification.
 
 The advantage of the NativeMML output processor is its speed, since
-native MathML support is usually faster than converting to HTML-with-CSS and SVG
-The disadvantage is that you are dependent on the browser's MathML
-implementation for your rendering, and these vary in quality of output
-and completeness of implementation.  MathJax relies on features that
-are not available in some renderers (for example, Firefox's MathML
-support does not implement the features needed for labeled equations).
-While MathJax's NativeMML output processor works around various limitations of Firefox/Gecko and Safari/WebKit, the results using the NativeMML output processor may have spacing or
-other rendering problems that are outside of MathJax's control.
+native MathML support is usually faster than converting to
+HTML-with-CSS and SVG.  The disadvantage is that you are dependent on
+the browser's MathML implementation for your rendering, and these vary
+in quality of output and completeness of implementation.  MathJax
+relies on features that are not available in some renderers (for
+example, Firefox's MathML support does not implement the features
+needed for labeled equations).  While MathJax's NativeMML output
+processor works around various limitations of Firefox/Gecko and
+Safari/WebKit, the results using the NativeMML output processor may
+have spacing, font, or other rendering problems that are outside of
+MathJax's control.
 
-The **PreviewHTML output processor** produces fast but low-quality output in all modern browsers. It is designed to serve as a fast preview mode as its layout quality is nowhere near the quality of the CommonHTML, HTML-CSS, and SVG output processors. Its major advantage is its speed. Its browser supports starts with IE8. It uses locally installed Times-like fonts and does not load any webfonts.
+The **PreviewHTML output processor** produces fast but low-quality
+output in all modern browsers. It is designed to serve as a fast
+preview mode as its layout quality is nowhere near the quality of the
+CommonHTML, HTML-CSS, and SVG output processors. Its major advantage
+is its speed. Its browser supports starts with IE8. It uses locally
+installed Times-like fonts and does not load any webfonts.
 
-The **PlainSource output processor** injects the plain text source of the equations instead; if the input is MathML, the output processor will prefer TeX and AsciiMath notation (in that order) if it is available in ``<annotation>`` elements. This output is a convenience output for users who prefer raw source, e.g., users who need to copy&paste larger document fragments and users of assistive technologies.
+The **PlainSource output processor** injects the plain text source of
+the equations instead of a typeset version; if the input is MathML,
+the output processor will prefer TeX and AsciiMath notation (in that
+order) if it is available in ``<annotation>`` elements. This output is
+a convenience output for users who prefer raw source, e.g., users who
+need to copy and paste larger document fragments and users of assistive
+technologies.
 
 .. _automatic-linebreaking:
 
@@ -117,7 +146,7 @@ to your page just before the ``<script>`` tag that loads
 
     Line breaking only applies to displayed equations, not
     in-line equations (unless the in-line equation is itself longer than a
-    line), and that the line-breaks are only computed once when the
+    line), and the line-breaks are only computed once when the
     equation is initially typeset, and do not change if the user changes
     the window size, or if the container changes size for some other
     reason.
@@ -130,9 +159,11 @@ See the :ref:`CommonHTML configuration <configure-CommonHTML>`,
 :ref:`HTML-CSS configuration <configure-HTML-CSS>`, or
 :ref:`SVG configuration <configure-SVG>` pages for more details.
 
-Note that breaks occur only at operations and relations or at 
-explicit space, but not, for example, in the middle two consecutive
-identifiers.
+Note that breaks occur only at operations and relations or at explicit
+space, but not, for example, in the middle of two consecutive
+identifiers, and long identifiers or numbers are not broken, nor are
+the contents of ``<mtext>`` elements (which come from the ``\text{}``
+macro in TeX input).
 
 The line-breaking algorithm uses the nesting depth, the type of
 operator, the size of spaces, and other factors to decide on the
@@ -157,11 +188,15 @@ Automatic Selection of the Output Processor
 
 Since not all browsers support MathML natively, it would be unwise to
 choose the NativeMML output processor unless you are sure of your
-audience's browser capabilities. Similarly, you might want more control over which platforms use which renderer.
+audience's browser capabilities. Similarly, you might want more
+control over which platforms use which renderer.
 
-While MathJax used to provide an extension to handle switching between HTML-CSS and NativeMML output, this limited extension was deprecated in MathJax v2.6.
+While MathJax used to provide an extension to handle switching between
+HTML-CSS and NativeMML output, this limited extension was deprecated
+in MathJax v2.6.
 
-Instead, you can use the regular MathJax configuration methods to define which output to use where.
+Instead, you can use the regular MathJax configuration methods to
+define which output to use where.
 
 In general, you can do the following:
 
@@ -176,7 +211,10 @@ In general, you can do the following:
   });
   </script>
 
-This does essentially what the ``MMLorHTML`` configuration did in its default settings.  You can, of course, substitute whatever output you want in place of `HTML-CSS` or `NativeMML,` and you can add other if-then statements for other browsers.  E.g.,
+This does essentially what the ``MMLorHTML`` configuration did in its
+default settings.  You can, of course, substitute whatever output you
+want in place of `HTML-CSS` or `NativeMML,` and you can add other
+if-then statements for other browsers.  E.g.,
 
 .. code-block:: html
 
@@ -192,9 +230,17 @@ This does essentially what the ``MMLorHTML`` configuration did in its default se
   </script>
 
 
-This illustrates using `BROWSER.versionAtLeast()` to make some decisions.  You can, of course, be as complicated as you like about making the choices. For example, you could detect if a user is blocking web-fonts and switch to SVG output (which does not rely on fonts but SVG data files).
+This illustrates using :meth:`BROWSER.versionAtLeast()` to make some
+decisions.  You can, of course, be as complicated as you like about
+making the choices. For example, you could detect if a user is
+blocking web-fonts and switch to SVG output (which does not rely on
+fonts but SVG data files).
 
-If you want something that is more backward compatible with `MMLorHTML` (i.e., if you have pages that configure `MMLorHTML` one way and other apges that configure it another way), here is a version that uses the old `MMLorHTML`'s `"prefer"` object, and only sets MathML mode if they browser can handle that.
+If you want something that is more backward compatible with
+`MMLorHTML` (i.e., if you have pages that configure `MMLorHTML` one
+way and other apges that configure it another way), here is a version
+that uses the old `MMLorHTML`'s `"prefer"` object, and only sets
+MathML mode if they browser can handle that.
 
 .. code-block:: html
 
@@ -223,7 +269,10 @@ If you want something that is more backward compatible with `MMLorHTML` (i.e., i
   </script>
 
 
-The deprecated ``MMLorHTML`` extension also included version checking to see if MathJax is supported in the browser, but there shouldn't be a need for that any longer as those older browsers (IE5 and below) just aren't used any more.
+The deprecated ``MMLorHTML`` extension also included version checking
+to see if MathJax is supported in the browser, but there shouldn't be
+a need for that any longer as those older browsers (IE5 and below)
+just aren't used any more.
 
 
 .. _mml-or-html:
@@ -233,9 +282,12 @@ The deprecated ``MMLorHTML`` extension also included version checking to see if 
 
 .. warning::
 
-  This extension has been deprecated in MathJax v2.6.
+  This extension has been deprecated in MathJax v2.6.  See the section above for alternatives.
 
-With the decline of MathPlayer, the general lack of development of native MathML implementations, and the increase in output options in MathJax, we have decided to deprecate the ``HTMLorMML`` extension in MathJax v2.6.
+With the decline of MathPlayer, the general lack of development of
+native MathML implementations, and the increase in output options in
+MathJax, we have decided to deprecate the ``HTMLorMML`` extension in
+MathJax v2.6.
 
 Originally, a number of combined configuration files would select
 NativeMML output when the browser supports it well enough, and
@@ -247,12 +299,21 @@ your configuration's `config` array, and they would not include an output
 processor in your `jax` array; MathJax will fill that in for you based on
 the abilities of your user's browser.
 
-By default, this extension would choose HTML-CSS in all browsers except for one case:  Internet Explorer 9 and below when the MathPlayer plugin is present.
+By default, this extension would choose HTML-CSS in all browsers
+except for one case: Internet Explorer 9 and below when the MathPlayer
+plugin is present.
 
-In recent versions of MathJax, this extension would choose HTML-CSS in all Internet Explorer versions when the MathPlayer plugin is present. However, due to lack of support for MathPlayer in Internet Explorer 10 and above, we have restricted this further. In the v1.x releases, MathJax selected NativeMML output for Firefox as well, but we have found that there are too many rendering issues with Firefox's native MathML implementation, and so MathJax v2.0+ selected
-HTML-CSS output for Firefox by default as well.
+In recent versions of MathJax, this extension would choose HTML-CSS in
+all Internet Explorer versions when the MathPlayer plugin is
+present. However, due to lack of support for MathPlayer in Internet
+Explorer 10 and above, we have restricted this further. In the v1.x
+releases, MathJax selected NativeMML output for Firefox as well, but
+we have found that there are too many rendering issues with Firefox's
+native MathML implementation, and so MathJax v2.0+ selected HTML-CSS
+output for Firefox by default as well.
 
-Users can still use the Mathjax contextual menu to select the NativeMML renderer if they wish to.
+Users can still use the Mathjax contextual menu to select the
+NativeMML renderer if they wish to.
 
 .. note::
 
@@ -292,9 +353,13 @@ other options of the HTML-CSS output jax.
 Viewport meta tag
 =================
 
-The meta viewport tag provides the browser with instructions regarding viewports and zooming. This way, web developers can control how a webpage is displayed on a mobile device.
+The meta viewport tag provides the browser with instructions regarding
+viewports and zooming. This way, web developers can control how a
+webpage is displayed on a mobile device.
 
-Incorrect or missing viewport information can confuse MathJax's layout process, leading to very small font sizes. We recommend to use standard values such as the following:
+Incorrect or missing viewport information can confuse MathJax's layout
+process, leading to very small font sizes. We recommend that you use
+standard values such as the following:
 
 .. code-block:: html
 
@@ -306,9 +371,13 @@ Incorrect or missing viewport information can confuse MathJax's layout process, 
 Internet Explorer Emulation modes
 =================================
 
-Internet Explorer provides so-called emulation modes for backward compatibility to its legacy versions. These emulation modes have been deprecated since Internet Explorer 11, cf. `Microsoft documentation <https://msdn.microsoft.com/en-us/library/jj676915.aspx>`_.
+Internet Explorer provides so-called emulation modes for backward
+compatibility to its legacy versions. These emulation modes have been
+deprecated since Internet Explorer 11, cf. `Microsoft documentation <https://msdn.microsoft.com/en-us/library/jj676915.aspx>`_.
 
-MathJax is fastest when in the standards mode of each IE version, so it is best to force the highest mode possible. That can be accomplished by adding
+MathJax is fastest when in the standards mode of each IE version, so
+it is best to force the highest mode possible. That can be
+accomplished by adding
 
 .. code-block:: html
 

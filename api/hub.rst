@@ -131,7 +131,7 @@ Properties
 Methods
 =======
 
-.. Method:: Config(options)
+.. method:: Config(options)
 
     Sets the configuration options (stored in ``MathJax.Hub.config``)
     to the values stored in the `options` object.  See
@@ -142,7 +142,7 @@ Methods
         - **options** --- object containing options to be set
     :Returns: ``null``
 
-.. describe:: Configured()
+.. method:: Configured()
 
     When ``delayStartupUntil`` is specified in the configuration file or
     in the script that loads ``MathJax.js``, MathJax's startup sequence is
@@ -151,7 +151,7 @@ Methods
 
     :Returns: ``null``
 
-.. describe:: Register.PreProcessor(callback)
+.. method:: Register.PreProcessor(callback)
 
     Used by preprocessors to register themselves with MathJax so that
     they will be called during the :meth:`MathJax.Hub.PreProcess()`
@@ -161,7 +161,7 @@ Methods
         - **callback** ---  the callback specification for the preprocessor
     :Returns: ``null``
 
-.. describe:: Register.MessageHook(type,callback)
+.. method:: Register.MessageHook(type,callback)
 
     Registers a listener for a particular message being sent to the
     hub processing signal (where `PreProcessing`, `Processing`, and
@@ -187,7 +187,7 @@ Methods
         - **callback** --- a callback specification
     :Returns: ``null``
 
-.. describe:: Register.StartupHook(type,callback)
+.. method:: Register.StartupHook(type,callback)
 
     Registers a listener for a particular message being sent to the
     startup signal (where initialization and component startup
@@ -201,7 +201,7 @@ Methods
         - **callback** --- a callback specification
     :Returns: ``null``
 
-.. describe:: Register.LoadHook(file,callback)
+.. method:: Register.LoadHook(file,callback)
 
     Registers a callback to be called when a particular file is
     completely loaded and processed.  (The callback is called when the
@@ -214,7 +214,7 @@ Methods
         - **callback** --- a callback specification
     :Returns: the callback object
 
-.. Method:: Queue(callback,...)
+.. method:: Queue(callback,...)
     :noindex:
 
     Pushes the given callbacks onto the main MathJax command queue.
@@ -229,7 +229,7 @@ Methods
         - **callback** --- a callback specification
     :Returns: the callback object for the last callback added to the queue
 
-.. Method:: Typeset([element[,callback]])
+.. method:: Typeset([element[,callback]])
 
     Calls the preprocessors on the given element (or elements if it is an
     array of elements), and then typesets any math elements within the
@@ -377,7 +377,7 @@ Methods
         - **element** --- the element to inspect
     :Returns: integer (-1, 0, 1)
 
-.. Method:: setRenderer(renderer[,type])
+.. method:: setRenderer(renderer[,type])
 
     Sets the output jax for the given element jax ``type`` (or ``jax/mml``
     if none is specified) to be the one given by ``renderer``, which
@@ -392,7 +392,7 @@ Methods
 	- **type** --- the element jax MIME type whose renderer to set
     :Returns: ``null``
 
-.. Method:: Insert(dst,src)
+.. method:: Insert(dst,src)
 
     Inserts data from the `src` object into the `dst` object.  The
     `key:value` pairs in `src` are (recursively) copied into `dst`, so
@@ -406,7 +406,7 @@ Methods
         - **src** --- the source object
     :Returns: the modified destination object
 
-.. Method:: formatError(script,error)
+.. method:: formatError(script,error)
 
     This is called when an internal error occurs during the processing
     of a math element (i.e., an error in the MathJax code itself).

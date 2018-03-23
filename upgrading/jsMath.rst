@@ -30,7 +30,7 @@ example,
       });
     </script>
     <script
-      src="https://example.com/MathJax.js?config=TeX-AMS_HTML">
+      src="https://example.com/MathJax.js?config=TeX-AMS_CHTML">
     </script>
 
 would load the ``jsMath2jax`` preprocessor, along with a configuration 

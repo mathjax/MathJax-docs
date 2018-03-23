@@ -99,13 +99,25 @@ consists of multiple files.
 
 To enable MathJax in your web platform using cdnjs, add the line:
 
+.. code-block:: html
+
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-AMS-MML_CHTML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
 the file if it contains no ``</head>``.
 
+Alternatively, you can use
+
+.. code-block:: html
+
+    <script type="text/javascript"
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_CHTML"></script>
+
+to get the latest release of MathJax (regardless of the version you
+have indicated in the URL).
+
 Keep in mind that this will enable MathJax for your current
 theme/template only.  If you change themes or update your theme, you
-will have to repeat these steps. We strongly suggest to use a plugin
-or help the community of your favorite software by writing a plugin.
+will have to repeat these steps. We strongly suggest tat you use a plugin
+or help the community of your favorite software by writing a plugin yourself.

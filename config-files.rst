@@ -15,7 +15,7 @@ it via
     <script type="text/javascript" src="path-to-MathJax/MathJax.js?config=default"></script>
 
 where ``path-to-MathJax`` is the URL to the MathJax directory on your
-server or hard disk.  If you are using MathJax from the CDN, you can
+server or hard disk.  If you are using MathJax from a CDN, you can
 view the contents of `default.js
 <https://github.com/mathjax/MathJax/blob/master/config/default.js>`_ as a
 reference, but you will not be able to edit the CDN copy.  It is
@@ -27,7 +27,7 @@ The remaining files in the ``MathJax/config`` directory are
 combined configuration files that include not just configuration
 parameters but also the files that MathJax would need to load for
 those configurations; you can browse the directory on `Github
-<https://github.com/mathjax/MathJax/tree/master/config/>`_.  This
+<https://github.com/mathjax/MathJax/tree/master/config/>`_.  Using one of these
 means MathJax will have to load fewer files, and since each file access requires
 establishing connections over the network, it can be faster to load one larger
 file than several smaller ones.  See :ref:`Loading and Configuring MathJax

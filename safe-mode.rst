@@ -4,7 +4,7 @@
 MathJax Safe-mode
 *****************
 
-MathML includes the ability to include hyperlinks within your
+MathML includes the ability to specify hyperlinks within your
 mathematics, and such links *could* be made to ``javascript:`` URL's.
 For example, the expression
 
@@ -55,9 +55,9 @@ to add ``,Safe`` after the configuration file when you are loading
 
 .. code-block:: html
 
-    <script src="https://example.com/MathJax.js?config=TeX-AMS_HTML,Safe"></script>
+    <script src="https://example.com/MathJax.js?config=TeX-AMS_CHTML,Safe"></script>
 
-This causes MathJax to load the ``TeX-AMS_HTML`` configuration file,
+This causes MathJax to load the ``TeX-AMS_CHTML`` configuration file,
 and then the ``Safe`` configuration, which adds the Safe extension to
 your ``extensions`` array so that it will be loaded with the other
 extensions.
@@ -69,7 +69,7 @@ include ``"Safe.js"`` in your ``extensions`` array directly:
 
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-      jax: ["input/TeX","output/HTML-CSS"],
+      jax: ["input/TeX","output/CommonHTML"],
       extensions: ["tex2jax.js","Safe.js"]
     });
     </script>

@@ -125,7 +125,7 @@ The actions you can perform on an element jax include:
 
     .. describe:: Text(newmath)
 
-        to set the math text of the element to `newmath` and typeset.
+        to set the math text of the element to ``newmath`` and typeset.
 
     .. describe::  Rerender()
 
@@ -205,7 +205,7 @@ available in `test/sample-dynamic.html
       });
     </script>
     <script type="text/javascript"
-      src="https://example.com/MathJax.js?config=TeX-AMS_HTML-full">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS_CHTML-full">
     </script>
 
     </head>

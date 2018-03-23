@@ -23,12 +23,12 @@ For example
       }
     });
 
-would ask for the PreviewHTML output to run as a preview (`disabled: false`),
-force inheritance of the surrounding text color, and set the `updateTime` and
-`updateDelay` to  low values (30ms / 6ms) to speed up
+would ask for the PreviewHTML output to run as a preview (``disabled: false``),
+force inheritance of the surrounding text color, and set the ``updateTime`` and
+``updateDelay`` to  low values (30ms / 6ms) to speed up
 the preview pass. Furthermore, it configures the second pass to set the
-chunking (`Chunks`) to a reflow every 10,000 equations and disables the
-progress messages (`messageStyle`).
+chunking (``Chunks``) to a reflow every 10,000 equations and disables the
+progress messages (``messageStyle``).
 
 This extension provides a two-pass rendering mode. A **first**, fast-but-rough
 rendering is genereated as a preview, using the

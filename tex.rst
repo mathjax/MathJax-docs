@@ -43,10 +43,10 @@ environments.  You must use HTML to handle such formatting tasks.  If
 you need a LaTeX-to-HTML converter, you should consider `other options
 <http://www.google.com/search?q=latex+to+html+converter>`_.
 
-There are two exception to this rule. First, MathJax supports the `\ref`
+There are two exception to this rule. First, MathJax supports the ``\ref``
 macro outside of math-mode. Second, MathJax supports some macros that
-add text within math-mode (such as `\text{}`) as well as `$...$` 
-within such macros (to switch back into math-mode) and`\$` to escape. 
+add text within math-mode (such as ``\text{}``) as well as ``$...$`` 
+within such macros (to switch back into math-mode) and ``\$`` to escape. 
 
 Second, some features in MathJax might be necessarily limited. 
 For example, MathJax only implements a limited subset of the ``array`` 
@@ -164,11 +164,11 @@ Another source of difficulty is when MathJax is used in content
 management systems that have their own document processing commands
 that are interpreted before the HTML page is created.  For example,
 many blogs and wikis use formats like :term:`Markdown` to allow you to
-create the content of you pages.  In Markdown, the underscore is used
+create the content of your pages.  In Markdown, the underscore is used
 to indicate italics, and this usage will conflict with MathJax's use
 of the underscore to indicate a subscript.  Since Markdown is applied
-to the page first, it will convert your subscripts markers into
-italics (inserting ``<i>`` tags into your mathematics, which will
+to the page first, it will convert your subscript markers into
+italics (inserting ``<i>`` or ``<em>`` tags into your mathematics, which will
 cause MathJax to ignore the math).
 
 Such systems need to be told not to modify the mathematics that
@@ -238,8 +238,8 @@ math-mode).  For example
 .. code-block:: latex
 
     \(
-       \def\RR{\bf R}
-       \def\bold#1{\bf #1}
+       \def\RR{{\bf R}}
+       \def\bold#1{{\bf #1}}
     \)
 
 would define ``\RR`` to produce a bold-faced "R", and ``\bold{...}``
@@ -257,8 +257,7 @@ pre-defined in the configuration by
       TeX: {
         Macros: {
 	  RR: "{\\bf R}",
-	  bold: ["{\\bf #1}",1],
-	  Abs: ['\\left\\lvert #2 \\right\\rvert_{\\text{#1}}', 2, ""]
+	  bold: ["{\\bf #1}",1]
 	}
       }
     });
@@ -298,9 +297,9 @@ that loads ``MathJax.js``:
 
 .. code-block:: html
 
-    <script src="/MathJax/MathJax.js?config=TeX-AMS_HTML,local/local.js"></script>
+    <script src="/MathJax/MathJax.js?config=TeX-AMS_CHTML,local/local"></script>
 
-If you are using the CDN, you can make a local configuration file on
+If you are using a CDN, you can make a local configuration file on
 your own server, and load MathJax itself from the CDN and your
 configuration file from your server.  See :ref:`Using a Local
 Configuration File with the CDN <local-config-files>` for details.
@@ -403,7 +402,7 @@ some extensions explicitly yourself.
 To enable any of the TeX extensions, simply add the appropriate string
 (e.g., ``"AMSmath.js"``) to the `extensions` array in the ``TeX`` block
 of your configuration.  If you use one of the combined configuration files,
-like ``TeX-AMS_HTML``, this will already include several of the extensions
+like ``TeX-AMS_CHTML``, this will already include several of the extensions
 automatically, but you can include others using a mathjax configuration
 script prior to loading MathJax.  For example
 
@@ -413,11 +412,11 @@ script prior to loading MathJax.  For example
       MathJax.Hub.Config({ TeX: { extensions: ["autobold.js"] }});
     </script>
     <script type="text/javascript"
-        src="https://example.com/MathJax.js?config=TeX-AMS_HTML">
+        src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML">
     </script>
 
 will load the `autobold` TeX extension in addition to those already
-included in the ``TeX-AMS_HTML`` configuration file.
+included in the ``TeX-AMS_CHTML`` configuration file.
 
 You can also load these extensions from within a math expression using
 the non-standard ``\require{extension}`` macro.  For example
@@ -513,7 +512,7 @@ configurations, add them to the `extensions` array in the TeX block.
 .. code-block:: javascript
 
     TeX: {
-      extensions: ["AMSmath.js", "AMSsymbols.js", ...]
+      extensions: ["AMSmath.js", "AMSsymbols.js"]
     }
 
 See the list of control sequences at the end of this document for details
@@ -525,9 +524,6 @@ environments it defines, but you will have to load it explicitly if you
 want to use the other macros that it defines.  The `AMSsymbols` extension
 is not loaded automatically, so you must include it explicitly if you want
 to use the macros it defines.
-
-Both extensions are included in all the combined configuration files
-that load the TeX input processor.
 
 
 AMScd

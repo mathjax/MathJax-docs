@@ -28,7 +28,7 @@ Mathematics is zoomed when the user "triggers" the zoom by an action,
 either clicking on the mathematics, double-clicking on it, or holding
 the mouse still over it (i.e., "hovering").  Which trigger is used is
 set by the user via the math contextual menu (or by the author using
-the ``menuSettings`` configuration section of the `core configuration
+the ``menuSettings`` configuration section of the :ref:`core configuration
 options <configure-hub>`).
 
 .. describe:: delay: 500

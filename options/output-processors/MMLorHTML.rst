@@ -6,7 +6,8 @@ The MMLorHTML configuration options (Deprecated)
 
 .. warning::
 
-  This extension has been deprecated in MathJax v2.6.
+  This extension has been deprecated in MathJax v2.6.  See
+  :ref:`automatic selection of output processors <automatic-output-switch>` for alternatives.
 
 The options below control the operation of the MMLorHTML configuration
 file that is run when you include ``"MMLorHTML.js"`` in the `config`

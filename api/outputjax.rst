@@ -74,7 +74,7 @@ Methods
 
     :Parameters:
         - **state** --- a structure containing information about the
-                        current proccessing state of the mathematics
+          current proccessing state of the mathematics
     :Returns: ``null``
 
 .. Method:: preTranslate(state)
@@ -200,7 +200,7 @@ the following methods.
     The return value is an object with the following properties:
 
     - ``Y`` --- the vertical offset from the top of the ``span`` to
-                the baseline of the mathematics
+      the baseline of the mathematics
     - ``mW`` --- the width of the original mathematics element
     - ``mH`` --- the height of the original mathematics element
     - ``zW`` --- the width of the zoomed math

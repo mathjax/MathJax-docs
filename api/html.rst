@@ -101,7 +101,7 @@ Methods
         - **script** --- the script whose content is to be retrieved
     :Returns: the text of the ``script``
 
-.. describe:: Cookie.Set(name,data)
+.. method:: Cookie.Set(name,data)
 
     Creates a MathJax cookie using the ``MathJax.HTML.Cookie.prefix``
     and the `name` as the cookie name, and the `key:value` pairs in
@@ -121,7 +121,7 @@ Methods
         - **data** --- object containing the data to store in the cookie
     :Returns: ``null``
 
-.. describe:: Cookie.Get(name[,obj])
+.. method:: Cookie.Get(name[,obj])
 
     Looks up the data for the cookie named `name` and merges the data
     into the given `obj` object, or returns a new object containing

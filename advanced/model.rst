@@ -36,7 +36,7 @@ run a preprocessor to locate the math delimiters and replace them by
 the special tags that it uses to mark the formulas.  There are
 preprocessors for :ref:`TeX notation <TeX-support>`, :ref:`MathML
 notation <MathML-support>`, :ref:`AsciiMath notation
-<AsciiMath-support>` and the :ref:`jsMath notation
+<AsciiMath-support>`, and the :ref:`jsMath notation
 <jsMath-support>` that uses `span` and `div` tags.
 
 For pages that are constructed programmatically, such as HTML
@@ -80,13 +80,13 @@ them when it runs its main typesetting pass.
 
 For example, 
 
-.. code-block:: html
+.. code:: html
 
     <script type="math/tex">x+\sqrt{1-x^2}</script>
 
 represents an in-line equation in TeX notation, and 
 
-.. code-block:: html
+.. code:: html
 
     <script type="math/tex; mode=display">
       \sum_{n=1}^\infty {1\over n^2} = {\pi^2\over 6}
@@ -96,7 +96,7 @@ is a displayed TeX equation.
 
 Alternatively, using MathML notation, you could use
 
-.. code-block:: html
+.. code:: html
 
     <script type="math/mml">
       <math>
@@ -115,7 +115,7 @@ Alternatively, using MathML notation, you could use
 
 for in-line math, or
 
-.. code-block:: html
+.. code:: html
 
     <script type="math/mml">
       <math display="block">
@@ -159,22 +159,22 @@ the mathematics they can process.
 Page authors can use one of MathJax's preprocessors to convert from
 math delimiters that are more natural for the author to type (e.g.,
 TeX math delimiters like ``$$...$$``) to MathJax's ``<script>``
-format.  Blog and wiki software could extend from their own markup
+format.  Blog and wiki software could extend their own markup
 languages to include math delimiters, which they could convert to
 MathJax's ``<script>`` format automatically.
 
-Note, however, that Internet Explorer has a bug that causes it to
-remove the space before a ``<script>`` tag if there is also a space
-after it, which can cause serious spacing problems with in-line math
-in Internet Explorer.  There are three possible solutions to this in
-MathJax.  The recommended way is to use a math preview (an element
-with class ``MathJax_Preview``) that is non-empty and comes right
-before the ``<script>`` tag.  Its contents can be just the word
-``[math]``, so it does not have to be specific to the mathematics
-script that follows; it just has to be non-empty (though it could have
-its style set to ``display:none``).  See also the ``preJax`` and
-``postJax`` options in the :ref:`Core Configuration Options
-<configure-hub>` document for another approach.
+Note, however, that Internet Explorer (version 8 and belowhas a bug
+that causes it to remove the space before a ``<script>`` tag if there
+is also a space after it, which can cause serious spacing problems
+with in-line math in Internet Explorer.  There are three possible
+solutions to this in MathJax.  The recommended way is to use a math
+preview (an element with class ``MathJax_Preview``) that is non-empty
+and comes right before the ``<script>`` tag.  Its contents can be just
+the word ``[math]``, so it does not have to be specific to the
+mathematics script that follows; it just has to be non-empty (though
+it could have its style set to ``display:none``).  See also the
+``preJax`` and ``postJax`` options in the :ref:`Core Configuration
+Options <configure-hub>` document for another approach.
 
 
 The components of MathJax

@@ -10,15 +10,19 @@ This page documents basic tips for debugging MathJax in your application.
 Using unpacked resources
 ========================
 
-MathJax provides both packged (minified) and unpacked versions of all its components. For debugging, it is useful to switch to an unpacked versions.
+MathJax provides both packaged (minified) and unpacked versions of all
+its components. For debugging, it is useful to switch to an unpacked
+version.
 
-For example, if your copy of MathJax lives at `https://example.com/MathJax.js` just add `unpacked/` before `MathJax.js`, e.g.,
+For example, if your copy of MathJax lives at
+``https://example.com/mathjax/MathJax.js`` just add ``unpacked/`` before
+``MathJax.js``, e.g.,
 
 
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://example.com/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="https://example.com/mathjax/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 to
@@ -27,7 +31,7 @@ to
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://example.com/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="https://example.com/mathjax/unpacked/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 
@@ -39,7 +43,9 @@ Getting traceback information
   MathJax.Hub.lastError
 
 
-MathJax stores the error object from the last `Math Processing Error` in `MathJax.Hub.lastError`. This allow developers to access the stack trace information when needed.
+MathJax stores the error object from the last `Math Processing Error`
+in ``MathJax.Hub.lastError``. This allows developers to access the
+stack-trace information when needed.
 
 
 Add listener for MathJax errors

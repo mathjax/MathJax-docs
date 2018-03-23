@@ -19,12 +19,13 @@ these customized versions are split over several files to minimize the page
 load.
 
 Since browsers do not provide APIs to access font metrics, MathJax has
-to ship with the necessary font data; this font data is
-generated during development and cannot be generated on the fly. In addition,
-most fonts do not cover the relevant characters for mathematical layout. Finally, some
-fonts (e.g. Cambria Math) store important glyphs outside the Unicode range, making them
-inaccessible to JavaScript. These are the main reasons why MathJax
-is unable to support arbitrary fonts at this time.
+to ship with the necessary font data; this font data is generated
+during development and cannot be generated on the fly. In addition,
+most fonts do not cover the relevant characters for mathematical
+layout. Finally, some fonts (e.g. Cambria Math) store important glyphs
+in special variant portions of the font, which require special
+handling to access from within a browser.  These are the main reasons
+why MathJax is unable to support arbitrary fonts at this time.
 
 
 Font configuration
@@ -51,9 +52,10 @@ distributions of the supported fonts do not work for technical reasons. You can
 download the webfonts from the `MathJax repository
 <https://github.com/mathjax/MathJax/tree/master/fonts/HTML-CSS>`_.
 
-The :ref:`SVG output processor <configure-SVG>` will not use fonts directly but
-derived SVG path data to draw paths corresponding to characters. The page author
-can configure the font via the ``font`` option.
+The :ref:`SVG output processor <configure-SVG>` will not use fonts
+directly but rather uses derived SVG path data to draw paths
+corresponding to characters. The page author can configure the font
+via the ``font`` option.
 
 There is currently no method for switching fonts after MathJax has loaded.
 Similarly, page users cannot change the font configuration at this time
@@ -75,7 +77,7 @@ configured fonts (e.g., upright Greek will be substituted with italic Greek).
 Finally, MathJax will ask the browser to provide the glyph from a system
 font. Since in that final case, MathJax will not have the necessary data on the
 glyph's bounding box, MathJax will guess these metrics; this can negatively
-affect layout.
+affect layout and rendering speed.
 
 
 Adding new fonts

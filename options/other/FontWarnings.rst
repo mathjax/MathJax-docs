@@ -118,7 +118,7 @@ would set the ``fadeoutTime`` option to 2000 milliseconds (2 seconds).
 
         HTML that gives the download link for the MathJax TeX fonts
         only.  (Used in place of `fonts` when the `HTML-CSS` option
-        for `availableFonts` only includes the `TeX` fonts.)
+        for `availableFonts` only includes the :term:`TeX` fonts.)
 
     You can add your own pre-defined HTML snippets to this object, or
     override the ones that are there with your own text.

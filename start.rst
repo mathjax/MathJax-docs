@@ -6,7 +6,7 @@ Getting Started
 
 MathJax allows you to include mathematics in your web pages, either
 using LaTeX, MathML, or AsciiMath notation, and the mathematics
-will be processed using JavaScript to produce HTML, SVG or MathML
+will be processed using JavaScript to produce HTML, SVG, or MathML
 equations for viewing in any modern browser.
 
 There are two ways to access MathJax: the easiest way is to use the
@@ -28,7 +28,6 @@ The easiest way to use MathJax is to link directly to a public
 installation available through a Content Distribution Network
 (CDN).  When you use a CDN, there is no need to install
 MathJax yourself, and you can begin using MathJax right away.
-
 The CDN will automatically arrange for your readers to download MathJax
 files from a fast, nearby server.
 
@@ -41,7 +40,8 @@ To use MathJax from a CDN, you need to do two things:
 
 There are many free CDN providers that provide copies of MathJax. Some
 provide "rolling releases", i.e., links that update to the latest
-available version upon release
+available version upon release. (Note that we also provide a means of
+obtaining the latest version automatically, described below.)
 
 - `cdnjs.com <https://cdnjs.com>`_ (recommended)
 - `jsdelivr.com <https://jsdelivr.com>`_  [rolling]
@@ -52,7 +52,7 @@ available version upon release
 
 .. warning::
 
-  We retired our self-hosted CDN at `cdn.mathjax.org` in April, 2017.
+  We retired our self-hosted CDN at ``cdn.mathjax.org`` in April, 2017.
   **We recommend** using `cdnjs.com <https://cdnjs.com>`_ which uses the same provider.
   The use of ``cdn.mathjax.org`` was governed by its `terms of service
   <https://www.mathjax.org/mathjax-cdn-terms-of-service/>`_.
@@ -62,28 +62,171 @@ To jump start using `cdnjs`, you accomplish the first step by putting
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
 ``<body>`` if necessary, but the head is to be preferred.)  This will
-load the latest version of MathJax from the distributed server, and
+load the version 2.7.3 of MathJax from the distributed server, and
 configure it to recognize mathematics in both TeX, MathML, and AsciiMath notation,
 and ask it to generate its output using HTML with CSS to display the
 mathematics.
 
 .. warning::
 
-  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and thus largest) combined configuration files. We list it here because it will quickly get you started using MathJax. It is probably not the most efficient configuration for your purposes and other :ref:`combined configuration files <common-configurations>` are available. You can also provide additional configuration parameters to tailor one of the combined configurations to your needs or use our development tools to generate your own combined configuration file.
+  The ``TeX-MML-AM_CHTML`` configuration is one of the most general (and
+  thus largest) combined configuration files.  We list it here because it
+  will quickly get you started using MathJax.  It is probably not the most
+  efficient configuration for your purposes and other :ref:`combined
+  configuration files <common-configurations>` are available.  You can also
+  provide additional configuration parameters to tailor one of the combined
+  configurations to your needs or use our development tools to generate
+  your own combined configuration file.
 
-  More details about the configuration process can be found in the :ref:`Loading and Configuring MathJax <loading>` instructions.
+  More details about the configuration process can be found in the
+  :ref:`Loading and Configuring MathJax <loading>` instructions.
+
+If you use the code snippet given above, you will need to change the URL 
+whenever MathJax is updated and the version changes (otherwise, you will 
+remain at the version you linked to).  It is also possible to have MathJax
+select its latest version for you.  To do this, use
+
+.. code-block:: html
+
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+into the ``<head>`` block of your document.  In this case, MathJax will 
+check to see what is the most current version available, and will load 
+that, regardless of the version you specified.  That way, you can always 
+be sure you will ahve the most up-to-date version of MathJax, and will not 
+have to modify your pages as new versions are released.
 
 .. note::
 
   To see how to enter mathematics in your web pages, see `Putting
   mathematics in a web page`_ below.
 
-.. _secure-cdn-access:
+
+Installing Your Own Copy of MathJax
+===================================
+
+We recommend using a CDN service if you can, but you can also install
+MathJax on your own server, or locally on your own hard disk.  To do
+so you will need to do the following things:
+
+1.  Obtain a copy of MathJax and make it available on your server or hard disk.
+
+2.  Configure MathJax to suit the needs of your site.
+
+3.  Link MathJax into the web pages that are to include mathematics.
+
+4.  Put mathematics into your web pages so that MathJax can display
+    it.
+
+These steps are described in more detail below.
+
+
+Downloading and Installing MathJax
+----------------------------------
+
+The MathJax source code is `hosted on
+GitHub <https://github.com/mathjax/MathJax/>`_.
+To install MathJax on your own server, download
+`the latest distribution <https://github.com/mathjax/MathJax/archive/master.zip>`_,
+unpack the archive, and place the resulting MathJax folder onto your
+web server at a convenient location where you can include it into your
+web pages.  For example, making ``MathJax`` a top-level directory on
+your server would be one natural way to do this.  That would let you
+refer to the main MathJax file via the URL ``/MathJax/MathJax.js``
+from within any page on your server.
+
+Once you have MathJax set up on your server, you can test it using the
+files in the ``MathJax/test`` directory.  If you are putting MathJax
+on a server, load them in your browser using their web addresses
+rather than opening them locally (i.e., use an ``http://`` URL rather
+than a ``file://`` URL).  When you view the ``index.html`` file, after
+a few moments you should see a message indicating that MathJax appears
+to be working.  If not, check that the files have been transferred to
+the server completely and that the permissions allow the server to
+access the files and folders that are part of the MathJax directory.
+(Be sure to verify the MathJax folder's permissions as well.)  Check
+the server log files for any errors that pertain to the MathJax
+installation; this may help locate problems in the permission or
+locations of files.
+
+.. note::
+
+  For more details (such as version control access) see :ref:`the
+  installation instructions <installation>`.
+
+
+Configuring your copy of MathJax
+--------------------------------
+
+When you include MathJax into your web pages as described below, it
+will load the file ``config/TeX-MML-AM_CHTML.js`` (i.e., the file
+named ``TeX-MML-AM_CHTML.js`` in the ``config`` folder of the
+main ``MathJax`` folder).  This file preloads all the most
+commonly-used components of MathJax, allowing it to process
+mathematics that is in the TeX or LaTeX format, the AsciiMath format, or the MathML notation.
+It will produce output in HTML (with CSS) to render the
+mathematics.
+
+There are a number of other prebuilt configuration files that you can
+choose from as well, or you could use the ``config/default.js`` file and
+customize the settings yourself.
+
+.. note::
+
+  The combined configuration files are
+  described more fully in :ref:`Common Configurations
+  <common-configurations>`, and the configuration options are described in
+  :ref:`Configuration Options <configuration>`.
+
+
+
+Linking your copy of MathJax into a web page
+--------------------------------------------
+
+You can include MathJax in your web page by putting
+
+.. code-block:: html
+
+    <script type="text/javascript" async src="path-to-MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+in your document's ``<head>`` block.  Here, ``path-to-MathJax`` should
+be replaced by the URL for the main MathJax directory, so if you have
+put the ``MathJax`` directory at the top level of you server's web
+site, you could use
+
+.. code-block:: html
+
+    <script type="text/javascript" async src="/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+to load MathJax in your page.  For example, your page could look like
+
+.. code-block:: html
+
+    <html>
+        <head>
+            ...
+            <script type="text/javascript" async src="/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+        </head>
+        <body>
+            ...
+        </body>
+    </html>
+
+.. note::
+
+  If you have installed MathJax on a server that is in a different
+  domain from the one serving the page that loads MathJax, be sure to
+  read the :ref:`Notes About Shared Servers <cross-domain-linking>` for
+  more details.  In that case, you may wish to consider using MathJax via a
+  :ref:`CDN <mathjax-cdn>` rather than installing your own copy
+  of MathJax.
 
 
 Putting mathematics in a web page
@@ -91,13 +234,14 @@ Putting mathematics in a web page
 
 To put mathematics in your web page, you can use :term:`TeX` and
 :term:`LaTeX` notation, :term:`MathML` notation, :term:`AsciiMath`
-notation, or a combination of all three within the same page; the
-MathJax configuration tells MathJax which you want to use, and how you
-plan to indicate the mathematics when you are using TeX/LaTeX or AsciiMath notation. The
-configuration file used in the examples above tells MathJax to look
-for both TeX, AsciiMath, and MathML notation within your pages.  Other
-configuration files tell MathJax to use only one of these input options or one of the other output options. These three
-formats are described in more detail below.
+notation, or a combination of all three within the same page; the MathJax
+configuration tells MathJax which you want to use, and how you plan to
+indicate the mathematics when you are using TeX/LaTeX or AsciiMath
+notation.  The configuration file used in the examples above tells MathJax
+to look for three three formats (TeX, AsciiMath, and MathML) within your pages.
+Other configuration files tell MathJax to use only one of these input
+options or one of the other output options.  These three formats are
+described in more detail below.
 
 
 .. _tex-and-latex-input:
@@ -158,7 +302,7 @@ file):
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript" async
-      src="https://example.com/MathJax.js?config=TeX-AMS_CHTML">
+      src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML">
     </script>
     </head>
     <body>
@@ -186,7 +330,8 @@ and LaTeX support <TeX-support>` for some suggestions about how to
 deal with the problem.
 
 There are a number of extensions for the TeX input processor that are
-loaded by combined configuration files which include ``TeX`` in their name (e.g., ``TeX-AMS_CHTML``).  These include:
+loaded by combined configuration files which include ``TeX`` in their name
+(e.g., ``TeX-AMS_CHTML``).  These include:
 
 - `TeX/AMSmath.js`, which defines the AMS math environments and
   macros,
@@ -219,13 +364,14 @@ mathematics using standard ``<math>`` tags, where ``<math
 display="block">`` represents displayed mathematics and ``<math
 display="inline">`` or just ``<math>`` represents in-line mathematics.
 
-Note that even on old browsers this will work in HTML files, not just XHTML files (MathJax
-works with both), and that the web page need not be served with any
-special MIME-type.  However note that in HTML (as opposed to XHTML), you should **not** include a namespace prefix for your
-``<math>`` tags; for example, you should not use ``<m:math>`` except
-in an XHTML file where you have tied the ``m`` namespace to the MathML DTD by
-adding the ``xmlns:m="http://www.w3.org/1998/Math/MathML"`` attribute
-to your file's ``<html>`` tag.
+Note that even on old browsers this will work in HTML files, not just XHTML
+files (MathJax works with both), and that the web page need not be served
+with any special MIME-type.  However note that in HTML (as opposed to
+XHTML), you should **not** include a namespace prefix for your ``<math>``
+tags; for example, you should not use ``<m:math>`` except in an XHTML file
+where you have tied the ``m`` namespace to the MathML DTD by adding the
+``xmlns:m="http://www.w3.org/1998/Math/MathML"`` attribute to your file's
+``<html>`` tag.
 
 Although it is not required, it is recommended that you include the
 ``xmlns="http://www.w3.org/1998/Math/MathML"`` attribute on all
@@ -246,7 +392,7 @@ file):
     <head>
     <title>MathJax MathML Test Page</title>
     <script type="text/javascript" async
-      src="https://example.com/MathJax.js?config=MML_CHTML">
+      src="https://example.com/mathjax/MathJax.js?config=MML_CHTML">
     </script>
     </head>
     <body>
@@ -322,9 +468,10 @@ details.
 AsciiMath input
 ---------------
 
-MathJax v2.0 introduced a new input format: :term:`AsciiMath` notation by incorporating `ASCIIMathML <https://en.wikipedia.org/wiki/ASCIIMathML>`_.
-By default, you mark mathematical
-expressions written in this form by surrounding them in "back-ticks", i.e., ```...```.
+MathJax v2.0 introduced a new input format: :term:`AsciiMath` notation by
+incorporating `ASCIIMathML <https://en.wikipedia.org/wiki/ASCIIMathML>`_.
+By default, you mark mathematical expressions written in this form by
+surrounding them in "back-ticks", i.e., ```...```.
 
 Here is a complete sample page containing AsciiMath notation (also
 available in the `test/sample-asciimath.html
@@ -338,7 +485,7 @@ file):
     <head>
     <title>MathJax AsciiMath Test Page</title>
     <script type="text/javascript" async
-      src="https://example.com/MathJax.js?config=AM_CHTML"></script>
+      src="https://example.com/mathjax/MathJax.js?config=AM_CHTML"></script>
     </head>
     <body>
 
@@ -361,123 +508,6 @@ details.
 
     See the :ref:`AsciiMath support <AsciiMath-support>` page for more on
     MathJax's AsciiMath support.
-
-
-Installing Your Own Copy of MathJax
-===================================
-
-We recommend using the CDN service if you can, but you can also install
-MathJax on your own server, or locally on your own hard disk.  To do
-so you will need to do the following things:
-
-1.  Obtain a copy of MathJax and make it available on your server or hard disk.
-
-2.  Configure MathJax to suit the needs of your site.
-
-3.  Link MathJax into the web pages that are to include mathematics.
-
-4.  Put mathematics into your web pages so that MathJax can display
-    it.
-
-
-Downloading and Installing MathJax
-----------------------------------
-
-The MathJax source code is `hosted on
-GitHub <https://github.com/mathjax/MathJax/>`_.
-To install MathJax on your own server, download
-`the latest distribution <https://github.com/mathjax/MathJax/archive/master.zip>`_ and
-unpack the archive and place the resulting MathJax folder onto your
-web server at a convenient location where you can include it into your
-web pages.  For example, making ``MathJax`` a top-level directory on
-your server would be one natural way to do this.  That would let you
-refer to the main MathJax file via the URL ``/MathJax/MathJax.js``
-from within any page on your server.
-
-Once you have MathJax set up on your server, you can test it using the
-files in the ``MathJax/test`` directory.  If you are putting MathJax
-on a server, load them in your browser using their web addresses
-rather than opening them locally (i.e., use an ``http://`` URL rather
-than a ``file://`` URL).  When you view the ``index.html`` file, after
-a few moments you should see a message indicating that MathJax appears
-to be working.  If not, check that the files have been transferred to
-the server completely and that the permissions allow the server to
-access the files and folders that are part of the MathJax directory.
-(Be sure to verify the MathJax folder's permissions as well.)  Check
-the server log files for any errors that pertain to the MathJax
-installation; this may help locate problems in the permission or
-locations of files.
-
-.. note::
-
-  For more details (such as version control access) see :ref:`the installation instructions <installation>`.
-
-
-Configuring your copy of MathJax
---------------------------------
-
-When you include MathJax into your web pages as described below, it
-will load the file ``config/TeX-MML-AM_CHTML.js`` (i.e., the file
-named ``TeX-MML-AM_CHTML.js`` in the ``config`` folder of the
-main ``MathJax`` folder).  This file preloads all the most
-commonly-used components of MathJax, allowing it to process
-mathematics that is in the TeX or LaTeX format, AsciiMath format, or in MathML notation.
-It will produce output in HTML (with CSS) to render the
-mathematics.
-
-There are a number of other prebuilt configuration files that you can
-choose from as well, or you could use the ``config/default.js`` file and
-customize the settings yourself.
-
-.. note::
-
-  The combined configuration files are
-  described more fully in :ref:`Common Configurations
-  <common-configurations>`, and the configuration options are described in
-  :ref:`Configuration Options <configuration>`.
-
-
-
-Linking your copy of MathJax into a web page
---------------------------------------------
-
-You can include MathJax in your web page by putting
-
-.. code-block:: html
-
-    <script type="text/javascript" async src="path-to-MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-in your document's ``<head>`` block.  Here, ``path-to-MathJax`` should
-be replaced by the URL for the main MathJax directory, so if you have
-put the ``MathJax`` directory at the top level of you server's web
-site, you could use
-
-.. code-block:: html
-
-    <script type="text/javascript" async src="/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
-to load MathJax in your page.  For example, your page could look like
-
-.. code-block:: html
-
-    <html>
-        <head>
-            ...
-            <script type="text/javascript" async src="/MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-        </head>
-        <body>
-            ...
-        </body>
-    </html>
-
-.. note::
-
-  If you have installed MathJax on a server that is in a different
-  domain from the one serving the page that loads MathJax, be sure to
-  read the :ref:`Notes About Shared Servers <cross-domain-linking>` for
-  more details.  In that case, you may wish to consider using MathJax via a
-  :ref:`CDN <mathjax-cdn>` rather than installing your own copy
-  of MathJax.
 
 
 Where to go from here?

@@ -4,18 +4,38 @@
 What's New in MathJax v2.7
 **************************
 
-MathJax v2.7 is primarily a bug-fix release with over 60 important bug fixes, in particular to the CommonHTML output. In addition, this release adds several new features as an opt-in. The following are some of the highlights.
+MathJax v2.7 is primarily a bug-fix release with over 60 important bug
+fixes, in particular to the CommonHTML output. In addition, this
+release adds several new features as an opt-in. The following are some
+of the highlights.
 
 Features
 --------
 
-* *Common HTML output improvements* Several important bugs in the layout model have been fixed, in particular tabular layout is now much more robust.
-* *Accessibility improvements.* After the completion of the MathJax Accessibility Extensions, we are integrating the opt-in for the MathJax menu into the core distribution. We are grateful to the web accessibility community for their guidance, support, and feedback in our efforts towards making MathJax completely accessible to all users. This allows end-users to opt into the following features via the MathJax Menu:
+* *Common HTML output improvements* Several important bugs in the
+  layout model have been fixed, in particular tabular layout is now
+  much more robust.
+* *Accessibility improvements.* After the completion of the MathJax
+  Accessibility Extensions, we are integrating the opt-in for the
+  MathJax menu into the core distribution. We are grateful to the web
+  accessibility community for their guidance, support, and feedback in
+  our efforts towards making MathJax completely accessible to all
+  users. This allows end-users to opt into the following features via
+  the MathJax Menu:
 
-  * *Responsive Equations.* An innovative responsive rendering of mathematical content through collapsing and exploration of subexpressions.
-  * *Universal aural Rendering.* An aural rendering tool providing on-the-fly speech-text for mathematical content and its subexpressions using various rule sets.
-  * *Full Exploration.* A fully accessible exploration tool, allowing for meaningful exploration of mathematical content including multiple highlighting features and synchronized aural rendering.
-  * For more information check the `release announcement <https://www.mathjax.org/mathjax-accessibility-extensions-v1-now-available/>`__ and the dedicated repository at `mathjax/mathjax-a11y <https://github.com/mathjax/MathJax-a11y>`__.
+  * *Responsive Equations.* An innovative responsive rendering of
+    mathematical content through collapsing and exploration of
+    subexpressions.
+  * *Universal aural Rendering.* An aural rendering tool providing
+    on-the-fly speech-text for mathematical content and its
+    subexpressions using various rule sets.
+  * *Full Exploration.* A fully accessible exploration tool, allowing
+    for meaningful exploration of mathematical content including
+    multiple highlighting features and synchronized aural rendering.
+  * For more information check the `release announcement
+    <https://www.mathjax.org/mathjax-accessibility-extensions-v1-now-available/>`__
+    and the dedicated repository at `mathjax/mathjax-a11y
+    <https://github.com/mathjax/MathJax-a11y>`__.
 
 For a detailed listing please check the `release milestone <https://github.com/mathjax/MathJax/milestone/14?closed=1>`__.
 
@@ -131,3 +151,4 @@ Misc.
 * `#1554 <https://github.com/mathjax/MathJax/issues/1554>`__ Safe extension: Add filtering of CSS styles like ``padding``, ``margin``.
 * `#1590 <https://github.com/mathjax/MathJax/issues/1590>`__ Set previews to have ``display:none``.
 * `#1591 <https://github.com/mathjax/MathJax/issues/1591>`__ Change ``rev=`` to ``V=`` in cache breaking code.
+
