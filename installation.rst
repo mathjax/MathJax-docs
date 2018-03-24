@@ -12,7 +12,7 @@ installation and go directly to :ref:`Configuring MathJax <loading>`.
 
 MathJax can be loaded from a public web server or privately from your
 hard drive or other local media. To use MathJax in either way, you
-will need to obtain a copy of MathJax. There are three ways to do
+will need to obtain a copy of MathJax. There are several ways to do
 this: via ``git``, ``svn``, ``npm``, ``composer``, ``bower``, or via a
 pre-packaged archive. We recommend ``git`` or ``svn``, as it is easier
 to keep your installation up to date with these tools.
