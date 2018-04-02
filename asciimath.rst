@@ -92,7 +92,7 @@ things like less-than and greater-than signs (``<`` and ``>``), and
 ampersands (``&``), which have special meaning to the browsers.  For
 example,
 
-.. code-block:: html
+.. code:: html
 
 	... when `x<y` we have ...
 
@@ -109,7 +109,7 @@ use to spot this problem; it is a common error and should be avoided.
 Usually, it is sufficient to simply put spaces around these symbols to
 cause the browser to avoid them, so
 
-.. code-block:: html
+.. code:: html
 
 	... when `x < y` we have ...
 

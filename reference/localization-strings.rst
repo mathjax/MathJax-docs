@@ -251,7 +251,7 @@ that you can include substitution parameters as usual:
 It is even possible to substitute HTML snippets into a localized
 string (when it is within an HTML snippet):
 
-.. code-block:: javascript
+.. code:: javascript
 
     [
       ["MathJaxLink","This is documented at the %1 website",[

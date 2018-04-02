@@ -18,7 +18,7 @@ multiple) third-party locations for easier reference.
 To specify the URL, set ``MathJax.Ajax.config.path["Extra"]`` in your
 configuration file, for example,
 
-.. code-block:: javascript
+.. code-block:: html
 
     <script type="text/x-mathjax-config">
       MathJax.Ajax.config.path["Extra"] = "https://my.extra.com/mathjax/extra";
@@ -26,7 +26,7 @@ configuration file, for example,
 
 or equivalently,
 
-.. code-block:: javascript
+.. code-block:: html
 
     <script type="text/javascript">
       window.MathJax = {
