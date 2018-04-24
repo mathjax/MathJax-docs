@@ -124,7 +124,7 @@ always use the latest version of MathJax, you can use
 
 .. code-block::  sh
 
-  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/lastes.js   # the latest release
+  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js   # the latest release
 
 and MathJax will look up the lastest version and load that (regardless
 of the version number referenced in your URL).  That means you will
