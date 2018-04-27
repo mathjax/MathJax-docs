@@ -191,7 +191,7 @@ behavior of MathJax.  They are given with their default values.
     than simply crash, MathJax can report an error and go on.  The
     options you can set include:
 
-    .. describe:: message: ["[Math Processing Error"]]
+    .. describe:: message: ["[Math Processing Error]"]
 
         This is an HTML snippet that will be inserted at the location
         of the mathematics for any formula that causes MathJax to
