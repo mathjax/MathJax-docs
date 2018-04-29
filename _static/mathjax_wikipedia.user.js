@@ -1,30 +1,22 @@
 // ==UserScript==
 // @name           MathJax in Wikipedia
-// @namespace      http://www.mathjax.org/
+// @namespace      https://www.mathjax.org/
 // @description    Insert MathJax into Wikipedia pages
-// @include        http://en.wikipedia.org/wiki/*
+// @include        https://*.wikipedia.org/wiki/*
 // ==/UserScript==
 
-if ((window.unsafeWindow == null ? window : unsafeWindow).MathJax == null) {
-  //
-  //  Replace the images with MathJax scripts of type math/tex
-  //
-  var images = document.getElementsByTagName('img'), count = 0;
-  for (var i = images.length - 1; i >= 0; i--) {
-    var img = images[i];
-    if (img.className === "tex") {
-      var script = document.createElement("script"); script.type = "math/tex";
-      if (window.opera) {script.innerHTML = img.alt} else {script.text = img.alt}
-      img.parentNode.replaceChild(script,img); count++;
-    }
-  }
-  if (count) {
-    //
-    //  Load MathJax and have it process the page
-    //
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_CHTML-full";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  }
-}
+// replace the images with MathJax scripts of type math/tex
+if (window.MathJax) throw "MathJax already loaded!";
+var imgs = document.querySelectorAll('img.mwe-math-fallback-image-inline')
+if (!imgs.length) throw "no matches!";
+imgs.forEach((img) => {
+  var script = document.createElement("script");
+  script.type = 'math/tex';
+  script[window.opera ? 'innerHTML' : 'text'] = img.alt;
+  img.parentNode.replaceChild(script, img);
+})
+// Load MathJax and have it process the page
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = 'https://cdn.mathjax.org/mathjax/2.7-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML-full';
+document.querySelector('head').appendChild(script);
