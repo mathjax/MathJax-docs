@@ -1190,12 +1190,10 @@ B
 
 .. code-block:: latex
 
-    \Bbb                    mediawiki-texvc
     \backepsilon            AMSsymbols
     \backprime              AMSsymbols
     \backsim                AMSsymbols
     \backsimeq              AMSsymbols
-    \backslash
     \backslash
     \bar
     \barwedge               AMSsymbols
@@ -1263,7 +1261,7 @@ B
     \brack
     \breve
     \buildrel
-    \bul                    mediawiki-texvc
+    \bull                   mediawiki-texvc
     \bullet
     \Bumpeq                 AMSsymbols
     \bumpeq                 AMSsymbols
@@ -1466,7 +1464,6 @@ G
     \gnsim                  AMSsymbols
     \grave
     \gt
-    \gt
     \gtrapprox              AMSsymbols
     \gtrdot                 AMSsymbols
     \gtreqless              AMSsymbols
@@ -1639,7 +1636,6 @@ L
     \lrArr                  mediawiki-texvc
     \lrcorner               AMSsymbols
     \Lsh                    AMSsymbols
-    \lt
     \lt
     \ltimes                 AMSsymbols
     \lVert                  AMSmath
@@ -1934,7 +1930,7 @@ S
     \smash
     \smile
     \spades                 mediawiki-texvc
-    \Space
+    \Space                                 non-standard
     \space
     \spadesuit
     \sphericalangle         AMSsymbols
