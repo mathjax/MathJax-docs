@@ -1198,6 +1198,7 @@ B
     \bar
     \barwedge               AMSsymbols
     \Bbb
+    \Bbb                    mediawiki-texvc
     \Bbbk                   AMSsymbols
     \bbox                  [bbox]
     \bcancel                cancel
