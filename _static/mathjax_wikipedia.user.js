@@ -24,7 +24,7 @@ if ((window.unsafeWindow == null ? window : unsafeWindow).MathJax == null) {
     //
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_CHTML-full";
+    script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_CHTML-full";
     document.getElementsByTagName("head")[0].appendChild(script);
   }
 }

@@ -102,7 +102,7 @@ To enable MathJax in your web platform using cdnjs, add the line:
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_CHTML"></script>
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML"></script>
 
 either just before the ``</head>`` tag in your theme file, or at the end of
 the file if it contains no ``</head>``.
@@ -112,7 +112,7 @@ Alternatively, you can use
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_CHTML"></script>
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_CHTML"></script>
 
 to get the latest release of MathJax (regardless of the version you
 have indicated in the URL).

@@ -107,7 +107,7 @@ IE+MathPlayer.
           (document.getElementsByTagNameNS("http://www.w3.org/1998/Math/MathML","math").length > 0))) {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_CHTML-full";
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_CHTML-full";
         document.getElementsByTagName("head")[0].appendChild(script);
       }
     }
@@ -147,7 +147,7 @@ converting the math images to their original TeX code.
         //
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-AMS-MML_CHTML-full";
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_CHTML-full";
         document.getElementsByTagName("head")[0].appendChild(script);
       }
     }
