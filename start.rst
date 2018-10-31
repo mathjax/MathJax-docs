@@ -238,7 +238,7 @@ notation, or a combination of all three within the same page; the MathJax
 configuration tells MathJax which you want to use, and how you plan to
 indicate the mathematics when you are using TeX/LaTeX or AsciiMath
 notation.  The configuration file used in the examples above tells MathJax
-to look for three three formats (TeX, AsciiMath, and MathML) within your pages.
+to look for three formats (TeX, AsciiMath, and MathML) within your pages.
 Other configuration files tell MathJax to use only one of these input
 options or one of the other output options.  These three formats are
 described in more detail below.
