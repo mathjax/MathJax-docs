@@ -163,7 +163,7 @@ format.  Blog and wiki software could extend their own markup
 languages to include math delimiters, which they could convert to
 MathJax's ``<script>`` format automatically.
 
-Note, however, that Internet Explorer (version 8 and belowhas a bug
+Note, however, that Internet Explorer (version 8 and below has a bug
 that causes it to remove the space before a ``<script>`` tag if there
 is also a space after it, which can cause serious spacing problems
 with in-line math in Internet Explorer.  There are three possible
