@@ -100,7 +100,7 @@ select its latest version for you.  To do this, use
 into the ``<head>`` block of your document.  In this case, MathJax will 
 check to see what is the most current version available, and will load 
 that, regardless of the version you specified.  That way, you can always 
-be sure you will ahve the most up-to-date version of MathJax, and will not 
+be sure you will have the most up-to-date version of MathJax, and will not 
 have to modify your pages as new versions are released.
 
 .. note::
