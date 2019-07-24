@@ -69,6 +69,14 @@ exclude_trees = ['_build']
 # The reST default role (used for this markup: `text`) to use for all documents.
 #default_role = None
 
+#
+# DPVC
+#
+primary_domain = 'js'
+#
+# /DPVC
+#
+
 # If true, '()' will be appended to :func: etc. cross-reference text.
 #add_function_parentheses = True
 

@@ -1,4 +1,4 @@
-.. _MathML-support:
+.. _mathml-support:
 
 **********************
 MathJax MathML Support

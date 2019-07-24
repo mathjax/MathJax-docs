@@ -3,96 +3,121 @@ MathJax Documentation
 #####################
 
 MathJax is an open-source JavaScript display engine for LaTeX,
-MathML, and AsciiMath notation that works in all modern browsers.
+MathML, and AsciiMath notation that works in all modern browsers,
+with built-in support for assistive technology like screen readers.
+
+Version 3.0 of MathJax is a complete rewrite of MathJax from the
+ground up, and its usage and configuration is significantly different
+from that of MathJax version 2.  Use the green menu at the bottom of
+the sidebar on the left to access the version 2 documentation if you
+need it.
 
 .. toctree::
-    :caption: Basic Usage
+    :caption: The Basics
+    :name: basics
     :maxdepth: 1
 
-    What is MathJax? <mathjax>
-    Getting Started with MathJax <start>
-    Installing and Testing MathJax <installation>
-    Loading and Configuring MathJax <configuration>
-    Combined MathJax Configurations <config-files>
+    What is MathJax?                  <basic/mathjax>
+    MathJax Accessibility Features    <basic/accessibility>
+    Writing Mathematics for MathJax   <basic/mathematics>
+    The MathJax Community             <basic/community>
+    Reporting Issues with MathJax     <basic/bugs>
+    
+.. toctree::
+   :caption: Including MathJax in a Web Page
+   :name: browser-components
+   :maxdepth: 1
+    
+    Getting Started with Components   <web/start>
+    Configuring and Loading MathJax   <web/configuration>
+    The MathJax Components            <web/components>
+    Typesetting and Converting Math   <web/typeset>
+    Hosting Your Own Copy of MathJax  <web/hosting>
+    Making a Custom Build of MathJax  <web/webpack>
+    Examples in a Browser             <web/examples>
 
 .. toctree::
-    :maxdepth: 1
+   :caption: MathJax on a Server Using NodeJS
+   :name: server-nodejs
+   :maxdepth: 2
 
-    MathJax TeX and LaTeX Support <tex>
-    MathJax MathML Support <mathml>
-    MathJax AsciiMath Support <asciimath>
-    MathJax Output Formats <output>
-    MathJax Font Support <font-support>
-
-.. toctree::
-    :maxdepth: 1
-
-    MathJax Localization <localization>
-    MathJax Safe-mode <safe-mode>
+   Getting Started with node.js       <server/start>
+   MathJax Three Different Ways       <server/overview>
+   Examples in node.js                <server/examples>
 
 .. toctree::
-    :maxdepth: 1
+   :caption: MathJax Input Formats
+   :name: input-formats
+   :maxdepth: 1
 
-    The MathJax Community <community>
+   TeX and LaTeX Support              <input/tex/index>
+   MathML Support                     <input/mathml>
+   AsciiMath Support                  <input/asciimath>
+   
+.. toctree::
+   :caption: MathJax Output Formats
+   :name: output-formats
+   :maxdepth: 1
 
+   HTML Output                        <output/html>
+   SVG Output                         <output/svg>
+   Font Support                       <output/fonts>
 
 .. toctree::
-    :caption: Configuration options
+    :caption: Configuration Options
+    :name: configuration-options
     :maxdepth: 1
 
-    Configuration options <options/index>
+    Configuring MathJax               <options/index>
 
 .. toctree::
     :caption: Advanced topics
     :name: advanced-topics
     :maxdepth: 1
 
-    The MathJax Processing Model <advanced/model>
-    The MathJax Startup Sequence <advanced/startup>
+    MathJax in Dynamic Content        <advanced/typeset>
+    Custom Extensions                 <advanced/extensions>
+    The MathJax Processing Model      <advanced/model>
     Synchronizing Your Code with MathJax <advanced/synchronize>
-    Loading MathJax Dynamically <advanced/dynamic>
-    Modifying Math on the Page <advanced/typeset>
-    Obtaining the MathML for an Expression <advanced/toMathML>
-    Writing MathJax Extensions <advanced/extension-writing>
-    Debugging Tips <advanced/debugging-tips>
-    MathJax on NodeJS <advanced/mathjax-node>
 
 .. toctree::
     :caption: The MathJax API
+    :name: api
     :maxdepth: 1
 
-    Details of the MathJax API<api/index>
+    The MathJax Compoment API        <api/components>
+    The Direct MathJax API           <api/direct>
 
 .. toctree::
-    :caption: Miscellanea
+    :caption: Miscellaneous
+    :name: miscellaneous
     :maxdepth: 1
 
-    Accessibility features <misc/accessibility-features>
-    Browser Compatibility <misc/browser-compatibility>
-    EPUB3 Reading Systems <misc/epub>
-    MathJax Badges and Logo <misc/badges>
-    Articles and Presentations <misc/articles>
-    Using MathJax in Web Platforms <misc/platforms>
-    MathJax FAQ <misc/faq>
-    MathJax in Use <misc/mathjax-in-use>
+    MathJax Badges and Logo           <misc/badges>
+    MathJax FAQ                       <misc/faq>
+    Browser Support                   <misc/browsers>
+    Articles and Presentations        <misc/articles>
 
 .. toctree::
-    :caption: Upgrading MathJax
-    :maxdepth: 2
-    
-    Upgrading MathJax <upgrading/index>
-
-.. toctree::
-    :caption: Reference Pages
+    :caption: MathJax Updates
+    :name: mathjax-updates
     :maxdepth: 1
 
-    HTML snippets <reference/HTML-snippets>
-    CSS style objects <reference/CSS-styles>
-    Localization strings <reference/localization-strings>
-    Glossary <reference/glossary>
+    Upgrading from Version 2.x        <upgrading/v2>
+    What's New in Version 3.0         <upgrading/whats-new-3.0>
+    What's New in Earlier Versions    <upgrading/earler/index>
 
-* :ref:`Search <search>`
+------
 
---------
+.. image:: https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A
+   :alt: powered-by NumFocus
+   :target: http://www.numfocus.org
+
+MathJax is a fiscally sponsored project under the auspices of the
+`NumFOCUS Foundation <http://www.numfocus.org/>`_, which serves as the
+legal and fiscal umbrella for the MathJax project and several dozen
+other open-source, scientifically oriented software products.
+
+------
 
 This version of the documentation was built |today|.

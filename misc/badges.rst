@@ -1,8 +1,8 @@
 .. _mathjax-badges:
 
-**********************************
+**************
 MathJax Badges
-**********************************
+**************
 
 We are proud of the work we have done on MathJax, and we hope you are
 proud to use it. If you would like to show your support for the MathJax
@@ -11,7 +11,6 @@ badges on your pages that use it.
 
 The MathJax Badges
 ==================
-
 
 .. raw:: html
 
@@ -112,9 +111,8 @@ Alternative versions
 While we do not allow the modification of the badges or the logo, we are
 open to requests for different versions.
 
--  An `SVG
-   version <https://www.mathjax.org/badge/badge-square.svg>`__ of
-   the square badge is available.
+-  An `SVG version <https://www.mathjax.org/badge/badge-square.svg>`__
+   of the square badge is available.
 -  Smaller versions of the main logo are available
 
    -  `96x20 <https://www.mathjax.org/badge/logo2.png>`__
@@ -134,44 +132,44 @@ observe these simple rules (for the fine print, see below):
 Things You Can Do
 ~~~~~~~~~~~~~~~~~
 
--  use the MathJax Logo or Badges in marketing, and other publicity
-   materials related to MathJax;
--  distribute unchanged MathJax products (code, development tools,
-   documentation) as long as you distribute them without charge;
--  describe your own software as "based on MathJax technology", or
+-  Use the MathJax Logo or Badges in marketing, and other publicity
+   materials related to MathJax.
+-  Distribute unchanged MathJax products (code, development tools,
+   documentation) as long as you distribute them without charge.
+-  Describe your own software as "based on MathJax technology", or
    "incorporating MathJax source code” if your software includes
-   modified MathJax products;
--  link to MathJax’s website(s) by using the logos and badges we
-   provide;
--  use MathJax's word marks in describing and advertising your services
+   modified MathJax products.
+-  Link to MathJax’s website(s) by using the logos and badges we
+   provide.
+-  Use MathJax's word marks in describing and advertising your services
    or products relating to a MathJax product, so long as you don't do
    anything that might mislead customers. For example, it's OK if your
-   website says, "Customization services for MathJax available here”;
-   and
--  make t-shirts, desktop wallpaper, or baseball caps though only for
+   website says, "Customization services for MathJax available here”.
+-  Make t-shirts, desktop wallpaper, or baseball caps though only for
    yourself and your friends (meaning people from whom you don't receive
    anything of value in return).
 
 Things You Cannot Do
 ~~~~~~~~~~~~~~~~~~~~
 
--  alter our logo or badges in any way
--  use our logo or badge online without including the link to the
-   MathJax home page
--  place our logo or badges in such close proximity to other content
-   that it is indistinguishable
--  make our logo or badges the most distinctive or prominent feature on
-   your website, printed material or other content
--  use our logo or badges in a way that suggests any type of association
+-  Alter our logo or badges in any way.
+-  Use our logo or badge online without including the link to the
+   MathJax home page.
+-  Place our logo or badges in such close proximity to other content
+   that it is indistinguishable.
+-  Make our logo or badges the most distinctive or prominent feature on
+   your website, printed material or other content.
+-  Use our logo or badges in a way that suggests any type of association
    or partnership with MathJax or approval, sponsorship or endorsement
-   by MathJax (unless allowed via a license from us)
--  use our logo or badges in a way that is harmful, deceptive, obscene
-   or otherwise objectionable to the average person
--  use our logo or badges on websites or other places containing content
+   by MathJax (unless allowed via a license from us).
+-  Use our logo or badges in a way that is harmful, deceptive, obscene
+   or otherwise objectionable to the average person.
+-  Use our logo or badges on websites or other places containing content
    associated with hate speech, pornography, gambling or illegal
-   activities
--  use our logo or badges in, or in connection with, content that
-   disparages us or sullies our reputation
+   activities.
+-  Use our logo or badges in, or in connection with, content that
+   disparages us or sullies our reputation.
+
 
 And now the fine print:
 ~~~~~~~~~~~~~~~~~~~~~~~

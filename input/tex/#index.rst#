@@ -1,0 +1,1144 @@
+.. _tex-support:
+
+*****************************
+MathJax TeX and LaTeX Support
+*****************************
+
+The support for `TeX` and `LaTeX` in MathJax involves two functions:
+the first looks for mathematics within your web page (indicated by
+math delimiters like ``$$...$$``) and marks the mathematics for later
+processing by MathJax, and the second is what converts the TeX
+notation into MathJax's internal format, where one of MathJax's output
+processors then displays it in the web page.  In MathJax version 2,
+these were separated into distinct components (the ``tex2jax``
+preprocessor and the TeX input jax), but in version 3, the ``tex2jax``
+functions have been folded into the TeX input jax.
+
+The TeX input jax can be configured to look for whatever markers you
+want to use for your math delimiters.  See the :ref:`TeX configuration
+options <configure-tex>` section for details on how to customize the
+delimiters, and other options for TeX input.
+
+The TeX input processor handles conversion of your mathematical
+notation into MathJax's internal format (which is essentially MathML),
+and so acts as a TeX to MathML converter.  The TeX input processor has
+can also be customized through the use of extensions that define
+additional functionality (see the :ref:`tex-extensions` section).
+
+Note: if you are not familiar with TeX/LaTeX, a good starting point is
+the `LaTeX Wiki book <http://en.wikibooks.org/wiki/LaTeX>`__.
+
+-----
+
+.. toctree::
+   :maxdepth: 2
+
+   differences
+   delimiters
+   html
+   macros
+   eqnumbers
+   extensions
+
+.. toctree::
+   :maxdepth: 2
+
+   <extensions/index.rst>
+
+.. toctree::
+   :maxdepth: 2
+              
+   macros/index
+
+
+
+.. _tex-commands:
+
+Supported LaTeX commands
+========================
+
+This is a long list of the TeX macros supported by MathJax.  If the
+macro is defined in an extension, the name of the extension follows
+the macro name.  If the extension is in brackets, the extension will
+be loaded automatically when the macro or environment is first used.
+
+More complete details about how to use these macros, with examples and
+explanations, is available at Carol Fisher's `TeX Commands Available
+in MathJax
+<http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`_ page.
+
+Symbols
+-------
+
+.. code-block:: latex
+
+    #
+    %
+    &
+    ^
+    _
+    {
+    }
+    ~
+    '
+
+    \   (backslash-space)
+    \!
+    \#
+    \$
+    \%
+    \&
+    \,
+    \:
+    \;
+    \>
+    \\
+    \_
+    \{
+    \|
+    \}
+
+A
+-
+
+.. code-block:: latex
+
+    \AA                     mediawiki-texvc
+    \above
+    \abovewithdelims
+    \acute
+    \alef                   mediawiki-texvc
+    \aleph
+    \alpha
+    \Alpha                  mediawiki-texvc
+    \amalg
+    \And
+    \and                    mediawiki-texvc
+    \ang                    mediawiki-texvc
+    \angle
+    \approx
+    \approxeq               AMSsymbols
+    \arccos
+    \arcsin
+    \arctan
+    \arg
+    \array
+    \Arrowvert
+    \arrowvert
+    \ast
+    \asymp
+    \atop
+    \atopwithdelims
+
+B
+-
+
+.. code-block:: latex
+
+    \backepsilon            AMSsymbols
+    \backprime              AMSsymbols
+    \backsim                AMSsymbols
+    \backsimeq              AMSsymbols
+    \backslash
+    \bar
+    \barwedge               AMSsymbols
+    \Bbb
+    \Bbb                    mediawiki-texvc
+    \Bbbk                   AMSsymbols
+    \bbox                  [bbox]
+    \bcancel                cancel
+    \because                AMSsymbols
+    \begin
+    \begingroup             begingroup      non-standard
+    \beta
+    \Beta                   mediawiki-texvc
+    \beth                   AMSsymbols
+    \between                AMSsymbols
+    \bf
+    \Big
+    \big
+    \bigcap
+    \bigcirc
+    \bigcup
+    \Bigg
+    \bigg
+    \Biggl
+    \biggl
+    \Biggm
+    \biggm
+    \Biggr
+    \biggr
+    \Bigl
+    \bigl
+    \Bigm
+    \bigm
+    \bigodot
+    \bigoplus
+    \bigotimes
+    \Bigr
+    \bigr
+    \bigsqcup
+    \bigstar                AMSsymbols
+    \bigtriangledown
+    \bigtriangleup
+    \biguplus
+    \bigvee
+    \bigwedge
+    \binom                  AMSmath
+    \blacklozenge           AMSsymbols
+    \blacksquare            AMSsymbols
+    \blacktriangle          AMSsymbols
+    \blacktriangledown      AMSsymbols
+    \blacktriangleleft      AMSsymbols
+    \blacktriangleright     AMSsymbols
+    \bmod
+    \bold                   mediawiki-texvc
+    \boldsymbol            [boldsymbol]
+    \bot
+    \bowtie
+    \Box                    AMSsymbols
+    \boxdot                 AMSsymbols
+    \boxed                  AMSmath
+    \boxminus               AMSsymbols
+    \boxplus                AMSsymbols
+    \boxtimes               AMSsymbols
+    \brace
+    \bracevert
+    \brack
+    \breve
+    \buildrel
+    \bull                   mediawiki-texvc
+    \bullet
+    \Bumpeq                 AMSsymbols
+    \bumpeq                 AMSsymbols
+
+C
+-
+
+.. code-block:: latex
+
+    \C                      mediawiki-texvc
+    \cal
+    \cancel                 cancel
+    \cancelto               cancel
+    \cap
+    \Cap                    AMSsymbols
+    \cases
+    \cdot
+    \cdotp
+    \cdots
+    \ce                     mhchem
+    \cee                    mhchem
+    \centerdot              AMSsymbols
+    \cf                     mhchem
+    \cfrac                  AMSmath
+    \check
+    \checkmark              AMSsymbols
+    \chi
+    \Chi                    mediawiki-texvc
+    \choose
+    \circ
+    \circeq                 AMSsymbols
+    \circlearrowleft        AMSsymbols
+    \circlearrowright       AMSsymbols
+    \circledast             AMSsymbols
+    \circledcirc            AMSsymbols
+    \circleddash            AMSsymbols
+    \circledR               AMSsymbols
+    \circledS               AMSsymbols
+    \class                 [HTML]           non-standard
+    \clubs                  mediawiki-texvc
+    \clubsuit
+    \cnums                  mediawiki-texvc
+    \colon
+    \color                  color
+    \colorbox               color
+    \complement             AMSsymbols
+    \Complex                mediawiki-texvc
+    \cong
+    \coppa                  mediawiki-texvc
+    \Coppa                  mediawiki-texvc
+    \coprod
+    \cos
+    \cosh
+    \cot
+    \coth
+    \cr
+    \csc
+    \cssId                 [HTML]           non-standard
+    \cup
+    \Cup                    AMSsymbols
+    \curlyeqprec            AMSsymbols
+    \curlyeqsucc            AMSsymbols
+    \curlyvee               AMSsymbols
+    \curlywedge             AMSsymbols
+    \curvearrowleft         AMSsymbols
+    \curvearrowright        AMSsymbols
+
+D
+-
+
+.. code-block:: latex
+
+    \dagger
+    \Dagger                 mediawiki-texvc
+    \daleth                 AMSsymbols
+    \Darr                   mediawiki-texvc
+    \dashleftarrow          AMSsymbols
+    \dashrightarrow         AMSsymbols
+    \dashv
+    \dbinom                 AMSmath
+    \ddagger
+    \ddddot                 AMSmath
+    \dddot                  AMSmath
+    \ddot
+    \ddots
+    \DeclareMathOperator    AMSmath
+    \definecolor            color
+    \def                   [newcommand]
+    \deg
+    \Delta
+    \delta
+    \det
+    \dfrac                  AMSmath
+    \diagdown               AMSsymbols
+    \diagup                 AMSsymbols
+    \diamond
+    \Diamond                AMSsymbols
+    \diamonds               mediawiki-texvc
+    \diamondsuit
+    \digamma                AMSsymbols
+    \Digamma                mediawiki-texvc
+    \dim
+    \displaylines
+    \displaystyle
+    \div
+    \divideontimes          AMSsymbols
+    \dot
+    \doteq
+    \Doteq                  AMSsymbols
+    \doteqdot               AMSsymbols
+    \dotplus                AMSsymbols
+    \dots
+    \dotsb
+    \dotsc
+    \dotsi
+    \dotsm
+    \dotso
+    \doublebarwedge         AMSsymbols
+    \doublecap              AMSsymbols
+    \doublecup              AMSsymbols
+    \Downarrow
+    \downarrow
+    \downdownarrows         AMSsymbols
+    \downharpoonleft        AMSsymbols
+    \downharpoonright       AMSsymbols
+
+E
+-
+
+.. code-block:: latex
+
+    \ell
+    \empty                  mediawiki-texvc
+    \emptyset
+    \enclose                enclose         non-standard
+    \end
+    \endgroup               begingroup      non-standard
+    \enspace
+    \epsilon
+    \Epsilon                mediawiki-texvc
+    \eqalign
+    \eqalignno
+    \eqcirc                 AMSsymbols
+    \eqref                 [AMSmath]
+    \eqsim                  AMSsymbols
+    \eqslantgtr             AMSsymbols
+    \eqslantless            AMSsymbols
+    \equiv
+    \eta
+    \Eta                    mediawiki-texvc
+    \eth                    AMSsymbols
+    \euro                   mediawiki-texvc
+    \exist                  mediawiki-texvc
+    \exists
+    \exp
+
+F
+-
+
+.. code-block:: latex
+
+    \fallingdotseq          AMSsymbols
+    \fbox
+    \fcolorbox              color
+    \Finv                   AMSsymbols
+    \flat
+    \forall
+    \frac
+    \frac                   AMSmath
+    \frak
+    \frown
+
+G
+-
+
+.. code-block:: latex
+
+    \Game                   AMSsymbols
+    \Gamma
+    \gamma
+    \gcd
+    \gdef                   begingroup
+    \ge
+    \geneuro                mediawiki-texvc
+    \geneuronarrow          mediawiki-texvc
+    \geneurowide            mediawiki-texvc
+    \genfrac                AMSmath
+    \geq
+    \geqq                   AMSsymbols
+    \geqslant               AMSsymbols
+    \gets
+    \gg
+    \ggg                    AMSsymbols
+    \gggtr                  AMSsymbols
+    \gimel                  AMSsymbols
+    \global                 begingroup
+    \gnapprox               AMSsymbols
+    \gneq                   AMSsymbols
+    \gneqq                  AMSsymbols
+    \gnsim                  AMSsymbols
+    \grave
+    \gt
+    \gtrapprox              AMSsymbols
+    \gtrdot                 AMSsymbols
+    \gtreqless              AMSsymbols
+    \gtreqqless             AMSsymbols
+    \gtrless                AMSsymbols
+    \gtrsim                 AMSsymbols
+    \gvertneqq              AMSsymbols
+
+H
+-
+
+.. code-block:: latex
+
+    \H                      mediawiki-texvc
+    \hAar                   mediawiki-texvc
+    \harr                   mediawiki-texvc
+    \Harr                   mediawiki-texvc
+    \hat
+    \hbar
+    \hbox
+    \hdashline
+    \hearts                 mediawiki-texvc
+    \heartsuit
+    \hline
+    \hom
+    \hookleftarrow
+    \hookrightarrow
+    \hphantom
+    \href                  [HTML]
+    \hskip
+    \hslash                 AMSsymbols
+    \hspace
+    \Huge
+    \huge
+    \idotsint               AMSmath
+
+I
+-
+
+.. code-block:: latex
+
+    \iff
+    \iiiint                 AMSmath
+    \iiint
+    \iint
+    \Im
+    \image                  mediawiki-texvc
+    \imath
+    \impliedby              AMSsymbols
+    \implies                AMSsymbols
+    \in
+    \inf
+    \infin                  mediawiki-texvc
+    \infty
+    \injlim                 AMSmath
+    \int
+    \intercal               AMSsymbols
+    \intop
+    \isin                   mediawiki-texvc
+    \iota
+    \Iota                   mediawiki-texvc
+    \it
+
+J
+-
+
+.. code-block:: latex
+
+    \jmath
+    \Join                   AMSsymbols
+
+K
+-
+
+.. code-block:: latex
+
+    \kappa
+    \Kappa                  mediawiki-texvc
+    \ker
+    \kern
+    \koppa                  mediawiki-texvc
+    \Koppa                  mediawiki-texvc
+
+L
+-
+
+.. code-block:: latex
+
+    \label                 [AMSmath]
+    \Lambda
+    \lambda
+    \land
+    \lang                   mediawiki-texvc
+    \langle
+    \LARGE
+    \Large
+    \large
+    \larr                   mediawiki-texvc
+    \Larr                   mediawiki-texvc
+    \lArr                   mediawiki-texvc
+    \LaTeX
+    \lbrace
+    \lbrack
+    \lceil
+    \ldotp
+    \ldots
+    \le
+    \leadsto                AMSsymbols
+    \left
+    \Leftarrow
+    \leftarrow
+    \leftarrowtail          AMSsymbols
+    \leftharpoondown
+    \leftharpoonup
+    \leftleftarrows         AMSsymbols
+    \Leftrightarrow
+    \leftrightarrow
+    \leftrightarrows        AMSsymbols
+    \leftrightharpoons      AMSsymbols
+    \leftrightsquigarrow    AMSsymbols
+    \leftroot
+    \leftthreetimes         AMSsymbols
+    \leq
+    \leqalignno
+    \leqq                   AMSsymbols
+    \leqslant               AMSsymbols
+    \lessapprox             AMSsymbols
+    \lessdot                AMSsymbols
+    \lesseqgtr              AMSsymbols
+    \lesseqqgtr             AMSsymbols
+    \lessgtr                AMSsymbols
+    \lesssim                AMSsymbols
+    \let                   [newcommand]
+    \lfloor
+    \lg
+    \lgroup
+    \lhd                    AMSsymbols
+    \lim
+    \liminf
+    \limits
+    \limsup
+    \ll
+    \llap
+    \llcorner               AMSsymbols
+    \Lleftarrow             AMSsymbols
+    \lll                    AMSsymbols
+    \llless                 AMSsymbols
+    \lmoustache
+    \ln
+    \lnapprox               AMSsymbols
+    \lneq                   AMSsymbols
+    \lneqq                  AMSsymbols
+    \lnot
+    \lnsim                  AMSsymbols
+    \log
+    \Longleftarrow
+    \longleftarrow
+    \Longleftrightarrow
+    \longleftrightarrow
+    \longmapsto
+    \Longrightarrow
+    \longrightarrow
+    \looparrowleft          AMSsymbols
+    \looparrowright         AMSsymbols
+    \lor
+    \lower
+    \lozenge                AMSsymbols
+    \lrarr                  mediawiki-texvc
+    \Lrarr                  mediawiki-texvc
+    \lrArr                  mediawiki-texvc
+    \lrcorner               AMSsymbols
+    \Lsh                    AMSsymbols
+    \lt
+    \ltimes                 AMSsymbols
+    \lVert                  AMSmath
+    \lvert                  AMSmath
+    \lvertneqq              AMSsymbols
+
+M
+-
+
+.. code-block:: latex
+
+    \maltese                AMSsymbols
+    \mapsto
+    \mathbb
+    \mathbf
+    \mathbin
+    \mathcal
+    \mathchoice            [mathchoice]
+    \mathclose
+    \mathfrak
+    \mathinner
+    \mathit
+    \mathop
+    \mathopen
+    \mathord
+    \mathpunct
+    \mathrel
+    \mathring               AMSmath
+    \mathrm
+    \mathscr
+    \mathsf
+    \mathstrut
+    \mathtip                action          non-standard
+    \mathtt
+    \matrix
+    \max
+    \mbox
+    \measuredangle          AMSsymbols
+    \mho                    AMSsymbols
+    \mid
+    \middle
+    \min
+    \mit
+    \mkern
+    \mmlToken                               non-standard
+    \mod
+    \models
+    \moveleft
+    \moveright
+    \mp
+    \mskip
+    \mspace
+    \mu
+    \Mu                     mediawiki-texvc
+    \multimap               AMSsymbols
+
+N
+-
+
+.. code-block:: latex
+
+    \N                      mediawiki-texvc
+    \nabla
+    \natural
+    \natnums                mediawiki-texvc
+    \ncong                  AMSsymbols
+    \ne
+    \nearrow
+    \neg
+    \negmedspace            AMSmath
+    \negthickspace          AMSmath
+    \negthinspace
+    \neq
+    \newcommand            [newcommand]
+    \newenvironment        [newcommand]
+    \Newextarrow            extpfeil
+    \newline
+    \nexists                AMSsymbols
+    \ngeq                   AMSsymbols
+    \ngeqq                  AMSsymbols
+    \ngeqslant              AMSsymbols
+    \ngtr                   AMSsymbols
+    \ni
+    \nLeftarrow             AMSsymbols
+    \nleftarrow             AMSsymbols
+    \nLeftrightarrow        AMSsymbols
+    \nleftrightarrow        AMSsymbols
+    \nleq                   AMSsymbols
+    \nleqq                  AMSsymbols
+    \nleqslant              AMSsymbols
+    \nless                  AMSsymbols
+    \nmid                   AMSsymbols
+    \nobreakspace           AMSmath
+    \nolimits
+    \normalsize
+    \not
+    \notag                 [AMSmath]
+    \notin
+    \nparallel              AMSsymbols
+    \nprec                  AMSsymbols
+    \npreceq                AMSsymbols
+    \nRightarrow            AMSsymbols
+    \nrightarrow            AMSsymbols
+    \nshortmid              AMSsymbols
+    \nshortparallel         AMSsymbols
+    \nsim                   AMSsymbols
+    \nsubseteq              AMSsymbols
+    \nsubseteqq             AMSsymbols
+    \nsucc                  AMSsymbols
+    \nsucceq                AMSsymbols
+    \nsupseteq              AMSsymbols
+    \nsupseteqq             AMSsymbols
+    \ntriangleleft          AMSsymbols
+    \ntrianglelefteq        AMSsymbols
+    \ntriangleright         AMSsymbols
+    \ntrianglerighteq       AMSsymbols
+    \nu
+    \Nu                     mediawiki-texvc
+    \nVDash                 AMSsymbols
+    \nVdash                 AMSsymbols
+    \nvDash                 AMSsymbols
+    \nvdash                 AMSsymbols
+    \nwarrow
+
+O
+-
+
+.. code-block:: latex
+
+    \O                      mediawiki-texvc
+    \odot
+    \officialeuro           mediawiki-texvc
+    \oint
+    \oldstyle
+    \Omega
+    \omega
+    \omicron
+    \Omicron                mediawiki-texvc
+    \ominus
+    \operatorname           AMSmath
+    \oplus
+    \or                     mediawiki-texvc
+    \oslash
+    \otimes
+    \over
+    \overbrace
+    \overleftarrow
+    \overleftrightarrow
+    \overline
+    \overrightarrow
+    \overset
+    \overwithdelims
+    \owns
+
+P
+-
+
+.. code-block:: latex
+
+    \P                      mediawiki-texvc
+    \pagecolor              mediawiki-texvc
+    \parallel
+    \part                   mediawiki-texvc
+    \partial
+    \perp
+    \phantom
+    \Phi
+    \phi
+    \Pi
+    \pi
+    \pitchfork              AMSsymbols
+    \plusmn                 mediawiki-texvc
+    \pm
+    \pmatrix
+    \pmb
+    \pmod
+    \pod
+    \Pr
+    \prec
+    \precapprox             AMSsymbols
+    \preccurlyeq            AMSsymbols
+    \preceq
+    \precnapprox            AMSsymbols
+    \precneqq               AMSsymbols
+    \precnsim               AMSsymbols
+    \precsim                AMSsymbols
+    \prime
+    \prod
+    \projlim                AMSmath
+    \propto
+    \Psi
+    \psi
+
+Q
+-
+
+.. code-block:: latex
+
+    \Q                      mediawiki-texvc
+    \qquad
+    \quad
+
+R
+-
+
+.. code-block:: latex
+
+    \R                      mediawiki-texvc
+    \raise
+    \rang                   mediawiki-texvc
+    \rangle
+    \rarr                   mediawiki-texvc
+    \Rarr                   mediawiki-texvc
+    \rArr                   mediawiki-texvc
+    \rbrace
+    \rbrack
+    \rceil
+    \Re
+    \real                   mediawiki-texvc
+    \reals                  mediawiki-texvc
+    \Reals                  mediawiki-texvc
+    \ref                   [AMSmath]
+    \renewcommand          [newcommand]
+    \renewenvironment      [newcommand]
+    \require                               non-standard
+    \restriction            AMSsymbols
+    \rfloor
+    \rgroup
+    \rhd                    AMSsymbols
+    \rho
+    \Rho                    mediawiki-texvc
+    \right
+    \Rightarrow
+    \rightarrow
+    \rightarrowtail         AMSsymbols
+    \rightharpoondown
+    \rightharpoonup
+    \rightleftarrows        AMSsymbols
+    \rightleftharpoons
+    \rightleftharpoons      AMSsymbols
+    \rightrightarrows       AMSsymbols
+    \rightsquigarrow        AMSsymbols
+    \rightthreetimes        AMSsymbols
+    \risingdotseq           AMSsymbols
+    \rlap
+    \rm
+    \rmoustache
+    \root
+    \Rrightarrow            AMSsymbols
+    \Rsh                    AMSsymbols
+    \rtimes                 AMSsymbols
+    \Rule                                  non-standard
+    \rVert                  AMSmath
+    \rvert                  AMSmath
+
+S
+-
+
+.. code-block:: latex
+
+    \S
+    \sampi                  mediawiki-texvc
+    \Sampi                  mediawiki-texvc
+    \scr
+    \scriptscriptstyle
+    \scriptsize
+    \scriptstyle
+    \sdot                   mediawiki-texvc
+    \searrow
+    \sect                   mediawiki-texvc
+    \sec
+    \setminus
+    \sf
+    \sharp
+    \shortmid               AMSsymbols
+    \shortparallel          AMSsymbols
+    \shoveleft              AMSmath
+    \shoveright             AMSmath
+    \sideset                AMSmath
+    \Sigma
+    \sigma
+    \sim
+    \simeq
+    \sin
+    \sinh
+    \skew
+    \small
+    \smallfrown             AMSsymbols
+    \smallint
+    \smallsetminus          AMSsymbols
+    \smallsmile             AMSsymbols
+    \smash
+    \smile
+    \spades                 mediawiki-texvc
+    \Space                                 non-standard
+    \space
+    \spadesuit
+    \sphericalangle         AMSsymbols
+    \sqcap
+    \sqcup
+    \sqrt
+    \sqsubset               AMSsymbols
+    \sqsubseteq
+    \sqsupset               AMSsymbols
+    \sqsupseteq
+    \square                 AMSsymbols
+    \stackrel
+    \star
+    \stigma                 mediawiki-texvc
+    \Stigma                 mediawiki-texvc
+    \strut
+    \style                 [HTML]          non-stanard
+    \sub                    mediawiki-texvc
+    \sube                   mediawiki-texvc
+    \subset
+    \Subset                 AMSsymbols
+    \subseteq
+    \subseteqq              AMSsymbols
+    \subsetneq              AMSsymbols
+    \subsetneqq             AMSsymbols
+    \substack               AMSmath
+    \succ
+    \succapprox             AMSsymbols
+    \succcurlyeq            AMSsymbols
+    \succeq
+    \succnapprox            AMSsymbols
+    \succneqq               AMSsymbols
+    \succnsim               AMSsymbols
+    \succsim                AMSsymbols
+    \sum
+    \sup
+    \supe                   mediawiki-texvc
+    \supset
+    \Supset                 AMSsymbols
+    \supseteq
+    \supseteqq              AMSsymbols
+    \supsetneq              AMSsymbols
+    \supsetneqq             AMSsymbols
+    \surd
+    \swarrow
+
+T
+-
+
+.. code-block:: latex
+
+    \tag                   [AMSmath]
+    \tan
+    \tanh
+    \tau
+    \Tau                    mediawiki-texvc
+    \tbinom                 AMSmath
+    \TeX
+    \text
+    \textbf
+    \textit
+    \textrm
+    \textsf
+    \textstyle
+    \texttt
+    \texttip                action         non-standard
+    \textvisiblespace       mediawiki-texvc
+    \tfrac                  AMSmath
+    \therefore              AMSsymbols
+    \Theta
+    \theta
+    \thetasym               mediawiki-texvc
+    \thickapprox            AMSsymbols
+    \thicksim               AMSsymbols
+    \thinspace
+    \tilde
+    \times
+    \tiny
+    \Tiny                                  non-standard
+    \to
+    \toggle                 action         non-standard
+    \top
+    \triangle
+    \triangledown           AMSsymbols
+    \triangleleft
+    \trianglelefteq         AMSsymbols
+    \triangleq              AMSsymbols
+    \triangleright
+    \trianglerighteq        AMSsymbols
+    \tt
+    \twoheadleftarrow       AMSsymbols
+    \twoheadrightarrow      AMSsymbols
+
+U
+-
+
+.. code-block:: latex
+
+    \uarr                   mediawiki-texvc
+    \uArr                   mediawiki-texvc
+    \Uarr                   mediawiki-texvc
+    \ulcorner               AMSsymbols
+    \underbrace
+    \underleftarrow
+    \underleftrightarrow
+    \underline
+    \underrightarrow
+    \underset
+    \unicode               [unicode]       non-standard
+    \unlhd                  AMSsymbols
+    \unrhd                  AMSsymbols
+    \Uparrow
+    \uparrow
+    \Updownarrow
+    \updownarrow
+    \upharpoonleft          AMSsymbols
+    \upharpoonright         AMSsymbols
+    \uplus
+    \uproot
+    \Upsilon
+    \upsilon
+    \upuparrows             AMSsymbols
+    \urcorner               AMSsymbols
+
+V
+-
+
+.. code-block:: latex
+
+    \varcoppa               mediawiki-texvc
+    \varDelta               AMSsymbols
+    \varepsilon
+    \varGamma               AMSsymbols
+    \varinjlim              AMSmath
+    \varkappa               AMSsymbols
+    \varLambda              AMSsymbols
+    \varliminf              AMSmath
+    \varlimsup              AMSmath
+    \varnothing             AMSsymbols
+    \varOmega               AMSsymbols
+    \varphi
+    \varPhi                 AMSsymbols
+    \varpi
+    \varPi                  AMSsymbols
+    \varprojlim             AMSmath
+    \varpropto              AMSsymbols
+    \varPsi                 AMSsymbols
+    \varrho
+    \varsigma
+    \varSigma               AMSsymbols
+    \varstigma              mediawiki-texvc
+    \varsubsetneq           AMSsymbols
+    \varsubsetneqq          AMSsymbols
+    \varsupsetneq           AMSsymbols
+    \varsupsetneqq          AMSsymbols
+    \vartheta
+    \varTheta               AMSsymbols
+    \vartriangle            AMSsymbols
+    \vartriangleleft        AMSsymbols
+    \vartriangleright       AMSsymbols
+    \varUpsilon             AMSsymbols
+    \varXi                  AMSsymbols
+    \vcenter
+    \vdash
+    \Vdash                  AMSsymbols
+    \vDash                  AMSsymbols
+    \vdots
+    \vec
+    \vee
+    \veebar                 AMSsymbols
+    \verb                  [verb]
+    \Vert
+    \vert
+    \vline                  mediawiki-texvc
+    \vphantom
+    \Vvdash                 AMSsymbols
+
+W
+-
+
+.. code-block:: latex
+
+    \wedge
+    \weierp                 mediawiki-texvc
+    \widehat
+    \widetilde
+    \wp
+    \wr
+
+X
+-
+
+.. code-block:: latex
+
+    \Xi
+    \xi
+    \xcancel                cancel
+    \xleftarrow             AMSmath
+    \xlongequal             extpfeil
+    \xmapsto                extpfeil
+    \xrightarrow            AMSmath
+    \xtofrom                extpfeil
+    \xtwoheadleftarrow      extpfeil
+    \xtwoheadrightarrow     extpfeil
+
+Y
+-
+
+.. code-block:: latex
+
+    \yen                    AMSsymbols
+
+Z
+-
+
+.. code-block:: latex
+
+    \Z                      mediawiki-texvc
+    \zeta
+    \Zeta                   mediawiki-texvc
+
+
+Environments
+------------
+
+LaTeX environments of the form ``\begin{XXX} ... \end{XXX}`` are
+provided where ``XXX`` is one of the following:
+
+.. code-block:: latex
+
+    align		   [AMSmath]
+    align*		   [AMSmath]
+    alignat		   [AMSmath]
+    alignat*		   [AMSmath]
+    aligned		   [AMSmath]
+    alignedat		   [AMSmath]
+    array
+
+    Bmatrix
+    bmatrix
+
+    cases
+    CD                      AMSmath
+
+    eqnarray
+    eqnarray*
+    equation
+    equation*
+
+    gather		   [AMSmath]
+    gather*		   [AMSmath]
+    gathered		   [AMSmath]
+
+    matrix
+    multline		   [AMSmath]
+    multline*		   [AMSmath]
+
+    pmatrix
+
+    smallmatrix		    AMSmath
+    split		   [AMSmath]
+    subarray		    AMSmath
+
+    Vmatrix
+    vmatrix

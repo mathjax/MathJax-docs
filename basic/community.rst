@@ -1,3 +1,5 @@
+.. _MathJax-community:
+
 *********************
 The MathJax Community
 *********************
@@ -34,9 +36,6 @@ The community is only as good as the users who participate, so if
 you have something to offer, please take time to make a post on one of
 our groups.
 
-If you want to follow just our press releases, please subscribe to
-`our press list <http://eepurl.com/hqn6-/>`_.
-
 
 .. _community-tracker:
 
@@ -51,6 +50,8 @@ Before you create a new issue, however, please search the issues to see if it
 has already been reported. You could also be using an outdated version of
 MathJax, so be sure to :ref:`upgrade your copy <getting-mathjax-git>` to verify
 that the problem persists in the latest version.
+
+See the section on `Reporting Issues <reporting-issues>`_ for more detailed instructions.
 
 
 .. _community-documentation:

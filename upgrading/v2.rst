@@ -1,0 +1,17 @@
+###########
+Placeholder
+###########
+
+components
+
+startup sequence
+
+no signals/callbacks/queue
+
+change of \color
+
+replacement for queuing (MathJax.startup.promise)
+
+tex2jax incorporated into TeX jax.  Same for mml2jax, asciimath2jax.
+
+useMathMLspacing changed to be on output rather than input.
