@@ -28,3 +28,9 @@ processor works around various limitations of Firefox/Gecko and
 Safari/WebKit, the results using the NativeMML output processor may
 have spacing, font, or other rendering problems that are outside of
 MathJax's control.
+
+-----
+
+.. raw:: html
+
+   <span></span>

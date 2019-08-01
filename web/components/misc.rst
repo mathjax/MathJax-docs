@@ -40,6 +40,8 @@ It is responsible for creating the needed objects (like the input and
 output jax), and for adding the typesetting and conversion methods
 described in the :ref:`web-typeset` section.
 
+-----
+
 
 .. _menu-component:
 
@@ -51,6 +53,8 @@ allows you to obtain the MathML or original format of the mathematics,
 change parameters about the output renderer, enable accessibility
 features, and so on.
 
+-----
+
 
 .. _litedom-component:
 
@@ -61,6 +65,8 @@ The `adaptors/liteDOM` component implements an alternative to the
 browser DOM that can be used to parse HTML pages outside of a
 browser.  This can be used in Node applications that don't have access
 to a browser DOM, or in webworkers that can't access the document DOM.
+
+-----
 
 
 .. _core-component:
@@ -74,6 +80,8 @@ documents, math items within those documents, DOM adaptors, and so
 on.  This component is loaded automatically when needed, so you don't
 usually have to load it yourself.  But you can include it if you are
 creating your own combined component.
+
+-----
 
 
 .. _loader-component:

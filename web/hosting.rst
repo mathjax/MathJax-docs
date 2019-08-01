@@ -10,6 +10,7 @@ need to do this if you are :ref:`creating a custom build
 <web-custom-build>` of MathJax, for example, or if you wish to use
 MathJax off-line.
 
+
 .. _obtain-mathjax:
 
 Acquiring the MathJax Code
@@ -223,3 +224,9 @@ containing the page that uses MathJax. This is an unfortunate
 restriction, but it is a limitiation imposed by Firefox's security
 model that MathJax can not circumvent. Currently, this is not a
 problem for other browsers.
+
+-----
+
+.. raw:: html
+
+   <span></span>

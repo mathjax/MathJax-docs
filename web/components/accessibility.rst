@@ -24,6 +24,7 @@ These are described below.
    :ref:`contextual menu extension <menu-component>`, so doesn't have
    to be loaded separately.
 
+-----
 
 .. _semantic-enrich-component:
 
@@ -37,6 +38,8 @@ processes.  These can be attached to the output for use by screen
 readers, or for use with the :ref:`explorer-component` component
 described below.
 
+-----
+
 
 .. _complexity-component:
 
@@ -49,6 +52,8 @@ element within an expression, and allows complex epxressions to
 collapsed portions can be expanded with a click of the mouse, or by
 keyboard actions when using the :ref:`explorer-component` extension
 described below.
+
+-----
 
 
 .. _explorer-component:

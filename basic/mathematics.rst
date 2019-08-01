@@ -264,3 +264,8 @@ This can be particularly confusing when you are using the LaTeX macro
 
 to produce an array with two rows.
 
+-----
+
+.. raw:: html
+
+   <span></span>

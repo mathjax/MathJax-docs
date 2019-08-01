@@ -1,12 +1,12 @@
 .. _mathjax-badges:
 
-**************
+##############
 MathJax Badges
-**************
+##############
 
 We are proud of the work we have done on MathJax, and we hope you are
 proud to use it. If you would like to show your support for the MathJax
-project, please consider including one of our “Powered by MathJax” web
+project, please consider including one of our "Powered by MathJax" web
 badges on your pages that use it.
 
 The MathJax Badges
@@ -130,27 +130,27 @@ impressions; therefore, if you do use our badge or logo, we ask that you
 observe these simple rules (for the fine print, see below):
 
 Things You Can Do
-~~~~~~~~~~~~~~~~~
+-----------------
 
 -  Use the MathJax Logo or Badges in marketing, and other publicity
    materials related to MathJax.
 -  Distribute unchanged MathJax products (code, development tools,
    documentation) as long as you distribute them without charge.
 -  Describe your own software as "based on MathJax technology", or
-   "incorporating MathJax source code” if your software includes
+   "incorporating MathJax source code" if your software includes
    modified MathJax products.
 -  Link to MathJax’s website(s) by using the logos and badges we
    provide.
 -  Use MathJax's word marks in describing and advertising your services
    or products relating to a MathJax product, so long as you don't do
    anything that might mislead customers. For example, it's OK if your
-   website says, "Customization services for MathJax available here”.
+   website says, "Customization services for MathJax available here".
 -  Make t-shirts, desktop wallpaper, or baseball caps though only for
    yourself and your friends (meaning people from whom you don't receive
    anything of value in return).
 
 Things You Cannot Do
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 -  Alter our logo or badges in any way.
 -  Use our logo or badge online without including the link to the
@@ -172,12 +172,18 @@ Things You Cannot Do
 
 
 And now the fine print:
-~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------
 
-*The words and logotype “MathJax,” the MathJax badges, and any
+*The words and logotype "MathJax," the MathJax badges, and any
 combination of the foregoing, whether integrated into a larger whole or
 standing alone, are MathJax’s trademarks. You are authorized to use our
 trademarks under the terms and conditions above, and only on the further
 condition that you download the trademarks directly from our website.
 MathJax retains full, unfettered, and sole discretion to revoke this
 trademark license for any reason whatsoever or for no specified reason.*
+
+-----
+
+.. raw:: html
+
+   <span></span>

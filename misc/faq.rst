@@ -1,18 +1,37 @@
 .. _FAQ:
 
-**********************************
+##################################
 MathJax Frequently Asked Questions
-**********************************
+##################################
 
+* :ref:`faq-license`
+* :ref:`faq-slow-no-math`
+* :ref:`faq-ie-support`
+* :ref:`faq-ie-meta`
+* :ref:`faq-size-issues`
+* :ref:`faq-safe`
+* :ref:`faq-content-mml`
+* :ref:`faq-create-math`
+* :ref:`faq-report-issue`
+* :ref:`faq-missing-macro`
+* :ref:`faq-user-macros`
+
+-----
+
+
+.. _faq-license:
 
 Which license is MathJax distributed under?
--------------------------------------------
+===========================================
 
 MathJax is distributed under the `Apache License, Version
 2.0 <https://github.com/mathjax/MathJax/blob/master/LICENSE>`__.
 
+
+.. _faq-slow-no-math:
+
 Will MathJax make my page load slower even if there's no math?
---------------------------------------------------------------
+==============================================================
 
 It depends on how you have configured and loaded MathJax.  The
 combined component files like `tex-chtml.js` contain a full copy of
@@ -28,8 +47,10 @@ MathJax until the rest of the page is ready, so that can help speed up
 your initial page loading as well.
 
 
+.. _faq-ie-support:
+
 Mathematics is not rendering properly in IE. How do I fix that?
----------------------------------------------------------------
+===============================================================
 
 Currently, MathJax version 3 only supports IE11, sop if you are using
 an earlier version, you will need to update your copy, or use a
@@ -75,8 +96,10 @@ the website yourself, you may have to report the issue to the
 maintainers of the site in order to have it resolved.
 
 
+.. _faq-ie-meta:
+
 What should IE's X-UA-Compatible meta tag be set to?
-----------------------------------------------------
+====================================================
 
 We strongly suggest to follow Microsoft's suggestion to use ``IE=edge``. That
 is, in the document ``<head>`` include
@@ -92,8 +115,10 @@ compatibility modes
 <https://msdn.microsoft.com/en-us/library/dn384051(v=vs.85).aspx>`__.
 
 
+.. _faq-size-issues:
+
 Some of my mathematics is too large or too small. How do I get it right?
-------------------------------------------------------------------------
+========================================================================
 
 MathJax renders mathematics dynamically so that formulas and symbols
 are nicely integrated into the surrounding text --- with matching font
@@ -115,8 +140,10 @@ check our documentation for :ref:`the HTML output
 <configure-HTML-CSS>` and :ref:`the SVG output <configure-SVG>`.
 
 
+.. _faq-safe:
+
 My mathematics is private. Is it safe to use MathJax?
------------------------------------------------------
+=====================================================
 
 Yes. MathJax is JavaScript code that is runs within the user's
 browser, so your site's actual content never leaves the browser while
@@ -132,8 +159,10 @@ open source which means that you can `review it and inspect its
 integrity <https://github.com/mathjax/mathjax>`__.
 
 
+.. _faq-content-mml:
+
 Does MathJax support Presentation and/or Content MathML?
---------------------------------------------------------
+========================================================
 
 MathML comes in two types: Presentation MathML, which describes what
 an equation looks like, and Content MathML, which describes what an
@@ -151,8 +180,10 @@ Versus Content MathML" <https://cnx.org/content/m31620/latest/>`__ at
 ``cnx.org``.
 
 
+.. _faq-create-math:
+
 How do I create mathematical expressions for display with MathJax?
-------------------------------------------------------------------
+==================================================================
 
 MathJax is a method to display mathematics. It is not an authoring
 environment, and so you will need another program to create mathematical
@@ -179,15 +210,19 @@ editor. A list of software the supports MathML may be found in `The W3C
 MathML software list <http://www.w3.org/Math/wiki/Tools>`__.
 
 
+.. _faq-report-issue:
+
 I ran into a problem with MathJax. How do I report it?
-------------------------------------------------------
+======================================================
 
 See the section on `Reporting Issues <reporting-issues>`_ for the
 steps to take when you think you have found a bug in MathJax.
 
 
+.. _faq-missing-macro:
+
 Why doesn't the TeX macro ``\something`` work?
-----------------------------------------------
+==============================================
 
 It really depends on what ``\something`` is. We have a full list of
 the `supported TeX commands <tex-commands>`_. If the command you want
@@ -208,8 +243,10 @@ realize that TeX conversion tools are unlikely produce results as good
 as controlling the HTML and CSS source yourself.
 
 
+.. _faq-user-macros:
+
 Does MathJax support user-defined TeX macros?
----------------------------------------------
+=============================================
 
 Yes, you can define TeX macros in MathJax the same way you do in LaTeX
 with ``\newcommand``, or ``\def``.  An example is
@@ -218,3 +255,9 @@ formula for water when you use the ``\water`` command. The
 ``\renewcommand`` command works as well. You can also store macros in
 the MathJax configuration. For more information, see `the
 documentation <tex-macros>`_.
+
+-----
+
+.. raw:: html
+
+   <span></span>

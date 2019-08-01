@@ -1,17 +1,18 @@
 .. _accessibility:
 
-**********************************
+######################
 Accessibility Features
-**********************************
+######################
 
 MathJax's mission is to provide the best tools for mathematics on the
 web. Naturally, this means for everyone and thus accessibility is an
 important concern for us.
 
+
 .. _mathjax-ui-a11y:
 
 MathJax User Interface
-----------------------
+======================
 
 The MathJax user interface consists of the :ref:`MathJax Menu
 <configure-MathMenu>` and the various MathJax Processing Messages, cf
@@ -27,8 +28,9 @@ fragment is included in the tab order; the menu can be triggered via
 the space or menu key; and navigation in the menu is possible using
 the arrow keys.
 
+
 MathJax Accessibility Extensions
---------------------------------
+================================
 
 The :ref:`MathJax Accessibility extensions <a11y-extensions>` provide
 several tools and features that enable universal rendering of
@@ -56,7 +58,7 @@ particular labels and live regions.
 .. _screenreader-support:
 
 Legacy Support via AssistiveMML.js
-----------------------------------
+==================================
 
 Some screen readers support MathML, MathJax's internal
 format. Screenreaders like ChromeVox, JAWS (on IE), and Texthelp
@@ -94,7 +96,7 @@ The expected result for MathJax given the current state of technology is roughly
   * except in iOS VoiceOver, where this allows the user to hook into VoiceOver's exploration features.
 
 Support Matrix (AssistiveMML.js)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 Below is a summary of results for MathML enabled screenreaders and the
 legacy AssistiveMML extension, based on tests as well as user reports.
@@ -292,7 +294,7 @@ legacy AssistiveMML extension, based on tests as well as user reports.
   <br/>
 
 Notes on Apple VoiceOver
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 * **VoiceOver** on OSX
 
@@ -319,7 +321,7 @@ Notes on Apple VoiceOver
 
 
 Notes on MathPlayer 4 and Internet Explorer 11
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------
 
 Design Science suggests that you always use IE's Enterprise mode for
 MathPlayer in IE11, `see their documentation
@@ -340,3 +342,9 @@ but they don't seem to work with NVDA and plain MathML pages.
 We suggest you do not switch on IE's Enterprise mode on pages using MathJax and
 we also have to strongly suggest that you **not** use the BrowserHelperAddon with MathJax
 on IE11.
+
+-----
+
+.. raw:: html
+
+   <span></span>

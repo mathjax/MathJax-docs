@@ -1,8 +1,8 @@
 .. _what-is-MathJax:
 
-****************
+################
 What is MathJax?
-****************
+################
 
 MathJax is an open-source JavaScript display engine for LaTeX, MathML,
 and AsciiMath notation that works in all modern browsers.  It was
@@ -57,3 +57,8 @@ with version 2, so web sites can perform all the math processing once
 up front, rather than having the browser do it each time the page is
 viewed.
 
+-----
+
+.. raw:: html
+
+   <span></span>

@@ -278,3 +278,9 @@ Finally, if you have questions or comments, or want to help support
 MathJax, you could visit the :ref:`MathJax community forums
 <community-forums>` or the :ref:`MathJax bug tracker
 <community-tracker>`.
+
+-----
+
+.. raw:: html
+
+   <span></span>

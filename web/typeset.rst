@@ -357,3 +357,8 @@ asynchronous load needed for the ``\require`` command); then when the
 expression is typeset, it is added to the document and the CHTML
 stylesheet is updated.
 
+-----
+
+.. raw:: html
+
+   <span></span>

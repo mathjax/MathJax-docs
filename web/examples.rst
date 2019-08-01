@@ -22,3 +22,9 @@ Needed examples:
 
 * MathML for AssistiveMML replacement
 * MathML for NativeMML replacement
+
+-----
+
+.. raw:: html
+
+   <span></span>

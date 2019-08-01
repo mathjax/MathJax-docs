@@ -1,8 +1,8 @@
 .. _MathJax-community:
 
-*********************
+#####################
 The MathJax Community
-*********************
+#####################
 
 If you are an active MathJax user, you may wish to become involved in
 the wider community of MathJax users.  The MathJax project maintains
@@ -14,7 +14,6 @@ with MathJax in your environment.
 
 
 .. _community-forums:
-
 
 Mailing Lists
 =============
@@ -79,3 +78,9 @@ contribute to the public `documentation wiki
 
 If you are using MathJax and want to show your support, please
 consider using our :ref:`"Powered by MathJax" badge <mathjax-badges>`.
+
+-----
+
+.. raw:: html
+
+   <span></span>

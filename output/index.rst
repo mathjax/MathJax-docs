@@ -59,3 +59,7 @@ in your document.
    mathml
 
 -----
+
+.. raw:: html
+
+   <span></span>

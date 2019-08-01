@@ -4,6 +4,18 @@
 Combined Components
 ###################
 
+Currently there are eight combined components, whose contents are
+described below:
+
+* :ref:`tex-chtml-component`
+* :ref:`tex-chtml-full-component`
+* :ref:`tex-svg-component`
+* :ref:`tex-svg-full-component`
+* :ref:`tex-mml-chtml-component`
+* :ref:`tex-mml-svg-component`
+* :ref:`mml-chtml-component`
+* :ref:`mml-svg-component`
+
 The combined components include everything needed to run MathJax in
 your web pages.  Each includes at least one input processor, an output
 processor, the data needed for the MathJax TeX font, the contextual
@@ -26,6 +38,8 @@ in your MathJax configuration.  So a typical use would be
 
 to load the `tex-chtml` component, for example.
 
+-----
+
 
 .. _tex-chtml-component:
 
@@ -42,6 +56,8 @@ The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
+-----
+
 
 .. _tex-chtml-full-component:
 
@@ -56,6 +72,8 @@ startup component.
 The `input/tex-full` component loads the the code for all the TeX
 extensions, and configures TeX to use all but the :ref:`tex-physics`
 and :ref:`tex-colorv2` extensions.
+
+-----
 
 
 .. _tex-svg-component:
@@ -73,6 +91,8 @@ The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
+-----
+
 
 .. _tex-svg-full-component:
 
@@ -86,6 +106,8 @@ along with the contextual menu component, and the startup component.
 The `input/tex-full` component loads the the code for all the TeX
 extensions, and configures TeX to use all but the :ref:`tex-physics`
 and :ref:`tex-colorv2` extensions.
+
+-----
 
 
 .. _tex-mml-chtml-component:
@@ -104,6 +126,8 @@ The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
+-----
+
 
 .. _tex-mml-svg-component:
 
@@ -121,6 +145,8 @@ The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
+-----
+
 
 .. _mml-chtml-component:
 
@@ -131,6 +157,8 @@ The `mml-chtml` component loads the :ref:`mathml-component` component
 and the :ref:`output/chtml <chtml-component>`, along with the
 contextual menu component, and the startup component.
 
+-----
+
 
 .. _mml-svg-component:
 
@@ -140,7 +168,6 @@ mml-svg
 The `mml-svg` component loads the :ref:`mathml-component` component
 and the :ref:`output/svg <svg-component>`, along with the
 contextual menu component, and the startup component.
-
 
 -----
 
