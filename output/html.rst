@@ -1,8 +1,8 @@
 .. _html-output:
 
-###########
-HTML Output
-###########
+############
+HTML Support
+############
 
 The `CommonHTML` output processor renders your mathematics using HTML
 with CSS styling.  It produces high-quality output in all modern

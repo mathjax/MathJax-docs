@@ -246,8 +246,7 @@ Note that once MathJax has processed the page, it will not not run
 again without you explicitly telling it to.  For example, if you add
 new mathematics to the page after MathJax has already run, that math
 will not be processed by MathJax until you request that to happen.
-See the section on :ref:`MathJax in Dynamic Content
-<../advanced/typeset-math>` for details of how to do that.
+See the section on :ref:`typeset-math` for details of how to do that.
 
 -----
 
@@ -265,9 +264,13 @@ point, you can start making pages that contain mathematical content!
 You could also read more about the details of how to :ref:`customize
 MathJax <web-configuration>`.
 
-If you are trying to use MathJax in blog or wiki software or in some
-other content-management system, you might want to read about :ref:`using
-MathJax in popular platforms <platforms>`.
+You can also check out the :ref:`MathJax examples <web-examples>` for
+illustrations of using MathJax.
+
+..
+   If you are trying to use MathJax in blog or wiki software or in some
+   other content-management system, you might want to read about :ref:`using
+   MathJax in popular platforms <platforms>`.
 
 If you are working on dynamic pages that include mathematics, you
 might want to read about the :ref:`MathJax Application Programming

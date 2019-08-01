@@ -1,8 +1,8 @@
 .. _typeset-math:
 
-**************************
-Modifying Math on the Page
-**************************
+##########################
+MathJax in Dynamic Content
+##########################
 
 If you are writing a dynamic web page where content containing
 mathematics may appear after MathJax has already typeset the rest of

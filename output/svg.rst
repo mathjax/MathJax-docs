@@ -1,8 +1,8 @@
 .. _svg-output:
 
-##########
-SVG Output
-##########
+###########
+SVG Support
+###########
 
 The ``SVG`` output processor uses `Scalable Vector Graphics` to render
 the mathematics on the page.  SVG is supported in all the major
