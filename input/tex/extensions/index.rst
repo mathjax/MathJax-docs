@@ -4,31 +4,45 @@
 The TeX/LaTeX Extension List
 ############################
 
-The main extensions are described below.
-
-See the :ref:`custom-extension` section for
-how to create your own TeX extension.
+The main extensions are described below:
 
 .. toctree::
-   :name: TeX Extenions
    :maxdepth: 1
 
    action
    ams
    amsCd
-   autobold
-   <autoload>
-   <bbox>
-   <begingroup>
-   <cancel>
-   <color>
-   <colorV2>
-   <enclose>
-   <extpfeil>
-   <html>
-   <mhchem>
-   <noerrors>
-   <noundefined>
-   <unicode>
+   autoload
+   bbox
+   boldsymbol
+   braket
+   cancel
+   color
+   colorV2
+   configMacros
+   enclose
+   extpfeil
+   html
+   mhchem
+   newcommand
+   noerrors
+   noundefined
+   physics
+   require
+   tagFormat
+   unicode
+   verb
 
-   <mediawiki-texvc>
+These extensions have not yet been ported to version 3:
+
+.. toctree::
+   :maxdepth: 1
+
+   autobold
+   autoload-all
+   begingroup
+   mediawiki-texvc
+
+See the :ref:`custom-extension` section for how to create your own TeX
+extension.
+

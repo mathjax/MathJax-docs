@@ -22,16 +22,15 @@ configure which extensions to autoload.
 Loading TeX Extensions
 ======================
 
-To enable one of the TeX extensions you need to do two things:  load
-the extension, and configure TeX to include it in is package setup.
-To load an extesion as a component, add its name to the ``load`` array
-in the ``loader`` block of your MathJax configuration.  For example,
-to load the ``color`` extension, add ``'[tex]/color'`` to the load
-array, as in the example below.
-
-To enable the extension in TeX, add the extension name to ``packages``
-array in the ``tex`` block of your configuration.  You can use the
-special `'[+]'` notation to add to the default packages (so you don't
+To enable one of the TeX extensions you need to do two things: load
+the extension, and configure TeX to include it in its package setup.
+For the first, to load an extension as a component, add its name to
+the ``load`` array in the ``loader`` block of your MathJax
+configuration.  For example, to load the ``color`` extension, add
+``'[tex]/color'`` to the load array, as in the example below.  To do
+the second, add the extension name to ``packages`` array in the
+``tex`` block of your configuration.  You can use the special
+``'[+]'`` notation to append it to the default packages (so you don't
 need to know what they are).  For example:
 
 .. code-block:: javascript
@@ -56,7 +55,7 @@ the combined extensions ending in ``-full`` load all the extensions.
 If you laod a component that has an extension you don't want to use,
 you can disable it by removing it from the ``package`` array in the
 ``tex`` block of your MathJax configuration.  For example, to disable
-the ``\require`` and autoloading of extensions, use
+``\require`` and autoloading of extensions, use
 
 .. code-block:: javascript
 

@@ -15,3 +15,13 @@ replacement for queuing (MathJax.startup.promise)
 tex2jax incorporated into TeX jax.  Same for mml2jax, asciimath2jax.
 
 useMathMLspacing changed to be on output rather than input.
+
+mml3 and content-mml not ported yet
+
+no NativeMML output
+
+only MathJax TeX font currently
+
+SVG equation numbers now float with window size changes
+
+A11Y changes (no AssistiveMML, no auto-collapse yet, assistive-menu now part of ui/menu).

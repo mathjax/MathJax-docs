@@ -36,7 +36,7 @@ it is part of the tag starting at ``<y``.  This is one indication you
 can use to spot this problem; it is a common error and should be
 avoided.
 
-Usually, it is sufficient to simply put spaces around these symbols to
+Usually, it is sufficient simply to put spaces around these symbols to
 cause the browser to avoid them, so
 
 .. code-block:: latex

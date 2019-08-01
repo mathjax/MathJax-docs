@@ -38,7 +38,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'MathJax'
-copyright = u'2018 The MathJax Consortium'
+copyright = u'2019 The MathJax Consortium'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the

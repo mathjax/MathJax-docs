@@ -1,4 +1,4 @@
-.. _configure-SVG:
+.. _configure-svg:
 
 ************************
 The SVG output processor

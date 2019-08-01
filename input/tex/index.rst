@@ -1,8 +1,8 @@
 .. _tex-support:
 
-*****************************
-MathJax TeX and LaTeX Support
-*****************************
+#####################
+TeX and LaTeX Support
+#####################
 
 The support for `TeX` and `LaTeX` in MathJax involves two functions:
 the first looks for mathematics within your web page (indicated by
@@ -26,11 +26,12 @@ can also be customized through the use of extensions that define
 additional functionality (see the :ref:`tex-extensions` section).
 
 Note: if you are not familiar with TeX/LaTeX, a good starting point is
-the `LaTeX Wiki book <http://en.wikibooks.org/wiki/LaTeX>`__.
+the `LaTeX Wiki book <http://en.wikibooks.org/wiki/LaTeX>`_.
 
 -----
 
 .. toctree::
+   :caption: More Information
    :maxdepth: 2
 
    differences
@@ -41,12 +42,8 @@ the `LaTeX Wiki book <http://en.wikibooks.org/wiki/LaTeX>`__.
    extensions
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   <extensions/index.rst>
+   extensions/index
+   macros/index
 
-..
-   .. toctree::
-      :maxdepth: 2
-
-      macros/index

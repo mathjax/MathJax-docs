@@ -14,7 +14,7 @@ text ``\xyz`` in red.
    In version 2, the styling for the undefined macro could be
    configured.  In version 3, this is not yet implemented.
 
-This extension is already loaded in the all the configurations that
+This extension is already loaded in all the components that
 include the TeX input jax, other than ``input/tex-base``.  To load the
 `ams` extension explicitly (when using ``input/tex-base`` for
 example), add ``'[tex]/noundefined'`` to the ``load`` array of the ``loader``

@@ -91,12 +91,12 @@ load, but some provide "rolling releases", i.e., links that update to
 the latest available version upon release (note that we also provide a
 means of obtaining the latest version automatically, described below).
 
-- `cdnjs.com <https://cdnjs.com>`_ (recommended)
-- `jsdelivr.com <https://jsdelivr.com>`_  [rolling or specific version]
-- `unpkg.com <https://unpkg.com/>`_ [rolling or specific version]
-- `raw.githack.com <http://raw.githack.com>`_
-- `gitcdn.xyz <http://gitcdn.xyz/>`_
-- `cdn.statically.io <http://cdn.statically.io>`_
+- `cdnjs.com <https://cdnjs.com>`__ (recommended)
+- `jsdelivr.com <https://jsdelivr.com>`__  [rolling or specific version]
+- `unpkg.com <https://unpkg.com/>`__ [rolling or specific version]
+- `raw.githack.com <http://raw.githack.com>`__
+- `gitcdn.xyz <http://gitcdn.xyz/>`__
+- `cdn.statically.io <http://cdn.statically.io>`__
  
 
 To jump start using ``cdnjs``, you accomplish the first two steps by putting

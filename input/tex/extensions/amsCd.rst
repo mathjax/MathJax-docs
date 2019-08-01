@@ -6,7 +6,7 @@ amsCd
 
 The `amsCd` extensions implements the `CD` environment for commutative
 diagrams.  See the `AMScd guide
-<http://www.jmilne.org/not/Mamscd.pdf>`_ for more information on how
+<http://www.jmilne.org/not/Mamscd.pdf>`__ for more information on how
 to use the `CD` environment.
 
 This extension is loaded automatically when the `autoload` extension

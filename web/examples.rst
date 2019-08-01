@@ -19,3 +19,6 @@ Needed examples:
 * reset equation numbering
 
 * v2 compatibility (including \require renaming through MathJax.startup.path or source)
+
+* MathML for AssistiveMML replacement
+* MathML for NativeMML replacement

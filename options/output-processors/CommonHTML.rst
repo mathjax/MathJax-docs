@@ -1,4 +1,4 @@
-.. _configure-CommonHTML:
+.. _configure-chtml:
 
 *******************************
 The CommonHTML output processor

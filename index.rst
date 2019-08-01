@@ -30,7 +30,7 @@ need it.
     
     Getting Started with Components   <web/start>
     Configuring and Loading MathJax   <web/configuration>
-    The MathJax Components            <web/components>
+    The MathJax Components            <web/components/index>
     Typesetting and Converting Math   <web/typeset>
     Hosting Your Own Copy of MathJax  <web/hosting>
     Making a Custom Build of MathJax  <web/webpack>
@@ -46,8 +46,7 @@ need it.
    Examples in node.js                <server/examples>
 
 .. toctree::
-   :caption: MathJax Input Formats
-   :name: input-formats
+   :caption: MathJax Input
    :maxdepth: 1
 
    TeX and LaTeX Support              <input/tex/index>
@@ -55,13 +54,14 @@ need it.
    AsciiMath Support                  <input/asciimath>
    
 .. toctree::
-   :caption: MathJax Output Formats
-   :name: output-formats
-   :maxdepth: 1
+   :caption: MathJax Output
+   :maxdepth: 2
+   :titlesonly:
 
-   HTML Output                        <output/html>
-   SVG Output                         <output/svg>
+   Output Formats                     <output/index>
+   Line Breaking                      <output/linebreaks>
    Font Support                       <output/fonts>
+   Browser Support                    <output/browser>
 
 .. toctree::
     :caption: Configuration Options
@@ -93,9 +93,8 @@ need it.
     :name: miscellaneous
     :maxdepth: 1
 
-    MathJax Badges and Logo           <misc/badges>
     MathJax FAQ                       <misc/faq>
-    Browser Support                   <misc/browsers>
+    MathJax Badges and Logo           <misc/badges>
     Articles and Presentations        <misc/articles>
 
 .. toctree::
