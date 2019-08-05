@@ -1,75 +1,78 @@
 .. _configure-chtml:
 
-*******************************
-The CommonHTML output processor
-*******************************
+###################################
+CommonHTML Output Processor Options
+###################################
 
-The options below control the operation of the CommonHTML output
-processor that is run when you include ``"output/CommonHTML"`` in the
-`jax` array of your configuration or load a combined configuration
-file that includes the CommonHTML output jax.  They are listed with their default
-values.  To set any of these options, include an ``CommonHTML`` section
-in your :meth:`MathJax.Hub.Config()` call.  For example
+The options below control the operation of the :ref:`CommonHTML output
+processor <html-output>` that is run when you include
+``'output/chtml'`` in the ``load`` array of the ``loader`` block of
+your MathJax configuration, or if you load a combined component that
+includes the CommonHTML output jax.  They are listed with their default
+values.  To set any of these options, include a ``chtml`` section in
+your :data:`MathJax` global object.
+
+-----
+
+The Configuration Block
+=======================
 
 .. code-block:: javascript
 
-    MathJax.Hub.Config({
-      CommonHTML: {
-        scale: 120
+    MathJax = {
+      chtml: {
+        scale: 1,                      // global scaling factor for all expressions
+        minScale: .5,                  // smallest scaling factor to use
+        matchFontHeight: true,         // true to match ex-height of surrounding font
+        mtextInheritFont: false,       // true to make mtext elements use surrounding font
+        merrorInheritFont: true,       // true to make merror text use surrounding font
+        mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+        skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+        exFactor: .5,                  // default size of ex in em units
+        displayAlign: 'center',        // default for indentalign when set to 'auto'
+        displayIndent: '0',            // default for indentshift when set to 'auto'
+        fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2',   // The URL where the fonts are found
+        adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
       }
-    });
+    };
 
-would set the ``scale`` option to 120%.
+-----
 
-.. describe:: scale: 100
 
-    The scaling factor (as a percentage) of math with respect to the
-    surrounding text.  The `CommonHTML` output processor tries to match
-    the ex-size of the mathematics with that of the text where it is
-    placed, but you may want to adjust the results using this scaling
-    factor.  The user can also adjust this value using the contextual
-    menu item associated with the typeset mathematics.
+Option Descriptions
+===================
 
-.. describe:: minScaleAdjust: 50
+.. _chtml-fontURL:
+.. describe:: fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2'
 
-   This gives a minimum scale (as a percent) for the scaling used by
-   MathJax to match the equation to the surrounding text.  This will
-   prevent MathJax from making the mathematics too small.
+   This is the URL to the location where the MathJax fonts are
+   stored.  In the default, ``[mathjax]`` is replaced by the location
+   from which you have loaded MathJax.  You should include a complete
+   URL to the location of the fonts you want to use.
 
-.. describe:: mtextFontInherit: false
+.. _chtml-adaptiveCSS:
+.. describe:: adaptiveCSS: true
 
-    This setting controls whether ``<mtext>`` elements will be typeset
-    using the math fonts or the font of the surrounding text.  When
-    ``false``, the font for ``mathvariant="normal"`` will be used;
-    when ``true``, the font will be inherited from the surrounding
-    paragraph.
+   This setting controls how the CommonHTML output jax handles the CSS
+   styles that it generates.  When true, this means that only the CSS
+   needed for the math that has been processed on the page so far is
+   generated.  When false, the CSS needed for all elements and all
+   characters in the MathJax font are generated.  This is an etremely
+   large amount of CSS, and that can have an effect on the performance
+   of your page, so it is best to leave this as ``true``.  You can
+   reset the information about what CSS is needed by using the command
 
-.. describe:: linebreaks: {}
+   .. code-block:: javascript
 
-    This is an object that configures automatic linebreaking in the
-    CommonHTML output.  In order to be backward compatible with earlier
-    versions of MathJax, only explicit line breaks are performed by
-    default, so you must enable line breaks if you want automatic
-    ones.  The object contains the following values:
+      MathJax.startup.document.output.clearCache();
 
-    .. describe:: automatic: false
+   to clear the font cache.
 
-        This controls the automatic breaking of expressions: when
-        ``false``, only ``linebreak="newline"`` is processed; when
-        ``true``, line breaks are inserted automatically in long
-        expressions.
+The remaining options are described in the
+:ref:`output-common-options` section.
 
-    .. describe:: width: "container"
+-----
 
-      This controls how wide the lines of mathematics can be.
+.. raw:: html
 
-      Use an explicit width like ``"30em"`` for a fixed width.
-      Use ``"container"`` to compute the size from the containing
-      element.
-      Use ``"nn% container"`` for a portion of the container.
-      Use ``"nn%"`` for a portion of the window size.
-
-      The container-based widths may be slower, and may not produce
-      the expected results if the layout width changes due to the
-      removal of previews or inclusion of mathematics during
-      typesetting.
+   <span></span>

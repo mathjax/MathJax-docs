@@ -1,182 +1,110 @@
 .. _configure-svg:
 
-************************
-The SVG output processor
-************************
+############################
+SVG Output Processor Options
+############################
 
-The options below control the operation of the SVG output
-processor that is run when you include ``"output/SVG"`` in the
-`jax` array of your configuration or load a combined configuration
-file that includes the SVG output jax.  They are listed with their default
-values.  To set any of these options, include an ``SVG`` section
-in your :meth:`MathJax.Hub.Config()` call.  For example
+The options below control the operation of the :ref:`SVG output
+processor <svg-output>` that is run when you include ``'output/svg'``
+in the ``load`` array of the ``loader`` block of your MathJax
+configuration, or if you load a combined component that includes the
+CommonHTML output jax.  They are listed with their default values.  To
+set any of these options, include an ``svg`` section in your
+:data:`MathJax` global object.
+
+-----
+
+The Configuration Block
+=======================
 
 .. code-block:: javascript
 
-    MathJax.Hub.Config({
-      SVG: {
-        scale: 120
+    MathJax = {
+      svg: {
+        scale: 1,                      // global scaling factor for all expressions
+        minScale: .5,                  // smallest scaling factor to use
+        matchFontHeight: true,         // true to match ex-height of surrounding font
+        mtextInheritFont: false,       // true to make mtext elements use surrounding font
+        merrorInheritFont: true,       // true to make merror text use surrounding font
+        mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+        skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+        exFactor: .5,                  // default size of ex in em units
+        displayAlign: 'center',        // default for indentalign when set to 'auto'
+        displayIndent: '0',            // default for indentshift when set to 'auto'
+        fontCache: 'local',            // or 'global' or 'none'
+        localID: null,                 // ID to use for local font cache (for single equation processing)
+        internalSpeechTitles: true,    // insert <title> tags with speech content
+        titleID: 0                     // initial id number to use for aria-labeledby titles
       }
-    });
+    };
 
-would set the ``scale`` option to 120%.
-
-.. describe:: scale: 100
-
-    The scaling factor (as a percentage) of math with respect to the
-    surrounding text.  The `SVG` output processor tries to match
-    the ex-size of the mathematics with that of the text where it is
-    placed, but you may want to adjust the results using this scaling
-    factor.  The user can also adjust this value using the contextual
-    menu item associated with the typeset mathematics.
-
-.. describe:: minScaleAdjust: 50
-
-   This gives a minimum scale (as a percent) for the scaling used by
-   MathJax to match the equation to the surrounding text.  This will
-   prevent MathJax from making the mathematics too small.
-
-.. describe:: font: "TeX"
-
-    This is the font to use for rendering the mathematics.  The
-    possible values are ``TeX``, ``STIX-Web``, ``Asana-Math``,
-    ``Neo-Euler``, ``Gyre-Pagella``, ``Gyre-Termes`` and
-    ``Latin-Modern``.  Note that not all mathematical characters are
-    available in all fonts (e.g., Neo-Euler does not include italic
-    characters), so some mathematics may work better in some fonts
-    than in others.  The ``STIX-Web`` font is the most complete.
+-----
 
 
-.. describe:: blacker: 1
+Option Descriptions
+===================
 
-    This is the stroke width to use for all character paths (1em =
-    1000 units).  This is a cheap way of getting slightly lighter or
-    darker characters, but remember that not all displays will act the
-    same, so a value that is good for you may not be good for everyone.
+.. _svg-fontCache:
+.. describe:: fontCache: 'local'
 
-.. describe:: undefinedFamily: "STIXGeneral, 'Arial Unicode MS', serif"
+   This setting determines how the SVG output jax manages characters
+   that appear multiple times in an equation or on a page.  The SVG
+   processor uses SVG paths to display the characters in your math
+   expressions, and when a character is used more than once, it is
+   possible to reuse the same path description; this can save space in
+   the SVG image, as the paths can be quite complex.  When set to
+   ``'local'``, MathJax will cache font paths on an express-by-expression
+   (each expression has its own cache within the SVG image itself),
+   which makes the SVG self-contained, but still allows for some
+   savings if characters are repeated.  When set to ``'global'``, a
+   single cache is used for all paths on the page; this gives the most
+   savings, but makes the images dependent on other elements of the
+   page.  When set to ``'none'``, no caching is done and explicit paths
+   are used for every character in the expression.
 
-    This is the font-family CSS value used for characters that are not
-    in the selected font (e.g., this is where to look for characters
-    not included in the MathJax TeX fonts).  IE will stop looking
-    after the first font that exists on the system (even if it doesn't
-    contain the needed character), so order these carefully.
+.. describe:: internalSpeechTitles: true
 
-.. describe:: mtextFontInherit: false
+   This tells the SVG output jax whether to put speech text into
+   ``<title>`` elements within the SVG (when set to ``'true'``), or to
+   use an ``aria-label`` attribute instead.  Neither of these control
+   whether speech strings are generated (that is handled by the
+   :ref:`semantic-enrich-options` settings); this setting only tells
+   what to do with a speech string when it has been generated or
+   included as an attribute on the root MathML element.
 
-    This setting controls whether ``<mtext>`` elements will be typeset
-    using the math fonts or the font of the surrounding text.  When
-    ``false``, the font for ``mathvariant="normal"`` will be used;
-    when ``true``, the font will be inherited from the surrounding
-    paragraph.
 
-.. describe:: addMMLclasses: false
+The remaining options are described in the
+:ref:`output-common-options` section.
 
-    This controls whether the MathML structure is retained and CSS
-    classes are added to mark the original MathML elements (as in the
-    output from the `HTML-CSS` output jax).  By default, the SVG
-    output jax removes unneeded nesting in order to produce a more
-    efficient markup, but if you want to use CSS to style the elements
-    as if they were MathML, you might need to set this to true.
+-----
 
-.. describe:: useFontCache: true
+Developer Options
+=================
 
-    This controls whether the SVG output uses ``<use>`` elements to re-use font paths rather than repeat paths every time. If ``useGlobalCache`` (see below) is set to ``false``, this will still reduce duplication of paths while keeping each SVG self-contained.
+In addition to the options listed above, low-level options intended
+for developers include the following:
 
-.. describe:: useGlobalCache: true
+.. _svg-localID:
+.. describe:: localID: null
 
-    When set to ``true`` the SVG Output stores paths (corresponding to "fonts" in the SVG output) in a global SVG object using ``<defs>`` elements so that it can re-use them in all equations  via ``<use>`` elements (much like a font file allows re-use of characters across the document). While set to ``true`` by default, it will have no effect if ``useFontCache`` is set to ``false``.
+   This gives the ID prefix to use for the paths stored in a local
+   font cache when :attr:`fontCache` is set to ``'local'``.  This is
+   useful if you need to process multiple equations by hand and want
+   to generate unique ids for each equation, even if MathJax is
+   restarted between equations.  If set to ``null``, no prefix is
+   used.
 
-.. describe:: EqnChunk: 50
-              EqnChunkFactor: 1.5
-	      EqnChunkDelay: 100
+.. _svg-titleID:
+.. describe:: titleID: 0
 
-    These values control how "chunky" the display of mathematical
-    expressions will be; that is, how often the equations will be
-    updated as they are processed.
+   This gives the initial number used to make unique ``<title>`` ids
+   when :attr:`internalSpeechTitles` is ``true``.  This is useful if
+   you need to process multiple equations by hand and want to generate
+   unique ids for each equation, even if MathJax is restarted between
+   equations.
 
-    ``EqnChunk`` is the number of equations that will be typeset before
-    they appear on screen.  Larger values make for less visual flicker
-    as the equations are drawn, but also mean longer delays before the
-    reader sees anything.
+-----
 
-    ``EqChunkFactor`` is the factor by which the ``EqnChunk`` will
-    grow after each chunk is displayed.
+.. raw:: html
 
-    ``EqChunkDelay`` is the time (in milliseconds) to delay between
-    chunks (to allow the browser to respond to other user
-    interaction).
-
-    Set ``EqnChunk`` to 1, ``EqnChunkFactor`` to 1, and
-    ``EqnChunkDelay`` to 10 to get the behavior from MathJax v1.1 and
-    below.
-
-.. describe:: matchFontHeight: true
-
-    This option indicates whether MathJax should try to adjust the
-    x-height of equations to match the x-height of the surrounding text.
-    See the :ref:`MatchWebFonts options <configure-MatchWebFonts>` for finer
-    control, especially if you are using Web fonts.
-
-.. describe:: linebreaks: {}
-
-    This is an object that configures automatic linebreaking in the
-    SVG output.  In order to be backward compatible with earlier
-    versions of MathJax, only explicit line breaks are performed by
-    default, so you must enable line breaks if you want automatic
-    ones.  The object contains the following values:
-
-    .. describe:: automatic: false
-
-        This controls the automatic breaking of expressions: when
-        ``false``, only ``linebreak="newline"`` is processed; when
-        ``true``, line breaks are inserted automatically in long
-        expressions.
-
-    .. describe:: width: "container"
-
-      This controls how wide the lines of mathematics can be.
-
-      Use an explicit width like ``"30em"`` for a fixed width.
-      Use ``"container"`` to compute the size from the containing
-      element.
-      Use ``"nn% container"`` for a portion of the container.
-      Use ``"nn%"`` for a portion of the window size.
-
-      The container-based widths may be slower, and may not produce
-      the expected results if the layout width changes due to the
-      removal of previews or inclusion of mathematics during
-      typesetting.
-
-.. describe:: styles: {}
-
-    This is a list of CSS declarations for styling the SVG output.
-    See the definitions in ``jax/output/SVG/config.js`` for some
-    examples of what are defined by default.  See :ref:`CSS Style
-    Objects <css-style-objects>` for details on how to specify CSS
-    style in a JavaScript object.
-
-.. describe:: tooltip: { ... }
-
-    This sets the configuration options for ``<maction>`` elements
-    with ``actiontype="tooltip"``.  (See also the ``#MathJax_Tooltip``
-    style setting in ``jax/output/SVG/config.js``, which can be
-    overridden using the ``styles`` option above.)
-
-    The ``tooltip`` section can contain the following options:
-
-    .. describe:: delayPost: 600
-
-        The delay (in milliseconds) before the tooltip is posted after
-        the mouse is moved over the ``maction`` element.
-
-    .. describe:: delayClear: 600
-
-        The delay (in milliseconds) before the tooltop is cleared
-        after the mouse moves out of the ``maction`` element.
-
-    .. describe:: offsetX: 10
-                  offsetY: 5
-
-        These are the offset from the mouse position (in pixels)
-	where the tooltip will be placed.
+   <span></span>

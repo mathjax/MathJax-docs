@@ -25,3 +25,7 @@ only MathJax TeX font currently
 SVG equation numbers now float with window size changes
 
 A11Y changes (no AssistiveMML, no auto-collapse yet, assistive-menu now part of ui/menu).
+
+No showMenu option (instead use renderActions)
+
+

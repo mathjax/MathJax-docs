@@ -225,7 +225,7 @@ component files in version 3, you may not need to do any configuration
 at all.
 
 
-.. _loader-load:
+.. _loader-load-explicit:
 
 Loading Components Individually
 -------------------------------

@@ -1,8 +1,8 @@
-.. _configuration:
+.. _configurating-mathjax:
 
-#####################
-Configuration Objects
-#####################
+###################
+Configuring MathJax
+###################
 
 The various components of MathJax, including its input and output
 processors, its extensions, and the MathJax core,
@@ -22,7 +22,7 @@ configuration if you do.
 
 Some blocks may contain further sub-blocks.  For example, the ``tex``
 block can have a ``macros`` sub-block that pre-defines macros, and a
-``tagFormat`` block (when the :ref:`tagformat-component` component is used)
+``tagFormat`` block (when the :ref:`tex-tagformat` component is used)
 to define how equation tags are displayed and handled.
 
 For example,
@@ -62,17 +62,55 @@ displayed equations to be typeset to the left (rather than centered),
 defines two macros, and finally set the tagging so that it uses square
 brackets rather than parentheses for equation numbers and tags.
 
+Note the special notation used with the ``packages`` option above.
+The ``packages`` property is an array of extension names, but the
+configuration uses a special object to add to that array rather than
+replace it.  If the option you are setting is an array, and you
+provide an object that has a single propery whose name is ``'[+]'``
+and whose value is an array, then that array will be appended to the
+default value for the option you are setting.  So in the example
+above, the ``'tagFormat'`` string is added to the default ``packages``
+array (without your needing to know what that default value is).
+
+Similarly, if you use an object with a single property whose name is
+``'[-]'`` and whose value is an array, the elements in that array are
+*removed* from the default value of the option you are setting.  For
+example,
+
+.. code-block:: javascript
+
+   packages: {'[-]': ['autload', 'require']}
+
+would **remove** the `autoload` and `require` packages from the default
+``packages`` array.
+
+Finally, you can combine ``'[+]'`` and ``'[-]'`` in one object to do
+both actions.  E.g.,
+
+.. code-block:: javascript
+
+   packages: {'[+]': ['enclose'], '[-]': ['autload', 'require']}
+
+would remove the `autoload` and `require` packages from the default
+``packages`` array, and add `enclose` to the result.
+
 -----
+
+In the links below, the various options are first listed with their
+default values as a complete configuration block, and then each option
+is explained further below that.
 
 .. toctree::
    :caption: More Information
    :maxdepth: 2
+   :titlesonly:
 
    input/index
    output/index
+   document
    accessibility
    menu
-   startup
+   startup/index
 
 -----
 

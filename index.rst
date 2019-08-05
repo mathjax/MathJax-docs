@@ -66,7 +66,7 @@ need it.
 .. toctree::
     :caption: Configuration Options
     :name: configuration-options
-    :maxdepth: 1
+    :maxdepth: 2
 
     Configuring MathJax               <options/index>
 

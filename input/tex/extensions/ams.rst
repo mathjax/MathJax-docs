@@ -4,7 +4,7 @@
 ams
 ###
 
-The `asm` extension implements AMS math environments and macros, and
+The `ams` extension implements AMS math environments and macros, and
 macros for accessing the characters in the AMS symbol fonts.  This
 extension is already loaded in all the components that include
 the TeX input jax, other than ``input/tex-base``.  See the :ref:`list
