@@ -29,3 +29,5 @@ A11Y changes (no AssistiveMML, no auto-collapse yet, assistive-menu now part of 
 No showMenu option (instead use renderActions)
 
 
+|-----|
+

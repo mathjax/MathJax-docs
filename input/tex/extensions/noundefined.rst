@@ -27,3 +27,5 @@ block of your MathJax configuration, and add ``'noundefined'`` to the
      loader: {load: ['[tex]/noundefined']},
      tex: {packages: {'[+]': ['noundefined']}}
    };
+
+|-----|

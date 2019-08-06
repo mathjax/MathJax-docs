@@ -130,3 +130,5 @@ level of the MathJax configuration object and prefix it with
        padding: '5px'
      }
    };
+
+|-----|

@@ -37,3 +37,5 @@ example), add ``'[tex]/configMacros'`` to the ``load`` array of the
      loader: {load: ['[tex]/configMacros']},
      tex: {packages: {'[+]': ['configMacros']}}
    };
+
+|-----|

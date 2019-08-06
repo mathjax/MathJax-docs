@@ -160,3 +160,5 @@ will not interpret them, but MathJax will.  E.g.,
 
 Keep in mind that the browser interprets your text before MathJax
 does.
+
+|-----|

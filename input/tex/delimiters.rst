@@ -48,3 +48,5 @@ actual LaTeX.  This functionality can be controlled via the
 See the :ref:`tex configuration options <configure-tex>` page, for
 additional configuration parameters that you can specify for the
 TeX input processor.
+
+|-----|

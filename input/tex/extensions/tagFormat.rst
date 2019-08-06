@@ -43,3 +43,5 @@ example), add ``'[tex]/tagFormat'`` to the ``load`` array of the
      loader: {load: ['[tex]/tagFormat']},
      tex: {packages: {'[+]': ['tagFormat']}}
    };
+
+|-----|

@@ -182,8 +182,4 @@ condition that you download the trademarks directly from our website.
 MathJax retains full, unfettered, and sole discretion to revoke this
 trademark license for any reason whatsoever or for no specified reason.*
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

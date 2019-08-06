@@ -120,8 +120,4 @@ Option Descriptions
    adaptor for use in `node` applications; if you do, it will set this
    value so that it will be used automatically.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

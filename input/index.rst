@@ -1,5 +1,0 @@
-.. _input-formats:
-
-###########
-Placeholder
-###########

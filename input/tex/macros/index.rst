@@ -2241,3 +2241,4 @@ provided where ``NAME`` is one of the following:
    * - ``vmatrix``
      - **ams**
 
+|-----|

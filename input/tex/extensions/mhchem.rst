@@ -41,3 +41,5 @@ extension is loaded.
    The older version was still available MathJax version 2.7, but it
    is no longer part of MathJax version 3.  Only the newer version of
    `mhchem` is available.
+
+|-----|

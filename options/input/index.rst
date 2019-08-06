@@ -120,8 +120,4 @@ Option Descriptions
     This could also be specified by ``ignoreClass: 'class[12]'``,
     which matches ``class`` followed by either a ``1`` or a ``2``.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

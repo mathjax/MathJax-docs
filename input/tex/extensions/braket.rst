@@ -43,3 +43,5 @@ and add ``'braket'`` to the ``packages`` array of the ``tex`` block.
 Alternatively, use ``\require{braket}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
+
+|-----|

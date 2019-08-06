@@ -1,4 +1,4 @@
-.. _configurating-mathjax:
+.. _configuring-mathjax:
 
 ###################
 Configuring MathJax
@@ -112,10 +112,4 @@ is explained further below that.
    menu
    startup/index
 
------
-
-.. raw:: html
-
-   <span></span>
-
-
+|-----|

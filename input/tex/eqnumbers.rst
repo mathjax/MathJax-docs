@@ -76,3 +76,5 @@ details.
 If you are using automatic equation numbering and modifying the page
 dynamically, you can run into problems due to duplicate labels. See
 :ref:`tex-reset` for how to address this.
+
+|-----|

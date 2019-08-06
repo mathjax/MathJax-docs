@@ -1,4 +1,4 @@
-.. _configure-chtml:
+.. _chtml-options:
 
 ###################################
 CommonHTML Output Processor Options
@@ -71,8 +71,4 @@ Option Descriptions
 The remaining options are described in the
 :ref:`output-common-options` section.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

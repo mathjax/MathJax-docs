@@ -35,8 +35,4 @@ output of the CommonHTML processor can.
 See :ref:`configure-svg` for information about the options that
 control the SVG output.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

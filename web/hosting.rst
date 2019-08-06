@@ -111,7 +111,7 @@ You can include MathJax in your web page by putting
 in your document's ``<head>`` block.  Here, ``tex-chtml.js`` is the
 combined component that you are loading, and this is just an example; you
 will need to pick the one you want to use.  See the section on
-:ref:`web-configure` for more details.
+:ref:`web-configuration` for more details.
 
 The ``path-to-MathJax`` should be replaced by the URL for the main
 MathJax directory, so if you have put the ``mathjax/components/dist``
@@ -210,23 +210,28 @@ Firefox's same-origin security policy affects its ability to load
 web-based fonts, as described above. This has implications not only to
 cross-domain loading of MathJax, but also to using MathJax locally
 from your hard disk. Firefox's interpretation of the same-origin
-policy for local files is that the "same domain" for a page is the
-directory where that page exists, or any of its subdirectories. So if
-you use MathJax in a page with a ``file://`` URL, and if MathJax is
-loaded from a directory other than the one containing the original
-page, then MathJax will not be able to access the web-based fonts in
-Firefox. In that case, MathJax will fall back on image fonts to
-display the mathematics.
+policy for local files used to be that the "same domain" for a page is
+the directory where that page exists, or any of its subdirectories.
+This allowed MathJax to be loaded from a subdiretory of the director
+where the web page was loaded.
 
-In order for Firefox to be able to load the fonts properly for a local
-file, your MathJax installation must be in a subdirectory of the one
-containing the page that uses MathJax. This is an unfortunate
-restriction, but it is a limitiation imposed by Firefox's security
-model that MathJax can not circumvent. Currently, this is not a
-problem for other browsers.
+This is no longer the case with Firefox starting with version 68 and
+going forward (see `their documentation
+<https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSRequestNotHttp#Local_File_Security_in_Firefox_68>`__).
+Now there is no same origin for a ``file://`` URL (the origin for a
+page loaded from a ``file://`` URL is unique).
 
------
+This means there are limited options for using MathJax in Firefox with
+a local copy of MathJax.  The easiest option is to use the SVG output
+renderer rather than the CommonHTML output, as that does not require
+fonts to be loaded, so avoids the same-origin issue.  Alternatively,
+you could install the MathJax TeX fonts as system fonts so that
+Firefox doesn't hav to try to laod them as web fonts.  
 
-.. raw:: html
+This is an unfortunate restriction for MathJax (though we understand
+their reasoning), but it is a limitiation imposed by Firefox's
+security model that MathJax can not circumvent. Currently, this is not
+a problem for other browsers, though there is no guarantee that it
+won't be in the future.
 
-   <span></span>
+|-----|

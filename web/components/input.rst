@@ -11,7 +11,9 @@ its own component.
 * :ref:`mathml-component`
 * :ref:`asciimath-component`
 
-These are described in more detail below.
+These are described in more detail below.  See the
+:ref:`input-options` section for details about configuring these
+components.
 
 -----
 
@@ -46,6 +48,9 @@ extensions to be loaded dynamically, so if you are calling MathJax's
 typesetting or conversion methods yourself, you should use the
 promise-based versions in order to handle that properly.
 
+See the :ref:`tex-options` section for information about
+configuring this component.
+
 input/tex-full
 --------------
 
@@ -58,6 +63,9 @@ should remove the :ref:`tex-color` extension if you add the
 :ref:`tex-colorv2` extension, and should remove the :ref:`tex-braket`
 extension if you enable the :ref:`tex-physics` package.
 
+See the :ref:`tex-options` section for information about
+configuring this component.
+
 input/tex-base
 --------------
 
@@ -67,6 +75,10 @@ macros and environments.  No other extensions are included, so no
 extensions are autoloaded, and you can not use ``\require``.  For this
 component, you must expliciutly load the extensions you want to use,
 and add them to the ``packages`` array.
+
+See the :ref:`tex-options` section for information about
+configuring this component.
+
 
 TeX Extension Packages
 ----------------------
@@ -100,6 +112,10 @@ all of them except :ref:`tex-physics` and :ref:`tex-colorV2`.  The
 `input/tex-base` and `[tex]/all-packages` components together are
 effectively the same as the `input/tex-full` component.
 
+See the :ref:`tex-extension-options` section for information about
+configuring the TeX extensions.
+
+
 -----
 
 
@@ -116,7 +132,10 @@ MathJax will define a function to convert serialized MathML strings
 into the output format that has been loaded.  See the
 :ref:`convert-math` section for details.
 
-See the :ref:`mathml-output` section for details about MathML output.
+* See the :ref:`mathml-output` section for details about MathML output.
+
+* See the :ref:`mathml-options` section for information about
+  configuring this component.
 
 -----
 
@@ -134,6 +153,9 @@ component, MathJax will define a function to convert AsciiMath strings
 into the output format that has been loaded.  See the
 :ref:`convert-math` section for details.
 
+See the :ref:`asciimath-options` section for information about
+configuring this component.
+
 .. note::
 
    The AsciiMath input jax has not been fully ported to version 3
@@ -142,8 +164,4 @@ into the output format that has been loaded.  See the
    component larger than usual, and slower than the other input
    components.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

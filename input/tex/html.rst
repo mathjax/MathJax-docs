@@ -150,3 +150,5 @@ then you can use ``\$`` in the text of your page to get a dollar sign
 (without the backslash) in the end.  Alternatively, you can use
 something like ``<span>$</span>`` to isolate the dollar sign so that
 MathJax will not use it as a delimiter.
+
+|-----|

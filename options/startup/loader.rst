@@ -305,9 +305,4 @@ the `input/tex` component is either loaded successfully or fails to load.
    promise object, the ``ready()`` function will not be called until
    the promise is resolved.
 
-
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

@@ -253,7 +253,7 @@ have as part of your javascript string.  For examnple,
 
 .. code-block:: javascript
 
-   var math = '\\frac{1}{\\sqrt{x^2 + 1}}`;
+   var math = '\\frac{1}{\\sqrt{x^2 + 1}}';
 
 This can be particularly confusing when you are using the LaTeX macro
 `\\`, which must both be doubled, as `\\\\`.  So you would do
@@ -264,8 +264,4 @@ This can be particularly confusing when you are using the LaTeX macro
 
 to produce an array with two rows.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

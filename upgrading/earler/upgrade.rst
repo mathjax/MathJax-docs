@@ -53,7 +53,7 @@ would become
 
 instead.  This will make sure your pages pass HTML5 validation.  Be sure
 that you put the configuration block **before** the script that loads
-MathJax.  See :ref:`Loading and Configuring MathJax <loading>` for more
+MathJax.  See `Loading and Configuring MathJax` for more
 details.
 
 If your page simply loads ``MathJax.js`` and relies on
@@ -90,7 +90,7 @@ needs to be downloaded.
 
 MathJax comes with four pre-built configurations, and our hope is that one
 of these will suit your needs.  They are described in more detail in the
-:ref:`Using a Configuration File  <config-files>` section.  To load one,
+`Using a Configuration File` section.  To load one,
 add ``?config=filename`` (where ``filename`` is the name of the
 configuration file without the ``.js``) to the URL that loads
 ``MathJax.js``.  For example
@@ -113,7 +113,7 @@ could be replaced by the single line
 In this way, you don't have to include the in-line configuration, and all
 the needed files will be downloaded when MathJax starts up.  For complete
 details about the contents of the combined configuration files, see the
-:ref:`Common Configurations <common-configurations>` section.
+`Common Configurations` section.
 
 If you want to use a pre-defined configuration file, but want to modify some
 of the configuration parameters, you can use both a
@@ -149,7 +149,7 @@ the best way for you to obtain MathJax.  That way you can be sure you are
 using an up-to-date version of MathJax, and that the server will be fast
 and reliable.
 
-See :ref:`Loading MathJax from a CDN <loading-CDN>` for more information.
+See `Loading MathJax from a CDN` for more information.
 
 Change in default TeX delimiters
 ================================
@@ -233,7 +233,7 @@ out MathJax from there.
 You may be able to switch to using the MathJax CDN (see above) rather than
 hosting your own copy of MathJax, and avoid the problem of updates all
 together.  If you must install your own copy, however, you should follow
-the instructions at :ref:`Installing and Testing MathJax <installation>`,
+the instructions at `Installing and Testing MathJax`,
 using either ``git`` or ``svn`` as described to obtain your copy from
 GitHub.  This will allow you to keep your copy of MathJax up to date as
 development continues.

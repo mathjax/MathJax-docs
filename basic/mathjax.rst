@@ -57,8 +57,4 @@ with version 2, so web sites can perform all the math processing once
 up front, rather than having the browser do it each time the page is
 viewed.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

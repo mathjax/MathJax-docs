@@ -40,8 +40,4 @@ MathJax has set in them.  See the :ref:`configure-after-load` section
 for more about how to change the configuration after MathJax is loaded
 if you need to do that.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

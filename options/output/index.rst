@@ -186,9 +186,3 @@ for developers include the following:
    subclass of ``CssStyles`` and pass that to the output jax.
    A ``null`` value means use the default ``CssStyles`` class and
    make a new instance of that.
-   
------
-
-.. raw:: html
-
-   <span></span>

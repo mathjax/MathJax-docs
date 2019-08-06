@@ -12,8 +12,8 @@ increase MathJax's performance.
 In addition to these changes, MathJax.org now offers MathJax as a network
 service.  Instead of having to install MathJax on your own server, you can
 link to our content delivery network (CDN) to get fast access to 
-up-to-date and past versions of MathJax.  See :ref:`Loading MathJax from 
-the CDN <loading-CDN>` for more details.
+up-to-date and past versions of MathJax.  See `Loading MathJax from 
+the CDN` for more details.
 
 The following sections outline the changes in v1.1:
 

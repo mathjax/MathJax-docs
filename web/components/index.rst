@@ -31,6 +31,9 @@ that.
 See the :ref:`loading-mathjax` section for details about how to
 specify and load MathJax components.
 
+See the :ref:`configuring-mathjax` sectino for details about how to
+configure the various MathJax components.
+
 -----
 
 .. toctree::
@@ -59,8 +62,4 @@ specify and load MathJax components.
 
    misc
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

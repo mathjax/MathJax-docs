@@ -759,8 +759,4 @@ provides a function that lets you specify a TeX string to translate,
 and then (asynchronously) generates the speech for it and displays it
 as the contents of the DOM element with ``id="speech"`` in the page.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

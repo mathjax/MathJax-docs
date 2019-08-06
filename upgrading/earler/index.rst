@@ -18,3 +18,13 @@ What's New inEarlier Versions
     Migrating from MathJax v1.0 to v1.1 <upgrade>
     Converting to MathJax from jsMath <jsMath>
 
+-----
+
+The links above may refer to sections of the documentation for version
+2.7 that are no longer present in the documentation for version 3.  In
+such cases, the links have been removed.  The original versions are
+available in the `version 2 documentation
+<http://docs.mathjax.org/en/v2.7-latest/upgrading/index.html>`__
+pages.
+
+|-----|

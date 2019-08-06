@@ -469,8 +469,4 @@ however, that MathJax will no longer know about any mathematics that
 has already been typeset, as that data was stored in the objects that
 have been discarded when the new ones are created.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

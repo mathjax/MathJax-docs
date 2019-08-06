@@ -46,3 +46,4 @@ These extensions have not yet been ported to version 3:
 See the :ref:`custom-extension` section for how to create your own TeX
 extension.
 
+|-----|

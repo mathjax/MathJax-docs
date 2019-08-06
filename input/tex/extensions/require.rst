@@ -31,3 +31,5 @@ to the ``packages`` array of the ``tex`` block.
      loader: {load: ['[tex]/require']},
      tex: {packages: {'[+]': ['require']}}
    };
+
+|-----|

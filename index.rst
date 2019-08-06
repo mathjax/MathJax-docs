@@ -41,9 +41,9 @@ need it.
    :name: server-nodejs
    :maxdepth: 2
 
-   Getting Started with node.js       <server/start>
-   MathJax Three Different Ways       <server/overview>
-   Examples in node.js                <server/examples>
+   Getting Started with Node          <server/start>
+   Three Ways to Use MathJax in Node  <server/overview>
+   Examples in Node                   <server/examples>
 
 .. toctree::
    :caption: MathJax Input
@@ -83,10 +83,9 @@ need it.
 .. toctree::
     :caption: The MathJax API
     :name: api
-    :maxdepth: 1
+    :maxdepth: 2
 
-    The MathJax Compoment API        <api/components>
-    The Direct MathJax API           <api/direct>
+    Using the MathJax API             <api/index>
 
 .. toctree::
     :caption: Miscellaneous
@@ -100,11 +99,11 @@ need it.
 .. toctree::
     :caption: MathJax Updates
     :name: mathjax-updates
-    :maxdepth: 1
+    :maxdepth: 2
+    :titlesonly:
 
     Upgrading from Version 2.x        <upgrading/v2>
-    What's New in Version 3.0         <upgrading/whats-new-3.0>
-    What's New in Earlier Versions    <upgrading/earler/index>
+    What's New                        <upgrading/index>
 
 ------
 

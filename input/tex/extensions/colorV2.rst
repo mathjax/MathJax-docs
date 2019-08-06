@@ -44,3 +44,5 @@ Alternatively, you can configure the `autoload` package to load
        }
      }
    };
+
+|-----|

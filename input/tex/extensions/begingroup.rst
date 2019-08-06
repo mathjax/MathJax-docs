@@ -40,3 +40,5 @@ release of MathJax.
    This extension is **not** included in any of the combined configurations,
    and will not be loaded automatically, so you must include it
    explicitly in your configuration if you wish to use these commands.
+
+|-----|

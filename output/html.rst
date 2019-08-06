@@ -25,8 +25,4 @@ more information).
 See :ref:`configure-chtml` for information about the options that
 control the CommonHTML output.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

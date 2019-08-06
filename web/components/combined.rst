@@ -169,9 +169,4 @@ The `mml-svg` component loads the :ref:`mathml-component` component
 and the :ref:`output/svg <svg-component>`, along with the
 contextual menu component, and the startup component.
 
------
-
-.. raw:: html
-
-   <span></span>
-
+|-----|

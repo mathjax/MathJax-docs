@@ -181,8 +181,4 @@ math expression, and creates a new :ref:`render action
 <document-renderActions>` that causes the funciton to be called as
 part of the MathJax rendering process.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

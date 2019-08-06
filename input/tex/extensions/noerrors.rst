@@ -29,3 +29,5 @@ and add ``'noerrors'`` to the ``packages`` array of the ``tex`` block.
      loader: {load: ['[tex]/noerrors']},
      tex: {packages: {'[+]': ['noerrors']}}
    };
+
+|-----|

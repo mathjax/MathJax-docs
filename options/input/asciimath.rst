@@ -1,4 +1,4 @@
-.. _configure-asciimath:
+.. _asciimath-options:
 
 #################################
 AsciiMath Input Processor Options
@@ -89,9 +89,4 @@ for developers include the following:
    pass that to the AsciiMath input jax.  A ``null`` value means use the
    default ``FindAsciiMath`` class and make a new instance of that.
 
-
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

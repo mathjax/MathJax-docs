@@ -137,8 +137,4 @@ Developer Options
    code if you don't specify one, so it is only necessary to set these
    if you want to manage the options specially.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

@@ -56,3 +56,5 @@ array of the ``tex`` block.
 Alternatively, use ``\require{html}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
+
+|-----|

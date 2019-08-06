@@ -76,3 +76,5 @@ says that the `verb` extension will not be autoloaded.
           }
         }
       };
+
+|-----|

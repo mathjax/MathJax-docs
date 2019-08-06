@@ -33,8 +33,11 @@ only font available in version 3 (see the :ref:`font-support` section
 for more information).  The `output/chtml/fonts/tex` component holds
 the font data.
 
-See the :ref:`chtml-output` section for details on the CommonHTML
-output processor.
+* See the :ref:`html-output` section for details on the CommonHTML
+  output processor.
+
+* See the :ref:`chtml-options` section for information about
+  configuring this component.
 
 -----
 
@@ -51,11 +54,10 @@ only font available in version 3 (see the :ref:`font-support` section
 for more information).  The `output/svg/fonts/tex` component holds
 the font data.
 
-See the :ref:`svg-output` section for details on the CommonHTML
-output processor.
+* See the :ref:`svg-output` section for details on the CommonHTML
+  output processor.
 
------
+* See the :ref:`svg-options` section for information about
+  configuring this component.
 
-.. raw:: html
-
-   <span></span>
+|-----|

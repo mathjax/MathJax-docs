@@ -161,4 +161,6 @@ software, such as editors or computational tools.
 MathJax provides access to these annotations through the ``"Show Math
 As"`` menu, via the ``Annotations`` submenu.  See the `MathML Annotation Framework 
 <http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_ and
-the :ref:`Contextual Menu Configuration <configure-menu>` documentation for details.
+the :ref:`menu-options` documentation for details.
+
+|-----|

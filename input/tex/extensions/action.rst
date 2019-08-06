@@ -36,3 +36,5 @@ array of the ``tex`` block.
 Alternatively, use ``\require{action}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 package is loaded.
+
+|-----|

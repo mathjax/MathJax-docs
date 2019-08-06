@@ -1,4 +1,4 @@
-.. _configure-mathml:
+.. _mathml-options:
 
 ##############################
 MathML Input Processor Options
@@ -90,9 +90,4 @@ for developers include the following:
    ``null`` value means use the default ``MathMLCompile`` class and
    make a new instance of that.
 
-   
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

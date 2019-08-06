@@ -38,6 +38,9 @@ processes.  These can be attached to the output for use by screen
 readers, or for use with the :ref:`explorer-component` component
 described below.
 
+See the :ref:`semantic-enrich-options` section for information about
+configuring this component.
+
 -----
 
 
@@ -52,6 +55,9 @@ element within an expression, and allows complex epxressions to
 collapsed portions can be expanded with a click of the mouse, or by
 keyboard actions when using the :ref:`explorer-component` extension
 described below.
+
+See the :ref:`complexity-options` section for information about
+configuring this component.
 
 -----
 
@@ -72,8 +78,7 @@ sub-expressions at the current level).  See the :ref:`accessibility`
 section for more details about using the expression explorer and its
 various features.
 
------
+See the :ref:`explorer-options` section for information about
+configuring this component.
 
-.. raw:: html
-
-   <span></span>
+|-----|

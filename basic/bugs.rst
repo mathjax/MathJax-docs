@@ -52,8 +52,4 @@ To report a problem, please follow these steps:
       <https://codesandbox.io>`__.
 
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

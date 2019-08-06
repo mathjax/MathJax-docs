@@ -14,7 +14,7 @@ Needed examples:
 
 * configure using an external script
 * have external script load mathjax itself
-* load mathjax only of there is math on the page
+* load mathjax only if there is math on the page
 * synchronize with promises
 * reset equation numbering
 
@@ -23,8 +23,4 @@ Needed examples:
 * MathML for AssistiveMML replacement
 * MathML for NativeMML replacement
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

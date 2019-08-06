@@ -1,8 +1,8 @@
 .. _getting-started-components:
 
-***************************************
+#######################################
 Getting Started with MathJax Components
-***************************************
+#######################################
 
 MathJax allows you to include mathematics in your web pages, either
 using LaTeX, MathML, or AsciiMath notation, and the mathematics will
@@ -218,8 +218,8 @@ component for TeX input and CommonHTML output.
 
 There are many options that can be set in this way.  See the section
 on :ref:`web-configuration` for more details, and on
-:ref:`Configurating Components <options-components>` for information
-on the available options for the various components.
+:ref:`configuring-mathjax` for information on the available options
+for the various components.
 
 -----
 
@@ -282,8 +282,4 @@ MathJax, you could visit the :ref:`MathJax community forums
 <community-forums>` or the :ref:`MathJax bug tracker
 <community-tracker>`.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

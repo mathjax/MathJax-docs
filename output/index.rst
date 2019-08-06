@@ -58,8 +58,4 @@ in your document.
    svg
    mathml
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

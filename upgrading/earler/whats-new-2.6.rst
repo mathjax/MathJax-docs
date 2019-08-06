@@ -9,15 +9,15 @@ MathJax v2.6 includes a number of new features, as well a more than 30 important
 Features
 --------
 
-* *Improved CommonHTML output.* The CommonHTML output now provides the same layout quality and MathML support as the HTML-CSS and SVG output. It is on average 40% faster than the other outputs and the markup it produces are identical on all browsers and thus can also be pre-generated on the server via MathJax-node. The fast preview mechanism introduced in v2.5 continues to develop as a separate output as :ref:`PreviewHTML <configure-PreviewHTML>` and the :ref:`fast-preview <configure-fast-preview>` extension.
+* *Improved CommonHTML output.* The CommonHTML output now provides the same layout quality and MathML support as the HTML-CSS and SVG output. It is on average 40% faster than the other outputs and the markup it produces are identical on all browsers and thus can also be pre-generated on the server via MathJax-node. The fast preview mechanism introduced in v2.5 continues to develop as a separate output as `PreviewHTML` and the `fast-preview` extension.
 * *Accessibility improvements.* We thank the AT community for their guidance, support, and feedback in our efforts towards making MathJax completely accessible to all users.
 
-  * *Screenreader compatibility.* The new ``AssistiveMML`` extension enables compatibility with most MathML-capable screenreaders by inserting visually-hidden MathML alongside MathJax's visual output. See :ref:`screenreader support <screenreader-support>` for details on the expected behavior as well as background on the limitations due to lack of web standards and browser/OS technology.
-  * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily access its features, cf. :ref:`MathJax UI <mathjax-ui-a11y>`.
+  * *Screenreader compatibility.* The new ``AssistiveMML`` extension enables compatibility with most MathML-capable screenreaders by inserting visually-hidden MathML alongside MathJax's visual output. See `screenreader support` for details on the expected behavior as well as background on the limitations due to lack of web standards and browser/OS technology.
+  * *Accesssible UI.* We have improved the accessibility of the MathJax menu to enable assistive technology users to easily access its features, cf. `MathJax UI`.
 * *PlainSource Output.* The new PlainSource output will revert the rendering back to the input format; in the case of MathML, the output will prefer TeX and AsciiMath from ``<annotation-xml>`` elements. This helps with accessibility and copy&paste of document fragments.
 * *Semi-slim MathJax repository for bower*. You can now use ``bower install components/MathJax`` to install a fork of MathJax without PNG fonts. **Many thanks** to `@minrk <https://github.com/minrk>`__ from the IPython/Jupyter team and to the team at `components <https://github.com/components>`__!
 * *MathJax via npm*. You can now use ``npm install mathjax`` to install a copy of MathJax without PNG fonts.
-* *Deprecated: MMLorHTML extension.* We have deprecated the ``MMLorHTML`` extension. For a detailed guide on configuring MathJax to choose different outputs on different browsers, please see :ref:`Automatic Selection of the Output Processor <automatic-output-switch>` for more information.
+* *Deprecated: MMLorHTML extension.* We have deprecated the ``MMLorHTML`` extension. For a detailed guide on configuring MathJax to choose different outputs on different browsers, please see `Automatic Selection of the Output Processor` for more information.
 
 Numerous bugs and issues have also been resolved; for a detailed listing please check the `release milestone <https://github.com/mathjax/MathJax/issues?q=milestone%3A%22MathJax+v2.6%22+is%3Aclosed>`__.
 
@@ -25,7 +25,7 @@ Numerous bugs and issues have also been resolved; for a detailed listing please 
 Interface
 ---------
 
-*   `#938 <https://github.com/mathjax/MathJax/issues/938>`__ Expose MathML for accessibility; cf. :ref:`screenreader support <screenreader-support>`.
+*   `#938 <https://github.com/mathjax/MathJax/issues/938>`__ Expose MathML for accessibility; cf. `screenreader support`.
 *   `#939 <https://github.com/mathjax/MathJax/issues/939>`__ Make MathJax contextual menu properly accessible.
 *   `#1088 <https://github.com/mathjax/MathJax/issues/1088>`__  MathJax Menu: drop PNG images in menu.
 *   `#1210 <https://github.com/mathjax/MathJax/issues/1210>`__  Update ``MathZoom.js``: global border-box support. **Special thanks** to `@CalebKester <https://github.com/CalebKester>`__

@@ -50,3 +50,5 @@ extension is loaded.
 
    If you want the old version 2 behavior, use the :ref:`tex-colorv2`
    extension instead.
+
+|-----|

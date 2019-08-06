@@ -112,8 +112,4 @@ determine the width, and that has an even more serous concequences for
 the layout, in general.  Thus it is best to use only the characters
 that are in the MathJax fonts when using server-side rendering.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

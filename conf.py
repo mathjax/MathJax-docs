@@ -73,6 +73,11 @@ exclude_trees = ['_build']
 # DPVC
 #
 primary_domain = 'js'
+rst_prolog = """
+.. |-----| raw:: html
+
+   <hr>
+"""
 #
 # /DPVC
 #

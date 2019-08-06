@@ -1,4 +1,4 @@
-.. _configure-svg:
+.. _svg-options:
 
 ############################
 SVG Output Processor Options
@@ -103,8 +103,4 @@ for developers include the following:
    unique ids for each equation, even if MathJax is restarted between
    equations.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

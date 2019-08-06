@@ -217,8 +217,4 @@ Option Descriptions
    displayed during expression exploration.  The default is 500,
    meaning 500%.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

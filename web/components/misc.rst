@@ -40,6 +40,9 @@ It is responsible for creating the needed objects (like the input and
 output jax), and for adding the typesetting and conversion methods
 described in the :ref:`web-typeset` section.
 
+See the :ref:`startup-options` section for information about
+configuring this component.
+
 -----
 
 
@@ -52,6 +55,9 @@ The `ui/menu` component implements the MathJax contextual menu, which
 allows you to obtain the MathML or original format of the mathematics,
 change parameters about the output renderer, enable accessibility
 features, and so on.
+
+See the :ref:`menu-options` section for information about
+configuring this component.
 
 -----
 
@@ -96,9 +102,7 @@ created by the `startup` module, you can use the `loader` component
 instead to load the MathJax component you need.  You can even use it
 as a general loader for other javascript, if you want.
 
+See the :ref:`loader-options` section for information about
+configuring this component.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

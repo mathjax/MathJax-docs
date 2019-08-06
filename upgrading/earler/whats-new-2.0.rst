@@ -6,7 +6,7 @@ What's New in MathJax v2.0
 
 MathJax version 2.0 includes many new and improved features, including
 much better speeds in Internet Explorer, a new AsciiMath input
-processor, a new :term:`SVG` output processor, support for additional
+processor, a new `SVG` output processor, support for additional
 LaTeX commands, and many bug fixes, to name just a few of the changes.
 
 
@@ -34,9 +34,8 @@ In v2.0, the output is processed in blocks so that typeset expressions
 are revealed in groups.  This reduces the visual distraction, and also
 speeds up the processing.  The number of equations in a block can be
 controlled through the ``EqnChunk`` parameter in the HTML-CSS or SVG
-block of your configuration.  See the :ref:`configuration options for
-HTML-CSS <configure-HTML-CSS>` and :ref:`configuration options for SVG
-<configure-SVG>` pages for details.
+block of your configuration.  See the `configuration options for
+HTML-CSS` and `configuration options for SVG` pages for details.
 
 If the page URL includes a hash reference (a link to a particular
 location within the page), MathJax v2.0 will jump to that location
@@ -45,8 +44,7 @@ may have changed due to the mathematical typsetting, that location may
 no longer be visible on screen, so MathJax moves there when it is done
 with the initial typesetting.)  You can control this behavior with the
 ``positionToHash`` parameter in the main section of your
-configuration.  See the :ref:`core configuration options
-<configure-hub>` page for details.
+configuration.  See the `core configuration options` page for details.
 
 
 Automatic equation numbering of TeX formulas
@@ -56,7 +54,7 @@ The TeX input jax now can be configured to add equation numbers
 (though the default is not to number equations so that existing pages
 will not change their appearance).  This is controlled through the
 ``equationNumbers`` section of the ``TeX`` block of your configuration
-(see the :ref:`equation numbering <tex-eq-numbers>` section for
+(see the `equation numbering` section for
 details).  You can request that the numbering follow the AMS-style
 numbering of environments, or you can request that every displayed
 equation be numbered.  There are now ``\label``, ``\ref``, and
@@ -71,7 +69,7 @@ MathJax now implements the MathML3 specification for automatic line
 breaking of displayed equations in its HTML-CSS output.  This is
 disabled by default, but can be enabled via the ``linebreaks`` section
 of the ``HTML-CSS`` or ``SVG`` block of your configuration (see the
-:ref:`automatic line breaking <automatic-linebreaking>` section for
+`automatic line breaking` section for
 details).  Note that automatic line breaking only applies to displayed
 equations, not in-line equations, unless they are themselves longer
 than a line.  The algorithm uses the nesting depth, the type of
@@ -84,22 +82,22 @@ the algorithm as we gain information from its actual use in the field.
 New AsciiMath input jax and SVG output jax
 ==========================================
 
-MathJax currently processes math in either :term:`TeX` and
-:term:`LaTeX` format, or :term:`MathML` notation; version 2.0 augments
-that to include :term:`AsciiMath` notation (see `the ASCIIMathML
+MathJax currently processes math in either `TeX` and
+`LaTeX` format, or `MathML` notation; version 2.0 augments
+that to include `AsciiMath` notation (see `the ASCIIMathML
 home page <http://www1.chapman.edu/~jipsen/mathml/asciimath.html>`_
 for details on this format).  This is a notation that is easier for
 students to use than TeX, and has been requested by the user
-community.  See the :ref:`AsciiMath support <AsciiMath-support>` page
+community.  See the `AsciiMath support` page
 for details.
 
 In addition to the HTML-CSS and Native MathML output available in
-v1.1, MathJax v2.0 includes an :term:`SVG`-based output jax.  This should
+v1.1, MathJax v2.0 includes an `SVG`-based output jax.  This should
 prove to be more reliable than the HTML-CSS output, as it avoids some
 CSS, web-font, and printing issues that the HTML-CSS output suffers
 from, and it currently has no browser-dependent code.  The SVG mode
 even works in some ebook readers (like Apple iBooks and Calibre).  See
-the :ref:`output formats <output-formats>` documentation for details.
+the `output formats` documentation for details.
 
 
 New combined configuration files
@@ -108,7 +106,7 @@ New combined configuration files
 Pre-defined configuration files that include the AsciiMath and SVG
 processors are now available with MathJax v2.0. These include
 ``AM_HTMLorMML``, ``TeX-AMS-MML_SVG``, and ``TeX-MML-AM_HTMLorMML``.
-See the :ref:`common configurations <config-files>` section for details.
+See the `common configurations` section for details.
 
 
 MathJax contextual menu now available on mobile devices
@@ -197,7 +195,7 @@ Many new TeX additions and enhancements
 * Allow optional alignment parameter for array, aligned, and gathered
   environments.
 
-See the :ref:`TeX support <TeX-support>` page for details on these
+See the `TeX support` page for details on these
 extensions and macros.
 
 
@@ -276,12 +274,11 @@ Interface improvements
 *  The `noErrors` and `noUndefined` extensions can now be disabled via
    a configuration option (since they are included in many of the
    combined configuration files).  See the `noErrors` and
-   `noUndefined` sections of the :ref:`TeX support
-   <TeX-support>` page for more information.
+   `noUndefined` sections of the `TeX support` page for more information.
 
 *  There is a new :meth:`MathJax.Hub.setRenderer()` function that can
-   be used to switch the current renderer.  See the :ref:`MathJax Hub
-   API <api-hub>` documentation for details.
+   be used to switch the current renderer.  See the `MathJax Hub
+   API` documentation for details.
 
 *  A user-defined macros is no longer overridden if an extension is
    loaded that redefines that macro.
@@ -298,7 +295,7 @@ Important changes from previous versions
    `HTML-CSS` (in those configurations that choose between the two).
    The only browser that defaults to `NativeMML` is now IE with
    MathPlayer installed.  You can configure this to your liking using
-   the :ref:`MMLorHTML configuration options <configure-MMLorHTML>`.
+   the `MMLorHTML configuration options`.
 
 *  `NativeMML` output will now be selected in IE9 when MathPlayer is
    present (since IE9 was released the same day as MathJax v1.1a, and
@@ -329,8 +326,8 @@ Important changes from previous versions
    to be properly parsed as a single math expression rather than two
    separate ones with unbalanced braces.  The old behavior can be
    obtained by setting ``balanceBraces`` to false in the ``tex2jax``
-   block of your configuration.  (See the :ref:`tex2jax configuration
-   options <configure-tex2jax>` for details.)
+   block of your configuration.  (See the `tex2jax configuration
+   options` for details.)
 
 *  If you are hosting your own copy of MathJax on your server, and
    that copy is being used from pages in a different domain, you will
@@ -347,8 +344,8 @@ Important changes from previous versions
        </FilesMatch>
 
    in the ``.htaccess` file for the ``Mathjax/fonts`` directory if you
-   are using the Apache web server.  See :ref:`Notes about shared
-   installations <cross-domain-linking>` for details.
+   are using the Apache web server.  See `Notes about shared
+   installations` for details.
 
 *  The ``\cases`` macro now properly places the second column in text
    mode not math mode.  In the past, one needed to use ``\text`` in
@@ -407,8 +404,7 @@ Important changes from previous versions
    may no longer be visible on screen, so MathJax moves there when it
    is done with the initial typesetting.  You can control this
    behavior with the ``positionToHash`` parameter in the main section
-   of your configuration (see :ref:`core configuration options
-   <configure-hub>`).
+   of your configuration (see `core configuration options`).
 
 *  In the event that MathJax is not able to load the configuration file
    you have specified in the script tag that loads ``MathJax.js`` via
@@ -471,8 +467,8 @@ Other enhancements
 *  Provide a new extension to handle tagged equations better in
    `HTML-CSS` output when there are floating elements that might
    reduce the area available to displayed equations.  (See the
-   HTML-CSS extensions section of the :ref:`output formats
-   <output-formats>` documentation for detais.)
+   HTML-CSS extensions section of the `output formats` documentation
+   for detais.)
 
 *  Use a text font for ``\it`` rather than the math italics, so
    spacing is better.

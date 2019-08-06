@@ -136,8 +136,7 @@ delimiters for in-line equations in TeX notation are ``\(...\)``,
 while those for display equations are ``$$...$$`` or ``\[...\]``, but
 both types of delimiters can be customized. For how to configure
 MathJax to scale all mathematics relative to the surrounding text,
-check our documentation for :ref:`the HTML output
-<configure-HTML-CSS>` and :ref:`the SVG output <configure-SVG>`.
+check our documentation for :ref:`output-options`.
 
 
 .. _faq-safe:
@@ -256,8 +255,4 @@ formula for water when you use the ``\water`` command. The
 the MathJax configuration. For more information, see `the
 documentation <tex-macros>`_.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

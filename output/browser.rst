@@ -78,8 +78,4 @@ at the top of the ``<head>`` section of your HTML documents.
 Note that versions of IE prior to 11 are no longer supported in
 MathJax version 3.
 
--------
-
-.. raw:: html
-
-   <span></span>
+|-----|

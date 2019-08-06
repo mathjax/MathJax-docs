@@ -37,3 +37,5 @@ example), add ``'[tex]/newcommand'`` to the ``load`` array of the
 Alternatively, use ``\require{newcommand}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 package is loaded.
+
+|-----|

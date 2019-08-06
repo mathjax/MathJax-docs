@@ -64,8 +64,4 @@ Presentations
    Paste <https://mathjax.github.io/papers/JMM/2010/miner-jmm2010/>`__ by Robert Miner *2010 Joint
    Mathematics Meetings in San Francisco*
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

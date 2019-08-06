@@ -47,3 +47,4 @@ the `LaTeX Wiki book <http://en.wikibooks.org/wiki/LaTeX>`_.
    extensions/index
    macros/index
 
+|-----|

@@ -31,3 +31,4 @@ environment's preamble; i.e., only the ``l``, ``r``, ``c``, and ``|``
 characters alongside ``:`` for dashed lines --- everything else is
 ignored.
 
+|-----|

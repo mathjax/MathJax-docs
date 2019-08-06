@@ -343,8 +343,4 @@ We suggest you do not switch on IE's Enterprise mode on pages using MathJax and
 we also have to strongly suggest that you **not** use the BrowserHelperAddon with MathJax
 on IE11.
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|

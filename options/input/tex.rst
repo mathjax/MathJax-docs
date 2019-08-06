@@ -1,4 +1,4 @@
-.. _configure-tex:
+.. _tex-options:
 
 ###########################
 TeX Input Processor Options
@@ -576,8 +576,4 @@ following values:
    space between rows, so setting this to ``true`` can improve the
    look of the diagram.)
 
------
-
-.. raw:: html
-
-   <span></span>
+|-----|
