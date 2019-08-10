@@ -79,7 +79,7 @@ into the ``mathjax/lib`` directory.
 Make the Files Available
 ========================
 
-Once you have acquired the MathJax files bu one of the methods
+Once you have acquired the MathJax files by one of the methods
 described above, you need to make the proper files available on your
 web server.  Note that most of the files in the MathJax distribution
 are not needed on the server.  For example, the ``mathjax/ts``

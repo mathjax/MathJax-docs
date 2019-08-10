@@ -79,7 +79,7 @@ calls.  For example,
    let promise = Promise.resolve();  // Used to hold chain of typesetting calls
 
    function typeset(code) {
-     promise = promise.then(() => MathJax.typesetPromise(code()))
+     promise = promise.then(() => {code(); return MathJax.typesetPromise()})
                       .catch((err) => console.log('Typeset failed: ' + err.message));
      return promise;
    }
@@ -120,7 +120,7 @@ I.e., simply use
 
    function typeset(code) {
      MathJax.startup.promise = MathJax.startup.promise
-       .then(() => MathJax.typesetPromise(code()))
+       .then(() => {code(); return MathJax.typesetPromise()})
        .catch((err) => console.log('Typeset failed: ' + err.message));
      return MathJax.startup.promise;
    }
@@ -158,6 +158,77 @@ to force MathJax to reset the page to the state it was before MathJax
 processed it, reset the TeX automatic line numbering and labels, and
 then retypeset the contents of the page from scratch.
 
+
+.. _load-for-math:
+
+Loading MathJax Only on Pages with Math
+---------------------------------------
+
+The MathJax combined configuration files are large, and so you may
+wish to include MathJax in your page only if it is necessary.  If you
+are using a content-management system that puts headers and footers
+into your pages automatically, you may not want to include MathJax
+directly, unless most of your pages include math, as that would laod
+MathJax on *all* your pages.  Once MathJax has been loaded, it should
+be in the browser's cache and load quickly on subsequent pages, but
+the first page a reader looks at will load more slowly.  In order to
+avoid that, you can use a script like the following one that checks to
+see if the content of the page seems to include math, and only loads
+MathJax if it does.  Note that this is not a very sophisticated test,
+and it may think there is math in some cases when there really isn't
+but it should reduce the number of pages on which MathJax will have ot
+be loaded.
+
+Create a file called ``check-for-tex.js`` containing the following:
+
+.. code-block:: javascript
+
+   (function () {
+     var body = document.body.textContent;
+     if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
+       if (!window.MathJax) {
+         window.MathJax = {
+           tex: {
+             inlineMath: {'[+]': [['$', '$']]}
+           }
+         };
+       }
+       var script = document.createElement('script');
+       script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/latest.js?tex-chtml.js';
+       document.head.appendChild(script);
+     }
+   })();
+
+and then use
+
+.. code-block:: html
+
+   <script src="check-for-tex.js" defer></script>
+
+in order to load the script when the pasge content is ready.  Note
+that you will want to unclude the path to the location where you
+stored ``check-mathjax.js``, that you should change
+``tex-chtml.js`` to whatever component file you want to use, and that
+the ``window.MathJax`` value should be set to whatever configuration
+you want to use.  In this case, it just adds dollar signs to the
+in-line math delimiters.  Finally, adjust the ``body.match()`` regular
+expression to match whatever you are using for math delimiters.
+
+This simply checks if there is something that looks like a TeX in-line
+or displayed math delimiter, and loads MathJax if there is.  If you
+are using different delimiters, you will need to change the pattern to
+include those (and exclude any that you don't use).  If you are using
+AsciiMath instead of TeX, then change the pattern to look for the
+AsciiMath delimiters.
+
+If you are using MathML, you may want to use
+
+.. code-block:: javascript
+
+   if (document.body.querySelector('math')) {...}
+
+for the test instead (provided you aren't using namspace prefixes,
+like `<m:math>`).
 
 -----
 

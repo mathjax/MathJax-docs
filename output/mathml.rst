@@ -13,6 +13,8 @@ mechanism that can convert the internal format into a serialized
 MathML string provided by :meth:`MathJax.startup.toMML()` (if you are
 using MathJax components).
 
+.. _NativeMML:
+
 While MathJax version 2 included a `NativeMML` output jax for
 producing MathML output in the web page, because MathML is not
 available in the Chrome, Edge, and IE browsers, because the MathML
@@ -97,6 +99,8 @@ block-level element with some top and bottom margin.
    various limitations of Firefox/Gecko and Safari/WebKit (e.g., to
    provide support for equation labels), but this approach does not,
    as it just uses the generic MathML.
+
+.. _AssistiveMML:
 
 MathJax version 2 also included an `AssistiveMML` extension that would
 insert hidden MathML that could be read by screen readers.  This is no

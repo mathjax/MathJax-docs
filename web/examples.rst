@@ -10,17 +10,23 @@ There are a number of example files in the `MathJax3 demo repository
 These include documentation as well as live examples that you can
 run.
 
-Needed examples:
+In addition, there are examples for:
 
-* configure using an external script
-* have external script load mathjax itself
-* load mathjax only if there is math on the page
-* synchronize with promises
-* reset equation numbering
+* :ref:`Configuring MathJax using an external script <local-configuration-file>`
+* :ref:`Configuring and loading MathJax using one local file <config-loads-mathjax>`
+* :ref:`Synchronizing with MathJax using promises <typeset-async>`
+* :ref:`Reseting TeX equation numbering <tex-reset>`
+* :ref:`Loading MathJax only on pages with math <load-for-math>`
 
-* v2 compatibility (including \require renaming through MathJax.startup.path or source)
+..
 
-* MathML for AssistiveMML replacement
-* MathML for NativeMML replacement
+* :ref:`A replacement for the NativeMML output jax <NativeMML>`
+* :ref:`A replacement for the AssistiveMML extension <AssistiveMML>`
+
+..
+
+* :ref:`Backward Compatibility for TeX input <v2-compatibility-example>`
+* :ref:`Locating MathJax v2 math script tags <math-script-example>`
+
 
 |-----|
