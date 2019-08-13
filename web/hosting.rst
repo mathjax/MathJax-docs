@@ -35,7 +35,7 @@ To include MathJax in your project, use the command
 
 This will install MathJax in ``node_modules/mathjax`` subdirectory of
 your current directory.  It will include the pre-built components in
-the ``node_modules/mathjax/lib`` directory, the source files for the
+the ``node_modules/mathjax/components/dist`` directory, the source files for the
 components in ``node_modules/mathjax/components/src``, the typescript
 source files for MathJax in ``node_modules/mathjax/ts``, and the
 compiled javascript files from the typescript source in
@@ -71,7 +71,7 @@ the following:
 This will compile the typescript source files from the ``mathjax/ts``
 directory into javascript files in the ``mathjax/js`` directory, and
 then will build the component files from ``mathjax/components/src``
-into the ``mathjax/lib`` directory.
+into the ``mathjax/components/dist`` directory.
 
 
 .. _serve-files:
