@@ -43,9 +43,9 @@ in math mode delimiters, though you are encouraged to use proper
 delimiters for these cases to make your files more compatible with
 actual LaTeX.  This functionality can be controlled via the
 ``processEnvironments`` option in the :ref:`tex configuration options
-<configure-tex>`.
+<tex-options>`.
 
-See the :ref:`tex configuration options <configure-tex>` page, for
+See the :ref:`tex configuration options <tex-options>` page, for
 additional configuration parameters that you can specify for the
 TeX input processor.
 

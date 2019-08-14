@@ -22,7 +22,7 @@ installed ones if they are available. It currently only supports
 MathJax's default TeX fonts (see the :ref:`font-support` section for
 more information).
 
-See :ref:`configure-chtml` for information about the options that
+See :ref:`chtml-options` for information about the options that
 control the CommonHTML output.
 
 |-----|

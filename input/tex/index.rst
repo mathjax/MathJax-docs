@@ -16,7 +16,7 @@ functions have been folded into the TeX input jax.
 
 The TeX input jax can be configured to look for whatever markers you
 want to use for your math delimiters.  See the :ref:`TeX configuration
-options <configure-tex>` section for details on how to customize the
+options <tex-options>` section for details on how to customize the
 delimiters, and other options for TeX input.
 
 The TeX input processor handles conversion of your mathematical

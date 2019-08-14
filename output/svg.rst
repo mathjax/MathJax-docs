@@ -32,7 +32,7 @@ Finally, because mathematical characters in SVG output are produced by
 SVG paths, not characters in a font, they can't be copy and pasted, as the
 output of the CommonHTML processor can.
 
-See :ref:`configure-svg` for information about the options that
+See :ref:`svg-options` for information about the options that
 control the SVG output.
 
 |-----|

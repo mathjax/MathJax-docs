@@ -33,7 +33,7 @@ input jax <TeX-support>` to handle LaTeX notation.
 
 AsciiMath can be configured to look for whatever markers you want to
 use for your math delimiters.  See the :ref:`AsciiMath
-configuration options <configure-asciimath>` section for details
+configuration options <asciimath-options>` section for details
 on how to customize the action of the AsciiMath input jax.
 
 
@@ -104,7 +104,7 @@ mathematics in the TeX format, and you can not enable the dollar-sign
 delimiter for both.  It is probably best to leave dollar signs for TeX
 notation.
 
-See the :ref:`configure-asciimath` page, for additional configuration
+See the :ref:`asciimath-options` page, for additional configuration
 parameters that you can specify for the AsciiMath input processor.
 
 
