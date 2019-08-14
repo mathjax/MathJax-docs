@@ -65,8 +65,8 @@ more details on how to configure MathJax.
 In addition to requiring the use of the :data:`MathJax` global
 variable for setting the configuration, the organization of the
 configuration options have been changed to accommodate the new
-internal structute of MathJax, and some of their names have changed as
-well.  To help you convert youyr existing version 2 configurations to
+internal structure of MathJax, and some of their names have changed as
+well.  To help you convert your existing version 2 configurations to
 version 3, we provide a `conversion tool <http://...>` that you can
 use to obtain a version 3 configuration that is as close as possible
 to your current one.
@@ -77,7 +77,7 @@ been ported to version 3, but for others, the version 2 feature may
 simply not exist in the new architecture of version 3.  For example,
 MathJax v2 updates the page in phases, first removing the math source
 expressions (e.g., the TeX code), then inserts a preview expression
-(fast to create, but not as accurately layed out), and then goes back
+(fast to create, but not as accurately laid out), and then goes back
 and produces high-quality typeset versions, which it inserts in chunks
 between page updates.  MathJax version 3 does not work that way (it
 does not change the page until the math is entirely typeset), and so
@@ -104,10 +104,10 @@ Changes in Loading MathJax
 Just as there are changes in how MathJax is configured, there are also
 changes in how MathJax is loaded.  With version 2, you load
 ``MathJax.js`` and indicate a combined configuration file using
-``?config=`` vollowed by the name of the configuration file.  This
+``?config=`` followed by the name of the configuration file.  This
 always required at least two files to be loaded (and often more than
 that), and the second file was always loaded asynchronously, meaning
-MathJax always operatored asynchronously.
+MathJax always operated asynchronously.
 
 In version 3, there is no longer a ``MathJax.js`` file, and you load a
 combined component file directly.  E.g., you load ``tex-chtml.js`` to
@@ -115,14 +115,14 @@ get TeX with CommonHTML output.  This reduces the number of files that
 need to be requested, and improves performance.  See
 :ref:`loading-mathjax` for more details.
 
-Just as there is no need to use ``?config=`` in vertsion 3, the other
+Just as there is no need to use ``?config=`` in version 3, the other
 parameters that could be set in this way also are absent from
 version 3.  So, for example, you can't set ``delayStartupUntil`` in
 the script that loads MathJax.
 
 The startup sequence operates fundamentally differently in version 3
 from how it did in version 2.  In version 2, MathJax would begin its
-startup process immediatly upon MathJax being loaded, queuing action
+startup process immediately upon MathJax being loaded, queuing action
 to perform configuration blocks, load extensions and jax, do the
 initial typesetting, and so on.  It was difficult to insert your own
 actions into this sequence, and timing issues could occur if you
@@ -133,7 +133,7 @@ promises, rather than MathJax's queues and signals, and MathJax's
 startup process is more straight-forward.  You can insert your own
 code into the startup process more easily, and can replace the default
 startup actions entirely, if you wish.  The actions Mathjax
-takes durring startup are better separated so that you can pick and
+takes during startup are better separated so that you can pick and
 choose the ones you want to perform.  See the :ref:`startup-actions`
 section for more details on how to accomplish this.
 
@@ -147,8 +147,8 @@ Changes in the MathJax API
 
 Because the internals have been completely redesigned, its :ref:`API
 <api>` has changed, and so if you have been calling MathJax functions,
-or have modified MathJax internals by agumenting the existing MathJax
-objects, that code will no longer work with version 3,a nd will have
+or have modified MathJax internals by augmenting the existing MathJax
+objects, that code will no longer work with version 3, and will have
 to be modified.  Some of the more important changes are discussed
 below.
 
@@ -238,7 +238,7 @@ below.
        }
      };
 
-  should find the scripts that MathJax version 2 normnally would have
+  should find the scripts that MathJax version 2 normally would have
   created.
 
 -----
@@ -252,7 +252,7 @@ Changes in Input and Output Jax
 The input and output processors (called "jax") are core pieces of
 MathJax.  All three input processors from version 2 are present in
 version 3, but the :ref:`AsciiMath <asciimath-support>` processor has
-not been fully ported to version 3, and currently constists of the
+not been fully ported to version 3, and currently consists of the
 legacy version 2 code patched onto the version 3 framework.  This is
 larger and less efficient than a full version 3 port, which should be
 included in a future release.
@@ -275,13 +275,13 @@ more modern remake of the HTML output that was both browser
 independent, and considerably faster.  The SVG output jax produced SVG
 images rather than HTML DOM trees, and did not require web fonts in
 order to display the math, so the results could be made
-self-contained.  MathJax version 3 incldues the CommonHTML and SVG
+self-contained.  MathJax version 3 includes the CommonHTML and SVG
 output jax, but has dropped the older, slower HTML-CSS output format.
 
 MathJax 2 also included an output format that produced MathML for
-those browsers that support it.  Since only Frirefox and Safari
+those browsers that support it.  Since only Firefox and Safari
 currently implement MathML rendering (with no support in IE, Edge, or
-Chrome), and bnecause MathJax can't control the quality or coverage of
+Chrome), and because MathJax can't control the quality or coverage of
 the MathML support in the browser, MathJax version 3 has dropped the
 NativeMML output format for now.  Should the browser situation improve
 in the future, it could be added again.  See :ref:`mathml-output` for
@@ -328,7 +328,7 @@ Some other changes include:
 
 ..
 
-* The configuration options for controling the format of equation
+* The configuration options for controlling the format of equation
   numbers have been moved to an extension; see the
   :ref:`tex-tagFormat` documentation for details.
 
@@ -362,8 +362,8 @@ In addition, there a few other changes of importance:
 
 ..
 
-* For expressions with equation numbers, the SVG output jax now hase
-  these epxressions float with the size of the container element, just
+* For expressions with equation numbers, the SVG output jax now has
+  these expressions float with the size of the container element, just
   like they do in HTML output.  This was not the case in version 2, so
   this is an important improvement for dynamic pages.
 
@@ -459,7 +459,7 @@ redesign of MathJax version 3.  These are described below.
 ..
 
 * The `mhchem` TeX extension in version 2 came in two forms:  the
-  original extension that didn't match the LaTeX implemnentation
+  original extension that didn't match the LaTeX implementation
   perfectly, and a rewrite by the author of the original LaTeX package
   that made it compatible with LaTeX.  The legacy version could be
   selected by a configuration option.  This is no longer possible in
@@ -493,7 +493,7 @@ redesign of MathJax version 3.  These are described below.
 ..
 
 * The `HelpDialog` extension is not included in version 3.  Its
-  functionality is incoprorated into the :ref:`menu-component`
+  functionality is incorporated into the :ref:`menu-component`
   directly.
 
 ..
@@ -512,7 +512,7 @@ redesign of MathJax version 3.  These are described below.
 ..
 
 * Synchronization with MathJax in version 2 was handled via queues,
-  signals, and callbacks.  In verion 3, these have been replaced by
+  signals, and callbacks.  In version 3, these have been replaced by
   ES6 promises.  See :ref:`synchronization` for more details.
 
 -----
@@ -540,7 +540,7 @@ important ones are the following.
   will be rebuilding the fonts used for MathJax, and making additional
   web fonts available in a future release.  We also plan to make the
   tools used for creating the necessary font data available for use in
-  porting yuor own fonts for use with MathJax.
+  porting your own fonts for use with MathJax.
 
 ..
 
@@ -580,7 +580,7 @@ important ones are the following.
 Contextual Menu Changes
 =======================
 
-The contextual menu has been reorganzied to make it easier to access
+The contextual menu has been reorganized to make it easier to access
 some functions, and to add new ones.  One major new features is the
 `Copy to Clipboard` submenu, which mirrors the `Show Math As` menu,
 but sends the output to the clipboard rather than displaying it on
@@ -593,7 +593,7 @@ settings).
 
 The contextual menu now stores its data using the ``localStorage``
 object in the browser, rather than using cookies like version 2 does.
-This shoudl be more efficient and more secure, but does mean older
+This should be more efficient and more secure, but does mean older
 browsers may not be able to save their settings from session to
 session (if they don't support ``localStorage``).
 
@@ -638,7 +638,7 @@ other browser-specific objects.  Using MathJax on a server to
 pre-process mathematics (e.g., to convert a TeX string to an SVG
 image, for example), was not easy in version 2.  The `mathjax-node
 <https://github.com/mathjax/mathjax-node>` project made that possible,
-but required a completley different way of interacting with MathJax,
+but required a completely different way of interacting with MathJax,
 and was not as easy to use or as reliable as we would have liked.
 
 Version 3 has server-side use as an important use-case to support, and
@@ -662,7 +662,7 @@ Version 2 Compatibility Example
 The following example causes the ``\color`` macro to be the original
 one from version 2, and sets up the ``\require`` macro to translate
 the old package names into the new ones.  This should make MathJax v3
-handle existing content propoerly.
+handle existing content properly.
 
 Be sure to convert your version-2 configuration to a version-3 one via
 the `conversion tool <http://...>`__ that we provide.

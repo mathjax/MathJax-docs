@@ -48,7 +48,7 @@ The Configuration Block
         TagIndent: '0.8em',        // amount to indent tags
         useLabelIds: true,         // use label name rather than tag for ids
         MultLineWidth: '85%',      // width of multline environment
-        maxMacros: 1000,           // maximum number of macro substititions per expression
+        maxMacros: 1000,           // maximum number of macro substitutions per expression
         maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
         baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
            (document.getElementsByTagName('base').length === 0) ?
@@ -243,7 +243,7 @@ Option Descriptions
    This is the base URL to use when creating links to tagged equations
    (via ``\ref{}`` or ``\eqref{}``) when there is a ``<base>`` element
    in the document that would affect those links.  You can set this
-   value by hjand if MathJax doesn't produce the correct link.
+   value by hand if MathJax doesn't produce the correct link.
 
 
 The remaining options are described in the
@@ -278,7 +278,7 @@ Several of the TeX extensions make additional options available in the
 below.  Note that the :ref:`input/tex <tex-input>` component, and the
 combined components that load the TeX input jax, include a number of
 these extensions automatically, so some these options will be
-available byu default.
+available by default.
 
 
 .. _tex-configmacros-options:
@@ -295,14 +295,14 @@ The :ref:`tex-configMacros` extension adds a ``macros`` option to the
     This lists macros to define before the TeX input processor begins.
     These are `name: value` pairs where the `name` gives the name of
     the TeX macro to be defined, and `value` gives the replacement
-    text for the macro.  The `value` can be a simple repklacement
+    text for the macro.  The `value` can be a simple replacement
     string, or an array of the form `[value, n]`, where `value` is the
     replacement text and `n` is the number of parameters for the
     macro.  The array can have a third entry:  either a string that is
     the default value to give for an optional (bracketed) parameter
     when the macro is used, or an array consisting of template strings
     that are used to separate the various parameters.  The first
-    template must preceed the first parameter, the second must preceed
+    template must precede the first parameter, the second must precede
     the second, and so on until the final which must end the last
     parameter to the macro.  See the examples below.
 
@@ -365,9 +365,9 @@ configuration block with the following values:
 .. describe:: defaultAllow: true
 
    This is the value used for any extensions that are requested, but
-   are not in the ``allow`` objecft described above.  If set to
+   are not in the ``allow`` object described above.  If set to
    ``true``, any extension not listed in ``allow`` will be allowed;
-   if ``false``, only the ones lised in ``allow`` (with value
+   if ``false``, only the ones listed in ``allow`` (with value
    ``true``) will be allowed.
 
 .. _tex-autoload-options:
@@ -377,7 +377,7 @@ Autoload Option
 
 The :ref:`tex-autoload` extension creates macros that cause the
 packages that define them to be loaded automatically when they are
-furst used.  Adding it to the ``packages`` array defines an
+first used.  Adding it to the ``packages`` array defines an
 ``autoload`` sub-block to the ``tex`` configuration block.  This block
 contains `key: value` pairs where the `key` is a TeX package name, and
 the value is an array of macros that cause that package to be loaded,
@@ -385,7 +385,7 @@ or an array consisting of two arrays, the first giving names of macros
 and the second names of environments; the first time any of them are
 used, the extension will be loaded automatically.
 
-The default autload definitions are the following:
+The default autoload definitions are the following:
 
 .. code-block:: javascript
 
@@ -425,7 +425,7 @@ array.  E.g., to not autoload the `color` extension, use
    };
 
 If you define your own extensions, and they have a prefix other than
-``[tex]``, then incldue that in the extension name.  For instance,
+``[tex]``, then include that in the extension name.  For instance,
 
 .. code-block:: javascript
 
@@ -446,7 +446,7 @@ your own prefixes, like the ``[extensions]`` prefix used here.
 TagFormat Options
 -----------------
 
-The :ref:`tex-tagFormat` extension allows you to control the dispolay
+The :ref:`tex-tagFormat` extension allows you to control the display
 and linking of equation tags and numbers.  Adding this to the
 ``packages`` array adds a ``tagFormat`` sub-object to the ``tex``
 configuration block with the following values:
@@ -482,7 +482,7 @@ configuration block with the following values:
 
    A function that takes an equation ID and base URL and returns the
    URL to link to it.  The ``base`` value is taken from the
-   :ref:`baseURL <tex-baseURL>` value, so that links can be make witin
+   :ref:`baseURL <tex-baseURL>` value, so that links can be make within
    a page even if it has a ``<base>`` element that sets the base URL
    for the page to a different location.
 
@@ -570,7 +570,7 @@ following values:
 .. _tex-amscd-hideHorizontalLabels:
 .. describe:: hideHorizontalLabels: false
 
-   This determines whether horiztonal arrows with labels above or
+   This determines whether horizontal arrows with labels above or
    below will use ``\smash`` in order to hide the height of the
    labels.  (Labels above or below horizontal arrows can cause excess
    space between rows, so setting this to ``true`` can improve the

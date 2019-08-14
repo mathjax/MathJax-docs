@@ -55,10 +55,10 @@ The Configuration Block
             alt: false,            // true if ALT required for zooming
             cmd: false,            // true if CMD required for zooming
             ctrl: false,           // true if CTRL required for zooming
-            shift: false,          // true if SHIFT required for zomming
+            shift: false,          // true if SHIFT required for zooming
             scale: 1,              // scaling factor for all math
             collapsible: false,    // true if complex math should be collapsible
-            inTabOrder: true,      // true if tabbibng includes math
+            inTabOrder: true,      // true if tabbing includes math
           },
           annotationTypes: {
             TeX: ['TeX', 'LaTeX', 'application/x-tex'],

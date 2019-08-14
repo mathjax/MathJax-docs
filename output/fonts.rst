@@ -93,7 +93,7 @@ the font that it is using, it will fall back to other fonts in a variety
 of ways.
 
 First, MathJax enhances Unicode coverage of its default TeX fonts,
-e.g., combining two double integrals ``U+222C`` when a quadrupel
+e.g., combining two double integrals ``U+222C`` when a quadruple
 integral ``U+2A0C`` is used. However, this cannot create every
 character specified in Unicode. Next, MathJax will run through a
 fallback chain within the configured fonts (e.g., upright Greek will
@@ -108,7 +108,7 @@ will use default values these metrics.  Measuring the width can
 negatively affect the rendering speed, and guessing the height and
 depth can reduce the quality of the resulting output.  When used on a
 server or in a command-line application, MathJax won't even be able to
-determine the width, and that has an even more serous concequences for
+determine the width, and that has an even more serous consequences for
 the layout, in general.  Thus it is best to use only the characters
 that are in the MathJax fonts when using server-side rendering.
 

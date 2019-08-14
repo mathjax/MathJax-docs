@@ -20,7 +20,7 @@ Typesetting Math in a Web Page
 ==============================
 
 MathJax makes it easy to typeset all the math in a web page, and in
-fact it will dothis automatically when it is first loaded unless you
+fact it will do this automatically when it is first loaded unless you
 configure it not to.  So this is one of the easiest actions to perform
 in MathJax; if your page is static, there is nothing to do but load
 MathJax.
@@ -35,7 +35,7 @@ The first of these, :meth:`MathJax.typeset()`, typesets the page, and
 does so immediately and synchronously, so when the call finishes, the
 page will have been typeset.  Note, however, that if the math includes
 actions that require additional files to be loaded (e.g., TeX input
-that uses `\require`, or that includes autoloaded extensinos), then
+that uses `\require`, or that includes autoloaded extensions), then
 an error will be thrown.  You can use the ``try/catch`` command to
 trap this condition.
 
@@ -71,7 +71,7 @@ should chain them using the promises they return.  For example:
    }).catch((err) => console.log(err.message));
 
 This approach can get complicated fast, however, so you may want to
-maintian a promise that can be used to chain the later typesetting
+maintain a promise that can be used to chain the later typesetting
 calls.  For example,
 
 .. code-block:: javascript
@@ -98,7 +98,7 @@ DOM modifications and returns the array of elements to typeset, or
    });
 
 would replace the contents of the element with ``id="math"`` with the
-specified fraction and have MathJax typeset it (asynmchronously).
+specified fraction and have MathJax typeset it (asynchronously).
 Because the :meth:`then()` call returns the result of
 :meth:`MathJax.typesetPromise()`, which is itself a promise, the
 :meth:`then()` will not resolve until that promise is resolved; i.e.,
@@ -156,7 +156,7 @@ references to be correct.  In that case, you can do
 
 to force MathJax to reset the page to the state it was before MathJax
 processed it, reset the TeX automatic line numbering and labels, and
-then retypeset the contents of the page from scratch.
+then re-typeset the contents of the page from scratch.
 
 
 .. _load-for-math:
@@ -168,7 +168,7 @@ The MathJax combined configuration files are large, and so you may
 wish to include MathJax in your page only if it is necessary.  If you
 are using a content-management system that puts headers and footers
 into your pages automatically, you may not want to include MathJax
-directly, unless most of your pages include math, as that would laod
+directly, unless most of your pages include math, as that would load
 MathJax on *all* your pages.  Once MathJax has been loaded, it should
 be in the browser's cache and load quickly on subsequent pages, but
 the first page a reader looks at will load more slowly.  In order to
@@ -176,7 +176,7 @@ avoid that, you can use a script like the following one that checks to
 see if the content of the page seems to include math, and only loads
 MathJax if it does.  Note that this is not a very sophisticated test,
 and it may think there is math in some cases when there really isn't
-but it should reduce the number of pages on which MathJax will have ot
+but it should reduce the number of pages on which MathJax will have to
 be loaded.
 
 Create a file called ``check-for-tex.js`` containing the following:
@@ -205,8 +205,8 @@ and then use
 
    <script src="check-for-tex.js" defer></script>
 
-in order to load the script when the pasge content is ready.  Note
-that you will want to unclude the path to the location where you
+in order to load the script when the page content is ready.  Note
+that you will want to include the path to the location where you
 stored ``check-mathjax.js``, that you should change
 ``tex-chtml.js`` to whatever component file you want to use, and that
 the ``window.MathJax`` value should be set to whatever configuration
@@ -227,7 +227,7 @@ If you are using MathML, you may want to use
 
    if (document.body.querySelector('math')) {...}
 
-for the test instead (provided you aren't using namspace prefixes,
+for the test instead (provided you aren't using namespace prefixes,
 like `<m:math>`).
 
 -----
@@ -258,12 +258,12 @@ If you had loaded the TeX input jax as well, you would also get four
 more methods, with ``tex`` in place of ``mathml``.
 
 As the names imply, the ``Promise`` functions perform the conversion
-asynchronously, and return promises, while the others opperate
+asynchronously, and return promises, while the others operate
 synchronously and return the converted form immediately.  The first
 two functions (and any others like them) produce DOM elements as the
 results of the conversion, with the promise versions passing that to
-their :meth:`then()` functions as their argumnent (see the section on
-:ref:`convert-async` below), and the non-promise verions returning
+their :meth:`then()` functions as their argument (see the section on
+:ref:`convert-async` below), and the non-promise versions returning
 them directly.  You can insert these DOM elements into the document
 directly, or you can use their :attr:`outerHTML` property to obtain
 their serialized string form.
@@ -280,7 +280,7 @@ Conversion Options
 ------------------
 
 All four of these functions require an argument that is the math
-string to be converted (e.g., the serialzied MathML string, or in the
+string to be converted (e.g., the serialized MathML string, or in the
 case of :meth:`tex2chtml()`, the TeX or LaTeX string).  You can also
 pass a second argument that is an object containing options that
 control the conversion process.  The options that can be included are:
@@ -348,7 +348,7 @@ in order to get get the correct metrics for the (eventual) location of
 the math that is being converted.  Of course, it would be easier to
 simply insert the TeX code into the page and use
 :meth:`MathJax.typeset()` to typeset it, but this is just an example
-to show you how to obtain the metrics from a partoicular location in
+to show you how to obtain the metrics from a particular location in
 the page.
 
 Note that obtaining the metrics causes a page refresh, so it is

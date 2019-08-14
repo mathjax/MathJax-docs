@@ -249,7 +249,7 @@ javascript uses the backslash (``\``) as a special character in
 strings.  Since TeX uses the backslash to indicate a macro name, you
 often need backslashes in your javascript strings.  In order to
 achieve this, you must double all the backslashes that you want to
-have as part of your javascript string.  For examnple,
+have as part of your javascript string.  For example,
 
 .. code-block:: javascript
 

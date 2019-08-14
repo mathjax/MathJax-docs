@@ -5,7 +5,7 @@ Miscellaneous Components
 ########################
 
 There are several miscellaneous components that don't fit into other
-catergories.  These are:
+categories.  These are:
 
 * :ref:`startup-component`
 * :ref:`menu-component`

@@ -26,7 +26,7 @@ output for use by the other extensions.
 
 The `semantic-enrich` extension adds two actions to the document's
 default :ref:`renderActions <document-renderActions>` object: an
-``enrich`` action to perform the semantic entrichment, and an
+``enrich`` action to perform the semantic enrichment, and an
 ``attachSpeech`` action to attach speech (if it is being generated) to
 the output.
 
@@ -136,7 +136,7 @@ Explorer Extension Options
 ==========================
 
 This extension provides support for interactive exploration of
-expressins within the page.  See the :ref:`accessibility` page for
+expressions within the page.  See the :ref:`accessibility` page for
 details about how this works.
 
 The `explorer` extension adds an ``explorable`` action to the
@@ -155,7 +155,7 @@ The Configuration Block
          foregroundColor: 'Black',    // color to use for text of selected sub-expression
          foregroundOpacity: 1,        // opacity for text of selected sub-expression
          backgroundColor: 'Blue',     // color for background of selected sub-expression
-         backgroundOpacity: .2,       // opacity afor background of selected sub-expression
+         backgroundOpacity: .2,       // opacity for background of selected sub-expression
          align: 'top',                // placement of zoomed expressions
          magnify: 500                 // magnification of zoomed expressions (as a percent)
        }
@@ -207,7 +207,7 @@ Option Descriptions
 
    This setting tells where to place the zoomed version of the
    selected sub-expression, when zoomed sub-expressions are being
-   displayed during expression expoloration.
+   displayed during expression exploration.
 
 .. _explorer-magnify:
 .. describe:: magnify: 500

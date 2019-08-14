@@ -36,9 +36,9 @@ easy to use in simple settings.  To that end, we have broken down the
 actions that MathJax takes into smaller units than in version 2, and
 made it possible to call on them individually, or replace them with
 alternative versions of your own.  For example, the typesetting
-process has been broken into a number of pieces, inckuding finding the
+process has been broken into a number of pieces, including finding the
 math in the page, compiling it into the internal format (MathML),
-getting metric data for the location of the math, converitng the math
+getting metric data for the location of the math, converting the math
 into the output format, inserting it into the page, adding menu event
 handlers, and so on.  You have control over which of these to perform,
 and can modify or remove the existing actions, or add new ones of your
@@ -80,7 +80,7 @@ relies on queues, callbacks, and signals, however.  Instead, these
 actions are managed through the ES6 `promise
 <https://developers.google.com/web/fundamentals/primers/promises>`__,
 which is a javascript standard, and should make integrating MathJax
-into your opwn applications more straight-forward.
+into your own applications more straight-forward.
 
 
 .. _package-managers:
@@ -147,7 +147,7 @@ server.  For version 2, we provided `mathjax-node
 is not as flexible or easy to use as many would have liked.  MathJax 3
 resolves this problem by being designed to work with `node`
 applications in essentially the same way as in a browser.  That is,
-you can laod MathJax components, configure them through the
+you can load MathJax components, configure them through the
 :data:`MathJax` global variable, and call the same functions for
 typesetting and conversion as you do within a browser.  This makes
 parallel development for both the browser and server much easier.
@@ -194,7 +194,7 @@ option, the :ref:`tag formatting <tex-tagFormat>` configuration
 options, and the :ref:`require <tex-require>` macro.  The new
 :ref:`tex-autoload` extension replaces the older `autoload-all`
 extension, is more configurable, and is included in the TeX input
-components by default.  There a several extrensions that are not yet
+components by default.  There a several extensions that are not yet
 ported to version 3, including the `autobold`, `mediawiki-texvc`, and
 the third-party extensions.  
 
@@ -203,7 +203,7 @@ SVG Output
 ----------
 
 The SVG output for equations with labels has been improved so that the
-posiotions of the labels now react to changes in the container width
+positions of the labels now react to changes in the container width
 (just like they do in the HTML output formats).
 
 

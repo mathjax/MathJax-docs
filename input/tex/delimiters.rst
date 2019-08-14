@@ -30,13 +30,13 @@ You can use ``\$`` to prevent a dollar sign from being treated as a
 math delimiter within the text of your web page, e.g., use "... the
 cost is \$2.50 for the first one, and \$2.00 for each additional one
 ..." to prevent these dollar signs from being used as math delimiters
-in a wb page where dollar signs have been configured to be in-line
+in a web page where dollar signs have been configured to be in-line
 delimiters.
 
 Note that, as opposed to true LaTeX, MathJax processes all
 environments when wrapped inside math delimiters, even those like
 ``\begin{equation}...\end{equation}`` that are supposed to be used to
-initiate mateh mode.  By defaut, MathJax will also render all
+initiate math mode.  By default, MathJax will also render all
 environments outside of delimiters, e.g.,
 ``\begin{matrix}...\end{matrix}`` would be processed even if it is not
 in math mode delimiters, though you are encouraged to use proper

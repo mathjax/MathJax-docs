@@ -35,7 +35,7 @@ support in MathJax also includes an interactive expression explorer
 that helps these users to "walk through" an expression one piece at a
 time, rather than having to listen to a complex expression all at
 once, and the ability to "collapse" portions of the expressions to
-allow a more simplified expresion to be read, and only expanded if
+allow a more simplified expression to be read, and only expanded if
 more detail is desired.
 
 MathJax is modular, so it can load components only when necessary, and
@@ -52,7 +52,7 @@ and dynamic.  Version 3 has been rewritten in ES6 using Typescript (a
 version of javascript that includes type-checking and the ability to
 transpile to ES5).  It was designed to be used as easily on a server
 (as part of a ``node.js`` application) as it is in a browser.  This makes
-pre-processing of web pages contianing mathematics much easier than
+pre-processing of web pages containing mathematics much easier than
 with version 2, so web sites can perform all the math processing once
 up front, rather than having the browser do it each time the page is
 viewed.

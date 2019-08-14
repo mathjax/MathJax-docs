@@ -51,7 +51,7 @@ Option Descriptions
 .. _output-scale:
 .. describe:: scale: 1
 
-   The scaling factor for math comparied to the surrounding text.  The
+   The scaling factor for math compaired to the surrounding text.  The
    `CommonHTML` output processor tries to match the ex-size of the
    mathematics with that of the text where it is placed, but you may
    want to adjust the results using this scaling factor.  The user can
@@ -104,7 +104,7 @@ Option Descriptions
 .. _output-mathmlSpacing:
 .. describe:: mathmlSpacing: false
 
-   This specifies whether to use TeX specing or MathML spacing when
+   This specifies whether to use TeX spacing or MathML spacing when
    typesetting the math.  When ``true``, MathML spacing rules are
    used; when ``false``, the TeX rules are used.
 
@@ -112,7 +112,7 @@ Option Descriptions
 .. describe:: skipAttributes: {}
 
    This object gives a list of non-standard attributes (e.g., RFDa
-   attributes) that will **not** be transfered from MathML element to
+   attributes) that will **not** be transferred from MathML element to
    their corresponding DOM elements in the typeset output.  For
    example, with
 

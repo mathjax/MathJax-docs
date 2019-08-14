@@ -7,7 +7,7 @@ Configuring and Loading MathJax
 The configuration, loading, and startup processes for MathJax version
 3 are different from those of version 2 in a number of ways.  Where
 version 2 had several different methods for configuring MathJax,
-verison 3 streamlines the process and has only one, as described
+version 3 streamlines the process and has only one, as described
 below.  In version 2, you always loaded ``MathJax.js``, and added a
 ``config=...`` parameter to provide a combined configuration file, but
 in version 3 you load one of several different files, depending on
@@ -176,7 +176,7 @@ from their version 2 counterparts, we provide an automated
 `configuration conversion tool <https://>`__ to help you move from
 version 2 to version 3.  Simply paste your current
 :meth:`MathJax.Hub.Config()` call into the converter, press
-``Convert`` and you should get the equivalent verision 3
+``Convert`` and you should get the equivalent version 3
 configuration, and comments about any options that could not be
 translated to version 3 (some options are not yet implements, others
 no longer make sense in version 3).  See the instructions on the
@@ -264,7 +264,7 @@ possible.
 
 .. _loader-load-combined:
 
-Loading Additional Compoments
+Loading Additional Components
 -----------------------------
 
 You can use the ``load`` array described in the previous section to
@@ -352,11 +352,11 @@ startup process.
 
 Actions coming before the :meth:`MathJax.startup.defaultReady()`
 call are run before any initialization has been done.  In particular,
-this is before any inpout or output jax are created, so this is where
+this is before any input or output jax are created, so this is where
 customization of the MathJax object definitions could be performed.
 For example, you could modify the configuration blocks at this point,
 or you could create subclasses of the MathJax objects that override
-some of thier methods to produce custom behavior, and then register
+some of their methods to produce custom behavior, and then register
 those subclasses with MathJax so they will be used in place of the
 originals.
 
@@ -423,8 +423,8 @@ The global variable ``MathJax`` is used to store the configuration for
 MathJax.  Once MathJax is loaded, however, MathJax changes the
 ``MathJax`` variable to contain the various methods needed to control
 MathJax.  The initial configuration that you provided is moved to the
-:attr:`MathJax.config` property so that its contents dosn't conflict
-with the new values provides in ``MathJax``.  This occures when the
+:attr:`MathJax.config` property so that its contents doesn't conflict
+with the new values provides in ``MathJax``.  This occurs when the
 MathJax component you have requested is loaded (and before the
 :func:`ready()` function is called).
 
@@ -438,7 +438,7 @@ not change their configurations.  (You can change
 :attr:`MathJax.config` values for objects that haven't been created
 yet, but not for ones that have.)
 
-For some objects, like inpout and output jax, document handlers, and
+For some objects, like input and output jax, document handlers, and
 math documents, the local copies of the configuration settings are
 stored in the :attr:`options` property of the object, and you may be
 able to set the value there.  For example,
@@ -456,10 +456,10 @@ it.  (There is a :meth:`getPatterns()` method if the ``FindTeX``
 object that could be used to refresh the object if the options are
 changed, however.)
 
-If you need to change the configutation for an object whose options
+If you need to change the configuration for an object whose options
 can't be changed once it is created, then you will need to create a
 new version of that object after you change the configuration.  For
-examnple, if you change :attr:`MathJax.config.tex.inlineMath` after
+example, if you change :attr:`MathJax.config.tex.inlineMath` after
 MathJax has started up, that will not affect the TeX input jax, as
 described above.  In this case, you can call
 :meth:`MathJax.startup.getComponents()` to ask MathJax to recreate all

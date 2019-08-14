@@ -52,7 +52,7 @@ extensions being autoloaded as needed.  The ``input/tex-base``
 component has no extensions loaded, while the ``input/tex-full`` and
 the combined extensions ending in ``-full`` load all the extensions.
 
-If you laod a component that has an extension you don't want to use,
+If you load a component that has an extension you don't want to use,
 you can disable it by removing it from the ``package`` array in the
 ``tex`` block of your MathJax configuration.  For example, to disable
 ``\require`` and autoloading of extensions, use

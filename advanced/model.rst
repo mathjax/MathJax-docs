@@ -1,4 +1,4 @@
-.. _proicessin-model:
+.. _processing-model:
 
 ############################
 The MathJax Processing Model

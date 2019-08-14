@@ -5,7 +5,7 @@ require
 #######
 
 The `require` extension defines the non-standard ``\require`` macro
-tha allows you to load extensions from within a math expression in a
+that allows you to load extensions from within a math expression in a
 web page.  For example:
 
 .. code-block:: latex

@@ -16,7 +16,7 @@ MathJax off-line.
 Acquiring the MathJax Code
 ==========================
 
-In order to host your own vetsion of MathJax, you must first obtain a
+In order to host your own version of MathJax, you must first obtain a
 copy of the MathJax code.  That can be done in several ways, the
 easiest being to use ``npm`` (the node package manager), or ``git`` to
 get MathJax from its GitHub development repository.
@@ -57,7 +57,7 @@ command
 This will install a copy of the source code for MathJax in the
 ``mathjax`` sub-directory of your current directory.  You will need to
 compile the typescript source files and build the component files by
-hand, as they are not part of the repository itsef.  To do this, do
+hand, as they are not part of the repository itself.  To do this, do
 the following:
 
 .. code-block:: shell
@@ -93,7 +93,7 @@ stored in the ``mathjax/components/dist`` files using the data in the
 It is the contents of the ``mathjax/components/dist`` directory that
 you want to make available on your server, as these are the files that
 are served from the CDNs that provide MathJax.  You should move them
-to a convenient location on your server.  THis might be a top-level
+to a convenient location on your server.  This might be a top-level
 directory called ``mathjax``, for example.
 
 
@@ -212,7 +212,7 @@ cross-domain loading of MathJax, but also to using MathJax locally
 from your hard disk. Firefox's interpretation of the same-origin
 policy for local files used to be that the "same domain" for a page is
 the directory where that page exists, or any of its subdirectories.
-This allowed MathJax to be loaded from a subdiretory of the director
+This allowed MathJax to be loaded from a subdirectory of the director
 where the web page was loaded.
 
 This is no longer the case with Firefox starting with version 68 and
@@ -226,10 +226,10 @@ a local copy of MathJax.  The easiest option is to use the SVG output
 renderer rather than the CommonHTML output, as that does not require
 fonts to be loaded, so avoids the same-origin issue.  Alternatively,
 you could install the MathJax TeX fonts as system fonts so that
-Firefox doesn't hav to try to laod them as web fonts.  
+Firefox doesn't hav to try to load them as web fonts.  
 
 This is an unfortunate restriction for MathJax (though we understand
-their reasoning), but it is a limitiation imposed by Firefox's
+their reasoning), but it is a limitation imposed by Firefox's
 security model that MathJax can not circumvent. Currently, this is not
 a problem for other browsers, though there is no guarantee that it
 won't be in the future.

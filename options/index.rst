@@ -9,7 +9,7 @@ processors, its extensions, and the MathJax core,
 all can be configured though a :data:`MathJax` global object that
 specifies the configuration you want to use.  The :data:`MathJax`
 object consists of sub-objects that configure the individual
-components of MathJax.  For example, the :ref:`intpu/tex <tex-input>`
+components of MathJax.  For example, the :ref:`input/tex <tex-input>`
 component is configured through a ``tex`` block within the
 :data:`MathJax` object, while the :ref:`startup-component` component
 is configured through the ``startup`` block.
@@ -66,7 +66,7 @@ Note the special notation used with the ``packages`` option above.
 The ``packages`` property is an array of extension names, but the
 configuration uses a special object to add to that array rather than
 replace it.  If the option you are setting is an array, and you
-provide an object that has a single propery whose name is ``'[+]'``
+provide an object that has a single properly whose name is ``'[+]'``
 and whose value is an array, then that array will be appended to the
 default value for the option you are setting.  So in the example
 above, the ``'tagFormat'`` string is added to the default ``packages``
@@ -79,7 +79,7 @@ example,
 
 .. code-block:: javascript
 
-   packages: {'[-]': ['autload', 'require']}
+   packages: {'[-]': ['autoload', 'require']}
 
 would **remove** the `autoload` and `require` packages from the default
 ``packages`` array.
@@ -89,7 +89,7 @@ both actions.  E.g.,
 
 .. code-block:: javascript
 
-   packages: {'[+]': ['enclose'], '[-]': ['autload', 'require']}
+   packages: {'[+]': ['enclose'], '[-]': ['autoload', 'require']}
 
 would remove the `autoload` and `require` packages from the default
 ``packages`` array, and add `enclose` to the result.

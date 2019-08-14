@@ -22,7 +22,7 @@ The Configuration Block
     MathJax = {
       mml: {
         parseAs: 'html',                     // or 'xml'
-        forceReparse: false,                 // true to serialize and reparse all MathML
+        forceReparse: false,                 // true to serialize and re-parse all MathML
         parseError: function (node) {        // function to process parsing errors
           this.error(this.adaptor.textContent(node).replace(/\n.*/g, ''));
         }
@@ -48,7 +48,7 @@ Option Descriptions
 .. _mathml-forceReparse:
 .. describe:: forceReparse: false
 
-   Specifies whether MathJax will serialize and reparse MathML found
+   Specifies whether MathJax will serialize and re-parse MathML found
    in the document.  This can be useful if you want to do XML parsing
    of the MathML from an HTML document.
 

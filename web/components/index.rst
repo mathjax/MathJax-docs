@@ -31,7 +31,7 @@ that.
 See the :ref:`loading-mathjax` section for details about how to
 specify and load MathJax components.
 
-See the :ref:`configuring-mathjax` sectino for details about how to
+See the :ref:`configuring-mathjax` section for details about how to
 configure the various MathJax components.
 
 -----

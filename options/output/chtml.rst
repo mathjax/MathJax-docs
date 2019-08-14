@@ -57,7 +57,7 @@ Option Descriptions
    styles that it generates.  When true, this means that only the CSS
    needed for the math that has been processed on the page so far is
    generated.  When false, the CSS needed for all elements and all
-   characters in the MathJax font are generated.  This is an etremely
+   characters in the MathJax font are generated.  This is an extremely
    large amount of CSS, and that can have an effect on the performance
    of your page, so it is best to leave this as ``true``.  You can
    reset the information about what CSS is needed by using the command

@@ -12,7 +12,7 @@ the :ref:`tex-ams` package, due to the large number of macros it contains.
 
 The `autoload` extension is loaded in all the components that include
 the TeX input jax, other than ``input/tex-base``.  That means that the
-TeX input jax essentailly has access to all the extensions, even if
+TeX input jax essentially has access to all the extensions, even if
 they aren't loaded initially, and you should never have to use
 ``\require`` or load other extensions (except `physics`) explicitly
 unless you want to.

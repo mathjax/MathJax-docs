@@ -10,7 +10,7 @@ release of MathJax.
 
 ..
    The `begingroup` extension implements commands that provide a
-   mechanism for localizing macro defintions so that they are not
+   mechanism for localizing macro definitions so that they are not
    permanent.  This is useful if you have a blog site, for example, and
    want to isolate changes that your readers make in their comments so
    that they don't affect later comments.

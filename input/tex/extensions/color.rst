@@ -32,7 +32,7 @@ extension is loaded.
    In version 2, a non-standard ``\color`` macro was the default
    implementation, but in version 3, the standard LaTeX one is now the
    default.  The difference between the two is that the standard
-   ``\color`` macro is a switch (everthing that follows it is in the
+   ``\color`` macro is a switch (everything that follows it is in the
    new color), whereas the non-standard version 2 ``\color`` macro
    takes an argument that is the mathematics to be colored.  That is,
    in version 2, you would do

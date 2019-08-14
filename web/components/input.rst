@@ -70,10 +70,10 @@ input/tex-base
 --------------
 
 This is a minimal TeX input component.  It includes the main TeX/LaTeX
-input parser, along with the base defintions for the most common
+input parser, along with the base definitions for the most common
 macros and environments.  No other extensions are included, so no
 extensions are autoloaded, and you can not use ``\require``.  For this
-component, you must expliciutly load the extensions you want to use,
+component, you must explicitly load the extensions you want to use,
 and add them to the ``packages`` array.
 
 See the :ref:`tex-options` section for information about
@@ -85,7 +85,7 @@ TeX Extension Packages
 
 Each of the TeX extensions listed in the :ref:`extension-list` has its
 own component.  The name of the component is the name of the extension
-preceeded by ``[tex]/``; so the component for the ``enclose``
+preceded by ``[tex]/``; so the component for the ``enclose``
 extension is ``[tex]/enclose``.  You can include any of the extension
 components in the ``load`` array of the ``loader`` section of your
 MathJax configuration, and add the extension to the ``packages`` array
@@ -103,7 +103,7 @@ in the ``tex`` block.  For example:
 Of course, if you are using one of the packages that includes the
 :ref:`tex-autoload` extension, then you don't have to load the
 extensions explicitly (except for :ref:`tex-physics` and
-:ref:`tex-colorv2`), as they will be laoded automatically when first
+:ref:`tex-colorv2`), as they will be loaded automatically when first
 used.
 
 In addition, there is a ``[tex]/all-packages`` component that includes

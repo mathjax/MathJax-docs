@@ -49,8 +49,8 @@ configuring this component.
 a11y/complexity
 ===============
 
-The `complexity` component computes a complecity measure for each
-element within an expression, and allows complex epxressions to
+The `complexity` component computes a complexity measure for each
+element within an expression, and allows complex expressions to
 "collapse" to make them both shorter, and simpler to read.  The
 collapsed portions can be expanded with a click of the mouse, or by
 keyboard actions when using the :ref:`explorer-component` extension
@@ -68,7 +68,7 @@ a11y/explorer
 =============
 
 The `explorer` component allows readers to explore a mathematical
-expresion interactively.  When an expression is focused (by tabbing to
+expression interactively.  When an expression is focused (by tabbing to
 it, or by clicking on it), a reader can "enter" the expression by
 pressing shift-space on the keyboard.  The arrow keys then move the
 reader through the expression (down moves to more detail by selecting

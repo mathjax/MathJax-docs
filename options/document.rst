@@ -4,7 +4,7 @@
 Document Options
 ################
 
-The options below conrol the operation of the ``MathDocument`` object
+The options below control the operation of the ``MathDocument`` object
 created by MathJax to process the mathematics in your web page.  They
 are listed with their default values.  To set any of these options,
 include an ``options`` section in your :data:`MathJax` global object.
@@ -76,7 +76,7 @@ Option Descriptions
    executed first when the actions are performed).  The first function
    gives the action to perform when a document is rendered as a whole,
    and the second a function to perform when an individual expression
-   is converted or rerendered.  These can be given either as an
+   is converted or re-rendered.  These can be given either as an
    explicit function, or as a string giving the name of a method to
    call (the first should be a method of a ``MathDocument``, and the
    second of a ``MathItem``).  If either is an empty string, that

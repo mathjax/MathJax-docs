@@ -26,7 +26,7 @@ Firefox are not always comparable to the output from MathJax, the
 
 You can, however, use MathJax's MathML serialization features to
 implement your own native MathML output if you wish.  Here is one
-example that does so for TeX intput to MathML output.
+example that does so for TeX input to MathML output.
 
 .. code-block:: html
 
@@ -87,7 +87,7 @@ replaces the standard ``typeset`` action with one that creates a
 MathJax container element and stores it in :attr:`math.typesetRoot`,
 then converts the internal format to a MathML string (via
 :meth:`MathJax.startup.toMML()`) and has the browser parse that into
-DOM elemente (via :attr:`innerHTML`).  A later render action will move
+DOM element (via :attr:`innerHTML`).  A later render action will move
 the container and its MathML contents into the DOM at the proper
 location.  For math that is in display style, the container is marked
 with an attribute so that CSS can be used to make the container be a
@@ -182,7 +182,7 @@ own version of this, as in the example below:
 
 This example creates a function that adds the assistive MathML to a
 math expression, and creates a new :ref:`render action
-<document-renderActions>` that causes the funciton to be called as
+<document-renderActions>` that causes the function to be called as
 part of the MathJax rendering process.
 
 |-----|

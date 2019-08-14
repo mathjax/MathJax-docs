@@ -8,7 +8,7 @@ MathJax provides a number of combined components that load everything
 you need to run MathJax with a given input and output format.  Still,
 you might find that none of the ones we provide fully suit your
 needs, and that you would like to include additional components in the
-build, or perhaops want to include customized configuration options.
+build, or perhaps want to include customized configuration options.
 
 You can use the MathJax component build tools to make your own custom
 component that has exactly the pieces and configuration that you
@@ -55,7 +55,7 @@ There are two kinds of components you could build:
 
 We describe how you can create each of these below.  In both cases,
 you should create a directory to hold your component's support files.
-You will need the maon control file for the component (that includes
+You will need the main control file for the component (that includes
 the code that defines the component), and a webpack control file that
 will tell MathJax's build tools how to handle your component.  These
 will be discussed in the sections below.
@@ -217,8 +217,8 @@ to your page and you should be in business (adjust the URL to point to
 wherever you have placed the ``custom-mathjax.min.js`` file).
 
 
-Configuringing the Component
-............................
+Configuring the Component
+.........................
 
 Note that you can still include a  ``MathJax = {...}`` definition in
 your web page before loading this custom MathJax build if you want to
@@ -226,7 +226,7 @@ customize the configuration for a specific page.  You could also
 include configuration within the component itself, as we did for the
 TeX ``packages`` array.  This will override any page-provided
 configuration, however, so if you want to provide non-standard
-defaults that can still be overriden in the page, use
+defaults that can still be overridden in the page, use
 
 .. code-block:: javascript
 
@@ -262,7 +262,7 @@ the CDN directories for the fonts.
 A Custom Extension
 ------------------
 
-Making a cusotm extension is very similar to making a custom combined
+Making a custom extension is very similar to making a custom combined
 component.  The main difference is that the extension may rely on
 other components, so you need to tell the build system about that so
 that it doesn't include the code from those other components.  You
@@ -302,7 +302,7 @@ containing the following text:
 
     /**
      * This function prevents multi-letter mi elements from being
-     *   interpretted as TEXCLASS.OP
+     *   interpreted as TEXCLASS.OP
      */
     function classORD(node) {
        this.getPrevClass(node);
@@ -356,7 +356,7 @@ containing the following text:
 
        /**
         * @param {TeXParser} parser   The TeX parser object
-        * @param {string} name        The control sequence that is calling thi sfunction
+        * @param {string} name        The control sequence that is calling this function
         * @param {string} type        The MathML element type to be created
         */
        mmlToken(parser, name, type) {
@@ -393,7 +393,7 @@ The comments explain what this code is doing.  The main piece needed
 to make it a TeX extension is the ``Configuration`` created in the
 last few lines.  It creates a TeX package named ``mml`` that handles
 macros through a ``CommandMap`` named ``mmlMap`` that is defined just
-above it. That command map defines five macros decscribed at at the
+above it. That command map defines five macros described at at the
 beginning of this section, each of which is tied to a method named
 ``mmlToken`` in the ``MmlMethods`` object that is defined earlier,
 passing it the name of the MathML token element to create.
@@ -471,9 +471,9 @@ MathJax file was loaded (e.g., the file ``tex-svg.js``, or
 
 You can define your own prefix to point to the location of your
 extensions by using the ``paths`` object in the ``loader`` block of
-your configutation.  In our case (see code below), we add a ``custom``
+your configuration.  In our case (see code below), we add a ``custom``
 prefix, and have it point to the URL of our extension (in this case,
-the same directory as the HTML file that loads it, prepresented by the
+the same directory as the HTML file that loads it, represented by the
 URL ``.``).  We use the ``custom`` prefix to specify
 ``[custom]/mml.min.js`` in the ``load`` array so that our extension
 will be loaded.
@@ -481,8 +481,8 @@ will be loaded.
 Finally, we ad the ``mml`` extension to the ``packages`` array in the
 ``tex`` block of our configuration via the special notation `{'[+]':
 [...]}` that tells MathJax to append the given array to the existing
-``packages`` array that is already in the configuartion by default.
-So this uses all teh packages that were already specified, plus our
+``packages`` array that is already in the configuration by default.
+So this uses all the packages that were already specified, plus our
 new ``mml`` package that is defined in our extension.
 
 The configuration and loading of MathJax now looks something like this:
@@ -507,7 +507,7 @@ The configuration and loading of MathJax now looks something like this:
 You should change the ``custom: '.'`` line to point to the actual URL for
 your server.
 
-This example loads the ``tex-chtml.js`` combined compoinent, so the TeX
+This example loads the ``tex-chtml.js`` combined component, so the TeX
 input is already loaded when our extension is loaded.  If you are
 using ``startup.js`` instead, and including ``input/tex`` in the
 ``load`` array, you will need to tell MathJax that your extension
@@ -732,7 +732,7 @@ example,
 would set the global variable :data:`speechReady` to true when SRE is
 ready to run (so you can check that value to see if speech can be
 generated yet).  A more sophisticated :meth:`ready()` function could
-allos you to queue translations to be befored, and when SRE is ready,
+allow you to queue translations to be performed, and when SRE is ready,
 it performs them.  Alternatively, if you have a user interface that
 allows users to transform TeX expressions, for example, then you could
 initially disable to buttons that trigger speech generation, and use
@@ -741,8 +741,8 @@ ask for speech translation until it can be produced.
 
 The second method of synchronizing with SRE is through the fact that
 the code sets :attr:`MathJax.sreReady` to a promise that is resolves
-when SRE is ready, wich you can use to make sure SRE is ready when you
-want to do sopeech generation.  For example
+when SRE is ready, which you can use to make sure SRE is ready when you
+want to do speech generation.  For example
 
 .. code-block:: javascript
 

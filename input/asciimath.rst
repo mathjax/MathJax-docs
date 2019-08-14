@@ -24,7 +24,7 @@ version of the AsciiMath preprocessor and input jax and for the
 ongoing improvements from the AsciiMath community.
 
 The AsciiMath input jax handles only the original ASCIIMathML notation
-(from ASCIIMathML v1.4.7), not the extened LaTeXMathML notation added
+(from ASCIIMathML v1.4.7), not the extended LaTeXMathML notation added
 in version 2.0 of ASCIIMathML, though the AsciiMath input jax does
 expose the tables that define the symbols that AsciiMath processes,
 and so it would be possible to extend them to include additional
@@ -43,7 +43,7 @@ Loading the AsciiMath Component
 ===============================
 
 The AsciiMath input jax has not yet been fully ported to version 3.
-Instead, teh Asciimath component uses the version 2 AsciiMath
+Instead, the AsciiMath component uses the version 2 AsciiMath
 input jax together with some of the legacy version 2 code patched into
 the version 3 framework.  This is less efficient, and somewhat larger,
 than a pure version-3 solution would be, and it can complicate
@@ -113,7 +113,7 @@ parameters that you can specify for the AsciiMath input processor.
 AsciiMath in HTML documents
 ===========================
 
-The AsciiMath syntax is descibed in the `ASCIIMathML syntax page
+The AsciiMath syntax is described in the `ASCIIMathML syntax page
 <http://www1.chapman.edu/~jipsen/mathml/asciimathsyntax.html>`_.
 
 Keep in mind that your mathematics is part of an HTML document, so you
