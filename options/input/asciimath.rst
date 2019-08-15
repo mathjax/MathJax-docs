@@ -26,15 +26,15 @@ The Configuration Block
         fixphi: true,              // true for TeX mapping, false for unicode mapping
         displaystyle: true,        // true for displaystyle typesetting, false for in-line
         decimalsign: '.'           // character to use for decimal separator
-        skipTags: [                // HTML tags that won't be searched for math
+        skipHtmlTags: [            // HTML tags that won't be searched for math
             'script', 'noscript', 'style', 'textarea', 'pre',
             'code', 'annotation', 'annotation-xml'
         ],
-        includeTags: {             // HTML tags that can appear within math
+        includeHtmlTags: {         // HTML tags that can appear within math
             br: '\n', wbr: '', '#comment': ''
         },
-        ignoreClass: 'tex2jax_ignore',    // class that marks tags not to search
-        processClass: 'tex2jax_process'   // class that marks tags that should be searched
+        ignoreHtmlClass: 'mathjax_ignore',    // class that marks tags not to search
+        processHtmlClass: 'mathjax_process'   // class that marks tags that should be searched
       }
     };
 

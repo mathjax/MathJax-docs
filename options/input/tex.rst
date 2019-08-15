@@ -32,22 +32,22 @@ The Configuration Block
         processEscapes: true,      // use \$ to produce a literal dollar sign
         processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
         processRefs: true,         // process \ref{...} outside of math mode
-        skipTags: [                //  HTML tags that won't be searched for math
+        skipHtmlTags: [            //  HTML tags that won't be searched for math
             'script', 'noscript', 'style', 'textarea', 'pre',
             'code', 'annotation', 'annotation-xml'
         ],
-        includeTags: {             //  HTML tags that can appear within math
+        includeHtmlTags: {         //  HTML tags that can appear within math
             br: '\n', wbr: '', '#comment': ''
         },
-        ignoreClass: 'tex2jax_ignore',    //  class that marks tags not to search
-        processClass: 'tex2jax_process',  //  class that marks tags that should be searched
+        ignoreHtmlClass: 'tex2jax_ignore',    //  class that marks tags not to search
+        processHtmlClass: 'tex2jax_process',  //  class that marks tags that should be searched
         digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
                                    // pattern for recognizing numbers
-        tags: 'none',              // or 'AMS' or 'all'
-        TagSide: 'right',          // side for \tag macros
-        TagIndent: '0.8em',        // amount to indent tags
+        tags: 'none',              // or 'ams' or 'all'
+        tagSide: 'right',          // side for \tag macros
+        tagIndent: '0.8em',        // amount to indent tags
         useLabelIds: true,         // use label name rather than tag for ids
-        MultLineWidth: '85%',      // width of multline environment
+        multlineWidth: '85%',      // width of multline environment
         maxMacros: 1000,           // maximum number of macro substitutions per expression
         maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
         baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
@@ -170,19 +170,19 @@ Option Descriptions
    This controls whether equations are numbered and how.  By default
    it is set to ``'none'`` to be compatible with earlier versions of
    MathJax where auto-numbering was not performed (so pages will not
-   change their appearance).  You can change this to ``'AMS'`` for
+   change their appearance).  You can change this to ``'ams'`` for
    equations numbered as the `AMSmath` package would do, or ``'all'``
    to get an equation number for every displayed equation.
 
-.. _tex-TagSide:
-.. describe:: TagSide: 'right'
+.. _tex-tagSide:
+.. describe:: tagSide: 'right'
 
     This specifies the side on which ``\tag{}`` macros will place the
     tags, and on which automatic equation numbers will appear.  Set it
     to ``'left'`` to place the tags on the left-hand side.
 
-.. _tex-TagIndent:
-.. describe:: TagIndent: "0.8em"
+.. _tex-tagIndent:
+.. describe:: tagIndent: "0.8em"
 
     This is the amount of indentation (from the right or left) for the
     tags produced by the ``\tag{}`` macro or by automatic equation
@@ -195,8 +195,8 @@ Option Descriptions
    or the equation number.  When ``true``, use the label, when
    ``false``, use the equation number.
 
-.. _tex-MultLineWidth:
-.. describe:: MultLineWidth: "85%"
+.. _tex-multlineWidth:
+.. describe:: multlineWidth: "85%"
 
     The width to use for the `multline` environment that is part of
     the :ref:`tex-ams` extension.  This width gives room for tags at

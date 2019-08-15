@@ -13,7 +13,7 @@ automatic equation numbers by adding:
 
     window.MathJax = {
       tex: {
-        tags: 'AMS'
+        tags: 'ams'
       }
     };
 
@@ -30,7 +30,7 @@ to add an equation tag even when automatic numbering is off).
 
 Note that the AMS environments come in two forms: starred and
 unstarred.  The unstarred versions produce equation numbers (when
-``tags`` is set to ``'AMS'``) and the starred ones don't.  For example
+``tags`` is set to ``'ams'``) and the starred ones don't.  For example
 
 .. code-block::  latex
 
@@ -46,7 +46,7 @@ will be numbered, while
        e^{\pi i} + 1 = 0
     \end{equation*}
 
-will not be numbered (when ``tags`` is ``'AMS'``).
+will not be numbered (when ``tags`` is ``'ams'``).
 
 You can use ``\label`` to give an equation an identifier that you can
 use to refer to it later, and then use ``\ref`` or ``\eqref`` within
