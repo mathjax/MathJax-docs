@@ -342,6 +342,12 @@ Some other changes include:
 * The functionality of the `MathChoice` extension has been moved to
   the base TeX package.
 
+..
+
+* The non-standard ``UPDIAGONALARROW`` and ``ARROW`` notations have
+  been removed from the ``menclose`` element.  These have been
+  replaced by the standard ``northeastarrow`` notation.
+
 
 Output Changes
 --------------
