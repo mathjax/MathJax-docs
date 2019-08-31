@@ -77,7 +77,7 @@ example that does so for TeX input to MathML output.
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/latest.js?startup.js">
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?startup.js">
    </script>
 
 This example uses the :ref:`startup-component` component to load just

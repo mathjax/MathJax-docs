@@ -104,7 +104,7 @@ To jump start using ``cdnjs``, you accomplish the first two steps by putting
 .. code-block:: html
 
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/latest.js?tex-mml-chtml.js">
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-mml-chtml.js">
    </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
@@ -149,7 +149,7 @@ the current version of MathJax.  To do this, simply leave out
 .. code-block:: html
 
    <script id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/tex-mml-chtml.js">
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-mml-chtml.js">
    </script>
 
 will always load version 3.0.0 of the ``tex-mml-chtml.js`` combined
@@ -208,7 +208,7 @@ component file that you are using.  For example
    };
    </script>
    <script id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/latest.js?tex-chtml.js">
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js">
    </script>
 
 configures MathJax's TeX input component to use ``$...$`` and

@@ -194,7 +194,7 @@ Create a file called ``check-for-tex.js`` containing the following:
          };
        }
        var script = document.createElement('script');
-       script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/latest.js?tex-chtml.js';
+       script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js';
        document.head.appendChild(script);
      }
    })();
