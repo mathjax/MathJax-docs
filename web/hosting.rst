@@ -35,11 +35,20 @@ To include MathJax in your project, use the command
 
 This will install MathJax in ``node_modules/mathjax`` subdirectory of
 your current directory.  It will include the pre-built components in
-the ``node_modules/mathjax/components/dist`` directory, the source files for the
-components in ``node_modules/mathjax/components/src``, the typescript
-source files for MathJax in ``node_modules/mathjax/ts``, and the
+the ``node_modules/mathjax/es5`` directory.
+
+If you need access to the source code, as well.  Then use
+
+.. code-block:: shell
+
+   npm install mathjax-full
+
+which installs MathJax in the ``node_modules/mathjax-full``
+subdirectory, the source files for the components in
+``node_modules/mathjax-full/components/src``, the typescript source
+files for MathJax in ``node_modules/mathjax-full/ts``, and the
 compiled javascript files from the typescript source in
-``node_modules/mathjax/js``.
+``node_modules/mathjax-full/js``.
 
 
 .. _mathjax-git:
@@ -47,14 +56,22 @@ compiled javascript files from the typescript source in
 Getting MathJax via git
 -----------------------
 
-To obtain a copy of MathJax from the GitHub source repository, use the
+To obtain a copy of MathJax from the GitHub component repository, use the
 command
 
 .. code-block:: shell
 
    git clone https://github.com/mathjax/MathJax.git mathjax
 
-This will install a copy of the source code for MathJax in the
+This will install a copy of MathJax in the ``mathjax/es5`` directory.
+
+If you need access to the source code as well, then use
+
+.. code-block:: shell
+
+   git clone https://github.com/mathjax/MathJax-src.git mathjax
+
+which will install the source code for MathJax in the
 ``mathjax`` sub-directory of your current directory.  You will need to
 compile the typescript source files and build the component files by
 hand, as they are not part of the repository itself.  To do this, do
@@ -71,7 +88,7 @@ the following:
 This will compile the typescript source files from the ``mathjax/ts``
 directory into javascript files in the ``mathjax/js`` directory, and
 then will build the component files from ``mathjax/components/src``
-into the ``mathjax/components/dist`` directory.
+into the ``mathjax/es5`` directory.
 
 
 .. _serve-files:
@@ -87,10 +104,10 @@ directory is typescript source code for MathJax, and this is compiled
 into the javascript files found in the ``mathjax/js`` directory.  But
 even these are not the files you want on your server.  These
 javascript files are further processed into the MathJax components
-stored in the ``mathjax/components/dist`` files using the data in the
+stored in the ``mathjax/es5`` files using the data in the
 ``mathjax/components/src`` directory.
 
-It is the contents of the ``mathjax/components/dist`` directory that
+It is the contents of the ``mathjax/es5`` directory that
 you want to make available on your server, as these are the files that
 are served from the CDNs that provide MathJax.  You should move them
 to a convenient location on your server.  This might be a top-level
@@ -114,7 +131,7 @@ will need to pick the one you want to use.  See the section on
 :ref:`web-configuration` for more details.
 
 The ``path-to-MathJax`` should be replaced by the URL for the main
-MathJax directory, so if you have put the ``mathjax/components/dist``
+MathJax directory, so if you have put the ``mathjax/es5``
 directory at the top level of you server's web site and named it
 ``mathjax``, you could use
 

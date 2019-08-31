@@ -14,10 +14,10 @@ component or a :ref:`combined component <combined-components>` file
 via node's ``require()`` command.
 
 See the `MathJax node demos
-<https://github.com/mathjax/mj3-demos-node#mj3-demos-node>`__ for
+<https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__ for
 examples of how to use MathJax from a `node` application.  in
 particular, see the `component-based examples
-<https://github.com/mathjax/mj3-demos-node/tree/master/component#component-based-examples>`__
+<https://github.com/mathjax/MathJax-demos-node/tree/master/component#component-based-examples>`__
 for illustrations of how to use MathJax components in a `node`
 application.
   

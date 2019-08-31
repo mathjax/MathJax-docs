@@ -178,7 +178,8 @@ own version of this, as in the example below:
      }
    };
    </script>
-   <script src="mathjax3/tex-chtml.js" id="MathJax-script" async></script>
+   <script type="text/javascript" id="MathJax-script" async
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js">
 
 This example creates a function that adds the assistive MathML to a
 math expression, and creates a new :ref:`render action

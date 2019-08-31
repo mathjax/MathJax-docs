@@ -4,9 +4,9 @@
 Examples in a Browser
 #####################
 
-There are a number of example files in the `MathJax3 demo repository
-<https://github.com/mathjax/mj3-demos>`__ (see the `list of demos
-<https://github.com/mathjax/mj3-demos#samples-of-mathjax-v3>`__).
+There are a number of example files in the `MathJax web demo repository
+<https://github.com/mathjax/MathJax-demos-web>`__ (see the `list of demos
+<https://github.com/mathjax/MathJax-demos-web#samples-of-mathjax-v3>`__).
 These include documentation as well as live examples that you can
 run.
 

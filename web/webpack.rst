@@ -39,10 +39,10 @@ Building a Custom Component
 
 MathJax comes with a number of predefined components, and you can use
 `their definitions
-<https://github.com/mathjax/MathJax/tree/master/components/src>`__ as a starting
+<https://github.com/mathjax/MathJax-src/tree/master/components/src>`__ as a starting
 point for your own custom component.  There are also custom component
-examples (with documentation) in the `MathJax3 demos repository
-<https://github.com/mathjax/mj3-demos#customization>`__, which is
+examples (with documentation) in the `MathJax web demos repository
+<https://github.com/mathjax/MathJax-demos-web#customization>`__, which is
 similar to the ones described here.
 
 There are two kinds of components you could build:
@@ -104,13 +104,13 @@ need to adjust the locations in the :func:`require()` commands).
    //
    //  Initialize the MathJax startup code
    //
-   require('mathjax/components/src/startup/lib/startup.js');
+   require('mathjax-full/components/src/startup/lib/startup.js');
 
    //
    //  Get the loader module and indicate the modules that
    //  will be loaded by hand below
    //
-   const {Loader} = require('mathjax/js/components/loader.js');
+   const {Loader} = require('mathjax-full/js/components/loader.js');
    Loader.preLoad(
      'loader', 'startup',
      'core',
@@ -126,22 +126,22 @@ need to adjust the locations in the :func:`require()` commands).
    // Load the components that we want to combine into one component
    //   (the ones listed in the preLoad() call above)
    //
-   require('mathjax/components/src/core/core.js');
+   require('mathjax-full/components/src/core/core.js');
 
-   require('mathjax/components/src/input/tex-base/tex-base.js');
-   require('mathjax/components/src/input/tex/extensions/ams/ams.js');
-   require('mathjax/components/src/input/tex/extensions/newcommand/newcommand.js');
-   require('mathjax/components/src/input/tex/extensions/config_macros/configMacros.js');
+   require('mathjax-full/components/src/input/tex-base/tex-base.js');
+   require('mathjax-full/components/src/input/tex/extensions/ams/ams.js');
+   require('mathjax-full/components/src/input/tex/extensions/newcommand/newcommand.js');
+   require('mathjax-full/components/src/input/tex/extensions/config_macros/configMacros.js');
 
-   require('mathjax/components/src/output/svg/svg.js');
-   require('mathjax/components/src/output/svg/fonts/tex/tex.js');
+   require('mathjax-full/components/src/output/svg/svg.js');
+   require('mathjax-full/components/src/output/svg/fonts/tex/tex.js');
 
-   require('mathjax/components/src/ui/menu/menu.js');
+   require('mathjax-full/components/src/ui/menu/menu.js');
 
    //
    // Update the configuration to include any updated values
    //
-   const {insert} = require('mathjax/js/util/Options.js');
+   const {insert} = require('mathjax-full/js/util/Options.js');
    insert(MathJax.config, {
      tex: {
        packages: {'[+]': ['ams', 'newcommand', 'configMacros']}
@@ -152,7 +152,7 @@ need to adjust the locations in the :func:`require()` commands).
    // Loading this component will cause all the normal startup
    //   operations to be performed
    //
-   require('mathjax3/components/src/startup/startup.js');
+   require('mathjax-full/components/src/startup/startup.js');
 
 
 This loads the various components that we want to include in the
@@ -168,11 +168,11 @@ following:
 
 .. code-block:: javascript
 
-   const PACKAGE = require('mathjax/components/webpack.common.js');
+   const PACKAGE = require('mathjax-full/components/webpack.common.js');
 
    module.exports = PACKAGE(
      'custom-mathjax',                     // the name of the package to build
-     '../node_modules/mathjax/js',         // location of the mathjax library
+     '../node_modules/mathjax-full/js',    // location of the mathjax library
      [],                                   // packages to link to
      __dirname,                            // our directory
      '.'                                   // where to put the packaged component
@@ -185,12 +185,12 @@ array of components that we assume are already loaded when this one is
 loaded (none in this case), the directory name we are working in
 (always ``__dirname``), and the directory where we want the final
 packaged component to go (the default is the
-``mathjax/components/dist`` directory, but we set it to the directory
+``mathjax-full/es5`` directory, but we set it to the directory
 containing the source files, and the component will end with
 ``.min.js``).
 
 Most of the real work is done by the
-``mathjax/components/webpack.common.js`` file, which is included in
+``mathjax-full/components/webpack.common.js`` file, which is included in
 the first line here.
 
 
@@ -201,7 +201,7 @@ Once these two files are ready, you should be able to use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax/components/bin/makeAll
+   ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``custom-mathjax.min.js`` in the directory with the other files.  If
@@ -233,7 +233,7 @@ defaults that can still be overridden in the page, use
    //
    // Update the configuration to include any updated values
    //
-   const {insert} = require('mathjax/js/util/Options.js');
+   const {insert} = require('mathjax-full/js/util/Options.js');
    insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configMacros']}}});
    MathJax.config = insert({
      // your default options here
@@ -252,7 +252,7 @@ actual web fonts are not included in the webpacked file, so you will
 probably need to include `fontURL` in the `chtml`
 block of your configuration and have it provide a URL where the fonts
 can be found.  They are in the
-``mathjax/components/dist/output/chtml/fonts/woff-v2`` directory, and
+``mathjax-full/es5/output/chtml/fonts/woff-v2`` directory, and
 you can put them on your server, or simply point `fontURL` to one of
 the CDN directories for the fonts.
  
@@ -296,9 +296,9 @@ containing the following text:
 
 .. code-block:: javascript
 
-    import {Configuration}  from '../node_modules/mathjax/js/input/tex/Configuration.js';
-    import {CommandMap} from '../node_modules/mathjax/js/input/tex/SymbolMap.js';
-    import TexError from '../node_modules/mathjax/js/input/tex/TexError.js';
+    import {Configuration}  from '../node_modules/mathjax-full/js/input/tex/Configuration.js';
+    import {CommandMap} from '../node_modules/mathjax-full/js/input/tex/SymbolMap.js';
+    import TexError from '../node_modules/mathjax-full/js/input/tex/TexError.js';
 
     /**
      * This function prevents multi-letter mi elements from being
@@ -411,11 +411,11 @@ following:
 
 .. code-block:: javascript
 
-   const PACKAGE = require('mathjax/components/webpack.common.js');
+   const PACKAGE = require('mathjax-full/components/webpack.common.js');
 
    module.exports = PACKAGE(
      'mml',                                // the name of the package to build
-     '../node_modules/mathjax/js',         // location of the mathjax library
+     '../node_modules/mathjax-full/js',    // location of the mathjax library
      [                                     // packages to link to
         'components/src/core/lib',
         'components/src/input/tex-base/lib'
@@ -431,12 +431,12 @@ assume are already loaded when this one is loaded (the ``core`` and
 ``tex-base`` components in this case), the directory name we are
 working in (always ``__dirname``), and the directory where we want the
 final packaged component to go (the default is the
-``mathjax/components/dist`` directory, but we set it to the directory
+``mathjax-full/es5`` directory, but we set it to the directory
 containing the source files, and the component will end with
 ``.min.js``).
 
 Most of the real work is done by the
-``mathjax/components/webpack.common.js`` file, which is included in
+``mathjax-full/components/webpack.common.js`` file, which is included in
 the first line here.
 
 
@@ -447,7 +447,7 @@ Once these two files are ready, you should be able to use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax/components/bin/makeAll
+   ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``mml.min.js`` in the directory with the other files.  If
@@ -534,7 +534,7 @@ extension until after the TeX input jax is loaded.  To do that, add a
    </script>
 
 This example can be seen live in the `MathJax 3 demos
-<https://github.com/mathjax/mj3-demos/blob/master/custom-tex-extension/mml.md>`__
+<https://github.com/mathjax/MathJax-demos-web/blob/master/custom-tex-extension/mml.md>`__
 repository.
 
 -----
@@ -550,7 +550,7 @@ not based on other MathJax components at all.  The following example
 shows how to make a custom build that provides a function for
 obtaining the speech string for a given TeX math string.  This example
 is similar to one in the `MathJax3 demos
-<https://github.com/mathjax/mj3-demos/blob/master/custom-build/custom-mathjax.md>`__
+<https://github.com/mathjax/MathJax-demos-web/blob/master/custom-build/custom-mathjax.md>`__
 repository.
 
 After downloading a copy of MathJax as described in the section on
@@ -569,16 +569,16 @@ the following:
    //
    //  Load the desired components
    //
-   const mathjax     = require('mathjax/js/mathjax.js').mathjax;      // MathJax core
-   const TeX         = require('mathjax/js/input/tex.js').TeX;        // TeX input
-   const MathML      = require('mathjax/js/input/mathml.js').MathML;  // MathML input
-   const browser     = require('mathjax/js/adaptors/browserAdaptor.js').browserAdaptor; // browser DOM
-   const Enrich      = require('mathjax/js/a11y/semantic-enrich.js').EnrichHandler;     // semantic enrichment
-   const Register    = require('mathjax/js/handlers/html.js').RegisterHTMLHandler;      // the HTML handler
-   const AllPackages = require('mathjax/js/input/tex/AllPackages').AllPackages;         // all TeX packages
-   const STATE       = require('mathjax/js/core/MathItem.js').STATE;
+   const mathjax     = require('mathjax-full/js/mathjax.js').mathjax;      // MathJax core
+   const TeX         = require('mathjax-full/js/input/tex.js').TeX;        // TeX input
+   const MathML      = require('mathjax-full/js/input/mathml.js').MathML;  // MathML input
+   const browser     = require('mathjax-full/js/adaptors/browserAdaptor.js').browserAdaptor; // browser DOM
+   const Enrich      = require('mathjax-full/js/a11y/semantic-enrich.js').EnrichHandler;     // semantic enrichment
+   const Register    = require('mathjax-full/js/handlers/html.js').RegisterHTMLHandler;      // the HTML handler
+   const AllPackages = require('mathjax-full/js/input/tex/AllPackages').AllPackages;         // all TeX packages
+   const STATE       = require('mathjax-full/js/core/MathItem.js').STATE;
 
-   const sreReady    = require('mathjax/js/a11y/sre.js').sreReady;    // SRE promise;
+   const sreReady    = require('mathjax-full/js/a11y/sre.js').sreReady;    // SRE promise;
 
    //
    //  Register the HTML handler with the browser adaptor and add the semantic enrichment
@@ -646,11 +646,11 @@ following:
 
 .. code-block:: javascript
 
-   const PACKAGE = require('mathjax/components/webpack.common.js');
+   const PACKAGE = require('mathjax-full/components/webpack.common.js');
 
    module.exports = PACKAGE(
      'mathjax-speech',                     // the name of the package to build
-     '../node_modules/mathjax/js',         // location of the mathjax library
+     '../node_modules/mathjax-full/js',    // location of the mathjax library
      [],                                   // packages to link to
      __dirname,                            // our directory
      '.'                                   // where to put the packaged component
@@ -663,12 +663,12 @@ array of components that we assume are already loaded when this one is
 loaded (none, since this is a self-contained build), the directory
 name we are working in (always ``__dirname``), and the directory where
 we want the final packaged component to go (the default is the
-``mathjax/components/dist`` directory, but we set it to the directory
+``mathjax-full/es5`` directory, but we set it to the directory
 containing the source files, and the component will end with
 ``.min.js``).
 
 Most of the real work is done by the
-``mathjax/components/webpack.common.js`` file, which is included in
+``mathjax-full/components/webpack.common.js`` file, which is included in
 the first line here.
 
 
@@ -679,7 +679,7 @@ Once these two files are ready, you should be able to use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax/components/bin/makeAll
+   ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``mathjax-speech.min.js`` in the directory with the other files.  it

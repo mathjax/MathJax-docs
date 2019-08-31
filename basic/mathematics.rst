@@ -44,7 +44,7 @@ signs.  See the section on :ref:`TeX and LaTeX Math Delimiters
 delimiters.
 
 Here is a complete sample page containing TeX mathematics (see the
-`MathJax3 Demos Repository <https://github.com/mathjax/mj3-demos>`__
+`MathJax Web Demos Repository <https://github.com/mathjax/MathJax-demos-web>`__
 for more).
 
 .. code-block:: html
@@ -115,7 +115,7 @@ a namespace prefix like ``m:`` above, since those are deprecated in
 HTML5), although this is not strictly required.
 
 Here is a complete sample page containing MathML mathematics (see the
-`MathJax3 Demos Repository <https://github.com/mathjax/mj3-demos>`__
+`MathJax Web Demos Repository <https://github.com/mathjax/MathJax-demos-web>`__
 for more).
 
 .. code-block:: html

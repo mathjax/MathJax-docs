@@ -724,7 +724,8 @@ the `conversion tool <http://...>`__ that we provide.
      }
    };
    </script>
-   <script src="mathjax3/tex-chtml.js" id="MathJax-script" async></script>
+   <script id="MathJax-script" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js"></script>
 
 This uses the ``tex-chtml.js`` combined component, so change this to
 whichever one you want.

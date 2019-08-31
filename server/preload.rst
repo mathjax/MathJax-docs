@@ -24,10 +24,10 @@ with the MathJax code.  (Or you can still use promises as well ---
 it's up to you!)
 
 See the `MathJax node demos
-<https://github.com/mathjax/mj3-demos-node#mj3-demos-node>`__ for
+<https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__ for
 examples of how to use MathJax from a `node` application.  in
 particular, see the `preloading examples
-<https://github.com/mathjax/mj3-demos-node/tree/master/preload#preloaded-component-examples>`__
+<https://github.com/mathjax/MathJax-demos-node/tree/master/preload#preloaded-component-examples>`__
 for illustrations of how to load MathJax components by hand in a
 `node` application.
   

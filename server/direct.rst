@@ -13,10 +13,10 @@ than using components, but it gives you the greatest flexibility as
 well.
 
 See the `MathJax node demos
-<https://github.com/mathjax/mj3-demos-node#mj3-demos-node>`__ for
+<https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__ for
 examples of how to use MathJax from a `node` application.  in
 particular, see the `non-component-based examples
-<https://github.com/mathjax/mj3-demos-node/tree/master/direct#non-component-based-examples>`__
+<https://github.com/mathjax/MathJax-demos-node/tree/master/direct#non-component-based-examples>`__
 for illustrations of how to use MathJax modules directly in a `node`
 application, rather than using the pre-packaged components.
   
