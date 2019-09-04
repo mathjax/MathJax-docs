@@ -173,14 +173,14 @@ Converting Your v2 Configuration to v3
 
 Because the version 3 configuration options are somewhat different
 from their version 2 counterparts, we provide an automated
-`configuration conversion tool <https://>`__ to help you move from
-version 2 to version 3.  Simply paste your current
-:meth:`MathJax.Hub.Config()` call into the converter, press
-``Convert`` and you should get the equivalent version 3
-configuration, and comments about any options that could not be
-translated to version 3 (some options are not yet implements, others
-no longer make sense in version 3).  See the instructions on the
-linked page for more details.
+`configuration conversion tool
+<https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`__
+to help you move from version 2 to version 3.  Simply paste your
+current :meth:`MathJax.Hub.Config()` call into the converter, press
+``Convert`` and you should get the equivalent version 3 configuration,
+and comments about any options that could not be translated to version
+3 (some options are not yet implements, others no longer make sense in
+version 3).  See the instructions on the linked page for more details.
 
 -----
 

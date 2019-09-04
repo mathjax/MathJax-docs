@@ -67,9 +67,10 @@ variable for setting the configuration, the organization of the
 configuration options have been changed to accommodate the new
 internal structure of MathJax, and some of their names have changed as
 well.  To help you convert your existing version 2 configurations to
-version 3, we provide a `conversion tool <http://...>` that you can
-use to obtain a version 3 configuration that is as close as possible
-to your current one.
+version 3, we provide a `conversion tool
+<https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`_
+that you can use to obtain a version 3 configuration that is as close
+as possible to your current one.
 
 Not all configuration parameters can be converted directly, however.
 For some of these, it is because the version 2 features have not yet
@@ -671,7 +672,9 @@ the old package names into the new ones.  This should make MathJax v3
 handle existing content properly.
 
 Be sure to convert your version-2 configuration to a version-3 one via
-the `conversion tool <http://...>`__ that we provide.
+the `conversion tool
+<https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`__
+that we provide.
 
 .. code-block:: html
 
@@ -743,7 +746,7 @@ to patch into MathJax version 3, which provides implementations for
 also flags usages of :meth:`MathJax.Hub.Register.StartupHook()` and
 the other hook-registering commands, and that you have converted your
 :meth:`MathJax.Hub.Config()` and ``x-mathjax-config`` scripts to their
-version 3 counterparts (use the `conversion tool <http://...>`__).
+version 3 counterparts (use the `conversion tool <https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`__).
 
 Add the following lines right after the ``new CommandMap()`` call in
 the code above:
