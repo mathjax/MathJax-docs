@@ -64,7 +64,7 @@ block of your MathJax configuration.  For example,
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?startup.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
    </script>
 
 would load the AsciiMath input jax, the CommonHTML output jax, and the

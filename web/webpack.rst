@@ -501,7 +501,7 @@ The configuration and loading of MathJax now looks something like this:
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
    </script>
 
 You should change the ``custom: '.'`` line to point to the actual URL for
@@ -530,7 +530,7 @@ extension until after the TeX input jax is loaded.  To do that, add a
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?startup.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
    </script>
 
 This example can be seen live in the `MathJax 3 demos

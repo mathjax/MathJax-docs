@@ -49,7 +49,7 @@ Ways of Accessing MathJax
 =========================
 
 There are two ways to access MathJax for inclusion in web pages: link
-to a content delivery network (CDN) like ``cdnjs.com`` to obtain a
+to a content delivery network (CDN) like ``cdn.jsdelivr.net`` to obtain a
 copy of MathJax, or download and install a copy of MathJax on your own
 server (for network access) or hard disk (for local use without a
 network connection).  The first method is described below, while the
@@ -91,20 +91,20 @@ load, but some provide "rolling releases", i.e., links that update to
 the latest available version upon release (note that we also provide a
 means of obtaining the latest version automatically, described below).
 
-- `cdnjs.com <https://cdnjs.com>`__ (recommended)
-- `jsdelivr.com <https://jsdelivr.com>`__  [rolling or specific version]
-- `unpkg.com <https://unpkg.com/>`__ [rolling or specific version]
+- `jsdelivr.com <https://jsdelivr.com>`__  [latest or specific version] (recommended)
+- `unpkg.com <https://unpkg.com/>`__ [latest or specific version]
+- `cdnjs.com <https://cdnjs.com>`__
 - `raw.githack.com <http://raw.githack.com>`__
 - `gitcdn.xyz <http://gitcdn.xyz/>`__
 - `cdn.statically.io <http://cdn.statically.io>`__
  
 
-To jump start using ``cdnjs``, you accomplish the first two steps by putting
+To jump start using ``jsdelivr``, you accomplish the first two steps by putting
 
 .. code-block:: html
 
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-mml-chtml.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
    </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
@@ -133,27 +133,62 @@ output format) to display the mathematics.
 
 If you use the code snippet given above, you will not need to change
 the URL whenever MathJax is updated and the version changes, because
-it includes the ``latest.js`` loader that will obtain the
-``tex-mml-chtml.js`` file from the latest version available on the
-CDN.
+``jsdelivr`` offers the ``mathjax@3`` notation for obtaining the
+``tex-mml-chtml.js`` file from the latest version (3.x.x) available on
+the CDN.
 
 .. _latest-version:
 
 Getting the Latest Version
 --------------------------
 
+Although ``jsdelivr`` provides a means of getting the latest version
+automtically, as described above, not all CDNs have a mechanism for
+that.  For such CDNs, MathJax provides a ``latest.js`` file that can
+be used to obtain the latest (3.x.x) version of MathJax.  For example,
+``cdnjs`` doesn't have a mechanism for getting the latest 3.x.x
+version automtically, so you can use
+
+.. code-block:: html
+
+   <script type="text/javascript" id="MathJax-script" async
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js">
+   </script>
+
+to obtain the latest (3.x.x) version of the ``tex-mml-chtml``
+component from ``cdnjs``; even though you have started by asking for
+version 3.0.0, the ``latest.js`` script will switch to the latest
+3.x.x version automatically.
+
+
+.. _specific_version:
+
+Getting a Specific Version
+--------------------------
+
 It is also possible to always use a specific version, regardless of
-the current version of MathJax.  To do this, simply leave out
-``latest.js?`` from the URL; for example:
+the current version of MathJax.  To do this, simply give the full
+version number in the URL; for example:
 
 .. code-block:: html
 
    <script id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-mml-chtml.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
    </script>
 
 will always load version 3.0.0 of the ``tex-mml-chtml.js`` combined
 component file.
+
+Other CDNs have slightly different formats for how to specify the
+version number.  For example, ``cdnjs`` uses the following:
+
+.. code-block:: html
+
+   <script type="text/javascript" id="MathJax-script" async
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-mml-chtml.js">
+   </script>
+
+to get the same file.
 
 
 .. _polyfill:
@@ -208,7 +243,7 @@ component file that you are using.  For example
    };
    </script>
    <script id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
    </script>
 
 configures MathJax's TeX input component to use ``$...$`` and

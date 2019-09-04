@@ -33,7 +33,7 @@ in your MathJax configuration.  So a typical use would be
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-chtml.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
    </script>
 
 to load the `tex-chtml` component, for example.

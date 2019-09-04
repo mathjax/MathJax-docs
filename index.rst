@@ -111,11 +111,14 @@ need it.
    :alt: powered-by NumFocus
    :target: http://www.numfocus.org
 
-MathJax is a fiscally sponsored project under the auspices of the
-`NumFOCUS Foundation <http://www.numfocus.org/>`_, which serves as the
-legal and fiscal umbrella for the MathJax project and several dozen
-other open-source, scientifically oriented software products.
+MathJax is a Sponsored Project of NumFOCUS, a 501(c)(3) nonprofit
+charity in the United States. NumFOCUS provides MathJax with fiscal,
+legal, and administrative support to help ensure the health and
+sustainability of the project. Visit `numfocus.org <http://www.numfocus.org>`__ for more
+information.
 
 ------
 
 This version of the documentation was built |today|.
+
+|-----|

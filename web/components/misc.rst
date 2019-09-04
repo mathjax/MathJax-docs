@@ -32,7 +32,7 @@ as in
 .. code-block:: html
 
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?startup.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
    </script>
 
 This is the component that manages the global :data:`MathJax` object.

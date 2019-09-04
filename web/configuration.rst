@@ -69,14 +69,14 @@ itself.  For example:
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-svg.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
    </script>
 
 This will configure the TeX input component to use single dollar
 signs as in-line math delimiters, and the SVG output component to use
 a global font cache (rather than a separate cache for each expression
 on the page), and then loads the latest version of the ``tex-svg``
-component file from the ``cdnjs`` CDN.  This will typeset any TeX
+component file from the ``jsdelivr`` CDN.  This will typeset any TeX
 mathematics on the page, producing SVG versions of the expressions.
 
 
@@ -107,11 +107,11 @@ and then use
 
    <script src="mathjax-config.js" defer></script>
    <script type="text/javascript" id="MathJax-script" defer
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-svg.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
    </script>
 
 to first load your configuration file, and then load the ``tex-svg``
-component from the ``cdnjs`` CDN.
+component from the ``jsdelivr`` CDN.
 
 Note that here we use the ``defer`` attribute on both scripts so that
 they will execute in order, but still not block the rest of the page
@@ -144,7 +144,7 @@ make the file ``load-mathjax.js`` containing
    
    (function () {
      var script = document.createElement('script');
-     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-svg.js';
+     script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
      script.async = true;
      document.head.appendChild(script);
    })();
@@ -199,13 +199,25 @@ To do so, use a script like the following
 .. code-block:: html
 
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest.js?tex-svg.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
    </script>
 
 to get the latest (3.x.x) version of the ``tex-svg`` component in ES5
-format (the only one currently available).  Alternatively, if you want
-to use a specific version regardless of what the latest version is,
-remove the ``latest.js?`` from the URL above:
+format (the only one currently available) from the ``jsdelivr`` CDN.
+This takes advantage of the feature of ``jsdeliver`` that allows you
+to get the latest version using the ``mathjax@3`` notation.  For a
+specific version, you would use
+
+.. code-block:: html
+
+   <script type="text/javascript" id="MathJax-script" async
+     src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-svg.js">
+   </script>
+
+to always get the 3.0.0 version of the ``tex-svg`` component.
+
+Other CDNs have slightly different formats for how to specify the
+version number.  For example, ``cdnjs`` uses the following:
 
 .. code-block:: html
 
@@ -213,7 +225,19 @@ remove the ``latest.js?`` from the URL above:
      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-svg.js">
    </script>
 
-This will always get the 3.0.0 version of the ``tex-svg`` component.
+Some CDNs don't provide a means of getting the lastest version
+automatically.  For these, MathJax provides a ``latest.js`` file that
+will do that for you.  For example, ``cdnjs`` doesn't have a mechanism
+for getting the latest 3.x.x version automtically.  If you want to do
+that using ``cdnjs``, then use
+
+.. code-block:: html
+
+   <script type="text/javascript" id="MathJax-script" async
+     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-svg.js">
+   </script>
+
+to obtain the latest (3.x.x) version of the ``tex-svg`` component.
 
 See :ref:`web-components` for a list of the various components you can
 choose and descriptions of their contents.  See the :ref:`list of CDNs
@@ -251,7 +275,7 @@ For example
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?startup.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/startup.js">
    </script>
 
 would cause the base TeX input, the SVG output, the contextual menu
@@ -286,7 +310,7 @@ components.  For example
    };
    </script>
    <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-chtml.js">
+     src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-chtml.js">
    </script>
 
 would load the version-2-compatible ``\color`` macro, inform TeX to
