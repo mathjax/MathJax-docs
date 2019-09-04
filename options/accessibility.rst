@@ -151,13 +151,32 @@ The Configuration Block
    MathJax = {
      options: {
        a11y: {
-         subtitles: true,             // show speech as a subtitle
-         foregroundColor: 'Black',    // color to use for text of selected sub-expression
-         foregroundOpacity: 1,        // opacity for text of selected sub-expression
-         backgroundColor: 'Blue',     // color for background of selected sub-expression
-         backgroundOpacity: .2,       // opacity for background of selected sub-expression
-         align: 'top',                // placement of zoomed expressions
-         magnify: 500                 // magnification of zoomed expressions (as a percent)
+         speech: true,                      // switch on speech output
+         braille: true,                     // switch on Braille output
+         subtitles: true,                   // show speech as a subtitle
+         viewBraille: false,                // display Braille output as subtitles
+         speechRules: 'mathspeak-default',  // speech rules as domain-style pair
+
+         backgroundColor: 'Blue',           // color for background of selected sub-expression
+         backgroundOpacity: .2,             // opacity for background of selected sub-expression
+         foregroundColor: 'Black',          // color to use for text of selected sub-expression
+         foregroundOpacity: 1,              // opacity for text of selected sub-expression
+
+         highlight: 'None',                 // type of highlighting for collapsible sub-expressions
+         flame: false,                      // color collapsible sub-expressions
+         hover: false,                      // show collapsible sub-expression on mouse hovering
+
+         treeColoring: false,               // tree color expression
+
+         magnification: 'None',             // type of magnification
+         magnify: '400%',                   // percentage of magnification of zoomed expressions
+         keyMagnifier: false,               // switch on magnification via key exploration
+         mouseMagnifier: false,             // switch on magnification via mouse hovering
+         align: 'top',                      // placement of magnified expression
+
+         infoType: false                    // show semantic type on mouse hovering
+         infoRole: false,                   // show semantic role on mouse hovering
+         infoPrefix: false,                 // show speech prefixes on mouse hovering
        }
      }
    };
@@ -165,12 +184,51 @@ The Configuration Block
 Option Descriptions
 -------------------
 
+The a11y options belong roughly to one of the following four categories:
+
+Speech Options
+^^^^^^^^^^^^^^
+
+.. _explorer-speech:
+.. describe:: speech: true
+
+   Sets if speech output is produced. By default speech is computed for every
+   expression on the page and output once the explorer is started.
+
+.. _explorer-braille:
+.. describe:: braille: true
+
+   Sets whether or not Braille is produced and output for an expression.                 
+              
+
 .. _explorer-subtitles:
 .. describe:: subtitles: true
 
    This option indicates whether the speech string for the selected
    sub-expression will be shown as a subtitle under the expression as
    it is explored.
+
+.. _explorer-viewBraille:
+.. describe:: viewBraille: false
+
+   This option indicates whether Braille output will be displayed under the
+   expression as it is explored.
+
+              
+.. _explorer-speechRules:
+.. describe:: speechRules: 'mathspeak-default'
+              
+   This option selects the speech rules used for speech generation in a
+   *domain*-*style* pair. For a list of possible selections please see the documentation of the
+   `Speech Rule Engine <https://speechruleengine.org>`__, e.g., by running 
+
+.. code-block:: bash
+
+   npx speech-rule-engine --options
+
+
+Highlighting Options
+^^^^^^^^^^^^^^^^^^^^
 
 .. _explorer-foregroundColor:
 .. describe:: foregroundColor: 'Black'
@@ -202,6 +260,68 @@ Option Descriptions
    This indicates the opacity to use for the background color of the
    selected sub-expression.
 
+.. _explorer-highlight:
+.. describe:: highlight: 'None'
+
+   Chooses a particular highlighter for showing collapsible
+   sub-expressions. Choices are ``'None'``, ``'Flame'``, and ``'Hover'``.
+              
+.. _explorer-flame:
+.. describe:: flame: false
+
+   This flag switches on the Flame highligher, which permanently highlights
+   collapsible sub-expressions, with successively darkening background for
+   nested collapsible expressions.
+
+.. _explorer-hover:
+.. describe:: hover: false
+
+   This switches on the Hover highlighter that highlights collapsible
+   sub-expression when hovering over them with a the mouse pointer.
+
+   Note, that having both ``'hover'`` and ``'flame'`` set to true can lead to
+   unexpected side-effects.
+              
+.. _explorer-treeColoring:
+.. describe:: treeColoring: false
+
+   This setting enables tree coloring, by which expressions are visually
+   distinguished by giving neighbouring symbols different, ideally contrasting
+   foreground colors.
+              
+
+Magnification Options
+^^^^^^^^^^^^^^^^^^^^^
+
+.. _explorer-magnification:
+.. describe:: magnification: 'None'
+
+   This option specifies a particular magnifier for enlarging
+   sub-expressions. Choices are ``'None'``, ``'Keyboard'``, and ``'Mouse'``.
+              
+
+.. _explorer-magnify:
+.. describe:: magnify: '400%'
+
+   This gives the magnification factor (as a percent) to use for the zoomed
+   sub-expression when zoomed sub-expressions are being displayed during
+   expression exploration.  The default is 400%.
+
+.. _explorer-keyMagnifier:
+.. describe:: keyMagnifier: false
+
+   Switches on zooming of sub-expressions during keyboard exploration of an
+   expression.
+              
+.. _explorer-mouseMagnifier:
+.. describe:: mouseMagnifier: false
+
+   Switches on zooming of sub-expressions by hovering with the mouse
+   pointer.
+              
+   Note, using both ``'keyMagnifier'`` and ``'mouseMagnifier`` together can lead
+   to unwanted side-effect.
+
 .. _explorer-align:
 .. describe:: align: 'top'
 
@@ -209,12 +329,43 @@ Option Descriptions
    selected sub-expression, when zoomed sub-expressions are being
    displayed during expression exploration.
 
-.. _explorer-magnify:
-.. describe:: magnify: 500
+Semantic Info Options
+^^^^^^^^^^^^^^^^^^^^^
 
-   This gives the magnification factor (as a percent) to use for the
-   zoomed sub-expression when zoomed sub-expressions are being
-   displayed during expression exploration.  The default is 500,
-   meaning 500%.
+Semantic information explorers are a feature that displays some semantic
+information of a sub-expression when hovering over it with the mouse
+pointer. Note, multiple information explorers work well together.
+
+.. _explorer-infoType:
+.. describe:: infoType: false
+
+   Activates an explorer that investigates the semantic type of sub-expressions.
+   The type is an immutable property of an expression, that is independent of
+   its particular position in a formula. Note, however that types can change
+   depending on subject area of a document.
+
+.. _explorer-infoRole:
+.. describe:: infoRole: false
+
+   Activates an explorer to present the semantic role of a sub-expression, which
+   is dependent on its context in the overall expression.
+
+.. _explorer-infoPrefix:
+.. describe:: infoPrefix: false
+
+   Activates explorer for prefix information, which pertains to the position of
+   a sub-expression. Examples are ``'exponent'``, ``'radicand'``, etc. These
+   would also be announced during interactive exploration with speech output.
+              
+   For more details on these concepts, see also the documentation of the
+   `Speech Rule Engine <https://speechruleengine.org>`__.
+
+.. note::
+
+   While multiple keyboard based exploration techniques work well together and
+   can be easily employed simultaneously, switching on multiple mouse based
+   exploration tools can lead to unexpected interactions of the tools and often
+   unpredictable side effects.
+
 
 |-----|
