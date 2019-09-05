@@ -71,9 +71,9 @@ Option Descriptions
 .. describe:: pageReady: Startup.defaultPageReady.bind(Startup)
 
    This is a function that is called when MathJax is ready to go and
-   the pasge is ready to be processed.  The default action is to
-   perform the initial typesetting of the pagse, but you can override
-   it to do whatever you wopuld like.  See :ref:`startup-action` for
+   the page is ready to be processed.  The default action is to
+   perform the initial typesetting of the page, but you can override
+   it to do whatever you would like.  See :ref:`startup-action` for
    more details and examples of how to do this.
 
 .. _startup-document:
