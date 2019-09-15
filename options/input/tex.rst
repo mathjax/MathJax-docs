@@ -32,15 +32,6 @@ The Configuration Block
         processEscapes: true,      // use \$ to produce a literal dollar sign
         processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
         processRefs: true,         // process \ref{...} outside of math mode
-        skipHtmlTags: [            //  HTML tags that won't be searched for math
-            'script', 'noscript', 'style', 'textarea', 'pre',
-            'code', 'annotation', 'annotation-xml'
-        ],
-        includeHtmlTags: {         //  HTML tags that can appear within math
-            br: '\n', wbr: '', '#comment': ''
-        },
-        ignoreHtmlClass: 'tex2jax_ignore',    //  class that marks tags not to search
-        processHtmlClass: 'tex2jax_process',  //  class that marks tags that should be searched
         digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
                                    // pattern for recognizing numbers
         tags: 'none',              // or 'ams' or 'all'
