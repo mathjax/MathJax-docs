@@ -212,7 +212,7 @@ below.
   author to encode HTML special characters like ``<``, ``>``, and
   ``&`` in their mathematics.  Version 3 does not alter the document
   in this way, and does not store the math that it locates in tags in
-  the page.  Instead, it keeps an external list of math object (of the
+  the page.  Instead, it keeps an external list of math objects (of the
   ``MathItem`` class).  So if you wish to use such scripts to store
   the math in the page initially, you can replace the ``find`` action
   in the :ref:`renderActions <document-renderActions>` list to use a
@@ -241,6 +241,13 @@ below.
 
   should find the scripts that MathJax version 2 normally would have
   created.
+
+  Note that this will *replace* the standard ``find`` action that
+  looks for math delimiters with this one that looks for the MathJax
+  v2 script tags instead.  If you want to do *both* the original
+  delimiter search *and* the search for script tags, then change the
+  ``find:`` above to ``findScript:`` so that it doesn't replace the
+  default ``find`` action.  That way, both actions will occur.
 
 -----
 
