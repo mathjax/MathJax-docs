@@ -54,7 +54,7 @@ outdated version of MathJax, so be sure to :ref:`upgrade your copy
 <mathjax-git>` to verify that the problem persists in the
 latest version.
 
-See the section on `Reporting Issues <reporting-issues>`_ for more
+See the section on `Reporting Issues <bugs>`_ for more
 detailed instructions.
 
 
