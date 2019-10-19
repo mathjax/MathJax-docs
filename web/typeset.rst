@@ -243,7 +243,7 @@ convert it into another form (either MathML, or one of the output
 formats that MathJax supports).  This was difficult to do in MathJax
 version 2, but easy to do in version 3.
 
-When MathJax startup up, it creates methods for converting from the
+When MathJax starts up, it creates methods for converting from the
 input format(s) to the output format(s) that you have loaded, and to
 MathML format.  For example, if you have loaded the MathML input jax
 and the SVG output jax (say by using the ``mml-svg`` component), then
