@@ -197,7 +197,20 @@ the first line here.
 Building the Component
 ......................
 
-Once these two files are ready, you should be able to use the command
+Once these two files are ready, you are ready to build the component.
+First, make sure that the needed tools are available via the commands
+
+.. code-block:: shell
+
+   npm install webpack
+   npm install webpack-cli
+   npm install uglifyjs-webpack-plugin
+   npm install babel-loader@7
+   npm install babel-core
+   npm install babel-preset-env
+
+After these are in place (you should only need to do this once), you
+should be able to use the command
 
 .. code-block:: shell
 
@@ -443,7 +456,20 @@ the first line here.
 Building the Extension
 ......................
 
-Once these two files are ready, you should be able to use the command
+Once these two files are ready, you are ready to build the component.
+First, make sure that the needed tools are available via the commands
+
+.. code-block:: shell
+
+   npm install webpack
+   npm install webpack-cli
+   npm install uglifyjs-webpack-plugin
+   npm install babel-loader@7
+   npm install babel-core
+   npm install babel-preset-env
+
+After these are in place (you should only need to do this once), you
+should be able to use the command
 
 .. code-block:: shell
 
