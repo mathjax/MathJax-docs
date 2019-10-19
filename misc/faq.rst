@@ -237,7 +237,7 @@ be done in HTML and CSS, not TeX. If you would like to convert full
 TeX documents into HTML to publish online, you should use a TeX to
 HTML converter like `LaTeXML <http://dlmf.nist.gov/LaTeXML/>`__,
 `Tralics <http://www-sop.inria.fr/apics/tralics/>`__, or `tex4ht
-<http://www.tug.org/applications/tex4ht/mn.html>`__, but you should
+<https://tug.org/tex4ht/>`__, but you should
 realize that TeX conversion tools are unlikely produce results as good
 as controlling the HTML and CSS source yourself.
 
