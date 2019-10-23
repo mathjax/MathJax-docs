@@ -15,7 +15,7 @@ See the :ref:`typeset-async` section for examples of typesetting using
 promises.
 
 In addition to promises, MathJax version 3 introduces
-a :ref:`rednderActions <document-renderactions>` configuration option
+a :ref:`renderActions <document-renderactions>` configuration option
 that provides a means of linking into MathJax's processing pipeline.
 This is a priorities list of functions to call during processing,
 which includes the default actions of finding the math in the page,
