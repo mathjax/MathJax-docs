@@ -21,7 +21,7 @@ delimiters, and other options for TeX input.
 
 The TeX input processor handles conversion of your mathematical
 notation into MathJax's internal format (which is essentially MathML),
-and so acts as a TeX to MathML converter.  The TeX input processor has
+and so acts as a TeX to MathML converter.  The TeX input processor
 can also be customized through the use of extensions that define
 additional functionality (see the :ref:`tex-extensions` section).
 

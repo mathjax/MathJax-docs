@@ -52,7 +52,7 @@ each of the components, see the :ref:`configuration` pages.
 Configuration Using an In-Line Script
 -------------------------------------
 
-The easiest way to configure MathJax to to place the ``MathJax``
+The easiest way to configure MathJax is to place the ``MathJax``
 object in a ``<script>`` tag just before the script that loads MathJax
 itself.  For example:
 

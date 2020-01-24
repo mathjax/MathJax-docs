@@ -21,7 +21,7 @@ In the example below, :data:`Startup` represents the
 .. code-block:: javascript
 
     MathJax = {
-      loader: {
+      startup: {
         elements: null,          // The elements to typeset (default is document body)
         typeset: true,           // Perform initial typeset?
         ready: Startup.defaultReady.bind(Startup),          // Called when components are loaded
