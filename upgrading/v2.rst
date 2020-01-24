@@ -275,7 +275,7 @@ input jax have been combined.  For example, the ``tex2jax`` and
 ``TeX`` options now both occur in the ``tex`` configuration block.
 
 MathJax version 2 included six different output jax, which had been
-developed over time to server different purposes.  The original
+developed over time to serve different purposes.  The original
 HTML-CSS output jax had the greatest browser coverage, but its output
 was browser-dependent, its font detection was fragile, and it was the
 slowest of the output processors.  The CommonHTML output jax was a
@@ -344,6 +344,12 @@ Some other changes include:
 
 * The ``useMathMLspacing`` options for the various input jax have been
   moved to the output jax instead, as the ``mathmlSpacing`` option.
+
+..
+
+* The ``processEscapes`` option for the `tex2jax` preprocessor (now
+  for the TeX input jax) had a default value of ``false`` in version 2,
+  but has default value ``true`` in version 3.
 
 ..
 
@@ -629,7 +635,8 @@ array.  For example
    MathJax = {
      options: {
        renderActions: {
-         addMenu: [0]
+         addMenu: [],
+         checkLoading: []
        }
      }
    };

@@ -50,6 +50,9 @@ The Configuration Block
 Note that some extensions make additional options available.  See the
 :ref:`tex-extension-options` section below for details.
 
+Note also that the default for ``processEscapes`` has changed from
+``false`` in version 2 to ``true`` in version 3.
+
 -----
 
 
