@@ -31,17 +31,21 @@ To include MathJax in your project, use the command
 
 .. code-block:: shell
 
-   npm install mathjax
+   npm install mathjax@3
 
 This will install MathJax in ``node_modules/mathjax`` subdirectory of
 your current directory.  It will include the pre-built components in
-the ``node_modules/mathjax/es5`` directory.
+the ``node_modules/mathjax/es5`` directory.  (Note that it is
+important to use ``mathjax@3``, as we are still making v2 releases,
+and so the latest mathjax npm package may not be the v3 one.  The
+``latest`` version on ``npmjs.com`` appears to be chronological rather
+than by version number.)
 
 If you need access to the source code, as well.  Then use
 
 .. code-block:: shell
 
-   npm install mathjax-full
+   npm install mathjax-full@3
 
 which installs MathJax in the ``node_modules/mathjax-full``
 subdirectory, the source files for the components in
