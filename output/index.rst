@@ -31,7 +31,7 @@ you select which one you want to use by including either
 .. code-block:: javascript
 
    window.MathJax = {
-     loader: {load: ["input/tex", "output/ctml"]}
+     loader: {load: ["input/tex", "output/chtml"]}
    };
 
 would specify TeX input and CommonHTML output for the mathematics
