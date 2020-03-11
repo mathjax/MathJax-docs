@@ -306,7 +306,7 @@ For example,
    let html = MathJax.tex2chtml('\\sqrt{x^2+1}', {em: 12, ex: 6, display: false});
 
 would convert the TeX expression ``\sqrt{x^2+1}`` to HTML as an
-in0line expression, with ``em`` size being 12 pixels and ``ex`` size
+in-line expression, with ``em`` size being 12 pixels and ``ex`` size
 being 6 pixels.  The result will be a DOM element containing the HTML
 for the expression.  Similarly,
 
