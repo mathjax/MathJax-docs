@@ -20,7 +20,7 @@ distributed network service, the tag might be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js">
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js">
     </script>
 
 If you have installed MathJax yourself, ``path-to-MathJax`` will be the
@@ -49,7 +49,7 @@ typical invocation of MathJax would be
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_CHTML">
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_CHTML">
     </script>
 
 which loads MathJax with a configuration file that includes everything
@@ -108,7 +108,7 @@ you can load the current version via
 
 .. code-block::  sh
 
-  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js   # the 2.7.5 release
+  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js   # the 2.7.7 release
 
 Pre-releases are also available on `cdnjs`.
 
@@ -124,7 +124,7 @@ always use the latest version of MathJax, you can use
 
 .. code-block::  sh
 
-  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js   # the latest release
+  https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js   # the latest release
 
 and MathJax will look up the latest version and load that (regardless
 of the version number referenced in your URL).  That means you will
@@ -256,7 +256,7 @@ from a CDN and still use your configuration file as follows:
 .. code-block:: html
 
     <script type="text/javascript"
-       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
+       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML,http://myserver.com/MathJax/config/local/local.js">
     </script>
 
 Because the ``local.js`` file is not on the CDN server, you must give

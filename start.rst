@@ -62,12 +62,12 @@ To jump start using `cdnjs`, you accomplish the first step by putting
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
 
 into the ``<head>`` block of your document.  (It can also go in the
 ``<body>`` if necessary, but the head is to be preferred.)  This will
-load the version 2.7.5 of MathJax from the distributed server, and
+load the version 2.7.7 of MathJax from the distributed server, and
 configure it to recognize mathematics in both TeX, MathML, and AsciiMath notation,
 and ask it to generate its output using HTML with CSS to display the
 mathematics.
@@ -94,13 +94,13 @@ select its latest version for you.  To do this, use
 .. code-block:: html
 
     <script type="text/javascript" async
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
     </script>
 
 into the ``<head>`` block of your document.  In this case, MathJax will 
 check to see what is the most current version available, and will load 
 that, regardless of the version you specified.  That way, you can always 
-be sure you will ahve the most up-to-date version of MathJax, and will not 
+be sure you will have the most up-to-date version of MathJax, and will not
 have to modify your pages as new versions are released.
 
 .. note::

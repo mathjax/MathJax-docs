@@ -205,7 +205,7 @@ available in `test/sample-dynamic.html
       });
     </script>
     <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML-full">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full">
     </script>
 
     </head>
