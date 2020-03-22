@@ -113,8 +113,8 @@ parameters that you can specify for the AsciiMath input processor.
 AsciiMath in HTML documents
 ===========================
 
-The AsciiMath syntax is described in the `ASCIIMathML syntax page
-<http://www1.chapman.edu/~jipsen/mathml/asciimathsyntax.html>`_.
+The AsciiMath syntax is described on the official `AsciiMath homepage
+<http://asciimath.org>`_.
 
 Keep in mind that your mathematics is part of an HTML document, so you
 need to be aware of the special characters used by HTML as part of its
