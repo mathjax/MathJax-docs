@@ -23,7 +23,7 @@ components.
 input/tex
 =========
 
-The TeX input format is packages in three different ways, depending on
+The TeX input format is packaged in three different ways, depending on
 which extensions are included in the component.  This gives you
 several possible trade-offs between file size and feature
 completeness.  See the :ref:`tex-input` section for details about the
