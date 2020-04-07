@@ -23,7 +23,6 @@ The Configuration Block
       svg: {
         scale: 1,                      // global scaling factor for all expressions
         minScale: .5,                  // smallest scaling factor to use
-        matchFontHeight: true,         // true to match ex-height of surrounding font
         mtextInheritFont: false,       // true to make mtext elements use surrounding font
         merrorInheritFont: true,       // true to make merror text use surrounding font
         mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules

@@ -6,8 +6,8 @@ mhchem
 
 The `mhchem` extensions implements the ``\ce`` and ``\pu``
 chemical equation macros of the LaTeX `mhchem` package.  See the
-`mhchem CTAN page <http://www.ctan.org/pkg/mhchem>`__ for more
-information and a link to the documentation for `mhchem`.
+`mhchem home page <https://mhchem.github.io/MathJax-mhchem/>`__ for more
+information and documentation for `mhchem`.
 
 For example
 

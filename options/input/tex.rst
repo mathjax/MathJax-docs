@@ -448,10 +448,10 @@ configuration block with the following values:
 .. code-block:: javascript
 
    tagFormat: {
-      number: (n: number) => n.toString(),
-      tag:    (tag: string) => '(' + tag + ')',
-      id:     (id: string) => 'mjx-eqn-' + id.replace(/\s/g, '_'),
-      url:    (id: string, base: string) => base + '#' + encodeURIComponent(id),
+      number: (n) => n.toString(),
+      tag:    (tag) => '(' + tag + ')',
+      id:     (id) => 'mjx-eqn-' + id.replace(/\s/g, '_'),
+      url:    (id, base) => base + '#' + encodeURIComponent(id),
     }
 
 .. describe:: number: function (n) {return n.toString()}
