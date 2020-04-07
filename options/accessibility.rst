@@ -12,6 +12,7 @@ that control these extensions are listed below.
 * :ref:`semantic-enrich-options`
 * :ref:`complexity-options`
 * :ref:`explorer-options`
+* :ref:`assistive-mml-options`
 
 -----
 
@@ -366,6 +367,38 @@ pointer. Note, multiple information explorers work well together.
    can be easily employed simultaneously, switching on multiple mouse based
    exploration tools can lead to unexpected interactions of the tools and often
    unpredictable side effects.
+
+.. _assistive-mml-options:
+
+Assisitve-MML Extension Options
+===============================
+
+This extension adds visually hidden MathML to MathJax's output that
+can be voiced by some screen readers.  See the
+:ref:`screenreader-support` section for more details on how this
+works.
+
+The `assisitive-mml` extension is included in all the combined
+components, and is active by default, so screen reader users will not
+need to do anything to activate it.  There is a menu item that
+controls whether to insert the assistive MathML, so visual users can
+turn it off if they wish.
+
+The extension adds an action to the document's default
+:ref:`renderActions <document-renderActions>` object that does the
+MathML insertion.  You can override that by using the following
+configuration.
+
+
+.. code-block:: javascript
+
+   MathJax = {
+     options: {
+       renderActions: {
+         assistiveMML: []
+       }
+     }
+   };
 
 
 |-----|

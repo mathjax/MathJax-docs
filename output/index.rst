@@ -43,11 +43,6 @@ in your document.
    formats from version 2 are not available in version 3.  These may
    be available in future releases if there is demand for them.
 
-   Also, the ``AssistiveMML`` extension has not been ported to version
-   3, and is unlikely to be in the future.  Support for assistive
-   technology is provided through the assistive explorer, available in
-   the contextual menu.
-
 -----
 
 .. toctree::

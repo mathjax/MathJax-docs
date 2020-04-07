@@ -10,17 +10,18 @@ assistive technology.
 * :ref:`semantic-enrich-component`
 * :ref:`complexity-component`
 * :ref:`explorer-component`
+* :ref:`assistive-mml-component`
 
 These are described below.
 
 .. note::
 
-   The `AssistiveMML` extension has not been ported to MathJax version
-   3, and is unlikely to be in the future (but see the
-   :ref:`mathml-output` section for some ideas about how to implement
-   this functionality).  Also, the `auto-collapse` extension has not
-   yet been converted to version 3, but will be in a future release.
-   Finally, the `assistive-menu` extension is now part of the standard
+   The `auto-collapse` extension has not yet been converted to version
+   3, but will be in a future release.
+
+.. note::
+
+   The `assistive-menu` extension is now part of the standard
    :ref:`contextual menu extension <menu-component>`, so doesn't have
    to be loaded separately.
 
@@ -80,5 +81,28 @@ various features.
 
 See the :ref:`explorer-options` section for information about
 configuring this component.
+
+-----
+
+
+.. _assistive-mml-component:
+
+a11y/assistive-mml-component
+============================
+
+The `assistive-mml` component embeds visually hidden MathML alongside
+MathJax's visual rendering while hiding the visual rendering from
+assistive technology (AT) such as screenreaders. This allows most
+MathML-enabled screenreaders to read out the underlying
+mathematics. It's important to note that Presentation MathML is
+usually not expressive enough to voice the mathematics properly in all
+circumstances, which is why screenreaders have to rely on heuristics
+to analyze the MathML semantically.  See the
+:ref:`screenreader-support` section for more details about screen
+reader support via the `assistive-mml` extension.
+
+See the :ref:`assistive-mml-options` section for information about
+configuring this component.
+
 
 |-----|

@@ -458,13 +458,6 @@ redesign of MathJax version 3.  These are described below.
 
 ..
 
-* The AssistiveMML extension from version 2 has not been included in
-  version 3, but you can easily add similar functionality; an
-  :ref:`example <AssistiveMML>` demonstrating one way to do this is
-  given in the :ref:`mathml-output` section.
-
-..
-
 * The `PlainSource` output jax has not be ported to version 3, though
   it may be in the future; it can be handled in other ways in
   version 3.  As mentioned above, the `NativeMML` has been dropped

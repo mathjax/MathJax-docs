@@ -21,7 +21,6 @@ In addition, there are examples for:
 ..
 
 * :ref:`A replacement for the NativeMML output jax <NativeMML>`
-* :ref:`A replacement for the AssistiveMML extension <AssistiveMML>`
 
 ..
 
