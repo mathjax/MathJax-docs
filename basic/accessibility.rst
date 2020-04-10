@@ -61,8 +61,8 @@ and ``mml-svg``.  If you are making a custom configuration, you can
 include ``ui/menu`` to enable the contextual menu, or you can include
 any of the :ref:`a11y extensions <accessibility-components>` explicitly.
 
-(options to control extensions)
-
+See the :ref:`accessibility-options` section for details about how to
+configure the extensions.
 
 .. _screenreader-support:
 
