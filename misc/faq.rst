@@ -86,7 +86,7 @@ details.
 If the MathJax site *does* render properly, this indicates that there
 may be something wrong with the webpage you were trying to view
 initially.  If you manage that website, then make sure that it is
-using `the latest version of MathJax <web-start>`_, and that you have
+using :ref:`the latest version of MathJax <mathjax-CDN>`, and that you have
 included the line
 
    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -155,7 +155,7 @@ between the CDN and a browser; or, if you prefer, you can install
 MathJax on your own web server, or for off-line use. MathJax does not
 reference scripts from other websites. The MathJax code is, of course,
 open source which means that you can `review it and inspect its
-integrity <https://github.com/mathjax/mathjax>`__.
+integrity <https://github.com/mathjax/MathJax-src>`__.
 
 
 .. _faq-content-mml:
@@ -214,7 +214,7 @@ MathML software list <http://www.w3.org/Math/wiki/Tools>`__.
 I ran into a problem with MathJax. How do I report it?
 ======================================================
 
-See the section on `Reporting Issues <reporting-issues>`_ for the
+See the section on :ref:`reporting-issues` for the
 steps to take when you think you have found a bug in MathJax.
 
 
@@ -224,11 +224,11 @@ Why doesn't the TeX macro ``\something`` work?
 ==============================================
 
 It really depends on what ``\something`` is. We have a full list of
-the `supported TeX commands <tex-commands>`_. If the command you want
+the :ref:`tex-commands`. If the command you want
 to use is not in this list, you may be able to define a TeX macro for
 it yourself, or if you want to get really advanced, you can define
-custom JavaScript that implements it (see the `Custom Extensions
-<extension-writing>`_ for details).
+custom JavaScript that implements it (see the :ref:`Custom Extensions
+<custom-extension>` section for details).
 
 Keep in mind that MathJax is meant for typesetting **math** on the
 web. It only replicates the math functionality of LaTeX and not the
@@ -252,7 +252,7 @@ with ``\newcommand``, or ``\def``.  An example is
 ``\newcommand{\water}{{\rm H_{2}O}}``, which will output the chemical
 formula for water when you use the ``\water`` command. The
 ``\renewcommand`` command works as well. You can also store macros in
-the MathJax configuration. For more information, see `the
-documentation <tex-macros>`_.
+the MathJax configuration. For more information, see :ref:`the
+documentation <tex-commands>`.
 
 |-----|
