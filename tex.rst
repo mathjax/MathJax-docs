@@ -1430,7 +1430,6 @@ F
     \Finv                   AMSsymbols
     \flat
     \forall
-    \frac
     \frac                   AMSmath
     \frak
     \frown
@@ -1499,13 +1498,13 @@ H
     \hspace
     \Huge
     \huge
-    \idotsint               AMSmath
 
 I
 -
 
 .. code-block:: latex
 
+    \idotsint               AMSmath
     \iff
     \iiiint                 AMSmath
     \iiint
@@ -1523,9 +1522,9 @@ I
     \int
     \intercal               AMSsymbols
     \intop
-    \isin                   mediawiki-texvc
     \iota
     \Iota                   mediawiki-texvc
+    \isin                   mediawiki-texvc
     \it
 
 J
