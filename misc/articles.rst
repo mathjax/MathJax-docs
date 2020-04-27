@@ -9,21 +9,21 @@ Articles
 ========
 
 -  `Towards Universal Rendering in MathJax (W4A 2016)
-   <https://github.com/mathjax/papers/blob/newpapers/W4A/w4a16-accessible.pdf>`__
+   <https://dl.acm.org/doi/10.1145/2899475.2899494>`__
    by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
 -  `Towards ARIA Standards for Mathematical Markup (DEIMS 2016)
-   <https://github.com/mathjax/papers/blob/newpapers/DEIMS16/deims16.pdf>`__
+   <https://mathjax.github.io/papers/DEIMS16/deims16.pdf>`__
    by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
 -  `Employing Semantic Analysis for Enhanced Accessibility 
    Features in MathJax (ADS, CCNC 2016)
-   <https://github.com/mathjax/papers/blob/newpapers/ads16/ads16.pdf>`__
+   <https://ieeexplore.ieee.org/document/7444948>`__
    by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
 -  `Whitepaper: Towards MathJax v3.0
-   <http://mathjax.github.io/papers/towards-v3/towards-mathjax-v3.html>`__
+   <http://mathjax.github.io/papers/towards-v3/towards-mathjax-v3.pdf>`__
    by Peter Krautzberger, Davide Cervone, Volker Sorge, *MathJax*, *2015*
 -  `Towards Meaningful Visual Abstraction of Mathematical Notation 
    (MathUI, CICM 2015)
-   <https://github.com/mathjax/papers/blob/newpapers/MathUI15/mathui15.pdf>`__
+   <https://mathjax.github.io/papers/MathUI15/mathui15.pdf>`__
    by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*
 -  `MathML forges
    on <http://radar.oreilly.com/2013/11/mathml-forges-on.html>`__
