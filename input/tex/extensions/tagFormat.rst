@@ -18,24 +18,88 @@ For example,
       section: 1,
       tex: {
         tagFormat: {
-	  number: (n) => MathJax.section + '.' + n,
-          id: (n) => 'eqn-id-' + n
+	  number: (n) => MathJax.config.section + '.' + n,
+          id: (tag) => 'eqn-id-' + tag
 	}
+      },
+      startup: {
+        ready() {
+          MathJax.startup.defaultReady();
+          MathJax.startup.input[0].preFilters.add(({math}) => {
+            if (math.inputData.recompile) {
+              MathJax.config.section = math.inputData.recompile.section;
+            }
+          });
+          MathJax.startup.input[0].postFilters.add(({math}) => {
+            if (math.inputData.recompile) {
+              math.inputData.recompile.section = MathJax.config.section;
+            }
+          });
+        }
       }
     };
 
 arranges for automatic equation numbers to be of the form ``1.n``, and
 uses ids of the form ``eqn-id-1.n`` as the ``id`` attribute of the
-tags within the web page.  This example uses the modern function
-notation (using ``=>``), but you could also use ``function (n) {return
-...}``.
+tags within the web page.  It also sets up pre- and -post-filters for
+the TeX input jax that arrange for the section number to be properly
+handled for automatically numbered equations that contain forward
+references to later expressions.  This example uses the modern
+function notation (using ``=>``), but you could also use
+``function (n) {return ...}``.
 
-This extension is already loaded in all the components that
-include the TeX input jax, other than ``input/tex-base``.  To load the
-`tagFormat` extension explicitly (when using ``input/tex-base`` for
-example), add ``'[tex]/tagFormat'`` to the ``load`` array of the
-``loader`` block of your MathJax configuration, and add
-``'tagFormat'`` to the ``packages`` array of the ``tex`` block.
+You can  adjust the  section numnber using  JavaScript by  setting the
+``MathJax.config.section`` variable.  It is  also possible  to create
+TeX macros for controlling the section number.  Here is one possibility:
+
+.. code-block:: javascript
+
+    MathJax = {
+      startup: {
+        ready() {
+          const Configuration = MathJax._.input.tex.Configuration.Configuration;
+          const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+          new CommandMap('sections', {
+            nextSection: 'NextSection',
+            setSection: 'SetSection',
+          }, {
+            NextSection(parser, name) {
+              MathJax.config.section++;
+              parser.tags.counter = parser.tags.allCounter = 0;
+            },
+            SetSection(parser, name) {
+              const n = parser.GetArgument(name);
+              MathJax.config.section = parseInt(n);
+            }
+          });
+          Configuration.create(
+            'sections', {handler: {macro: ['sections']}}
+          );
+          MathJax.startup.defaultReady();
+        }
+      }
+    };
+
+(Of course, you will want to merge this configuraiton in with the rest
+of your configuration options.)
+
+This makes two new macros available: ``\nextSection``, which
+increments the section counter, and ``\setSection{n}``, which sets the
+section number to ``n``.  These must be issues within math delimiters
+in order for MathJax to process them.  In order to prevent them from
+producing any output in your page, you could enclose them within a
+hidden element.  For example,
+
+.. code-block:: html
+
+   <span style="display: hidden">\(\nextSection\)</span>
+
+or something similar.  
+
+To load the `tagFormat` extension, add ``'[tex]/tagFormat'`` to the
+``load`` array of the ``loader`` block of your MathJax configuration,
+and add ``'tagFormat'`` to the ``packages`` array of the ``tex``
+block.
 
 .. code-block:: javascript
 
