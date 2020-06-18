@@ -79,6 +79,10 @@ Option Descriptions
    same ratio in the surrounding text as in the math fonts, which is
    unlikely).
 
+   Note that, although this option is available on all the output
+   renderers, it has no effect on SVG output, since that is scaled to
+   match the surrounding height automatically.
+
 .. _output-mtextInheritFont:
 .. describe:: mtextInheritFont: false
 
