@@ -46,8 +46,8 @@ enable it.
 A number of extensions are already loaded and configured in the
 components that contain the TeX extension.  The ``input/tex``, and the
 combined components containing ``tex`` and not ending in ``-full``
-include the ``ams``, ``newcommand``, ``noUndefined``, ``require``,
-``autoload``, and ``configMacros`` extensions, with the other
+include the ``ams``, ``newcommand``, ``noundefined``, ``require``,
+``autoload``, and ``configmacros`` extensions, with the other
 extensions being autoloaded as needed.  The ``input/tex-base``
 component has no extensions loaded, while the ``input/tex-full`` and
 the combined extensions ending in ``-full`` load all the extensions.

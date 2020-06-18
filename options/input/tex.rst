@@ -277,10 +277,10 @@ available by default.
 
 .. _tex-configmacros-options:
 
-ConfigMacros Options
+Configmacros Options
 --------------------
 
-The :ref:`tex-configMacros` extension adds a ``macros`` option to the
+The :ref:`tex-configmacros` extension adds a ``macros`` option to the
 ``tex`` block that lets you pre-define macros.
 
 .. _tex-macros-option:
@@ -387,7 +387,7 @@ The default autoload definitions are the following:
      tex: {
        autoload: expandable({
          action: ['toggle', 'mathtip', 'texttip'],
-         amsCd: [[], ['CD']],
+         amscd: [[], ['CD']],
          bbox: ['bbox'],
          boldsymbol: ['boldsymbol'],
          braket: ['bra', 'ket', 'braket', 'set', 'Bra', 'Ket', 'Braket', 'Set', 'ketbra', 'Ketbra'],
@@ -437,17 +437,17 @@ your own prefixes, like the ``[extensions]`` prefix used here.
 
 .. _tex-tagformat-options:
 
-TagFormat Options
+Tagformat Options
 -----------------
 
-The :ref:`tex-tagFormat` extension allows you to control the display
+The :ref:`tex-tagformat` extension allows you to control the display
 and linking of equation tags and numbers.  Adding this to the
-``packages`` array adds a ``tagFormat`` sub-object to the ``tex``
+``packages`` array adds a ``tagformat`` sub-object to the ``tex``
 configuration block with the following values:
 
 .. code-block:: javascript
 
-   tagFormat: {
+   tagformat: {
       number: (n) => n.toString(),
       tag:    (tag) => '(' + tag + ')',
       id:     (id) => 'mjx-eqn-' + id.replace(/\s/g, '_'),
@@ -515,19 +515,19 @@ sub-block of the ``tex`` configuration block with the following values:
 
 .. _tex-amscd-options:
 
-AmsCD Options
+Amscd Options
 -------------
 
 The :ref:`tex-amscd` extension defines the `CD` environment for
 commutative diagrams.  Adding it to the ``packages`` array defines an
-``amsCd`` sub-block of the ``tex`` configuration block with the
+``amscd`` sub-block of the ``tex`` configuration block with the
 following values:
 
 .. code-block:: javascript
 
    MathJax = {
      tex: {
-       amsCd: {
+       amscd: {
          colspace: '5pt',
          rowspace: '5pt',
          harrowsize: '2.75em',

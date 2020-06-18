@@ -1,12 +1,12 @@
 .. _tex-tagformat:
 
 #########
-tagFormat
+tagformat
 #########
 
-The `tagFormat` extension provides the ability to customize the format
+The `tagformat` extension provides the ability to customize the format
 of the equation tags and automatic equation numbers.  You do this by
-providing functions in the ``tagFormat`` object of the ``tex`` block
+providing functions in the ``tagformat`` object of the ``tex`` block
 of your MathJax configuration.  The functions you can provide are
 listed in the :ref:`tex-tagformat-options` section.
 
@@ -17,7 +17,7 @@ For example,
     MathJax = {
       section: 1,
       tex: {
-        tagFormat: {
+        tagformat: {
 	  number: (n) => MathJax.config.section + '.' + n,
           id: (tag) => 'eqn-id-' + tag
 	}
@@ -96,16 +96,16 @@ hidden element.  For example,
 
 or something similar.  
 
-To load the `tagFormat` extension, add ``'[tex]/tagFormat'`` to the
+To load the `tagformat` extension, add ``'[tex]/tagformat'`` to the
 ``load`` array of the ``loader`` block of your MathJax configuration,
-and add ``'tagFormat'`` to the ``packages`` array of the ``tex``
+and add ``'tagformat'`` to the ``packages`` array of the ``tex``
 block.
 
 .. code-block:: javascript
 
    window.MathJax = {
-     loader: {load: ['[tex]/tagFormat']},
-     tex: {packages: {'[+]': ['tagFormat']}}
+     loader: {load: ['[tex]/tagformat']},
+     tex: {packages: {'[+]': ['tagformat']}}
    };
 
 |-----|

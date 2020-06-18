@@ -189,8 +189,8 @@ TeX Input Extensions
 There are two new TeX input extensions: :ref:`tex-braket` and
 :ref:`tex-physics`.  Also, some functionality that was built into the TeX
 input jax in version 2 has been moved into extensions in version 3.
-This includes the :ref:`macros <tex-configMacros>` configuration
-option, the :ref:`tag formatting <tex-tagFormat>` configuration
+This includes the :ref:`macros <tex-configmacros>` configuration
+option, the :ref:`tag formatting <tex-tagformat>` configuration
 options, and the :ref:`require <tex-require>` macro.  The new
 :ref:`tex-autoload` extension replaces the older `autoload-all`
 extension, is more configurable, and is included in the TeX input

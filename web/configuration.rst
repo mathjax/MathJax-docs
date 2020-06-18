@@ -301,10 +301,10 @@ components.  For example
    <script>
    MathJax = {
      loader: {
-       load: ['[tex]/colorV2']
+       load: ['[tex]/colorv2']
      },
      tex: {
-       packages: {'[+]': 'colorV2'},
+       packages: {'[+]': 'colorv2'},
        autoload: {color: []}
      }
    };

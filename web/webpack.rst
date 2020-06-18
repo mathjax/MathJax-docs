@@ -85,7 +85,7 @@ After downloading a copy of MathJax as described in the section on
 
 For this example, we will create a custom build that has the TeX input
 jax and the SVG output jax, and we will load the ``newcommand``,
-``ams``, and ``configMacros`` extensions, but will not include
+``ams``, and ``configmacros`` extensions, but will not include
 ``require`` or ``autoload``, so the user will not be able load any
 additional TeX extensions.  This component also includes the
 contextual menu.
@@ -117,7 +117,7 @@ need to adjust the locations in the :func:`require()` commands).
      'input/tex-base',
      '[tex]/ams',
      '[tex]/newcommand',
-     '[tex]/configMacros',
+     '[tex]/configmacros',
      'output/svg', 'output/svg/fonts/tex.js',
      'ui/menu'
    );
@@ -131,7 +131,7 @@ need to adjust the locations in the :func:`require()` commands).
    require('mathjax-full/components/src/input/tex-base/tex-base.js');
    require('mathjax-full/components/src/input/tex/extensions/ams/ams.js');
    require('mathjax-full/components/src/input/tex/extensions/newcommand/newcommand.js');
-   require('mathjax-full/components/src/input/tex/extensions/config_macros/configMacros.js');
+   require('mathjax-full/components/src/input/tex/extensions/config_macros/configmacros.js');
 
    require('mathjax-full/components/src/output/svg/svg.js');
    require('mathjax-full/components/src/output/svg/fonts/tex/tex.js');
@@ -144,7 +144,7 @@ need to adjust the locations in the :func:`require()` commands).
    const {insert} = require('mathjax-full/js/util/Options.js');
    insert(MathJax.config, {
      tex: {
-       packages: {'[+]': ['ams', 'newcommand', 'configMacros']}
+       packages: {'[+]': ['ams', 'newcommand', 'configmacros']}
      }
    });
 
@@ -247,7 +247,7 @@ defaults that can still be overridden in the page, use
    // Update the configuration to include any updated values
    //
    const {insert} = require('mathjax-full/js/util/Options.js');
-   insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configMacros']}}});
+   insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configmacros']}}});
    MathJax.config = insert({
      // your default options here
    }, MathJax.config);

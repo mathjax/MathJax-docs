@@ -22,7 +22,7 @@ configuration if you do.
 
 Some blocks may contain further sub-blocks.  For example, the ``tex``
 block can have a ``macros`` sub-block that pre-defines macros, and a
-``tagFormat`` block (when the :ref:`tex-tagformat` component is used)
+``tagformat`` block (when the :ref:`tex-tagformat` component is used)
 to define how equation tags are displayed and handled.
 
 For example,
@@ -31,7 +31,7 @@ For example,
 
     window.MathJax = {
       loader: {
-        load: ['[tex]/tagFormat']
+        load: ['[tex]/tagformat']
       },
       startup: {
         pageReady: () => {
@@ -40,13 +40,13 @@ For example,
         }
       },
       tex: {
-        packages: {'[+]': ['tagFormat']},
+        packages: {'[+]': ['tagformat']},
         tagSide: 'left',
         macros: {
 	  RR: '{\\bf R}',
 	  bold: ['{\\bf #1}',1]
 	},
-        tagFormat: {
+        tagformat: {
            tag: (n) => '[' + n + ']'
         }
       }
@@ -57,7 +57,7 @@ be loaded, sets up the :ref:`startup-component` component to have a
 function that it runs when the page (and MathJax) are ready (the
 function issues an alert and then does the usual :meth:`pageReady()`
 function, which typesets the page), configures the :ref:`TeX input
-<tex-input>` component to use the `tagFormat` extension, asks for
+<tex-input>` component to use the `tagformat` extension, asks for
 displayed equations to be typeset to the left (rather than centered),
 defines two macros, and finally set the tagging so that it uses square
 brackets rather than parentheses for equation numbers and tags.
@@ -69,7 +69,7 @@ replace it.  If the option you are setting is an array, and you
 provide an object that has a single properly whose name is ``'[+]'``
 and whose value is an array, then that array will be appended to the
 default value for the option you are setting.  So in the example
-above, the ``'tagFormat'`` string is added to the default ``packages``
+above, the ``'tagformat'`` string is added to the default ``packages``
 array (without your needing to know what that default value is).
 
 Similarly, if you use an object with a single property whose name is

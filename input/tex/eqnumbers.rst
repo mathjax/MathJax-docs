@@ -68,8 +68,8 @@ that references can come before the corresponding formula as well as
 after them.
 
 You can configure the way that numbers are displayed and how the
-references to them by including the ``tagFormat`` extension, and
-setting options within the ``tagFormat`` block of your ``tex``
+references to them by including the ``tagformat`` extension, and
+setting options within the ``tagformat`` block of your ``tex``
 configuration.  See the :ref:`tex-tagformat` extension for more
 details.
 

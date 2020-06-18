@@ -1,10 +1,10 @@
 .. _tex-colorv2:
 
 #######
-colorV2
+colorv2
 #######
 
-The `colorV2` extension defines the ``\color`` macro to be the
+The `colorv2` extension defines the ``\color`` macro to be the
 non-standard macro that is the default in MathJax version 2, namely,
 it takes two arguments, one the name of the color (or an HTML color of
 the form ``#RGB`` or ``#RRGGBB``), and the second the math to be
@@ -21,16 +21,16 @@ array of the ``tex`` block.
 .. code-block:: javascript
 
    window.MathJax = {
-     loader: {load: ['[tex]/colorV2']},
+     loader: {load: ['[tex]/colorv2']},
      tex: {packages: {'[+]': ['color']}}
    };
 
-or, use ``\require{colorV2}`` in a TeX expression to load it
+or, use ``\require{colorv2}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
 Alternatively, you can configure the `autoload` package to load
-`colorV2` when ``\color`` is used rather than the (LaTeX-compatible)
+`colorv2` when ``\color`` is used rather than the (LaTeX-compatible)
 `color` extension:
 
 .. code-block:: javascript
@@ -39,7 +39,7 @@ Alternatively, you can configure the `autoload` package to load
      tex: {
        autoload: {
          color: [],            // don't autoload the color extension
-         colorV2: ['color']    // autoload colorV2 on the first use of \color
+         colorv2: ['color']    // autoload colorv2 on the first use of \color
        }
      }
    };

@@ -424,7 +424,7 @@ C
    * - ``\colon``
      -
    * - ``\color``
-     - color, *colorV2*
+     - color, *colorv2*
    * - ``\colorbox``
      - color
    * - ``\comm``
@@ -1180,9 +1180,9 @@ M
    * - ``\min``
      -
    * - ``\minCDarrowheight``
-     - amsCd
+     - amscd
    * - ``\minCDarrowwidth``
-     - amsCd
+     - amscd
    * - ``\mit``
      -
    * - ``\mkern``
@@ -2207,7 +2207,7 @@ provided where ``NAME`` is one of the following:
    * - ``cases``
      - **ams**
    * - ``CD``
-     - amsCd
+     - amscd
    * - ``eqnarray``
      -
    * - ``eqnarray*``

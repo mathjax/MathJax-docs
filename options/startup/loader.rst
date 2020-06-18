@@ -191,7 +191,7 @@ Option Descriptions
             '[tex]/noundefined',
             '[tex]/require',
             '[tex]/autoload',
-            '[tex]/configMacros'
+            '[tex]/configmacros'
           ]
         }
       }

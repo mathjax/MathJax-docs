@@ -108,7 +108,7 @@ used.
 
 In addition, there is a ``[tex]/all-packages`` component that includes
 all the packages, and configures the TeX input processors to include
-all of them except :ref:`tex-physics` and :ref:`tex-colorV2`.  The
+all of them except :ref:`tex-physics` and :ref:`tex-colorv2`.  The
 `input/tex-base` and `[tex]/all-packages` components together are
 effectively the same as the `input/tex-full` component.
 

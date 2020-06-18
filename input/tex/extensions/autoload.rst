@@ -72,7 +72,7 @@ says that the `verb` extension will not be autoloaded.
         tex: {
           autoload: {
             color: [],
-            colorV2: ['color']
+            colorv2: ['color']
           }
         }
       };
