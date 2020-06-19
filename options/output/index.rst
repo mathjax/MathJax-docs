@@ -35,7 +35,7 @@ above.  They are given here with their default values, using the
         mtextInheritFont: false,       // true to make mtext elements use surrounding font
         merrorInheritFont: false,      // true to make merror text use surrounding font
         mtextFont: '',                 // font to use for mtext, if not inheriting (empty means use MathJax fonts)
-        merrorFont: 'Times',           // font to use for merror, if not inheriting (empty means use MathJax fonts)
+        merrorFont: 'serif',           // font to use for merror, if not inheriting (empty means use MathJax fonts)
         mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
         skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
         exFactor: .5,                  // default size of ex in em units
