@@ -33,7 +33,9 @@ above.  They are given here with their default values, using the
         minScale: .5,                  // smallest scaling factor to use
         matchFontHeight: true,         // true to match ex-height of surrounding font
         mtextInheritFont: false,       // true to make mtext elements use surrounding font
-        merrorInheritFont: true,       // true to make merror text use surrounding font
+        merrorInheritFont: false,      // true to make merror text use surrounding font
+        mtextFont: '',                 // font to use for mtext, if not inheriting (empty means use MathJax fonts)
+        merrorFont: 'Times',           // font to use for merror, if not inheriting (empty means use MathJax fonts)
         mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
         skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
         exFactor: .5,                  // default size of ex in em units
@@ -88,22 +90,41 @@ Option Descriptions
 
    This setting controls whether ``<mtext>`` elements will be typeset
    using the math fonts or the font of the surrounding text.  When
-   ``false``, the math fonts will be used, as they are for other token
-   elements; when ``true``, the font will be inherited from the
-   surrounding text, when possible, depending on the ``mathvariant``
-   for the element (some math variants, such as ``fraktur`` can't be
-   inherited from the surroundings).
+   ``false``, the :ref:`mtextFont <output-mtextFont>` will be used,
+   unless it is blank, in which case math fonts will be used, as they
+   are for other token elements; when ``true``, the font will be
+   inherited from the surrounding text, when possible, depending on
+   the ``mathvariant`` for the element (some math variants, such as
+   ``fraktur`` can't be inherited from the surroundings).
 
 .. _output-merrorInheritFont:
 .. describe:: merrorInheritFont: false
 
    This setting controls whether the text for ``<merror>`` elements
    will be typeset using the math fonts or the font of the surrounding
-   text.  When ``false``, the math fonts will be used, as they are for
-   other token elements; when ``true``, the font will be inherited
-   from the surrounding text, when possible, depending on the
-   ``mathvariant`` for the element (some math variants, such as
-   ``fraktur`` can't be inherited from the surroundings).
+   text.  When ``false``, the :ref:`merrorFont <output-merrorFont>`
+   will be used; when ``true``, the font will be inherited from the
+   surrounding text, when possible, depending on the ``mathvariant``
+   for the element (some math variants, such as ``fraktur`` can't be
+   inherited from the surroundings).
+
+.. _output-mtextFont:
+.. describe:: mtextFont: ''
+
+   This specifies the font family to use for ``<mtext>`` elements when
+   :ref:`mtextInheritFont <output-mtextInheritFont>` is ``false`` (and
+   is ignored if it is ``true``).  It can be a comma-separated list of
+   font-family names.  If it is empty, then the math fonts are used,
+   as they are with other token elements.
+
+.. _output-merrorFont:
+.. describe:: mtextFont: 'Times'
+
+   This specifies the font family to use for ``<merror>`` elements
+   when :ref:`merrorInheritFont <output-merrorInheritFont>` is
+   ``false`` (and is ignored if it is ``true``).  It can be a
+   comma-separated list of font-family names.  If it is empty, then
+   the math fonts are used, as they are with other token elements.
 
 .. _output-mathmlSpacing:
 .. describe:: mathmlSpacing: false
