@@ -112,8 +112,9 @@ for that extension.  For example,
 
 would set the padding for ``\colorbox`` to be 5 pixels.
 
-See the :ref:`configuration` section for details about the options for
-each of the extensions below.
+See the :ref:`configuring-mathjax` section for details about how to
+configure MathJax in general, and :ref:`tex-extension-options` for the
+options for individual extensions.
 
 For extensions that are not loaded explicitly but may be loaded via
 the `autoload` package or the ``\require`` macro, you can't include

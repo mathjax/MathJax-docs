@@ -50,4 +50,7 @@ literal, and the backslash has special meaning in javascript strings.
 So to get an actual backslash in the string you must double it, as in
 the examples above.
 
+See :ref:`tex-configmacros-options` for more details on the ``macros``
+configuration block.
+
 |-----|

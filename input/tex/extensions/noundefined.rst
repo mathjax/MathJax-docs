@@ -28,4 +28,49 @@ block of your MathJax configuration, and add ``'noundefined'`` to the
      tex: {packages: {'[+]': ['noundefined']}}
    };
 
+-----
+
+
+.. _tex-noundefined-options:
+
+noundefined Options
+-------------------
+
+Adding ``'[tex]/noundefined'`` to the ``packages`` array defines a
+``noundefined`` sub-block of the ``tex`` configuration block with the
+following values:
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       noundefined: {
+         color: 'red',
+         background: '',
+         size: ''
+       }
+     }
+   };
+
+.. _tex-noundefined-color:
+.. describe:: color: 'red'
+
+   This gives the color to use for the text of the undefined macro
+   name, or an empty string to make the color the same as the
+   surrounding mathematics.
+
+.. _tex-noundefined-background:
+.. describe:: background: ''
+
+   This gives the color to use for the background for the undefined
+   macro name, or an empty srting to have no brackground color.
+
+.. _tex-noundefined-size:
+.. describe:: size: ''
+
+   This gives the size to use for the undefined macro name (e.g.,
+   ``90%`` or ``12px``), or an emtpy string to keep the size the same
+   as the surrounding mathematics.
+
+
 |-----|

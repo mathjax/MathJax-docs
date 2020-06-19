@@ -8,6 +8,8 @@ Version 3.1 includes a number of new features, as well as bug fixes
 for several issues with version 3.0.  These are described below.
 
 * :ref:`v3.1-tex-package-name-changes`
+* :ref:`v3.1-tex-format-error`
+* :ref:`v3.1-tex-noundefined-options`
 * :ref:`v3.1-output-options`
 
 
@@ -37,6 +39,31 @@ If you are using direct imports of the MathJax modules, you will need
 to change to the new names now, as there is no backward-compatibility
 option for that.
 
+.. _v3.1-tex-format-error:
+
+Tex Error Formatting
+====================
+
+There is a new :attr:`formatError` option for the TeX input jax that
+provides a function that is called when a syntax or other error occurs
+during the processing of a TeX expression.  This can be used to trap
+the errors for reporting purposes, or to process the errors in other
+ways.  See the :ref:`formatError <tex-formatError>` documenation.
+
+
+.. _v3.1-tex-noundefined-options:
+
+Noundefined Package Options
+===========================
+
+The ``noundefined`` package now has configuration options similar to
+the ones available in the ones available in version 2.  These include
+tha ability to set the text color, background color, and size of the
+text to use for disoplaying undefined macro names within TeX formulas.
+See the :ref:`noundefined options <tex-noundefined-options>` for
+details.
+
+
 
 .. _v3.1-output-options:
 
@@ -46,14 +73,15 @@ New Output Configuration Options
 There are two new output configuration options, and updated behavior
 and defaults for two existing options.  These options control the
 fonts used for ``<mtext>`` and ``<merror>`` elements.  The original
-``mtextInheritFont`` and ``merrorInheritFont`` properties controlled
-whether these elements used the same font as the surrounding text,
-but neither worked properly in version 3.0.  This has been fixed in
-version 3.1 so these now properly cause the surrounding font to be
-used for the contents of the specified elements when set to ``true``.
+:attr:`mtextInheritFont` and :attr:`merrorInheritFont` properties
+controlled whether these elements used the same font as the
+surrounding text, but neither worked properly in version 3.0.  This
+has been fixed in version 3.1 so these now properly cause the
+surrounding font to be used for the contents of the specified elements
+when set to ``true``.
 
-If these are set to ``false``, the new ``mtextFont`` and
-``merrorFont`` properties specify a font family (or list of families)
+If these are set to ``false``, the new :attr:`mtextFont` and
+:attr:`merrorFont` properties specify a font family (or list of families)
 to use fort the content of these elemements.  This allows you to force
 a specific font to be used for the text within mathematics.  If these
 are set to an empty string, then the MathJax fonts will be used.
@@ -71,8 +99,8 @@ which means that the MathJax fonts will be used for ``<mtext>``
 elements, and the browser's serif font will be used for ``<merror>``
 text.  See the :ref:`output-common-options` for more information.
 
-**Note:** the default for ``merrorInheritFont`` has been changed from
-``true`` to ``false`` now that ``merrorFont`` is available.
+**Note:** the default for :attr:`merrorInheritFont` has been changed from
+``true`` to ``false`` now that :attr:`merrorFont` is available.
 
 
 |-----|

@@ -43,7 +43,9 @@ The Configuration Block
         maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
         baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
            (document.getElementsByTagName('base').length === 0) ?
-            '' : String(document.location).replace(/#.*$/, ''))
+            '' : String(document.location).replace(/#.*$/, '')),
+        formatError:               // function called when TeX syntax errors occur
+            (jax, err) => jax.formatError(err)
       }
     };
 
@@ -239,6 +241,16 @@ Option Descriptions
    in the document that would affect those links.  You can set this
    value by hand if MathJax doesn't produce the correct link.
 
+.. _tex-formatError:
+.. describe:: formatError: (jax, err) => jax.formatError(err)
+
+   This is a function that is called when the TeX input jax reports a
+   syntax or other error in the TeX that it is processing.  The
+   default is to generate an ``<merror>`` MathML element with the
+   message indicating the error that occurred.  You can override the
+   function to perform other tasks, like recording the message, or
+   replacing the message with an alternative message.
+
 
 The remaining options are described in the
 :ref:`input-common-options` section.
@@ -274,300 +286,29 @@ combined components that load the TeX input jax, include a number of
 these extensions automatically, so some these options will be
 available by default.
 
-
-.. _tex-configmacros-options:
-
-Configmacros Options
---------------------
-
-The :ref:`tex-configmacros` extension adds a ``macros`` option to the
-``tex`` block that lets you pre-define macros.
-
-.. _tex-macros-option:
-.. describe:: macros: {}
-
-    This lists macros to define before the TeX input processor begins.
-    These are `name: value` pairs where the `name` gives the name of
-    the TeX macro to be defined, and `value` gives the replacement
-    text for the macro.  The `value` can be a simple replacement
-    string, or an array of the form `[value, n]`, where `value` is the
-    replacement text and `n` is the number of parameters for the
-    macro.  The array can have a third entry:  either a string that is
-    the default value to give for an optional (bracketed) parameter
-    when the macro is used, or an array consisting of template strings
-    that are used to separate the various parameters.  The first
-    template must precede the first parameter, the second must precede
-    the second, and so on until the final which must end the last
-    parameter to the macro.  See the examples below.
-
-    Note that since the `value` is a javascript string,
-    backslashes in the replacement text must be doubled to prevent
-    them from acting as javascript escape characters.
-
-    For example,
-
-    .. code-block:: javascript
- 
-        macros: {
-          RR: '{\\bf R}',                    // a simple string replacement
-          bold: ['\\boldsymbol{#1}',1] ,     // this macro has one parameter
-          ddx: ['\\frac{d#2}{d#1}', 2, 'x'], // this macro has an optional parameter that defaults to 'x'
-          abc: ['(#1)', 1, [null, '\\cba']]  // equivalent to \def\abc#1\cba{(#1)}
-        }
-
-    would ask the TeX processor to define four new macros:  ``\RR``,
-    which produces a bold-face "R", and ``\bold{...}``, which takes one
-    parameter and sets it in the bold-face font, ``\ddx``, which has
-    an optional (bracketed) parameter that defaults to ``x``, so that
-    ``\ddx{y}`` produces ``\frac{dy}{dx}`` while ``\ddx[t]{y}``
-    produces ``\frac{dy}{dt}``, and ``\abc`` that is equivalent to
-    ``\def\abc#1\cba{(#1)}``.
-
-.. _tex-require-options:
-
-Require Options
----------------
-
-The :ref:`tex-require` extension defines the (non-standard)
-``\require{}`` macro for loading TeX extensions.  Adding it to the
-``packages`` array defines a ``require`` sub-block of the ``tex``
-configuration block with the following values:
+For example, the :ref:`tex-configmacros` package adds a ``macros``
+block to the ``tex`` configuration block that allows you to pre-define
+macros for use in TeX espressions:
 
 .. code-block:: javascript
 
    MathJax = {
      tex: {
-       require: {
-         allow: {
-           base: false,
-           'all-packages': false
-         },
-         defaultAllow: true
-      }
-    };
-
-.. _tex-require-allow:
-.. describe:: allow: {...}
-
-   This sub-object indicates which extensions can be loaded by
-   ``\require``.  The keys are the package names, and the value is
-   ``true`` to allow the extension to be loaded, and ``false`` to
-   disallow it.  If an extension is not in the list, the default value
-   is given by ``defaultAllow``, described below.
-
-.. _tex-require-defaultAllow:
-.. describe:: defaultAllow: true
-
-   This is the value used for any extensions that are requested, but
-   are not in the ``allow`` object described above.  If set to
-   ``true``, any extension not listed in ``allow`` will be allowed;
-   if ``false``, only the ones listed in ``allow`` (with value
-   ``true``) will be allowed.
-
-.. _tex-autoload-options:
-
-Autoload Option
----------------
-
-The :ref:`tex-autoload` extension creates macros that cause the
-packages that define them to be loaded automatically when they are
-first used.  Adding it to the ``packages`` array defines an
-``autoload`` sub-block to the ``tex`` configuration block.  This block
-contains `key: value` pairs where the `key` is a TeX package name, and
-the value is an array of macros that cause that package to be loaded,
-or an array consisting of two arrays, the first giving names of macros
-and the second names of environments; the first time any of them are
-used, the extension will be loaded automatically.
-
-The default autoload definitions are the following:
-
-.. code-block:: javascript
-
-   MathJax = {
-     tex: {
-       autoload: expandable({
-         action: ['toggle', 'mathtip', 'texttip'],
-         amscd: [[], ['CD']],
-         bbox: ['bbox'],
-         boldsymbol: ['boldsymbol'],
-         braket: ['bra', 'ket', 'braket', 'set', 'Bra', 'Ket', 'Braket', 'Set', 'ketbra', 'Ketbra'],
-         cancel: ['cancel', 'bcancel', 'xcancel', 'cancelto'],
-         color: ['color', 'definecolor', 'textcolor', 'colorbox', 'fcolorbox'],
-         enclose: ['enclose'],
-         extpfeil: ['xtwoheadrightarrow', 'xtwoheadleftarrow', 'xmapsto',
-                    'xlongequal', 'xtofrom', 'Newextarrow'],
-         html: ['href', 'class', 'style', 'cssId'],
-         mhchem: ['ce', 'pu'],
-         newcommand: ['newcommand', 'renewcommand', 'newenvironment', 'renewenvironment', 'def', 'let'],
-         unicode: ['unicode'],
-         verb: ['verb']
+       macros: {
+         R: '\\mathbf{R}'
        }
      }
-   };
+   }
 
-To prevent an extension from autoloading, set its value to an empty
-array.  E.g., to not autoload the `color` extension, use
+The options for the various TeX packages (that have options) are
+described in the links below:
 
-.. code-block:: javascript
-
-   MathJax = {
-     tex: {
-       autoload: expandable({
-         color: []
-       }
-     }
-   };
-
-If you define your own extensions, and they have a prefix other than
-``[tex]``, then include that in the extension name.  For instance,
-
-.. code-block:: javascript
-
-   MathJax = {
-     tex: {
-       autoload: expandable({
-         '[extensions]/myExtension' : ['myMacro', 'myOtherMacro']
-       }
-     }
-   };
-
-See the :ref:`loader-options` section for details about how to define
-your own prefixes, like the ``[extensions]`` prefix used here.
-
-
-.. _tex-tagformat-options:
-
-Tagformat Options
------------------
-
-The :ref:`tex-tagformat` extension allows you to control the display
-and linking of equation tags and numbers.  Adding this to the
-``packages`` array adds a ``tagformat`` sub-object to the ``tex``
-configuration block with the following values:
-
-.. code-block:: javascript
-
-   tagformat: {
-      number: (n) => n.toString(),
-      tag:    (tag) => '(' + tag + ')',
-      id:     (id) => 'mjx-eqn-' + id.replace(/\s/g, '_'),
-      url:    (id, base) => base + '#' + encodeURIComponent(id),
-    }
-
-.. describe:: number: function (n) {return n.toString()}
-
-   A function that tells MathJax what tag to use for equation number
-   ``n``.  This could be used to have the equations labeled by a
-   sequence of symbols rather than numbers, or to use section and
-   subsection numbers instead.
-
-.. describe:: tag: function (n) {return '(' + n + ')'}
-
-   A function that tells MathJax how to format an equation number for
-   displaying as a tag for an equation.  This is what appears in the
-   margin of a tagged or numbered equation.
-
-.. describe:: id: function (n) {return 'mjx-eqn-' + n.replace(/\\s/g, '_')}
-
-   A function that tells MathJax what ID to use as an anchor for the
-   equation (so that it can be used in URL references).
-
-.. describe:: url: function (id, base) {return base + '#' + encodeURIComponent(id)}
-
-   A function that takes an equation ID and base URL and returns the
-   URL to link to it.  The ``base`` value is taken from the
-   :ref:`baseURL <tex-baseURL>` value, so that links can be make within
-   a page even if it has a ``<base>`` element that sets the base URL
-   for the page to a different location.
-
-
-.. _tex-color-options:
-
-Color Options
--------------
-
-The :ref:`tex-color` extension defines the LaTeX-compatible ``\color``
-macro.  Adding it to the ``packages`` array defines a ``color``
-sub-block of the ``tex`` configuration block with the following values:
-
-.. code-block:: javascript
-
-   MathJax = {
-     tex: {
-       color: {
-         padding: '5px',
-         borderWidth: '2px'
-       }
-     }
-   };
-
-.. _tex-color-padding:
-.. describe:: padding: '5px'
-
-   This gives the padding to use for color boxes with background colors.
-
-.. _tex-color-borderWidth:
-.. describe:: borderWidth: '2px'
-
-   This gives the border width to use with framed color boxes produced
-   by ``\fcolorbox``.
-
-
-.. _tex-amscd-options:
-
-Amscd Options
--------------
-
-The :ref:`tex-amscd` extension defines the `CD` environment for
-commutative diagrams.  Adding it to the ``packages`` array defines an
-``amscd`` sub-block of the ``tex`` configuration block with the
-following values:
-
-.. code-block:: javascript
-
-   MathJax = {
-     tex: {
-       amscd: {
-         colspace: '5pt',
-         rowspace: '5pt',
-         harrowsize: '2.75em',
-         varrowsize: '1.75em',
-         hideHorizontalLabels: false
-       }
-     }
-   };
-
-.. _tex-amscd-colspace:
-.. describe:: colspace: '5pt'
-
-   This gives the amount of space to use between columns in the
-   commutative diagram.
-
-.. _tex-amscd-rowspace:
-.. describe:: rowspace: '5pt'
-
-   This gives the amount of space to use between rows in the
-   commutative diagram.
-
-.. _tex-amscd-harrowsize:
-.. describe:: harrowsize: '2.75em'
-
-   This gives the minimum size for horizontal arrows in the
-   commutative diagram.
-
-.. _tex-amscd-varrowsize:
-.. describe:: varrowsize: '1.75em'
-
-   This gives the minimum size for vertical arrows in the
-   commutative diagram.
-
-.. _tex-amscd-hideHorizontalLabels:
-.. describe:: hideHorizontalLabels: false
-
-   This determines whether horizontal arrows with labels above or
-   below will use ``\smash`` in order to hide the height of the
-   labels.  (Labels above or below horizontal arrows can cause excess
-   space between rows, so setting this to ``true`` can improve the
-   look of the diagram.)
+* :ref:`tex-amscd-options`
+* :ref:`tex-autoload-options`
+* :ref:`tex-color-options`
+* :ref:`tex-configmacros-options`
+* :ref:`tex-noundefined-options`
+* :ref:`tex-require-options`
+* :ref:`tex-tagformat-options`
 
 |-----|

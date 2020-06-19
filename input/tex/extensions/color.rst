@@ -51,4 +51,38 @@ extension is loaded.
    If you want the old version 2 behavior, use the :ref:`tex-colorv2`
    extension instead.
 
+-----
+
+
+.. _tex-color-options:
+
+color Options
+-------------
+
+Adding the `color` extension to the ``packages`` array defines a
+``color`` sub-block of the ``tex`` configuration block with the
+following values:
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       color: {
+         padding: '5px',
+         borderWidth: '2px'
+       }
+     }
+   };
+
+.. _tex-color-padding:
+.. describe:: padding: '5px'
+
+   This gives the padding to use for color boxes with background colors.
+
+.. _tex-color-borderWidth:
+.. describe:: borderWidth: '2px'
+
+   This gives the border width to use with framed color boxes produced
+   by ``\fcolorbox``.
+
 |-----|
