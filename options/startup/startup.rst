@@ -54,7 +54,7 @@ Option Descriptions
    performed when the page is ready.
 
 .. _startup-ready:
-.. describe:: ready: Startup.defaultReady.bind(Startup)
+.. describe:: ready: MathJax.startup.defaultReady.bind(Startup)
 
    This is a function that is called when MathJax is loaded and ready
    to go.  It is called by the :ref:`loader-component` when all the
@@ -68,13 +68,16 @@ Option Descriptions
    better choice.
 
 .. _startup-pageReady:
-.. describe:: pageReady: Startup.defaultPageReady.bind(Startup)
+.. describe:: pageReady: MathJax.startup.defaultPageReady.bind(Startup)
 
    This is a function that is called when MathJax is ready to go and
    the page is ready to be processed.  The default action is to
-   perform the initial typesetting of the page, but you can override
-   it to do whatever you would like.  See :ref:`startup-action` for
-   more details and examples of how to do this.
+   perform the initial typesetting of the page and return the promise
+   that resolves what that is complete, but you can override it to do
+   whatever you would like, though you sholud return the promise from
+   the :meth:`MathJax.startup.defaultPageReady()` function if you call
+   it.  See :ref:`startup-action` for more details and examples of how
+   to do this.
 
 .. _startup-document:
 .. describe:: document: document
