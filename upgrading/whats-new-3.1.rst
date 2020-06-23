@@ -11,6 +11,7 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-tex-format-error`
 * :ref:`v3.1-tex-noundefined-options`
 * :ref:`v3.1-tex-textmacros`
+* :ref:`v3.1-mathml-verify-options`
 * :ref:`v3.1-output-options`
 * :ref:`v3.1-startup-promise`
 
@@ -77,6 +78,18 @@ text-mode material.  This allows you to quote TeX special characters,
 create accented characters, change fonts and sizes, add spacing, etc.,
 within text-mode material.  See the :ref:`tex-textmacros` page
 for complete details.
+
+
+.. _v3.1-mathml-verify-options:
+
+MathML Verify Options
+=====================
+
+The MathML input jax has the ability to check and report or
+(sometimes) correct errors in MathML trees, but the options that
+control this checking were not documented, and could not be changed
+easily.  Version 3.1 exposes these options so they can be set in the
+configuration block for the MathML input jax.
 
 
 .. _v3.1-output-options:
