@@ -10,8 +10,9 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-tex-package-name-changes`
 * :ref:`v3.1-tex-format-error`
 * :ref:`v3.1-tex-noundefined-options`
+* :ref:`v3.1-tex-textmacros`
 * :ref:`v3.1-output-options`
-
+* :ref:`v3.1-startup-promise`
 
 ------
 
@@ -64,6 +65,19 @@ See the :ref:`noundefined options <tex-noundefined-options>` for
 details.
 
 
+.. _v3.1-tex-textmacros:
+
+New `textmacros` Package
+========================
+
+There is a new `textmacros` package for the TeX input jax that
+provides support for processing a number of text-mode macros when they
+appear inside ``\text{}`` or other similar settings that produce
+text-mode material.  This allows you to quote TeX special characters,
+create accented characters, change fonts and sizes, add spacing, etc.,
+within text-mode material.  See the :ref:`tex-textmacros` page
+for complete details.
+
 
 .. _v3.1-output-options:
 
@@ -102,5 +116,29 @@ text.  See the :ref:`output-common-options` for more information.
 **Note:** the default for :attr:`merrorInheritFont` has been changed from
 ``true`` to ``false`` now that :attr:`merrorFont` is available.
 
+
+.. _v3.1-startup-promise:
+
+Startup Promise Revisions
+=========================
+
+The :attr:`MathJax.startup.promise` now works in a more intuitive way.
+In the past, it was initially set to be a promise that resolves when
+MathJax is ready and the ``DOMContentLoaded`` event occurs, and was
+changed by the :meth:`startup.pageReady()` function to one that
+resolve when the initial typesetting is finished.  So you could not
+use :attr:`MathJax.startup.promise` to tell when the initial
+typesetting is complete without overriding the
+:meth:`startup.pageReady()` method as well.
+
+In version 3.1, the :attr:`MathJax.startup.promise` has been changed
+to one that resolves when the action of the :meth:`startup.pageReady()`
+method is finished (which includes the initial typesetting action).
+That makes this promise a reliable way to determine when the initial
+typesetting is finished.
+
+See the sections on :ref:`startup-action`, on :ref:`typeset-async`,
+and on the :ref:`pageReady() <startup-pageready>` for more
+details.
 
 |-----|

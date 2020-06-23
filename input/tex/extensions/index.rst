@@ -30,6 +30,7 @@ The main extensions are described below:
    physics
    require
    tagformat
+   textmacros
    unicode
    verb
 

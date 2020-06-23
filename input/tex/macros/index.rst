@@ -13,7 +13,8 @@ More complete details about how to use these macros, with examples and
 explanations, is available at Carol Fisher's `TeX Commands Available
 in MathJax
 <http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`_
-page.
+page. (These were written for MathJax v2, but most of the information
+is still correct for v3.)
 
 In the following tables, the first column lists the macro (or
 character, or environment), and the second column indicates which
@@ -23,6 +24,11 @@ the components that include the TeX input jax (except for
 ``input/tex-base``, which only includes the base package).  If the
 package name is in italics, then the package is *not* autoloaded by
 the :ref:`tex-autoload` extension.
+
+Note that most macros are not processed inside text-mode material
+(such as that within ``\text{}`` and other similar macros).  The
+:ref:`tex-textmacros` extension makes additional macros available in
+text mode, as listed in the documentation for that extention.
 
 
 .. raw:: html
