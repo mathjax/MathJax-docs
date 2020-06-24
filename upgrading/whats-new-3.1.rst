@@ -14,12 +14,14 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-mathml-verify-options`
 * :ref:`v3.1-output-options`
 * :ref:`v3.1-startup-promise`
+* :ref:`v3.1-typesetClear`
+* :ref:`v3.1-getMathItemsWithin`
 
 ------
 
 .. _v3.1-tex-package-name-changes:
 
-Tex Package Name Changes
+TeX Package Name Changes
 ========================
 
 The names of several tex packages have been changed to conform to a
@@ -43,7 +45,7 @@ option for that.
 
 .. _v3.1-tex-format-error:
 
-Tex Error Formatting
+TeX Error Formatting
 ====================
 
 There is a new :attr:`formatError` option for the TeX input jax that
@@ -153,5 +155,41 @@ typesetting is finished.
 See the sections on :ref:`startup-action`, on :ref:`typeset-async`,
 and on the :ref:`pageReady() <startup-pageready>` for more
 details.
+
+
+.. _v3.1-typesetClear:
+
+New API for Clearing Typeset Content
+====================================
+
+If you are dynamically adding and removing content from your page, you
+need to tell MathJax abiout what you are doing so that it can typeset
+any new mathematics, and forget about any old typeset mathematics that
+you have removed.  In version 3.0, the :meth:`MathJax.typesetClear()`
+method could be used to tell MathJax to forget about *all* the
+mathematics that is ahs typeset, but if you only removed some of it,
+there was no easy way to tell it to forget about only the math you
+removed.  This situation has been improved in version 3.1 by allowing
+the :meth:`MathJax.typesetClear()` method to accept an array of
+elements whose contents should be forgotten.  See :ref:`typeset-clear`
+for more details.
+
+
+.. _v3.1-getMathItemsWithin:
+
+New API for Getting Math within a Container
+===========================================
+
+MathJax keeps track of the math that you have typeset using a list of
+objects called `MathItems`.  These store the original math string, the
+locatino of the math in the document, the input jax used to process
+it, and so on.  In the past, you had access to these through a list
+stored in the `MathDocument` object stored at :attr:`MathJax.startup.document`, 
+but it was not easy to get access to the individual MathItems in a
+convenient way.  In v3.1 there is now a function
+:meth:`MathJax.startup.document.getMathItemsWithin()` that returns all
+the MathItems for the typeset math within a DOM container element (or
+collection of DOM elements).  See :ref:`get-math-items` for details.
+
 
 |-----|
