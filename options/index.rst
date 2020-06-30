@@ -110,6 +110,7 @@ is explained further below that.
    document
    accessibility
    menu
+   safe
    startup/index
 
 |-----|

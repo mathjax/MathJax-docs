@@ -239,6 +239,38 @@ is the v3 replacement for the v2 `ElementJax` object, and
 similar function to the v2 function :meth:`MathJax.Hub.getAllJax()`.
 
 
+.. _safe-typesetting:
+
+Typesetting User-Supplied Content
+---------------------------------
+
+Mathematics formats like LaTeX and MathML allow a powerful range of
+layout options, including access to hyperlinks, CSS styles, font
+selection and sizing, spacing, and so on.  Such features give you a
+great deal of flexibility in producing the mathematics for your pages,
+but if your readers are allowed to enter mathematics into you pages
+(e.g., for a question-and-answer site, or in comments on a blog),
+these features can be abused to cause problems for other readers and
+pose a potential security risk to them.  For example, the TeX
+``\href`` command can be used to insert ``javascript:`` links into the
+page, while the ``\style`` macro could be used to disrupt the user
+interface or layout of your pages.
+
+In order to limit the potential interference that could be caused by
+the mathematics entered by your readers, MathJax provides the
+`ui/safe` extension.  This extension filters the mathematics on the
+page in order to try to remove problematic attributes, like javascript
+links, or font sizes that are too large or too small, or style
+settings that would be disruptive to the page layout.  If your page
+allows your readers to post content that includes mathematics
+processed by MathJax, you should cstrongly consider using the
+`ui/safe` extension.
+
+See the :ref:`safe-options` section for details of how to load and
+configure the `ui/safe` extension.
+
+
+
 .. _load-for-math:
 
 Loading MathJax Only on Pages with Math
