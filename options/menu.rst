@@ -23,18 +23,8 @@ activated, MathJax may need to load the `a11y/explorer` component;
 this render action makes sure that has happened before any math is
 typeset.)
 
-If you want to disable the contextual menu, you can override the
-``addMenu`` render action:
-
-.. code-block:: javascript
-
-   MathJax = {
-     options: {
-       renderActions: {
-         addMenu: [0, '', '']
-       }
-     }
-   };
+If you want to disable the contextual menu, you can set the
+:attr:`enableMenu` option to ``false``:
 
 -----
 
@@ -45,6 +35,7 @@ The Configuration Block
 
     MathJax = {
       options: {
+        enableMenu: true,          // set to false to disable the menu
         menuOptions: {
           settings: {
             texHints: true,        // put TeX-related attributes on MathML
@@ -77,6 +68,12 @@ The Configuration Block
 Option Descriptions
 ===================
 
+.. _menu-enableMenu:
+.. describe:: enableMenu: true
+
+   This controls whether the MathJax contextual menu will be added to
+   the typeset mathematics or not.
+   
 .. _menu-settings:
 .. describe:: settings: {...}
 

@@ -619,24 +619,10 @@ and improved; see :ref:`accessibility` for details.
 
 Finally, the ``showMathMenu`` and ``showMathMenuMSIE`` options have
 been removed.  The need for separate handling of the menu in IE is no
-longer applicable, and you can control whether the menu is added or
-not by configuring the :ref:`renderActions <document-renderActions>`
-array.  For example
-
-.. code-block:: javascript
-
-   MathJax = {
-     options: {
-       renderActions: {
-         addMenu: [],
-         checkLoading: []
-       }
-     }
-   };
-
-would prevent the contextual menu from being attached to the typeset
-mathematics.
-
+longer applicable, and you control whether the contextual menu is
+attached to the typeset mathematics using the ``enableMenu`` property
+of the ``options`` block of the MathJax configuration (see
+the :ref:`menu-options` documentation).
 
 -----
 

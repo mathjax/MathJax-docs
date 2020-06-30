@@ -38,12 +38,24 @@ The Configuration Block
 
    MathJax = {
      options: {
+       enableEnrichment: true,  // false to disable enrichment
        enrichSpeech: 'none',    // or 'shallow', or 'deep'
      }
    };
 
 Option Descriptions
 -------------------
+
+.. _semantic-enrich-enableEnrichment:
+.. describe:: enableEnrichment: true
+
+   This setting controls whether semantic enrichment is applied to the
+   internal MathML representation of the mathematics in the page.
+   This is controlled automatically by the settings of the context
+   menu, so you should not need to adjust it yourself.  You can,
+   however, use it to disable semantic enrichment if the
+   `semantic-enrich` component has been loaded automatically and you
+   don't need that.
 
 .. _semantic-enrich-speech:
 .. describe:: enrichSpeech: 'none'
@@ -83,12 +95,22 @@ The Configuration Block
 
    MathJax = {
      options: {
-       makeCollapsible: true         // insert maction to allow collapsing
+       enableComplexity: true,       // set to false to disable complexity computations
+       makeCollapsible: true         // insert mactions to allow collapsing
      }
    };
 
 Option Descriptions
 -------------------
+
+.. _complexity-enableComplexity:
+.. describe:: enableComplexity: true
+
+   This setting controls whether the `complexity` extension is to run
+   or not.  The value is controlled automatically by the settings of
+   the context menu, so you should not need to adjust it yourself.
+   You can, however, use it to disable it if the `complexity`
+   component has been loaded automatically and you don't need it.
 
 .. _complexity-makeCollapsible:
 .. describe:: makeCollapsible: true
@@ -151,6 +173,7 @@ The Configuration Block
 
    MathJax = {
      options: {
+       enableExplorer: true,                // set to false to disable the explorer
        a11y: {
          speech: true,                      // switch on speech output
          braille: true,                     // switch on Braille output
@@ -184,6 +207,15 @@ The Configuration Block
 
 Option Descriptions
 -------------------
+
+.. _explorer-enableExplorer:
+.. describe:: enableExplorer: true
+
+   This setting controls whether the `explorer` extension is to run
+   or not.  The value is controlled automatically by the settings of
+   the context menu, so you should not need to adjust it yourself.
+   You can, however, use it to disable it if the `explorer`
+   component has been loaded automatically and you don't need it.
 
 The a11y options belong roughly to one of the following four categories:
 

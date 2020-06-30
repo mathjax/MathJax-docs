@@ -87,8 +87,8 @@ configuring this component.
 
 .. _assistive-mml-component:
 
-a11y/assistive-mml-component
-============================
+a11y/assistive-mml
+==================
 
 The `assistive-mml` component embeds visually hidden MathML alongside
 MathJax's visual rendering while hiding the visual rendering from
