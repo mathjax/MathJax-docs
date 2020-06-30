@@ -16,6 +16,7 @@ The main extensions are described below:
    bbox
    boldsymbol
    braket
+   bussproofs
    cancel
    color
    colorv2
