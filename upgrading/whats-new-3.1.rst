@@ -11,6 +11,7 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-tex-format-error`
 * :ref:`v3.1-tex-noundefined-options`
 * :ref:`v3.1-tex-textmacros`
+* :ref:`v3.1-safe`
 * :ref:`v3.1-mathml-verify-options`
 * :ref:`v3.1-output-options`
 * :ref:`v3.1-startup-promise`
@@ -80,6 +81,19 @@ text-mode material.  This allows you to quote TeX special characters,
 create accented characters, change fonts and sizes, add spacing, etc.,
 within text-mode material.  See the :ref:`tex-textmacros` page
 for complete details.
+
+
+.. _v3.1-safe:
+
+New Safe Extension
+==================
+
+The `Safe` extension hs now been ported from v2 to v3.  This
+extensions allows you to filter the values used in the attributes of
+the underlying MathML that is generated from the TeX, AsciiMath, or
+MathML input.  This can be used to prevent certain URLs from being
+used, or certain CSS styles from being used, etc.  See
+:ref:`safe-typesetting` for more details.
 
 
 .. _v3.1-mathml-verify-options:
