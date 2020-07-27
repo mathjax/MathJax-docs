@@ -143,11 +143,11 @@ Getting the Latest Version
 --------------------------
 
 Although ``jsdelivr`` provides a means of getting the latest version
-automtically, as described above, not all CDNs have a mechanism for
+automatically, as described above, not all CDNs have a mechanism for
 that.  For such CDNs, MathJax provides a ``latest.js`` file that can
 be used to obtain the latest (3.x.x) version of MathJax.  For example,
 ``cdnjs`` doesn't have a mechanism for getting the latest 3.x.x
-version automtically, so you can use
+version automatically, so you can use
 
 .. code-block:: html
 
