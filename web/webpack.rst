@@ -143,7 +143,7 @@ need to adjust the locations in the :func:`require()` commands).
    require('mathjax-full/components/src/input/tex-base/tex-base.js');
    require('mathjax-full/components/src/input/tex/extensions/ams/ams.js');
    require('mathjax-full/components/src/input/tex/extensions/newcommand/newcommand.js');
-   require('mathjax-full/components/src/input/tex/extensions/config_macros/configmacros.js');
+   require('mathjax-full/components/src/input/tex/extensions/configmacros/configmacros.js');
 
    require('mathjax-full/components/src/output/svg/svg.js');
    require('mathjax-full/components/src/output/svg/fonts/tex/tex.js');
@@ -226,7 +226,7 @@ should be able to use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax-full/components/bin/makeAll
+   node ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``custom-mathjax.min.js`` in the directory with the other files.  If
@@ -258,7 +258,7 @@ defaults that can still be overridden in the page, use
    // Update the configuration to include any updated values
    //
    const {insert} = require('mathjax-full/js/util/Options.js');
-   insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configmacros']}}});
+   insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configmacros']}}}, false);
    MathJax.config = insert({
      // your default options here
    }, MathJax.config);
@@ -472,7 +472,7 @@ should be able to use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax-full/components/bin/makeAll
+   node ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``mml.min.js`` in the directory with the other files.  If
@@ -704,7 +704,7 @@ Once these two files are ready, you should be able to use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax-full/components/bin/makeAll
+   node ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``mathjax-speech.min.js`` in the directory with the other files.  it
