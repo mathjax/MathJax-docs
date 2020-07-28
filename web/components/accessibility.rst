@@ -12,7 +12,21 @@ assistive technology.
 * :ref:`explorer-component`
 * :ref:`assistive-mml-component`
 
-These are described below.
+To load one of these components, include the component name in the
+:attr:`load` array of the :attr:`loader` block of your MathJax
+configuration.  For example:
+
+.. code-block:: html
+
+   <script>
+   MathJax = {
+     loader: {
+       load: ['a11y/semantic-enrich']
+     }
+   }
+   </script>
+
+to load the `semantic-enrich` extension.
 
 .. note::
 

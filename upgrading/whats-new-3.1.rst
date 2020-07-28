@@ -17,6 +17,9 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-startup-promise`
 * :ref:`v3.1-typesetClear`
 * :ref:`v3.1-getMathItemsWithin`
+* :ref:`v3.1-sreReady`
+* :ref:`v3.1-liteDOM`
+* :ref:`v3.1-demos`
 
 ------
 
@@ -205,5 +208,46 @@ convenient way.  In v3.1 there is now a function
 the MathItems for the typeset math within a DOM container element (or
 collection of DOM elements).  See :ref:`get-math-items` for details.
 
+
+.. _v3.1-sreReady:
+
+Change to SRE Interface
+=======================
+
+In version 3.0.5, The `a11y/sre` module exposed a value
+:attr:`sreReady` that was a promise that would be resolved when the
+Speech-Rule Engine was ready to use.  Due to changes in SRE (which can
+now be configured to load localized translation data, and so may
+become un-ready while that is happening), the :attr:`sreReady` value
+in version 3.1.0 is now a function returning a promise, so should be
+called as :meth:`sreReady()`.
+
+
+.. _v3.1-liteDOM:
+
+Fixes to the LiteDOM and DOMAdaptors
+====================================
+
+The `LiteDOM` in version 3.0.5 failed to process comments correctly:
+they were properly read and ignored, but where not included in the
+output when the DOM is serialized.  In version 3.1.0, this has been
+fixes so that comments are properly maintained.  In addition, the
+:attr:`doctype` of the document is now retained by the `LiteDOM`, and
+can be accessed by a new :meth:`doctype()` method of the `DOMAdaptor`
+class (and its subclasses).
+
+
+.. _v3.1-demos:
+
+Updated Demos
+=============
+
+The `web <https://github.com/mathjax/MathJax-demos-web#MathJax-demos-web>`__
+and `node <https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__
+examples have been updated to use the new features available in
+version 3.1.0, and to include more examples.  In particular, the node
+examples now include demonstrations of using the simpler loading
+mechanism for node applications, using puppeteer to perform
+server-side processing, and using JSDOM for server-side processing.
 
 |-----|
