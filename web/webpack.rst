@@ -611,19 +611,14 @@ the following:
    Enrich(Register(browser()), new MathML());
 
    //
-   //  Create the TeX input jax
-   //
-   const inputJax = new TeX({
-      packages: AllPackages,
-      macros: {require: ['', 1]}      // Make \require a no-op since all packages are loaded
-   });
-      
-   //
    //  Initialize mathjax with a blank DOM.
    //
    const html = MathJax.document('', {
       enrichSpeech: 'shallow',           // add speech to the enriched MathML
-      InputJax: tex
+      InputJax: new TeX({
+         packages: AllPackages.filter((name) => name !== 'bussproofs'),  // Bussproofs needs an output jax
+         macros: {require: ['', 1]}      // Make \require a no-op since all packages are loaded
+      })
    });
 
    //
@@ -637,7 +632,6 @@ the following:
    window.MathJax = {
       version: mathjax.version,
       html: html,
-      tex: inputJax,
       sreReady: sreReady,
 
       tex2speech(tex, display = true) {
