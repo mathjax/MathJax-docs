@@ -98,6 +98,8 @@ on the other hand has a large number of preferences that allow very fine-tuned
 control over how different types of expressions are spoken. The MathJax menu
 allows a smart choice of preferences by only displaying the preferences that
 are currently relevant for the sub-expression that is currently explored.
+The `Select Preferences` option opens a selection box for all possible
+ClearSpeak preference choices.
 
 Some rule-set and preference settings can also be controlled by keyboard
 commands. This allows the user to have the same expression read in different
@@ -108,11 +110,10 @@ active rule set.  For ClearSpeak rules, preference cycling depends on the type
 of the currently explored sub-expression, similar to smart selection of menu
 entries.
 
-.. note::
-
-   MathJax currently only supports speech in English, French, and Spanish.  The
-   only available Braille output is Nemeth. We are hoping to add more in the
-   future.
+The speech language can be adjusted in the `Language` sub-menu in the
+`Speech` options.  MathJax currently only supports speech in English,
+French, German, and Spanish.  The only available Braille output is
+Nemeth. We are hoping to add more in the future.
 
 In addition to voicing expressions, the explorer allows for queries on
 sub-expression, such as getting positional information with respect to the
@@ -143,13 +144,15 @@ During interactive exploration, the sub-expression that is explorered is
 automatically highlighted, by default with a blue background color. The
 highlighting can be customized by changing `Background` or `Foreground`
 colors in in the `Highlight` sub-menu of the MathJax contextual menu.
+In addition, the opacity of both `Background` and `Foreground` can be
+adjusted by two slider bars underneath the respective sub-menus.
 
-In addition, there is choice of highlighters for marking collapsible
-sub-expressions: The `Flame` highligher permanently colors collapsible
-sub-expressions while successively darkening the background for nested
-collapsible expressions. The `Hover` highlighter colors each
-collapsible sub-expression only when hovering over it with the mouse
-pointer.
+The `Highlight` sub-menu also provides a choice of highlighters for
+marking collapsible sub-expressions: The `Flame` highligher permanently
+colors collapsible sub-expressions while successively darkening the
+background for nested collapsible expressions. The `Hover` highlighter
+colors each collapsible sub-expression only when hovering over it with
+the mouse pointer.
 
 A final highlighting feature is `Tree Coloring`, in which expressions are
 visually distinguished by giving neighbouring symbols different, ideally
