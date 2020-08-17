@@ -12,7 +12,8 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-tex-noundefined-options`
 * :ref:`v3.1-tex-textmacros`
 * :ref:`v3.1-safe`
-* :ref:`v3.1-mathml-verify-options`
+* :ref:`v3.1-accessibility`
+* :ref:`v3.1-mathml-verification-options`
 * :ref:`v3.1-output-options`
 * :ref:`v3.1-startup-promise`
 * :ref:`v3.1-typesetClear`
@@ -99,10 +100,27 @@ used, or certain CSS styles from being used, etc.  See
 :ref:`safe-typesetting` for more details.
 
 
-.. _v3.1-mathml-verify-options:
+.. _v3.1-accessibility:
 
-MathML Verify Options
-=====================
+New Accessibility Features
+==========================
+
+MathJax's accessibility code has undergone some internal improvements
+for speed and reliability.  In addition, there is now a localization
+of the speech output for the German lanugage.  The accessibility
+contextual menu has been updated to include the ability to select the
+localization language (in the `speech` submenu), and to expose
+additional features, such as the ability to set the opacity of the
+foreground and background colors in the `highlight` submenu.  Finally,
+there is a new control panel for managing the Clearspeak preferences
+available in the `Clearspeak rules` submenu of the `Speech` menu.  See
+the :ref:`a11y-extensions` for more details.
+
+
+.. _v3.1-mathml-verification-options:
+
+MathML Verification Options
+===========================
 
 The MathML input jax has the ability to check and report or
 (sometimes) correct errors in MathML trees, but the options that

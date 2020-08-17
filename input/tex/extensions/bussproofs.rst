@@ -5,21 +5,23 @@ bussproofs
 ##########
 
 The `bussproofs` extension implements the ``bussproofs`` style package from
-LaTeX. See the `Ctan page <https://www.ctan.org/pkg/bussproofs>`__ for
+LaTeX. See the `CTAN page <https://www.ctan.org/pkg/bussproofs>`__ for
 more information and documentation of `bussproofs`.
 
-Note that there are a couple of important differences to the use of the actual
-package: Proofs always have to be in a `prooftree` environment, i.e., inference
-macros are only recognised if they are enclosed in `\begin{prooftree}` and
-`\end{prooftree}`. Consequently the `\DisplayProof` command is not necessary.
+Note that there are a couple of important differences between the use
+of the package in MathJax compared to actual LaTeX.  First, proofs
+always have to be in a `prooftree` environment, i.e., inference macros
+are only recognised if they are enclosed in ``\begin{prooftree}`` and
+``\end{prooftree}``. Consequently the ``\DisplayProof`` command is not
+necessary.
 
-Unlike in the LaTeX package, options for abbreviated inference rule macros do
-not have to be manually set. All abbreviated macros are directly available. Thus
-commands like `\BinaryInfC` and `\BIC` can be used immediately and
-interchangeably.
+Second, unlike in the LaTeX package, options for abbreviated inference
+rule macros do not have to be manually set. All abbreviated macros are
+directly available. Thus commands like ``\BinaryInfC`` and ``\BIC``
+can be used immediately and interchangeably.
 
 
-For example
+For example:
 
 .. code-block:: latex
 
@@ -45,8 +47,9 @@ For example
 Also note that the `bussproofs` commands for sequent calculus derivations are
 not yet fully implemented.
 
-This extension is **not** loaded by the `autoload` extension is used.
-To load the `bussproofs` extension explicitly, add
+
+This extension is loaded automatically when the `autoload` extension
+is used.  To load the `bussproofs` extension explicitly, add
 ``'[tex]/bussproofs'`` to the ``load`` array of the ``loader`` block
 of your MathJax configuration, and add ``'bussproofs'`` to the
 ``packages`` array of the ``tex`` block.
@@ -61,7 +64,5 @@ of your MathJax configuration, and add ``'bussproofs'`` to the
 Alternatively, use ``\require{bussproofs}`` in a TeX expression to
 load it dynamically from within the math on the page, if the `require`
 extension is loaded.
-
-[more details, examples, etc., here]
 
 |-----|
