@@ -263,7 +263,7 @@ page in order to try to remove problematic attributes, like javascript
 links, or font sizes that are too large or too small, or style
 settings that would be disruptive to the page layout.  If your page
 allows your readers to post content that includes mathematics
-processed by MathJax, you should cstrongly consider using the
+processed by MathJax, you should strongly consider using the
 `ui/safe` extension.
 
 See the :ref:`safe-options` section for details of how to load and
