@@ -1,0 +1,807 @@
+.. _upgrade-v2:
+
+#######################
+Upgrading from v2 to v3
+#######################
+
+MathJax v3 is a complete rewrite of MathJax from the ground up (see
+:ref:`whats-new-3.0`), and so its internal structure is quite
+different from that of version 2.  That means MathJax v3 is **not** a
+drop-in replacement for MathJax v2, and upgrading to version 3 takes
+some adjustment to your web pages.  The sections below describe the
+changes you will need to make, and the most important differences
+between v2 and v3.
+
+.. warning::
+
+   If you are using the ``latest.js`` feature of MathJax v2 on a CDN,
+   note that this will **not** update to version 3 automatically,
+   since there are significant and potentially breaking changes in
+   version 3.  There is, however, a bug in ``latest.js`` in versions
+   2.7.5 and below; when the current version is 3.0 or higher,
+   ``latest.js`` will not use the highest version of 2.x, but instead
+   will use the version from which ``latest.js`` has been taken.  For
+   example, if you load ``latest.js`` from version 2.7.3, it currently
+   is giving you version 2.7.5 as the latest version, when version 3
+   is released to the CDN, your pages will revert to using version
+   2.7.3 again.  This behavior has been corrected in version 2.7.6, so
+   if you change to loading ``latest.js`` from version 2.7.6, you
+   should get the latest 2.x version regardless of the presence of
+   version 3 on the CDN.
+
+MathJax v3 is still a work in progress; not all features of version
+2 have been converted to version 3 yet, and some may not be.  MathJax
+v2 will continue to be maintained as we work to move more features
+into version 3, but MathJax v2 likely will not see much further
+development, just maintenance, once MathJax v3 is fully converted.
+
+* :ref:`v2-configuration-changes`
+* :ref:`v2-loading-changes`
+* :ref:`v2-api-changes`
+* :ref:`v2-jax-changes`
+* :ref:`v2-not-available`
+* :ref:`v2-not-ported`
+* :ref:`v2-contextual-menu-changes`
+* :ref:`v2-mathjax-node`
+* :ref:`v2-compatibility-example`
+
+-----
+
+.. _v2-configuration-changes:
+
+Configuration Changes
+=====================
+
+There are a number of changes in version 3 that affect how MathJax is
+configured.  In version 2, there were several ways to provide
+configuration for MathJax; in MathJax 3, when you are using
+:ref:`MathJax components <web-components>`, there is now only one,
+which is to set the :data:`MathJax` global to contain the
+configuration information prior to loading MathJax.  In particular,
+you no longer call :meth:`MathJax.Hub.Config()`, and this function does
+not exist in MathJax v3.  See the section :ref:`configuration` for
+more details on how to configure MathJax.
+
+In addition to requiring the use of the :data:`MathJax` global
+variable for setting the configuration, the organization of the
+configuration options have been changed to accommodate the new
+internal structure of MathJax, and some of their names have changed as
+well.  To help you convert your existing version 2 configurations to
+version 3, we provide a `conversion tool
+<https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`_
+that you can use to obtain a version 3 configuration that is as close
+as possible to your current one.
+
+Not all configuration parameters can be converted directly, however.
+For some of these, it is because the version 2 features have not yet
+been ported to version 3, but for others, the version 2 feature may
+simply not exist in the new architecture of version 3.  For example,
+MathJax v2 updates the page in phases, first removing the math source
+expressions (e.g., the TeX code), then inserts a preview expression
+(fast to create, but not as accurately laid out), and then goes back
+and produces high-quality typeset versions, which it inserts in chunks
+between page updates.  MathJax version 3 does not work that way (it
+does not change the page until the math is entirely typeset), and so
+the options that control the math preview and the chunking of the
+equations for display simply have no counterparts in version 3.
+
+Finally, configurations that change the MathJax code via augmenting
+the existing MathJax objects, or that hook into MathJax's processing
+pipeline via :meth:`MathJax.Hub.Register.StartupHook()` or one of the
+other hook mechanisms will not carry over to version 3.  MathJax v3
+does not use the queues, signals, and callbacks that are central to
+version 2, so code that relies on them will have to be updated.  See
+the :ref:`web-configuration` section for some approaches to these
+issues.
+
+-----
+
+
+.. _v2-loading-changes:
+
+Changes in Loading MathJax
+==========================
+
+Just as there are changes in how MathJax is configured, there are also
+changes in how MathJax is loaded.  With version 2, you load
+``MathJax.js`` and indicate a combined configuration file using
+``?config=`` followed by the name of the configuration file.  This
+always required at least two files to be loaded (and often more than
+that), and the second file was always loaded asynchronously, meaning
+MathJax always operated asynchronously.
+
+In version 3, there is no longer a ``MathJax.js`` file, and you load a
+combined component file directly.  E.g., you load ``tex-chtml.js`` to
+get TeX with CommonHTML output.  This reduces the number of files that
+need to be requested, and improves performance.  See
+:ref:`loading-mathjax` for more details.
+
+Just as there is no need to use ``?config=`` in version 3, the other
+parameters that could be set in this way also are absent from
+version 3.  So, for example, you can't set ``delayStartupUntil`` in
+the script that loads MathJax.
+
+The startup sequence operates fundamentally differently in version 3
+from how it did in version 2.  In version 2, MathJax would begin its
+startup process immediately upon MathJax being loaded, queuing action
+to perform configuration blocks, load extensions and jax, do the
+initial typesetting, and so on.  It was difficult to insert your own
+actions into this sequence, and timing issues could occur if you
+didn't put your configuration in the right place.
+
+In version 3, synchronization with MathJax is done through ES6
+promises, rather than MathJax's queues and signals, and MathJax's
+startup process is more straight-forward.  You can insert your own
+code into the startup process more easily, and can replace the default
+startup actions entirely, if you wish.  The actions Mathjax
+takes during startup are better separated so that you can pick and
+choose the ones you want to perform.  See the :ref:`startup-actions`
+section for more details on how to accomplish this.
+
+-----
+
+
+.. _v2-api-changes:
+
+Changes in the MathJax API
+==========================
+
+Because the internals have been completely redesigned, its :ref:`API
+<api>` has changed, and so if you have been calling MathJax functions,
+or have modified MathJax internals by augmenting the existing MathJax
+objects, that code will no longer work with version 3, and will have
+to be modified.  Some of the more important changes are discussed
+below.
+
+* The :meth:`Mathjax.Hub.Typeset()` function has been replaced by the
+  :meth:`MathJax.typesetPromise()` and :meth:`MathJax.typeset()`
+  functions.  In fact, the :attr:`MathJax.Hub` has been removed
+  entirely.
+
+..
+
+* The queues, signals, and callbacks that are central to version 2
+  have been replaced by ES6 promises in version 3.  In particular, you
+  can use :attr:`MathJax.startup.promise` as a replacement for
+  :meth:`MathJax.Hub.Queue()`.  See the :ref:`typeset-async` section
+  for how this is done.  See the :ref:`v2-compatibility-example` below
+  for code that may make it possible for you to use your version 2
+  code in version 3.
+
+..
+
+* The :meth:`MathJax.Hub.Register.StartupHook()` and other related
+  hooks have been replaced by ``ready()`` functions in the
+  :ref:`loader-component` component.  So code that relies on these
+  hooks to alter MathJax need to be reworked.  The
+  :ref:`startup-actions` section shows some mechanisms that can be
+  used for this.
+
+..
+
+* Version 2 configurations could include an :meth:`Augment` block that
+  could be used to add (or override) methods and data in the main
+  MathJax objects.  In version 3, this should be handled through
+  subclassing the MathJax object classes, and passing the new classes
+  to the objects that use them.  This can be done during the `startup`
+  component's ``ready()`` function, when the MathJax classes are
+  available, but before any of their instances have been created.  See
+  the :ref:`startup-actions` section for some ideas on how this can be
+  done.
+
+..
+
+* The ``Augment`` configuration blocks and :meth:`StartupHooks()`
+  function described above could be used in version 2 to extend
+  MathJax's capabilities, and in particular, to extend the TeX input
+  jax by adding new javascript-based macros.  These version-2
+  mechanisms are not available in version 3; instead, TeX extensions
+  are more formalized in version 3.  See the :ref:`custom-component`
+  section for an example of how this can be done.
+
+..
+
+.. _math-script-example:
+
+* In version 2, the mathematics that is located by MathJax is removed
+  from the page and stored in special ``<script>`` tags within the
+  page.  These are not visible to the reader, but mark the location
+  and content of the math on the page.  It was possible in version 2
+  for programs to create these ``<script>`` tags themselves, avoiding
+  the need for MathJax to look for math delimiters, and for the page
+  author to encode HTML special characters like ``<``, ``>``, and
+  ``&`` in their mathematics.  Version 3 does not alter the document
+  in this way, and does not store the math that it locates in tags in
+  the page.  Instead, it keeps an external list of math objects (of the
+  ``MathItem`` class).  So if you wish to use such scripts to store
+  the math in the page initially, you can replace the ``find`` action
+  in the :ref:`renderActions <document-renderActions>` list to use a
+  function that locates the scripts and creates the needed
+  ``MathItem`` objects.  For example
+
+  .. code-block:: javascript
+
+     MathJax = {
+       options: {
+         renderActions: {
+           find: [10, function (doc) {
+             for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+               const display = !!node.type.match(/; *mode=display/);
+               const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+               const text = document.createTextNode('');
+               node.parentNode.replaceChild(text, node);
+               math.start = {node: text, delim: '', n: 0};
+               math.end = {node: text, delim: '', n: 0};
+               doc.math.push(math);
+             }
+           }, '']
+         }
+       }
+     };
+
+  should find the scripts that MathJax version 2 normally would have
+  created.
+
+  Note that this will *replace* the standard ``find`` action that
+  looks for math delimiters with this one that looks for the MathJax
+  v2 script tags instead.  If you want to do *both* the original
+  delimiter search *and* the search for script tags, then change the
+  ``find:`` above to ``findScript:`` so that it doesn't replace the
+  default ``find`` action.  That way, both actions will occur.
+
+-----
+
+
+.. _v2-jax-changes:
+
+Changes in Input and Output Jax
+===============================
+
+The input and output processors (called "jax") are core pieces of
+MathJax.  All three input processors from version 2 are present in
+version 3, but the :ref:`AsciiMath <asciimath-support>` processor has
+not been fully ported to version 3, and currently consists of the
+legacy version 2 code patched onto the version 3 framework.  This is
+larger and less efficient than a full version 3 port, which should be
+included in a future release.
+
+In version 2, MathJax used preprocessors (`tex2jax`, `mml2jax`,
+`asciimath2jax`, and `jsMath2jax`) to locate the mathematics in the
+page and prepare it for the input jax.  There was really no need to
+have these be separate pieces, so in version 3, these have been folded
+into their respective input jax.  That means that you don't load them
+separately, and the configuration options of the preprocessor and
+input jax have been combined.  For example, the ``tex2jax`` and
+``TeX`` options now both occur in the ``tex`` configuration block.
+
+MathJax version 2 included six different output jax, which had been
+developed over time to serve different purposes.  The original
+HTML-CSS output jax had the greatest browser coverage, but its output
+was browser-dependent, its font detection was fragile, and it was the
+slowest of the output processors.  The CommonHTML output jax was a
+more modern remake of the HTML output that was both browser
+independent, and considerably faster.  The SVG output jax produced SVG
+images rather than HTML DOM trees, and did not require web fonts in
+order to display the math, so the results could be made
+self-contained.  MathJax version 3 includes the CommonHTML and SVG
+output jax, but has dropped the older, slower HTML-CSS output format.
+
+MathJax 2 also included an output format that produced MathML for
+those browsers that support it.  Since only Firefox and Safari
+currently implement MathML rendering (with no support in IE, Edge, or
+Chrome), and because MathJax can't control the quality or coverage of
+the MathML support in the browser, MathJax version 3 has dropped the
+NativeMML output format for now.  Should the browser situation improve
+in the future, it could be added again.  See :ref:`mathml-output` for
+more on this, and for an example of how to implement MathML output
+yourself.
+
+There are few changes within the supported input and output jax, as
+described below:
+
+Input Changes
+-------------
+
+There are two changes in the TeX input jax that can affect backward
+compatibility with existing TeX content in your pages.
+
+The first concerns the ``\color`` macro; in version 2, ``\color`` is a
+non-standard in that it takes two arguments (the color an the math to
+be shown in that color), while the authentic LaTeX version is a switch
+that changes the color of everything that follows it.  The
+LaTeX-compatible one was available as an extension.  In version 3,
+both versions are extensions (see ), with the LaTeX-compatible one
+being autoloaded when ``\color`` is first used.  See the
+:ref:`tex-color` and :ref:`tex-colorv2` extensions for more
+information, and how to configure MathJax to use the original
+version-2 ``\color`` macro.
+
+The other incompatibility is that the names of some extensions have
+been changed in version 3.  For example, `AMScd` in version 2 is now
+`amscd` in version 3.  This means that you need to use
+``\require{amscd}`` rather than ``\require{AMScd}`` to load the `CD`
+environment.  In order to support existing content that uses
+``\require``, you can use the code in the
+:ref:`v2-compatibility-example` section below.
+
+Some other changes include:
+
+* The `autoload-all` extension has been rename `autoload`, and is more
+  flexible and configurable than the original.
+
+..
+
+* There are two new extensions, :ref:`tex-braket` and
+  :ref:`tex-physics`.
+
+..
+
+* The configuration options for controlling the format of equation
+  numbers have been moved to an extension; see the
+  :ref:`tex-tagformat` documentation for details.
+
+..
+
+* The ``useMathMLspacing`` options for the various input jax have been
+  moved to the output jax instead, as the ``mathmlSpacing`` option.
+
+..
+
+* The ``processEscapes`` option for the `tex2jax` preprocessor (now
+  for the TeX input jax) had a default value of ``false`` in version 2,
+  but has default value ``true`` in version 3.
+
+..
+
+* The functionality of the `MathChoice` extension has been moved to
+  the base TeX package.
+
+..
+
+* The non-standard ``UPDIAGONALARROW`` and ``ARROW`` notations have
+  been removed from the ``menclose`` element.  These have been
+  replaced by the standard ``northeastarrow`` notation.
+
+
+Output Changes
+--------------
+
+There are several important changes to the output jax in version 3,
+and several things that aren't yet implemented, but will be in a
+future version.  One such feature is linebreaking, which hasn't been
+ported to version 3 yet. Another is that only the MathJax TeX font is
+currently available in version 3.  See :ref:`v2-not-ported` for a list of
+features that are still being converted.
+
+In addition, there a few other changes of importance:
+
+* There are no more image fonts.  These were for use with the HTML-CSS
+  output jax, and since that is not included in MathJax version 3,
+  neither are the image fonts.  Since those took up a lot of disk
+  space, this should make locally hosted MathJax installations smaller.
+
+..
+
+* For expressions with equation numbers, the SVG output jax now has
+  these expressions float with the size of the container element, just
+  like they do in HTML output.  This was not the case in version 2, so
+  this is an important improvement for dynamic pages.
+
+..
+
+* The font used for characters that aren't in the font used by MathJax
+  used to be controlled by the ``undefinedFont`` configuration
+  parameter in version 2, but in version 3, you should use CSS to set
+  this instead.  For example,
+
+  .. code-block:: css
+
+     mjx-container mjx-utext {
+       font-family: my-favorite-font;
+     }
+     mjx-container svg text {
+       font-family: my-favorite-font;
+     }
+
+  would select the ``my-favorite-font`` to be used for unknown
+  characters.  The first declaration is for the CommonHTML output, and
+  the second for the SVG output.  Once advantage of this approach is
+  that you can specify the CSS separately for each variant; e.g.,
+
+  .. code-block:: css
+
+     mjx-container mjx-utext[variant="sans-serif"] {
+       font-family: my-sans-serif-font;
+     }
+     mjx-container svg text[data-variant="sans-serif"] {
+       font-family: my-sans-serif-font;
+     }
+
+  would set the font to use for characters that aren't in the MathJax
+  fonts and that have requested the sans-serif variant.
+
+..
+
+* Version 3 only implements the CommonHTML and SVG output jax.  The
+  original HTML-CSS output jax has been dropped, a has the NativeMML.
+  The PreviewHTML and PlainSource output jax have not been ported to
+  version 3, though they may be in the future, if there is interest.
+
+-----
+
+.. _v2-not-available:
+
+No Longer Applies to Version 3
+==============================
+
+A number of version 2 features have been removed as part of the
+redesign of MathJax version 3.  These are described below.
+
+* In version 3, MathJax no longer updates the page in small "chunks",
+  but instead updates the page as a whole (a future version may
+  include an extension that updates in smaller pieces).  This has an
+  impact on a number of version 2 features.  First, because there is
+  no incremental update, the MathJax message bar (usually in the lower
+  left corner) that indicated the progress of the typesetting is no
+  longer needed, and is not part of MathJax version 3.  Of course, the
+  configuration options that control it have also been removed, as
+  have the options for equation chunking (that controlled how many
+  equations to process between screen updates.
+
+..
+
+* Similarly, since the page updating is done all at once, there is no
+  need for the math preview versions that were displayed while the
+  equations where being typeset.  So the `fast-preview` extension and
+  `PreviewHTML` output jax have been removed, along with the
+  configuration options for them.
+
+..
+
+* The `PlainSource` output jax has not be ported to version 3, though
+  it may be in the future; it can be handled in other ways in
+  version 3.  As mentioned above, the `NativeMML` has been dropped
+  from version 3, though it is not hard to :ref:`implement a
+  replacement <NativeMML>` if you want.
+
+..
+
+* The `autobold` TeX extension is no longer available in version 3,
+  and is unlikely to be ported in the future.
+
+..
+
+* The `mhchem` TeX extension in version 2 came in two forms:  the
+  original extension that didn't match the LaTeX implementation
+  perfectly, and a rewrite by the author of the original LaTeX package
+  that made it compatible with LaTeX.  The legacy version could be
+  selected by a configuration option.  This is no longer possible in
+  version 3 (the legacy version is no longer provided).
+
+..
+
+* The `handle-floats` extension for HTML output has been removed, as
+  its functionality is now part of the standard CommonHTML output.
+
+..
+
+* The `jsMath2jax` preprocessor has been dropped.  This was used to
+  help bridge jsMath users to MathJax, but since it has been a decade
+  since MathJax was introduced, the need for jsMath conversion should
+  be very small at this point.
+
+..
+
+* The `MatchWebFonts` extension is no longer available.  This was
+  sometimes needed for HTML-CSS output, which relied on the fonts
+  being in place when it ran.  The CommonHTML output is less
+  susceptible to font issues, and this is no longer necessary.
+
+..
+
+* The `FontWarnings` extension is no longer available, since it was
+  for the HTML-CSS output jax, which is not part of MathJax
+  version 3.
+
+..
+
+* The `HelpDialog` extension is not included in version 3.  Its
+  functionality is incorporated into the :ref:`menu-component`
+  directly.
+
+..
+
+* The `toMathML` extension is no longer provided in version 3.
+  Instead, you can use :meth:`MathJax.startup.toMML()` if you are
+  using MathJax components, or can use the ``SerializedMMLVisitor``
+  object if you are calling MathJax modules directly.
+
+..
+
+* The configuration blocks no longer allow the ``style`` option that
+  were available in version 2.  Instead, you should use CSS
+  stylesheets and CSS style files directly.
+
+..
+
+* Synchronization with MathJax in version 2 was handled via queues,
+  signals, and callbacks.  In version 3, these have been replaced by
+  ES6 promises.  See :ref:`synchronization` for more details.
+
+-----
+
+
+.. _v2-not-ported:
+
+Not Yet Ported to Version 3
+===========================
+
+As MathJax 3 is still a work in progress, not all of the version 2
+features have been converted to the new code base yet, though we hope
+to include them in version 3 in a future release.  Among the most
+important ones are the following.
+
+* Currently, automatic line breaking support is missing from
+  version 3.  This is a key feature to be included in a future
+  release.
+
+..
+
+* The MathJax v3 output jax currently only support one font, the
+  MathJax TeX fonts.  Improved font support is an important goal for
+  version 3, and this is one of the next features to be addressed.  We
+  will be rebuilding the fonts used for MathJax, and making additional
+  web fonts available in a future release.  We also plan to make the
+  tools used for creating the necessary font data available for use in
+  porting your own fonts for use with MathJax.
+
+..
+
+* The localization mechanism available in version 2 has not yet been
+  incorporated into version 3, so currently MathJax v3 is available
+  only in English.  This is an important feature that will be added to
+  MathJax v3 in a future release.
+
+..
+
+* The `Safe` extension has not yet been ported to version 3, but
+  should be for a future release.
+
+..
+
+* The `begingroup` and `mediawiki-texvc` TeX extensions haven't been
+  ported to version 3 yet, but should be in the future.
+
+..
+
+* The `mml3` and `content-mml` extensions for the MathML input jax are
+  not yet available in version 3.  We do hope to have these in a
+  future release.
+
+..
+
+* The `auto-collapse` assistive extension is not yet available for
+  version 3.  If there is enough interest, that will also be ported to
+  the new code base.
+
+
+-----
+
+
+.. _v2-contextual-menu-changes:
+
+Contextual Menu Changes
+=======================
+
+The contextual menu has been reorganized to make it easier to access
+some functions, and to add new ones.  One major new features is the
+`Copy to Clipboard` submenu, which mirrors the `Show Math As` menu,
+but sends the output to the clipboard rather than displaying it on
+screen.  This is a feature that has been requested for a long time,
+and we are pleased to be able to offer it in version 3.
+
+There is also a new `Reset to defaults` item that resets all the saved
+settings to their original values (effectively clearing any custom
+settings).
+
+The contextual menu now stores its data using the ``localStorage``
+object in the browser, rather than using cookies like version 2 does.
+This should be more efficient and more secure, but does mean older
+browsers may not be able to save their settings from session to
+session (if they don't support ``localStorage``).
+
+The accessibility menu options are now built into the contextual menu,
+so there is no longer an `accessibility-menu` extension.  They also
+have been reorganized in the menu to make it easier to access the more
+important features.  The `auto-collapse` extension has not yet been
+ported to version 3, however.  The equation explorer has been expanded
+and improved; see :ref:`accessibility` for details.
+
+Finally, the ``showMathMenu`` and ``showMathMenuMSIE`` options have
+been removed.  The need for separate handling of the menu in IE is no
+longer applicable, and you control whether the contextual menu is
+attached to the typeset mathematics using the ``enableMenu`` property
+of the ``options`` block of the MathJax configuration (see
+the :ref:`menu-options` documentation).
+
+-----
+
+
+.. _v2-mathjax-node:
+
+MathJax in Node
+===============
+
+Version 2 of MathJax was designed to work in a browser, and relied
+heavily on the presence of the browser window, document, DOM, and
+other browser-specific objects.  Using MathJax on a server to
+pre-process mathematics (e.g., to convert a TeX string to an SVG
+image, for example), was not easy in version 2.  The `mathjax-node
+<https://github.com/mathjax/mathjax-node>` project made that possible,
+but required a completely different way of interacting with MathJax,
+and was not as easy to use or as reliable as we would have liked.
+
+Version 3 has server-side use as an important use-case to support, and
+so it is possible to use MathJax in a `node` application in
+essentially the same way as in a browser, with only a few minor
+adjustments to the configuration to allow for that.  This should make
+it much easier to use MathJax on a server, as it will work the same
+there as for your web-based applications.  It is also possible to link
+to MathJax at a lower level and access the MathJax modules directly.
+See the section on :ref:`using MathJax in node <node-start>`, and the
+:ref:`MathJax API <mathjax-api>` for more information on these
+possibilities.
+
+-----
+
+.. _v2-compatibility-example:
+
+Version 2 Compatibility Example
+===============================
+
+The following example causes the ``\color`` macro to be the original
+one from version 2, and sets up the ``\require`` macro to translate
+the old package names into the new ones.  This should make MathJax v3
+handle existing content properly.
+
+Be sure to convert your version-2 configuration to a version-3 one via
+the `conversion tool
+<https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`__
+that we provide.
+
+.. code-block:: html
+
+   <script>
+   MathJax = {
+     startup: {
+       //
+       //  Mapping of old extension names to new ones
+       //
+       requireMap: {
+         AMSmath: 'ams',
+         AMSsymbols: 'ams',
+         AMScd: 'amscd',
+         HTML: 'html',
+         noErrors: 'noerrors',
+         noUndefined: 'noundefined'
+       },
+       ready: function () {
+         //
+         //  Replace the require command map with a new one that checks for
+         //    renamed extensions and converts them to the new names.
+         //
+         var CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+         var requireMap = MathJax.config.startup.requireMap;
+         var RequireLoad = MathJax._.input.tex.require.RequireConfiguration.RequireLoad;
+         var RequireMethods = {
+           Require: function (parser, name) {
+             var required = parser.GetArgument(name);
+             if (required.match(/[^_a-zA-Z0-9]/) || required === '') {
+               throw new TexError('BadPackageName', 'Argument for %1 is not a valid package name', name);
+             }
+             if (requireMap.hasOwnProperty(required)) {
+               required = requireMap[required];
+             }
+             RequireLoad(parser, required);
+           }
+         };
+         new CommandMap('require', {require: 'Require'}, RequireMethods);
+         //
+         //  Do the usual startup
+         //
+         return MathJax.startup.defaultReady();
+       }
+     },
+     tex: {
+       autoload: {
+         color: [],          // don't autoload the color extension
+         colorv2: ['color'], // do autoload the colorv2 extension
+       }
+     }
+   };
+   </script>
+   <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+This uses the ``tex-chtml.js`` combined component, so change this to
+whichever one you want.
+
+If your website uses the MathJax API to queue typeset calls via
+
+.. code-block:: javascript
+
+   MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+
+for example, these calls will need to be converted to use the
+:ref:`MathJax 3 API <api>`.  You may be able to use the following code
+to patch into MathJax version 3, which provides implementations for
+:meth:`MathJax.Hub.Typeset()`, and :meth:`MathJax.Hub.Queue()`.  It
+also flags usages of :meth:`MathJax.Hub.Register.StartupHook()` and
+the other hook-registering commands, and that you have converted your
+:meth:`MathJax.Hub.Config()` and ``x-mathjax-config`` scripts to their
+version 3 counterparts (use the `conversion tool <https://mathjax.github.io/MathJax-demos-web/convert-configuration/convert-configuration.html>`__).
+
+Add the following lines right after the ``new CommandMap()`` call in
+the code above:
+
+.. code-block:: javascript
+
+         //
+         // Add a replacement for MathJax.Callback command
+         //
+         MathJax.Callback = function (args) {
+           if (Array.isArray(args)) {
+             if (args.length === 1 && typeof(args[0]) === 'function') {
+               return args[0];
+             } else if (typeof(args[0]) === 'string' && args[1] instanceof Object &&
+                       typeof(args[1][args[0]]) === 'function') {
+               return Function.bind.apply(args[1][args[0]], args.slice(1));
+             } else if (typeof(args[0]) === 'function') {
+               return Function.bind.apply(args[0], [window].concat(args.slice(1)));
+             } else if (typeof(args[1]) === 'function') {
+               return Function.bind.apply(args[1], [args[0]].concat(args.slice(2)));
+             }
+           } else if (typeof(args) === 'function') {
+             return args;
+           }
+           throw Error("Can't make callback from given data");
+         };
+         //
+         // Add a replacement for MathJax.Hub commands
+         //
+         MathJax.Hub = {
+           Queue: function () {
+             for (var i = 0, m = arguments.length; i < m; i++) {
+                var fn = MathJax.Callback(arguments[i]);
+                MathJax.startup.promise = MathJax.startup.promise.then(fn);
+             }
+             return MathJax.startup.promise;
+           },
+           Typeset: function (elements, callback) {
+              var promise = MathJax.typesetPromise(elements);
+              if (callback) {
+                promise = promise.then(callback);
+              }
+              return promise;
+           },
+           Register: {
+              MessageHook: function () {console.log('MessageHooks are not supported in version 3')},
+              StartupHook: function () {console.log('StartupHooks are not supported in version 3')},
+              LoadHook: function () {console.log('LoadHooks are not supported in version 3')}
+           },
+           Config: function () {console.log('MathJax configurations should be converted for version 3')}
+         };
+         //
+         //  Warn about x-mathjax-config scripts
+         //
+         if (document.querySelector('script[type="text/x-mathjax-config"]')) {
+           throw Error('x-mathjax-config scripts should be converted to MathJax global variable');
+         }
+
+With this you may be able to get away with using your existing version
+2 code to interact with version 3.  But if not, either a more
+sophisticated compatibility module will be needed, or better yet,
+convert to the new version 3 API.
+
+|-----|
+
