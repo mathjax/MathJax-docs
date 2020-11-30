@@ -79,7 +79,7 @@ calls.  For example,
    let promise = Promise.resolve();  // Used to hold chain of typesetting calls
 
    function typeset(code) {
-     promise = promise.then(() => {return MathJax.typesetPromise(code());})
+     promise = promise.then(() => MathJax.typesetPromise(code()))
                       .catch((err) => console.log('Typeset failed: ' + err.message));
      return promise;
    }
@@ -120,7 +120,7 @@ I.e., simply use
 
    function typeset(code) {
      MathJax.startup.promise = MathJax.startup.promise
-       .then(() => {code(); return MathJax.typesetPromise()})
+       .then(() => MathJax.typesetPromise(code()))
        .catch((err) => console.log('Typeset failed: ' + err.message));
      return MathJax.startup.promise;
    }
