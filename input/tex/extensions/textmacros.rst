@@ -10,7 +10,7 @@ material.  See the :ref:`tex-differences` section for how text-mode is
 handled without this extension.
 
 This extension is not loaded automatically, and can't be loaded via
-the `autolaod` extension.  To load the `textmacros` extension, add
+the `autoload` extension.  To load the `textmacros` extension, add
 ``'[tex]/textmacros'`` to the ``load`` array of the ``loader`` block
 of your MathJax configuration, and add ``'textmacros'`` to the
 ``packages`` array of the ``tex`` block.
