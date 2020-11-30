@@ -157,7 +157,7 @@ example; or if you change the accessibility settings, say to enable
 the expression explorer, all the math can be updated to incldue the
 speech strings that it uses.  If you modify the page to include new
 mathematics and call :meth:`MathJax.typeset()` or
-:meth:`MathJax.typesetPromis()`, the newly typeset mathematics will be
+:meth:`MathJax.typesetPromise()`, the newly typeset mathematics will be
 added to the list of already typeset mathematics, as you would expect.
 
 If you modify the page to remove content that contains typeset
