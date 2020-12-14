@@ -212,8 +212,8 @@ Improved Expression Explorer
 
 The interactive expression explorer has been improved in a number of
 ways.  It now includes better heuristics for creating the speech text
-for the expressions you explore, provides more keboard control of the
-features in play during your exploration, adds suppot for braille
+for the expressions you explore, provides more keyboard control of the
+features in play during your exploration, adds support for braille
 output, adds support for zooming on subexpressions, and more.  See the
 :ref:`accessibility` page for more details.
 
