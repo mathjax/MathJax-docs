@@ -19,7 +19,7 @@ automatic equation numbers by adding:
 
 to tell the TeX input processor to use the AMS numbering rules (where
 only certain environments produce numbered equations, as they would be
-in LaTeX).  It is also possible to set the tagging to `'all'`, so that
+in LaTeX).  It is also possible to set the tagging to ``'all'``, so that
 every displayed equation will get a number, regardless of the
 environment used.
 
