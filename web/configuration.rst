@@ -449,7 +449,7 @@ performed after the initial typesetting is complete.
    };
 
 As an alternative, you can override the :func:`pageReady()` function,
-and use the promse returned from the
+and use the promise returned from the
 :meth:`MathJax.startup.defaultPageReady()` function:
 
 .. code-block:: javascript
