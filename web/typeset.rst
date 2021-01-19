@@ -196,7 +196,7 @@ DOM element, as in the example above, or a CSS selector string (e.g.,
 ``'#has-math'``), or an array of these.  The selector can specify more
 than one container element (e.g., via a class selector).
 
-If you are using automatic equation numbers and insert new conent in
+If you are using automatic equation numbers and insert new content in
 the middle of the page, that may require the equation numbers to be
 adjusted throughout the page.  In that case, you can do
 
