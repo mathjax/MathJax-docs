@@ -427,7 +427,7 @@ configuration.
    MathJax = {
      options: {
        renderActions: {
-         assistiveMML: []
+         assistiveMml: []
        }
      }
    };
