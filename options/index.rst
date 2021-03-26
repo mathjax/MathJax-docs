@@ -35,7 +35,7 @@ For example,
       },
       startup: {
         pageReady: () => {
-          alert('Running MathJax')l;
+          alert('Running MathJax');
           return MathJax.startup.defaultPageReady();
         }
       },
