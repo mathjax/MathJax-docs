@@ -1,3 +1,4 @@
+
 .. _input-components:
 
 ################
@@ -121,13 +122,13 @@ configuring the TeX extensions.
 
 .. _mathml-component:
 
-input/mathml
+input/mml
 ============
 
-The `input/mathml` component contains the MathML input processor,
+The `input/mml` component contains the MathML input processor,
 including the function that identifies MathML within the page.  See
 the :ref:`mathml-input` section for details concerning the MathML
-input processor.  When you include the `input/mathml` component,
+input processor.  When you include the `input/mml` component,
 MathJax will define a function to convert serialized MathML strings
 into the output format that has been loaded.  See the
 :ref:`convert-math` section for details.

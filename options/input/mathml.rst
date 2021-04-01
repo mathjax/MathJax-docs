@@ -6,7 +6,7 @@ MathML Input Processor Options
 
 The options below control the operation of the :ref:`MathML input
 processor <mathml-input>` that is run when you include
-``'input/mathml'`` in the ``load`` array of the ``loader`` block of
+``'input/mml'`` in the ``load`` array of the ``loader`` block of
 your MathJax configuration, or if you load a combined component that
 includes the MathML input jax.  They are listed with their default
 values.  To set any of these options, include an ``mml`` section in
