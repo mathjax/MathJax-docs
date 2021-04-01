@@ -40,6 +40,13 @@ For example:
 
     (x+1)^2 = \cssId{step1}{\style{visibility:hidden}{(x+1)(x+1)}}
 
+.. Note::
+
+   For the ``\href`` macro, the `url` parameter is not processed
+   futher, as it is in actual TeX, so you do not need to quote special
+   characters.  For example, ``\href{#section1}{x}`` is fine, but
+   ``\href{\#section}{x}`` will not work as expected.
+
 This extension is loaded automatically when the `autoload` extension
 is used.  To load the `html` extension explicitly, add
 ``'[tex]/html'`` to the ``load`` array of the ``loader`` block of
