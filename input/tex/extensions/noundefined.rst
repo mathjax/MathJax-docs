@@ -28,6 +28,18 @@ block of your MathJax configuration, and add ``'noundefined'`` to the
      tex: {packages: {'[+]': ['noundefined']}}
    };
 
+Since the `noundefined` extension is included in the combined
+components that contain the TeX input jax, it may already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['noundefined']}}
+   };
+
+
 -----
 
 

@@ -32,6 +32,18 @@ to the ``packages`` array of the ``tex`` block.
      tex: {packages: {'[+]': ['require']}}
    };
 
+Since the `require` extension is included in the combined
+components that contain the TeX input jax, it may already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['require']}}
+   };
+
+
 -----
 
 .. _tex-require-options:

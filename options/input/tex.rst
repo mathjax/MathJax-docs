@@ -80,6 +80,40 @@ Option Descriptions
         }
       };
 
+   This loads the :ref:`tex-enclose` extension and acticates it by
+   including it in the package list.
+
+   You can remove packages from the default list using ``'[-]'``
+   rather than ``[+]``, as in the followiong example:
+
+   .. code-block:: javascript
+
+      MathJax = {
+        tex: {
+          packages: {'[-]': ['noundefined']}
+        }
+      };
+
+   This would disable the :ref:`tex-noundefined` extension, so that
+   unknown macro names would cause error messages rather than be
+   displayed in red.
+
+   If you need to both remove some default packages and add new ones,
+   you can do so by including both within the braces:
+
+   .. code-block:: javascript
+
+      MathJax = {
+        loader: {load: ['[tex]/enclose']},
+        tex: {
+          packages: {'[-]': ['noundefined', 'autoload'], '[+]': ['enclose']}
+        }
+      };
+
+   This disables the :ref:`tex-noundefined` and :ref:`tex-autoload`
+   extensions, and adds in the :ref:`tex-enclose` extension.
+
+
 .. _tex-inlineMath:
 .. describe:: inlineMath: [['\\\(','\\\)']]
 

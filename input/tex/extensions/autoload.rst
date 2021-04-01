@@ -78,6 +78,31 @@ says that the `verb` extension will not be autoloaded.
       };
 
 
+This extension is already loaded in all the components that
+include the TeX input jax, other than ``input/tex-base``.  To load the
+`autoload` extension explicitly (when using ``input/tex-base`` for
+example), add ``'[tex]/autoload'`` to the ``load`` array of the
+``loader`` block of your MathJax configuration, and add
+``'autoload'`` to the ``packages`` array of the ``tex`` block.
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     loader: {load: ['[tex]/autoload']},
+     tex: {packages: {'[+]': ['autoload']}}
+   };
+
+Since the `autoload` extension is included in the combined
+components that contain the TeX input jax, it will already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['autload']}}
+   };
+
 -----
 
 .. _tex-autoload-options:

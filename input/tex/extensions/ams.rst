@@ -27,4 +27,15 @@ Alternatively, use ``\require{ams}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+Since the `ams` extension is included in the combined
+components that contain the TeX input jax, it will already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['ams']}}
+   };
+
 |-----|

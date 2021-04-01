@@ -38,6 +38,17 @@ example), add ``'[tex]/configmacros'`` to the ``load`` array of the
      tex: {packages: {'[+]': ['configmacros']}}
    };
 
+Since the `configmacros` extension is included in the combined
+components that contain the TeX input jax, it may already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['configmacros']}}
+   };
+
 -----
 
 
