@@ -282,8 +282,10 @@ Option Descriptions
    syntax or other error in the TeX that it is processing.  The
    default is to generate an ``<merror>`` MathML element with the
    message indicating the error that occurred.  You can override the
-   function to perform other tasks, like recording the message, or
-   replacing the message with an alternative message.
+   function to perform other tasks, like recording the message,
+   replacing the message with an alternative message, or throwing the
+   error so that MathJax will stop at that point (you can catch the
+   error using promises or a ``try/carch`` block).
 
 
 The remaining options are described in the
