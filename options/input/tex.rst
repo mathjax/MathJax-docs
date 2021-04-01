@@ -52,8 +52,10 @@ The Configuration Block
 Note that some extensions make additional options available.  See the
 :ref:`tex-extension-options` section below for details.
 
-Note also that the default for ``processEscapes`` has changed from
-``false`` in version 2 to ``true`` in version 3.
+.. note::
+
+   The default for ``processEscapes`` has changed from
+   ``false`` in version 2 to ``true`` in version 3.
 
 -----
 
@@ -154,12 +156,14 @@ Option Descriptions
 .. describe:: processEscapes: false
 
     When set to ``true``, you may use ``\$`` to represent a literal
-    dollar sign, rather than using it as a math delimiter.  When
-    ``false``, ``\$`` will not be altered, and its dollar sign may be
-    considered part of a math delimiter.  Typically this is set to
-    ``true`` if you enable the ``$ ... $`` in-line delimiters, so you
-    can type ``\$`` and MathJax will convert it to a regular dollar
-    sign in the rendered document.
+    dollar sign, rather than using it as a math delimiter, and ``\\``
+    to represent a literal backslash (so that you can use ``\\\$`` to
+    get a literal ``\$`` or ``\\$...$`` to get a backslash jsut before
+    in-line math).  When ``false``, ``\$`` will not be altered, and
+    its dollar sign may be considered part of a math delimiter.
+    Typically this is set to ``true`` if you enable the ``$ ... $``
+    in-line delimiters, so you can type ``\$`` and MathJax will
+    convert it to a regular dollar sign in the rendered document.
 
 .. _tex-processRefs:
 .. describe:: processRefs: true
