@@ -22,15 +22,15 @@ In the example below, :data:`Loader` represents the
 
     MathJax = {
       loader: {
-        paths: {mathjax: Loader.getRoot()},          // the path prefixes for use in specifying components
-        source: {},                                  // the URLs for components, when defaults aren't right
-        dependencies: {},                            // arrays of dependencies for each component
-        provides: {},                                // components provided by each component
         load: [],                                    // array of components to load
         ready: Loader.defaultReady.bind(Loader),     // function to call when everything is loaded
         failed: function (error) {                   // function to call if a component fails to load
           console.log(`MathJax(${error.package || '?'}): ${error.message}`);
-        }
+        },
+        paths: {mathjax: Loader.getRoot()},          // the path prefixes for use in specifying components
+        source: {},                                  // the URLs for components, when defaults aren't right
+        dependencies: {},                            // arrays of dependencies for each component
+        provides: {},                                // components provided by each component
         require: null                                // function to use for loading components
       }
     };
