@@ -279,4 +279,31 @@ Equation Numbers
    * - ``\eqref``
      -  cite a labeled equation with parentheses
 
+-----
+
+Additional Packages
+===================
+
+You can configure the `textmacros` extension to use additional
+packages, just as you can specify additional math TeX packages.
+Normally, these should be pckages designed for text mode, but it is
+possible to load some of the regular TeX packages as text macros.  For example
+
+.. code:: javascript
+
+   MathJax = {
+     loader: {load: ['[tex]/textmacros', '[tex]/bbox']},
+     tex: {
+       packages: {'[+]': {'textmacros'}},
+       textmacros: {
+         packages: {'[+]': ['bbox']}
+       }
+     }
+   }
+
+would make the :ref:`tex-bbox` extension available in text mode, so
+you could use ``\bbox`` inside ``\text{}``, for example.  Not all
+math-mode extensions are approrpriate for textmode, but some can be
+usefully employed in text mode.
+
 |-----|
