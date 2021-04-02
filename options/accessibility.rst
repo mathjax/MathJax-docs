@@ -14,6 +14,38 @@ that control these extensions are listed below.
 * :ref:`explorer-options`
 * :ref:`assistive-mml-options`
 
+Because the accessibility extensions are controlled by the settings of
+the MathJax contextual menu, you may use the :ref:`menu-options` to
+control whether they are enabled or not.  There are settings below
+that can be used to *disable* the extensions, in case they are laoded
+automatically, but these are not the settings that control whether the
+extensions themselves are loaded.  That is controlled by the menu
+settings:
+
+.. code-block:: javascript
+
+   MathJax = {
+     options: {
+       menuOptions: {
+         settings: {
+           assistiveMml: true;   // true to enable assitive MathML
+           collapsible: false;   // true to enable collapsible math
+           explorer: false;      // true to enable the expression explorer
+         }
+       }
+     }
+   };
+
+Note that there is no control for the semantic enrichment *per se*,
+but it is enabled automatically by enabling the collapsible math or
+the expression explorer.
+
+Although you can load the extensions explicitly using the
+:ref:`loader-options`, it is probably better to use the men u options
+above, so that if a user turns the extensions off, they will not incur
+the network and startup costs of laoding the extensions they will not
+be using.
+
 -----
 
 .. _semantic-enrich-options:
@@ -39,6 +71,13 @@ The Configuration Block
    MathJax = {
      options: {
        enableEnrichment: true,  // false to disable enrichment
+       sre: {
+         speech: 'none',         // or 'shallow', or 'deep'
+         domain: 'mathspeak',    // speech rules domain
+         style: 'default',       // speech rules style
+         locale: 'en'            // the language to use (en, fr, es, de, it)
+       },
+       enrichError: (doc, math, err) => doc.enrichError(doc, math, err),  // function to call if enrichment fails
        enrichSpeech: 'none',    // or 'shallow', or 'deep'
      }
    };
@@ -57,8 +96,34 @@ Option Descriptions
    `semantic-enrich` component has been loaded automatically and you
    don't need that.
 
+.. _semantic-sre:
+.. describe:: sre: {...}
+
+   This block sets configuration values for the Speech-Rule Engine
+   (SRE) that underlies MathJax's semantic enrichment features.  See
+   the `SRE documentation
+   <https://github.com/zorkow/speech-rule-engine/tree/master#options-to-control-speech-output>`__
+   for more details.
+
+.. _semantic-enrich-error:
+.. describe:: enrichError: (doc, math, err) => doc.enrichError(doc, math, err)
+
+   This setting provides a function that gets called when the semantic
+   enrichment process fails for some reason.  The default is to call
+   the MathDocument's ``enrichError()`` method, which simply prints a
+   warning message in the browser console window.  The original
+   (unenriched) MathML will be used for the output of the expression.
+   You can override the defaul tbehavior by providing a function that
+   does whatever you want, such as recording the error, or replacing
+   the original MathML with alterntiave MathML contianing an error
+   message.
+
 .. _semantic-enrich-speech:
-.. describe:: enrichSpeech: 'none'
+.. describe:: enrichSpeech: (deprecated)
+
+   This setting has been moved to the ``sre.speech`` setting, and is
+   deprecated.  It will be removed in a future release, but currently
+   its value will be transferred to ``sre.speech`` if supplied.
 
    This setting controls whether MathJax uses the Speech-Rule Engine
    (SRE) to generate a speech string for the expressions on the page.
@@ -70,7 +135,6 @@ Option Descriptions
    processors will find the top-most speech string and set the
    appropriate attributes on the output they generate so that screen
    readers can find it.
-
 
 -----
 

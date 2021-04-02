@@ -48,8 +48,11 @@ The Configuration Block
             ctrl: false,           // true if CTRL required for zooming
             shift: false,          // true if SHIFT required for zooming
             scale: 1,              // scaling factor for all math
-            collapsible: false,    // true if complex math should be collapsible
             inTabOrder: true,      // true if tabbing includes math
+
+            assistiveMml: true,    // true if hidden assistive MathML should be generated for screen readers
+            collapsible: false,    // true if complex math should be collapsible
+            explorer: false,       // true if the expression explorere should be active
           },
           annotationTypes: {
             TeX: ['TeX', 'LaTeX', 'application/x-tex'],
