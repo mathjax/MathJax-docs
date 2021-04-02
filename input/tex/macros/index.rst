@@ -1119,6 +1119,22 @@ M
      -
    * - ``\mathbf``
      -
+   * - ``\mathbfcal``
+     -
+   * - ``\mathbffrak``
+     -
+   * - ``\mathbfit``
+     -
+   * - ``\mathbfscr``
+     -
+   * - ``\mathbfsf``
+     -
+   * - ``\mathbfsfit``
+     -
+   * - ``\mathbfsfup``
+     -
+   * - ``\mathbfup``
+     -
    * - ``\mathbin``
      -
    * - ``\mathcal``
@@ -1132,6 +1148,8 @@ M
    * - ``\mathinner``
      -
    * - ``\mathit``
+     -
+   * - ``\mathnormal``
      -
    * - ``\mathop``
      -
@@ -1150,6 +1168,10 @@ M
    * - ``\mathscr``
      -
    * - ``\mathsf``
+     -
+   * - ``\mathsfit``
+     -
+   * - ``\mathsfup``
      -
    * - ``\mathstrut``
      -
@@ -1829,6 +1851,48 @@ S
      - *physics*
    * - ``\swarrow``
      -
+   * - ``\symbb``
+     -
+   * - ``\symbf``
+     -
+   * - ``\symbfcal``
+     -
+   * - ``\symbffrak``
+     -
+   * - ``\symbfit``
+     -
+   * - ``\symbfscr``
+     -
+   * - ``\symbfsf``
+     -
+   * - ``\symbfsfit``
+     -
+   * - ``\symbfsfup``
+     -
+   * - ``\symbfup``
+     -
+   * - ``\symcal``
+     -
+   * - ``\symfrak``
+     -
+   * - ``\symit``
+     -
+   * - ``\symnormal``
+     -
+   * - ``\symrm``
+     -
+   * - ``\symscr``
+     -
+   * - ``\symsf``
+     -
+   * - ``\symsfit``
+     -
+   * - ``\symsfup``
+     -
+   * - ``\symtt``
+     -
+   * - ``\symup``
+     -
 
 
 T
@@ -1859,6 +1923,8 @@ T
      - color
    * - ``\textit``
      -
+   * - ``\textnormal``
+     -
    * - ``\textrm``
      -
    * - ``\textsf``
@@ -1868,6 +1934,8 @@ T
    * - ``\texttip``
      - action
    * - ``\texttt``
+     -
+   * - ``\textup``
      -
    * - ``\tfrac``
      - **ams**
