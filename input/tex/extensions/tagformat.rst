@@ -39,7 +39,7 @@ following values:
    tagformat: {
       number: (n) => n.toString(),
       tag:    (tag) => '(' + tag + ')',
-      id:     (id) => 'mjx-eqn-' + id.replace(/\s/g, '_'),
+      id:     (id) => 'mjx-eqn:' + id.replace(/\s/g, '_'),
       url:    (id, base) => base + '#' + encodeURIComponent(id),
     }
 
@@ -56,7 +56,7 @@ following values:
    displaying as a tag for an equation.  This is what appears in the
    margin of a tagged or numbered equation.
 
-.. describe:: id: function (n) {return 'mjx-eqn-' + n.replace(/\\s/g, '_')}
+.. describe:: id: function (n) {return 'mjx-eqn:' + n.replace(/\\s/g, '_')}
 
    A function that tells MathJax what ID to use as an anchor for the
    equation (so that it can be used in URL references).
@@ -87,7 +87,7 @@ automatic equation numbers generated when the ``tags`` option in the
       tex: {
         tagformat: {
 	  number: (n) => MathJax.config.section + '.' + n,
-          id: (tag) => 'eqn-id-' + tag
+          id: (tag) => 'eqn-id:' + tag
 	}
       },
       startup: {
@@ -108,7 +108,7 @@ automatic equation numbers generated when the ``tags`` option in the
     };
 
 This arranges for automatic equation numbers to be of the form
-``1.n``, and uses ids of the form ``eqn-id-1.n`` as the ``id``
+``1.n``, and uses ids of the form ``eqn-id:1.n`` as the ``id``
 attribute of the tags within the web page.  It also sets up pre- and
 post-filters for the TeX input jax that arrange for the section number
 to be properly handled for automatically numbered equations that
