@@ -36,6 +36,7 @@ above.  They are given here with their default values, using the
         merrorInheritFont: false,      // true to make merror text use surrounding font
         mtextFont: '',                 // font to use for mtext, if not inheriting (empty means use MathJax fonts)
         merrorFont: 'serif',           // font to use for merror, if not inheriting (empty means use MathJax fonts)
+        unknownFamily: 'serif',        // font to use for character that aren't in MathJax's fonts
         mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
         skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
         exFactor: .5,                  // default size of ex in em units
@@ -118,13 +119,21 @@ Option Descriptions
    as they are with other token elements.
 
 .. _output-merrorFont:
-.. describe:: mtextFont: 'Times'
+.. describe:: merrorFont: 'serif'
 
    This specifies the font family to use for ``<merror>`` elements
    when :ref:`merrorInheritFont <output-merrorInheritFont>` is
    ``false`` (and is ignored if it is ``true``).  It can be a
    comma-separated list of font-family names.  If it is empty, then
    the math fonts are used, as they are with other token elements.
+
+.. _output-unknownFamily:
+.. describe:: unknownFamily: 'serif'
+
+   This specifies the font family to use for characters that are not
+   found in the MathJax math fonts.  For exmaple, if you enter unicode
+   characters directly, these may not be in MathJax's font, and so
+   they will be taken from the font specified here.
 
 .. _output-mathmlSpacing:
 .. describe:: mathmlSpacing: false
