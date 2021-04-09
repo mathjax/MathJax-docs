@@ -14,7 +14,7 @@ component is configured through a ``tex`` block within the
 :data:`MathJax` object, while the :ref:`startup-component` component
 is configured through the ``startup`` block.
 
-These blocks are javascript objects that includes ``name: value``
+These blocks are JavaScript objects that includes ``name: value``
 pairs giving the names of parameters and their values, with pairs
 separated by commas.  Be careful not to include a comma after the last
 value, however, as some browsers will fail to process the

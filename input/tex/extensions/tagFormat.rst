@@ -80,7 +80,7 @@ TeX macros for controlling the section number.  Here is one possibility:
       }
     };
 
-(Of course, you will want to merge this configuraiton in with the rest
+(Of course, you will want to merge this configuration in with the rest
 of your configuration options.)
 
 This makes two new macros available: ``\nextSection``, which

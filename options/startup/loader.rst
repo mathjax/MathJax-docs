@@ -295,7 +295,7 @@ the `input/tex` component is either loaded successfully or fails to load.
 .. _loader-component-checkReady:
 .. describe:: checkReady: undefined
 
-   This is a function that tages no argument and is called when the
+   This is a function that takes no argument and is called when the
    component is loaded, but before the ``ready()`` function is
    called.  It can be used o do post-processing after the component is
    loaded, but before other components are signaled that it is ready.
