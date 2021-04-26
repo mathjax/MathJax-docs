@@ -17,7 +17,7 @@ that control these extensions are listed below.
 Because the accessibility extensions are controlled by the settings of
 the MathJax contextual menu, you may use the :ref:`menu-options` to
 control whether they are enabled or not.  There are settings below
-that can be used to *disable* the extensions, in case they are laoded
+that can be used to *disable* the extensions, in case they are loaded
 automatically, but these are not the settings that control whether the
 extensions themselves are loaded.  That is controlled by the menu
 settings:
@@ -78,7 +78,6 @@ The Configuration Block
          locale: 'en'            // the language to use (en, fr, es, de, it)
        },
        enrichError: (doc, math, err) => doc.enrichError(doc, math, err),  // function to call if enrichment fails
-       enrichSpeech: 'none',    // or 'shallow', or 'deep'
      }
    };
 
@@ -118,23 +117,10 @@ Option Descriptions
    the original MathML with alterntiave MathML contianing an error
    message.
 
-.. _semantic-enrich-speech:
-.. describe:: enrichSpeech: (deprecated)
+.. note::
 
-   This setting has been moved to the ``sre.speech`` setting, and is
-   deprecated.  It will be removed in a future release, but currently
-   its value will be transferred to ``sre.speech`` if supplied.
-
-   This setting controls whether MathJax uses the Speech-Rule Engine
-   (SRE) to generate a speech string for the expressions on the page.
-   If set to ``'none'`` (the default), no speech is generated.  When set
-   to ``'shallow'``, speech is generated only for the complete
-   equation, and when set to ``'deep'``, every speakable element is
-   marked with its speech string.  These speech strings are put in
-   ``data-semantic-speech`` attributes, when generated.  The output
-   processors will find the top-most speech string and set the
-   appropriate attributes on the output they generate so that screen
-   readers can find it.
+   As of version 3.1.3, the ``enrichSpeech`` option has been renamed
+   as ``speech`` in the ``sre`` block of the configuration.
 
 -----
 
@@ -243,7 +229,6 @@ The Configuration Block
          braille: true,                     // switch on Braille output
          subtitles: true,                   // show speech as a subtitle
          viewBraille: false,                // display Braille output as subtitles
-         speechRules: 'mathspeak-default',  // speech rules as domain-style pair
 
          backgroundColor: 'Blue',           // color for background of selected sub-expression
          backgroundOpacity: .2,             // opacity for background of selected sub-expression
@@ -311,17 +296,12 @@ Speech Options
    This option indicates whether Braille output will be displayed under the
    expression as it is explored.
 
-              
-.. _explorer-speechRules:
-.. describe:: speechRules: 'mathspeak-default'
-              
-   This option selects the speech rules used for speech generation in a
-   *domain*-*style* pair. For a list of possible selections please see the documentation of the
-   `Speech Rule Engine <https://speechruleengine.org>`__, e.g., by running 
+.. note::
 
-.. code-block:: bash
-
-   npx speech-rule-engine --options
+   As of version 3.1.3, the ``speechRules`` option has been broken
+   into two separate options, ``domain`` and ``style``, in the ``sre``
+   block of the configuration.  See the :ref:`semantic-enrich-options`
+   above for more.
 
 
 Highlighting Options
@@ -459,8 +439,8 @@ pointer. Note, multiple information explorers work well together.
 
 .. note::
 
-   While multiple keyboard based exploration techniques work well together and
-   can be easily employed simultaneously, switching on multiple mouse based
+   While multiple keyboard-based exploration techniques work well together and
+   can be easily employed simultaneously, switching on multiple mouse-based
    exploration tools can lead to unexpected interactions of the tools and often
    unpredictable side effects.
 
@@ -482,7 +462,7 @@ turn it off if they wish.
 
 The extension adds an action to the document's default
 :ref:`renderActions <document-renderActions>` object that does the
-MathML insertion.  You can override that by using the following
+MathML insertion.  You can disable that by using the following
 configuration.
 
 
@@ -490,9 +470,7 @@ configuration.
 
    MathJax = {
      options: {
-       renderActions: {
-         assistiveMml: []
-       }
+       enableAssistiveMml: false
      }
    };
 
