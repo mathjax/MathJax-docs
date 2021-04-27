@@ -10,7 +10,14 @@ following non-standard macros:
 
 .. describe:: \\href{url}{math}
 
-    Makes ``math`` be a link to the page given by ``url``.
+    Makes ``math`` be a link to the page given by ``url``.  Note that
+    the url is not processed by TeX, but is given as the literal url.
+    In actual TeX or LaTeX, special characters must be escaped; so,
+    for example, a url containing a ``#`` would need to use ``\#`` in
+    the url in actual TeX.  That is not necessary in MathJax, and if
+    you do use ``\#``, it will produce ``/#`` in the url (since the
+    ``\`` will be inserted into the url verbatim, and browsers will
+    convert that to ``/`` (thinking it is a DOS directory separator).
 
 .. describe:: \\class{name}{math}
 
