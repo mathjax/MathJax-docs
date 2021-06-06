@@ -14,6 +14,38 @@ that control these extensions are listed below.
 * :ref:`explorer-options`
 * :ref:`assistive-mml-options`
 
+Because the accessibility extensions are controlled by the settings of
+the MathJax contextual menu, you may use the :ref:`menu-options` to
+control whether they are enabled or not.  There are settings below
+that can be used to *disable* the extensions, in case they are loaded
+automatically, but these are not the settings that control whether the
+extensions themselves are loaded.  That is controlled by the menu
+settings:
+
+.. code-block:: javascript
+
+   MathJax = {
+     options: {
+       menuOptions: {
+         settings: {
+           assistiveMml: true;   // true to enable assitive MathML
+           collapsible: false;   // true to enable collapsible math
+           explorer: false;      // true to enable the expression explorer
+         }
+       }
+     }
+   };
+
+Note that there is no control for the semantic enrichment *per se*,
+but it is enabled automatically by enabling the collapsible math or
+the expression explorer.
+
+Although you can load the extensions explicitly using the
+:ref:`loader-options`, it is probably better to use the men u options
+above, so that if a user turns the extensions off, they will not incur
+the network and startup costs of laoding the extensions they will not
+be using.
+
 -----
 
 .. _semantic-enrich-options:
@@ -38,27 +70,57 @@ The Configuration Block
 
    MathJax = {
      options: {
-       enrichSpeech: 'none',    // or 'shallow', or 'deep'
+       enableEnrichment: true,  // false to disable enrichment
+       sre: {
+         speech: 'none',         // or 'shallow', or 'deep'
+         domain: 'mathspeak',    // speech rules domain
+         style: 'default',       // speech rules style
+         locale: 'en'            // the language to use (en, fr, es, de, it)
+       },
+       enrichError: (doc, math, err) => doc.enrichError(doc, math, err),  // function to call if enrichment fails
      }
    };
 
 Option Descriptions
 -------------------
 
-.. _semantic-enrich-speech:
-.. describe:: enrichSpeech: 'none'
+.. _semantic-enrich-enableEnrichment:
+.. describe:: enableEnrichment: true
 
-   This setting controls whether MathJax uses the Speech-Rule Engine
-   (SRE) to generate a speech string for the expressions on the page.
-   If set to ``'none'`` (the default), no speech is generated.  When set
-   to ``'shallow'``, speech is generated only for the complete
-   equation, and when set to ``'deep'``, every speakable element is
-   marked with its speech string.  These speech strings are put in
-   ``data-semantic-speech`` attributes, when generated.  The output
-   processors will find the top-most speech string and set the
-   appropriate attributes on the output they generate so that screen
-   readers can find it.
+   This setting controls whether semantic enrichment is applied to the
+   internal MathML representation of the mathematics in the page.
+   This is controlled automatically by the settings of the context
+   menu, so you should not need to adjust it yourself.  You can,
+   however, use it to disable semantic enrichment if the
+   `semantic-enrich` component has been loaded automatically and you
+   don't need that.
 
+.. _semantic-sre:
+.. describe:: sre: {...}
+
+   This block sets configuration values for the Speech-Rule Engine
+   (SRE) that underlies MathJax's semantic enrichment features.  See
+   the `SRE documentation
+   <https://github.com/zorkow/speech-rule-engine/tree/master#options-to-control-speech-output>`__
+   for more details.
+
+.. _semantic-enrich-error:
+.. describe:: enrichError: (doc, math, err) => doc.enrichError(doc, math, err)
+
+   This setting provides a function that gets called when the semantic
+   enrichment process fails for some reason.  The default is to call
+   the MathDocument's ``enrichError()`` method, which simply prints a
+   warning message in the browser console window.  The original
+   (unenriched) MathML will be used for the output of the expression.
+   You can override the defaul tbehavior by providing a function that
+   does whatever you want, such as recording the error, or replacing
+   the original MathML with alterntiave MathML contianing an error
+   message.
+
+.. note::
+
+   As of version 3.1.3, the ``enrichSpeech`` option has been renamed
+   as ``speech`` in the ``sre`` block of the configuration.
 
 -----
 
@@ -83,12 +145,22 @@ The Configuration Block
 
    MathJax = {
      options: {
-       makeCollapsible: true         // insert maction to allow collapsing
+       enableComplexity: true,       // set to false to disable complexity computations
+       makeCollapsible: true         // insert mactions to allow collapsing
      }
    };
 
 Option Descriptions
 -------------------
+
+.. _complexity-enableComplexity:
+.. describe:: enableComplexity: true
+
+   This setting controls whether the `complexity` extension is to run
+   or not.  The value is controlled automatically by the settings of
+   the context menu, so you should not need to adjust it yourself.
+   You can, however, use it to disable it if the `complexity`
+   component has been loaded automatically and you don't need it.
 
 .. _complexity-makeCollapsible:
 .. describe:: makeCollapsible: true
@@ -151,12 +223,12 @@ The Configuration Block
 
    MathJax = {
      options: {
+       enableExplorer: true,                // set to false to disable the explorer
        a11y: {
          speech: true,                      // switch on speech output
          braille: true,                     // switch on Braille output
          subtitles: true,                   // show speech as a subtitle
          viewBraille: false,                // display Braille output as subtitles
-         speechRules: 'mathspeak-default',  // speech rules as domain-style pair
 
          backgroundColor: 'Blue',           // color for background of selected sub-expression
          backgroundOpacity: .2,             // opacity for background of selected sub-expression
@@ -184,6 +256,15 @@ The Configuration Block
 
 Option Descriptions
 -------------------
+
+.. _explorer-enableExplorer:
+.. describe:: enableExplorer: true
+
+   This setting controls whether the `explorer` extension is to run
+   or not.  The value is controlled automatically by the settings of
+   the context menu, so you should not need to adjust it yourself.
+   You can, however, use it to disable it if the `explorer`
+   component has been loaded automatically and you don't need it.
 
 The a11y options belong roughly to one of the following four categories:
 
@@ -215,17 +296,12 @@ Speech Options
    This option indicates whether Braille output will be displayed under the
    expression as it is explored.
 
-              
-.. _explorer-speechRules:
-.. describe:: speechRules: 'mathspeak-default'
-              
-   This option selects the speech rules used for speech generation in a
-   *domain*-*style* pair. For a list of possible selections please see the documentation of the
-   `Speech Rule Engine <https://speechruleengine.org>`__, e.g., by running 
+.. note::
 
-.. code-block:: bash
-
-   npx speech-rule-engine --options
+   As of version 3.1.3, the ``speechRules`` option has been broken
+   into two separate options, ``domain`` and ``style``, in the ``sre``
+   block of the configuration.  See the :ref:`semantic-enrich-options`
+   above for more.
 
 
 Highlighting Options
@@ -363,8 +439,8 @@ pointer. Note, multiple information explorers work well together.
 
 .. note::
 
-   While multiple keyboard based exploration techniques work well together and
-   can be easily employed simultaneously, switching on multiple mouse based
+   While multiple keyboard-based exploration techniques work well together and
+   can be easily employed simultaneously, switching on multiple mouse-based
    exploration tools can lead to unexpected interactions of the tools and often
    unpredictable side effects.
 
@@ -386,7 +462,7 @@ turn it off if they wish.
 
 The extension adds an action to the document's default
 :ref:`renderActions <document-renderActions>` object that does the
-MathML insertion.  You can override that by using the following
+MathML insertion.  You can disable that by using the following
 configuration.
 
 
@@ -394,9 +470,7 @@ configuration.
 
    MathJax = {
      options: {
-       renderActions: {
-         assistiveMML: []
-       }
+       enableAssistiveMml: false
      }
    };
 

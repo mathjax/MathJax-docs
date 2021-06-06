@@ -16,7 +16,7 @@ web-font blocking, or other character placement issues that sometimes
 occur with the HTML-based output.
 
 One advantage to the SVG output is that it is relatively
-self-contained (it does not relay heavily on CSS, though it does use
+self-contained (it does not rely heavily on CSS, though it does use
 some in certain circumstances), so it can be saved and used as an
 independent image.  One disadvantage of this mode is that its
 variable-width tables become fixed size once they are typeset, and

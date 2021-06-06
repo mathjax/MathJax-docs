@@ -26,8 +26,47 @@ If you wish to include MathJax as part of a larger project, you can
 use either of the techniques to do that, and make a webpacked file
 that includes your own project code as well as MathJax.
 
+
+.. _getting-ready:
+
+Getting Things Ready
+====================
+
 Your first step is to download a copy of MathJax via ``npm`` or
 ``git``, as described in the section on :ref:`obtain-mathjax`.
+
+* If you use ``npm``, you will want to install the ``mathjax-full``
+  package rather than the ``mathjax`` package, since the former
+  includes all the source code, in both its original and compiled
+  forms, along with the webpacked components.
+
+..
+
+* If you use ``git``, be sure to run the commands to compile and make
+  the components, as listed in :ref:`mathjax-git`.
+
+In either case, you should have a ``js``, an ``es5``, and a
+``components`` directory, either in the ``node_modules/mathjax-full``
+directory (for ``npm`` installations) or in the main directory (for
+``git`` installations).
+
+Your second step is to obtain the tools needed to package your custom
+code using ``webpack``.  Use the commands
+
+.. code-block:: shell
+
+   npm install webpack
+   npm install webpack-cli
+   npm install terser-webpack-plugin
+   npm install babel-loader
+   npm install @babel/core
+   npm install @babel/preset-env
+
+to install ``webpack`` and its needed libraries.  Once this is done,
+you should be able to make the components described below.  The
+building instructions assume you used ``npm`` to aquire MathJax; if
+you used ``git``, then you will need to remove
+``node_modules/mathjax-full`` from the paths that incldue them.
 
 -----
 
@@ -42,13 +81,16 @@ MathJax comes with a number of predefined components, and you can use
 <https://github.com/mathjax/MathJax-src/tree/master/components/src>`__ as a starting
 point for your own custom component.  There are also custom component
 examples (with documentation) in the `MathJax web demos repository
-<https://github.com/mathjax/MathJax-demos-web#customization>`__, which is
+<https://github.com/mathjax/MathJax-demos-web#customization>`__, which are
 similar to the ones described here.
 
 There are two kinds of components you could build:
 
 * A **combined component** that brings together several other
   components (the ``tex-chtml`` component is a combined component)
+
+..
+
 * A **extension component** that contains what is needed for one
   feature and can be loaded along with other components to add
   that feature to MathJax.
@@ -60,18 +102,6 @@ the code that defines the component), and a webpack control file that
 will tell MathJax's build tools how to handle your component.  These
 will be discussed in the sections below.
 
-If you have not already done so, you should build the components
-already defined in MathJax, so that you can call on them in your own
-component.  To do this, issue the commands
-
-.. code-block:: shell
-
-   cd mathjax
-   npm run make-components
-
-(Note that the ``mathjax`` directory will be in your ``node_modules``
-directory if you used ``npm`` to install MathJax.)
-
 
 .. _custom-combined:
 
@@ -79,13 +109,13 @@ A Custom Combined Component
 ---------------------------
 
 After downloading a copy of MathJax as described in the section on
-:ref:`obtain-mathjax`, make the directory for your component and
+:ref:`getting-ready`, make the directory for your component and
 ``cd`` to that directory.  We will assume the directory is called
 ``custom-mathjax`` for this discussion.
 
 For this example, we will create a custom build that has the TeX input
 jax and the SVG output jax, and we will load the ``newcommand``,
-``ams``, and ``configMacros`` extensions, but will not include
+``ams``, and ``configmacros`` extensions, but will not include
 ``require`` or ``autoload``, so the user will not be able load any
 additional TeX extensions.  This component also includes the
 contextual menu.
@@ -117,7 +147,7 @@ need to adjust the locations in the :func:`require()` commands).
      'input/tex-base',
      '[tex]/ams',
      '[tex]/newcommand',
-     '[tex]/configMacros',
+     '[tex]/configmacros',
      'output/svg', 'output/svg/fonts/tex.js',
      'ui/menu'
    );
@@ -131,7 +161,7 @@ need to adjust the locations in the :func:`require()` commands).
    require('mathjax-full/components/src/input/tex-base/tex-base.js');
    require('mathjax-full/components/src/input/tex/extensions/ams/ams.js');
    require('mathjax-full/components/src/input/tex/extensions/newcommand/newcommand.js');
-   require('mathjax-full/components/src/input/tex/extensions/config_macros/configMacros.js');
+   require('mathjax-full/components/src/input/tex/extensions/configmacros/configmacros.js');
 
    require('mathjax-full/components/src/output/svg/svg.js');
    require('mathjax-full/components/src/output/svg/fonts/tex/tex.js');
@@ -144,7 +174,7 @@ need to adjust the locations in the :func:`require()` commands).
    const {insert} = require('mathjax-full/js/util/Options.js');
    insert(MathJax.config, {
      tex: {
-       packages: {'[+]': ['ams', 'newcommand', 'configMacros']}
+       packages: {'[+]': ['ams', 'newcommand', 'configmacros']}
      }
    });
 
@@ -198,28 +228,18 @@ Building the Component
 ......................
 
 Once these two files are ready, you are ready to build the component.
-First, make sure that the needed tools are available via the commands
+First, make sure that you have obtained the needed tools as described
+in :ref:`getting-ready` above.  Then you should be able to use the
+command
 
 .. code-block:: shell
 
-   npm install webpack
-   npm install webpack-cli
-   npm install uglifyjs-webpack-plugin
-   npm install babel-loader@7
-   npm install babel-core
-   npm install babel-preset-env
-
-After these are in place (you should only need to do this once), you
-should be able to use the command
-
-.. code-block:: shell
-
-   ../node_modules/mathjax-full/components/bin/makeAll
+   node ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``custom-mathjax.min.js`` in the directory with the other files.  If
 you put this on your web server, you can load it into your web pages
-in place of loading MathJax from a CDN.  This fill will include all
+in place of loading MathJax from a CDN.  This file will include all
 that you need to run MathJax on your pages.  Just add
 
 .. code-block:: html
@@ -228,7 +248,6 @@ that you need to run MathJax on your pages.  Just add
 
 to your page and you should be in business (adjust the URL to point to
 wherever you have placed the ``custom-mathjax.min.js`` file).
-
 
 Configuring the Component
 .........................
@@ -247,7 +266,7 @@ defaults that can still be overridden in the page, use
    // Update the configuration to include any updated values
    //
    const {insert} = require('mathjax-full/js/util/Options.js');
-   insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configMacros']}}});
+   insert(MathJax.config, {tex: {packages: {'[+]': ['ams', 'newcommand', 'configmacros']}}}, false);
    MathJax.config = insert({
      // your default options here
    }, MathJax.config);
@@ -287,7 +306,7 @@ discussed below.
 For this example, we make a custom TeX extension that defines new TeX
 commands implemented by javascript functions.
 
-The commands implemented by here provide the ability to generate
+The commands implemented here provide the ability to generate
 MathML token elements from within TeX by hand. This allows more
 control over the content and attributes of the elements produced. The
 macros are ``\mi``, ``\mo``, ``\mn``, ``\ms``, and ``\mtext``, and
@@ -303,8 +322,8 @@ The Extension File
 ..................
 
 After downloading a copy of MathJax as described in the section on
-:ref:`obtain-mathjax`, create a directory for the extension named
-``custom-extension`` and cd to it.  Then create the file ``mml.js``
+:ref:`getting-ready`, create a directory for the extension named
+``custom-extension`` and ``cd`` to it.  Then create the file ``mml.js``
 containing the following text:
 
 .. code-block:: javascript
@@ -363,15 +382,15 @@ containing the following text:
     }
 
     /**
-     *  The methods needed for the MathML token commands
+     *  The mapping of control sequence to function calls
      */
-    const MmlMethods = {
-
-       /**
-        * @param {TeXParser} parser   The TeX parser object
-        * @param {string} name        The control sequence that is calling this function
-        * @param {string} type        The MathML element type to be created
-        */
+    const MmlMap = new CommandMap('mmlMap', {
+       mi: ['mmlToken', 'mi'],
+       mo: ['mmlToken', 'mo'],
+       mn: ['mmlToken', 'mn'],
+       ms: ['mmlToken', 'ms'],
+       mtext: ['mmlToken', 'mtext']
+    }, {
        mmlToken(parser, name, type) {
           const typeClass = parser.configuration.nodeFactory.mmlFactory.getNodeClass(type);
           const def = parseAttributes(parser.GetBrackets(name), typeClass);
@@ -380,19 +399,7 @@ containing the following text:
           if (type === 'mi') mml.setTeXclass = classORD;
           parser.Push(mml);
        }
-
-    };
-
-    /**
-     *  The macro mapping of control sequence to function calls
-     */
-    const MmlMap = new CommandMap('mmlMap', {
-       mi: ['mmlToken', 'mi'],
-       mo: ['mmlToken', 'mo'],
-       mn: ['mmlToken', 'mn'],
-       ms: ['mmlToken', 'ms'],
-       mtext: ['mmlToken', 'mtext']
-    }, MmlMethods);
+    });
 
     /**
      * The configuration used to enable the MathML macros
@@ -406,14 +413,14 @@ The comments explain what this code is doing.  The main piece needed
 to make it a TeX extension is the ``Configuration`` created in the
 last few lines.  It creates a TeX package named ``mml`` that handles
 macros through a ``CommandMap`` named ``mmlMap`` that is defined just
-above it. That command map defines five macros described at at the
+above it. That command map defines five macros described at the
 beginning of this section, each of which is tied to a method named
-``mmlToken`` in the ``MmlMethods`` object that is defined earlier,
-passing it the name of the MathML token element to create.
-The ``mmlToken`` method is the one that is called by the TeX parser
-when the ``\mi`` and other macros are called.  It gets the argument to
-the macro, and any optional attributes, and creates the MathML element
-with the attributes, using the argument as the text of the element.
+``mmlToken`` in the object that follows, passing it the name of the
+MathML token element to create.  The ``mmlToken`` method is the one
+that is called by the TeX parser when the ``\mi`` and other macros are
+called.  It gets the argument to the macro, and any optional
+attributes, and creates the MathML element with the attributes, using
+the argument as the text of the element.
 
 
 The Webpack Configuration
@@ -457,23 +464,13 @@ Building the Extension
 ......................
 
 Once these two files are ready, you are ready to build the component.
-First, make sure that the needed tools are available via the commands
+First, make sure that you have obtained the needed tools as described
+in :ref:`getting-ready` above.  Then you should be able to use the
+command
 
 .. code-block:: shell
 
-   npm install webpack
-   npm install webpack-cli
-   npm install uglifyjs-webpack-plugin
-   npm install babel-loader@7
-   npm install babel-core
-   npm install babel-preset-env
-
-After these are in place (you should only need to do this once), you
-should be able to use the command
-
-.. code-block:: shell
-
-   ../node_modules/mathjax-full/components/bin/makeAll
+   node ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``mml.min.js`` in the directory with the other files.  If
@@ -504,9 +501,9 @@ URL ``.``).  We use the ``custom`` prefix to specify
 ``[custom]/mml.min.js`` in the ``load`` array so that our extension
 will be loaded.
 
-Finally, we ad the ``mml`` extension to the ``packages`` array in the
-``tex`` block of our configuration via the special notation `{'[+]':
-[...]}` that tells MathJax to append the given array to the existing
+Finally, we add the ``mml`` extension to the ``packages`` array in the
+``tex`` block of our configuration via the special notation ``{'[+]':
+[...]}`` that tells MathJax to append the given array to the existing
 ``packages`` array that is already in the configuration by default.
 So this uses all the packages that were already specified, plus our
 new ``mml`` package that is defined in our extension.
@@ -580,8 +577,8 @@ is similar to one in the `MathJax3 demos
 repository.
 
 After downloading a copy of MathJax as described in the section on
-:ref:`obtain-mathjax`, create a directory called ``mathjax-speech``
-and cd into it.
+:ref:`getting-ready`, create a directory called ``mathjax-speech`` and
+``cd`` into it.
 
 
 The Custom Build File
@@ -604,7 +601,7 @@ the following:
    const AllPackages = require('mathjax-full/js/input/tex/AllPackages').AllPackages;         // all TeX packages
    const STATE       = require('mathjax-full/js/core/MathItem.js').STATE;
 
-   const sreReady    = require('mathjax-full/js/a11y/sre.js').sreReady;    // SRE promise;
+   const sreReady    = require('mathjax-full/js/a11y/sre.js').sreReady();    // SRE promise;
 
    //
    //  Register the HTML handler with the browser adaptor and add the semantic enrichment
@@ -612,19 +609,14 @@ the following:
    Enrich(Register(browser()), new MathML());
 
    //
-   //  Create the TeX input jax
-   //
-   const inputJax = new TeX({
-      packages: AllPackages,
-      macros: {require: ['', 1]}      // Make \require a no-op since all packages are loaded
-   });
-      
-   //
    //  Initialize mathjax with a blank DOM.
    //
    const html = MathJax.document('', {
       enrichSpeech: 'shallow',           // add speech to the enriched MathML
-      InputJax: tex
+      InputJax: new TeX({
+         packages: AllPackages.filter((name) => name !== 'bussproofs'),  // Bussproofs needs an output jax
+         macros: {require: ['', 1]}      // Make \require a no-op since all packages are loaded
+      })
    });
 
    //
@@ -638,7 +630,6 @@ the following:
    window.MathJax = {
       version: mathjax.version,
       html: html,
-      tex: inputJax,
       sreReady: sreReady,
 
       tex2speech(tex, display = true) {
@@ -656,7 +647,7 @@ the following:
    }
 
 Unlike the component-based example above, this custom build calls on
-the MathJax source files directly.  The ``import`` commands at the
+the MathJax source files directly.  The ``require`` commands at the
 beginning of the file load the needed objects, and the rest of the
 code instructs MathJax to create a ``MathDocument`` object for
 handling the conversions that we will be doing (using a TeX input
@@ -701,11 +692,14 @@ the first line here.
 Building the Custom File
 ------------------------
 
-Once these two files are ready, you should be able to use the command
+Once these two files are ready, you are ready to make your custom
+build.  First, make sure that you have obtained the needed tools as
+described in :ref:`getting-ready` above.  Then you should be able to
+use the command
 
 .. code-block:: shell
 
-   ../node_modules/mathjax-full/components/bin/makeAll
+   node ../node_modules/mathjax-full/components/bin/makeAll
 
 to process your custom build.  You should end up with a file
 ``mathjax-speech.min.js`` in the directory with the other files.  it
@@ -714,6 +708,7 @@ the :meth:`MathJax.tex2speech()` command defined in the file above.
 Note that this is not enough to do normal typesetting (for example, no
 output jax has been included), so this is a minimal file for producing
 the speech strings from TeX input.
+
 
 Using the File in a Web Page
 ----------------------------

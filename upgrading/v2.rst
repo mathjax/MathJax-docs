@@ -318,8 +318,8 @@ version-2 ``\color`` macro.
 
 The other incompatibility is that the names of some extensions have
 been changed in version 3.  For example, `AMScd` in version 2 is now
-`amsCd` in version 3.  This means that you need to use
-``\require{amsCd}`` rather than ``\require{AMScd}`` to load the `CD`
+`amscd` in version 3.  This means that you need to use
+``\require{amscd}`` rather than ``\require{AMScd}`` to load the `CD`
 environment.  In order to support existing content that uses
 ``\require``, you can use the code in the
 :ref:`v2-compatibility-example` section below.
@@ -338,7 +338,7 @@ Some other changes include:
 
 * The configuration options for controlling the format of equation
   numbers have been moved to an extension; see the
-  :ref:`tex-tagFormat` documentation for details.
+  :ref:`tex-tagformat` documentation for details.
 
 ..
 
@@ -619,24 +619,10 @@ and improved; see :ref:`accessibility` for details.
 
 Finally, the ``showMathMenu`` and ``showMathMenuMSIE`` options have
 been removed.  The need for separate handling of the menu in IE is no
-longer applicable, and you can control whether the menu is added or
-not by configuring the :ref:`renderActions <document-renderActions>`
-array.  For example
-
-.. code-block:: javascript
-
-   MathJax = {
-     options: {
-       renderActions: {
-         addMenu: [],
-         checkLoading: []
-       }
-     }
-   };
-
-would prevent the contextual menu from being attached to the typeset
-mathematics.
-
+longer applicable, and you control whether the contextual menu is
+attached to the typeset mathematics using the ``enableMenu`` property
+of the ``options`` block of the MathJax configuration (see
+the :ref:`menu-options` documentation).
 
 -----
 
@@ -694,7 +680,7 @@ that we provide.
        requireMap: {
          AMSmath: 'ams',
          AMSsymbols: 'ams',
-         AMScd: 'amsCd',
+         AMScd: 'amscd',
          HTML: 'html',
          noErrors: 'noerrors',
          noUndefined: 'noundefined'
@@ -729,7 +715,7 @@ that we provide.
      tex: {
        autoload: {
          color: [],          // don't autoload the color extension
-         colorV2: ['color'], // do autoload the colorV2 extension
+         colorv2: ['color'], // do autoload the colorv2 extension
        }
      }
    };

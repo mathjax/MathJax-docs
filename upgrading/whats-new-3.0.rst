@@ -189,8 +189,8 @@ TeX Input Extensions
 There are two new TeX input extensions: :ref:`tex-braket` and
 :ref:`tex-physics`.  Also, some functionality that was built into the TeX
 input jax in version 2 has been moved into extensions in version 3.
-This includes the :ref:`macros <tex-configMacros>` configuration
-option, the :ref:`tag formatting <tex-tagFormat>` configuration
+This includes the :ref:`macros <tex-configmacros>` configuration
+option, the :ref:`tag formatting <tex-tagformat>` configuration
 options, and the :ref:`require <tex-require>` macro.  The new
 :ref:`tex-autoload` extension replaces the older `autoload-all`
 extension, is more configurable, and is included in the TeX input
@@ -212,8 +212,8 @@ Improved Expression Explorer
 
 The interactive expression explorer has been improved in a number of
 ways.  It now includes better heuristics for creating the speech text
-for the expressions you explore, provides more keboard control of the
-features in play during your exploration, adds suppot for braille
+for the expressions you explore, provides more keyboard control of the
+features in play during your exploration, adds support for braille
 output, adds support for zooming on subexpressions, and more.  See the
 :ref:`accessibility` page for more details.
 

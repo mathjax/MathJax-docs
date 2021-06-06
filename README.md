@@ -3,10 +3,10 @@
 [![Documentation Status](https://readthedocs.org/projects/mathjax/badge/?version=latest)](https://docs.mathjax.org)
 
 
-## Beautiful math in all browsers.
+## Beautiful and accessible math in all browsers.
 
 MathJax is an open-source JavaScript display engine for LaTeX, MathML, and
-AsciiMath notation that works in all modern browsers.  It was designed with
+AsciiMath notation that works in all modern browsers, as well as server-side in node applications.  It was designed with
 the goal of consolidating the recent advances in web technologies into a
 single, definitive, math-on-the-web platform supporting the major browsers
 and operating systems.  It requires no setup on the part of the user (no
@@ -26,24 +26,24 @@ You can use the editor feature on github to simplify this.
 
 ## Community
 
-The main MathJax website is <http://www.mathjax.org>, and it includes
+The main MathJax website is <https://www.mathjax.org>, and it includes
 announcements and other important information.  MathJax is maintained and
-distributed on GitHub at <http://github.com/mathjax/MathJax>.  A user forum
+distributed on GitHub at <https://github.com/mathjax/MathJax>, and the source code is housed at <https://github.com/mathjax/MathJax-src>.  A user forum
 for asking questions and getting assistance is hosted at Google, and the
 bug tracker is hosted at GitHub:
 
 Bug tracker:         <https://github.com/mathjax/MathJax/issues>  
-MathJax-Users Group: <http://groups.google.com/group/mathjax-users>
+MathJax-Users Group: <https://groups.google.com/group/mathjax-users>
 
 Before reporting a bug, please check that it has not already been reported.
-Also, please use the bug tracker for reporting bugs rather than the help forum.
+Please use the bug tracker for reporting bugs rather than the help forum, and use the forum rather than the bug tracker for asking usage questions.
 
 
 ## License
 
 Just like MathJax, this documentation is license under Apache License, Version 2.0.
 
-> Copyright (c) 2009-2013 The MathJax Consortium
+> Copyright (c) 2009-2020 The MathJax Consortium
 >
 > Licensed under the Apache License, Version 2.0 (the "License");
 > you may not use this file except in compliance with the License.

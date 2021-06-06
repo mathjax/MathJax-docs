@@ -32,4 +32,58 @@ to the ``packages`` array of the ``tex`` block.
      tex: {packages: {'[+]': ['require']}}
    };
 
+Since the `require` extension is included in the combined
+components that contain the TeX input jax, it may already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['require']}}
+   };
+
+
+-----
+
+.. _tex-require-options:
+
+require Options
+---------------
+
+Adding the `require` extension to the ``packages`` array defines a
+``require`` sub-block of the ``tex`` configuration block with the
+following values:
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       require: {
+         allow: {
+           base: false,
+           'all-packages': false
+         },
+         defaultAllow: true
+      }
+    };
+
+.. _tex-require-allow:
+.. describe:: allow: {...}
+
+   This sub-object indicates which extensions can be loaded by
+   ``\require``.  The keys are the package names, and the value is
+   ``true`` to allow the extension to be loaded, and ``false`` to
+   disallow it.  If an extension is not in the list, the default value
+   is given by ``defaultAllow``, described below.
+
+.. _tex-require-defaultAllow:
+.. describe:: defaultAllow: true
+
+   This is the value used for any extensions that are requested, but
+   are not in the ``allow`` object described above.  If set to
+   ``true``, any extension not listed in ``allow`` will be allowed;
+   if ``false``, only the ones listed in ``allow`` (with value
+   ``true``) will be allowed.
+
 |-----|

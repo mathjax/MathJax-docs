@@ -16,7 +16,10 @@ In addition, there are examples for:
 * :ref:`Configuring and loading MathJax using one local file <config-loads-mathjax>`
 * :ref:`Synchronizing with MathJax using promises <typeset-async>`
 * :ref:`Reseting TeX equation numbering <tex-reset>`
+* :ref:`Updating previously typeset content <typeset-clear>`
+* :ref:`Looking up the math on the page <get-math-items>`
 * :ref:`Loading MathJax only on pages with math <load-for-math>`
+* :ref:`Automatic Section Numbering<tex-tagformat-section-numbers>`
 
 ..
 

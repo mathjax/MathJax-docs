@@ -52,7 +52,7 @@ your initial page loading as well.
 Mathematics is not rendering properly in IE. How do I fix that?
 ===============================================================
 
-Currently, MathJax version 3 only supports IE11, sop if you are using
+Currently, MathJax version 3 only supports IE11, so if you are using
 an earlier version, you will need to update your copy, or use a
 different browser.
 

@@ -12,6 +12,7 @@ from that of MathJax version 2.  Use the green menu at the bottom of
 the sidebar on the left to access the version 2 documentation if you
 need it.
 
+.. _toc-basics:
 .. toctree::
     :caption: The Basics
     :name: basics
@@ -23,6 +24,7 @@ need it.
     The MathJax Community             <basic/community>
     Reporting Issues with MathJax     <basic/bugs>
     
+.. _toc-mathjax-web:
 .. toctree::
    :caption: Including MathJax in a Web Page
    :name: browser-components
@@ -36,6 +38,7 @@ need it.
     Making a Custom Build of MathJax  <web/webpack>
     Examples in a Browser             <web/examples>
 
+.. _toc-mathjax-node:
 .. toctree::
    :caption: MathJax on a Server Using NodeJS
    :name: server-nodejs
@@ -45,6 +48,7 @@ need it.
    Three Ways to Use MathJax in Node  <server/overview>
    Examples in Node                   <server/examples>
 
+.. _toc-mathjax-input:
 .. toctree::
    :caption: MathJax Input
    :maxdepth: 1
@@ -53,6 +57,7 @@ need it.
    MathML Support                     <input/mathml>
    AsciiMath Support                  <input/asciimath>
    
+.. _toc-mathjax-output:
 .. toctree::
    :caption: MathJax Output
    :maxdepth: 2
@@ -63,6 +68,7 @@ need it.
    Font Support                       <output/fonts>
    Browser Support                    <output/browser>
 
+.. _toc-configuration-options:
 .. toctree::
     :caption: Configuration Options
     :name: configuration-options
@@ -70,6 +76,7 @@ need it.
 
     Configuring MathJax               <options/index>
 
+.. _toc-advanced-topics:
 .. toctree::
     :caption: Advanced topics
     :name: advanced-topics
@@ -80,6 +87,7 @@ need it.
     The MathJax Processing Model      <advanced/model>
     Synchronizing Your Code with MathJax <advanced/synchronize>
 
+.. _toc-mathjax-api:
 .. toctree::
     :caption: The MathJax API
     :name: api
@@ -87,6 +95,7 @@ need it.
 
     Using the MathJax API             <api/index>
 
+.. _toc-miscellaneous:
 .. toctree::
     :caption: Miscellaneous
     :name: miscellaneous
@@ -96,6 +105,7 @@ need it.
     MathJax Badges and Logo           <misc/badges>
     Articles and Presentations        <misc/articles>
 
+.. _toc-mathjax-updates:
 .. toctree::
     :caption: MathJax Updates
     :name: mathjax-updates

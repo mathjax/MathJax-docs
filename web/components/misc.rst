@@ -8,6 +8,7 @@ There are several miscellaneous components that don't fit into other
 categories.  These are:
 
 * :ref:`startup-component`
+* :ref:`safe-component`
 * :ref:`menu-component`
 * :ref:`litedom-component`
 * :ref:`core-component`
@@ -42,6 +43,27 @@ described in the :ref:`web-typeset` section.
 
 See the :ref:`startup-options` section for information about
 configuring this component.
+
+-----
+
+
+.. _safe-component:
+
+ui/safe
+=======
+
+The `ui/safe` component is intended for use in situations where your
+readers will be allowed to enter mathematical notation into your pages
+themselves, such as a question-and-answer site, or a blog with user
+comments.  It filters the mathematics on the page to make sure that
+certain values within the mathematics are not misused by the reader to
+cause problems on your page.  For example, the ``\href`` macro
+normally could be used to insert ``javascript:`` URLs into the page;
+the `ui/safe` extension can be used to prevent that.
+
+See the :ref:`safe-options` section for more information on what is
+filtered and how to control the level of filtering being performed.
+See :ref:`safe-typesetting` for additional details.
 
 -----
 

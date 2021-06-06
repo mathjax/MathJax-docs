@@ -79,7 +79,7 @@ calls.  For example,
    let promise = Promise.resolve();  // Used to hold chain of typesetting calls
 
    function typeset(code) {
-     promise = promise.then(() => {code(); return MathJax.typesetPromise()})
+     promise = promise.then(() => MathJax.typesetPromise(code()))
                       .catch((err) => console.log('Typeset failed: ' + err.message));
      return promise;
    }
@@ -120,7 +120,7 @@ I.e., simply use
 
    function typeset(code) {
      MathJax.startup.promise = MathJax.startup.promise
-       .then(() => {code(); return MathJax.typesetPromise()})
+       .then(() => MathJax.typesetPromise(code()))
        .catch((err) => console.log('Typeset failed: ' + err.message));
      return MathJax.startup.promise;
    }
@@ -144,9 +144,61 @@ You can reset equation numbering using the command
 
 where ``start`` is the number at which to start equation numbering.
 
-If you have inserted new content, that may require the entire page to
-be reprocessed in order to get the automatic numbering, labels, and
-references to be correct.  In that case, you can do
+
+.. _typeset-clear:
+
+Updating Previously Typeset Content
+-----------------------------------
+
+MathJax keeps track of all the math that it has typeset within your
+page.  This is so that if you change the output renderer (using the
+MathJax contextual menu), it can be changed to use the new format, for
+example; or if you change the accessibility settings, say to enable
+the expression explorer, all the math can be updated to incldue the
+speech strings that it uses.  If you modify the page to include new
+mathematics and call :meth:`MathJax.typeset()` or
+:meth:`MathJax.typesetPromise()`, the newly typeset mathematics will be
+added to the list of already typeset mathematics, as you would expect.
+
+If you modify the page to remove content that contains typeset
+mathematics, you will need to tell MathJax about that so that it knows
+the typeset math that you are removed is no longer on the page.  You
+do this by using the :meth:`MathJax.typesetClear()` method.
+
+When called with no arguments, :meth:`MathJax.typesetClear()` tells
+MathJax to forget about all the math that has been typeset so far.
+Note that the math will remain in the page as typeset math, but
+MathJax will no longer know anything about it.  For example, that
+means that changes to the output renderer or accessibility setting
+swill not affect any of the math that was typeset previously.
+
+If you remove math from only a portion of the page, you can call
+:meth:`MathJax.typesetClear()` passing it an array of container
+elements that have been (or will be) removed, and MathJax will forget
+about the math that is within those containiers, while remembering the
+rest of the math on the page.  For example, if you have an element
+with ``id="has-math"`` that you have perviously typeset, and you are
+planning to replace the contents of this element with new content
+(stored in a variable ``new_html``) that needs to be typeset, you
+might use soemthing like:
+
+.. code-block:: javascript
+
+   const node = document.getElementById('has-math');
+   MathJax.typesetClear([node]);
+   node.innerHTML = new_html;
+   MathJax.typesetPromise([node]).then(() => {
+     // the new content is has been typeset
+   });
+
+The argument passed to :meth:`MathJax.typestClear()` can be an actual
+DOM element, as in the example above, or a CSS selector string (e.g.,
+``'#has-math'``), or an array of these.  The selector can specify more
+than one container element (e.g., via a class selector).
+
+If you are using automatic equation numbers and insert new content in
+the middle of the page, that may require the equation numbers to be
+adjusted throughout the page.  In that case, you can do
 
 .. code-block:: javascript
 
@@ -155,8 +207,68 @@ references to be correct.  In that case, you can do
    MathJax.typeset();
 
 to force MathJax to reset the page to the state it was before MathJax
-processed it, reset the TeX automatic line numbering and labels, and
-then re-typeset the contents of the page from scratch.
+processed it (i.e., remove its typeset math), reset the TeX automatic
+line numbering and labels, and then re-typeset the contents of the
+page from scratch.
+
+
+.. _get-math-items:
+
+Looking up the Math on the Page
+-------------------------------
+
+MathJax saves its information about a particular expression that it
+has typeset in an object called a ``MathItem``; each typeset
+expression has an associated MathItem.  You can look up the MathItems
+using the :meth:`MathJax.startup.document.getMathItemsWithin()`
+function.  You pass this a container element (or a CSS selector for an
+element or collection of elements, or an array of containers or
+selectors) and it will return an array of the MathItems that are
+within those containsers.  E.g.,
+
+.. code-block:: javascript
+
+   MathJax.startup.document.getMathItemsWithin(document.body);
+
+will return an array of all the MathItems for the typeset math on the
+page.  See the `MathItem definition
+<https://github.com/mathjax/MathJax-src/blob/master/ts/core/MathItem.ts>`__
+for details on the contents of the MathItem structure.  The MathItem
+is the v3 replacement for the v2 `ElementJax` object, and
+:meth:`getMathItemsWithin()` performs a
+similar function to the v2 function :meth:`MathJax.Hub.getAllJax()`.
+
+
+.. _safe-typesetting:
+
+Typesetting User-Supplied Content
+---------------------------------
+
+Mathematics formats like LaTeX and MathML allow a powerful range of
+layout options, including access to hyperlinks, CSS styles, font
+selection and sizing, spacing, and so on.  Such features give you a
+great deal of flexibility in producing the mathematics for your pages,
+but if your readers are allowed to enter mathematics into you pages
+(e.g., for a question-and-answer site, or in comments on a blog),
+these features can be abused to cause problems for other readers and
+pose a potential security risk to them.  For example, the TeX
+``\href`` command can be used to insert ``javascript:`` links into the
+page, while the ``\style`` macro could be used to disrupt the user
+interface or layout of your pages.
+
+In order to limit the potential interference that could be caused by
+the mathematics entered by your readers, MathJax provides the
+`ui/safe` extension.  This extension filters the mathematics on the
+page in order to try to remove problematic attributes, like javascript
+links, or font sizes that are too large or too small, or style
+settings that would be disruptive to the page layout.  If your page
+allows your readers to post content that includes mathematics
+processed by MathJax, you should strongly consider using the
+`ui/safe` extension.
+
+See the :ref:`safe-options` section for details of how to load and
+configure the `ui/safe` extension.
+
 
 
 .. _load-for-math:

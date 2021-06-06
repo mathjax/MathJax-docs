@@ -11,15 +11,16 @@ The main extensions are described below:
 
    action
    ams
-   amsCd
+   amscd
    autoload
    bbox
    boldsymbol
    braket
+   bussproofs
    cancel
    color
-   colorV2
-   configMacros
+   colorv2
+   configmacros
    enclose
    extpfeil
    html
@@ -29,7 +30,8 @@ The main extensions are described below:
    noundefined
    physics
    require
-   tagFormat
+   tagformat
+   textmacros
    unicode
    verb
 

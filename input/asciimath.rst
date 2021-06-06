@@ -128,7 +128,7 @@ that you have to be careful about things like less-than and
 greater-than signs (``<`` and ``>``), and ampersands (``&``), which
 have special meaning to web browsers.  For example,
 
-.. code:: html
+.. code:: latex
 
 	... when `x<y` we have ...
 
@@ -146,7 +146,7 @@ avoided.
 Usually, it is sufficient simply to put spaces around these symbols to
 cause the browser to avoid them, so
 
-.. code:: html
+.. code:: latex
 
 	... when `x < y` we have ...
 

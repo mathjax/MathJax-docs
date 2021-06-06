@@ -11,6 +11,8 @@ See the `MathJax node demos
 examples of how to use MathJax from a `node` application.  These are
 categorized into three groups
 
+* `Examples using MathJax components the simple way
+  <https://github.com/mathjax/MathJax-demos-node/tree/master/simple#simple-component-examples>`__
 * `Examples using MathJax components via the startup module
   <https://github.com/mathjax/MathJax-demos-node/tree/master/component#component-based-examples>`__
 * `Examples using MathJax components loaded by hand

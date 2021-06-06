@@ -39,7 +39,7 @@ Since browsers do not provide APIs to access font metrics, MathJax has
 to ship with the necessary font data; this font data is generated
 during development and cannot be determined easily on the fly.  The
 tools for creating the data needed by MathJax have not yet been
-created for version 3 (the data for the MatahJax TeX font was
+created for version 3 (the data for the MathJax TeX font was
 converted from the version 2 format by hand).  These tools are high on
 the list for inclusion in the next version of MathJax, which should
 provide the additional fonts missing from the initial release of

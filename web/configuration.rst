@@ -301,10 +301,10 @@ components.  For example
    <script>
    MathJax = {
      loader: {
-       load: ['[tex]/colorV2']
+       load: ['[tex]/colorv2']
      },
      tex: {
-       packages: {'[+]': 'colorV2'},
+       packages: {'[+]': 'colorv2'},
        autoload: {color: []}
      }
    };
@@ -358,6 +358,18 @@ actions instead, such as delaying the initial typesetting while other
 content is loaded dynamically, for example.  The :func:`ready()`
 function sets up the call to :func:`pageReady()` as part of its
 default action.
+
+The return value of :func:`pageReady()` is a promise that is resolved
+when the initial typesetting is finished (it is the return value of
+the initial :meth:`MathJax.typesetPromise()` call).  If you override
+the :func:`pageReady()` method, your function should return a promise
+as well.  If your function calls
+:meth:`MathJax.startup.defaultPageReady()`, then you should return the
+promise that it returns (or a promise obtained from its :func:`then()`
+or :func:`catch()` methods).  The :attr:`MathJax.startup.promise` will
+resolve when the promise you return is resolved; if you don't return a
+promise, :attr:`MathJax.startup.promise` will resolve immediately,
+which may mean that it resolves too early.
 
 Using these two functions separately or in combination gives you full
 control over the actions that MathJax takes when it starts up, and
@@ -436,6 +448,26 @@ performed after the initial typesetting is complete.
      }
    };
 
+As an alternative, you can override the :func:`pageReady()` function,
+and use the promise returned from the
+:meth:`MathJax.startup.defaultPageReady()` function:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     startup: {
+       pageReady: () => {
+         return MathJax.startup.defaultPageReady().then(() => {
+           console.log('MathJax initial typesetting complete');
+         });
+       }
+     }
+   };
+
+Be sure that you return the promise that you obtain from
+:func:`then()` method, otherwise :attr:`MathJax.startup.promise` will
+resolve before the initial typesetting (and your code) has been
+performed.
 
 -----
 

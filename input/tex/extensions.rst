@@ -46,8 +46,8 @@ enable it.
 A number of extensions are already loaded and configured in the
 components that contain the TeX extension.  The ``input/tex``, and the
 combined components containing ``tex`` and not ending in ``-full``
-include the ``ams``, ``newcommand``, ``noUndefined``, ``require``,
-``autoload``, and ``configMacros`` extensions, with the other
+include the ``ams``, ``newcommand``, ``noundefined``, ``require``,
+``autoload``, and ``configmacros`` extensions, with the other
 extensions being autoloaded as needed.  The ``input/tex-base``
 component has no extensions loaded, while the ``input/tex-full`` and
 the combined extensions ending in ``-full`` load all the extensions.
@@ -112,8 +112,9 @@ for that extension.  For example,
 
 would set the padding for ``\colorbox`` to be 5 pixels.
 
-See the :ref:`configuration` section for details about the options for
-each of the extensions below.
+See the :ref:`configuring-mathjax` section for details about how to
+configure MathJax in general, and :ref:`tex-extension-options` for the
+options for individual extensions.
 
 For extensions that are not loaded explicitly but may be loaded via
 the `autoload` package or the ``\require`` macro, you can't include

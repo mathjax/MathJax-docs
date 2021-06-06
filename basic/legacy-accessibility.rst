@@ -240,7 +240,7 @@ Notes on Apple VoiceOver
 
 
 Notes on MathPlayer 4 and Internet Explorer 11
-----------------------------------------------
+==============================================
 
 Design Science suggests that you always use IE's Enterprise mode for
 MathPlayer in IE11, `see their documentation

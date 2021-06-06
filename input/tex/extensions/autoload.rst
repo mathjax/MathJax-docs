@@ -72,9 +72,105 @@ says that the `verb` extension will not be autoloaded.
         tex: {
           autoload: {
             color: [],
-            colorV2: ['color']
+            colorv2: ['color']
           }
         }
       };
+
+
+This extension is already loaded in all the components that
+include the TeX input jax, other than ``input/tex-base``.  To load the
+`autoload` extension explicitly (when using ``input/tex-base`` for
+example), add ``'[tex]/autoload'`` to the ``load`` array of the
+``loader`` block of your MathJax configuration, and add
+``'autoload'`` to the ``packages`` array of the ``tex`` block.
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     loader: {load: ['[tex]/autoload']},
+     tex: {packages: {'[+]': ['autoload']}}
+   };
+
+Since the `autoload` extension is included in the combined
+components that contain the TeX input jax, it will already be in
+the package list.  In that case, if you want to disable it, you can
+remove it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['autload']}}
+   };
+
+-----
+
+.. _tex-autoload-options:
+
+autoload Options
+----------------
+
+Adding the `autoload` extension to the ``packages`` array defines an
+``autoload`` sub-block to the ``tex`` configuration block.  This block
+contains `key: value` pairs where the `key` is a TeX package name, and
+the `value` is an array of macros that cause that package to be loaded,
+or an array consisting of two arrays, the first giving names of macros
+and the second names of environments; the first time any of them are
+used, the extension will be loaded automatically.
+
+The default autoload definitions are the following:
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       autoload: expandable({
+         action: ['toggle', 'mathtip', 'texttip'],
+         amscd: [[], ['CD']],
+         bbox: ['bbox'],
+         boldsymbol: ['boldsymbol'],
+         braket: ['bra', 'ket', 'braket', 'set', 'Bra', 'Ket', 'Braket', 'Set', 'ketbra', 'Ketbra'],
+         cancel: ['cancel', 'bcancel', 'xcancel', 'cancelto'],
+         color: ['color', 'definecolor', 'textcolor', 'colorbox', 'fcolorbox'],
+         enclose: ['enclose'],
+         extpfeil: ['xtwoheadrightarrow', 'xtwoheadleftarrow', 'xmapsto',
+                    'xlongequal', 'xtofrom', 'Newextarrow'],
+         html: ['href', 'class', 'style', 'cssId'],
+         mhchem: ['ce', 'pu'],
+         newcommand: ['newcommand', 'renewcommand', 'newenvironment', 'renewenvironment', 'def', 'let'],
+         unicode: ['unicode'],
+         verb: ['verb']
+       }
+     }
+   };
+
+To prevent an extension from autoloading, set its value to an empty
+array.  E.g., to not autoload the `color` extension, use
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       autoload: expandable({
+         color: []
+       }
+     }
+   };
+
+If you define your own extensions, and they have a prefix other than
+``[tex]``, then include that in the extension name.  For instance,
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       autoload: expandable({
+         '[extensions]/myExtension' : ['myMacro', 'myOtherMacro']
+       }
+     }
+   };
+
+See the :ref:`loader-options` section for details about how to define
+your own prefixes, like the ``[extensions]`` prefix used here.
 
 |-----|

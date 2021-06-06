@@ -45,34 +45,41 @@ example that does so for TeX input to MathML output.
      //
      //  When page is ready, render the math in the document
      //
-     startup: {pageReady: () => MathJax.startup.document.render()},
+     //
+     //  When page is ready:
+     //    disable the assistive-mathml menu item
+     //    render the document, handling require and autoload calls
+     //
+     startup: {
+       pageReady() {
+         MathJax.startup.document.menu.menu.findID('Accessibility', 'AssistiveMml').disable();
+         MathJax._.mathjax.mathjax.handleRetriesFor(() => MathJax.startup.document.render());
+       }
+     },
      //
      //  Override the usual typeset render action with one that generates MathML output
      //
      options: {
        renderActions: {
+         assistiveMml: [],  // disable assistive mathml
          typeset: [150,
-           //
-           //  The function for rendering a document's math elements
-           //
-           (doc) => {
-             const toMML = MathJax.startup.toMML;
-             for (math of doc.math) {
-               math.typesetRoot = document.createElement('mjx-container');
-               math.typesetRoot.innerHTML = toMML(math.root);
-               math.display && math.typesetRoot.setAttribute('display', 'block');
-             }
-           },
-           //
-           //  The function for rendering a single math expression
-           //
-           (math, doc) => {
-             math.typesetRoot = document.createElement('mjx-container');
-             math.typesetRoot.innerHTML = MathJax.startup.toMML(math.root);
-             math.display && math.typesetRoot.setAttribute('display', 'block');
-           }
+           (doc) => {for (math of doc.math) {MathJax.config.renderMathML(math, doc)}},
+           (math, doc) => MathJax.config.renderMathML(math, doc)
          ]
+       },
+       menuOptions: {
+         settings: {
+           assistiveMml: false
+         }
        }
+     },
+     //
+     // The action to use for rendering MathML
+     //
+     renderMathML(math, doc) {
+       math.typesetRoot = document.createElement('mjx-container');
+       math.typesetRoot.innerHTML = MathJax.startup.toMML(math.root);
+       math.display && math.typesetRoot.setAttribute('display', 'block');
      }
    };
    </script>
@@ -92,6 +99,17 @@ the container and its MathML contents into the DOM at the proper
 location.  For math that is in display style, the container is marked
 with an attribute so that CSS can be used to make the container be a
 block-level element with some top and bottom margin.
+
+The example also takes several steps to disable the Assistive MathML
+extension that inserts hidden MathML for the usual output renders.
+This is unneeded since we are generating MathML ourselves as the
+primary output.  Setting the :attr:`menuOptions.settings.assistiveMml`
+option to ``false`` turns off the assistive MathML in the contextual
+menu. The :func:`pageReady()` function also includes a line that
+disables the assistive-MathML item in the menu, so user's can't
+accidentaly turn it on again.  Finally, the `assistiveMml` render
+action is disabled, since it will never be activated (overkill
+perhaps, but no need to run the usual code for nothing).
 
 .. note::
 
