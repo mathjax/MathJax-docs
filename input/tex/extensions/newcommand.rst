@@ -49,4 +49,18 @@ remove it:
      tex: {packages: {'[-]': ['newcommand']}}
    };
 
+
+-----
+
+
+.. _tex-newcommand-commands:
+
+
+newcommand Commands
+-------------------
+
+The `newcommand` extension implementes the following macros:
+``\def``, ``\let``, ``\newcommand``, ``\newenvironment``, ``\renewcommand``, ``\renewenvironment``
+
+
 |-----|

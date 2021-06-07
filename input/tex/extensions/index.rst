@@ -18,11 +18,14 @@ The main extensions are described below:
    braket
    bussproofs
    cancel
+   centernot
    color
+   colortbl
    colorv2
    configmacros
    enclose
    extpfeil
+   gensymb
    html
    mhchem
    newcommand
@@ -33,6 +36,7 @@ The main extensions are described below:
    tagformat
    textmacros
    unicode
+   upgreek
    verb
 
 These extensions have not yet been ported to version 3:

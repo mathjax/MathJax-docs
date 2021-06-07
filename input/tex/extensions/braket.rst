@@ -44,4 +44,17 @@ Alternatively, use ``\require{braket}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-braket-commands:
+
+
+braket Commands
+---------------
+
+The `braket` extension implementes the following macros:
+``\|``, ``\bra``, ``\Bra``, ``\braket``, ``\Braket``, ``\ket``, ``\Ket``, ``\ketbra``, ``\Ketbra``, ``\set``, ``\Set``, ``|``
+
+
 |-----|

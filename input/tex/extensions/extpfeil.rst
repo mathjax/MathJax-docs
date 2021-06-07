@@ -47,4 +47,17 @@ Alternatively, use ``\require{extpfeil}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-extpfeil-commands:
+
+
+extpfeil Commands
+-----------------
+
+The `extpfeil` extension implementes the following macros:
+``\Newextarrow``, ``\xlongequal``, ``\xmapsto``, ``\xtofrom``, ``\xtwoheadleftarrow``, ``\xtwoheadrightarrow``
+
+
 |-----|

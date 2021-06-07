@@ -86,4 +86,20 @@ following values:
    look of the diagram.)
 
 
+-----
+
+
+.. _tex-amscd-commands:
+
+
+amscd Commands
+--------------
+
+The `amscd` extension implementes the following macros:
+``@``, ``\minCDarrowheight``, ``\minCDarrowwidth``
+
+And the following environments:
+``CD``
+
+
 |-----|

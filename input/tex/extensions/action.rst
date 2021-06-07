@@ -37,4 +37,17 @@ Alternatively, use ``\require{action}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 package is loaded.
 
+-----
+
+
+.. _tex-action-commands:
+
+
+action Commands
+---------------
+
+The `action` extension implementes the following macros:
+``\mathtip``, ``\texttip``, ``\toggle``
+
+
 |-----|

@@ -86,4 +86,15 @@ following values:
    if ``false``, only the ones listed in ``allow`` (with value
    ``true``) will be allowed.
 
+-----
+
+
+.. _tex-require-commands:
+
+
+require Commands
+----------------
+
+The `require` extension implementes the following macros: ``\require``
+
 |-----|
