@@ -27,6 +27,10 @@ MathJax implement some of the `colortbl` commands differently:
    of a ``\columncolor`` is used in the arguments of the tabular environment, it
    will be ignored.
 
+   In addition overhand arguments are currently not handled. That is MathJax
+   ignores up to two optional bracketed arguments after the mandatory color
+   argument.
+
 .. describe:: \cellcolor[model]{color}
 
    Allows to color a single cell. It can be used anywhere in the cell to color.
