@@ -4,11 +4,11 @@
 centernot
 #########
 
-The `centernot` extension partially implements the ``centernot`` style package
-from LaTeX. It provides the ``\centernot`` command which can be used as a
-replacement of the standard ``\not`` command and generally leads to a better
-alignment of the slash with the operator it negates. This can be observed with
-the following two examples:
+The `centernot` extension implements the ``centernot`` style package from
+LaTeX. It provides the ``\centernot`` command which can be used as a replacement
+of the standard ``\not`` command and generally leads to a better alignment of
+the slash with the operator it negates. This can be observed with the following
+two examples:
 
 .. code-block:: latex
 
@@ -28,7 +28,6 @@ the following two examples:
 
 See also the `CTAN page <https://www.ctan.org/pkg/centernot>`__ for more
 information and documentation of `centernot`.
-
 
 
 
