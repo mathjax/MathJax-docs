@@ -162,25 +162,25 @@ added to the list of already typeset mathematics, as you would expect.
 
 If you modify the page to remove content that contains typeset
 mathematics, you will need to tell MathJax about that so that it knows
-the typeset math that you are removed is no longer on the page.  You
+the typeset math that you are removing is no longer on the page.  You
 do this by using the :meth:`MathJax.typesetClear()` method.
 
 When called with no arguments, :meth:`MathJax.typesetClear()` tells
 MathJax to forget about all the math that has been typeset so far.
 Note that the math will remain in the page as typeset math, but
 MathJax will no longer know anything about it.  For example, that
-means that changes to the output renderer or accessibility setting
-swill not affect any of the math that was typeset previously.
+means that changes to the output renderer or accessibility settings
+will not affect any of the math that was typeset previously.
 
 If you remove math from only a portion of the page, you can call
 :meth:`MathJax.typesetClear()` passing it an array of container
 elements that have been (or will be) removed, and MathJax will forget
-about the math that is within those containiers, while remembering the
+about the math that is within those containers, while remembering the
 rest of the math on the page.  For example, if you have an element
-with ``id="has-math"`` that you have perviously typeset, and you are
+with ``id="has-math"`` that you have previously typeset, and you are
 planning to replace the contents of this element with new content
 (stored in a variable ``new_html``) that needs to be typeset, you
-might use soemthing like:
+might use something like:
 
 .. code-block:: javascript
 
@@ -224,7 +224,7 @@ using the :meth:`MathJax.startup.document.getMathItemsWithin()`
 function.  You pass this a container element (or a CSS selector for an
 element or collection of elements, or an array of containers or
 selectors) and it will return an array of the MathItems that are
-within those containsers.  E.g.,
+within those containers.  E.g.,
 
 .. code-block:: javascript
 
@@ -248,7 +248,7 @@ Mathematics formats like LaTeX and MathML allow a powerful range of
 layout options, including access to hyperlinks, CSS styles, font
 selection and sizing, spacing, and so on.  Such features give you a
 great deal of flexibility in producing the mathematics for your pages,
-but if your readers are allowed to enter mathematics into you pages
+but if your readers are allowed to enter mathematics into your pages
 (e.g., for a question-and-answer site, or in comments on a blog),
 these features can be abused to cause problems for other readers and
 pose a potential security risk to them.  For example, the TeX
@@ -456,7 +456,7 @@ do something like
    let html = MathJax.tex2svg('\\sqrt{x^2+1}', options);
    node.appendChild(html);
 
-in order to get get the correct metrics for the (eventual) location of
+in order to get the correct metrics for the (eventual) location of
 the math that is being converted.  Of course, it would be easier to
 simply insert the TeX code into the page and use
 :meth:`MathJax.typeset()` to typeset it, but this is just an example
