@@ -4,6 +4,14 @@
 gensymb
 #######
 
+The `gensymb` extension implements the ``gensymb`` style package from LaTeX. It
+provides a number of macros for unit notation.  See the `CTAN page
+<https://www.ctan.org/pkg/gensymb>`__ for more information and documentation of
+`gensymb`.
+
+Note that not all the characters for this package are yet included in the
+MathJax fonts so output might vary on clients.
+
 .. code-block:: javascript
 
    window.MathJax = {
