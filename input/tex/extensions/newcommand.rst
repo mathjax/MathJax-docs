@@ -59,7 +59,7 @@ remove it:
 newcommand Commands
 -------------------
 
-The `newcommand` extension implementes the following macros:
+The `newcommand` extension implements the following macros:
 ``\def``, ``\let``, ``\newcommand``, ``\newenvironment``, ``\renewcommand``, ``\renewenvironment``
 
 

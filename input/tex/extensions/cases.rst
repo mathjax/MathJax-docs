@@ -5,7 +5,7 @@ cases
 #####
 
 
-The `cases` extension implements the ``upgreek`` style package from LaTeX.
+The `cases` extension implements the ``cases`` style package from LaTeX.
 **...Explanation...**
 See the `CTAN page <https://www.ctan.org/pkg/cases>`__
 for more information and documentation of `cases`.
@@ -37,7 +37,7 @@ extension is loaded.
 cases Commands
 --------------
 
-The `cases` extension implementes the following macros:
+The `cases` extension implements the following macros:
 ``&``
 
 And the following environments:

@@ -55,7 +55,7 @@ extension is loaded.
 bbox Commands
 -------------
 
-The `bbox` extension implementes the following macros:
+The `bbox` extension implements the following macros:
 ``\bbox``
 
 

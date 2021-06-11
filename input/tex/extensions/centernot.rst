@@ -53,7 +53,7 @@ extension is loaded.
 centernot Commands
 ------------------
 
-The `centernot` extension implementes the following macros:
+The `centernot` extension implements the following macros:
 ``\centernot``, ``\centerOver``
 
 

@@ -46,7 +46,7 @@ package is loaded.
 action Commands
 ---------------
 
-The `action` extension implementes the following macros:
+The `action` extension implements the following macros:
 ``\mathtip``, ``\texttip``, ``\toggle``
 
 

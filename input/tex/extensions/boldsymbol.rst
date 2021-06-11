@@ -34,7 +34,7 @@ extension is loaded.
 boldsymbol Commands
 -------------------
 
-The `boldsymbol` extension implementes the following macros:
+The `boldsymbol` extension implements the following macros:
 ``\boldsymbol``
 
 

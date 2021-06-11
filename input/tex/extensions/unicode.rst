@@ -64,7 +64,7 @@ extension is loaded.
 unicode Commands
 ----------------
 
-The `unicode` extension implementes the following macros:
+The `unicode` extension implements the following macros:
 ``\unicode``
 
 

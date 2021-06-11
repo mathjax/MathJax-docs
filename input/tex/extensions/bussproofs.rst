@@ -74,7 +74,7 @@ extension is loaded.
 bussproofs Commands
 -------------------
 
-The `bussproofs` extension implementes the following macros:
+The `bussproofs` extension implements the following macros:
 ``\alwaysDashedLine``, ``\alwaysNoLine``, ``\alwaysRootAtBottom``, ``\alwaysRootAtTop``, ``\alwaysSingleLine``, ``\alwaysSolidLine``, ``\AXC``, ``\Axiom``, ``\AxiomC``, ``\BIC``, ``\BinaryInf``, ``\BinaryInfC``, ``\dashedLine``, ``\fCenter``, ``\LeftLabel``, ``\LL``, ``\noLine``, ``\QuaternaryInf``, ``\QuaternaryInfC``, ``\QuinaryInf``, ``\QuinaryInfC``, ``\RightLabel``, ``\RL``, ``\rootAtBottom``, ``\rootAtTop``, ``\singleLine``, ``\solidLine``, ``\TIC``, ``\TrinaryInf``, ``\TrinaryInfC``, ``\UIC``, ``\UnaryInf``, ``\UnaryInfC``
 
 And the following environments:

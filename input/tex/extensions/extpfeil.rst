@@ -56,7 +56,7 @@ extension is loaded.
 extpfeil Commands
 -----------------
 
-The `extpfeil` extension implementes the following macros:
+The `extpfeil` extension implements the following macros:
 ``\Newextarrow``, ``\xlongequal``, ``\xmapsto``, ``\xtofrom``, ``\xtwoheadleftarrow``, ``\xtwoheadrightarrow``
 
 

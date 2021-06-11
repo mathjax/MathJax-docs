@@ -5,7 +5,7 @@ empheq
 ######
 
 
-The `empheq` extension implements the ``upgreek`` style package from LaTeX.
+The `empheq` extension implements the ``empheq`` style package from LaTeX.
 **...Explanation...**
 See the `CTAN page <https://www.ctan.org/pkg/empheq>`__
 for more information and documentation of `empheq`.
@@ -37,7 +37,7 @@ extension is loaded.
 empheq Commands
 ---------------
 
-The `empheq` extension implementes the following macros:
+The `empheq` extension implements the following macros:
 ``\empheqbigl``, ``\empheqbiglangle``, ``\empheqbiglbrace``, ``\empheqbiglbrack``, ``\empheqbiglceil``, ``\empheqbiglfloor``, ``\empheqbiglparen``, ``\empheqbiglvert``, ``\empheqbiglVert``, ``\empheqbigr``, ``\empheqbigrangle``, ``\empheqbigrbrace``, ``\empheqbigrbrack``, ``\empheqbigrceil``, ``\empheqbigrfloor``, ``\empheqbigrparen``, ``\empheqbigrvert``, ``\empheqbigrVert``, ``\empheql``, ``\empheqlangle``, ``\empheqlbrace``, ``\empheqlbrack``, ``\empheqlceil``, ``\empheqlfloor``, ``\empheqlparen``, ``\empheqlvert``, ``\empheqlVert``, ``\empheqr``, ``\empheqrangle``, ``\empheqrbrace``, ``\empheqrbrack``, ``\empheqrceil``, ``\empheqrfloor``, ``\empheqrparen``, ``\empheqrvert``, ``\empheqrVert``
 
 And the following environments:

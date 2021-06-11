@@ -34,7 +34,7 @@ extension is loaded.
 gensymb Commands
 ----------------
 
-The `gensymb` extension implementes the following macros:
+The `gensymb` extension implements the following macros:
 ``\celsius``, ``\degree``, ``\micro``, ``\ohm``, ``\perthousand``
 
 

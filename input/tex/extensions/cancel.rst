@@ -48,7 +48,7 @@ extension is loaded.
 cancel Commands
 ---------------
 
-The `cancel` extension implementes the following macros:
+The `cancel` extension implements the following macros:
 ``\bcancel``, ``\cancel``, ``\cancelto``, ``\xcancel``
 
 

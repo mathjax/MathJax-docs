@@ -53,7 +53,7 @@ extension is loaded.
 braket Commands
 ---------------
 
-The `braket` extension implementes the following macros:
+The `braket` extension implements the following macros:
 ``\|``, ``\bra``, ``\Bra``, ``\braket``, ``\Braket``, ``\ket``, ``\Ket``, ``\ketbra``, ``\Ketbra``, ``\set``, ``\Set``, ``|``
 
 

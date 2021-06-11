@@ -95,7 +95,7 @@ following values:
 amscd Commands
 --------------
 
-The `amscd` extension implementes the following macros:
+The `amscd` extension implements the following macros:
 ``@``, ``\minCDarrowheight``, ``\minCDarrowwidth``
 
 And the following environments:

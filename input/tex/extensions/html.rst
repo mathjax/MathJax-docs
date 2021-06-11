@@ -80,7 +80,7 @@ extension is loaded.
 html Commands
 -------------
 
-The `html` extension implementes the following macros:
+The `html` extension implements the following macros:
 ``\class``, ``\cssId``, ``\href``, ``\style``
 
 

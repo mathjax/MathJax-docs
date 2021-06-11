@@ -94,7 +94,7 @@ following values:
 color Commands
 --------------
 
-The `color` extension implementes the following macros:
+The `color` extension implements the following macros:
 ``\color``, ``\colorbox``, ``\definecolor``, ``\fcolorbox``, ``\textcolor``
 
 

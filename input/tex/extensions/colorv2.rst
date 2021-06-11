@@ -53,7 +53,7 @@ Alternatively, you can configure the `autoload` package to load
 colorv2 Commands
 ----------------
 
-The `colorv2` extension implementes the following macros:
+The `colorv2` extension implements the following macros:
 ``\color``
 
 

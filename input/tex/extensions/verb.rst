@@ -54,7 +54,7 @@ extension is loaded.
 verb Commands
 -------------
 
-The `verb` extension implementes the following macros:
+The `verb` extension implements the following macros:
 ``\verb``
 
 

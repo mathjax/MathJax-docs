@@ -18,15 +18,18 @@ The main extensions are described below:
    braket
    bussproofs
    cancel
+   cases
    centernot
    color
    colortbl
    colorv2
    configmacros
+   empheq
    enclose
    extpfeil
    gensymb
    html
+   mathtools
    mhchem
    newcommand
    noerrors
@@ -34,6 +37,7 @@ The main extensions are described below:
    physics
    require
    tagformat
+   textcomp
    textmacros
    unicode
    upgreek

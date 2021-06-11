@@ -51,7 +51,7 @@ extension is loaded.
 mhchem Commands
 ---------------
 
-The `mhchem` extension implementes the following macros:
+The `mhchem` extension implements the following macros:
 ``\ce``, ``\longleftrightarrows``, ``\longLeftrightharpoons``, ``\longrightleftharpoons``, ``\longRightleftharpoons``, ``\pu``, ``\tripledash``, ``\xleftarrow``, ``\xleftrightarrow``, ``\xLeftrightharpoons``, ``\xrightarrow``, ``\xrightleftharpoons``, ``\xRightleftharpoons``
 
 

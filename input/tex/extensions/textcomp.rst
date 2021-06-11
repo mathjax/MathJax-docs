@@ -5,7 +5,7 @@ textcomp
 ########
 
 
-The `textcomp` extension implements the ``upgreek`` style package from LaTeX.
+The `textcomp` extension implements the ``textcomp`` style package from LaTeX.
 **...Explanation...**
 See the `CTAN page <https://www.ctan.org/pkg/textcomp>`__
 for more information and documentation of `textcomp`.
@@ -37,7 +37,7 @@ extension is loaded.
 textcomp Commands
 -----------------
 
-The `textcomp` extension implementes the following macros:
+The `textcomp` extension implements the following macros:
 ``\textacutedbl``, ``\textasciiacute``, ``\textasciibreve``, ``\textasciicaron``, ``\textasciicircum``, ``\textasciidieresis``, ``\textasciimacron``, ``\textasciitilde``, ``\textasteriskcentered``, ``\textbackslash``, ``\textbaht``, ``\textbar``, ``\textbardbl``, ``\textbigcircle``, ``\textblank``, ``\textborn``, ``\textbraceleft``, ``\textbraceright``, ``\textbrokenbar``, ``\textbullet``, ``\textcelsius``, ``\textcent``, ``\textcentoldstyle``, ``\textcircledP``, ``\textcolonmonetary``, ``\textcompwordmark``, ``\textcopyleft``, ``\textcopyright``, ``\textcurrency``, ``\textdagger``, ``\textdaggerdbl``, ``\textdegree``, ``\textdied``, ``\textdiscount``, ``\textdiv``, ``\textdivorced``, ``\textdollar``, ``\textdollaroldstyle``, ``\textdong``, ``\textdownarrow``, ``\texteightoldstyle``, ``\textellipsis``, ``\textemdash``, ``\textendash``, ``\textestimated``, ``\texteuro``, ``\textexclamdown``, ``\textfiveoldstyle``, ``\textflorin``, ``\textfouroldstyle``, ``\textfractionsolidus``, ``\textgravedbl``, ``\textgreater``, ``\textguarani``, ``\textinterrobang``, ``\textinterrobangdown``, ``\textlangle``, ``\textlbrackdbl``, ``\textleftarrow``, ``\textless``, ``\textlira``, ``\textlnot``, ``\textlquill``, ``\textmarried``, ``\textmho``, ``\textminus``, ``\textmu``, ``\textmusicalnote``, ``\textnaira``, ``\textnineoldstyle``, ``\textnumero``, ``\textohm``, ``\textonehalf``, ``\textoneoldstyle``, ``\textonequarter``, ``\textonesuperior``, ``\textopenbullet``, ``\textordfeminine``, ``\textordmasculine``, ``\textparagraph``, ``\textperiodcentered``, ``\textpertenthousand``, ``\textperthousand``, ``\textpeso``, ``\textpm``, ``\textquestiondown``, ``\textquotedblleft``, ``\textquotedblright``, ``\textquoteleft``, ``\textquoteright``, ``\textrangle``, ``\textrbrackdbl``, ``\textrecipe``, ``\textreferencemark``, ``\textregistered``, ``\textrightarrow``, ``\textrquill``, ``\textsection``, ``\textservicemark``, ``\textsevenoldstyle``, ``\textsixoldstyle``, ``\textsterling``, ``\textsurd``, ``\textthreeoldstyle``, ``\textthreequarters``, ``\textthreesuperior``, ``\texttildelow``, ``\texttimes``, ``\texttrademark``, ``\texttwooldstyle``, ``\texttwosuperior``, ``\textunderscore``, ``\textuparrow``, ``\textvisiblespace``, ``\textwon``, ``\textyen``, ``\textzerooldstyle``
 
 

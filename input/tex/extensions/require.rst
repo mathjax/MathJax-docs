@@ -95,6 +95,6 @@ following values:
 require Commands
 ----------------
 
-The `require` extension implementes the following macros: ``\require``
+The `require` extension implements the following macros: ``\require``
 
 |-----|

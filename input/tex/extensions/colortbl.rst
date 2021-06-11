@@ -71,7 +71,7 @@ extension is loaded.
 colortbl Commands
 -----------------
 
-The `colortbl` extension implementes the following macros:
+The `colortbl` extension implements the following macros:
 ``\cellcolor``, ``\columncolor``, ``\rowcolor``
 
 

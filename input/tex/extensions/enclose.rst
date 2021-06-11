@@ -54,7 +54,7 @@ extension is loaded.
 enclose Commands
 ----------------
 
-The `enclose` extension implementes the following macros:
+The `enclose` extension implements the following macros:
 ``\enclose``
 
 
