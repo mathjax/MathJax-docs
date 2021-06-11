@@ -40,30 +40,34 @@ text mode, as listed in the documentation for that extention.
 
 
 Symbols
-=======
+-------
 
 .. list-table::
    :widths: 70 30
 
-   * - ``&``
-     -
-   * - ``#``
-     -
-   * - ``%``
-     -
-   * - ``^``
-     -
-   * - ``~``
-     -
    * - ``_``
+     -
+   * - ``.``
      -
    * - ``'``
      -
    * - ``’``
      -
+   * - ``(``
+     -
+   * - ``)``
+     - **base**, *physics*
+   * - ``[``
+     -
+   * - ``]``
+     - **base**, *physics*
    * - ``{``
      -
    * - ``}``
+     -
+   * - ``@``
+     - **amscd**
+   * - ``/``
      -
    * - ``\``  (backslash-space)
      -
@@ -74,7 +78,7 @@ Symbols
    * - ``\;``
      -
    * - ``\:``
-     -
+     - **base**, *mathtools*
    * - ``\!``
      -
    * - ``\{``
@@ -92,13 +96,29 @@ Symbols
    * - ``\>``
      -
    * - ``\|``
-     -
+     - **base**, **braket**
    * - ``\$``
+     -
+   * - ``&``
+     - **base**, *cases*
+   * - ``#``
+     -
+   * - ``%``
+     -
+   * - ``^``
+     -
+   * - ``<``
+     -
+   * - ``>``
+     -
+   * - ``|``
+     - **base**, **braket**, *physics*
+   * - ``~``
      -
 
 
 A
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -107,6 +127,8 @@ A
      -
    * - ``\abovewithdelims``
      -
+   * - ``\Aboxed``
+     - *mathtools*
    * - ``\abs``
      - *physics*
    * - ``\absolutevalue``
@@ -127,12 +149,26 @@ A
      - *physics*
    * - ``\acute``
      -
+   * - ``\adjustlimits``
+     - *mathtools*
    * - ``\admat``
      - *physics*
    * - ``\aleph``
      -
    * - ``\alpha``
      -
+   * - ``\alwaysDashedLine``
+     - **bussproofs**
+   * - ``\alwaysNoLine``
+     - **bussproofs**
+   * - ``\alwaysRootAtBottom``
+     - **bussproofs**
+   * - ``\alwaysRootAtTop``
+     - **bussproofs**
+   * - ``\alwaysSingleLine``
+     - **bussproofs**
+   * - ``\alwaysSolidLine``
+     - **bussproofs**
    * - ``\amalg``
      -
    * - ``\And``
@@ -175,9 +211,11 @@ A
      -
    * - ``\array``
      -
-   * - ``\Arrowvert``
-     -
+   * - ``\ArrowBetweenLines``
+     - *mathtools*
    * - ``\arrowvert``
+     -
+   * - ``\Arrowvert``
      -
    * - ``\asec``
      - *physics*
@@ -199,10 +237,16 @@ A
      -
    * - ``\atopwithdelims``
      -
+   * - ``\AXC``
+     - **bussproofs**
+   * - ``\Axiom``
+     - **bussproofs**
+   * - ``\AxiomC``
+     - **bussproofs**
 
 
 B
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -228,9 +272,9 @@ B
    * - ``\bbFont``
      -
    * - ``\bbox``
-     - bbox
+     - **bbox**
    * - ``\bcancel``
-     - cancel
+     - **cancel**
    * - ``\because``
      - **ams**
    * - ``\begin``
@@ -243,9 +287,11 @@ B
      - **ams**
    * - ``\bf``
      -
-   * - ``\Big``
-     -
+   * - ``\BIC``
+     - **bussproofs**
    * - ``\big``
+     -
+   * - ``\Big``
      -
    * - ``\bigcap``
      -
@@ -253,29 +299,29 @@ B
      -
    * - ``\bigcup``
      -
-   * - ``\Bigg``
-     -
    * - ``\bigg``
      -
-   * - ``\Biggl``
+   * - ``\Bigg``
      -
    * - ``\biggl``
      -
-   * - ``\Biggm``
+   * - ``\Biggl``
      -
    * - ``\biggm``
      -
-   * - ``\Biggr``
+   * - ``\Biggm``
      -
    * - ``\biggr``
      -
-   * - ``\Bigl``
+   * - ``\Biggr``
      -
    * - ``\bigl``
      -
-   * - ``\Bigm``
+   * - ``\Bigl``
      -
    * - ``\bigm``
+     -
+   * - ``\Bigm``
      -
    * - ``\bigodot``
      -
@@ -283,14 +329,16 @@ B
      -
    * - ``\bigotimes``
      -
-   * - ``\Bigr``
-     -
    * - ``\bigr``
+     -
+   * - ``\Bigr``
      -
    * - ``\bigsqcup``
      -
    * - ``\bigstar``
      - **ams**
+   * - ``\bigtimes``
+     - *mathtools*
    * - ``\bigtriangledown``
      -
    * - ``\bigtriangleup``
@@ -301,6 +349,10 @@ B
      -
    * - ``\bigwedge``
      -
+   * - ``\BinaryInf``
+     - **bussproofs**
+   * - ``\BinaryInfC``
+     - **bussproofs**
    * - ``\binom``
      - **ams**
    * - ``\blacklozenge``
@@ -320,7 +372,7 @@ B
    * - ``\bmqty``
      - *physics*
    * - ``\boldsymbol``
-     - boldsymbol
+     - **boldsymbol**
    * - ``\bot``
      -
    * - ``\bowtie``
@@ -330,45 +382,45 @@ B
    * - ``\boxdot``
      - **ams**
    * - ``\boxed``
-     - **ams**
+     - **base**, **ams**
    * - ``\boxminus``
      - **ams**
    * - ``\boxplus``
      - **ams**
    * - ``\boxtimes``
      - **ams**
-   * - ``\Bqty``
-     - *physics*
    * - ``\bqty``
      - *physics*
-   * - ``\Bra``
-     - braket
+   * - ``\Bqty``
+     - *physics*
    * - ``\bra``
-     - braket, *physics*
+     - **braket**, *physics*
+   * - ``\Bra``
+     - **braket**
    * - ``\brace``
      -
    * - ``\bracevert``
      -
    * - ``\brack``
      -
-   * - ``\Braket``
-     - braket
    * - ``\braket``
-     - braket, *physics*
+     - **braket**, *physics*
+   * - ``\Braket``
+     - **braket**
    * - ``\breve``
      -
    * - ``\buildrel``
      -
    * - ``\bullet``
      -
-   * - ``\Bumpeq``
-     - **ams**
    * - ``\bumpeq``
+     - **ams**
+   * - ``\Bumpeq``
      - **ams**
 
 
 C
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -376,13 +428,13 @@ C
    * - ``\cal``
      -
    * - ``\cancel``
-     - cancel
+     - **cancel**
    * - ``\cancelto``
-     - cancel
-   * - ``\Cap``
-     - **ams**
+     - **cancel**
    * - ``\cap``
      -
+   * - ``\Cap``
+     - **ams**
    * - ``\cases``
      -
    * - ``\cdot``
@@ -392,9 +444,19 @@ C
    * - ``\cdots``
      -
    * - ``\ce``
-     - mhchem
+     - **mhchem**
+   * - ``\cellcolor``
+     - *colortbl*
+   * - ``\celsius``
+     - *gensymb*
+   * - ``\centercolon``
+     - *mathtools*
    * - ``\centerdot``
      - **ams**
+   * - ``\centernot``
+     - *centernot*
+   * - ``\centerOver``
+     - *centernot*
    * - ``\cfrac``
      - **ams**
    * - ``\check``
@@ -423,16 +485,36 @@ C
      - **ams**
    * - ``\circledS``
      - **ams**
+   * - ``\clap``
+     - *mathtools*
    * - ``\class``
-     - html
+     - **html**
    * - ``\clubsuit``
      -
    * - ``\colon``
      -
+   * - ``\colonapprox``
+     - *mathtools*
+   * - ``\Colonapprox``
+     - *mathtools*
+   * - ``\coloneq``
+     - *mathtools*
+   * - ``\Coloneq``
+     - *mathtools*
+   * - ``\coloneqq``
+     - *mathtools*
+   * - ``\Coloneqq``
+     - *mathtools*
+   * - ``\colonsim``
+     - *mathtools*
+   * - ``\Colonsim``
+     - *mathtools*
    * - ``\color``
-     - color, *colorv2*
+     - **color**, *colorv2*
    * - ``\colorbox``
-     - color
+     - **color**
+   * - ``\columncolor``
+     - *colortbl*
    * - ``\comm``
      - *physics*
    * - ``\commutator``
@@ -461,6 +543,16 @@ C
      - *physics*
    * - ``\cr``
      -
+   * - ``\cramped``
+     - *mathtools*
+   * - ``\crampedclap``
+     - *mathtools*
+   * - ``\crampedllap``
+     - *mathtools*
+   * - ``\crampedrlap``
+     - *mathtools*
+   * - ``\crampedsubstack``
+     - *mathtools*
    * - ``\cross``
      - *physics*
    * - ``\crossproduct``
@@ -470,11 +562,11 @@ C
    * - ``\csch``
      - *physics*
    * - ``\cssId``
-     - html
-   * - ``\Cup``
-     - **ams**
+     - **html**
    * - ``\cup``
      -
+   * - ``\Cup``
+     - **ams**
    * - ``\curl``
      - *physics*
    * - ``\curlyeqprec``
@@ -492,7 +584,7 @@ C
 
 
 D
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -501,6 +593,8 @@ D
      -
    * - ``\daleth``
      - **ams**
+   * - ``\dashedLine``
+     - **bussproofs**
    * - ``\dashleftarrow``
      - **ams**
    * - ``\dashrightarrow``
@@ -509,6 +603,8 @@ D
      -
    * - ``\dbinom``
      - **ams**
+   * - ``\dblcolon``
+     - *mathtools*
    * - ``\dd``
      - *physics*
    * - ``\ddagger``
@@ -523,15 +619,23 @@ D
      -
    * - ``\DeclareMathOperator``
      - **ams**
+   * - ``\DeclarePairedDelimiters``
+     - *mathtools*
+   * - ``\DeclarePairedDelimitersX``
+     - *mathtools*
+   * - ``\DeclarePairedDelimitersXPP``
+     - *mathtools*
    * - ``\def``
      - **newcommand**
    * - ``\definecolor``
-     - color
+     - **color**
    * - ``\deg``
      -
-   * - ``\Delta``
-     -
+   * - ``\degree``
+     - *gensymb*
    * - ``\delta``
+     -
+   * - ``\Delta``
      -
    * - ``\derivative``
      - *physics*
@@ -547,12 +651,14 @@ D
      - *physics*
    * - ``\diagup``
      - **ams**
-   * - ``\Diamond``
-     - **ams**
    * - ``\diamond``
      -
+   * - ``\Diamond``
+     - **ams**
    * - ``\diamondsuit``
      -
+   * - ``\diffd``
+     - *physics*
    * - ``\differential``
      - *physics*
    * - ``\digamma``
@@ -569,14 +675,16 @@ D
      - *physics*
    * - ``\divideontimes``
      - **ams**
+   * - ``\divsymbol``
+     -
    * - ``\dmat``
      - *physics*
    * - ``\dot``
      -
-   * - ``\Doteq``
-     - **ams**
    * - ``\doteq``
      -
+   * - ``\Doteq``
+     - **ams**
    * - ``\doteqdot``
      - **ams**
    * - ``\dotplus``
@@ -601,9 +709,9 @@ D
      - **ams**
    * - ``\doublecup``
      - **ams**
-   * - ``\Downarrow``
-     -
    * - ``\downarrow``
+     -
+   * - ``\Downarrow``
      -
    * - ``\downdownarrows``
      - **ams**
@@ -618,17 +726,89 @@ D
 
 
 E
-=
+-
 
 .. list-table::
    :widths: 70 30
 
    * - ``\ell``
      -
+   * - ``\empheqbigl``
+     - *empheq*
+   * - ``\empheqbiglangle``
+     - *empheq*
+   * - ``\empheqbiglbrace``
+     - *empheq*
+   * - ``\empheqbiglbrack``
+     - *empheq*
+   * - ``\empheqbiglceil``
+     - *empheq*
+   * - ``\empheqbiglfloor``
+     - *empheq*
+   * - ``\empheqbiglparen``
+     - *empheq*
+   * - ``\empheqbiglvert``
+     - *empheq*
+   * - ``\empheqbiglVert``
+     - *empheq*
+   * - ``\empheqbigr``
+     - *empheq*
+   * - ``\empheqbigrangle``
+     - *empheq*
+   * - ``\empheqbigrbrace``
+     - *empheq*
+   * - ``\empheqbigrbrack``
+     - *empheq*
+   * - ``\empheqbigrceil``
+     - *empheq*
+   * - ``\empheqbigrfloor``
+     - *empheq*
+   * - ``\empheqbigrparen``
+     - *empheq*
+   * - ``\empheqbigrvert``
+     - *empheq*
+   * - ``\empheqbigrVert``
+     - *empheq*
+   * - ``\empheql``
+     - *empheq*
+   * - ``\empheqlangle``
+     - *empheq*
+   * - ``\empheqlbrace``
+     - *empheq*
+   * - ``\empheqlbrack``
+     - *empheq*
+   * - ``\empheqlceil``
+     - *empheq*
+   * - ``\empheqlfloor``
+     - *empheq*
+   * - ``\empheqlparen``
+     - *empheq*
+   * - ``\empheqlvert``
+     - *empheq*
+   * - ``\empheqlVert``
+     - *empheq*
+   * - ``\empheqr``
+     - *empheq*
+   * - ``\empheqrangle``
+     - *empheq*
+   * - ``\empheqrbrace``
+     - *empheq*
+   * - ``\empheqrbrack``
+     - *empheq*
+   * - ``\empheqrceil``
+     - *empheq*
+   * - ``\empheqrfloor``
+     - *empheq*
+   * - ``\empheqrparen``
+     - *empheq*
+   * - ``\empheqrvert``
+     - *empheq*
+   * - ``\empheqrVert``
+     - *empheq*
    * - ``\emptyset``
      -
    * - ``\enclose``
-     - enclose
+     - **enclose**
    * - ``\end``
      -
    * - ``\enspace``
@@ -641,6 +821,14 @@ E
      -
    * - ``\eqcirc``
      - **ams**
+   * - ``\eqcolon``
+     - *mathtools*
+   * - ``\Eqcolon``
+     - *mathtools*
+   * - ``\eqqcolon``
+     - *mathtools*
+   * - ``\Eqqcolon``
+     - *mathtools*
    * - ``\eqref``
      - **ams**
    * - ``\eqsim``
@@ -676,7 +864,7 @@ E
 
 
 F
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -685,8 +873,10 @@ F
      - **ams**
    * - ``\fbox``
      -
+   * - ``\fCenter``
+     - **bussproofs**
    * - ``\fcolorbox``
-     - color
+     - **color**
    * - ``\fderivative``
      - *physics*
    * - ``\fdv``
@@ -700,8 +890,10 @@ F
    * - ``\forall``
      -
    * - ``\frac``
-     - **ams**, **base**
+     - **base**, **ams**
    * - ``\frak``
+     -
+   * - ``\framebox``
      -
    * - ``\frown``
      -
@@ -710,16 +902,16 @@ F
 
 
 G
-=
+-
 
 .. list-table::
    :widths: 70 30
 
    * - ``\Game``
      - **ams**
-   * - ``\Gamma``
-     -
    * - ``\gamma``
+     -
+   * - ``\Gamma``
      -
    * - ``\gcd``
      -
@@ -778,7 +970,7 @@ G
 
 
 H
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -810,16 +1002,16 @@ H
    * - ``\hphantom``
      -
    * - ``\href``
-     - html
+     - **html**
    * - ``\hskip``
      -
    * - ``\hslash``
      - **ams**
    * - ``\hspace``
      -
-   * - ``\Huge``
-     -
    * - ``\huge``
+     -
+   * - ``\Huge``
      -
    * - ``\hypcosecant``
      - *physics*
@@ -836,7 +1028,7 @@ H
 
 
 I
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -883,12 +1075,14 @@ I
      -
    * - ``\iota``
      -
+   * - ``\ip``
+     - *physics*
    * - ``\it``
      -
 
 
 J
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -900,7 +1094,7 @@ J
 
 
 K
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -911,27 +1105,27 @@ K
      -
    * - ``\kern``
      -
-   * - ``\Ket``
-     - braket
    * - ``\ket``
-     - braket, *physics*
-   * - ``\Ketbra``
-     - braket
+     - **braket**, *physics*
+   * - ``\Ket``
+     - **braket**
    * - ``\ketbra``
-     - braket, *physics*
+     - **braket**, *physics*
+   * - ``\Ketbra``
+     - **braket**
 
 
 L
-=
+-
 
 .. list-table::
    :widths: 70 30
 
    * - ``\label``
      -
-   * - ``\Lambda``
-     -
    * - ``\lambda``
+     -
+   * - ``\Lambda``
      -
    * - ``\land``
      -
@@ -939,11 +1133,11 @@ L
      -
    * - ``\laplacian``
      - *physics*
-   * - ``\LARGE``
+   * - ``\large``
      -
    * - ``\Large``
      -
-   * - ``\large``
+   * - ``\LARGE``
      -
    * - ``\LaTeX``
      -
@@ -973,6 +1167,8 @@ L
      -
    * - ``\leftharpoonup``
      -
+   * - ``\LeftLabel``
+     - **bussproofs**
    * - ``\leftleftarrows``
      - **ams**
    * - ``\Leftrightarrow``
@@ -1029,6 +1225,8 @@ L
      -
    * - ``\ll``
      -
+   * - ``\LL``
+     - **bussproofs**
    * - ``\llap``
      -
    * - ``\llcorner``
@@ -1057,28 +1255,28 @@ L
      - **base**, *physics*
    * - ``\logarithm``
      - *physics*
-   * - ``\Longleftarrow``
-     -
    * - ``\longleftarrow``
+     -
+   * - ``\Longleftarrow``
      -
    * - ``\Longleftrightarrow``
      -
    * - ``\longleftrightarrow``
      -
    * - ``\longleftrightarrows``
-     - *mhchem*
+     - **mhchem**
    * - ``\longLeftrightharpoons``
-     - *mhchem*
+     - **mhchem**
    * - ``\longmapsto``
-     -
-   * - ``\Longrightarrow``
      -
    * - ``\longrightarrow``
      -
-   * - ``\longRightleftharpoons``
-     - *mhchem*
+   * - ``\Longrightarrow``
+     -
    * - ``\longrightleftharpoons``
-     - *mhchem*
+     - **mhchem**
+   * - ``\longRightleftharpoons``
+     - **mhchem**
    * - ``\looparrowleft``
      - **ams**
    * - ``\looparrowright``
@@ -1089,6 +1287,8 @@ L
      -
    * - ``\lozenge``
      - **ams**
+   * - ``\lparen``
+     - *mathtools*
    * - ``\lrcorner``
      - **ams**
    * - ``\Lsh``
@@ -1097,16 +1297,16 @@ L
      -
    * - ``\ltimes``
      - **ams**
-   * - ``\lVert``
-     - **ams**
    * - ``\lvert``
+     - **ams**
+   * - ``\lVert``
      - **ams**
    * - ``\lvertneqq``
      - **ams**
 
 
 M
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1141,6 +1341,8 @@ M
      -
    * - ``\mathchoice``
      -
+   * - ``\mathclap``
+     - *mathtools*
    * - ``\mathclose``
      -
    * - ``\mathfrak``
@@ -1149,6 +1351,12 @@ M
      -
    * - ``\mathit``
      -
+   * - ``\mathllap``
+     - *mathtools*
+   * - ``\mathmakebox``
+     - *mathtools*
+   * - ``\mathmbox``
+     - *mathtools*
    * - ``\mathnormal``
      -
    * - ``\mathop``
@@ -1163,6 +1371,8 @@ M
      -
    * - ``\mathring``
      - **ams**
+   * - ``\mathrlap``
+     - *mathtools*
    * - ``\mathrm``
      -
    * - ``\mathscr``
@@ -1176,8 +1386,12 @@ M
    * - ``\mathstrut``
      -
    * - ``\mathtip``
-     - action
+     - **action**
+   * - ``\mathtoolsset``
+     - *mathtools*
    * - ``\mathtt``
+     -
+   * - ``\mathup``
      -
    * - ``\matrix``
      -
@@ -1201,6 +1415,8 @@ M
      - *physics*
    * - ``\mho``
      - **ams**
+   * - ``\micro``
+     - *gensymb*
    * - ``\mid``
      -
    * - ``\middle``
@@ -1208,9 +1424,9 @@ M
    * - ``\min``
      -
    * - ``\minCDarrowheight``
-     - amscd
+     - **amscd**
    * - ``\minCDarrowwidth``
-     - amscd
+     - **amscd**
    * - ``\mit``
      -
    * - ``\mkern``
@@ -1221,6 +1437,8 @@ M
      -
    * - ``\models``
      -
+   * - ``\MoveEqLeft``
+     - *mathtools*
    * - ``\moveleft``
      -
    * - ``\moveright``
@@ -1233,6 +1451,12 @@ M
      -
    * - ``\mspace``
      -
+   * - ``\MTFlushSpaceAbove``
+     - *mathtools*
+   * - ``\MTFlushSpaceBelow``
+     - *mathtools*
+   * - ``\MTThinColon``
+     - *mathtools*
    * - ``\mu``
      -
    * - ``\multimap``
@@ -1240,7 +1464,7 @@ M
 
 
 N
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1253,6 +1477,8 @@ N
      - *physics*
    * - ``\ncong``
      - **ams**
+   * - ``\ndownarrow``
+     - *mathtools*
    * - ``\ne``
      -
    * - ``\nearrow``
@@ -1272,9 +1498,11 @@ N
    * - ``\newenvironment``
      - **newcommand**
    * - ``\Newextarrow``
-     - extpfeil
+     - **extpfeil**
    * - ``\newline``
      -
+   * - ``\newtagform``
+     - *mathtools*
    * - ``\nexists``
      - **ams**
    * - ``\ngeq``
@@ -1287,13 +1515,13 @@ N
      - **ams**
    * - ``\ni``
      -
-   * - ``\nLeftarrow``
-     - **ams**
    * - ``\nleftarrow``
      - **ams**
-   * - ``\nLeftrightarrow``
+   * - ``\nLeftarrow``
      - **ams**
    * - ``\nleftrightarrow``
+     - **ams**
+   * - ``\nLeftrightarrow``
      - **ams**
    * - ``\nleq``
      - **ams**
@@ -1308,6 +1536,10 @@ N
    * - ``\nobreakspace``
      - **ams**
    * - ``\nolimits``
+     -
+   * - ``\noLine``
+     - **bussproofs**
+   * - ``\nonscript``
      -
    * - ``\nonumber``
      -
@@ -1329,9 +1561,9 @@ N
      - **ams**
    * - ``\npreceq``
      - **ams**
-   * - ``\nRightarrow``
-     - **ams**
    * - ``\nrightarrow``
+     - **ams**
+   * - ``\nRightarrow``
      - **ams**
    * - ``\nshortmid``
      - **ams**
@@ -1361,33 +1593,37 @@ N
      - **ams**
    * - ``\nu``
      -
-   * - ``\nVDash``
-     - **ams**
-   * - ``\nVdash``
+   * - ``\nuparrow``
+     - *mathtools*
+   * - ``\nvdash``
      - **ams**
    * - ``\nvDash``
      - **ams**
-   * - ``\nvdash``
+   * - ``\nVdash``
+     - **ams**
+   * - ``\nVDash``
      - **ams**
    * - ``\nwarrow``
      -
 
 
 O
-=
+-
 
 .. list-table::
    :widths: 70 30
 
    * - ``\odot``
      -
+   * - ``\ohm``
+     - *gensymb*
    * - ``\oint``
      -
    * - ``\oldstyle``
      -
-   * - ``\Omega``
-     -
    * - ``\omega``
+     -
+   * - ``\Omega``
      -
    * - ``\omicron``
      -
@@ -1401,6 +1637,8 @@ O
      -
    * - ``\order``
      - *physics*
+   * - ``\ordinarycolon``
+     - *mathtools*
    * - ``\oslash``
      -
    * - ``\otimes``
@@ -1411,6 +1649,8 @@ O
      -
    * - ``\overbrace``
      -
+   * - ``\overbracket``
+     - *mathtools*
    * - ``\overleftarrow``
      -
    * - ``\overleftrightarrow``
@@ -1423,6 +1663,8 @@ O
      -
    * - ``\overset``
      -
+   * - ``\overunderset``
+     -
    * - ``\overwithdelims``
      -
    * - ``\owns``
@@ -1430,7 +1672,7 @@ O
 
 
 P
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1451,15 +1693,17 @@ P
      - *physics*
    * - ``\perp``
      -
+   * - ``\perthousand``
+     - *gensymb*
    * - ``\phantom``
-     -
-   * - ``\Phi``
      -
    * - ``\phi``
      -
-   * - ``\Pi``
+   * - ``\Phi``
      -
    * - ``\pi``
+     -
+   * - ``\Pi``
      -
    * - ``\pitchfork``
      - **ams**
@@ -1473,9 +1717,9 @@ P
      -
    * - ``\pmod``
      -
-   * - ``\Pmqty``
-     - *physics*
    * - ``\pmqty``
+     - *physics*
+   * - ``\Pmqty``
      - *physics*
    * - ``\pod``
      -
@@ -1501,6 +1745,8 @@ P
      - **ams**
    * - ``\precsim``
      - **ams**
+   * - ``\prescript``
+     - *mathtools*
    * - ``\prime``
      -
    * - ``\principalvalue``
@@ -1513,20 +1759,20 @@ P
      - **ams**
    * - ``\propto``
      -
-   * - ``\Psi``
-     -
    * - ``\psi``
      -
+   * - ``\Psi``
+     -
    * - ``\pu``
-     - mhchem
-   * - ``\PV``
-     - *physics*
+     - **mhchem**
    * - ``\pv``
+     - *physics*
+   * - ``\PV``
      - *physics*
 
 
 Q
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1573,7 +1819,7 @@ Q
      - *physics*
    * - ``\qquad``
      -
-   * - ``\qsince,``
+   * - ``\qsince``
      - *physics*
    * - ``\qthen``
      - *physics*
@@ -1583,6 +1829,14 @@ Q
      -
    * - ``\quantity``
      - *physics*
+   * - ``\QuaternaryInf``
+     - **bussproofs**
+   * - ``\QuaternaryInfC``
+     - **bussproofs**
+   * - ``\QuinaryInf``
+     - **bussproofs**
+   * - ``\QuinaryInfC``
+     - **bussproofs**
    * - ``\qunless``
      - *physics*
    * - ``\qusing``
@@ -1590,7 +1844,7 @@ Q
 
 
 R
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1613,13 +1867,17 @@ R
      - *physics*
    * - ``\ref``
      -
+   * - ``\refeq``
+     - *mathtools*
    * - ``\renewcommand``
      - **newcommand**
    * - ``\renewenvironment``
      - **newcommand**
-   * - ``\require``
-     - **require**
+   * - ``\renewtagform``
+     - *mathtools*
    * - ``\Res``
+     - *physics*
+   * - ``\Residue``
      - *physics*
    * - ``\restriction``
      - **ams**
@@ -1643,10 +1901,12 @@ R
      -
    * - ``\rightharpoonup``
      -
+   * - ``\RightLabel``
+     - **bussproofs**
    * - ``\rightleftarrows``
      - **ams**
    * - ``\rightleftharpoons``
-     - **ams**, **base**
+     - **base**, **ams**
    * - ``\rightrightarrows``
      - **ams**
    * - ``\rightsquigarrow``
@@ -1655,6 +1915,8 @@ R
      - **ams**
    * - ``\risingdotseq``
      - **ams**
+   * - ``\RL``
+     - **bussproofs**
    * - ``\rlap``
      -
    * - ``\rm``
@@ -1663,24 +1925,32 @@ R
      -
    * - ``\root``
      -
+   * - ``\rootAtBottom``
+     - **bussproofs**
+   * - ``\rootAtTop``
+     - **bussproofs**
+   * - ``\rowcolor``
+     - *colortbl*
+   * - ``\rparen``
+     - *mathtools*
    * - ``\Rrightarrow``
      - **ams**
    * - ``\Rsh``
      - **ams**
    * - ``\rtimes``
      - **ams**
-   * - ``\Rule``
-     -
    * - ``\rule``
      -
-   * - ``\rVert``
-     - **ams**
+   * - ``\Rule``
+     -
    * - ``\rvert``
+     - **ams**
+   * - ``\rVert``
      - **ams**
 
 
 S
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1705,10 +1975,10 @@ S
      - *physics*
    * - ``\sech``
      - *physics*
-   * - ``\Set``
-     - braket
    * - ``\set``
-     - braket
+     - **braket**
+   * - ``\Set``
+     - **braket**
    * - ``\setminus``
      -
    * - ``\sf``
@@ -1719,15 +1989,17 @@ S
      - **ams**
    * - ``\shortparallel``
      - **ams**
+   * - ``\shortvdotswithin``
+     - *mathtools*
    * - ``\shoveleft``
-     - **ams**
+     - **ams**, *mathtools*
    * - ``\shoveright``
-     - **ams**
+     - **ams**, *mathtools*
    * - ``\sideset``
      - **ams**
-   * - ``\Sigma``
-     -
    * - ``\sigma``
+     -
+   * - ``\Sigma``
      -
    * - ``\sim``
      -
@@ -1737,6 +2009,8 @@ S
      - **base**, *physics*
    * - ``\sine``
      - *physics*
+   * - ``\singleLine``
+     - **bussproofs**
    * - ``\sinh``
      - **base**, *physics*
    * - ``\skew``
@@ -1763,6 +2037,8 @@ S
      -
    * - ``\smqty``
      - *physics*
+   * - ``\solidLine``
+     - **bussproofs**
    * - ``\Space``
      -
    * - ``\space``
@@ -1771,9 +2047,13 @@ S
      -
    * - ``\sphericalangle``
      - **ams**
-   * - ``\sPmqty``
-     - *physics*
+   * - ``\splitdfrac``
+     - *mathtools*
+   * - ``\splitfrac``
+     - *mathtools*
    * - ``\spmqty``
+     - *physics*
+   * - ``\sPmqty``
      - *physics*
    * - ``\sqcap``
      -
@@ -1791,6 +2071,8 @@ S
      -
    * - ``\square``
      - **ams**
+   * - ``\stackbin``
+     -
    * - ``\stackrel``
      -
    * - ``\star``
@@ -1798,11 +2080,11 @@ S
    * - ``\strut``
      -
    * - ``\style``
-     - html
-   * - ``\Subset``
-     - **ams**
+     - **html**
    * - ``\subset``
      -
+   * - ``\Subset``
+     - **ams**
    * - ``\subseteq``
      -
    * - ``\subseteqq``
@@ -1833,10 +2115,10 @@ S
      -
    * - ``\sup``
      -
-   * - ``\Supset``
-     - **ams**
    * - ``\supset``
      -
+   * - ``\Supset``
+     - **ams**
    * - ``\supseteq``
      -
    * - ``\supseteqq``
@@ -1896,7 +2178,7 @@ S
 
 
 T
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -1917,33 +2199,273 @@ T
      -
    * - ``\text``
      -
+   * - ``\textacutedbl``
+     - *textcomp*
+   * - ``\textasciiacute``
+     - *textcomp*
+   * - ``\textasciibreve``
+     - *textcomp*
+   * - ``\textasciicaron``
+     - *textcomp*
+   * - ``\textasciicircum``
+     - *textcomp*
+   * - ``\textasciidieresis``
+     - *textcomp*
+   * - ``\textasciimacron``
+     - *textcomp*
+   * - ``\textasciitilde``
+     - *textcomp*
+   * - ``\textasteriskcentered``
+     - *textcomp*
+   * - ``\textbackslash``
+     - *textcomp*
+   * - ``\textbaht``
+     - *textcomp*
+   * - ``\textbar``
+     - *textcomp*
+   * - ``\textbardbl``
+     - *textcomp*
    * - ``\textbf``
      -
+   * - ``\textbigcircle``
+     - *textcomp*
+   * - ``\textblank``
+     - *textcomp*
+   * - ``\textborn``
+     - *textcomp*
+   * - ``\textbraceleft``
+     - *textcomp*
+   * - ``\textbraceright``
+     - *textcomp*
+   * - ``\textbrokenbar``
+     - *textcomp*
+   * - ``\textbullet``
+     - *textcomp*
+   * - ``\textcelsius``
+     - *textcomp*
+   * - ``\textcent``
+     - *textcomp*
+   * - ``\textcentoldstyle``
+     - *textcomp*
+   * - ``\textcircledP``
+     - *textcomp*
+   * - ``\textclap``
+     - *mathtools*
+   * - ``\textcolonmonetary``
+     - *textcomp*
    * - ``\textcolor``
-     - color
+     - **color**
+   * - ``\textcompwordmark``
+     - *textcomp*
+   * - ``\textcopyleft``
+     - *textcomp*
+   * - ``\textcopyright``
+     - *textcomp*
+   * - ``\textcurrency``
+     - *textcomp*
+   * - ``\textdagger``
+     - *textcomp*
+   * - ``\textdaggerdbl``
+     - *textcomp*
+   * - ``\textdegree``
+     - *textcomp*
+   * - ``\textdied``
+     - *textcomp*
+   * - ``\textdiscount``
+     - *textcomp*
+   * - ``\textdiv``
+     - *textcomp*
+   * - ``\textdivorced``
+     - *textcomp*
+   * - ``\textdollar``
+     - *textcomp*
+   * - ``\textdollaroldstyle``
+     - *textcomp*
+   * - ``\textdong``
+     - *textcomp*
+   * - ``\textdownarrow``
+     - *textcomp*
+   * - ``\texteightoldstyle``
+     - *textcomp*
+   * - ``\textellipsis``
+     - *textcomp*
+   * - ``\textemdash``
+     - *textcomp*
+   * - ``\textendash``
+     - *textcomp*
+   * - ``\textestimated``
+     - *textcomp*
+   * - ``\texteuro``
+     - *textcomp*
+   * - ``\textexclamdown``
+     - *textcomp*
+   * - ``\textfiveoldstyle``
+     - *textcomp*
+   * - ``\textflorin``
+     - *textcomp*
+   * - ``\textfouroldstyle``
+     - *textcomp*
+   * - ``\textfractionsolidus``
+     - *textcomp*
+   * - ``\textgravedbl``
+     - *textcomp*
+   * - ``\textgreater``
+     - *textcomp*
+   * - ``\textguarani``
+     - *textcomp*
+   * - ``\textinterrobang``
+     - *textcomp*
+   * - ``\textinterrobangdown``
+     - *textcomp*
    * - ``\textit``
      -
+   * - ``\textlangle``
+     - *textcomp*
+   * - ``\textlbrackdbl``
+     - *textcomp*
+   * - ``\textleftarrow``
+     - *textcomp*
+   * - ``\textless``
+     - *textcomp*
+   * - ``\textlira``
+     - *textcomp*
+   * - ``\textllap``
+     - *mathtools*
+   * - ``\textlnot``
+     - *textcomp*
+   * - ``\textlquill``
+     - *textcomp*
+   * - ``\textmarried``
+     - *textcomp*
+   * - ``\textmho``
+     - *textcomp*
+   * - ``\textminus``
+     - *textcomp*
+   * - ``\textmu``
+     - *textcomp*
+   * - ``\textmusicalnote``
+     - *textcomp*
+   * - ``\textnaira``
+     - *textcomp*
+   * - ``\textnineoldstyle``
+     - *textcomp*
    * - ``\textnormal``
      -
+   * - ``\textnumero``
+     - *textcomp*
+   * - ``\textohm``
+     - *textcomp*
+   * - ``\textonehalf``
+     - *textcomp*
+   * - ``\textoneoldstyle``
+     - *textcomp*
+   * - ``\textonequarter``
+     - *textcomp*
+   * - ``\textonesuperior``
+     - *textcomp*
+   * - ``\textopenbullet``
+     - *textcomp*
+   * - ``\textordfeminine``
+     - *textcomp*
+   * - ``\textordmasculine``
+     - *textcomp*
+   * - ``\textparagraph``
+     - *textcomp*
+   * - ``\textperiodcentered``
+     - *textcomp*
+   * - ``\textpertenthousand``
+     - *textcomp*
+   * - ``\textperthousand``
+     - *textcomp*
+   * - ``\textpeso``
+     - *textcomp*
+   * - ``\textpm``
+     - *textcomp*
+   * - ``\textquestiondown``
+     - *textcomp*
+   * - ``\textquotedblleft``
+     - *textcomp*
+   * - ``\textquotedblright``
+     - *textcomp*
+   * - ``\textquoteleft``
+     - *textcomp*
+   * - ``\textquoteright``
+     - *textcomp*
+   * - ``\textrangle``
+     - *textcomp*
+   * - ``\textrbrackdbl``
+     - *textcomp*
+   * - ``\textrecipe``
+     - *textcomp*
+   * - ``\textreferencemark``
+     - *textcomp*
+   * - ``\textregistered``
+     - *textcomp*
+   * - ``\textrightarrow``
+     - *textcomp*
+   * - ``\textrlap``
+     - *mathtools*
    * - ``\textrm``
      -
+   * - ``\textrquill``
+     - *textcomp*
+   * - ``\textsection``
+     - *textcomp*
+   * - ``\textservicemark``
+     - *textcomp*
+   * - ``\textsevenoldstyle``
+     - *textcomp*
    * - ``\textsf``
      -
+   * - ``\textsixoldstyle``
+     - *textcomp*
+   * - ``\textsterling``
+     - *textcomp*
    * - ``\textstyle``
      -
+   * - ``\textsurd``
+     - *textcomp*
+   * - ``\textthreeoldstyle``
+     - *textcomp*
+   * - ``\textthreequarters``
+     - *textcomp*
+   * - ``\textthreesuperior``
+     - *textcomp*
+   * - ``\texttildelow``
+     - *textcomp*
+   * - ``\texttimes``
+     - *textcomp*
    * - ``\texttip``
-     - action
+     - **action**
+   * - ``\texttrademark``
+     - *textcomp*
    * - ``\texttt``
      -
+   * - ``\texttwooldstyle``
+     - *textcomp*
+   * - ``\texttwosuperior``
+     - *textcomp*
+   * - ``\textunderscore``
+     - *textcomp*
    * - ``\textup``
      -
+   * - ``\textuparrow``
+     - *textcomp*
+   * - ``\textvisiblespace``
+     - *textcomp*
+   * - ``\textwon``
+     - *textcomp*
+   * - ``\textyen``
+     - *textcomp*
+   * - ``\textzerooldstyle``
+     - *textcomp*
    * - ``\tfrac``
      - **ams**
    * - ``\therefore``
      - **ams**
-   * - ``\Theta``
-     -
    * - ``\theta``
+     -
+   * - ``\Theta``
      -
    * - ``\thickapprox``
      - **ams**
@@ -1951,27 +2473,29 @@ T
      - **ams**
    * - ``\thinspace``
      -
+   * - ``\TIC``
+     - **bussproofs**
    * - ``\tilde``
      -
    * - ``\times``
      -
-   * - ``\Tiny``
-     -
    * - ``\tiny``
+     -
+   * - ``\Tiny``
      -
    * - ``\to``
      -
    * - ``\toggle``
-     - action
+     - **action**
    * - ``\top``
      -
-   * - ``\Tr``
-     - *physics*
    * - ``\tr``
      - *physics*
-   * - ``\Trace``
+   * - ``\Tr``
      - *physics*
    * - ``\trace``
+     - *physics*
+   * - ``\Trace``
      - *physics*
    * - ``\triangle``
      -
@@ -1987,8 +2511,12 @@ T
      -
    * - ``\trianglerighteq``
      - **ams**
+   * - ``\TrinaryInf``
+     - **bussproofs**
+   * - ``\TrinaryInfC``
+     - **bussproofs**
    * - ``\tripledash``
-     - *mhchem*
+     - **mhchem**
    * - ``\tt``
      -
    * - ``\twoheadleftarrow``
@@ -1998,15 +2526,23 @@ T
 
 
 U
-=
+-
 
 .. list-table::
    :widths: 70 30
 
+   * - ``\UIC``
+     - **bussproofs**
    * - ``\ulcorner``
      - **ams**
+   * - ``\UnaryInf``
+     - **bussproofs**
+   * - ``\UnaryInfC``
+     - **bussproofs**
    * - ``\underbrace``
      -
+   * - ``\underbracket``
+     - *mathtools*
    * - ``\underleftarrow``
      -
    * - ``\underleftrightarrow``
@@ -2020,39 +2556,123 @@ U
    * - ``\underset``
      -
    * - ``\unicode``
-     - unicode
+     - **unicode**
    * - ``\unlhd``
      - **ams**
    * - ``\unrhd``
      - **ams**
+   * - ``\upalpha``
+     - *upgreek*
+   * - ``\uparrow``
+     -
    * - ``\Uparrow``
      -
-   * - ``\uparrow``
+   * - ``\upbeta``
+     - *upgreek*
+   * - ``\upchi``
+     - *upgreek*
+   * - ``\updelta``
+     - *upgreek*
+   * - ``\Updelta``
+     - *upgreek*
+   * - ``\updownarrow``
      -
    * - ``\Updownarrow``
      -
-   * - ``\updownarrow``
-     -
+   * - ``\upepsilon``
+     - *upgreek*
+   * - ``\upeta``
+     - *upgreek*
+   * - ``\upgamma``
+     - *upgreek*
+   * - ``\Upgamma``
+     - *upgreek*
    * - ``\upharpoonleft``
      - **ams**
    * - ``\upharpoonright``
      - **ams**
+   * - ``\upiota``
+     - *upgreek*
+   * - ``\upkappa``
+     - *upgreek*
+   * - ``\uplambda``
+     - *upgreek*
+   * - ``\Uplambda``
+     - *upgreek*
    * - ``\uplus``
      -
+   * - ``\upmu``
+     - *upgreek*
+   * - ``\upnu``
+     - *upgreek*
+   * - ``\upomega``
+     - *upgreek*
+   * - ``\Upomega``
+     - *upgreek*
+   * - ``\upomicron``
+     - *upgreek*
+   * - ``\upphi``
+     - *upgreek*
+   * - ``\Upphi``
+     - *upgreek*
+   * - ``\uppi``
+     - *upgreek*
+   * - ``\Uppi``
+     - *upgreek*
+   * - ``\uppsi``
+     - *upgreek*
+   * - ``\Uppsi``
+     - *upgreek*
+   * - ``\uprho``
+     - *upgreek*
    * - ``\uproot``
+     -
+   * - ``\upsigma``
+     - *upgreek*
+   * - ``\Upsigma``
+     - *upgreek*
+   * - ``\upsilon``
      -
    * - ``\Upsilon``
      -
-   * - ``\upsilon``
-     -
+   * - ``\uptau``
+     - *upgreek*
+   * - ``\uptheta``
+     - *upgreek*
+   * - ``\Uptheta``
+     - *upgreek*
    * - ``\upuparrows``
      - **ams**
+   * - ``\upupsilon``
+     - *upgreek*
+   * - ``\Upupsilon``
+     - *upgreek*
+   * - ``\upvarepsilon``
+     - *upgreek*
+   * - ``\upvarphi``
+     - *upgreek*
+   * - ``\upvarpi``
+     - *upgreek*
+   * - ``\upvarrho``
+     - *upgreek*
+   * - ``\upvarsigma``
+     - *upgreek*
+   * - ``\upvartheta``
+     - *upgreek*
+   * - ``\upxi``
+     - *upgreek*
+   * - ``\Upxi``
+     - *upgreek*
+   * - ``\upzeta``
+     - *upgreek*
    * - ``\urcorner``
      - **ams**
+   * - ``\usetagform``
+     - *mathtools*
 
 
 V
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -2083,14 +2703,14 @@ V
      - **ams**
    * - ``\varOmega``
      - **ams**
-   * - ``\varPhi``
-     - **ams**
    * - ``\varphi``
      -
-   * - ``\varPi``
+   * - ``\varPhi``
      - **ams**
    * - ``\varpi``
      -
+   * - ``\varPi``
+     - **ams**
    * - ``\varprojlim``
      - **ams**
    * - ``\varpropto``
@@ -2099,10 +2719,10 @@ V
      - **ams**
    * - ``\varrho``
      -
-   * - ``\varSigma``
-     - **ams**
    * - ``\varsigma``
      -
+   * - ``\varSigma``
+     - **ams**
    * - ``\varsubsetneq``
      - **ams**
    * - ``\varsubsetneqq``
@@ -2111,10 +2731,10 @@ V
      - **ams**
    * - ``\varsupsetneqq``
      - **ams**
-   * - ``\varTheta``
-     - **ams**
    * - ``\vartheta``
      -
+   * - ``\varTheta``
+     - **ams**
    * - ``\vartriangle``
      - **ams**
    * - ``\vartriangleleft``
@@ -2129,16 +2749,18 @@ V
      - *physics*
    * - ``\vcenter``
      -
-   * - ``\Vdash``
-     - **ams**
-   * - ``\vDash``
-     - **ams**
    * - ``\vdash``
      -
+   * - ``\vDash``
+     - **ams**
+   * - ``\Vdash``
+     - **ams**
    * - ``\vdot``
      - *physics*
    * - ``\vdots``
      -
+   * - ``\vdotswithin``
+     - *mathtools*
    * - ``\vec``
      -
    * - ``\vectorarrow``
@@ -2152,12 +2774,14 @@ V
    * - ``\veebar``
      - **ams**
    * - ``\verb``
-     - verb
+     - **verb**
    * - ``\Vert``
      -
    * - ``\vert``
      -
    * - ``\vmqty``
+     - *physics*
+   * - ``\vnabla``
      - *physics*
    * - ``\vphantom``
      -
@@ -2170,7 +2794,7 @@ V
 
 
 W
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -2188,47 +2812,69 @@ W
 
 
 X
-=
+-
 
 .. list-table::
    :widths: 70 30
 
    * - ``\xcancel``
-     - cancel
-   * - ``\Xi``
-     -
+     - **cancel**
+   * - ``\xhookleftarrow``
+     - *mathtools*
+   * - ``\xhookrightarrow``
+     - *mathtools*
    * - ``\xi``
      -
+   * - ``\Xi``
+     -
    * - ``\xleftarrow``
-     - **ams**, *mhchem*
+     - **ams**
+   * - ``\xLeftarrow``
+     - *mathtools*
+   * - ``\xleftharpoondown``
+     - *mathtools*
+   * - ``\xleftharpoonup``
+     - *mathtools*
    * - ``\xleftrightarrow``
-     - *mhchem*
+     - *mathtools*, **mhchem**
+   * - ``\xLeftrightarrow``
+     - *mathtools*
+   * - ``\xleftrightharpoons``
+     - *mathtools*
    * - ``\xLeftrightharpoons``
-     - *mhchem*
+     - **mhchem**
    * - ``\xlongequal``
-     - extpfeil
+     - **extpfeil**
    * - ``\xmapsto``
-     - extpfeil
+     - **extpfeil**, *mathtools*
    * - ``\xmat``
      - *physics*
+   * - ``\xmathstrut``
+     - *mathtools*
    * - ``\xmatrix``
      - *physics*
    * - ``\xrightarrow``
-     - **ams**, *mhchem*
-   * - ``\xRightleftharpoons``
-     - *mhchem*
+     - **ams**
+   * - ``\xRightarrow``
+     - *mathtools*
+   * - ``\xrightharpoondown``
+     - *mathtools*
+   * - ``\xrightharpoonup``
+     - *mathtools*
    * - ``\xrightleftharpoons``
-     - *mhchem*
+     - *mathtools*, **mhchem**
+   * - ``\xRightleftharpoons``
+     - **mhchem**
    * - ``\xtofrom``
-     - extpfeil
+     - **extpfeil**
    * - ``\xtwoheadleftarrow``
-     - extpfeil
+     - **extpfeil**
    * - ``\xtwoheadrightarrow``
-     - extpfeil
+     - **extpfeil**
 
 
 Y
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -2238,7 +2884,7 @@ Y
 
 
 Z
-=
+-
 
 .. list-table::
    :widths: 70 30
@@ -2252,10 +2898,7 @@ Z
 
 
 Environments
-============
-
-LaTeX environments of the form ``\begin{NAME} ... \end{NAME}`` are
-provided where ``NAME`` is one of the following:
+------------
 
 .. list-table::
    :widths: 70 30
@@ -2274,14 +2917,40 @@ provided where ``NAME`` is one of the following:
      - **ams**
    * - ``array``
      -
-   * - ``Bmatrix``
-     - **ams**
    * - ``bmatrix``
      - **ams**
+   * - ``Bmatrix``
+     - **ams**
+   * - ``bmatrix*``
+     - *mathtools*
+   * - ``Bmatrix*``
+     - *mathtools*
+   * - ``bsmallmatrix``
+     - *mathtools*
+   * - ``Bsmallmatrix``
+     - *mathtools*
+   * - ``bsmallmatrix*``
+     - *mathtools*
+   * - ``Bsmallmatrix*``
+     - *mathtools*
    * - ``cases``
      - **ams**
+   * - ``cases*``
+     - *mathtools*
    * - ``CD``
-     - amscd
+     - **amscd**
+   * - ``crampedsubarray``
+     - *mathtools*
+   * - ``dcases``
+     - *mathtools*
+   * - ``dcases*``
+     - *mathtools*
+   * - ``drcases``
+     - *mathtools*
+   * - ``drcases*``
+     - *mathtools*
+   * - ``empheq``
+     - *empheq*
    * - ``eqnarray``
      -
    * - ``eqnarray*``
@@ -2289,30 +2958,81 @@ provided where ``NAME`` is one of the following:
    * - ``equation``
      -
    * - ``equation*``
-     -
+     - **ams**
+   * - ``flalign``
+     - **ams**
+   * - ``flalign*``
+     - **ams**
    * - ``gather``
      - **ams**
    * - ``gather*``
      - **ams**
    * - ``gathered``
      - **ams**
+   * - ``lgathered``
+     - *mathtools*
    * - ``matrix``
      - **ams**
+   * - ``matrix*``
+     - *mathtools*
    * - ``multline``
      - **ams**
    * - ``multline*``
      - **ams**
+   * - ``multlined``
+     - *mathtools*
+   * - ``numcases``
+     - *cases*
    * - ``pmatrix``
      - **ams**
+   * - ``pmatrix*``
+     - *mathtools*
+   * - ``prooftree``
+     - **bussproofs**
+   * - ``psmallmatrix``
+     - *mathtools*
+   * - ``psmallmatrix*``
+     - *mathtools*
+   * - ``rcases``
+     - *mathtools*
+   * - ``rcases*``
+     - *mathtools*
+   * - ``rgathered``
+     - *mathtools*
    * - ``smallmatrix``
      - **ams**, *physics*
+   * - ``smallmatrix*``
+     - *mathtools*
    * - ``split``
      - **ams**
+   * - ``spreadlines``
+     - *mathtools*
    * - ``subarray``
+     - **ams**
+   * - ``subnumcases``
+     - *cases*
+   * - ``vmatrix``
      - **ams**
    * - ``Vmatrix``
      - **ams**
-   * - ``vmatrix``
+   * - ``vmatrix*``
+     - *mathtools*
+   * - ``Vmatrix*``
+     - *mathtools*
+   * - ``vsmallmatrix``
+     - *mathtools*
+   * - ``Vsmallmatrix``
+     - *mathtools*
+   * - ``vsmallmatrix*``
+     - *mathtools*
+   * - ``Vsmallmatrix*``
+     - *mathtools*
+   * - ``xalignat``
      - **ams**
+   * - ``xalignat*``
+     - **ams**
+   * - ``xxalignat``
+     - **ams**
+
 
 |-----|
