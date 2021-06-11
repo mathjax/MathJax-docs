@@ -97,12 +97,12 @@ Default alignment for smallmatrix environments.
 .. _tex-mathtools-shortvdotsadjustabove:
 .. describe:: shortvdotsadjustabove: '.2em'
 
-Space to remove above \shortvdots.
+Space to remove above ``\shortvdots``.
 
 .. _tex-mathtools-shortvdotsadjustbelow:
 .. describe:: shortvdotsadjustbelow: '.2em'
 
-Space to remove below \shortvdots.
+Space to remove below ``\shortvdots``.
 
 .. _tex-mathtools-centercolon:
 .. describe:: centercolon: false
@@ -117,7 +117,7 @@ Vertical adjustment for centered colons.
 .. _tex-mathtools-thincolon-dx:
 .. describe:: thincolon-dx: '-.04em'
 
-Horizontal adjustment for thin colons (e.g., \coloneqq).
+Horizontal adjustment for thin colons (e.g., ``\coloneqq``).
 
 .. _tex-mathtools-thincolon-dw:
 .. describe:: thincolon-dw: '-.08em'
@@ -127,27 +127,27 @@ Width adjustment for thin colons.
 .. _tex-mathtools-use-unicode:
 .. describe:: use-unicode: false
 
-True to use unicode characters rather than multi-character version for \coloneqq, etc., when possible.
+True to use unicode characters rather than multi-character version for ``\coloneqq``, etc., when possible.
 
 .. _tex-mathtools-prescript-sub-format:
 .. describe:: prescript-sub-format: ''
 
-Format for \prescript subscript.
+Format for ``\prescript`` subscript.
 
 .. _tex-mathtools-prescript-sup-format:
 .. describe:: prescript-sup-format: ''
 
-Format for \prescript superscript.
+Format for ``\prescript`` superscript.
 
 .. _tex-mathtools-prescript-arg-format:
 .. describe:: prescript-arg-format: ''
 
-Format for \prescript base.
+Format for ``\prescript`` base.
 
 .. _tex-mathtools-allow-mathtoolsset:
 .. describe:: allow-mathtoolsset: true
 
-True to allow \mathtoolsset to change settings.
+True to allow ``\mathtoolsset`` to change settings.
 
 .. _tex-mathtools-pairedDelimiters:
 .. describe:: pairedDelimiters: {}
