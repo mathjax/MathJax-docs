@@ -5,10 +5,11 @@ cases
 #####
 
 
-The `cases` extension implements the ``cases`` style package from LaTeX.
-**...Explanation...**
-See the `CTAN page <https://www.ctan.org/pkg/cases>`__
-for more information and documentation of `cases`.
+The `cases` extension implements the ``cases`` style package from LaTeX.  It
+provides environments ``numcases`` and ``subnumcases`` for formulas with
+separately enumerated cases.  See the `CTAN page
+<https://www.ctan.org/pkg/cases>`__ for more information and documentation of
+`cases`.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.
 To load the `cases` extension, add ``'[tex]/'cases'`` to the ``load`` array of the ``loader`` block of your

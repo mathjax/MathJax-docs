@@ -5,9 +5,12 @@ empheq
 ######
 
 
-The `empheq` extension implements the ``empheq`` style package from LaTeX.
-**...Explanation...**
-See the `CTAN page <https://www.ctan.org/pkg/empheq>`__
+The `empheq` extension partially implements the ``empheq`` style package from
+LaTeX.  The package provides macros and environments for emphasising equations.
+See the :ref:`list of control sequences <tex-empheq-commands>` for details about
+what commands are implemented in this extension.  Note, that the current
+implementation of the ``empheq`` environment supports only the ``left`` and
+``right`` options. Also see the `CTAN page <https://www.ctan.org/pkg/empheq>`__
 for more information and documentation of `empheq`.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.

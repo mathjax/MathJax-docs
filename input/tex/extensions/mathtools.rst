@@ -5,10 +5,10 @@ mathtools
 #########
 
 
-The `mathtools` extension implements the ``mathtools`` style package from LaTeX.
-**...Explanation...**
-See the `CTAN page <https://www.ctan.org/pkg/mathtools>`__
-for more information and documentation of `mathtools`.
+The `mathtools` extension implements the ``mathtools`` style package from
+LaTeX. The package provides a number of tools for advanced mathematical
+typesetting. See the `CTAN page <https://www.ctan.org/pkg/mathtools>`__ for
+more information and documentation of `mathtools`.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.
 To load the `mathtools` extension, add ``'[tex]/'mathtools'`` to the ``load`` array of the ``loader`` block of your

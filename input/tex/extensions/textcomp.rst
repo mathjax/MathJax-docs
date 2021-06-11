@@ -5,21 +5,27 @@ textcomp
 ########
 
 
-The `textcomp` extension implements the ``textcomp`` style package from LaTeX.
-**...Explanation...**
-See the `CTAN page <https://www.ctan.org/pkg/textcomp>`__
-for more information and documentation of `textcomp`.
+The `textcomp` extension implements the old ``textcomp`` style package from
+LaTeX.  The macros of the package are now part of LaTeX's base package. The
+`textcomp` extension provides a number of text macros that can be used in math
+mode as well. See the `CTAN page <https://www.ctan.org/pkg/textcomp>`__ for
+more information and documentation of `textcomp`.
 
-This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `textcomp` extension, add ``'[tex]/'textcomp'`` to the ``load`` array of the ``loader`` block of your
-MathJax configuration, and add ``'textcomp'`` to the ``packages`` array of the ``tex`` block.
+This package is not autoloaded, so you must request it explicitly if you want to
+use it.  To load the `textcomp` extension, add ``'[tex]/'textcomp'`` to the
+``load`` array of the ``loader`` block of your MathJax configuration, and add
+``'textcomp'`` to the ``packages`` array of the ``tex`` block.  The macros
+provided in `textcomp` can be used equally in math and text mode. In order to
+make them available in text mode they have to be explicitly added to the
+packages of the `textmacros` extension.
 
 
 .. code-block:: javascript
 
    window.MathJax = {
-     loader: {load: ['[tex]/textcomp']},
-     tex: {packages: {'[+]': ['textcomp']}}
+     loader: {load: ['[tex]/textmacros', '[tex]/textcomp']},
+     tex: {packages: {'[+]': ['textmacros']}}
+     textmacros: {packages: {'[+]': ['textcomp']}}
    };
 
 
@@ -27,6 +33,8 @@ MathJax configuration, and add ``'textcomp'`` to the ``packages`` array of the `
 Alternatively, use ``\require{textcomp}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
+
+
 
 -----
 
