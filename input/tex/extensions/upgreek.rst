@@ -12,6 +12,10 @@ documentation of `upgreek`.
 Note, that the extension does not implement the font selection options from the
 LaTeX package.
 
+This package is not autoloaded, so you must request it explicitly if you want to use it.
+To load the `upgreek` extension, add ``'[tex]/'upgreek'`` to the ``load`` array of the ``loader`` block of your
+MathJax configuration, and add ``'upgreek'`` to the ``packages`` array of the ``tex`` block.
+
 .. code-block:: javascript
 
    window.MathJax = {

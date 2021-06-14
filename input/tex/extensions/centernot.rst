@@ -10,6 +10,7 @@ of the standard ``\not`` command and generally leads to a better alignment of
 the slash with the operator it negates. This can be observed with the following
 two examples:
 
+
 .. code-block:: latex
 
   \begin{array}{c}
@@ -29,7 +30,18 @@ two examples:
 See also the `CTAN page <https://www.ctan.org/pkg/centernot>`__ for more
 information and documentation of `centernot`.
 
+In addition to ``\centernot`` the package also implements the non-standard
+``\centerOver``.
 
+.. describe:: \centerOver{symbol1}{symbol2}
+
+    Overlays ``symbol2`` centered on top of ``symbol1``.
+
+
+This package is not autoloaded, so you must request it explicitly if you want to
+use it.  To load the `centernot` extension, add ``'[tex]/'centernot'`` to the
+``load`` array of the ``loader`` block of your MathJax configuration, and add
+``'centernot'`` to the ``packages`` array of the ``tex`` block.
 
 .. code-block:: javascript
 

@@ -23,11 +23,11 @@ MathJax implement some of the `colortbl` commands differently:
    the column to color. If used elsewhere an error is thrown.
 
    Note, that it is unlike its LaTeX counterpart that is used in the layout
-   specification of a tabular environment. While MathJax will not throw an error
-   of a ``\columncolor`` is used in the arguments of the tabular environment, it
-   will be ignored.
+   specification of a table environment (e.g., ``array``). While MathJax will not
+   throw an error of a ``\columncolor`` is used in the arguments of the table
+   environment, it will be ignored.
 
-   In addition overhand arguments are currently not handled. That is MathJax
+   In addition overhang arguments are currently not handled. That is MathJax
    ignores up to two optional bracketed arguments after the mandatory color
    argument.
 
@@ -38,6 +38,10 @@ MathJax implement some of the `colortbl` commands differently:
 
 The order of precendence of the color commands is as follows: ``\cellcolor > \rowcolor > \columncolor``.
 See the example below for all three commands in action.
+
+This package is not autoloaded, so you must request it explicitly if you want to use it.
+To load the `colortbl` extension, add ``'[tex]/'colortbl'`` to the ``load`` array of the ``loader`` block of your
+MathJax configuration, and add ``'colortbl'`` to the ``packages`` array of the ``tex`` block.
 
 .. code-block:: latex
 

@@ -42,6 +42,42 @@ remove it:
 -----
 
 
+.. _tex-ams-options:
+
+
+ams Options
+-----------
+
+Adding the `ams` extension to the ``packages`` array defines an
+``ams`` sub-block of the ``tex`` configuration block with the
+following values:
+
+.. code-block:: javascript
+
+  MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '100%',
+        multlineIndent: '1em'
+      }
+    }
+  };
+
+
+.. _tex-ams-multlineWidth:
+.. describe:: multlineWidth: '100%'
+
+The width to use for multline environments.
+
+.. _tex-ams-multlineIndent:
+.. describe:: multlineIndent: '1em'
+
+The margin to use on both sides of multline environments.
+
+
+-----
+
+
 .. _tex-ams-commands:
 
 
