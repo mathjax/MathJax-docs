@@ -65,4 +65,20 @@ Alternatively, use ``\require{bussproofs}`` in a TeX expression to
 load it dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-bussproofs-commands:
+
+
+bussproofs Commands
+-------------------
+
+The `bussproofs` extension implements the following macros:
+``\alwaysDashedLine``, ``\alwaysNoLine``, ``\alwaysRootAtBottom``, ``\alwaysRootAtTop``, ``\alwaysSingleLine``, ``\alwaysSolidLine``, ``\AXC``, ``\Axiom``, ``\AxiomC``, ``\BIC``, ``\BinaryInf``, ``\BinaryInfC``, ``\dashedLine``, ``\fCenter``, ``\LeftLabel``, ``\LL``, ``\noLine``, ``\QuaternaryInf``, ``\QuaternaryInfC``, ``\QuinaryInf``, ``\QuinaryInfC``, ``\RightLabel``, ``\RL``, ``\rootAtBottom``, ``\rootAtTop``, ``\singleLine``, ``\solidLine``, ``\TIC``, ``\TrinaryInf``, ``\TrinaryInfC``, ``\UIC``, ``\UnaryInf``, ``\UnaryInfC``
+
+And the following environments:
+``prooftree``
+
+
 |-----|

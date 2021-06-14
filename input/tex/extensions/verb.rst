@@ -45,4 +45,17 @@ Alternatively, use ``\require{verb}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-verb-commands:
+
+
+verb Commands
+-------------
+
+The `verb` extension implements the following macros:
+``\verb``
+
+
 |-----|

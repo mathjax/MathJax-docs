@@ -25,4 +25,17 @@ Alternatively, use ``\require{boldsymbol}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-boldsymbol-commands:
+
+
+boldsymbol Commands
+-------------------
+
+The `boldsymbol` extension implements the following macros:
+``\boldsymbol``
+
+
 |-----|

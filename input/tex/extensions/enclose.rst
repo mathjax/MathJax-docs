@@ -45,4 +45,17 @@ Alternatively, use ``\require{enclose}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-enclose-commands:
+
+
+enclose Commands
+----------------
+
+The `enclose` extension implements the following macros:
+``\enclose``
+
+
 |-----|

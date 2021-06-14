@@ -42,4 +42,17 @@ extension is loaded.
    is no longer part of MathJax version 3.  Only the newer version of
    `mhchem` is available.
 
+-----
+
+
+.. _tex-mhchem-commands:
+
+
+mhchem Commands
+---------------
+
+The `mhchem` extension implements the following macros:
+``\ce``, ``\longleftrightarrows``, ``\longLeftrightharpoons``, ``\longrightleftharpoons``, ``\longRightleftharpoons``, ``\pu``, ``\tripledash``, ``\xleftarrow``, ``\xleftrightarrow``, ``\xLeftrightharpoons``, ``\xrightarrow``, ``\xrightleftharpoons``, ``\xRightleftharpoons``
+
+
 |-----|

@@ -71,4 +71,17 @@ Alternatively, use ``\require{html}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-html-commands:
+
+
+html Commands
+-------------
+
+The `html` extension implements the following macros:
+``\class``, ``\cssId``, ``\href``, ``\style``
+
+
 |-----|

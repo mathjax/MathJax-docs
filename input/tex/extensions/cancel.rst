@@ -39,4 +39,17 @@ Alternatively, use ``\require{cancel}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-cancel-commands:
+
+
+cancel Commands
+---------------
+
+The `cancel` extension implements the following macros:
+``\bcancel``, ``\cancel``, ``\cancelto``, ``\xcancel``
+
+
 |-----|

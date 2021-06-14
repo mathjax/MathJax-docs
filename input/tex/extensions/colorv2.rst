@@ -44,4 +44,17 @@ Alternatively, you can configure the `autoload` package to load
      }
    };
 
+-----
+
+
+.. _tex-colorv2-commands:
+
+
+colorv2 Commands
+----------------
+
+The `colorv2` extension implements the following macros:
+``\color``
+
+
 |-----|

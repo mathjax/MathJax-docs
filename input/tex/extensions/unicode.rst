@@ -55,4 +55,17 @@ Alternatively, use ``\require{unicode}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 extension is loaded.
 
+-----
+
+
+.. _tex-unicode-commands:
+
+
+unicode Commands
+----------------
+
+The `unicode` extension implements the following macros:
+``\unicode``
+
+
 |-----|

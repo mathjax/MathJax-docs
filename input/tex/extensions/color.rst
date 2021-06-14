@@ -85,4 +85,17 @@ following values:
    This gives the border width to use with framed color boxes produced
    by ``\fcolorbox``.
 
+-----
+
+
+.. _tex-color-commands:
+
+
+color Commands
+--------------
+
+The `color` extension implements the following macros:
+``\color``, ``\colorbox``, ``\definecolor``, ``\fcolorbox``, ``\textcolor``
+
+
 |-----|
