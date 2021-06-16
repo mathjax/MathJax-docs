@@ -11,7 +11,7 @@ typesetting. See the `CTAN page <https://www.ctan.org/pkg/mathtools>`__ for
 more information and documentation of `mathtools`.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `mathtools` extension, add ``'[tex]/'mathtools'`` to the ``load`` array of the ``loader`` block of your
+To load the `mathtools` extension, add ``'[tex]/mathtools'`` to the ``load`` array of the ``loader`` block of your
 MathJax configuration, and add ``'mathtools'`` to the ``packages`` array of the ``tex`` block.
 
 

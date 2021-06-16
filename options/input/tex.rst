@@ -38,7 +38,6 @@ The Configuration Block
         tagSide: 'right',          // side for \tag macros
         tagIndent: '0.8em',        // amount to indent tags
         useLabelIds: true,         // use label name rather than tag for ids
-        multlineWidth: '85%',      // width of multline environment
         maxMacros: 1000,           // maximum number of macro substitutions per expression
         maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
         baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
@@ -56,6 +55,14 @@ Note that some extensions make additional options available.  See the
 
    The default for ``processEscapes`` has changed from
    ``false`` in version 2 to ``true`` in version 3.
+
+.. note::
+
+   Prior to version 3.2, the ``multlineWidth`` option used to be in the
+   main ``tex`` block, but it is now in the ``ams`` sub-block of the
+   ``tex`` block.  Version 3.2 includes code to move the configuration
+   from its old location to its new one, but that
+   backward-compatibility code will be removed in a future vesion.
 
 -----
 
@@ -229,15 +236,6 @@ Option Descriptions
    or the equation number.  When ``true``, use the label, when
    ``false``, use the equation number.
 
-.. _tex-multlineWidth:
-.. describe:: multlineWidth: "85%"
-
-    The width to use for the `multline` environment that is part of
-    the :ref:`tex-ams` extension.  This width gives room for tags at
-    either side of the equation, but if you are displaying mathematics
-    in a small area or a thin column of text, you might need to change
-    the value to leave sufficient margin for tags.
-
 .. _tex-maxMacros:
 .. describe:: maxMacros: 10000
 
@@ -343,12 +341,38 @@ macros for use in TeX espressions:
 The options for the various TeX packages (that have options) are
 described in the links below:
 
+* :ref:`tex-ams-options`
 * :ref:`tex-amscd-options`
 * :ref:`tex-autoload-options`
 * :ref:`tex-color-options`
 * :ref:`tex-configmacros-options`
+* :ref:`tex-mathtools-options`
 * :ref:`tex-noundefined-options`
+* :ref:`tex-physics-options`
 * :ref:`tex-require-options`
+* :ref:`tex-setoptions-options`
 * :ref:`tex-tagformat-options`
+
+-----
+
+Setting Options from within TeX Expressions
+===========================================
+
+It is sometimes convenient to be able to change the value of a TeX or
+TeX extension option from within a TeX expression.  For example, you
+might want to change the tag side for an individual expression.  The
+:ref:`tex-setoptions` extension allows you to do just that.  It
+defines a ``\setOptions`` macro that allows you to change the values
+of options for the TeX parser, or the options for a given TeX package.
+
+Because this functionality can have potential adverse consequences on
+a page that allows community members to enter TeX notation, this
+extension is not loaded by default, and can't be loaded by
+`\require{}`.  You must laod it and add it to the tex package list
+explicitly in order to allow the options to be set.  The extension has
+configuration parameters that allow you to control which packages and
+options can be modified from within a TeX expression, and you may wish
+to adjust those if you are using this macro in a community setting.
+
 
 |-----|

@@ -39,7 +39,7 @@ In addition to ``\centernot`` the package also implements the non-standard
 
 
 This package is not autoloaded, so you must request it explicitly if you want to
-use it.  To load the `centernot` extension, add ``'[tex]/'centernot'`` to the
+use it.  To load the `centernot` extension, add ``'[tex]/centernot'`` to the
 ``load`` array of the ``loader`` block of your MathJax configuration, and add
 ``'centernot'`` to the ``packages`` array of the ``tex`` block.
 
@@ -50,6 +50,19 @@ use it.  To load the `centernot` extension, add ``'[tex]/'centernot'`` to the
      tex: {packages: {'[+]': ['centernot']}}
    };
 
+
+
+You can configure the `autoload` extension to load `centernot` via
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {
+       autoload: {
+         centernot: ['centernot', 'centerOver']
+       }
+     }
+   };
 
 
 Alternatively, use ``\require{centernot}`` in a TeX expression to load it

@@ -75,6 +75,15 @@ The width to use for multline environments.
 The margin to use on both sides of multline environments.
 
 
+.. note::
+
+   The ``mutlineWidth`` option used to be in the main ``tex`` block,
+   but as of version 3.2, it is now in the ``ams`` sub-block of the
+   ``tex`` block.  Version 3.2 includes code to move the configuration
+   from its old location to its new one, but that
+   backward-compatibility code will be removed in a future vesion.
+
+
 -----
 
 

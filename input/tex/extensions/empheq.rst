@@ -14,7 +14,7 @@ implementation of the ``empheq`` environment supports only the ``left`` and
 for more information and documentation of `empheq`.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `empheq` extension, add ``'[tex]/'empheq'`` to the ``load`` array of the ``loader`` block of your
+To load the `empheq` extension, add ``'[tex]/empheq'`` to the ``load`` array of the ``loader`` block of your
 MathJax configuration, and add ``'empheq'`` to the ``packages`` array of the ``tex`` block.
 
 
@@ -23,6 +23,20 @@ MathJax configuration, and add ``'empheq'`` to the ``packages`` array of the ``t
    window.MathJax = {
      loader: {load: ['[tex]/empheq']},
      tex: {packages: {'[+]': ['empheq']}}
+   };
+
+
+You can configure the `autoload` extension to load `empheq` when the
+``empheq`` environment is first used via
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {
+       autoload: {
+         empheq: [[], ['empheq']]
+       }
+     }
    };
 
 
