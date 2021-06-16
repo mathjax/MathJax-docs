@@ -48,7 +48,7 @@ Option Descriptions
    This setting controls whether MathJax will scale the mathematics so
    that the ex-height of the math fonts matches the ex-height of the
    surrounding fonts.  This makes the math match the surroundings
-   better, but if the surrounding font doesn't have its ex-height set
+   better, but if the surrounding font does not have its ex-height set
    properly (and not all fonts do), it can cause the math to *not*
    match the surrounding text.  While this will make the lower-case
    letters match the surrounding fonts, the upper case letters may not
