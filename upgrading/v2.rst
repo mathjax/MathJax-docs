@@ -564,19 +564,8 @@ important ones are the following.
 
 ..
 
-* The `Safe` extension has not yet been ported to version 3, but
-  should be for a future release.
-
-..
-
 * The `begingroup` and `mediawiki-texvc` TeX extensions haven't been
   ported to version 3 yet, but should be in the future.
-
-..
-
-* The `mml3` and `content-mml` extensions for the MathML input jax are
-  not yet available in version 3.  We do hope to have these in a
-  future release.
 
 ..
 
