@@ -148,7 +148,7 @@ following values:
    true if that option can be set for that package, and false
    otherwise.  The default is to check if the option is listed
    explicitly in the list of options for the given package in the
-   ``allowOptions``, and if the value is explicitly false, or if it is
+   ``allowOptions``. If the value is explicitly false, or if it is
    not listed and the ``allowOptionDefault`` is false, then produce an
    error. Otherwise check that the option actually exists for the
    package, and report an error if not, otherwise allow the option to
