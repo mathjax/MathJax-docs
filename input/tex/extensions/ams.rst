@@ -81,7 +81,7 @@ The margin to use on both sides of multline environments.
    but as of version 3.2, it is now in the ``ams`` sub-block of the
    ``tex`` block.  Version 3.2 includes code to move the configuration
    from its old location to its new one, but that
-   backward-compatibility code will be removed in a future vesion.
+   backward-compatibility code will be removed in a future version.
 
 
 -----
