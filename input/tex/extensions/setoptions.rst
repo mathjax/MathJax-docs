@@ -135,7 +135,7 @@ following values:
    check if the package is explicitly allowed by its entry in the
    ``allowOptions`` property being either ``true`` or a list of the
    options that are allowed to be set, otherwise if that entry is
-   explicitly ``false`` or the ``allowPacakgeDefault`` option is
+   explicitly ``false`` or the ``allowPackageDefault`` option is
    ``false``, an error is issued.  You can supply your own function to
    process the package names in another way if you wish.
 
