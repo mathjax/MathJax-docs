@@ -64,6 +64,7 @@ need it.
    :titlesonly:
 
    Output Formats                     <output/index>
+   Lazy Typesetting                   <output/lazy>
    Line Breaking                      <output/linebreaks>
    Font Support                       <output/fonts>
    Browser Support                    <output/browser>
