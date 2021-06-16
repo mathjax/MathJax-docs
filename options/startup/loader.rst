@@ -286,7 +286,7 @@ Option Descriptions
    There are three default filters: one that replaces `name` with its
    value in the ``source`` list, if any; one that normalizes package
    names by adding ``[mathjax]/`` if there is no prefix or protocol
-   already, and adding ``.js`` if there isn't an extension; and one
+   already, and adding ``.js`` if there is no extension; and one
    that replaced prefixes with their values in the ``paths`` list.
    These have priorities 0, 10, and 20, respectively, and you can use
    priorities (including negative ones) with your own functions to
