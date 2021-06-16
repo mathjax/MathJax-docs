@@ -134,7 +134,7 @@ following values:
    The default is to first check that the named package exists, then
    check if the package is explicitly allowed by its entry in the
    ``allowOptions`` property being either ``true`` or a list of the
-   options that are allowed to be set, otherwise if that entry is
+   ``allowOptions`` property. The entry can either be ``true``, allowing all options of the package to be set, or a list of the options that are allowed to be set. If the entry is
    explicitly ``false`` or the ``allowPackageDefault`` option is
    ``false``, an error is issued.  You can supply your own function to
    process the package names in another way if you wish.
