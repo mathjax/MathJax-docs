@@ -31,7 +31,6 @@ above.  They are given here with their default values, using the
       chtml: {
         scale: 1,                      // global scaling factor for all expressions
         minScale: .5,                  // smallest scaling factor to use
-        matchFontHeight: true,         // true to match ex-height of surrounding font
         mtextInheritFont: false,       // true to make mtext elements use surrounding font
         merrorInheritFont: false,      // true to make merror text use surrounding font
         mtextFont: '',                 // font to use for mtext, if not inheriting (empty means use MathJax fonts)
@@ -44,6 +43,12 @@ above.  They are given here with their default values, using the
         displayIndent: '0'             // default for indentshift when set to 'auto'
       }
     };
+
+.. note::
+
+   The ``matchFontHeight`` option is no longer available on the SVG
+   output processor, so it is no longer listed here.  It is now
+   decribed among the CommonHTML output options.
 
 -----
 
@@ -67,24 +72,6 @@ Option Descriptions
    This gives a minimum scale factor for the scaling used by MathJax
    to match the equation to the surrounding text.  This will prevent
    MathJax from making the mathematics too small.
-
-.. _output-matchFontHeight:
-.. describe:: matchFontHeight: true
-
-   This setting controls whether MathJax will scale the mathematics so
-   that the ex-height of the math fonts matches the ex-height of the
-   surrounding fonts.  This makes the math match the surroundings
-   better, but if the surrounding font doesn't have its ex-height set
-   properly (and not all fonts do), it can cause the math to *not*
-   match the surrounding text.  While this will make the lower-case
-   letters match the surrounding fonts, the upper case letters may not
-   match (that would require the font height and ex-height to have the
-   same ratio in the surrounding text as in the math fonts, which is
-   unlikely).
-
-   Note that, although this option is available on all the output
-   renderers, it has no effect on SVG output, since that is scaled to
-   match the surrounding height automatically.
 
 .. _output-mtextInheritFont:
 .. describe:: mtextInheritFont: false
