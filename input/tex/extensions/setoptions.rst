@@ -192,7 +192,7 @@ following values:
    can't be set.  If it is ``true`` and ``allowOptionsDefault`` is
    true, then any of its options can be set.  If it is an explicit
    list of options, then if the option is listed as ``true``, it can
-   be set, and if ``false`` it can not.  If an option isn't listed,
+   be set, and if ``false`` it can not.  If an option is not listed,
    then the value of ``allowOptionsDefault`` is used to determine
    whether it can be set or not.  If a package does not appear
    explicitly in the list, then the value of ``allowPackageDefault``
