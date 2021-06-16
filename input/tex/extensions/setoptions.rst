@@ -150,7 +150,7 @@ following values:
    explicitly in the list of options for the given package in the
    ``allowOptions``, and if the value is explicitly false, or if it is
    not listed and the ``allowOptionDefault`` is false, then produce an
-   error, otherwise check that the option actually exists for the
+   error. Otherwise check that the option actually exists for the
    package, and report an error if not, otherwise allow the option to
    be set.  You can supply your own function to process the option
    names in another way if you wish.
