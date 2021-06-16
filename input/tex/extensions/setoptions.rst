@@ -170,7 +170,7 @@ following values:
 
    This indicates how to handle packages that are not listed
    explicitly in the ``allowOptions`` list.  If ``true``, packages
-   that aren't listed are allowed to have their options set, and if
+   that are not listed are allowed to have their options set. If the value is
    ``false``, only the packages that are listed as ``true`` or have
    explicit option lists can have their options set.
    
