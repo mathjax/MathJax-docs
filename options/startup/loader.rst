@@ -31,7 +31,8 @@ In the example below, :data:`Loader` represents the
         source: {},                                  // the URLs for components, when defaults aren't right
         dependencies: {},                            // arrays of dependencies for each component
         provides: {},                                // components provided by each component
-        require: null                                // function to use for loading components
+        require: null,                               // function to use for loading components
+        pathFlters: []                               // functions to use to process package names
       }
     };
 
@@ -248,6 +249,48 @@ Option Descriptions
           require: require
         }
       };
+
+.. _loader-pathFilters:
+.. describe:: pathFilters: []
+
+   This is an array of functions that are used to process the names of
+   components to produce the actual URL used to locate the component.
+   There are built-in filters that perform actions like converting the
+   prefix ``[tex]`` to the path for the TeX extensions, and adding
+   `.js` to the end of the name, and so on.  You can provide your own
+   filters if you need to manage the URLs in a different way.  The
+   array consists of entries that are either functions that take a
+   data object as an argument, or an array consisting of such a
+   function and a number representing its priority in the list of
+   filters (lower numbers are earlier in the list).  The data object
+   that is passed to these functions is
+
+   .. code-block:: javascript
+
+      {
+        name: string,            // the current name for the package (this becomes the url in the end)
+        original: string,        // the original package name (should not be modified)
+        addExtension: boolean,   // true if .js should be added to this name at some stage in the filter list
+      }
+
+   The filter can change the `name` value to move it closer to the
+   final URL used for loading the given package.  The `original`
+   property should be the original name of the package, and should not
+   be modified.
+
+   The function should return ``true`` if the `name` should be futher
+   processed by other filters in the list, and ``false`` to end
+   processing with the `name` now representing the final URL for the
+   component.
+
+   There are three default filters: one that replaces `name` with its
+   value in the ``source`` list, if any; one that normalizes package
+   names by adding ``[mathjax]/`` if there isn't a prefix or protocol
+   already, and adding ``.js`` if there isn't an extension; and one
+   that replaced prefixes with their values in the ``paths`` list.
+   These have priorities 0, 10, and 20, respectively, and you can use
+   priorities (including negative ones) with your own functions to
+   insert them into this list in any location.
 
 -----
 

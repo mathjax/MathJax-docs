@@ -27,6 +27,8 @@ In the example below, :data:`Startup` represents the
         ready: Startup.defaultReady.bind(Startup),          // Called when components are loaded
         pageReady: Startup.defaultPageReady.bind(Startup),  // Called when MathJax and page are ready
         document: document,      // The document (or fragment or string) to work in
+        invalidOption: 'warn',   // Are invalid options fatal or produce an error?
+        optionError: OPTIONS.optionError,  // Function used to report invalid options
         input: [],               // The names of the input jax to use from among those loaded
         output: null,            // The name for the output jax to use from among those loaded
         handler: null,           // The name of the handler to register from among those loaded
@@ -86,6 +88,26 @@ Option Descriptions
    that you want to process.  By default (for in-browser use) it is
    the browser document.  When there is no global :data:`document`
    variable, it is an empty HTML document.
+
+.. _startup-invalidOption:
+.. describe:: invalidOption: 'warn'   // or 'fatal'
+
+   This determines whether an invalid option will cause a fatal error
+   (when set to ``'fatal'``) that stops MathJax from running, or a
+   warning (when set to ``'warn'``) that allows MathJax to go on.
+   Prior to version 3.2, invalid options wer fatal, but this option
+   now allows control over that behavior.
+
+.. _startup-optionError:
+.. describe:: optionError: OPTIONS.optionError
+
+   This option gives a function that is called whenever there is an
+   invalid option provided by the user.  It takes two string
+   arguments, the first being the message, and the second being the
+   name of the invalid option.  The default function looks at the
+   ``invalidOption`` value and if it is ``'fatal'`` it throws an error
+   using the given message, otherwise it logs the message to the
+   browser console, allowing futher options to be processed.
 
 .. _startup-input:
 .. describe:: input: []
