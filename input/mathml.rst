@@ -91,7 +91,7 @@ See the `results of the MathML3.0 test suite
 <http://www.w3.org/Math/testsuite/results/tests.html>`_ for details.
 
 
-.. _content-mathml:
+.. _mathml-content-mathml:
 
 Content MathML
 ==============
@@ -120,32 +120,34 @@ version 3.
    For more information, see :doc:`options/extensions/Content-MathML`.
 
 
-.. _mml3-mathml:
+.. _mathml-mml3:
 
 Experimental mml3 extension
 ===========================
 
-The version 2 ``mml3`` extension is not yet available in version 3.
+MathML includes a number of tags that support elementary-school
+mathematics, like ``<mstack>`` and ``<mlongdiv>``.  MathJax has only
+experimental support for these tags via the `mml3` extension.  This
+uses an XSLT transform to convert these tags into other presentation
+MathML tags that MathJax has implemented. This does a reasonable job
+for some constructs, and a poorer job for others, but it does make it
+possible to process elementary math within MathJax.  Better support is
+planned for the future.
 
-..
-   To activate experimental features in your documents, simply include
-   ``"mml3.js"`` in the ``extensions`` array of your MathML
-   configuration block.  For example
+To activate experimental features in your documents, simply include
+``[mml]/mml3`` in the ``load`` array of the ``loader`` section of your
+configuration:
 
-   .. code-block:: html
 
-       <script type="text/x-mathjax-config">
-       MathJax.Hub.Config({
-         MathML: {
-           extensions: ["mml3.js"]
-         }
-       });
-       </script>
+.. code-block:: javascript
 
-   Note that this script tag must come *before* the script that loads
-   ``MathJax.js`` itself.
+   MathJax = {
+     loader: {load: ['[mml]/mml3']}
+   };
 
-   For more information, see :doc:`options/extensions/MML3`.
+
+This will install a pre-filter on the MathML input jax that performs
+the XSLT transform before processing it.
 
 
 .. _mathml-semantics-annotations:

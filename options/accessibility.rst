@@ -70,7 +70,7 @@ The Configuration Block
 
    MathJax = {
      options: {
-       enableEnrichment: true,  // false to disable enrichment
+       enableEnrichment: true,   // false to disable enrichment
        sre: {
          speech: 'none',         // or 'shallow', or 'deep'
          domain: 'mathspeak',    // speech rules domain

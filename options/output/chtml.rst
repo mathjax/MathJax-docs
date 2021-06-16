@@ -23,7 +23,6 @@ The Configuration Block
       chtml: {
         scale: 1,                      // global scaling factor for all expressions
         minScale: .5,                  // smallest scaling factor to use
-        matchFontHeight: true,         // true to match ex-height of surrounding font
         mtextInheritFont: false,       // true to make mtext elements use surrounding font
         merrorInheritFont: true,       // true to make merror text use surrounding font
         mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
@@ -31,6 +30,7 @@ The Configuration Block
         exFactor: .5,                  // default size of ex in em units
         displayAlign: 'center',        // default for indentalign when set to 'auto'
         displayIndent: '0',            // default for indentshift when set to 'auto'
+        matchFontHeight: true,         // true to match ex-height of surrounding font
         fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2',   // The URL where the fonts are found
         adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
       }
@@ -41,6 +41,20 @@ The Configuration Block
 
 Option Descriptions
 ===================
+
+.. _chtml-matchFontHeight:
+.. describe:: matchFontHeight: true
+
+   This setting controls whether MathJax will scale the mathematics so
+   that the ex-height of the math fonts matches the ex-height of the
+   surrounding fonts.  This makes the math match the surroundings
+   better, but if the surrounding font does not have its ex-height set
+   properly (and not all fonts do), it can cause the math to *not*
+   match the surrounding text.  While this will make the lower-case
+   letters match the surrounding fonts, the upper case letters may not
+   match (that would require the font height and ex-height to have the
+   same ratio in the surrounding text as in the math fonts, which is
+   unlikely).
 
 .. _chtml-fontURL:
 .. describe:: fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2'

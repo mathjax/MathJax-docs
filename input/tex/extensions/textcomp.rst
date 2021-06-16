@@ -12,7 +12,7 @@ mode as well. See the `CTAN page <https://www.ctan.org/pkg/textcomp>`__ for
 more information and documentation of `textcomp`.
 
 This package is not autoloaded, so you must request it explicitly if you want to
-use it.  To load the `textcomp` extension, add ``'[tex]/'textcomp'`` to the
+use it.  To load the `textcomp` extension, add ``'[tex]/textcomp'`` to the
 ``load`` array of the ``loader`` block of your MathJax configuration, and add
 ``'textcomp'`` to the ``packages`` array of the ``tex`` block.  The macros
 provided in `textcomp` can be used equally in math and text mode. In order to

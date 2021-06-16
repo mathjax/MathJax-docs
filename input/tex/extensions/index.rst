@@ -36,6 +36,7 @@ The main extensions are described below:
    noundefined
    physics
    require
+   setoptions
    tagformat
    textcomp
    textmacros

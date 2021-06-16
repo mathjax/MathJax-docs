@@ -13,7 +13,7 @@ Note that not all the characters for this package are yet included in the
 MathJax fonts so output might vary on clients.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `gensymb` extension, add ``'[tex]/'gensymb'`` to the ``load`` array of the ``loader`` block of your
+To load the `gensymb` extension, add ``'[tex]/gensymb'`` to the ``load`` array of the ``loader`` block of your
 MathJax configuration, and add ``'gensymb'`` to the ``packages`` array of the ``tex`` block.
 
 .. code-block:: javascript
@@ -21,6 +21,19 @@ MathJax configuration, and add ``'gensymb'`` to the ``packages`` array of the ``
    window.MathJax = {
      loader: {load: ['[tex]/gensymb']},
      tex: {packages: {'[+]': ['gensymb']}}
+   };
+
+
+You can configure the `autoload` extension to load `gensymb` via
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {
+       autoload: {
+         gensymb: ['celsius', 'degree', 'micro', 'ohm', 'perthousand']
+       }
+     }
    };
 
 

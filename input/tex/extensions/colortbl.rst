@@ -39,10 +39,6 @@ MathJax implement some of the `colortbl` commands differently:
 The order of precendence of the color commands is as follows: ``\cellcolor > \rowcolor > \columncolor``.
 See the example below for all three commands in action.
 
-This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `colortbl` extension, add ``'[tex]/'colortbl'`` to the ``load`` array of the ``loader`` block of your
-MathJax configuration, and add ``'colortbl'`` to the ``packages`` array of the ``tex`` block.
-
 .. code-block:: latex
 
   \begin{array}{|l|c|}
@@ -53,11 +49,27 @@ MathJax configuration, and add ``'colortbl'`` to the ``packages`` array of the `
   \end{array}
 
 
+This package is not autoloaded, so you must request it explicitly if you want to use it.
+To load the `colortbl` extension, add ``'[tex]/colortbl'`` to the ``load`` array of the ``loader`` block of your
+MathJax configuration, and add ``'colortbl'`` to the ``packages`` array of the ``tex`` block.
+
 .. code-block:: javascript
 
    window.MathJax = {
      loader: {load: ['[tex]/colortbl']},
      tex: {packages: {'[+]': ['colortbl']}}
+   };
+
+You can configure the `autoload` extension to load `colortbl` via
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {
+       autoload: {
+         colortbl: ['cellcolor', 'columncolor', 'rowcolor']
+       }
+     }
    };
 
 

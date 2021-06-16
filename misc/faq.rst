@@ -167,7 +167,7 @@ MathML comes in two types: Presentation MathML, which describes what
 an equation looks like, and Content MathML, which describes what an
 equation means. By default, MathJax works with Presentation MathML and
 offers an extension for Content MathML, see :ref:`the documentation on
-MathML support <content-mathml>`, which has not yet been converted to
+MathML support <mathml-content-mathml>`, which has not yet been converted to
 version 3.
 
 You can also convert your Content MathML expressions to Presentation

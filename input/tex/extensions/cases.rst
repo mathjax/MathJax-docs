@@ -12,7 +12,7 @@ separately enumerated cases.  See the `CTAN page
 `cases`.
 
 This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `cases` extension, add ``'[tex]/'cases'`` to the ``load`` array of the ``loader`` block of your
+To load the `cases` extension, add ``'[tex]/cases'`` to the ``load`` array of the ``loader`` block of your
 MathJax configuration, and add ``'cases'`` to the ``packages`` array of the ``tex`` block.
 
 
@@ -23,6 +23,18 @@ MathJax configuration, and add ``'cases'`` to the ``packages`` array of the ``te
      tex: {packages: {'[+]': ['cases']}}
    };
 
+
+You can configure the `autoload` extension to load `cases` via
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {
+       autoload: {
+         cases: [[], ['numcases', 'subnumcases']]
+       }
+     }
+   };
 
 
 Alternatively, use ``\require{cases}`` in a TeX expression to load it
