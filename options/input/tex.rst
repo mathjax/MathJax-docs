@@ -368,7 +368,7 @@ of options for the TeX parser, or the options for a given TeX package.
 Because this functionality can have potential adverse consequences on
 a page that allows community members to enter TeX notation, this
 extension is not loaded by default, and can't be loaded by
-`\require{}`.  You must laod it and add it to the tex package list
+`\require{}`.  You must load it and add it to the tex package list
 explicitly in order to allow the options to be set.  The extension has
 configuration parameters that allow you to control which packages and
 options can be modified from within a TeX expression, and you may wish
