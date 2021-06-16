@@ -95,7 +95,7 @@ Option Descriptions
    This determines whether an invalid option will cause a fatal error
    (when set to ``'fatal'``) that stops MathJax from running, or a
    warning (when set to ``'warn'``) that allows MathJax to go on.
-   Prior to version 3.2, invalid options wer fatal, but this option
+   Prior to version 3.2, invalid options were fatal, but this option
    now allows control over that behavior.
 
 .. _startup-optionError:
