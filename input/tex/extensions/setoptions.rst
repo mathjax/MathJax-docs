@@ -179,7 +179,7 @@ following values:
 
    This indicates how to handle options that are not listed explicitly
    in the ``allowOptions`` list for a given package.  If ``true``,
-   options that aren't listed are allowed to be set, and if ``false``,
+   options that are not listed are allowed to be set, and if ``false``,
    only the options that are listed explicitly as ``true`` for the given
    package can have their options set.
 
