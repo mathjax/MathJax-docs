@@ -73,6 +73,42 @@ To load the `setoptions` extension, add ``'[tex]/setoptions'`` to the
 
 -----
 
+.. _tex-setoptions-require:
+
+The \require command with setoptions
+------------------------------------
+
+If the `require` package is enabled, `setoptions` modifies
+``\require`` to allow passing of options for the required package (and
+makes the original ``\require`` macro available as ``\Require``).  So
+the new syntax is:
+
+.. describe:: \require[options]{package}
+
+where `options` is a list of options in the same format as used by
+``\setOptions``, and ``package`` is the name of the extension to load.
+This command is equivalent to:
+
+.. code-block:: latex
+
+   \Require{package}\setOptions[package]{options}
+
+meaning that the package is loaded and then its options are set.
+
+For example:
+
+.. code-block:: latex
+
+   \require[harrowsize=3em]{amscd}
+
+would load the `amscd` extension and then set its ``harrowsize``
+option to ``3em``.
+
+Note that the same rules apply to which options can be set for which
+package as those that govern ``\setOptions`` itself.
+
+
+-----
 
 .. _tex-setoptions-options:
 
@@ -213,6 +249,5 @@ setoptions Commands
 
 The `setoptions` extension implements the following macros:
 ``\setOptions``
-
 
 |-----|
