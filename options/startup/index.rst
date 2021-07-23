@@ -24,7 +24,7 @@ saved as :attr:`MathJax.config`, and other properties are added to
 :data:`MathJax` depending on the components that get loaded.  For
 example, the `startup` component adds :meth:`MathJax.startup`, which
 contains the objects that the `startup` module creates, like the input
-and output jax, the math ocument object, the DOM adaptor, and so on.
+and output jax, the math document object, the DOM adaptor, and so on.
 See the :ref:`MathJax API <mathjax-api>` documentation for more
 information.
 
