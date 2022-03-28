@@ -5,7 +5,7 @@ html
 ####
 
 The `html` extension gives you access to some HTML features like
-styles, classes, element ID's, and clickable links.  It defines the
+styles, classes, element ID's, data-* attributes, and clickable links.  It defines the
 following non-standard macros:
 
 .. describe:: \\href{url}{math}
@@ -37,6 +37,10 @@ following non-standard macros:
     Adds the give ``css`` declarations to the element associated with
     ``math``.
 
+.. describe:: \\data{dataset}{math}
+
+    Adds `data-* <https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*>`__ attributes to the element associated with ``math``.
+
 For example:
 
 .. code-block:: latex
@@ -46,6 +50,8 @@ For example:
     (x+1)^2 = \class{hidden}{(x+1)(x+1)}
 
     (x+1)^2 = \cssId{step1}{\style{visibility:hidden}{(x+1)(x+1)}}
+
+    x = \data{during="quadratic"}{\frac{-b\pm\sqrt{b^2-4ac}}{2a}}
 
 .. Note::
 
@@ -81,7 +87,7 @@ html Commands
 -------------
 
 The `html` extension implements the following macros:
-``\class``, ``\cssId``, ``\href``, ``\style``
+``\class``, ``\cssId``, ``\data``, ``\href``, ``\style``
 
 
 |-----|
