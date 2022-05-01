@@ -51,7 +51,7 @@ For example:
 
     (x+1)^2 = \cssId{step1}{\style{visibility:hidden}{(x+1)(x+1)}}
 
-    x = \data{during="quadratic"}{\frac{-b\pm\sqrt{b^2-4ac}}{2a}}
+    x = \data{during=quadratic}{\frac{-b\pm\sqrt{b^2-4ac}}{2a}}
 
 .. Note::
 
