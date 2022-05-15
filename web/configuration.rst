@@ -244,7 +244,7 @@ choose and descriptions of their contents.  See the :ref:`list of CDNs
 <cdn-list>` for the URLs for a number of CDNs that serve MathJax.
 
 Note that the script that loads the MathJax component file should
-*follow* the script the configures MathJax (otherwise MathJax will not
+*follow* the script that configures MathJax (otherwise MathJax will not
 know what configuration you need).  If you use one of the combined
 component files in version 3, you may not need to do any configuration
 at all.

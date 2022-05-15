@@ -54,7 +54,7 @@ only font available in version 3 (see the :ref:`font-support` section
 for more information).  The `output/svg/fonts/tex` component holds
 the font data.
 
-* See the :ref:`svg-output` section for details on the CommonHTML
+* See the :ref:`svg-output` section for details on the SVG
   output processor.
 
 * See the :ref:`svg-options` section for information about
