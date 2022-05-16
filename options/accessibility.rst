@@ -28,9 +28,9 @@ settings:
      options: {
        menuOptions: {
          settings: {
-           assistiveMml: true;   // true to enable assitive MathML
-           collapsible: false;   // true to enable collapsible math
-           explorer: false;      // true to enable the expression explorer
+           assistiveMml: true,   // true to enable assitive MathML
+           collapsible: false,   // true to enable collapsible math
+           explorer: false      // true to enable the expression explorer
          }
        }
      }

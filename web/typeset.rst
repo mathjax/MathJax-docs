@@ -94,7 +94,7 @@ DOM modifications and returns the array of elements to typeset, or
    typeset(() => {
      const math = document.querySelector('#math');
      math.innerHTML = '$$\\frac{a}{1-a^2}$$';
-     return math;
+     return [math];
    });
 
 would replace the contents of the element with ``id="math"`` with the
