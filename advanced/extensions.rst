@@ -4,7 +4,7 @@
 Custom Extensions
 #################
 
-**This page is uncer construction**
+**This page is under construction**
 
 See the :ref:`custom-component` section for an example of building
 custom extensions to MathJax.
