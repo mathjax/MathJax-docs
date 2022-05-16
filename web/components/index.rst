@@ -24,7 +24,7 @@ extensions to be loaded as well.
 
 Components provide a great deal of flexibility in determining the
 pieces of MathJax that you use.  You can even make your own custom
-builds of MathJax that package exactly the pieces and that you want to
+builds of MathJax that package exactly the pieces that you want to
 use.  See :ref:`web-custom-build` for more details about how to do
 that.
 

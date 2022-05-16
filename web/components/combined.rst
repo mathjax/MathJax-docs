@@ -52,7 +52,7 @@ the contextual menu component, and the startup component.
 
 The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which that means most other extensions
+:ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
@@ -69,7 +69,7 @@ The `tex-chtml-full` component loads the :ref:`input/tex-full
 <chtml-component>`, along with the contextual menu component, and the
 startup component.
 
-The `input/tex-full` component loads the the code for all the TeX
+The `input/tex-full` component loads the code for all the TeX
 extensions, and configures TeX to use all but the :ref:`tex-physics`
 and :ref:`tex-colorv2` extensions.
 
@@ -87,7 +87,7 @@ the contextual menu component, and the startup component.
 
 The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which that means most other extensions
+:ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
@@ -103,7 +103,7 @@ The `tex-svg-full` component loads the :ref:`input/tex-full
 <tex-component>` component and the :ref:`output/svg <svg-component>`,
 along with the contextual menu component, and the startup component.
 
-The `input/tex-full` component loads the the code for all the TeX
+The `input/tex-full` component loads the code for all the TeX
 extensions, and configures TeX to use all but the :ref:`tex-physics`
 and :ref:`tex-colorv2` extensions.
 
@@ -122,7 +122,7 @@ component, and the startup component.
 
 The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which that means most other extensions
+:ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
@@ -141,7 +141,7 @@ component, and the startup component.
 
 The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which that means most other extensions
+:ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
 ``\require`` macro to load them explicitly.
 
