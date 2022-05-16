@@ -26,7 +26,7 @@ the ``<script>`` tag that loads MathJax, then your site should work
 unchanged with version 1.1 of MathJax.  You may wish to consider moving to
 the new HTML5-compliant method of configuring MathJax, however, which uses
 a separate ``<script>`` tag to specify the configuration.  That tag should
-come **before** the one that loads ``Mathjax.js``, and should have
+come **before** the one that loads ``MathJax.js``, and should have
 ``type="text/x-mathjax-config"`` rather than ``type="text/javascript"``.
 For example,
 

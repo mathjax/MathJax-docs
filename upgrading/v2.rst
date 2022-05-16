@@ -133,7 +133,7 @@ In version 3, synchronization with MathJax is done through ES6
 promises, rather than MathJax's queues and signals, and MathJax's
 startup process is more straight-forward.  You can insert your own
 code into the startup process more easily, and can replace the default
-startup actions entirely, if you wish.  The actions Mathjax
+startup actions entirely, if you wish.  The actions MathJax
 takes during startup are better separated so that you can pick and
 choose the ones you want to perform.  See the :ref:`startup-actions`
 section for more details on how to accomplish this.
@@ -153,7 +153,7 @@ objects, that code will no longer work with version 3, and will have
 to be modified.  Some of the more important changes are discussed
 below.
 
-* The :meth:`Mathjax.Hub.Typeset()` function has been replaced by the
+* The :meth:`MathJax.Hub.Typeset()` function has been replaced by the
   :meth:`MathJax.typesetPromise()` and :meth:`MathJax.typeset()`
   functions.  In fact, the :attr:`MathJax.Hub` has been removed
   entirely.

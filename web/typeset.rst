@@ -39,7 +39,7 @@ that uses `\require`, or that includes autoloaded extensions), then
 an error will be thrown.  You can use the ``try/catch`` command to
 trap this condition.
 
-The second, :meth:`Mathjax.typesetPromise()`, performs the typesetting
+The second, :meth:`MathJax.typesetPromise()`, performs the typesetting
 asynchronously, and returns a promise that is resolved when the
 typesetting is complete.  This properly handles loading of external
 files, so if you are expecting to process TeX input that can include
