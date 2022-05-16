@@ -47,4 +47,40 @@ forward references are unlikely to work, and backward references will
 work only if the target expression has already been typeset. We hope
 to improve this situation in a future release.
 
+
+.. _lazy-options:
+
+Lazy Typesetting Options
+------------------------
+
+Adding the `ui/lazy` extension to the `loader.load` array adds the
+following options to the MathJax configuration:
+
+.. code-block:: javascript
+
+   MathJax = {
+     options: {
+       lazyMargin: '200px',
+       lazyAlwaysTypeset: null
+     }
+   };
+
+.. _lazy-lazyMargin:
+.. describe:: lazyMargin: '200px'
+
+   This gives the extent of the typesetting margin outside the visible
+   viewport.  When mathematics appears within this range of the
+   viewport, it will be typeset.  This allows typesetting to occur
+   slightly before the math appears in the window, for a smoother
+   effect.
+
+.. _lazy-lazyAlwaysTypeset:
+.. describe:: lazyAlwaysTypeset: null
+
+   This gives an array of containers whose math expressions should
+   always be typset during the initial typesetting pass, rather than
+   waiting for them to scroll into view.  This may be useful if
+   MathJax output appears in diagrams or other layout that must be
+   sized and placed during initial page layout.
+
 |-----|
