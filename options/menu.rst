@@ -52,7 +52,7 @@ The Configuration Block
 
             assistiveMml: true,    // true if hidden assistive MathML should be generated for screen readers
             collapsible: false,    // true if complex math should be collapsible
-            explorer: false,       // true if the expression explorere should be active
+            explorer: false,       // true if the expression explorer should be active
           },
           annotationTypes: {
             TeX: ['TeX', 'LaTeX', 'application/x-tex'],
