@@ -164,6 +164,16 @@ html_show_sourcelink = True
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'MathJaxdoc'
 
+#
+# DPVC: Add warning about new version
+#
+rst_prolog = """.. attention::
+    `Version 3 <https://docs.mathjax.org/en/latest/index.html>`_ is now the current version of MathJax.
+    This document is for version 1.
+"""
+#
+# /DPVC
+#
 
 # -- Options for LaTeX output --------------------------------------------------
 
