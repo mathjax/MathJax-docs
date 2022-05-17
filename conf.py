@@ -88,6 +88,16 @@ pygments_style = 'sphinx'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+#
+# DPVC: Add warning about new version
+#
+rst_prolog = """.. attention::
+    `Version 3 <https://docs.mathjax.org/en/latest/index.html>`_ is now the current version of MathJax.
+    This document is for version 2.
+"""
+#
+# /DPVC
+#
 
 # -- Options for HTML output ---------------------------------------------------
 
@@ -99,7 +109,7 @@ html_theme = 'sphinx_rtd_theme'
 # DPVC:  Add cusotm css overrides
 #
 def setup(app):
-  app.add_stylesheet( "custom.css" )
+  app.add_css_file( "custom.css" )
 #
 # /DPVC
 #
