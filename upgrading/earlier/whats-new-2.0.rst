@@ -343,7 +343,7 @@ Important changes from previous versions
        </IfModule>
        </FilesMatch>
 
-   in the ``.htaccess` file for the ``Mathjax/fonts`` directory if you
+   in the ``.htaccess` file for the ``MathJax/fonts`` directory if you
    are using the Apache web server.  See `Notes about shared
    installations` for details.
 
@@ -370,7 +370,7 @@ Important changes from previous versions
 
 *  In order to improve stability with IE when MathPlayer is installed,
    MathJax now adds the namespace and object bindings that are needed
-   for MathPlayer at the time that Mathjax is first loaded, rather
+   for MathPlayer at the time that MathJax is first loaded, rather
    than waiting for the `NativeMML` output jax to be loaded.  Since
    this is before the configuration information has been obtained,
    this will happen regardless of whether the `NativeMML` output jax
