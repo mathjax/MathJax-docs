@@ -13,6 +13,7 @@ and other content-management systems.
 -  `MathJax plugins`_ for `Joomla`_.
 -  `Sphinx extension: MathJax`_
 -  `MathJax plugin for DokuWiki`_
+-  `MathJax plugin for WackoWiki`_
 -  `MediaWiki math extension used on Wikipedia`_, using MathJax since
    v1.20.
 -  `Tiddlywiki plugin`_, `PluginMathJax`_ for TiddlyWiki.
@@ -26,6 +27,7 @@ and other content-management systems.
 .. _Simple-MathJax: http://wordpress.org/extend/plugins/simple-mathjax/
 .. _MathJax plugin for Drupal: http://drupal.org/project/mathjax
 .. _MathJax plugin for DokuWiki: https://www.dokuwiki.org/plugin:mathjax
+.. _MathJax plugin for WackoWiki: https://wackowiki.org/doc/Dev/PatchesHacks/MathJax
 .. _Concrete5 MathJax plugin: http://www.concrete5.org/marketplace/addons/load-mathjax/
 .. _PluginMathJax: http://myweb.dal.ca/haines/#PluginMathJax
 .. _`Sphinx extension: MathJax`: http://sphinx.pocoo.org/ext/math.html#module-sphinx.ext.mathjax
