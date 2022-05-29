@@ -186,7 +186,7 @@ explorer to v3.  This includes summarising expressions and navigation
 of tabular expressions, like matrices or equation systems.  See the
 :ref:`keyboard command <special-keys>` documentation for details.
 
-.. _v3.2.1-sre:
+.. _v3.2-sre4:
 
 As of v3.2.1 MathJax pulls in SRE v4 which supports as Catalan, Danish,
 Norwegian (Bokmal and Nynorsk) and Swedish as additional languages. It also
@@ -198,7 +198,7 @@ namespace in the browser, is closed.
 See the `SRE release notes
 <https://github.com/zorkow/speech-rule-engine/releases/v4.0.0>`__ as well as the
 `MathJax v3.2.1 release notes
-<https://github.com/mathjax/MathJax-src/releases/3.2.1`__ for details.
+<https://github.com/mathjax/MathJax-src/releases/v3.2.1>`__ for details.
 
 -----
 
