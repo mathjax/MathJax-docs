@@ -66,7 +66,7 @@ to install ``webpack`` and its needed libraries.  Once this is done,
 you should be able to make the components described below.  The
 building instructions assume you used ``npm`` to aquire MathJax; if
 you used ``git``, then you will need to remove
-``node_modules/mathjax-full`` from the paths that incldue them.
+``node_modules/mathjax-full`` from the paths that include them.
 
 -----
 
@@ -625,8 +625,6 @@ the following:
   //  The user's configuration object
   //
   const CONFIG = window.MathJax || {};
-  console.log(CONFIG);
-
 
   //
   //  The global MathJax object
