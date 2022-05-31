@@ -154,7 +154,7 @@ MathJax keeps track of all the math that it has typeset within your
 page.  This is so that if you change the output renderer (using the
 MathJax contextual menu), it can be changed to use the new format, for
 example; or if you change the accessibility settings, say to enable
-the expression explorer, all the math can be updated to incldue the
+the expression explorer, all the math can be updated to include the
 speech strings that it uses.  If you modify the page to include new
 mathematics and call :meth:`MathJax.typeset()` or
 :meth:`MathJax.typesetPromise()`, the newly typeset mathematics will be
