@@ -15,7 +15,7 @@ component that has exactly the pieces and configuration that you
 want. You can also use them to make a custom extension, for example a
 TeX input extension, that takes advantage of the components already
 loaded, but implements additional functionality.
-These possibilities are described in :ref:`custom-component` below.  
+These possibilities are described in :ref:`custom-component` below.
 
 It is also possible to make a completely custom build of MathJax that
 doesn't use the MathJax components at all, but includes direct calls
@@ -66,7 +66,7 @@ to install ``webpack`` and its needed libraries.  Once this is done,
 you should be able to make the components described below.  The
 building instructions assume you used ``npm`` to aquire MathJax; if
 you used ``git``, then you will need to remove
-``node_modules/mathjax-full`` from the paths that incldue them.
+``node_modules/mathjax-full`` from the paths that include them.
 
 -----
 
@@ -287,7 +287,7 @@ can be found.  They are in the
 ``mathjax-full/es5/output/chtml/fonts/woff-v2`` directory, and
 you can put them on your server, or simply point `fontURL` to one of
 the CDN directories for the fonts.
- 
+
 
 .. _custom-extension:
 
@@ -589,64 +589,74 @@ the following:
 
 .. code-block:: javascript
 
-   //
-   //  Load the desired components
-   //
-   const mathjax     = require('mathjax-full/js/mathjax.js').mathjax;      // MathJax core
-   const TeX         = require('mathjax-full/js/input/tex.js').TeX;        // TeX input
-   const MathML      = require('mathjax-full/js/input/mathml.js').MathML;  // MathML input
-   const browser     = require('mathjax-full/js/adaptors/browserAdaptor.js').browserAdaptor; // browser DOM
-   const Enrich      = require('mathjax-full/js/a11y/semantic-enrich.js').EnrichHandler;     // semantic enrichment
-   const Register    = require('mathjax-full/js/handlers/html.js').RegisterHTMLHandler;      // the HTML handler
-   const AllPackages = require('mathjax-full/js/input/tex/AllPackages').AllPackages;         // all TeX packages
-   const STATE       = require('mathjax-full/js/core/MathItem.js').STATE;
+  //
+  //  Load the desired components
+  //
+  const mathjax     = require('mathjax-full/js/mathjax.js').mathjax;      // MathJax core
+  const TeX         = require('mathjax-full/js/input/tex.js').TeX;        // TeX input
+  const MathML      = require('mathjax-full/js/input/mathml.js').MathML;  // MathML input
+  const browser     = require('mathjax-full/js/adaptors/browserAdaptor.js').browserAdaptor; // browser DOM
+  const Enrich      = require('mathjax-full/js/a11y/semantic-enrich.js').EnrichHandler;     // semantic enrichment
+  const Register    = require('mathjax-full/js/handlers/html.js').RegisterHTMLHandler;      // the HTML handler
+  const AllPackages = require('mathjax-full/js/input/tex/AllPackages').AllPackages;         // all TeX packages
+  const STATE       = require('mathjax-full/js/core/MathItem.js').STATE;
 
-   const sreReady    = require('mathjax-full/js/a11y/sre.js').sreReady();    // SRE promise;
+  const sreReady    = require('mathjax-full/js/a11y/sre.js').sreReady();    // SRE promise;
 
-   //
-   //  Register the HTML handler with the browser adaptor and add the semantic enrichment
-   //
-   Enrich(Register(browser()), new MathML());
+  //
+  //  Register the HTML handler with the browser adaptor and add the semantic enrichment
+  //
+  Enrich(Register(browser()), new MathML());
 
-   //
-   //  Initialize mathjax with a blank DOM.
-   //
-   const html = MathJax.document('', {
-      sre: {
-        speech: 'shallow',           // add speech to the enriched MathML
-      },
-      InputJax: new TeX({
-         packages: AllPackages.filter((name) => name !== 'bussproofs'),  // Bussproofs needs an output jax
-         macros: {require: ['', 1]}      // Make \require a no-op since all packages are loaded
-      })
-   });
+  //
+  //  Initialize mathjax with a blank DOM.
+  //
+  const html = mathjax.document('', {
+     sre: {
+       speech: 'shallow',           // add speech to the enriched MathML
+     },
+     InputJax: new TeX({
+        packages: AllPackages.filter((name) => name !== 'bussproofs'),  // Bussproofs needs an output jax
+        macros: {require: ['', 1]}      // Make \require a no-op since all packages are loaded
+     })
+  });
 
-   //
-   //  The user's configuration object
-   //
-   const CONFIG = window.MathJax || {};
+  //
+  //  The user's configuration object
+  //
+  const CONFIG = window.MathJax || {};
 
-   //
-   //  The global MathJax object
-   //
-   window.MathJax = {
-      version: mathjax.version,
-      html: html,
-      sreReady: sreReady,
+  //
+  //  The global MathJax object
+  //
+  window.MathJax = {
+     version: mathjax.version,
+     html: html,
+     sreReady: sreReady,
 
-      tex2speech(tex, display = true) {
-         const math = new html.options.MathItem(tex, inputJax, display);
-         math.convert(html, STATE.CONVERT);
-         return math.root.attributes.get('data-semantic-speech') || 'no speech text generated';
-      }
-   }
+     tex2speech(tex, display = true) {
+       const math = new html.options.MathItem(tex, html.inputJax[0], display);
+       return mathjax.handleRetriesFor(() => math.convert(html, STATE.CONVERT)).then(() => {
+         let speech = '';
+         math.root.walkTree(node => {
+           const attributes = node.attributes.getAllAttributes();
+           console.log(attributes);
+           if (!speech && attributes['data-semantic-speech'] &&
+               !attributes['data-semantic-parent']) {
+             speech = attributes['data-semantic-speech'];
+           }
+         });
+         return speech || 'no speech text generated';
+       });
+     }
+  };
 
-   //
-   // Perform ready function, if there is one
-   //
-   if (CONFIG.ready) {
-      sreReady.then(CONFIG.ready);
-   }
+  //
+  // Perform ready function, if there is one
+  //
+  if (CONFIG.ready) {
+    sreReady.then(CONFIG.ready);
+  }
 
 Unlike the component-based example above, this custom build calls on
 the MathJax source files directly.  The ``require`` commands at the
@@ -656,7 +666,7 @@ handling the conversions that we will be doing (using a TeX input
 jax), and then defines a global ``MathJax`` object that has the
 :meth:`tex2speech()` function that our custom build offers.
 
-   
+
 The Webpack Configuration
 -------------------------
 
@@ -730,7 +740,7 @@ like
 
 .. code-block:: javascript
 
-   const speech = MathJax.tex2speech('\\sqrt{x^2+1}', true);
+   const speech = await MathJax.tex2speech('\\sqrt{x^2+1}', true);
 
 to obtain a text string that contains the speech text for the square
 root given in the TeX string.
@@ -770,8 +780,8 @@ want to do speech generation.  For example
 .. code-block:: javascript
 
    function showSpeech(tex, display = false) {
-      MathJax.sreReady = MathJax.sreReady.then(() => {
-        const speech = MathJax.tex2speech(tex, display);
+      MathJax.sreReady = MathJax.sreReady.then(async () => {
+        const speech = await MathJax.tex2speech(tex, display);
         const output = document.getElementById('speech');
         output.innerHTML = '';
         output.appendChild(document.createTextNode(speech));
