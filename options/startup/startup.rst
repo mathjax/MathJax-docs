@@ -76,7 +76,7 @@ Option Descriptions
    the page is ready to be processed.  The default action is to
    perform the initial typesetting of the page and return the promise
    that resolves what that is complete, but you can override it to do
-   whatever you would like, though you sholud return the promise from
+   whatever you would like, though you should return the promise from
    the :meth:`MathJax.startup.defaultPageReady()` function if you call
    it.  See :ref:`startup-action` for more details and examples of how
    to do this.
@@ -107,7 +107,7 @@ Option Descriptions
    name of the invalid option.  The default function looks at the
    ``invalidOption`` value and if it is ``'fatal'`` it throws an error
    using the given message, otherwise it logs the message to the
-   browser console, allowing futher options to be processed.
+   browser console, allowing further options to be processed.
 
 .. _startup-input:
 .. describe:: input: []
