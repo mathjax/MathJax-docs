@@ -47,7 +47,7 @@ Option Descriptions
 
    This array lists the components that you want to load.  If you are
    using a combined component file, you may not need to request any
-   additional components.  If you are using using the :ref:`startup-component`
+   additional components.  If you are using the :ref:`startup-component`
    component explicitly, then you will need to list all the components
    you want to load.
 
@@ -58,7 +58,7 @@ Option Descriptions
    loaded successfully.  By default, it simply calls the
    :ref:`startup-component` component's :ref:`ready() <startup-ready>`
    function, if there is one.  You can override this with your own
-   function, can can call :meth:`MathJax.loader.defaultReady()` after
+   function, can call :meth:`MathJax.loader.defaultReady()` after
    doing whatever startup you need to do.  See also the
    :ref:`loader-component-options` section for how to tie into
    individual components being loaded.
@@ -71,7 +71,7 @@ Option Descriptions
    console log, but you can override it to trap loading errors in
    MathJax components.  See also the :ref:`loader-component-options`
    section below for how to trap individual component errors.
-   
+
 .. _loader-paths:
 .. describe:: paths: {mathjax: Loader.getRoot()}
 
@@ -105,7 +105,7 @@ Option Descriptions
 
    You can define as many different paths as you need.  Note that
    paths can refer to other paths, so you could do
-   
+
    .. code-block:: javascript
 
       MathJax = {
@@ -139,7 +139,7 @@ Option Descriptions
       };
 
    gives an explicit location to obtain the ``special/extension`` component.
-   
+
 
 .. _loader-dependencies:
 .. describe:: dependencies: {}
@@ -171,7 +171,7 @@ Option Descriptions
    components to be loaded prior to loading your extension, and would
    load your extension from the given URL even though you may be
    getting MathJax from a CDN.
-   
+
 
 .. _loader-provides:
 .. describe:: provides: {}
@@ -233,9 +233,9 @@ Option Descriptions
    a string that is the location of the component to load, and should
    do whatever is needed to load that component.  If the loading is
    asynchronous, it should return a promise that is resolved when the
-   component is loaded, ortherwise it should return nothing.  If there
+   component is loaded, otherwise it should return nothing.  If there
    is an error loading the component, it should throw an error.
-   
+
    If set ``null``, the default is to insert a ``<script>`` tag into
    the document that loads the component.
 
@@ -331,7 +331,7 @@ the `input/tex` component is either loaded successfully or fails to load.
 
    This is a function that has an argument that is a ``PackageError``
    object (which is a subclass of ``Error`` with an extra field, that
-   being ``pacakge``, the name of the component being loaded).  It is
+   being ``package``, the name of the component being loaded).  It is
    called when the component fails to load (and that can be because
    one of its dependencies fails to load).
 

@@ -76,7 +76,7 @@ Option Descriptions
    the page is ready to be processed.  The default action is to
    perform the initial typesetting of the page and return the promise
    that resolves what that is complete, but you can override it to do
-   whatever you would like, though you sholud return the promise from
+   whatever you would like, though you should return the promise from
    the :meth:`MathJax.startup.defaultPageReady()` function if you call
    it.  See :ref:`startup-action` for more details and examples of how
    to do this.
