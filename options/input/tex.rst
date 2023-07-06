@@ -62,7 +62,7 @@ Note that some extensions make additional options available.  See the
    main ``tex`` block, but it is now in the ``ams`` sub-block of the
    ``tex`` block.  Version 3.2 includes code to move the configuration
    from its old location to its new one, but that
-   backward-compatibility code will be removed in a future vesion.
+   backward-compatibility code will be removed in a future version.
 
 -----
 
@@ -165,7 +165,7 @@ Option Descriptions
     When set to ``true``, you may use ``\$`` to represent a literal
     dollar sign, rather than using it as a math delimiter, and ``\\``
     to represent a literal backslash (so that you can use ``\\\$`` to
-    get a literal ``\$`` or ``\\$...$`` to get a backslash jsut before
+    get a literal ``\$`` or ``\\$...$`` to get a backslash just before
     in-line math).  When ``false``, ``\$`` will not be altered, and
     its dollar sign may be considered part of a math delimiter.
     Typically this is set to ``true`` if you enable the ``$ ... $``

@@ -303,7 +303,7 @@ possible to load some of the regular TeX packages as text macros.  For example
 
 would make the :ref:`tex-bbox` extension available in text mode, so
 you could use ``\bbox`` inside ``\text{}``, for example.  Not all
-math-mode extensions are approrpriate for textmode, but some can be
+math-mode extensions are appropriate for textmode, but some can be
 usefully employed in text mode.
 
 |-----|

@@ -225,10 +225,10 @@ version number.  For example, ``cdnjs`` uses the following:
      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-svg.js">
    </script>
 
-Some CDNs don't provide a means of getting the lastest version
+Some CDNs don't provide a means of getting the latest version
 automatically.  For these, MathJax provides a ``latest.js`` file that
 will do that for you.  For example, ``cdnjs`` doesn't have a mechanism
-for getting the latest 3.x.x version automtically.  If you want to do
+for getting the latest 3.x.x version automatically.  If you want to do
 that using ``cdnjs``, then use
 
 .. code-block:: html

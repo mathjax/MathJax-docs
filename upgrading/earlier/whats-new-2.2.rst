@@ -32,13 +32,13 @@ TeX input:
 * Avoid potential infinite loops in ``\mathchoice`` constructs.
   (`Issue #373 <https://github.com/mathjax/MathJax/issues/373>`_)
 
-* Add error message when an evironment closes with unbalanced braces.
+* Add error message when an environment closes with unbalanced braces.
   (`Issue #454 <https://github.com/mathjax/MathJax/issues/454>`_)
 
 * Allow spaces in the RGB, rgb, and greyscale color specifications.
   (`Issue #446 <https://github.com/mathjax/MathJax/issues/446>`_)
 
-* Process ``\$`` in ``\text`` arguements.  (ssue #349)
+* Process ``\$`` in ``\text`` arguments.  (ssue #349)
 
 * Preserve spaces within ``\verb`` arguments.  (`Issue #381 <https://github.com/mathjax/MathJax/issues/381>`_)
 
@@ -98,7 +98,7 @@ HTML-CSS/SVG output
 
 * Add min-width to displayed equations with labels so that they cause
   their containers to have non-zero width (like when they are in a
-  table cell or an absolutlye positioned element).  (`Issue #428 <https://github.com/mathjax/MathJax/issues/428>`_)
+  table cell or an absolutely positioned element).  (`Issue #428 <https://github.com/mathjax/MathJax/issues/428>`_)
 
 * Fix a processing error with elements that contain hyperlinks.
   (`Issue #364 <https://github.com/mathjax/MathJax/issues/364>`_)
@@ -116,7 +116,7 @@ HTML-CSS/SVG output
   print media has a different font size.  (`Issue #386 <https://github.com/mathjax/MathJax/issues/386>`_)
 
 * Don't scale line thickness for ``menclose`` elements (so lines won't
-  disapear in scripts).  (`Issue #414 <https://github.com/mathjax/MathJax/issues/414>`_)
+  disappear in scripts).  (`Issue #414 <https://github.com/mathjax/MathJax/issues/414>`_)
 
 * Fix ``fontdata.js`` to allow it to be included in combined configuration
   files.  (`Issue #413 <https://github.com/mathjax/MathJax/issues/413>`_)
@@ -125,7 +125,7 @@ HTML-CSS/SVG output
   #412 <https://github.com/mathjax/MathJax/issues/412>`_)
 
 * Fix Math Processing Error when ``&ApplyFunction``; is used without
-  preceeding content.  (`Issue #410 <https://github.com/mathjax/MathJax/issues/410>`_)
+  preceding content.  (`Issue #410 <https://github.com/mathjax/MathJax/issues/410>`_)
 
 * Fix a problem using an empty table as a super- or subscript.
   (`Issue #392 <https://github.com/mathjax/MathJax/issues/392>`_)

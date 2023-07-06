@@ -64,7 +64,7 @@ code using ``webpack``.  Use the commands
 
 to install ``webpack`` and its needed libraries.  Once this is done,
 you should be able to make the components described below.  The
-building instructions assume you used ``npm`` to aquire MathJax; if
+building instructions assume you used ``npm`` to acquire MathJax; if
 you used ``git``, then you will need to remove
 ``node_modules/mathjax-full`` from the paths that include them.
 

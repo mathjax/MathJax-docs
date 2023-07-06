@@ -57,7 +57,7 @@ There is a new :attr:`formatError` option for the TeX input jax that
 provides a function that is called when a syntax or other error occurs
 during the processing of a TeX expression.  This can be used to trap
 the errors for reporting purposes, or to process the errors in other
-ways.  See the :ref:`formatError <tex-formatError>` documenation.
+ways.  See the :ref:`formatError <tex-formatError>` documentation.
 
 
 .. _v3.1-tex-noundefined-options:
@@ -67,7 +67,7 @@ Noundefined Package Options
 
 The ``noundefined`` package now has configuration options similar to
 the ones available in the ones available in version 2.  These include
-tha ability to set the text color, background color, and size of the
+the ability to set the text color, background color, and size of the
 text to use for disoplaying undefined macro names within TeX formulas.
 See the :ref:`noundefined options <tex-noundefined-options>` for
 details.
@@ -107,7 +107,7 @@ New Accessibility Features
 
 MathJax's accessibility code has undergone some internal improvements
 for speed and reliability.  In addition, there is now a localization
-of the speech output for the German lanugage.  The accessibility
+of the speech output for the German language.  The accessibility
 contextual menu has been updated to include the ability to select the
 localization language (in the `speech` submenu), and to expose
 additional features, such as the ability to set the opacity of the
@@ -146,7 +146,7 @@ when set to ``true``.
 
 If these are set to ``false``, the new :attr:`mtextFont` and
 :attr:`merrorFont` properties specify a font family (or list of families)
-to use fort the content of these elemements.  This allows you to force
+to use fort the content of these elements.  This allows you to force
 a specific font to be used for the text within mathematics.  If these
 are set to an empty string, then the MathJax fonts will be used.
 

@@ -28,7 +28,7 @@ the :ref:`tex-autoload` extension.
 Note that most macros are not processed inside text-mode material
 (such as that within ``\text{}`` and other similar macros).  The
 :ref:`tex-textmacros` extension makes additional macros available in
-text mode, as listed in the documentation for that extention.
+text mode, as listed in the documentation for that extension.
 
 
 .. raw:: html

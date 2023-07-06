@@ -36,7 +36,7 @@ MathJax implement some of the `colortbl` commands differently:
    Allows to color a single cell. It can be used anywhere in the cell to color.
 
 
-The order of precendence of the color commands is as follows: ``\cellcolor > \rowcolor > \columncolor``.
+The order of precedence of the color commands is as follows: ``\cellcolor > \rowcolor > \columncolor``.
 See the example below for all three commands in action.
 
 .. code-block:: latex

@@ -107,7 +107,7 @@ Option Descriptions
    name of the invalid option.  The default function looks at the
    ``invalidOption`` value and if it is ``'fatal'`` it throws an error
    using the given message, otherwise it logs the message to the
-   browser console, allowing futher options to be processed.
+   browser console, allowing further options to be processed.
 
 .. _startup-input:
 .. describe:: input: []

@@ -26,7 +26,7 @@ The Configuration Block
         parseError: function (node) {        // function to process parsing errors
           this.error(this.adaptor.textContent(node).replace(/\n.*/g, ''));
         },
-        verify: {                            // parameters controling verification of MathML
+        verify: {                            // parameters controlling verification of MathML
           checkArity: true,                  //   check if number of children is correct
           checkAttributes: false,            //   check if attribute names are valid
           fullErrors: false,                 //   display full error messages or just error node
@@ -117,7 +117,7 @@ Option Descriptions
    .. describe:: fixMmultiscripts: true
 
       This specifies whether extra ``<none/>`` entries are added to
-      ``<mmultiscripts>`` elements to balance the super- ans
+      ``<mmultiscripts>`` elements to balance the super- and
       subscripts, as required by the specification, or whether to
       generate an error instead.
 

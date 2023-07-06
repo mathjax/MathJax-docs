@@ -86,7 +86,7 @@ Asciimath
 *   `#851 <https://github.com/mathjax/MathJax/issues/851>`__ Prevent leading space in quote from causing processing errors.
 *   `#431 <https://github.com/mathjax/MathJax/issues/431>`__ Fix handling of special characters in exponents.
 *   `#741 <https://github.com/mathjax/MathJax/issues/741>`__ Add underbrace macro.
-*   `#857 <https://github.com/mathjax/MathJax/issues/857>`__ Update AsciiMathML to 2.2; changes include `improve entity handling <https://github.com/mathjax/asciimathml/issues/2>`__, `add triangle macro <https://github.com/mathjax/asciimathml/issues/4>`__, `map ast to asterisk <https://github.com/mathjax/asciimathml/issues/6>`__, `allow input of row vectors <https://github.com/mathjax/asciimathml/issues/11>`__, `allow lamda <https://github.com/mathjax/asciimathml/issues/12>`__, `switch phi/varphi mapping <https://github.com/mathjax/asciimathml/issues/14>`__, `add underbrace macro <https://github.com/mathjax/asciimathml/issues/18>`__, `handle empty nodes better <https://github.com/mathjax/asciimathml/issues/24>`__, `add vector norm macro <https://github.com/mathjax/asciimathml/issues/26>`__, `improve @ macro <https://github.com/mathjax/asciimathml/issues/27>`__.
+*   `#857 <https://github.com/mathjax/MathJax/issues/857>`__ Update AsciiMathML to 2.2; changes include `improve entity handling <https://github.com/mathjax/asciimathml/issues/2>`__, `add triangle macro <https://github.com/mathjax/asciimathml/issues/4>`__, `map ast to asterisk <https://github.com/mathjax/asciimathml/issues/6>`__, `allow input of row vectors <https://github.com/mathjax/asciimathml/issues/11>`__, `allow lambda <https://github.com/mathjax/asciimathml/issues/12>`__, `switch phi/varphi mapping <https://github.com/mathjax/asciimathml/issues/14>`__, `add underbrace macro <https://github.com/mathjax/asciimathml/issues/18>`__, `handle empty nodes better <https://github.com/mathjax/asciimathml/issues/24>`__, `add vector norm macro <https://github.com/mathjax/asciimathml/issues/26>`__, `improve @ macro <https://github.com/mathjax/asciimathml/issues/27>`__.
 
 MathML Handling
 ---------------
@@ -96,7 +96,7 @@ MathML Handling
 *   `#769 <https://github.com/mathjax/MathJax/issues/769>`__ Update ``indentshift`` implementation to meet clarified MathML specification.
 *   `#768 <https://github.com/mathjax/MathJax/issues/768>`__ Fix processing of percentage values for ``indenshift``.
 *   `#839 <https://github.com/mathjax/MathJax/issues/839>`__ Update inheritance of ``displaystyle`` in ``mtable`` to meet clarified MathML specification.
-*   `#695 <https://github.com/mathjax/MathJax/issues/695>`__ Allow Content MathML converion to be customized.
+*   `#695 <https://github.com/mathjax/MathJax/issues/695>`__ Allow Content MathML conversion to be customized.
 *   `#964 <https://github.com/mathjax/MathJax/issues/964>`__ Move experimental support for elementary math and RTL to its own extension.
 
 Fonts
@@ -121,5 +121,5 @@ Misc.
 -----
 
 *   `#870 <https://github.com/mathjax/MathJax/issues/870>`__ Add Composer package information.
-*   `#872 <https://github.com/mathjax/MathJax/issues/872>`__ Add small delay between input and output phase to prevent performance degredation.
+*   `#872 <https://github.com/mathjax/MathJax/issues/872>`__ Add small delay between input and output phase to prevent performance degradation.
 *   `#1016 <https://github.com/mathjax/MathJax/issues/1016>`__ Fix bug related to ``<script>`` elements with namespace prefix, e.g., in xHTML.
