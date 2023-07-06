@@ -38,7 +38,7 @@ The Configuration Block
         tagSide: 'right',          // side for \tag macros
         tagIndent: '0.8em',        // amount to indent tags
         useLabelIds: true,         // use label name rather than tag for ids
-        maxMacros: 1000,           // maximum number of macro substitutions per expression
+        maxMacros: 10000,          // maximum number of macro substitutions per expression
         maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
         baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
            (document.getElementsByTagName('base').length === 0) ?
