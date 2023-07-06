@@ -64,7 +64,7 @@ TeX emulation
 *   `#889 <https://github.com/mathjax/MathJax/issues/889>`__ remove extra space around some parenthesis constructs.
 *   `#856 <https://github.com/mathjax/MathJax/issues/856>`__ Recognize comma as decimal delimiter in units.
 *   `#877 <https://github.com/mathjax/MathJax/issues/877>`__ Fix bug related to multiple accent having different width.
-*   `#832 <https://github.com/mathjax/MathJax/issues/832>`__ Fix multiline environment not being centered in HTML-CSS output.
+*   `#832 <https://github.com/mathjax/MathJax/issues/832>`__ Fix multline environment not being centered in HTML-CSS output.
 *   `#776 <https://github.com/mathjax/MathJax/issues/776>`__ Fix stretchy delimiters of ``binom`` and ``choose``.
 *   `#900 <https://github.com/mathjax/MathJax/issues/900>`__ Fix ``\buildrel`` getting TeX class ORD instead of REL.
 *   `#890 <https://github.com/mathjax/MathJax/issues/890>`__ Enable px as dimension in ``\\[...]``.

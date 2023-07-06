@@ -495,7 +495,7 @@ Other bug fixes
 *  Isolate non-standard attributes on MathML elements so that they don't
    interfere with the inner workings of MathJax.
 
-*  Properly handle width of border and padding in errors in `HTML-CSS`
+*  Properly handle width of border and padding in merrors in `HTML-CSS`
    output.
 
 *  Properly handle lower-case Greek better.
@@ -519,7 +519,7 @@ Other bug fixes
 
 *  Handle border and padding CSS styles better in `HTML-CSS` output.
 
-*  Fixed multiline environment to put tags on bottom row when
+*  Fixed multline environment to put tags on bottom row when
    ``TagSide`` is set to ``right``.
 
 *  Force reflow after equations are typeset so that some rendering

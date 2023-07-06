@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: pip install codespell
-      - run: codespell --ignore-words-list=braket,ket
+      - run: codespell --ignore-words-list=braket,ket,merror,multline

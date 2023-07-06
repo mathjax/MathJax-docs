@@ -67,12 +67,12 @@ following values:
 .. _tex-ams-multlineWidth:
 .. describe:: multlineWidth: '100%'
 
-The width to use for multiline environments.
+The width to use for multline environments.
 
 .. _tex-ams-multlineIndent:
 .. describe:: multlineIndent: '1em'
 
-The margin to use on both sides of multiline environments.
+The margin to use on both sides of multline environments.
 
 
 .. note::
