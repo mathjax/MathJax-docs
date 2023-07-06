@@ -148,7 +148,7 @@ In addition, the opacity of both `Background` and `Foreground` can be
 adjusted by two slider bars underneath the respective sub-menus.
 
 The `Highlight` sub-menu also provides a choice of highlighters for
-marking collapsible sub-expressions: The `Flame` highligher permanently
+marking collapsible sub-expressions: The `Flame` highlighter permanently
 colors collapsible sub-expressions while successively darkening the
 background for nested collapsible expressions. The `Hover` highlighter
 colors each collapsible sub-expression only when hovering over it with
@@ -164,7 +164,7 @@ Magnification
 
 During exploration, the accessibility extension can optionally magnify
 the sub-expression that is currently explored. The zoomed version of
-the expression is overlayed on the original one when traversing the
+the expression is overlaid on the original one when traversing the
 formula. For keyboard exploration, this can be switched on in the
 `Magnification` sub-menu by selecting the `Keyboard` option.
 

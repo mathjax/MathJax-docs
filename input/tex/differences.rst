@@ -28,7 +28,7 @@ inside these text blocks, however, in general.  So, for example,
 ``\text{some \textbf{bold} text}`` will produce the output "some
 \\textbf{bold} text", not "some **bold** text".
 
-There is an extension (new in version 3.1) that implements a numnber
+There is an extension (new in version 3.1) that implements a number
 of text-mode macros within the ``\text{}`` macro and other ones that
 produce text-mode material.  See the :ref:`tex-textmacros`
 documentation for details.

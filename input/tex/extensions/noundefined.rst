@@ -75,13 +75,13 @@ following values:
 .. describe:: background: ''
 
    This gives the color to use for the background for the undefined
-   macro name, or an empty srting to have no brackground color.
+   macro name, or an empty string to have no background color.
 
 .. _tex-noundefined-size:
 .. describe:: size: ''
 
    This gives the size to use for the undefined macro name (e.g.,
-   ``90%`` or ``12px``), or an emtpy string to keep the size the same
+   ``90%`` or ``12px``), or an empty string to keep the size the same
    as the surrounding mathematics.
 
 

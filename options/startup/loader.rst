@@ -278,7 +278,7 @@ Option Descriptions
    property should be the original name of the package, and should not
    be modified.
 
-   The function should return ``true`` if the `name` should be futher
+   The function should return ``true`` if the `name` should be further
    processed by other filters in the list, and ``false`` to end
    processing with the `name` now representing the final URL for the
    component.
@@ -300,7 +300,7 @@ Option Descriptions
 Component Configuration
 =======================
 
-In addition to the options listed above, individual compoments can be
+In addition to the options listed above, individual components can be
 configured in the ``loader`` block by using a sub-block with the
 component's name, and any of the options listed below.  For example,
 

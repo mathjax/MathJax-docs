@@ -48,7 +48,7 @@ above.  They are given here with their default values, using the
 
    The ``matchFontHeight`` option is no longer available on the SVG
    output processor, so it is no longer listed here.  It is now
-   decribed among the CommonHTML output options.
+   described among the CommonHTML output options.
 
 -----
 
@@ -59,7 +59,7 @@ Option Descriptions
 .. _output-scale:
 .. describe:: scale: 1
 
-   The scaling factor for math compaired to the surrounding text.  The
+   The scaling factor for math compared to the surrounding text.  The
    `CommonHTML` output processor tries to match the ex-size of the
    mathematics with that of the text where it is placed, but you may
    want to adjust the results using this scaling factor.  The user can
@@ -118,7 +118,7 @@ Option Descriptions
 .. describe:: unknownFamily: 'serif'
 
    This specifies the font family to use for characters that are not
-   found in the MathJax math fonts.  For exmaple, if you enter unicode
+   found in the MathJax math fonts.  For example, if you enter unicode
    characters directly, these may not be in MathJax's font, and so
    they will be taken from the font specified here.
 

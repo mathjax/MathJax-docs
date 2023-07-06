@@ -262,7 +262,7 @@ Interface improvements
    TeX output.)
 
 *  MathJax now loads the menu and zoom code (if they haven't been
-   loaded already) after the initial typesetting has occured so that
+   loaded already) after the initial typesetting has occurred so that
    they will be available immediately when a user needs those
    features, but do not delay the initial typesetting of the
    mathematics.
@@ -331,7 +331,7 @@ Important changes from previous versions
 
 *  If you are hosting your own copy of MathJax on your server, and
    that copy is being used from pages in a different domain, you will
-   have set up the access control paramters for the font directory to
+   have set up the access control parameters for the font directory to
    allow Firefox to access the font files properly.  Since MathJax 2.0
    includes fonts in WOFF format, you will need to include ``woff`` in
    you access control declaration for the fonts.  E.g., use
@@ -468,7 +468,7 @@ Other enhancements
    `HTML-CSS` output when there are floating elements that might
    reduce the area available to displayed equations.  (See the
    HTML-CSS extensions section of the `output formats` documentation
-   for detais.)
+   for details.)
 
 *  Use a text font for ``\it`` rather than the math italics, so
    spacing is better.
@@ -495,7 +495,7 @@ Other bug fixes
 *  Isolate non-standard attributes on MathML elements so that they don't
    interfere with the inner workings of MathJax.
 
-*  Properly handle width of border and padding in merrors in `HTML-CSS`
+*  Properly handle width of border and padding in mirrors in `HTML-CSS`
    output.
 
 *  Properly handle lower-case Greek better.
@@ -519,7 +519,7 @@ Other bug fixes
 
 *  Handle border and padding CSS styles better in `HTML-CSS` output.
 
-*  Fixed multline environment to put tags on bottom row when
+*  Fixed multiline environment to put tags on bottom row when
    ``TagSide`` is set to ``right``.
 
 *  Force reflow after equations are typeset so that some rendering
@@ -624,7 +624,7 @@ Other bug fixes
 *  Fixed problem with size of colored backgrounds on ``<mo>`` in some
    circumstances in `HTML-CSS` output.
 
-*  Make ``\ulcorner``, etc. use more approprate unicode positions, and remap
+*  Make ``\ulcorner``, etc. use more appropriate unicode positions, and remap
    those positions to the locations in the MathJax web fonts.
 
 

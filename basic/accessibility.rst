@@ -42,7 +42,7 @@ aurally. In particular:
   and exploration of subexpressions.
 - An aural rendering tool providing on-the-fly speech-text for mathematical
   content and its subexpressions using various rule sets.
-- Tactile rendering tool enabling Nemeth Braille output on a connecte Braille
+- Tactile rendering tool enabling Nemeth Braille output on a connected Braille
   displays.
 - An exploration tool, allowing for meaningful exploration of mathematical
   content including multiple highlighting features, magnification and

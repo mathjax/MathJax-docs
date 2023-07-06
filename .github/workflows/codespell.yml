@@ -1,0 +1,10 @@
+# https://pypi.org/project/codespell
+name: codespell
+on: [pull_request, push]
+jobs:
+  codespell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: pip install codespell
+      - run: codespell --ignore-words-list=braket,ket

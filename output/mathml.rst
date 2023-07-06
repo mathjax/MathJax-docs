@@ -107,7 +107,7 @@ primary output.  Setting the :attr:`menuOptions.settings.assistiveMml`
 option to ``false`` turns off the assistive MathML in the contextual
 menu. The :func:`pageReady()` function also includes a line that
 disables the assistive-MathML item in the menu, so user's can't
-accidentaly turn it on again.  Finally, the `assistiveMml` render
+accidentally turn it on again.  Finally, the `assistiveMml` render
 action is disabled, since it will never be activated (overkill
 perhaps, but no need to run the usual code for nothing).
 

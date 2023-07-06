@@ -47,7 +47,7 @@ HTML-CSS/SVG display
 * Force final math span to be remeasured so that we are sure the container is the right size.
 * Fix alignment problem in ``<msubsup>``.
 * Fix processing error when rowalign has a bad value.
-* Fix a vertical placement problem with stretched elements in mtables in HTML-CSS, and improve performace for placeing the extension characters.
+* Fix a vertical placement problem with stretched elements in mtables in HTML-CSS, and improve performance for placeing the extension characters.
 * Handle spacing for U+2061 (function apply) better.
 * Better handling of primes and other pseudo scripts in HTML-CSS and SVG output.
 * Fixed a problem with ``<mmultiscripts>`` in SVG mode that caused processing error messages.
@@ -67,7 +67,7 @@ TeX emulation
 =============
 
 * Allow negative dimensions for ``\\[]`` but clip to 0 since this isn't really allowed in MathML.
-* Fixed problem where \\ with whitespace followed by [ would incorrectly be interpretted as \\[dimen].
+* Fixed problem where \\ with whitespace followed by [ would incorrectly be interpreted as \\[dimen].
 * Make ``jsMath2jax`` run before other preprocessors so that ``tex2jax`` won't grab environments from inside the jsMath spans and divs before jsMath2jax sees them.
 * Fix issue with ``\vec`` not producing the correct character for ``\vec{\mathbf{B}}`` and similar constructs.
 * Combine multiple primes into single unicode characters.
@@ -85,7 +85,7 @@ TeX emulation
 * Make ``autoload-all`` skip extensions that are already loaded, and not redefine user-defined macros.
 * Fix most extensions to not overwrite user defined macros when the extension is loaded.
 * Ignore ``\label{}`` with no label.
-* Make ``\injlim`` and friends produce single ``<mi>`` elements for thier names rather than one for each letter.
+* Make ``\injlim`` and friends produce single ``<mi>`` elements for their names rather than one for each letter.
 * Handle primes followed by superscript as real TeX does in TeX input jax.
 * Handle a few more negations (e.g., of arrows) to produce the proper Unicode points for these.
 * Don't produce a processing error when ``\limits`` is used without a preceding operator.

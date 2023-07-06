@@ -154,7 +154,7 @@ Option Descriptions
 .. _safe-scriptlevelRange:
 .. describe:: scriptlevelRange: [-2, 2]
 
-   This specifies the range of values allowd for the
+   This specifies the range of values allowed for the
    :attr:`scriptlevel` MathML attribute (for ``<math>`` and
    ``<mstyle>`` nodes).  These are filtered to prevent users from
    making text that is too large (via negative :attr:`scriptlevel`) or

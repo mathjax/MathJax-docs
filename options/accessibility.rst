@@ -43,7 +43,7 @@ the expression explorer.
 Although you can load the extensions explicitly using the
 :ref:`loader-options`, it is probably better to use the men u options
 above, so that if a user turns the extensions off, they will not incur
-the network and startup costs of laoding the extensions they will not
+the network and startup costs of loading the extensions they will not
 be using.
 
 -----
@@ -112,9 +112,9 @@ Option Descriptions
    the MathDocument's ``enrichError()`` method, which simply prints a
    warning message in the browser console window.  The original
    (unenriched) MathML will be used for the output of the expression.
-   You can override the defaul tbehavior by providing a function that
+   You can override the default tbehavior by providing a function that
    does whatever you want, such as recording the error, or replacing
-   the original MathML with alterntiave MathML contianing an error
+   the original MathML with alterntiave MathML containing an error
    message.
 
 .. note::
@@ -346,7 +346,7 @@ Highlighting Options
 .. _explorer-flame:
 .. describe:: flame: false
 
-   This flag switches on the Flame highligher, which permanently highlights
+   This flag switches on the Flame highlighter, which permanently highlights
    collapsible sub-expressions, with successively darkening background for
    nested collapsible expressions.
 

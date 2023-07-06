@@ -5,13 +5,13 @@ Legacy Assistive Support in v2
 ##############################
 
 Interactions between screen readers and MathJax are delicate and vary
-from browser to broswer, operating system to operating system, and
+from browser to browser, operating system to operating system, and
 screen reader to screen reader.  The following information was
 gathered over time for version 2 of MathJax and various
-broser/operating-system/screen-reader combinations.  The information
+browser/operating-system/screen-reader combinations.  The information
 is several years old, and my no longer be completely accurate, as
 features in browsers and screen readers change regularly.  Because
-this inforamtion changes regularly with updates to browsers and screen
+this information changes regularly with updates to browsers and screen
 readers, we are unable to maintin a table like this for version 3.
 
 Support Matrix (AssistiveMML.js)
@@ -219,7 +219,7 @@ Notes on Apple VoiceOver
 
   * *Safari*. The visually-hidden MathML is read out and gets an
     outline. Visual rendering is ignored correctly. VoiceOver
-    somtimes drops parts of the equation due to its partial MathML
+    sometimes drops parts of the equation due to its partial MathML
     support.
   * *Chrome*. The visually-hidden MathML is detected but VoiceOver
     does not read it correctly (only e.g., "4 items detected; math";

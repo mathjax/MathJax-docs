@@ -247,7 +247,7 @@ a local copy of MathJax.  The easiest option is to use the SVG output
 renderer rather than the CommonHTML output, as that does not require
 fonts to be loaded, so avoids the same-origin issue.  Alternatively,
 you could install the MathJax TeX fonts as system fonts so that
-Firefox doesn't hav to try to load them as web fonts.  
+Firefox doesn't have to try to load them as web fonts.  
 
 This is an unfortunate restriction for MathJax (though we understand
 their reasoning), but it is a limitation imposed by Firefox's

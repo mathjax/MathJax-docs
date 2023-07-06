@@ -50,7 +50,7 @@ For example:
 .. Note::
 
    For the ``\href`` macro, the `url` parameter is not processed
-   futher, as it is in actual TeX, so you do not need to quote special
+   further, as it is in actual TeX, so you do not need to quote special
    characters.  For example, ``\href{#section1}{x}`` is fine, but
    ``\href{\#section}{x}`` will not work as expected.
 
