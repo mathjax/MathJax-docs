@@ -119,7 +119,7 @@ output format) to display the mathematics.
   The ``tex-mml-chtml.js`` file includes all the pieces needed for
   MathJax to process these two input formats and produce this
   output format.  There are several other choices with different
-  input/output combinations, and and you can even configure MathJax to
+  input/output combinations, and you can even configure MathJax to
   load components individually.
 
   We list this file here because it will get you started quickly with

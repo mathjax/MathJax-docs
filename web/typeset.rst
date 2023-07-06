@@ -319,7 +319,7 @@ and then use
 
 in order to load the script when the page content is ready.  Note
 that you will want to include the path to the location where you
-stored ``check-mathjax.js``, that you should change
+stored ``check-for-tex.js``, that you should change
 ``tex-chtml.js`` to whatever component file you want to use, and that
 the ``window.MathJax`` value should be set to whatever configuration
 you want to use.  In this case, it just adds dollar signs to the
