@@ -495,7 +495,7 @@ Other bug fixes
 *  Isolate non-standard attributes on MathML elements so that they don't
    interfere with the inner workings of MathJax.
 
-*  Properly handle width of border and padding in mirrors in `HTML-CSS`
+*  Properly handle width of border and padding in errors in `HTML-CSS`
    output.
 
 *  Properly handle lower-case Greek better.
