@@ -247,7 +247,7 @@ The Configuration Block
          mouseMagnifier: false,             // switch on magnification via mouse hovering
          align: 'top',                      // placement of magnified expression
 
-         infoType: false                    // show semantic type on mouse hovering
+         infoType: false,                   // show semantic type on mouse hovering
          infoRole: false,                   // show semantic role on mouse hovering
          infoPrefix: false,                 // show speech prefixes on mouse hovering
        }
