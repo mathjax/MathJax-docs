@@ -32,8 +32,7 @@ In version 2 of MathJax, it was difficult to adjust the fonts in use
 being used.  For example, switching the variables and function names
 to use a sans-serif font rather than the standard serifed font is
 quite difficult in version 2.  The structure of the font data in
-version 3 has been completely redesigned to help make such changes
-easier to make.
+version 3 has been completely redesigned to make such changes easier.
 
 Since browsers do not provide APIs to access font metrics, MathJax has
 to ship with the necessary font data; this font data is generated
