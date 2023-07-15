@@ -15,13 +15,13 @@ web documents that include mathematics and be confident that users will be
 able to view it naturally and easily.  Simply include MathJax and some
 mathematics in a web page, and MathJax does the rest.
 
-See <http://www.mathjax.org/> or <https://github.com/mathjax/MathJax/> for additional details.
+See <https://www.mathjax.org/> or <https://github.com/mathjax/MathJax/> for additional details.
 
 
 ## Beautiful documentation.
 
 The MathJax installation and usage documentation is available in this repository. The documents are also
-available on the MathJax web site online at <http://docs.mathjax.org>.  Please help us improve the documentation!
+available on the MathJax web site online at <https://docs.mathjax.org>.  Please help us improve the documentation!
 You can use the editor feature on github to simplify this.
 
 ## Community

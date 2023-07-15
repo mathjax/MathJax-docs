@@ -573,7 +573,7 @@ not based on other MathJax components at all.  The following example
 shows how to make a custom build that provides a function for
 obtaining the speech string for a given TeX math string.  This example
 is similar to one in the `MathJax3 demos
-<https://github.com/mathjax/MathJax-demos-web/blob/master/custom-build/custom-mathjax.md>`__
+<https://github.com/mathjax/MathJax-demos-web/blob/master/custom-build/custom-mathjax.html.md>`__
 repository.
 
 After downloading a copy of MathJax as described in the section on
