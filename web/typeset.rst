@@ -191,7 +191,7 @@ might use something like:
      // the new content is has been typeset
    });
 
-The argument passed to :meth:`MathJax.typsetClear()` can be an actual
+The argument passed to :meth:`MathJax.typesetClear()` can be an actual
 DOM element, as in the example above, or a CSS selector string (e.g.,
 ``'#has-math'``), or an array of these.  The selector can specify more
 than one container element (e.g., via a class selector).
