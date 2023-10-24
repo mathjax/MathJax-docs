@@ -259,7 +259,7 @@ string (when it is within an HTML snippet):
       ]]
     ]
 
-Note, however, that a better approach to this exampe is given in the
+Note, however, that a better approach to this example is given in the
 next section.
 
 Since an HTML snippet might contain several strings that need to be
