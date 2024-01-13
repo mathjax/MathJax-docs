@@ -601,8 +601,6 @@ D
      - **ams**
    * - ``\dashv``
      -
-   * - ``\data``
-     - **html**
    * - ``\dbinom``
      - **ams**
    * - ``\dblcolon``
