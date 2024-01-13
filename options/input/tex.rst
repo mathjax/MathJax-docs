@@ -89,7 +89,7 @@ Option Descriptions
         }
       };
 
-   This loads the :ref:`tex-enclose` extension and acticates it by
+   This loads the :ref:`tex-enclose` extension and activates it by
    including it in the package list.
 
    You can remove packages from the default list using ``'[-]'``
