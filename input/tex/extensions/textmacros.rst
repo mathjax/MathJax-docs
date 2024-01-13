@@ -256,8 +256,7 @@ HTML Commands
 -------------
 
 .. list-table::
-   * - ``\data``
-     - specify data-* attributes
+
    * - ``\href``
      - make hyperlink
    * - ``\style``
