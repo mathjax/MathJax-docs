@@ -17,7 +17,8 @@ using MathJax components).
 
 While MathJax version 2 included a `NativeMML` output jax for
 producing MathML output in the web page, because MathML is not
-available in the Chrome, Edge, and IE browsers, because the MathML
+available in IE browsers, because support came to the Chrome and 
+Edge browsers in early 2023, because the MathML
 support in Safari and Firefox don't include all the features needed by
 MathJax (e.g., the `<mlabeledtr>` element needed for labeled
 equations), and because the quality of the results in Safari and
