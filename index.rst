@@ -120,12 +120,12 @@ need it.
 
 .. image:: https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A
    :alt: powered-by NumFocus
-   :target: http://www.numfocus.org
+   :target: https://numfocus.org
 
 MathJax is a Sponsored Project of NumFOCUS, a 501(c)(3) nonprofit
 charity in the United States. NumFOCUS provides MathJax with fiscal,
 legal, and administrative support to help ensure the health and
-sustainability of the project. Visit `numfocus.org <http://www.numfocus.org>`__ for more
+sustainability of the project. Visit `numfocus.org <https://numfocus.org>`__ for more
 information.
 
 ------
