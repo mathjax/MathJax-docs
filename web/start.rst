@@ -208,6 +208,16 @@ version 3 to work with IE11, include the line
 before the script that loads MathJax.  Support for IE11 is not
 guaranteed, and may be dropped in the future.
 
+.. warning::
+
+   The original `polyfill` website was purchased by a Chinese company
+   in 2024, and has been used to inject malware into pages that use
+   it.  You should **NOT** use the ``polyfill.io`` library any longer,
+   and should either remove the reference entirely, or switch to a
+   link like the one above.  See `this post
+   <https://sansec.io/research/polyfill-supply-chain-attack>`__ for
+   more details.
+
 -----
 
 
