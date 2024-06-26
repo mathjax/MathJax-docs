@@ -196,18 +196,17 @@ to get the same file.
 Browser Compatibility
 ---------------------
 
-MathJax supports all modern browsers (Chrome, Safari,
-Firefox, Edge), and most mobile browsers.  Include the
-`polyfill <https://polyfill.io/v3/>`__ library in order to support
-earlier browser versions (see their `browser support
-<https://polyfill.io/v3/supported-browsers/>`__ page for details).
-In particular, to allow MathJax version 3 to work with IE11, include the line
+MathJax supports all modern browsers (Chrome, Safari, Firefox, Edge),
+and most mobile browsers.  Include the ``polyfill`` library in order
+to support earlier browser versions.  In particular, to allow MathJax
+version 3 to work with IE11, include the line
 
 .. code-block:: html
 
-   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 
-before the script that loads MathJax.
+before the script that loads MathJax.  Support for IE11 is not
+guaranteed, and may be dropped in the future.
 
 -----
 
