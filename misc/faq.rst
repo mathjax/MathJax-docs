@@ -86,14 +86,9 @@ details.
 If the MathJax site *does* render properly, this indicates that there
 may be something wrong with the webpage you were trying to view
 initially.  If you manage that website, then make sure that it is
-using :ref:`the latest version of MathJax <mathjax-CDN>`, and that you have
-included the line
-
-   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
-before the script that loads MathJax itself.  If you *don't* manage
-the website yourself, you may have to report the issue to the
-maintainers of the site in order to have it resolved.
+using :ref:`the latest version of MathJax <mathjax-CDN>`.  If you
+*don't* manage the website yourself, you may have to report the issue
+to the maintainers of the site in order to have it resolved.
 
 
 .. _faq-ie-meta:

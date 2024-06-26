@@ -12,17 +12,7 @@ IE6), MathJax version 3 relies on more modern browser features, and so
 older browsers are no longer supported.
 
 The CommonHTML and SVG output supports all modern browsers (Chrome, Safari,
-Firefox, Edge), and most mobile browsers.  Include the
-`polyfill <https://polyfill.io/v3/>`__ library in order to support
-earlier browser versions (see their `browser support
-<https://polyfill.io/v3/supported-browsers/>`__ page for details).
-In particular, to allow MathJax version 3 to work with IE11, include the line
-
-.. code-block:: html
-
-   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-
-before the script that loads MathJax.
+Firefox, Edge), and most mobile browsers.
 
 Please `file issues on GitHub
 <https://github.com/mathjax/MathJax/issues>`__ if you notice
