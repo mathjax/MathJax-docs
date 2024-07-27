@@ -86,9 +86,9 @@ automatic equation numbers generated when the ``tags`` option in the
       section: 1,
       tex: {
         tagformat: {
-	  number: (n) => MathJax.config.section + '.' + n,
+          number: (n) => MathJax.config.section + '.' + n,
           id: (tag) => 'eqn-id:' + tag
-	}
+        }
       },
       startup: {
         ready() {
@@ -127,16 +127,13 @@ possibility:
       startup: {
         ready() {
           const Configuration = MathJax._.input.tex.Configuration.Configuration;
-          const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+          const CommandMap = MathJax._.input.tex.TokenMap.CommandMap;
           new CommandMap('sections', {
-            nextSection: 'NextSection',
-            setSection: 'SetSection',
-          }, {
-            NextSection(parser, name) {
+            nextSection: (parser, _name) => {
               MathJax.config.section++;
               parser.tags.counter = parser.tags.allCounter = 0;
             },
-            SetSection(parser, name) {
+            setSection: (parser, name) => {
               const n = parser.GetArgument(name);
               MathJax.config.section = parseInt(n);
             }
@@ -149,8 +146,13 @@ possibility:
       }
     };
 
-Of course, you will want to merge this configuraiton in with the rest
-of your configuration options.
+Of course, you will want to merge this configuraiton in with the rest of your
+configuration options. Moreovers, you will need to load the new `sections`
+configuration by adding it to your package list loaded into the TeX input jax.
+
+.. code-block:: javascript
+
+   {packages: {'[+]': ['tagformat', 'sections']}}
 
 This makes two new macros available: ``\nextSection``, which
 increments the section counter, and ``\setSection{n}``, which sets the
@@ -161,8 +163,8 @@ within a hidden element.  For example,
 
 .. code-block:: html
 
-   <span style="display: hidden">\(\nextSection\)</span>
+   <span style="display: none">\(\nextSection\)</span>
 
-or something similar.  
+or something similar.
 
 |-----|
