@@ -405,7 +405,7 @@ control the conversion process.  The options that can be included are:
   the surrounding font.  Default is ``8``.
 * :attr:`containerWidth`, a number giving the width of the container,
   in pixels.  Default is 80 times the :attr:`ex` value.
-* :attr:`lineWidth'`, a number giving the line-breaking width in
+* :attr:`lineWidth`, a number giving the line-breaking width in
   ``em`` units.  Default is a very large number (100000), so
   effectively no line breaking.
 * :attr:`scale`, a number giving a scaling factor to apply to the
