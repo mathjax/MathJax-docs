@@ -42,6 +42,12 @@ In addition, there are examples within this documentation:
 
 ..
 
+* :ref:`Building a custom component <custom-component>`
+* :ref:`Building a custom extension <custom-extension>`
+* :ref:`Building a custom MathJax file <custom-build>`
+
+..
+
 * :ref:`Backward Compatibility for TeX input <v2-compatibility-example>`
 * :ref:`Locating MathJax v2 math script tags <math-script-example>`
 
