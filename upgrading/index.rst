@@ -1,3 +1,5 @@
+.. _whats-new-in-mathjax:
+
 #####################
 What's New in MathJax
 #####################

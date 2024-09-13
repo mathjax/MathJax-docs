@@ -17,7 +17,7 @@ MathJax Components
 
 To make using MathJax easier in web pages, the various pieces that
 make up MathJax have been packaged into separate files called
-"components".  For example, there is a component for MathML input, and
+*components*.  For example, there is a component for MathML input, and
 one for SVG output, and the various TeX extensions are packaged as
 separate components.  You can mix and match the various components to
 customize MathJax to suit your particular needs (this is described in
@@ -25,11 +25,11 @@ detail in the section on :ref:`configure-mathjax` below); the
 individual component files that you specify are loaded when MathJax
 starts up.
 
-There are also components that combine several others into one larger
-file that loads everything you need to run MathJax all at once.  These
-represent some of the standard combinations of input and output
-formats, and you will probably find one of these that suits your
-needs.  You can :ref:`configure <configure-mathjax>` the various
+There are also *combined components* that combine several others into
+one larger file that loads everything you need to run MathJax all at
+once.  These represent some of the standard combinations of input and
+output formats, and you will probably find one of these that suits
+your needs.  You can :ref:`configure <configure-mathjax>` the various
 components in order to customize how they run, even when they are
 loaded as part of a combined component.  For example, you can set the
 delimiters to be used for in-line and displayed math for the TeX input
@@ -78,7 +78,8 @@ To use MathJax from a CDN, you need to do three things:
 1.  Include a MathJax configuration in your page (this may be optional
     in some cases).
 
-2.  Link to MathJax in the web pages that are to include mathematics.
+2.  Link to the CDN copy of MathJax in the web pages that are to
+    include mathematics.
 
 3.  Put mathematics into your web pages so that MathJax can display
     it.
@@ -88,14 +89,20 @@ To use MathJax from a CDN, you need to do three things:
 There are many free CDN services that provide copies of MathJax. Most
 of them require you to specify a particular version of MathJax to
 load, but some provide "rolling releases", i.e., links that update to
-the latest available version upon release (note that we also provide a
-means of obtaining the latest version automatically, described below).
+the latest available version upon release.
+
+.. note::
+
+   MathJax no longer provides a means of obtaining the latest version
+   itself.  This used to be done by loading the ``latest.js`` file,
+   but that has been removed in version 4.
+
+The following are some of the CDNs that offer MathJax:
 
 - `jsdelivr.com <https://jsdelivr.com>`__  [latest or specific version] (recommended)
 - `unpkg.com <https://unpkg.com/>`__ [latest or specific version]
 - `cdnjs.com <https://cdnjs.com>`__
 - `raw.githack.com <http://raw.githack.com>`__
-- `gitcdn.xyz <http://gitcdn.xyz/>`__
 - `cdn.statically.io <http://cdn.statically.io>`__
  
 
@@ -103,13 +110,11 @@ To jump start using ``jsdelivr``, you accomplish the first two steps by putting
 
 .. code-block:: html
 
-   <script type="text/javascript" id="MathJax-script" async
-     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-   </script>
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 into the ``<head>`` block of your document.  (It can also go in the
 ``<body>`` if necessary, but the head is to be preferred.)  This will
-load the latest 3.x.x version of MathJax from the distributed server,
+load the latest 4.x.x version of MathJax from the distributed server,
 configure it to recognize mathematics in both TeX and MathML notation,
 and ask it to generate its output using HTML with CSS (the CommonHTML
 output format) to display the mathematics.
@@ -133,33 +138,9 @@ output format) to display the mathematics.
 
 If you use the code snippet given above, you will not need to change
 the URL whenever MathJax is updated and the version changes, because
-``jsdelivr`` offers the ``mathjax@3`` notation for obtaining the
-``tex-mml-chtml.js`` file from the latest version (3.x.x) available on
+``jsdelivr`` offers the ``mathjax@4`` notation for obtaining the
+``tex-mml-chtml.js`` file from the latest version (4.x.x) available on
 the CDN.
-
-.. _latest-version:
-
-Getting the Latest Version
---------------------------
-
-Although ``jsdelivr`` provides a means of getting the latest version
-automatically, as described above, not all CDNs have a mechanism for
-that.  For such CDNs, MathJax provides a ``latest.js`` file that can
-be used to obtain the latest (3.x.x) version of MathJax.  For example,
-``cdnjs`` doesn't have a mechanism for getting the latest 3.x.x
-version automatically, so you can use
-
-.. code-block:: html
-
-   <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/latest?tex-mml-chtml.js">
-   </script>
-
-to obtain the latest (3.x.x) version of the ``tex-mml-chtml``
-component from ``cdnjs``; even though you have started by asking for
-version 3.0.0, the ``latest.js`` script will switch to the latest
-3.x.x version automatically.
-
 
 .. _specific_version:
 
@@ -172,11 +153,9 @@ version number in the URL; for example:
 
 .. code-block:: html
 
-   <script id="MathJax-script" async
-     src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
-   </script>
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/tex-mml-chtml.js"></script>
 
-will always load version 3.0.0 of the ``tex-mml-chtml.js`` combined
+will always load version 4.0.0 of the ``tex-mml-chtml.js`` combined
 component file.
 
 Other CDNs have slightly different formats for how to specify the
@@ -184,9 +163,7 @@ version number.  For example, ``cdnjs`` uses the following:
 
 .. code-block:: html
 
-   <script type="text/javascript" id="MathJax-script" async
-     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.0.0/es5/tex-mml-chtml.js">
-   </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/4.0.0/tex-mml-chtml.js"></script>
 
 to get the same file.
 
@@ -197,16 +174,11 @@ Browser Compatibility
 ---------------------
 
 MathJax supports all modern browsers (Chrome, Safari, Firefox, Edge),
-and most mobile browsers.  Include the ``polyfill`` library in order
-to support earlier browser versions.  In particular, to allow MathJax
-version 3 to work with IE11, include the line
-
-.. code-block:: html
-
-   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-
-before the script that loads MathJax.  Support for IE11 is not
-guaranteed, and may be dropped in the future.
+and most mobile browsers.  We no longer test MathJax with IE11, so you
+should not expect it to work with any version of Internet Explorer.
+We used to recommend loading the ``polyfill`` library in order to help
+MathJax work with older browsers, but that is not necessary for modern
+browsers, and we no longer recommend it.
 
 .. warning::
 
@@ -214,7 +186,7 @@ guaranteed, and may be dropped in the future.
    in 2024, and has been used to inject malware into pages that use
    it.  You should **NOT** use the ``polyfill.io`` library any longer,
    and should either remove the reference entirely, or switch to a
-   link like the one above.  See `this post
+   link from another source.  See `this post
    <https://sansec.io/research/polyfill-supply-chain-attack>`__ for
    more details.
 
@@ -239,7 +211,7 @@ If you wish to enable single dollar signs as in-line math delimiters,
 you need to tell MathJax that by providing an explicit MathJax
 configuration.  That is accomplished by using a ``<script>`` tag to
 set the ``MathJax`` global variable to hold a configuration for
-MathJax and placing that script before the one that loads the MathJax
+MathJax and placing that script **before** the one that loads the MathJax
 component file that you are using.  For example
 
 .. code-block:: html
@@ -251,12 +223,10 @@ component file that you are using.  For example
      }
    };
    </script>
-   <script id="MathJax-script" async
-     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-   </script>
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 
 configures MathJax's TeX input component to use ``$...$`` and
-``\(...\)`` as delimiters for inline-math (this enabling single
+``\(...\)`` as delimiters for inline-math (thus enabling single
 dollar signs as math delimiters), and then loads the ``tex-chtml.js``
 component for TeX input and CommonHTML output.
 
@@ -301,11 +271,12 @@ Where to Go from Here?
 ======================
 
 If you have followed the instructions above, you should now have
-MathJax installed and configured on your web server, and you should be
-able to use it to write web pages that include mathematics.  At this
-point, you can start making pages that contain mathematical content!
+MathJax installed and configured in your web page, and you should be
+able to use MathJax to write web pages that include mathematics.  At
+this point, you can start making pages that contain mathematical
+content!
 
-You could also read more about the details of how to :ref:`customize
+You could read more about the details of how to :ref:`customize
 MathJax <web-configuration>`.
 
 You can also check out the :ref:`MathJax examples <web-examples>` for

@@ -8,8 +8,8 @@ Currently, there are three components designed specifically to support
 assistive technology.
 
 * :ref:`semantic-enrich-component`
-* :ref:`complexity-component`
 * :ref:`explorer-component`
+* :ref:`complexity-component`
 * :ref:`assistive-mml-component`
 
 To load one of these components, include the component name in the
@@ -28,16 +28,23 @@ configuration.  For example:
 
 to load the `semantic-enrich` extension.
 
+The `semantic-enrich` and `explorer` components are part of all the
+:ref:`combined components <combined-components>`, so if you are using
+one of the those, you don't need to laod these assistive extensions
+yourself.
+
+
 .. note::
 
-   The `auto-collapse` extension has not yet been converted to version
-   3, but will be in a future release.
+   The `auto-collapse` extension from version 2 has not yet been
+   converted to the current version of MathJax, but will be in a
+   future release.
 
 .. note::
 
-   The `assistive-menu` extension is now part of the standard
-   :ref:`contextual menu extension <menu-component>`, so doesn't have
-   to be loaded separately.
+   The `assistive-menu` extension from version 2 is now part of the
+   standard :ref:`contextual menu extension <menu-component>`, so
+   doesn't have to be loaded separately.
 
 -----
 
@@ -59,6 +66,30 @@ configuring this component.
 -----
 
 
+.. _explorer-component:
+
+a11y/explorer
+=============
+
+The `explorer` component allows readers to explore a mathematical
+expression interactively.  When an expression is focused by tabbing to
+it, a reader can "enter" the expression by pressing shift-space on the
+keyboard.  Clicking on a typeset expression will also enter the
+explorer at the character that is clicked.
+
+Once the explorer is activated, the arrow keys move the reader through
+the expression: down moves to more detail by selecting the first
+subexpression of the selected expression, up moves to more complete
+expressions, while left and right move through the sub-expressions at
+the current level.  See the :ref:`accessibility` section for more
+details about using the expression explorer and its various features.
+
+See the :ref:`explorer-options` section for information about
+configuring this component.
+
+-----
+
+
 .. _complexity-component:
 
 a11y/complexity
@@ -69,31 +100,9 @@ element within an expression, and allows complex expressions to
 "collapse" to make them both shorter, and simpler to read.  The
 collapsed portions can be expanded with a click of the mouse, or by
 keyboard actions when using the :ref:`explorer-component` extension
-described below.
+described above.
 
 See the :ref:`complexity-options` section for information about
-configuring this component.
-
------
-
-
-.. _explorer-component:
-
-a11y/explorer
-=============
-
-The `explorer` component allows readers to explore a mathematical
-expression interactively.  When an expression is focused (by tabbing to
-it, or by clicking on it), a reader can "enter" the expression by
-pressing shift-space on the keyboard.  The arrow keys then move the
-reader through the expression (down moves to more detail by selecting
-the first subexpression of the selected expression, up moves to more
-complete expressions, while left and right move through the
-sub-expressions at the current level).  See the :ref:`accessibility`
-section for more details about using the expression explorer and its
-various features.
-
-See the :ref:`explorer-options` section for information about
 configuring this component.
 
 -----

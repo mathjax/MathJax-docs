@@ -1,8 +1,8 @@
 .. _web-typeset:
 
-######################################
-Typesetting and Converting Mathematics
-######################################
+#######################
+Typesetting Mathematics
+#######################
 
 There are two main uses for MathJax:
 
@@ -10,8 +10,10 @@ There are two main uses for MathJax:
 * Converting a string containing mathematics into another form.
 
 In version 2, MathJax could perform the first function very well, but
-it was much harder to do the second.  MathJax version 3 makes both
-easy to do.  Both these tasks are described below.
+it was much harder to do the second.  The current version of MathJax
+makes both easy to do.  Typesetting math is described below,
+while converting math is described in the :ref:`next section
+<convert-math>`.
 
 
 .. _typeset-page:
@@ -28,111 +30,152 @@ MathJax.
 If your page is dynamic, and you may be adding math after the page is
 loaded, then you will need to tell MathJax to typeset the mathematics
 once it has been inserted into the page.  There are two methods for
-doing that: :meth:`MathJax.typeset()` and
-:meth:`MathJax.typesetPromise()`.
+doing that: :js:meth:`MathJax.typeset()` and
+:js:meth:`MathJax.typesetPromise()`.
 
-The first of these, :meth:`MathJax.typeset()`, typesets the page, and
-does so immediately and synchronously, so when the call finishes, the
-page will have been typeset.  Note, however, that if the math includes
-actions that require additional files to be loaded (e.g., TeX input
-that uses `\require`, or that includes autoloaded extensions), then
-an error will be thrown.  You can use the ``try/catch`` command to
-trap this condition.
+The first of these, :js:meth:`MathJax.typeset()`, typesets the page,
+and does so immediately and synchronously, so when the call finishes,
+the page will have been typeset.  Note, however, that if the math
+includes actions that require additional files to be loaded (e.g., TeX
+input that uses ``\require``, or that includes autoloaded extensions),
+then a ``retry`` error will be thrown.  In that case, you should use
+the :js:meth:`MathJax.typesetPromise()` instead, as described below;
+but note that this will make your typesetting asynchronous, and you
+may need to take that into account in the rest of your code.  See also
+:ref:`retry-error` section for more details.
 
-The second, :meth:`MathJax.typesetPromise()`, performs the typesetting
-asynchronously, and returns a promise that is resolved when the
-typesetting is complete.  This properly handles loading of external
-files, so if you are expecting to process TeX input that can include
-`\require` or autoloaded extensions, you should use this form of
-typesetting.  It can be used with ``await`` as part of a larger
-``async`` function.
+.. warning::
 
-Both functions take an optional argument, which is an array of elements
-whose content should be processed.  An element can be either an actual
-DOM element, or a CSS selector string for an element or collection of
+   In MathJax v4, with the introduction of new fonts that include many
+   more characters than the original MathJax TeX fonts did, the fonts
+   have been broken into smaller pieces so that your readers don't
+   have to download the entire font and its data for characters that
+   may never be used.  That means that typesetting mathematics may
+   need to operate asynchronously even if the TeX *doesn't* include
+   ``\require`` or any auto-loaded extensions, as the output itself
+   could need extra font data files to be loaded.  Thus in version 4,
+   it is always best to use the promise-based command, described
+   below.
+
+The second method, :js:meth:`MathJax.typesetPromise()`, performs the
+typesetting asynchronously, and returns a promise that is resolved
+when the typesetting is complete.  This properly handles loading of
+external files, so if you are expecting to process TeX input that can
+include `\require` or autoloaded extensions, you should use this form
+of typesetting.  Note that it can be used with ``await`` as part of a
+larger ``async`` function.  If you are getting a ``retry`` error while
+calling :js:meth:`MathJax.typeset()`, you should switch to using
+:js:meth:`MathJax.typesetPromise()` instead.
+
+Each of these functions take an optional argument, which is an array of
+elements whose content should be processed.  An element can be either
+an actual DOM element, or a CSS selector string for one or more DOM
 elements.  Supplying an array of elements will restrict the
 typesetting to the contents of those elements only.
+
+.. js:function:: MathJax.typeset([elements])
+
+   :param (string|HTMLElement)[] elements: An optional array of DOM
+                                           elements or CSS selector
+                                           strings that restricts
+                                           the typesetting to the
+                                           contents of the specified
+                                           container elements.
+
+.. js:function:: MathJax.typesetPromise([elements])
+
+   :param (string|HTMLElement)[] elements: An optional array of DOM
+                                           elements or CSS selector
+                                           strings that restricts
+                                           the typesetting to the
+                                           contents of the specified
+                                           container elements.
+   :returns Promise: A promise that resolves when the typesetting is complete.
+
+-----
 
 .. _typeset-async:
 
 Handling Asynchronous Typesetting
----------------------------------
+=================================
 
-It is generally a bad idea to try to perform multiple asynchronous
-typesetting calls simultaneously, so if you are using
-:meth:`MathJax.typesetPromise()` to make several typeset calls, you
-should chain them using the promises they return.  For example:
+It is not recommended to perform multiple asynchronous typesetting
+calls simultaneously, as these can interfere with one another while
+they are waiting for files to load.  For this reason, MathJax uses the
+:js:data:`MathJax.startup.promise` within the
+:js:meth:`MathJax.typesetPromise()` function to make sure any previous
+typeset calls are complete before starting the new one.  So if you do
+
+.. code-block:: javascript
+
+   MathJax.typesetPromise(["#container1"]);
+   MathJax.typesetPromise(["#container2"]);
+
+the second typeset operation will wait for the first one to complete
+before it starts.  (This also applies to the promise-based conversion
+functions described in the :ref:`next section <convert-math>`, which
+also use the :js:data:`MathJax.startup.promise` to coordinate with
+other typesetting and conversion operations.)
+
+The value of :js:data:`MathJax.startup.promise` is updated by each
+:js:meth:`MathJax.typesetPromise()` call (and by the promise-based
+conversion calls), so you can always use
+:js:data:`MathJax.startup.promise` as a means of waiting for all the
+currently pending typesetting operations to complete.
+
+.. warning::
+
+   The inclusion of the :js:data:`MathJax.startup.promise` within
+   :js:meth:`MathJax.typesetPromise()` and the promise-based
+   conversion functions is new in version 4.  In version 3, you were
+   expected to handle chaining of the typeset calls yourself, but most
+   coders failed to do this, so MathJax v4 now handles that for you.
+
+   The version 3 documentation recommened using and setting
+   :js:data:`MathJax.startup.promise` yourself to make sure typeset
+   calls were serialized; if you included that code pattern in your v3
+   work-flow, you should remove it, otherwise you will likely cause a
+   circular dependency where the typesetting will wait for the promise
+   to be resolved, but it can't resolve until the typesetting
+   completes.
+
+Because :js:meth:`MathJax.typesetPromise()` returns a promise, you can
+use that promise to synchronize the rest of your code with the actions
+of MathJax.  For example,
 
 .. code-block:: javascript
 
    MathJax.typesetPromise().then(() => {
-     // modify the DOM here
-     MathJax.typesetPromise();
-   }).catch((err) => console.log(err.message));
-
-This approach can get complicated fast, however, so you may want to
-maintain a promise that can be used to chain the later typesetting
-calls.  For example,
-
-.. code-block:: javascript
-
-   let promise = Promise.resolve();  // Used to hold chain of typesetting calls
-
-   function typeset(code) {
-     promise = promise.then(() => MathJax.typesetPromise(code()))
-                      .catch((err) => console.log('Typeset failed: ' + err.message));
-     return promise;
-   }
-
-Then you can use :meth:`typeset()` to run code that changes the DOM
-and typesets the result.  The :meth:`code` that you pass it does the
-DOM modifications and returns the array of elements to typeset, or
-:data:`null` to typeset the whole page.  E.g.,
-
-.. code-block:: javascript
-
-   typeset(() => {
-     const math = document.querySelector('#math');
-     math.innerHTML = '$$\\frac{a}{1-a^2}$$';
-     return [math];
+     for (const item of MathJax.startup.document.math) {
+       console.log(item.math);
+     }
    });
 
-would replace the contents of the element with ``id="math"`` with the
-specified fraction and have MathJax typeset it (asynchronously).
-Because the :meth:`then()` call returns the result of
-:meth:`MathJax.typesetPromise()`, which is itself a promise, the
-:meth:`then()` will not resolve until that promise is resolved; i.e.,
-not until the typesetting is complete.  Finally, since the
-:meth:`typeset()` function returns the :data:`promise`, you can use
-``await`` in an ``async`` function to wait for the typesetting to
-complete:
+would typeset the math on the page and then print the original TeX
+code to the console for each of the expressions on the page.
+
+It is also possible to use the ``await`` command to wait for the
+promise to be resolved.  For example
 
 .. code-block:: javascript
 
-   await typeset(...);
-
-Note that this doesn't take the initial typesetting that MathJax
-performs into account, so you might want to use
-:attr:`MathJax.startup.promise` in place of :data:`promise` above.
-I.e., simply use
-
-.. code-block:: javascript
-
-   function typeset(code) {
-     MathJax.startup.promise = MathJax.startup.promise
-       .then(() => MathJax.typesetPromise(code()))
-       .catch((err) => console.log('Typeset failed: ' + err.message));
-     return MathJax.startup.promise;
+   async function reportMath() {
+     await MathJax.typesetPromise();
+     for (const item of MathJax.startup.document.math) {
+       console.log(item.math);
+     }
    }
 
-This avoids the need for the global :data:`promise` variable, and
-makes sure that your typesetting doesn't occur until the initial
-typesetting is complete.
+would define a function ``reportMath()`` that typesets the page and
+then reports the original TeX for each expression, similarly to the
+previous code example.
+
+-----
 
 .. _tex-reset:
 
 Resetting Automatic Equation Numbering
---------------------------------------
+======================================
 
 The TeX input jax allows you to automatically number equations. When
 modifying a page, this can lead to problems as numbered equations may
@@ -140,15 +183,20 @@ be removed and added; most commonly, duplicate labels lead to issues.
 
 You can reset equation numbering using the command
 
-   .. describe:: MathJax.texReset([start])
+.. js:function:: MathJax.texReset([start])
 
-where ``start`` is the number at which to start equation numbering.
+   :param number start: An optional number at which to start the
+                         equation numbering.  The default is 1.
 
+This can be used to start the equation numbering at a particular
+number, or reset it to the default starting number of 1.
+
+-----
 
 .. _typeset-clear:
 
 Updating Previously Typeset Content
------------------------------------
+===================================
 
 MathJax keeps track of all the math that it has typeset within your
 page.  This is so that if you change the output renderer (using the
@@ -156,14 +204,23 @@ MathJax contextual menu), it can be changed to use the new format, for
 example; or if you change the accessibility settings, say to enable
 the expression explorer, all the math can be updated to include the
 speech strings that it uses.  If you modify the page to include new
-mathematics and call :meth:`MathJax.typeset()` or
-:meth:`MathJax.typesetPromise()`, the newly typeset mathematics will be
+mathematics and call :js:meth:`MathJax.typeset()` or
+:js:meth:`MathJax.typesetPromise()`, the newly typeset mathematics will be
 added to the list of already typeset mathematics, as you would expect.
 
 If you modify the page to remove content that contains typeset
 mathematics, you will need to tell MathJax about that so that it knows
 the typeset math that you are removing is no longer on the page.  You
-do this by using the :meth:`MathJax.typesetClear()` method.
+do this by using the following command:
+
+.. js:function:: MathJax.typesetClear([elements])
+
+   :param (string|HTMLElement)[] elements: An optional array of DOM
+                                           elements or CSS selector
+                                           strings that restricts
+                                           the typesetting to the
+                                           contents of the specified
+                                           container elements.
 
 When called with no arguments, :meth:`MathJax.typesetClear()` tells
 MathJax to forget about all the math that has been typeset so far.
@@ -174,24 +231,23 @@ will not affect any of the math that was typeset previously.
 
 If you remove math from only a portion of the page, you can call
 :meth:`MathJax.typesetClear()` passing it an array of container
-elements that have been (or will be) removed, and MathJax will forget
-about the math that is within those containers, while remembering the
-rest of the math on the page.  For example, if you have an element
-with ``id="has-math"`` that you have previously typeset, and you are
-planning to replace the contents of this element with new content
-(stored in a variable ``new_html``) that needs to be typeset, you
-might use something like:
+elements that have been (or will be) removed, or CSS selector strings
+for them, and MathJax will forget about the math that is within those
+containers, while remembering the rest of the math on the page.  For
+example, if you have an element with ``id="has-math"`` that you have
+previously typeset, and you are planning to replace the contents of
+this element with new content (stored in a variable ``new_html``) that
+needs to be typeset, you might use something like:
 
 .. code-block:: javascript
 
-   const node = document.getElementById('has-math');
-   MathJax.typesetClear([node]);
+   MathJax.typesetClear(['#has-math']);
    node.innerHTML = new_html;
-   MathJax.typesetPromise([node]).then(() => {
-     // the new content is has been typeset
+   MathJax.typesetPromise(['#has-math']).then(() => {
+     // the new content has been typeset
    });
 
-The argument passed to :meth:`MathJax.typsetClear()` can be an actual
+The argument passed to :js:meth:`MathJax.typesetClear()` can be an actual
 DOM element, as in the example above, or a CSS selector string (e.g.,
 ``'#has-math'``), or an array of these.  The selector can specify more
 than one container element (e.g., via a class selector).
@@ -211,17 +267,30 @@ processed it (i.e., remove its typeset math), reset the TeX automatic
 line numbering and labels, and then re-typeset the contents of the
 page from scratch.
 
+-----
 
 .. _get-math-items:
 
 Looking up the Math on the Page
--------------------------------
+===============================
 
 MathJax saves its information about a particular expression that it
 has typeset in an object called a ``MathItem``; each typeset
 expression has an associated MathItem.  You can look up the MathItems
-using the :meth:`MathJax.startup.document.getMathItemsWithin()`
-function.  You pass this a container element (or a CSS selector for an
+using the following command:
+
+.. js:function:: MathJax.startup.document.getMathItemsWithin(elements)
+
+   :param (string|HTMLElement)[] elements: An array of DOM elements or
+                                           CSS selector strings that
+                                           restricts the typesetting
+                                           to the contents of the
+                                           specified container
+                                           elements.
+   :return MathItem[]: The list of ``MathItem`` objects for the
+                       expressions within the specified containers.
+   
+You pass this a container element (or a CSS selector for an
 element or collection of elements, or an array of containers or
 selectors) and it will return an array of the MathItems that are
 within those containers.  E.g.,
@@ -234,20 +303,21 @@ will return an array of all the MathItems for the typeset math on the
 page.  See the `MathItem definition
 <https://github.com/mathjax/MathJax-src/blob/master/ts/core/MathItem.ts>`__
 for details on the contents of the MathItem structure.  The MathItem
-is the v3 replacement for the v2 `ElementJax` object, and
-:meth:`getMathItemsWithin()` performs a
-similar function to the v2 function :meth:`MathJax.Hub.getAllJax()`.
+is the replacement for the v2 ``ElementJax`` object, and
+:js:meth:`MathJax.startup.document.getMathItemsWithin()` performs a
+similar function to the v2 function :js:meth:`MathJax.Hub.getAllJax()`.
 
+-----
 
 .. _safe-typesetting:
 
 Typesetting User-Supplied Content
----------------------------------
+=================================
 
 Mathematics formats like LaTeX and MathML allow a powerful range of
 layout options, including access to hyperlinks, CSS styles, font
 selection and sizing, spacing, and so on.  Such features give you a
-great deal of flexibility in producing the mathematics for your pages,
+great deal of flexibility in producing the mathematics for your pages;
 but if your readers are allowed to enter mathematics into your pages
 (e.g., for a question-and-answer site, or in comments on a blog),
 these features can be abused to cause problems for other readers and
@@ -269,275 +339,108 @@ processed by MathJax, you should strongly consider using the
 See the :ref:`safe-options` section for details of how to load and
 configure the `ui/safe` extension.
 
-
-
-.. _load-for-math:
-
-Loading MathJax Only on Pages with Math
----------------------------------------
-
-The MathJax combined configuration files are large, and so you may
-wish to include MathJax in your page only if it is necessary.  If you
-are using a content-management system that puts headers and footers
-into your pages automatically, you may not want to include MathJax
-directly, unless most of your pages include math, as that would load
-MathJax on *all* your pages.  Once MathJax has been loaded, it should
-be in the browser's cache and load quickly on subsequent pages, but
-the first page a reader looks at will load more slowly.  In order to
-avoid that, you can use a script like the following one that checks to
-see if the content of the page seems to include math, and only loads
-MathJax if it does.  Note that this is not a very sophisticated test,
-and it may think there is math in some cases when there really isn't
-but it should reduce the number of pages on which MathJax will have to
-be loaded.
-
-Create a file called ``check-for-tex.js`` containing the following:
-
-.. code-block:: javascript
-
-   (function () {
-     var body = document.body.textContent;
-     if (body.match(/(?:\$|\\\(|\\\[|\\begin\{.*?})/)) {
-       if (!window.MathJax) {
-         window.MathJax = {
-           tex: {
-             inlineMath: {'[+]': [['$', '$']]}
-           }
-         };
-       }
-       var script = document.createElement('script');
-       script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
-       document.head.appendChild(script);
-     }
-   })();
-
-and then use
-
-.. code-block:: html
-
-   <script src="check-for-tex.js" defer></script>
-
-in order to load the script when the page content is ready.  Note
-that you will want to include the path to the location where you
-stored ``check-for-tex.js``, that you should change
-``tex-chtml.js`` to whatever component file you want to use, and that
-the ``window.MathJax`` value should be set to whatever configuration
-you want to use.  In this case, it just adds dollar signs to the
-in-line math delimiters.  Finally, adjust the ``body.match()`` regular
-expression to match whatever you are using for math delimiters.
-
-This simply checks if there is something that looks like a TeX in-line
-or displayed math delimiter, and loads MathJax if there is.  If you
-are using different delimiters, you will need to change the pattern to
-include those (and exclude any that you don't use).  If you are using
-AsciiMath instead of TeX, then change the pattern to look for the
-AsciiMath delimiters.
-
-If you are using MathML, you may want to use
-
-.. code-block:: javascript
-
-   if (document.body.querySelector('math')) {...}
-
-for the test instead (provided you aren't using namespace prefixes,
-like `<m:math>`).
-
 -----
 
-.. _convert-math:
+.. _retry-error:
 
-Converting a Math String to Other Formats
-=========================================
+The "Retry" Error
+=================
 
-An important use case for MathJax is to convert a string containing
-mathematics (in one of the three forms that MathJax understands) and
-convert it into another form (either MathML, or one of the output
-formats that MathJax supports).  This was difficult to do in MathJax
-version 2, but easy to do in version 3.
+MathJax has a large number of optional features, and not all of them
+are included when you load MathJax into a web page.  If one of those
+features is needed by your code, MathJax will suspecd its operations
+and attempt to load the needed extension for that feature.  Because
+this process is asynchronous, MathJax must give up the CPU, wait for
+the needed file to load, and restart the typesetting after it has
+arrived.
 
-When MathJax starts up, it creates methods for converting from the
-input format(s) to the output format(s) that you have loaded, and to
-MathML format.  For example, if you have loaded the MathML input jax
-and the SVG output jax (say by using the ``mml-svg`` component), then
-MathJax will create the following conversion methods for you:
+This process is managed internally by MathJax setting up a promise for
+when the file is loaded, and throwing an error so that code higher up
+in the typesetting process can catch that error and know that it must
+wait for the promise to resolve before retrying the typesetting that
+was being performed.  This is an error with the message ``retry``.
 
-   .. describe:: MathJax.mathml2svg(math[,options])
-                 MathJax.mathml2svgPromise(math[,options])
-                 MathJax.mathml2mml(math[,options])
-                 MathJax.mathml2mmlPromise(math[,options])
+The promise-based typesetting and conversion functions handle this
+retry error automatically, and incorporate waiting for the
+asynchronous file loading to complete into thei own promises.  The
+synchronous functions, however, can't do that, since the retry promise
+would make them asynchronous.  If a retry is request during the
+running of one of the synchronous functions, the retry error will not
+be caught, and you will likely get an error report in the browser
+console indicating an uncause ``retry`` error.  That indicates that
+you may need to rewrite your code to use the promise-based functions,
+instead.  This means your code will have to handle asynchronous
+typesetting, and can't work synchronously as it stands.
 
-If you had loaded the TeX input jax as well, you would also get four
-more methods, with ``tex`` in place of ``mathml``.
+If there is no promise-based version of the code you are running
+(e.g., you are using :js:meth:`MathJax.startup.document.convert()`
+directly), then you may be able to use the following function to
+process the retry errors for you.
 
-As the names imply, the ``Promise`` functions perform the conversion
-asynchronously, and return promises, while the others operate
-synchronously and return the converted form immediately.  The first
-two functions (and any others like them) produce DOM elements as the
-results of the conversion, with the promise versions passing that to
-their :meth:`then()` functions as their argument (see the section on
-:ref:`convert-async` below), and the non-promise versions returning
-them directly.  You can insert these DOM elements into the document
-directly, or you can use their :attr:`outerHTML` property to obtain
-their serialized string form.
+.. js:function:: mathjax.handleRetriesFor(code)
 
-The functions that convert to MathML produce serialized MathML strings
-automatically, rather than DOM elements.  (You can use the browser's
-:attr:`DOMParser` object to convert the string into a MathML DOM tree
-if you need one.)
+   :param ()=>void code: A function to run with retry error trapped.
+                         If one occurs, the function will be called
+                         again after the promise associated with the
+                         retry error's file loading has been resolved.
 
-
-.. _conversion-options:
-
-Conversion Options
-------------------
-
-All four of these functions require an argument that is the math
-string to be converted (e.g., the serialized MathML string, or in the
-case of :meth:`tex2chtml()`, the TeX or LaTeX string).  You can also
-pass a second argument that is an object containing options that
-control the conversion process.  The options that can be included are:
-
-* :attr:`display`, a boolean specifying whether the math is in
-  display-mode or not (for TeX input).  Default is ``true``.
-* :attr:`em`, a number giving the number of pixels in an ``em`` for
-  the surrounding font.  Default is ``16``.
-* :attr:`ex`, a number giving the number of pixels in an ``ex`` for
-  the surrounding font.  Default is ``8``.
-* :attr:`containerWidth`, a number giving the width of the container,
-  in pixels.  Default is 80 times the :attr:`ex` value.
-* :attr:`lineWidth'`, a number giving the line-breaking width in
-  ``em`` units.  Default is a very large number (100000), so
-  effectively no line breaking.
-* :attr:`scale`, a number giving a scaling factor to apply to the
-  resulting conversion.  Default is 1.
-
-For example,
+From within a web page, you can obtain the ``mathjax`` variable via
 
 .. code-block:: javascript
 
-   let html = MathJax.tex2chtml('\\sqrt{x^2+1}', {em: 12, ex: 6, display: false});
+   const {mathjax} = MathJax._.mathjax;
 
-would convert the TeX expression ``\sqrt{x^2+1}`` to HTML as an
-in-line expression, with ``em`` size being 12 pixels and ``ex`` size
-being 6 pixels.  The result will be a DOM element containing the HTML
-for the expression.  Similarly,
-
-.. code-block:: javascript
-   
-   let html = MathJax.tex2chtml('\\sqrt{x^2+1}', {em: 12, ex: 6, display: false});
-   let text = html.outerHTML;
-
-sets :data:`text` to be the serialized HTML string for the expression.
-
-
-.. _get-metrics:
-
-Obtaining the Output Metrics
-----------------------------
-
-Since the :attr:`em`, :attr:`ex`, and :attr:`containerWidth` all
-depend on the location where the math will be placed in the document
-(they are values based on the surrounding text font and the container
-elements width), MathJax provides a method for obtaining these values
-from a given DOM element.  The method
-
-   .. describe:: MathJax.getMetricsFor(node, display)
-
-takes a DOM element (``node``) and a boolean (``display``), indicating
-if the math is in display mode or not, and returns an object
-containing all six of the options listed above.  You can pass this
-object directly to the conversion methods discussed above.  So you can
-do something like
+For example, you might need to do something like the following:
 
 .. code-block:: javascript
 
-   let node = document.querySelector('#math');
-   let options = MathJax.getMetricsFor(node, true);
-   let html = MathJax.tex2svg('\\sqrt{x^2+1}', options);
-   node.appendChild(html);
+   const {mathjax} = MathJax._.mathjax;
+   mathjax.handleRetriesFor(() => {
+     return MathJax.startup.document.convert('\\color{red}{x+y}');
+   }).then((node) => {
+     document.body.append(node);
+     MathJax.startup.document.reset();
+     MathJax.startup.document.updateDocument();
+   });
 
-in order to get the correct metrics for the (eventual) location of
-the math that is being converted.  Of course, it would be easier to
-simply insert the TeX code into the page and use
-:meth:`MathJax.typeset()` to typeset it, but this is just an example
-to show you how to obtain the metrics from a particular location in
-the page.
+The ``convert()`` call would normally throw a ``retry`` error when
+loading the `color` extension the first time it is used, but the
+``handleRetriesFor()`` call traps that and handles it, eventually
+typesetting the expression once the `color` extension has been loaded.
+Then the result is a appended to the document, and the document CSS is
+updated to include any new CSS needed for the output.
 
-Note that obtaining the metrics causes a page refresh, so it is
-expensive to do this.  If you need to get the metrics from many
-different locations, there are more efficient ways, but these are
-advanced topics to be dealt with elsewhere.
+Of course, it is better to insert the TeX code into the page and call
+:js:meth:`MathJax.typesetPromise()` instead, but this is only meant as
+an example of how ``mathjax.handleRetriesFor()`` works.
 
+Some things that may initiate a ``retry`` error include:
 
-.. _conversion-stylesheet:
+* Using the ``\require`` macro in TeX code
+* Using a macro that autoloads its definition (like ``\color`` or ``\bbox``)
+* Using some named entities in MathML code in the conversion functions
+* Generating output for characters whose data must be loaded dynamically.
+* Loading of localization files for speech generation.
 
-Obtaining the Output Stylesheet
--------------------------------
+If you are trying to use synchronous calls, any of these situations
+may lead to the ``retry`` error.  If you are unable to move to the
+promise-based calls for some reason, then your only recourse is to
+load any of the needed extensions before typesetting or converting the
+math.
 
-The output from the SVG and CommonHTML output jax both depend on CSS
-stylesheets in order to properly format their results.  You can obtain
-the SVG stylesheet element by calling
+To do this, be sure to include any needed TeX extensions in the
+``load`` array of the ``loader`` section of your MathJax
+configuration.  To handle the enetities in MathML, add the
+``[mml]/entities`` extension to the ``load`` array.
 
-.. code-block:: javascript
-
-   MathJax.svgStylesheet();
-
-and the HTML stylesheet from
-
-.. code-block:: javascript
-
-   MathJax.chtmlStylesheet();
-
-The CommonHTML output jax CSS can be quite large, so the output jax
-tries to minimize the stylesheet by including only the styles that are
-actually needed for the mathematics that has been processed by the
-output jax.  That means you should request the stylesheet only *after*
-you have typeset the mathematics itself.
-
-Moreover, if you typeset several expressions, the stylesheet will
-include everything needed for all the expressions you have typeset.
-If you want to reset the stylesheet, then use
-
-.. code-block:: javascript
-
-   MathJax.startup.output.clearCache();
-
-if the output jax is the CommonHTML output jax.  So if you want to
-produce the style sheet for a single expression, issue the
-:meth:`clearCache()` command just before the :meth:`tex2chtml()` call.
-
-
-.. _convert-async:
-
-Asynchronous Conversion
------------------------
-
-If you are converting TeX or LaTeX that might use `\require` to load
-extensions, or where extensions might be autoloaded, you will either
-need to use one of the "full" components that include all the
-extensions, or preload all the extensions you need if you plan to use
-the synchronous calls listed above.  Otherwise, you can use the
-promise-based calls, which handle the loading of extensions
-transparently.
-
-For example,
-
-.. code-block:: javascript
-
-   let node = document.querySelector('#math');
-   let options = MathJax.getMetricsFor(node, true);
-   MathJax.tex2chtmlPromise('\\require{bbox}\\bbox[red]{\\sqrt{x^2+1}}', options)
-     .then((html) => {
-       node.appendChild(html);
-       let sheet = document.querySelector('#MJX-CHTML-styles');
-       if (sheet) sheet.parentNode.removeChild(sheet);
-       document.head.appendChild(MathJax.chtmlStylesheet());
-     });
-
-would get the metrics for the element with ``id="math"``, convert
-the TeX expression using those metrics (properly handling the
-asynchronous load needed for the ``\require`` command); then when the
-expression is typeset, it is added to the document and the CHTML
-stylesheet is updated.
+You can load all the font data up front by setting the
+``loadAlFontFiles`` option to ``true`` in the ``startup`` section of
+your MathJax configuration.  This can cause *many* files to be laoded,
+however, so should be avoided if at all possible.  It is much better
+to move to the promise-based calls to handle this situation.  If you
+must use ``loadAllFontFiles``, then you may want to pick a font with
+less character coverage, such as ``mathjax-tex``, the original MathJax
+TeX fonts, rather than the newer fonts for version 4, which have much
+higher coverage, and so woudl involve loading more files.
 
 |-----|

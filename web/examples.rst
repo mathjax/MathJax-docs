@@ -10,7 +10,7 @@ There are a number of example files in the `MathJax web demo repository
 These include documentation as well as live examples that you can
 run.
 
-In addition, there are examples for:
+In addition, there are examples within this documentation:
 
 * :ref:`Configuring MathJax using an external script <local-configuration-file>`
 * :ref:`Configuring and loading MathJax using one local file <config-loads-mathjax>`
@@ -19,10 +19,25 @@ In addition, there are examples for:
 * :ref:`Updating previously typeset content <typeset-clear>`
 * :ref:`Looking up the math on the page <get-math-items>`
 * :ref:`Loading MathJax only on pages with math <load-for-math>`
-* :ref:`Automatic Section Numbering<tex-tagformat-section-numbers>`
 
 ..
 
+* :ref:`Automatic section numbering <tex-tagformat-section-numbers>`
+* :ref:`Better display of Unicode full-width numbers <full-width-numbers>`
+* :ref:`Creating stand-alone SVG images <stand-alone-svg>`
+
+..
+
+* :ref:`Printing all the TeX code in the page <print-all-math>`
+* :ref:`Printing all the TeX errors in the page <tex-error-report>`
+* :ref:`Printing all merror messages <listing-all-errors>`
+* :ref:`Reporting all undefined macros <report-undefined-macros>`
+* :ref:`Reporting all MathML structural errors <verifying-mathml>`
+* :ref:`Trapping compilation and typesetting errors <trap-errors>`
+
+..
+
+* :ref:`Defining both in-line and display-mode AsciiMath delimiters <asciimath-display-delimiters>`
 * :ref:`A replacement for the NativeMML output jax <NativeMML>`
 
 ..

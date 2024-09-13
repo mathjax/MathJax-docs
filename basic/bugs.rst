@@ -34,8 +34,12 @@ To report a problem, please follow these steps:
    anyone else has come across the problem before.
    
 -  Found a real and new problem? Please report it to the `MathJax issue
-   tracker <https://github.com/mathjax/MathJax/issues>`__ including the
-   following information:
+   tracker <https://github.com/mathjax/MathJax/issues>`__ by filling
+   out the issue template.  **Do not just erase the template** and
+   write a free-form report.  The information requested in the
+   template may be crucial to diagnosing your proble, and without it,
+   we may not be able to give you a meaningful response.  Be sure to
+   include the following information:
 
    -  A detailed description of the problem. What exactly is not working
       as you expected? What do you see?

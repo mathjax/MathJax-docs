@@ -2,15 +2,21 @@
 MathJax Documentation
 #####################
 
-MathJax is an open-source JavaScript display engine for LaTeX,
-MathML, and AsciiMath notation that works in all modern browsers,
-with built-in support for assistive technology like screen readers.
+MathJax is an open-source JavaScript display engine for LaTeX, MathML,
+and AsciiMath notation that works in all modern browsers, with
+built-in support for assistive technology like screen readers,
+including automatic speech generation and an expression explorer that
+can be used to investigate typeset mathematics on a more granual level
+than the complete expression.
 
-Version 3.0 of MathJax is a complete rewrite of MathJax from the
-ground up, and its usage and configuration is significantly different
-from that of MathJax version 2.  Use the green menu at the bottom of
-the sidebar on the left to access the version 2 documentation if you
-need it.
+Version 4.0 of MathJax adds significant new features to MathJax,
+including support of selecting one of a number of different fonts to
+use for mathematical typesetting, support for in-line and displayed
+equation line breaking.  See the :ref:`whats-new-in-mathjax` section
+for more details.  MathJax was rewritten from the ground up in v3.0,
+and the usage and configuration in v4 (and v3) is significantly
+different from that of MathJax v2.  Use the menu at the bottom of the
+screen to access the version 2 documentation if you need it.
 
 .. _toc-basics:
 .. toctree::
@@ -31,9 +37,13 @@ need it.
    :maxdepth: 1
     
     Getting Started with Components   <web/start>
-    Configuring and Loading MathJax   <web/configuration>
+    Configuring MathJax               <web/configuration>
+    Loading MathJax                   <web/loading>
+    Performing Startup Actions        <web/actions>
     The MathJax Components            <web/components/index>
-    Typesetting and Converting Math   <web/typeset>
+    Typesetting Mathematics           <web/typeset>
+    Converting Math Strings           <web/convert>
+    Detecting Typeset Errors          <web/errors>
     Hosting Your Own Copy of MathJax  <web/hosting>
     Making a Custom Build of MathJax  <web/webpack>
     Examples in a Browser             <web/examples>
@@ -114,19 +124,14 @@ need it.
     :titlesonly:
 
     Upgrading from Version 2.x        <upgrading/v2>
-    What's New                        <upgrading/index>
+    What's New in MathJax             <upgrading/index>
 
 ------
 
-.. image:: https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&amp;colorA=E1523D&amp;colorB=007D8A
-   :alt: powered-by NumFocus
-   :target: http://www.numfocus.org
-
-MathJax is a Sponsored Project of NumFOCUS, a 501(c)(3) nonprofit
-charity in the United States. NumFOCUS provides MathJax with fiscal,
-legal, and administrative support to help ensure the health and
-sustainability of the project. Visit `numfocus.org <http://www.numfocus.org>`__ for more
-information.
+MathJax, Inc., is a non-profit organization, registered with the IRS
+as a public charity under section 501(c)(3), with EIN 88-1669159, and
+incorporated in West Virginia. Any contributions of support you make
+to MathJax, Inc., are tax deductible.
 
 ------
 
