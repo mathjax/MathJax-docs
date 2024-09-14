@@ -31,12 +31,11 @@ the following:
    //
    import {mathjax} from '@mathjax/src/js/mathjax.js';                        // MathJax core
    import {TeX} from '@mathjax/src/js/input/tex.js';                          // TeX input
-   import {MathML} from '@mathjax/src/js/input/mathml.js';                    // MathML input
+   import {Sre} from '@mathjax/src/js/a11y/sre.js';                           // Speech generation
    import {browserAdaptor} from '@mathjax/src/js/adaptors/browserAdaptor.js'; // browser DOM
-   import {EnrichHandler} from '@mathjax/src/js/a11y/semantic-enrich.js';     // semantic enrichment
    import {RegisterHTMLHandler} from '@mathjax/src/js/handlers/html.js';      // the HTML handler
    import {STATE} from '@mathjax/src/js/core/MathItem.js';                    // the various states
-   import {sreReady} from '@mathjax/src/js/a11y/sre.js';                      // Speech generation
+   import {SerializedMmlVisitor} from '@mathjax/src/js/core/MmlTree/SerializedMmlVisitor.js';
 
    //
    //  Load the needed TeX extensions
@@ -46,21 +45,23 @@ the following:
    import '@mathjax/src/js/input/tex/configmacros/ConfigMacrosConfiguration.js';
 
    //
-   //  Register the HTML handler with the browser adaptor and add the semantic enrichment
+   //  Register the HTML handler with the browser adaptor
    //
-   EnrichHandler(RegisterHTMLHandler(browserAdaptor()), new MathML());
+   RegisterHTMLHandler(browserAdaptor());
 
    //
    //  Initialize mathjax with a blank DOM.
    //
    const html = mathjax.document('', {
-     sre: {
-       speech: 'shallow', // add speech to the enriched MathML
-     },
      InputJax: new TeX({
        packages: ['base', 'ams', 'newcommand', 'configmacros']
      })
    });
+
+   //
+   //  The visitor to produce serialized MathML
+   //
+   const visitor = new SerializedMmlVisitor();
 
    //
    //  The user's configuration object
@@ -73,29 +74,37 @@ the following:
    window.MathJax = {
      version: mathjax.version,
      html: html,
-     sreReady: sreReady,
+     Sre: Sre,
 
+     //
+     //  A function to serialize the internal MathML format
+     //
+     toMML(node) {
+       return visitor.visitTree(node, this.html);
+     },
+
+     //
+     //  A function to convert TeX/LaTeX to a speech string
+     //
      tex2speech(tex, display = true) {
-       const math = new html.options.MathItem(tex, html.inputJax[0], display);
-       return mathjax.handleRetriesFor(() => math.convert(html, STATE.ENRICHED)).then(() => {
-         let speech = '';
-         math.root.walkTree(node => {
-           if (speech) return;
-           const attributes = node.attributes.getAllAttributes();
-           if (attributes['data-semantic-speech'] && !attributes['data-semantic-parent']) {
-             speech = attributes['data-semantic-speech'];
-           }
-         });
-         return speech;
-       });
+       return this.Sre.sreReady().then(() => {
+         return mathjax.handleRetriesFor(() => 
+           this.toMML(html.convert(tex, {format: 'TeX', end: STATE.COMPILED, display}))
+         )
+       }).then((mml) => this.Sre.toSpeech(mml));
      }
    };
+
+   //
+   // Setup SRE's engine
+   //
+   Sre.setupEngine({domain: 'clearspeak', ...(CONFIG.sre || {})});
 
    //
    // Perform ready function, if there is one
    //
    if (CONFIG.ready) {
-     sreReady().then(CONFIG.ready);
+     Sre.sreReady().then(CONFIG.ready);
    }
 
 Unlike the component-based example in the :ref:`custom-component`
@@ -123,7 +132,7 @@ build offers.
 
       const {mathjax} = require('@mathjax/src/js/mathjax.js');
 
-   and similary for the other ``import`` commands.  Note that the
+   and similarly for the other ``import`` commands.  Note that the
    MathJax ``package.json`` file is set up to route
    ``@mathjax/src/js`` to the MathJax ``mjs`` directory when used in
    an ``import`` command, and to the ``cjs`` directory when used in a
@@ -157,7 +166,7 @@ containing the control file, the packed build file will end in
 
 Most of the real work is done by the
 ``@mathjax/src/components/webpack.config.mjs`` file, which will be
-called automatically by the commands in teh following section.
+called automatically by the commands in the following section.
 
 
 Building the Custom File
@@ -244,5 +253,86 @@ methods of the promise that is returned by
    }).catch((err) => console.error(err));
 
 to produce and handle the speech.
+
+
+Configuring the Speech Generation
+---------------------------------
+
+The speech-generation software can produce strings in a variety of
+languages, or in Braille notation, and this custom build of MathJax
+allows you to specify which language to use, or set other parameters
+of the speech-rule engine (SRE).  This is done by setting the
+:js:data:`MathJax` variable to a configuration that includes an ``sre`` block
+with the properties you want to customize.  For example:
+
+.. code-block:: javascript
+
+   MathJax = {
+     sre: {
+       locale: 'fr'
+     }
+   }
+
+would tell the SRE to produce speech strings in the French language
+rather than English.
+
+The complete list of options for the ``sre`` block can be found in the
+`Speech-Rule Engine documentation
+<https://github.com/Speech-Rule-Engine/speech-rule-engine?tab=readme-ov-file#options>`__.
+
+Here is a complete page that converts a math expression into Nemeth
+Beaille.
+
+.. code-block:: html
+
+   <!DOCTYPE html>
+   <html>
+   <head>
+   <meta charset="UTF-8" />
+   <meta content="width=device-width, initial-scale=1" name="viewport" />
+   <title>Use mathjax-speech to generate Braille</title>
+   <script>
+     MathJax = {
+       sre: {
+         modality: 'braille',
+         locale: 'nemeth'
+       }
+     }
+   </script>
+   <script src="mathjax-speech.min.js" defer></script>
+   <script type="module">
+     console.log(await MathJax.tex2speech('\\sqrt{x^2+1}', true));
+   </script>
+   </head>
+   <body>
+
+Of course, you could create a more sophisticated version that takes an
+expression typed by a user and processes that using
+:meth:`MathJax.tex2speech()`, then displays the result in the web
+page.  That is left as an exercise for the interested reader.
+
+
+Performing Actions at Startup
+-----------------------------
+
+If you load ``mathjax-speech.min.js`` with the ``defer`` attribute,
+then your own code would need to wait for ``mathjax-speech.js`` to
+load before it can call :meth:`MathJax.tex2speech()`.  One way to do
+that is to use a script with ``type="module"`` that follows the script
+that loads ``mathjax-speech.js``, as is done in the example above.
+
+Another way is to use the :meth:`ready()` function in the
+:js:data:`Mathjax`, which will be run after the MathJax file has been
+loaded, and SRE has been initialized.  For example
+
+.. code-block:: javascript
+
+   MathJax = {
+     ready() {
+       MathJax.tex2speech('\\sqrt{x^2+1}').then((speech) => console.log(speech));
+     }
+   }
+
+could be used to perform the speech conversion after everything is ready.
 
 |-----|

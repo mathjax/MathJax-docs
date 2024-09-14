@@ -47,7 +47,7 @@ below:
    :param string math: The TeX, serialized MathML, or AsciiMath string
                        to be converted.
    :param OptionList options: Described in the section below.
-   :return: The DOM tree (for CHTML or SVG output), a serialzied MathML
+   :return: The DOM tree (for CHTML or SVG output), a serialized MathML
             string, or a promise that returns one of these and that is
             resolved when the result is ready.
 

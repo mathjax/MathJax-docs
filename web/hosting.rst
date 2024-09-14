@@ -46,7 +46,7 @@ which installs MathJax in the ``node_modules/@mathjax/src``
 subdirectory, with the webpacked component files in the
 ``node_modules/@mathjax/src/bundle`` directory.  The Typescript source
 code files are in ``node_modules/@mathjax/src/ts``, and pre-compiled
-verions of this are available in two formats: as ES modules in the
+versions of this are available in two formats: as ES modules in the
 ``node_modules/@mathjax/src/mjs`` directory, and as CommonoJS modules
 in ``node_modules/@mathjax/src/cjs``.  See the :ref:`node-start`
 section for more details about how to use the MathJax source code in
@@ -109,7 +109,7 @@ into the ``@mathjax/src/bundle`` directory.
 
       npm install -g pnpm
 
-If you don't want to build both ``cjs`` and ``mjs`` verions, then you can use
+If you don't want to build both ``cjs`` and ``mjs`` versions, then you can use
 
 .. code-block:: shell
 

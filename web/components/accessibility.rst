@@ -30,7 +30,7 @@ to load the `semantic-enrich` extension.
 
 The `semantic-enrich` and `explorer` components are part of all the
 :ref:`combined components <combined-components>`, so if you are using
-one of the those, you don't need to laod these assistive extensions
+one of the those, you don't need to load these assistive extensions
 yourself.
 
 

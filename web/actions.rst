@@ -255,7 +255,7 @@ function, but that promise is set up as soon as MathJax is loaded, so
 it can be used outside of the :js:meth:`ready()` function.  You must
 be careful, however, that MathJax is loaded before you try to use it.
 For example, if you use :attr:`defer` or :attr:`async` attributes on
-the script tag that laods MathJax, then you need to be sure your code
+the script tag that loads MathJax, then you need to be sure your code
 that uses :js:meth:`MathJax.startup.promise` doesn't run until after
 MathJax has been loaded.
 

@@ -111,7 +111,7 @@ usual startup process is included.
 
       const {startup} = require('@mathjax/src/components/src/startup/init.js');
 
-   and similary for the other ``import`` commands.  Note that the
+   and similarly for the other ``import`` commands.  Note that the
    MathJax ``package.json`` file is set up to route
    ``@mathjax/src/js`` to the MathJax ``mjs`` directory when used in
    an ``import`` command, and to the ``cjs`` directory when used in a
@@ -145,7 +145,7 @@ the packed component file will end in ``.min.js`` rather than just
 
 Most of the real work is done by the
 ``@mathjax/src/components/webpack.config.mjs`` file, which will be
-called automatically by the commands in teh following section.
+called automatically by the commands in the following section.
 
 
 Building the Component

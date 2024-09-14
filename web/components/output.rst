@@ -28,7 +28,7 @@ output/chtml
 
 The `output/chtml` component includes the CommonHTML output processor.
 When loaded, it causes data for handling a font to be loaded as well
-(via its own component); which font is loaded depends on teh
+(via its own component); which font is loaded depends on the
 configuration, and there are a number of other fonts available for you
 to select from.
 
@@ -51,7 +51,7 @@ output/svg
 
 The `output/svg` component includes the SVG output processor.
 When loaded, it causes data for handling a font to be loaded as well
-(via its own component); which font is loaded depends on teh
+(via its own component); which font is loaded depends on the
 configuration, and there are a number of other fonts available for you
 to select from.
 

@@ -77,7 +77,7 @@ The `ui/lazy` component changes the way MathJax handles the timing for
 typesetting expressions in the page.  Normally, MathJax will typeset
 all the expressions in one pass over the page.  When there are many
 expressions in your document, that can take a significant amount of
-time, and cause a noticable delay before the mathematics becomes
+time, and cause a noticeable delay before the mathematics becomes
 available.
 
 With the `lazy` extension, MathJax will only typeset expressions when

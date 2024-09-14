@@ -28,7 +28,7 @@ components when they are needed.
 
    In version 3, there were a number of combined components that
    included most of the TeX extensions.  These components ended in
-   ``-full``.  Becaus the number of extensions has grown, and
+   ``-full``.  Because the number of extensions has grown, and
    continues to do so, including with third-party extensions, it is
    impractical to include all the extensions in a single file.  In
    version 4, the ``-full`` versions have been removed, along with the

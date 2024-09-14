@@ -100,10 +100,10 @@ We describe how you can create each of these in the links below.
 
 -----
 
-.. _customized-components:
+.. _customized-component-examples:
 
-Customized Components
-=====================
+Customized Component Examples
+=============================
 
 .. toctree::
 

@@ -131,7 +131,7 @@ currently pending typesetting operations to complete.
    expected to handle chaining of the typeset calls yourself, but most
    coders failed to do this, so MathJax v4 now handles that for you.
 
-   The version 3 documentation recommened using and setting
+   The version 3 documentation recommended using and setting
    :js:data:`MathJax.startup.promise` yourself to make sure typeset
    calls were serialized; if you included that code pattern in your v3
    work-flow, you should remove it, otherwise you will likely cause a
@@ -362,7 +362,7 @@ was being performed.  This is an error with the message ``retry``.
 
 The promise-based typesetting and conversion functions handle this
 retry error automatically, and incorporate waiting for the
-asynchronous file loading to complete into thei own promises.  The
+asynchronous file loading to complete into their own promises.  The
 synchronous functions, however, can't do that, since the retry promise
 would make them asynchronous.  If a retry is request during the
 running of one of the synchronous functions, the retry error will not
@@ -430,17 +430,17 @@ math.
 
 To do this, be sure to include any needed TeX extensions in the
 ``load`` array of the ``loader`` section of your MathJax
-configuration.  To handle the enetities in MathML, add the
+configuration.  To handle the entities in MathML, add the
 ``[mml]/entities`` extension to the ``load`` array.
 
 You can load all the font data up front by setting the
 ``loadAlFontFiles`` option to ``true`` in the ``startup`` section of
-your MathJax configuration.  This can cause *many* files to be laoded,
+your MathJax configuration.  This can cause *many* files to be loaded,
 however, so should be avoided if at all possible.  It is much better
 to move to the promise-based calls to handle this situation.  If you
 must use ``loadAllFontFiles``, then you may want to pick a font with
 less character coverage, such as ``mathjax-tex``, the original MathJax
 TeX fonts, rather than the newer fonts for version 4, which have much
-higher coverage, and so woudl involve loading more files.
+higher coverage, and so would involve loading more files.
 
 |-----|

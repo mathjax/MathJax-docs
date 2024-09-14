@@ -83,7 +83,7 @@ formatting the error.  Alternatively, you could use
      }
    }
 
-to have jsut ``Error!`` show up as the error message, with the actual
+to have just ``Error!`` show up as the error message, with the actual
 error message stored in the ``title`` attribute of the ``merror`` node
 so that a tooltip will pop up when you hover over the error message.
 

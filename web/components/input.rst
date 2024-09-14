@@ -109,7 +109,7 @@ configuring the TeX extensions.
 
    Version 3 included a ``[tex]/all-packages`` components that
    included most of the TeX extension packages.  Due to the growing
-   number of extensions, inclduing third-party extensions, the
+   number of extensions, including third-party extensions, the
    ``all-packages`` extension has been dropped from v4.
 
 -----

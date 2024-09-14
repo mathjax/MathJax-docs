@@ -226,14 +226,14 @@ options.  Note, however, that MathJax will no longer know about any
 mathematics that has already been typeset, as that data was stored in
 the objects that have been discarded when the new ones are created.
 This includes the data about the global font cache for SVG output, and
-the CHTML CSS cache, so this is not someting you should do lightly.
+the CHTML CSS cache, so this is not something you should do lightly.
 
 .. _v2-to-v3-converter:
 
 Converting your old Configuration to v4
 =======================================
 
-The configuration options for v4 are bascially the same as for v3,
+The configuration options for v4 are basically the same as for v3,
 with some new ones added, you should be able to use your current v3
 configuration in v4 without change.  The only major caveat is if you
 have used a :js:meth:`ready()` function in the ``startup`` section of
@@ -249,7 +249,7 @@ to help you move from version 2 to the current version.  Simply paste
 your current :js:meth:`MathJax.Hub.Config()` call into the converter,
 press ``Convert`` and you should get the equivalent v3/v4
 configuration, and comments about any options that could not be
-translated to the current verion (some options are not yet implements,
+translated to the current version (some options are not yet implements,
 others no longer make sense in version 4).  See the instructions on
 the converter page for more details.
 
