@@ -241,9 +241,9 @@ needs to be typeset, you might use something like:
 
 .. code-block:: javascript
 
-   MathJax.typesetClear(['#has-math']);
+   MathJax.typesetClear([node]);
    node.innerHTML = new_html;
-   MathJax.typesetPromise(['#has-math']).then(() => {
+   MathJax.typesetPromise([node]).then(() => {
      // the new content has been typeset
    });
 
@@ -260,7 +260,7 @@ adjusted throughout the page.  In that case, you can do
 
    MathJax.startup.document.state(0);
    MathJax.texReset();
-   MathJax.typeset();
+   MathJax.typesetPromise();
 
 to force MathJax to reset the page to the state it was before MathJax
 processed it (i.e., remove its typeset math), reset the TeX automatic
@@ -377,12 +377,13 @@ If there is no promise-based version of the code you are running
 directly), then you may be able to use the following function to
 process the retry errors for you.
 
-.. js:function:: mathjax.handleRetriesFor(code)
+.. js:function:: mathjax.handleRetriesFor(function)
 
-   :param ()=>void code: A function to run with retry error trapped.
-                         If one occurs, the function will be called
-                         again after the promise associated with the
-                         retry error's file loading has been resolved.
+   :param ()=>void function: A function to run with retry errors being
+                             trapped.  If one occurs, the function
+                             will be called again after the promise
+                             associated with the retry error's file
+                             loading has been resolved.
 
 From within a web page, you can obtain the ``mathjax`` variable via
 

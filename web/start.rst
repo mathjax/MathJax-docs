@@ -288,9 +288,9 @@ illustrations of using MathJax.
    MathJax in popular platforms <platforms>`.
 
 If you are working on dynamic pages that include mathematics, you
-might want to read about the :ref:`MathJax Application Programming
-Interface <mathjax-api>` (its API), so you know how to include
-mathematics in your interactive pages.
+might want to read about :ref:`MathJax in Dynamic Content
+<typeset-math>`, so you know how to include mathematics in your
+interactive pages.
 
 Finally, if you have questions or comments, or want to help support
 MathJax, you could visit the :ref:`MathJax community forums

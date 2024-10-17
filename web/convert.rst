@@ -80,6 +80,19 @@ The functions ending in ``Promise`` perform the conversion
 asynchronously, and return promises, while the others operate
 synchronously and return the converted form immediately.
 
+.. warning::
+
+   In version 4, the promise-based conversion functions wait for
+   :js:data:`MathJax.startup.promise` before performing the
+   conversion, and reset this value to the promise these conversoin
+   functions create.  The version 3 documentation recommended using
+   and setting :js:data:`MathJax.startup.promise` yourself to make
+   sure typeset calls were serialized; if you included that code
+   pattern in your v3 work-flow, you should remove it, otherwise you
+   will likely cause a circular dependency where the typesetting will
+   wait for the promise to be resolved, but it can't resolve until the
+   typesetting completes.
+
 Note that the synchronous functions only work if the math you typeset
 doesn't require MathJax to load any extensions or data files (e.g.,
 TeX input uses ``\require`` or macros that are autoloaded from an
@@ -112,9 +125,15 @@ Conversion Options
 
 All of the functions listed above require an argument that is the math
 string to be converted (e.g., the serialized MathML string, the TeX or
-LaTeX string, or the AsciiMath string).  You can also pass a second
-argument that is an object containing options that control the
-conversion process.  The options that can be included are:
+LaTeX string, or the AsciiMath string).  Note that this is not a
+serialized HTML string with embeded math, but only a single math
+expression in one of the formats that MathJax understands.  Note also
+that you shoudl not include math delimiters like ``$$...$$`` or
+``\(...\)`` as part of the string; it is just the mathematics itself.
+
+You may also pass a second argument that is an object containing
+options that control the conversion process.  The options that can be
+included are:
 
 * :attr:`display`, a boolean specifying whether the math is in
   display-mode or not (for TeX input).  Default is ``true``.
