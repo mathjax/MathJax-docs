@@ -5,7 +5,7 @@ Configuring MathJax
 ###################
 
 MathJax provides a number of combined component files, like
-``tex-chtml.js``, that group various components that are commonly used
+:file:`tex-chtml.js`, that group various components that are commonly used
 together into a single file.  If you use one of the combined component
 files, you may not need to do any configuration at all.  You can
 modify the default configuration by using a javascript variable that
@@ -18,7 +18,7 @@ described below.
    versions 3 and 4 are different from those of version 2 in a number
    of ways.  Where version 2 had several different methods for
    configuring MathJax, v3 and v4 streamline the process and have only
-   one.  In version 2, you always loaded ``MathJax.js``, and added a
+   one.  In version 2, you always loaded :file:`MathJax.js`, and added a
    ``config=...`` parameter to provide a combined configuration file,
    but in version 3 and above you load one of several different files,
    depending on your needs, avoiding the multiple file transfers that
@@ -31,7 +31,7 @@ The Configuration Variable
 ==========================
 
 To configure MathJax, you use a global javascript object named
-`MathJax` that contains configuration data for the various components
+:js:data:`MathJax` that contains configuration data for the various components
 of MathJax.  For example, to configure the TeX input component to use
 single dollar signs as in-line math delimiters (in addition to the
 usual ``\(...\)`` delimiters) and the SVG output component to use a
@@ -41,7 +41,7 @@ global font cache for all expressions on the page, you would use
 
    MathJax = {
      tex: {
-       inlineMath: [['$', '$'], ['\\(', '\\)']]
+       inlineMath: {'[+]': [['$', '$']]}
      },
      svg: {
        fontCache: 'global'
@@ -67,16 +67,16 @@ itself.  For example:
    <script>
    MathJax = {
      tex: {
-       inlineMath: [['$', '$'], ['\\(', '\\)']]
+       inlineMath: {'[+]': [['$', '$']]}
      },
      svg: {
        fontCache: 'global'
      }
    };
    </script>
-   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 
-This will configure the TeX input component to use single dollar
+This will configure the TeX input component to add single dollar
 signs as in-line math delimiters, and the SVG output component to use
 a global font cache (rather than a separate cache for each expression
 on the page), and then loads the latest version of the ``tex-svg``
@@ -98,7 +98,7 @@ create a file called ``mathjax-config.js`` that contains
 
    window.MathJax = {
      tex: {
-       inlineMath: [['$', '$'], ['\\(', '\\)']]
+       inlineMath: {'[+]': [['$', '$']]}
      },
      svg: {
        fontCache: 'global'
@@ -115,12 +115,15 @@ and then use
 to first load your configuration file, and then load the ``tex-svg``
 component from the ``jsdelivr`` CDN.
 
-Note that here we use the :attr:`defer` attribute on both scripts so that
-they will execute in order, but still not block the rest of the page
-while the files are being downloaded to the browser.  If the :attr:`async`
-attribute were used, there is no guarantee that the configuration
-would run first, and so you could get instances where MathJax doesn't
-get properly configured, and they would seem to occur randomly.
+.. note::
+   
+   Here we use the :attr:`defer` attribute on both scripts so that
+   they will execute in order, but still not block the rest of the
+   page while the files are being downloaded to the browser.  If the
+   :attr:`async` attribute were used, there is no guarantee that the
+   configuration would run first, and so you could get instances where
+   MathJax doesn't get properly configured, and they would seem to
+   occur randomly.
 
 
 .. _config-loads-mathjax:
@@ -131,13 +134,13 @@ Configuring and Loading in One Script
 It is possible to have the MathJax configuration file also load
 MathJax as well, which would be another way to handle the problem of
 synchronizing the two scripts described above.  For example, you could
-make the file ``load-mathjax.js`` containing
+make the file :file:`load-mathjax.js` containing
 
 .. code-block:: javascript
 
    window.MathJax = {
      tex: {
-       inlineMath: [['$', '$'], ['\\(', '\\)']]
+       inlineMath: {'[+]': [['$', '$']]}
      },
      svg: {
        fontCache: 'global'
@@ -195,8 +198,8 @@ yet, but not for ones that have.)
 
 For some objects, like input and output jax, document handlers, and
 math documents, the local copies of the configuration settings are
-stored in the :js:data:`options` property of those object, and you may
-be able to set the value there.  For example,
+stored in the :js:data:`options` property of those objects, and you
+may be able to set the value there.  For example,
 :js:data:`MathJax.startup.output.options.scale` is the scaling value
 for the output, and you can set that at any time to affect any
 subsequent typeset calls.
@@ -208,10 +211,10 @@ is created. For example, with the TeX input jax, the
 :js:data:`MathJax.startup.document.inputJax.tex.findTeX`; but in this
 case, the :js:data:`FindTeX` object uses the configuration once when
 it is created, so changing
-:js:data:`MathJax.startup.document.inputJax.tex.findTeX.options` will
-not affect it.  (There is a :js:meth:`getPatterns()` method if the
-:js:data:`FindTeX` object that could be used to refresh the object if
-the options are changed, however.)
+:js:data:`MathJax.startup.document.inputJax.tex.findTeX.options` after
+the fact will not affect it.  (There is a :js:meth:`getPatterns()`
+method of the :js:data:`FindTeX` object that could be used to refresh
+the object if the options are changed, however.)
 
 If you need to change the configuration for an object whose options
 can't be changed once it is created, then you will need to create a
@@ -237,7 +240,7 @@ The configuration options for v4 are basically the same as for v3,
 with some new ones added, you should be able to use your current v3
 configuration in v4 without change.  The only major caveat is if you
 have used a :js:meth:`ready()` function in the ``startup`` section of
-your configuration to make modifications ro additions to MathJax's
+your configuration to make modifications or additions to MathJax's
 code, in which case, those might need to be adjusted.  See the
 :ref:`whats-new-in-mathjax` section for more details.
 

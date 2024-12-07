@@ -5,9 +5,10 @@ Getting Started with MathJax Components
 #######################################
 
 MathJax allows you to include mathematics in your web pages, either
-using LaTeX, MathML, or AsciiMath notation, and the mathematics will
-be processed using JavaScript to produce HTML or SVG for viewing in
-any modern browser.
+using LaTeX, `MathML <http://www.w3.org/TR/MathML3>`_, or `AsciiMath
+<http://asciimath.org/>`_ notation, and the mathematics will be
+processed using JavaScript to produce HTML or SVG for viewing in any
+modern browser.
 
 
 .. _mathjax-components:
@@ -19,7 +20,7 @@ To make using MathJax easier in web pages, the various pieces that
 make up MathJax have been packaged into separate files called
 *components*.  For example, there is a component for MathML input, and
 one for SVG output, and the various TeX extensions are packaged as
-separate components.  You can mix and match the various components to
+separate components.  You can mix and match these components to
 customize MathJax to suit your particular needs (this is described in
 detail in the section on :ref:`configure-mathjax` below); the
 individual component files that you specify are loaded when MathJax
@@ -114,7 +115,7 @@ To jump start using ``jsdelivr``, you accomplish the first two steps by putting
 
 into the ``<head>`` block of your document.  (It can also go in the
 ``<body>`` if necessary, but the head is to be preferred.)  This will
-load the latest 4.x.x version of MathJax from the distributed server,
+load the latest 4.x.y version of MathJax from the distributed server,
 configure it to recognize mathematics in both TeX and MathML notation,
 and ask it to generate its output using HTML with CSS (the CommonHTML
 output format) to display the mathematics.
@@ -139,7 +140,7 @@ output format) to display the mathematics.
 If you use the code snippet given above, you will not need to change
 the URL whenever MathJax is updated and the version changes, because
 ``jsdelivr`` offers the ``mathjax@4`` notation for obtaining the
-``tex-mml-chtml.js`` file from the latest version (4.x.x) available on
+``tex-mml-chtml.js`` file from the latest version (4.x.y) available on
 the CDN.
 
 .. _specific_version:
@@ -219,21 +220,22 @@ component file that you are using.  For example
    <script>
    MathJax = {
      tex: {
-       inlineMath: [['$', '$'], ['\\(', '\\)']]
+       inlineMath: {'[+]': [['$', '$']]}
      }
    };
    </script>
    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 
-configures MathJax's TeX input component to use ``$...$`` and
-``\(...\)`` as delimiters for inline-math (thus enabling single
-dollar signs as math delimiters), and then loads the ``tex-chtml.js``
-component for TeX input and CommonHTML output.
+configures MathJax's TeX input component to add ``$...$`` as
+inline-math delimiters in addition to the default ``\(...\)``
+delimiters (thus enabling single dollar signs as math
+delimiters), and then loads the :file:`tex-chtml.js` component for TeX
+input and CommonHTML output.
 
-There are many options that can be set in this way.  See the section
-on :ref:`web-configuration` for more details, and on
-:ref:`configuring-mathjax` for information on the available options
-for the various components.
+There are many options that can be set in this way.  See the
+instructions for :ref:`web-configuration` for more details, and the
+section on :ref:`configuring-mathjax` for information on the available
+options for the various components.
 
 -----
 

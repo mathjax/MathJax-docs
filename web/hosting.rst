@@ -140,15 +140,15 @@ Make the Files Available
 
 Once you have acquired the MathJax files by one of the methods
 described above, you need to make the proper files available on your
-web server.  Note that most of the files in the MathJax distribution
-are not needed on the server.  For example, the ``@mathjax/src/ts``
-directory is typescript source code for MathJax, and this is compiled
-into the javascript files found in the ``@mathjax/src/mjs`` or
-``@mathjax/src/cjs`` directory.  But even these are not the files you
-want on your server.  These javascript files are further processed
-into the MathJax components stored in the ``@mathjax/src/bundle``
-directory using the data in the ``@mathjax/src/components/mjs``
-directory.
+web server.  Note that most of the files in the MathJax source
+distribution are not needed on the server.  For example, the
+``@mathjax/src/ts`` directory is typescript source code for MathJax,
+and this is compiled into the javascript files found in the
+``@mathjax/src/mjs`` or ``@mathjax/src/cjs`` directory.  But even
+these are not the files you want on your server.  These javascript
+files are further processed into the MathJax components stored in the
+``@mathjax/src/bundle`` directory using the data in the
+``@mathjax/src/components/mjs`` directory.
 
 It is the contents of the ``@mathjax/src/bundle`` directory that you
 want to make available on your server, as these are the files that are
@@ -173,10 +173,10 @@ You can include MathJax in your web page by putting
 
     <script defer src="path-to-MathJax/tex-chtml.js"></script>
 
-in your document's ``<head>`` block.  Here, ``tex-chtml.js`` is the
+in your document's ``<head>`` block.  Here, :file:`tex-chtml.js` is the
 combined component that you are loading, and this is just an example; you
 will need to pick the one you want to use.  See the section on
-:ref:`web-configuration` for more details.
+:ref:`loading-mathjax` for more details.
 
 The ``path-to-MathJax`` should be replaced by the URL for the main
 MathJax directory, so if you have put the ``mathjax``
@@ -191,6 +191,7 @@ to load MathJax in your page.  For example, your page could look like
 
 .. code-block:: html
 
+    <!DOCTYPE html>
     <html>
         <head>
             ...
@@ -221,7 +222,7 @@ same-origin security policy for cross-domain scripting.
 Some browsers' (e.g., Firefox's) interpretation of the same-origin
 policy is more strict than other browsers, and it affects how fonts
 are loaded with the ``@font-face`` CSS directive. MathJax’s CommonHTML
-output mode use this directive to load web-based math fonts into the
+output mode uses this directive to load web-based math fonts into the
 web page when needed. These browsers' security policies, however, may
 only allow this when the fonts come from the same server as the web
 page itself, so if you load MathJax (and hence its web fonts) from a
@@ -234,9 +235,9 @@ MathJax is installed, and if that server is running the Apache web
 software. In the remote server’s MathJax folder, create a file called
 ``.htaccess`` that contains the following lines:
 
-:: 
+.. code-block::
 
-    <FilesMatch "\.(ttf|otf|eot|woff)$">
+    <FilesMatch "\.(woff|woff2)$">
     <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
     </IfModule>
@@ -257,7 +258,7 @@ be able to download the web-based fonts.
 If you want to restrict the sites that can access the web fonts,
 change the ``Access-Control-Allow-Origin`` line to something like:
 
-::
+.. code-block::
 
    Header set Access-Control-Allow-Origin "http://www.math.yourcollege.edu"
 
@@ -268,5 +269,9 @@ discussion of web-font linking for more details.
 Note that the CDNs that host MathJax already have these settings in
 place, so you can load fonts from them into your own pages without
 having to worry about these issues.
+
+For web servers other than Apache, you will need to consult the
+server's documentation to determine how to specify the needed header
+line for fonts on your system.
 
 |-----|

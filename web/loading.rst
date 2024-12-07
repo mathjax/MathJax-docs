@@ -16,7 +16,7 @@ produce SVG output.  To do so, use a script like the following
 
    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js"></script>
 
-to get the latest (4.x.x) version of the ``tex-svg`` component from
+to get the latest (4.x.y) version of the ``tex-svg`` component from
 the ``jsdelivr`` CDN.
 
 .. warning::
@@ -27,7 +27,7 @@ the ``jsdelivr`` CDN.
 
 The example above takes advantage of the feature of ``jsdeliver`` that
 allows you to get the latest version using the ``mathjax@4`` notation.
-For a specific version, you would use
+To obtain a specific version, you would use a tag like
 
 .. code-block:: html
 
@@ -45,7 +45,7 @@ version number.  For example, ``cdnjs`` uses the following:
    </script>
 
 Some CDNs don't provide a means of getting the latest version
-automatically, so you shiould check the documentation for the CDN you
+automatically, so you should check the documentation for the CDN you
 are planning to use to see if they support that, and how to indicate
 it in your source URL.
 
@@ -79,20 +79,23 @@ For example
      loader: {
        load: ['input/tex-base', 'output/svg', 'ui/menu', '[tex]/require']
      },
+     output: {
+       font: 'mathjax-newcm'
+     },
      tex: {
-       packages: ['base', 'require']
+       packages: {'[+]': ['require']}
      }
    };
    </script>
    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/startup.js"></script>
 
-would cause the base TeX input, the SVG output, the contextual menu
-code, and the TeX ``\require`` macro extension components to be loaded
-(and tells TeX to use the ``require`` extension in addition to the
-base TeX macros).  In this way, you can load exactly the components
-you want.  Note, however, that each component will be loaded as a
-separate file, so it is better to use a combined component file if
-possible.
+would cause the base TeX input, the SVG output (with the
+``mathjax-newcm`` font), the contextual menu code, and the TeX
+``\require`` macro extension components to be loaded (and tells TeX to
+use the ``require`` extension in addition to the base TeX macros).  In
+this way, you can load exactly the components you want.  Note,
+however, that each component will be loaded as a separate file, so it
+is better to use a combined component file if possible.
 
 
 .. _loader-load-combined:
@@ -152,7 +155,7 @@ sophisticated test, and it may think there is math in some cases when
 there really isn't but it should reduce the number of pages on which
 MathJax will have to be loaded.
 
-Create a file called ``check-for-tex.js`` containing the following:
+Create a file called :file:`check-for-tex.js` containing the following:
 
 .. code-block:: javascript
 
@@ -180,7 +183,7 @@ and then use
 
 in order to load the script when the page content is ready.  Note that
 you will want to include the path to the location where you stored
-``check-for-tex.js``, that you should change ``tex-chtml.js`` to
+:file:`check-for-tex.js`, that you should change :file:`tex-chtml.js` to
 whatever combined-component file you want to use, and that the
 :js:data:`window.MathJax` value should be set to whatever
 configuration you want to use.  In this case, it just adds dollar

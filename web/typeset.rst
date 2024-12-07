@@ -61,7 +61,7 @@ The second method, :js:meth:`MathJax.typesetPromise()`, performs the
 typesetting asynchronously, and returns a promise that is resolved
 when the typesetting is complete.  This properly handles loading of
 external files, so if you are expecting to process TeX input that can
-include `\require` or autoloaded extensions, you should use this form
+include ``\require`` or autoloaded extensions, you should use this form
 of typesetting.  Note that it can be used with ``await`` as part of a
 larger ``async`` function.  If you are getting a ``retry`` error while
 calling :js:meth:`MathJax.typeset()`, you should switch to using
@@ -146,8 +146,8 @@ of MathJax.  For example,
 .. code-block:: javascript
 
    MathJax.typesetPromise().then(() => {
-     for (const item of MathJax.startup.document.math) {
-       console.log(item.math);
+     for (const eqn of MathJax.startup.document.math) {
+       console.log(eqn.math);
      }
    });
 
@@ -161,14 +161,14 @@ promise to be resolved.  For example
 
    async function reportMath() {
      await MathJax.typesetPromise();
-     for (const item of MathJax.startup.document.math) {
-       console.log(item.math);
+     for (const eqn of MathJax.startup.document.math) {
+       console.log(eqn.math);
      }
    }
 
-would define a function ``reportMath()`` that typesets the page and
-then reports the original TeX for each expression, similarly to the
-previous code example.
+would define an asynchronous function ``reportMath()`` that typesets
+the page and then reports the original TeX for each expression,
+similarly to the previous code example.
 
 -----
 
@@ -231,13 +231,16 @@ will not affect any of the math that was typeset previously.
 
 If you remove math from only a portion of the page, you can call
 :meth:`MathJax.typesetClear()` passing it an array of container
-elements that have been (or will be) removed, or CSS selector strings
-for them, and MathJax will forget about the math that is within those
-containers, while remembering the rest of the math on the page.  For
-example, if you have an element with ``id="has-math"`` that you have
-previously typeset, and you are planning to replace the contents of
-this element with new content (stored in a variable ``new_html``) that
-needs to be typeset, you might use something like:
+elements that will be removed, or CSS selector strings for them, and
+MathJax will forget about the math that is within those containers,
+while remembering the rest of the math on the page.  Note that you
+should call this function **before** you change the contents of the
+containers.
+
+For example, if you have an element with ``id="has-math"`` that you
+have previously typeset, and you are planning to replace the contents
+of this element with new content (stored in a variable ``new_html``)
+that needs to be typeset, you might use something like:
 
 .. code-block:: javascript
 
@@ -302,7 +305,7 @@ within those containers.  E.g.,
 will return an array of all the MathItems for the typeset math on the
 page.  See the `MathItem definition
 <https://github.com/mathjax/MathJax-src/blob/master/ts/core/MathItem.ts>`__
-for details on the contents of the MathItem structure.  The MathItem
+for details on the contents of the MathItem structure.  The ``MathItem``
 is the replacement for the v2 ``ElementJax`` object, and
 :js:meth:`MathJax.startup.document.getMathItemsWithin()` performs a
 similar function to the v2 function :js:meth:`MathJax.Hub.getAllJax()`.
@@ -348,7 +351,7 @@ The "Retry" Error
 
 MathJax has a large number of optional features, and not all of them
 are included when you load MathJax into a web page.  If one of those
-features is needed by your code, MathJax will suspecd its operations
+features is needed by your code, MathJax will suspend its operations
 and attempt to load the needed extension for that feature.  Because
 this process is asynchronous, MathJax must give up the CPU, wait for
 the needed file to load, and restart the typesetting after it has
@@ -367,9 +370,9 @@ synchronous functions, however, can't do that, since the retry promise
 would make them asynchronous.  If a retry is request during the
 running of one of the synchronous functions, the retry error will not
 be caught, and you will likely get an error report in the browser
-console indicating an uncause ``retry`` error.  That indicates that
+console indicating an uncaught ``retry`` error.  That indicates that
 you may need to rewrite your code to use the promise-based functions,
-instead.  This means your code will have to handle asynchronous
+instead, which means your code will have to handle asynchronous
 typesetting, and can't work synchronously as it stands.
 
 If there is no promise-based version of the code you are running
@@ -379,12 +382,15 @@ process the retry errors for you.
 
 .. js:function:: mathjax.handleRetriesFor(function)
 
-   :param ()=>void function: A function to run with retry errors being
+   :param ()=>any function: A function to run with retry errors being
                              trapped.  If one occurs, the function
                              will be called again after the promise
                              associated with the retry error's file
                              loading has been resolved.
 
+   :return Promise: A promise that is resolved when the function
+                     argument completes without a retry.
+                     
 From within a web page, you can obtain the ``mathjax`` variable via
 
 .. code-block:: javascript
@@ -408,7 +414,7 @@ The ``convert()`` call would normally throw a ``retry`` error when
 loading the `color` extension the first time it is used, but the
 ``handleRetriesFor()`` call traps that and handles it, eventually
 typesetting the expression once the `color` extension has been loaded.
-Then the result is a appended to the document, and the document CSS is
+Then the result is appended to the document, and the document CSS is
 updated to include any new CSS needed for the output.
 
 Of course, it is better to insert the TeX code into the page and call
@@ -441,7 +447,8 @@ however, so should be avoided if at all possible.  It is much better
 to move to the promise-based calls to handle this situation.  If you
 must use ``loadAllFontFiles``, then you may want to pick a font with
 less character coverage, such as ``mathjax-tex``, the original MathJax
-TeX fonts, rather than the newer fonts for version 4, which have much
-higher coverage, and so would involve loading more files.
+TeX fonts that doesn't have any dynamically loaded data, rather than
+the newer fonts for version 4, which have much higher coverage, and so
+would involve loading more files.
 
 |-----|

@@ -83,9 +83,9 @@ Each of the TeX extensions listed in the :ref:`extension-list` has its
 own component.  The name of the component is the name of the extension
 preceded by ``[tex]/`` so the component for the ``enclose``
 extension is ``[tex]/enclose``.  You can include any of the extension
-components in the ``load`` array of the ``loader`` section of your
-MathJax configuration, and add the extension to the ``packages`` array
-in the ``tex`` block.  For example:
+components in the :js:data:`load` array of the :js:data:`loader` section of your
+MathJax configuration, and add the extension to the :js:data:`packages` array
+in the :js:data:`tex` block.  For example:
 
 .. code-block:: html
 

@@ -45,17 +45,16 @@ screen to access the version 2 documentation if you need it.
     Converting Math Strings           <web/convert>
     Detecting Typeset Errors          <web/errors>
     Hosting Your Own Copy of MathJax  <web/hosting>
-    Making a Custom Build of MathJax  <web/webpack>
     Examples in a Browser             <web/examples>
 
 .. _toc-mathjax-node:
 .. toctree::
-   :caption: MathJax on a Server Using NodeJS
+   :caption: MathJax in Node Applications
    :name: server-nodejs
    :maxdepth: 2
 
    Getting Started with Node          <server/start>
-   Three Ways to Use MathJax in Node  <server/overview>
+   The DOM Adaptor                    <server/adaptor>
    Examples in Node                   <server/examples>
 
 .. _toc-mathjax-input:
@@ -94,17 +93,9 @@ screen to access the version 2 documentation if you need it.
     :maxdepth: 1
 
     MathJax in Dynamic Content        <advanced/typeset>
-    Custom Extensions                 <advanced/extensions>
+    Making a Custom Build of MathJax  <advanced/webpack>
     The MathJax Processing Model      <advanced/model>
     Synchronizing Your Code with MathJax <advanced/synchronize>
-
-.. _toc-mathjax-api:
-.. toctree::
-    :caption: The MathJax API
-    :name: api
-    :maxdepth: 2
-
-    Using the MathJax API             <api/index>
 
 .. _toc-miscellaneous:
 .. toctree::

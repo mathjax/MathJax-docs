@@ -46,6 +46,20 @@ To report a problem, please follow these steps:
       
    -  The MathJax version you are working with, your operating system,
       and full browser information including all version information.
+
+   -  The MathJax configuration you are using, and the MathJax
+      component you are loading (e.g., :file:`tex-chtml.js`).
+
+   -  If a particular expression is not displaying properly, then please
+      include the original LaTeX, MathML, or AsciiMath version of the
+      expression as text (that can be copied), as well as a screen
+      snapshot of the result you are seeing in your browser.
+
+   -  If you are making calls to the MathJax API, how and when are you
+      doing so?  It would help to include a code snippet with the
+      actual calls you are making.  Because the timing of such calls
+      is often at issue, the surrounding code may also be important to
+      include.
       
    -  If at all possible, a pointer to a webpage that is publicly
       available and exhibits the problem. This makes sure that we can

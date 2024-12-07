@@ -146,8 +146,8 @@ section for more details on how to accomplish this.
 Changes in the MathJax API
 ==========================
 
-Because the internals have been completely redesigned, its :ref:`API
-<api>` has changed, and so if you have been calling MathJax functions,
+Because the internals have been completely redesigned, its API
+has changed, and so if you have been calling MathJax functions,
 or have modified MathJax internals by augmenting the existing MathJax
 objects, that code will no longer work with version 3, and will have
 to be modified.  Some of the more important changes are discussed
@@ -637,9 +637,11 @@ adjustments to the configuration to allow for that.  This should make
 it much easier to use MathJax on a server, as it will work the same
 there as for your web-based applications.  It is also possible to link
 to MathJax at a lower level and access the MathJax modules directly.
-See the section on :ref:`using MathJax in node <node-start>`, and the
-:ref:`MathJax API <mathjax-api>` for more information on these
-possibilities.
+
+..
+    See the section on :ref:`using MathJax in node <node-start>`, and the
+    :ref:`MathJax API <mathjax-api>` for more information on these
+    possibilities.
 
 -----
 
@@ -722,7 +724,7 @@ If your website uses the MathJax API to queue typeset calls via
    MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
 
 for example, these calls will need to be converted to use the
-:ref:`MathJax 3 API <api>`.  You may be able to use the following code
+MathJax 3 API.  You may be able to use the following code
 to patch into MathJax version 3, which provides implementations for
 :meth:`MathJax.Hub.Typeset()`, and :meth:`MathJax.Hub.Queue()`.  It
 also flags usages of :meth:`MathJax.Hub.Register.StartupHook()` and

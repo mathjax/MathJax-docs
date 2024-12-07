@@ -33,6 +33,11 @@ The `semantic-enrich` and `explorer` components are part of all the
 one of the those, you don't need to load these assistive extensions
 yourself.
 
+If you are using the `ui/menu` component (included in all the combined
+components), there are menu items that will cause these assistive
+extensions to be loaded dynamically, so you don't need to load them
+explicitly in that case.
+
 
 .. note::
 
@@ -126,6 +131,14 @@ reader support via the `assistive-mml` extension.
 
 See the :ref:`assistive-mml-options` section for information about
 configuring this component.
+
+.. note::
+
+   In MathJax v2 and v2, the `assistive-mml` extension was loaded an
+   enabled by default.  In v4, however, the `explorer` component has
+   replaced it as the default assistive tool.  The explorer can be
+   disable, however, and the assistive MathML re-enabled using the
+   MathJax contexutal menu on any typeset expression.
 
 
 |-----|

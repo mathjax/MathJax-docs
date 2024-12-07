@@ -1,8 +1,8 @@
 .. _configuring-mathjax:
 
-###################
-Configuring MathJax
-###################
+#############################
+MathJax Configuration Options
+#############################
 
 The various components of MathJax, including its input and output
 processors, its extensions, and the MathJax core,

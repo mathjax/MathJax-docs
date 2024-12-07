@@ -24,9 +24,9 @@ have loaded, you will get the corresponding functions from the list
 below:
 
 .. js:function:: MathJax.tex2chtml(math[,options])
-                 MathJax.tes2chtmlPromise(math[,options])
+                 MathJax.tex2chtmlPromise(math[,options])
                  MathJax.tex2svg(math[,options])
-                 MathJax.tes2svgPromise(math[,options])
+                 MathJax.tex2svgPromise(math[,options])
                  MathJax.tex2mml(math[,options])
                  MathJax.tex2mmlPromise(math[,options])
                  
@@ -74,7 +74,17 @@ output.
 The functions that convert to MathML produce serialized MathML strings
 automatically, rather than DOM elements.  You can use the browser's
 :attr:`DOMParser` object to convert the string into a MathML DOM tree
-if you need that instead.
+if you need that instead.  Alternatively, you can use
+:js:meth:`MathJax.startup.adaptor.parse()` to convert the string to an
+``HTMLdocument`` or ``XMLDocument`` object.  For example,
+
+.. code-block:: javascript
+
+   const mml = MathJax.tex2mml('\\sqrt{x^2+1}');
+   const math = MathJax.startup.adaptor.parse(mml).body.firstChild;
+
+will set ``math`` to be the ``<math>`` node containing the MathML DOM
+tree from the TeX expression ``\sqrt{x^2+1}``.
 
 The functions ending in ``Promise`` perform the conversion
 asynchronously, and return promises, while the others operate
@@ -84,7 +94,7 @@ synchronously and return the converted form immediately.
 
    In version 4, the promise-based conversion functions wait for
    :js:data:`MathJax.startup.promise` before performing the
-   conversion, and reset this value to the promise these conversoin
+   conversion, and reset this value to the promise these conversion
    functions create.  The version 3 documentation recommended using
    and setting :js:data:`MathJax.startup.promise` yourself to make
    sure typeset calls were serialized; if you included that code
@@ -95,7 +105,7 @@ synchronously and return the converted form immediately.
 
 Note that the synchronous functions only work if the math you typeset
 doesn't require MathJax to load any extensions or data files (e.g.,
-TeX input uses ``\require`` or macros that are autoloaded from an
+TeX input that uses ``\require`` or macros that are autoloaded from an
 extension).  If a file needs to be loaded, MathJax with throw a
 ``retry`` error, which will prevent the conversion from completing.
 In that case, you should either switch to the promise-based versions
@@ -126,9 +136,9 @@ Conversion Options
 All of the functions listed above require an argument that is the math
 string to be converted (e.g., the serialized MathML string, the TeX or
 LaTeX string, or the AsciiMath string).  Note that this is not a
-serialized HTML string with embeded math, but only a single math
+serialized HTML string with embedded math, but only a single math
 expression in one of the formats that MathJax understands.  Note also
-that you shoudl not include math delimiters like ``$$...$$`` or
+that you should not include math delimiters like ``$$...$$`` or
 ``\(...\)`` as part of the string; it is just the mathematics itself.
 
 You may also pass a second argument that is an object containing
@@ -236,7 +246,18 @@ actually needed for the mathematics that has been processed by the
 output jax.  That means you should request the stylesheet only *after*
 you have typeset the mathematics itself.
 
-Moreover, if you typeset several expressions, the stylesheet will
+MathJax adds rules to these stylesheets dynamically, and one
+side-effect of this is that those styles are not part of the
+stylesheet element's text content, so won't be included if you call
+``textContent`` or any of the other methods of obtaining the text of
+the stylesheet.  For this reason, MathJax provides the command
+
+.. js:function:: MathJax.startup.adaptor.cssText(stylesheet)
+
+that will give the complete text content of a stylesheet, including
+the dynamically added rules.
+
+Note that, if you typeset several expressions, the stylesheet will
 include everything needed for all the expressions you have typeset.
 If you want to reset the stylesheet, then use
 
@@ -256,7 +277,7 @@ Creating Stand-Alone SVG Images
 
 If you are using the SVG output jax to produce stand-alone SVG files,
 then you should set the ``fontCache`` value in the ``svg`` section of
-your MathJax configuration to be ``'local'``.  If set to ``global``,
+your MathJax configuration to be ``local``.  If set to ``global``,
 then there will be a common global cache created for all the character
 paths used in the expressions you typeset.  To clear that cache, use
 
@@ -296,7 +317,7 @@ This defines a function :meth:`getSvgImage()` that takes a math string
 and returns a self-contained serialized SVG image of the math.
 
 Note that in version 4, the MathJax contextual menu also includes a
-``SVG Image`` option in the ``Show Math As`` menu that you can use to
-obtain the SVG image directly.
+``SVG Image`` option in the ``Show Math As`` and ``Copy Math As``
+submenus that you can use to obtain the SVG image directly.
 
 |-----|

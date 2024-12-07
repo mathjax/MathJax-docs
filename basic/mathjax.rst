@@ -49,11 +49,11 @@ assets in that way.
 Finally, MathJax has a rich application programming interface (API)
 that can be used to make the mathematics on your web pages interactive
 and dynamic.  Although version 2 was written directly in javascript,
-versions 3 and 4 were rewritten using Typescript (a version of
+versions 3 and 4 are rewritten using Typescript (a version of
 javascript that includes type-checking and the ability to transpile to
 ES6 or ES5 versions of javascript).  While version 3 was provided as
 CommonJS modules using ES5, version 4 comes packaged as ES Modules
-using ES6 as well the older CommonJS modules in ES5 format.
+using ES6 as well CommonJS modules in ES5 format.
 
 Since version 3, MathJax can be used as easily on a server (as part of
 a ``node.js`` application) as it is in a browser.  This makes

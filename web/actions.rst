@@ -19,7 +19,7 @@ structures, creates functions in the :js:data:`MathJax` object to make
 typesetting and format conversion easy for you, sets up the
 :js:meth:`pageReady()` call (described below), and creates a promise
 for when that is complete.  You can override the :js:meth:`ready()`
-function with one of your own to override the startup process
+function with one of your own to replace that startup process
 completely, or to perform actions before or after the usual
 initialization.  For example, you could do additional setup before
 MathJax creates the objects it needs, or you could hook into the
@@ -50,7 +50,7 @@ typesetting needs to be performed later.
 Using these two functions separately or in combination gives you full
 control over the actions that MathJax takes when it starts up, and
 allows you to customize MathJax's startup process to suit your needs.
-Several examples are given below for common situations.
+Several examples for common situations are given below.
 
 -----
 
@@ -172,6 +172,7 @@ delimiters.
 
    MathJax = {
      loader: {load: ['input/asciimath', 'output/chtml']},
+     output: {font: 'mathjax-newcm'},
      asciimath: {
        delimiters: [['``','``'], ['`','`']]
      },
@@ -263,7 +264,7 @@ One way to do that is to use :attr:`defer` on both the script that
 loads MathJax and the one that uses
 :js:data:`MathJax.startup.promise`, and to put your script **after**
 the one that loads MathJax.  Since deferred scripts run in the order
-they appeared in the HTML document, that will guarantee that
+in which they appeared in the HTML document, that will guarantee that
 :js:data:`MathJax.startup.promise` will be defined when you use it.
 For example,
 
@@ -272,7 +273,7 @@ For example,
    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
    <script defer src="mathjax-dependent-code.js"></script>
 
-where the ``mathjax-dependent-code.js`` file contains the
+where the :file:`mathjax-dependent-code.js` file contains the
 :js:data:`MathJax.startup.promise` reference, such as
 
 .. code-block:: javascript

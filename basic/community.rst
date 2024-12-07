@@ -27,11 +27,11 @@ MathJax, so it may be a good place to find the examples you are
 looking for.
 
 If you want to discuss MathJax development, please use the `MathJax
-Dev Google Group <https://groups.google.com/g/mathjax-dev>`_. We made
-this group to discuss anything beyond what an end-user might be
-interested in, so if you have any suggestions or questions about
-MathJax performance, technology, or design, feel free to submit it to
-the group.
+Developers Google Group
+<https://groups.google.com/g/mathjax-dev>`_. We made this group to
+discuss anything beyond what an end-user might be interested in, so if
+you have any suggestions or questions about MathJax performance,
+technology, or design, feel free to submit it to the group.
 
 The community is only as good as the users who participate, so if you
 have something to offer, please take time to make a post on one of our
@@ -53,7 +53,7 @@ outdated version of MathJax, so be sure to :ref:`upgrade your copy
 <mathjax-git>` to verify that the problem persists in the
 latest version.
 
-When y9ou create an issue, you will need to choose between a bug
+When you create an issue, you will need to choose between a bug
 report and a feature request.  Each of these comes with a template
 that you should use to structure your report or request.  **Do not
 just erase that template**, as the information that it requests is

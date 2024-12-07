@@ -11,11 +11,12 @@ Putting mathematics in a web page
 =================================
 
 To put mathematics in your web page, you can use TeX and LaTeX
-notation, MathML notation, AsciiMath notation, or a combination of all
-three within the same page; the MathJax configuration tells MathJax
-which you want to use, and how you plan to indicate the mathematics
-when you are using TeX/LaTeX or AsciiMath notation.  These three
-formats are described in more detail below.
+notation, `MathML <http://www.w3.org/TR/MathML3>`_ notation,
+`AsciiMath <http://asciimath.org/>`__ notation, or a combination of
+all three within the same page; the MathJax configuration tells
+MathJax which you want to use, and how you plan to indicate the
+mathematics when you are using TeX/LaTeX or AsciiMath notation.  These
+three formats are described in more detail below.
 
 
 .. _tex-input:
@@ -62,6 +63,26 @@ for more).
     $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
     </body>
     </html>
+
+.. raw:: html
+
+    <p>This renders as shown below:</p>
+    <p style="background-color: #DDD; padding: 1em 0; text-align: center">
+    <iframe style='background-color: white' srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>MathJax TeX Test Page</title>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js">
+      </script>
+      </head>
+      <body>
+      When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+      $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
+      </body>
+      </html>
+    '></iframe>
+    </p>
 
 
 .. _tex-html-markdown:
@@ -171,6 +192,60 @@ for more).
     </body>
     </html>
 
+.. raw:: html
+
+    <p>This renders as shown below:</p>
+    <p style="background-color: #DDD; padding: 1em 0; text-align: center">
+    <iframe style='background-color: white' srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>MathJax MathML Test Page</title>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/mml-chtml.js">
+      </script>
+      </head>
+      <body>
+
+      <p>
+      When
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>a</mi><mo>&#x2260;</mo><mn>0</mn>
+      </math>,
+      there are two solutions to
+      <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mi>a</mi><msup><mi>x</mi><mn>2</mn></msup>
+        <mo>+</mo> <mi>b</mi><mi>x</mi>
+        <mo>+</mo> <mi>c</mi> <mo>=</mo> <mn>0</mn>
+      </math>
+      and they are
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+        <mi>x</mi> <mo>=</mo>
+        <mrow>
+          <mfrac>
+            <mrow>
+              <mo>&#x2212;</mo>
+              <mi>b</mi>
+              <mo>&#x00B1;</mo>
+              <msqrt>
+                <msup><mi>b</mi><mn>2</mn></msup>
+                <mo>&#x2212;</mo>
+                <mn>4</mn><mi>a</mi><mi>c</mi>
+              </msqrt>
+            </mrow>
+            <mrow>
+              <mn>2</mn><mi>a</mi>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mtext>.</mtext>
+      </math>
+      </p>
+
+      </body>
+      </html>
+    '></iframe>
+    </p>
+
 .. _mml-self-closing-tags:
 
 When entering MathML notation in an HTML page (rather than an XHTML
@@ -205,10 +280,10 @@ MathJax v2.0 introduced a new input format, AsciiMath notation, by
 incorporating `ASCIIMathML
 <https://en.wikipedia.org/wiki/ASCIIMathML>`_ as one of its input
 processors.  This has not been fully ported to MathJax version 3 and
-above, but there is a version of it that uses the legacy version 2
-code to patch it into MathJax v3 and v4.  None of the combined
-components currently include it, so you would need to specify it
-explicitly in your MathJax configuration in order to use it.  See the
+above, but there is a version of it that uses the legacy v2 code to
+patch it into MathJax v3 and v4.  None of the combined components
+currently include it, so you would need to specify it explicitly in
+your MathJax configuration in order to use it.  See the
 :ref:`AsciiMath <asciimath-support>` page for more details.
 
 By default, you mark mathematical expressions written in AsciiMath by
@@ -224,7 +299,8 @@ Here is a complete sample page containing AsciiMath notation:
     <title>MathJax AsciiMath Test Page</title>
     <script>
     MathJax = {
-      loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']}
+      loader: {load: ["input/asciimath", "output/chtml", "ui/menu"]},
+      output: {font: "mathjax-newcm"}
     }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/startup.js">
@@ -239,6 +315,46 @@ Here is a complete sample page containing AsciiMath notation:
 
     </body>
     </html>
+
+.. raw:: html
+
+    <p>This renders as shown below:</p>
+    <p style="background-color: #DDD; padding: 1em 0; text-align: center">
+    <iframe style='background-color: white' srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>MathJax AsciiMath Test Page</title>
+      <script>
+      MathJax = {
+        loader: {load: ["input/asciimath", "output/chtml", "ui/menu"]},
+        output: {font: "mathjax-newcm"}
+      }
+      </script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/startup.js">
+      </script>
+      <body>
+
+      <p>When `a != 0`, there are two solutions to `ax^2 + bx + c = 0` and
+      they are</p>
+      <p style="text-align:center">
+        `x = (-b +- sqrt(b^2-4ac))/(2a) .`
+      </p>
+
+      </body>
+      </html>
+    '></iframe>
+    </p>
+
+Here we are loading the input and output components separately rather
+than using a combined configuration file.  Since the ``output/chtml``
+components does not have a font configured with it, we need to specify
+the font explicitly in the ``output`` section of the MathJax
+configuration.  It is also possible to load a combined component like
+:file:`tex-chtml.js` rather than :file:`startup.js` and include
+``input/asciimath`` in the ``load`` array of the ``loader`` block of
+the configuration, in which case the ``mathjax-newcm`` font will
+already be included, and won't need to be specified separately.
 
 See the :ref:`AsciiMath support <AsciiMath-support>` page for more on
 MathJax's AsciiMath support and how to configure it.
@@ -269,5 +385,15 @@ This can be particularly confusing when you are using the LaTeX macro
    const array = '\\begin{array}{cc} a & b \\\\ c & d \\end{array}';
 
 to produce an array with two rows.
+
+It is also possible to use the ``String.raw`` constructor to create
+strings with backslashes that don't need to be doubled.  For example,
+
+.. code-block::
+
+   const math = String.raw`\frac{1}{\sqrt{x^2 + 1}}`;
+
+is equivalent to the first declaration above.
+
 
 |-----|

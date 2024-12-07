@@ -31,10 +31,10 @@ extension is included in the :ref:`combined components
 Listing TeX Parse Errors
 ------------------------
 
-If you wish identify the TeX expressions that don't parse properly,
+If you wish to identify the TeX expressions that don't parse properly,
 there are several approaches that could be taken.  First, you can
-provide a :js:meth:`formatError()` function in the ``tex`` section of
-your MathJax configuration.
+provide a :js:meth:`formatError()` function in the :js:data:`tex`
+section of your MathJax configuration.
 
 .. js:method:: formatError(jax, error)
 
@@ -100,7 +100,7 @@ the typesetting is complete and filter out the ones that include
  .. code-block:: javascript
 
     const errorItems = Array.from(MathJax.startup.document.math).filter((item) => {
-      const node = item?.root?.childNodes?.[0]?.childNodes?.[0];
+      const node = item.root?.childNodes?.[0]?.childNodes?.[0];
       return node && node.isKind('merror') && node.attributes.get('data-mjx-error');
     });
     for (const item of errorItems) {
@@ -227,11 +227,11 @@ MathML Compilation Errors
 
 The processing of a MathML expression can lead to compilation errors,
 such as errors caused by text not enclosed in a token element tag, or
-the presence of nodes that are not MathML nodes.  Such error cause the
+the presence of nodes that are not MathML nodes.  Such errors cause the
 entire MathML tree to be replaced by an ``merror`` node containing the
 error message describing the problem.
 
-Such errors can be trapped using the :js:meth:`compileError()`
+These errors can be trapped using the :js:meth:`compileError()`
 function described in the section below.
 
 -----
@@ -241,13 +241,13 @@ function described in the section below.
 Trapping Compile and Typeset Errors
 ===================================
 
-Sometimes compiling a TeX into the internal MathML representation, or
-processing a MathML expression can lead to an error message "Math
-input error".  Hovering over this message should cause a tooltip with
-a more detailed error message to appear.
+Sometimes compiling a TeX expression into the internal MathML
+representation, or processing a MathML tree, can lead to an error
+message "Math input error".  Hovering over this message should cause a
+tooltip with a more detailed error message to appear.
 
 You can trap such errors by specifying a :js:meth:`compileError()`
-function in the ``options`` section of your MathJax configuration.
+function in the :js:data:`options` section of your MathJax configuration.
 
 .. js:function:: compileError(document, math, error)
 
@@ -257,10 +257,10 @@ function in the ``options`` section of your MathJax configuration.
    :param Error error: The Error object containing the error message
                        for the problem that occurred.
 
-The default action is to call ``document.compileError(math, error)``,
-which sets ``math.root`` to a ``math`` node containing an ``merror``
-whose content is ``error.message``.  You can override that and do your
-own processing.  For example
+The default action is to call :js:meth:`document.compileError(math,
+error)`, which sets :js:data:`math.root` to a ``math`` node
+containing an ``merror`` whose content is :js:data:`error.message`.
+You can override that and do your own processing.  For example
 
 .. code-block:: javascript
 

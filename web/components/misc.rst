@@ -27,16 +27,16 @@ startup
 
 The `startup` component is the one that you would use if you are not
 using a :ref:`combined component <combined-components>`, but are using
-the ``load`` array in the ``loader`` section of your MathJax
-configuration to specify the components you want to load.  Like you would a
-combined component, you load the `startup` component directly via a `<script>` tag,
-as in
+the :js:data:`load` array in the :js:data:`loader` section of your
+MathJax configuration to specify the components you want to load.
+Like you would a combined component, you load the `startup` component
+directly via a ``<script>`` tag, as in
 
 .. code-block:: html
 
    <script defer src="https://cdn.jsdelivr.net/npm/mathjax4/startup.js"></script>
 
-This is the component that manages the global :data:`MathJax` object.
+This is the component that manages the global :js:data:`MathJax` object.
 It is responsible for creating the needed objects (like the input and
 output jax), and for adding the typesetting and conversion methods
 described in the :ref:`web-typeset` section.
