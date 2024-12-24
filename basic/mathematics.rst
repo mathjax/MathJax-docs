@@ -73,7 +73,7 @@ for more).
       <html>
       <head>
       <title>MathJax TeX Test Page</title>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js">
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
       </script>
       </head>
       <body>
@@ -201,7 +201,7 @@ for more).
       <html>
       <head>
       <title>MathJax MathML Test Page</title>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/mml-chtml.js">
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/mml-chtml.js">
       </script>
       </head>
       <body>
@@ -331,7 +331,7 @@ Here is a complete sample page containing AsciiMath notation:
         output: {font: "mathjax-newcm"}
       }
       </script>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/startup.js">
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0/startup.js">
       </script>
       <body>
 
