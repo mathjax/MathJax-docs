@@ -137,7 +137,7 @@ build offers.
    ``@mathjax/src/js`` to the MathJax ``mjs`` directory when used in
    an ``import`` command, and to the ``cjs`` directory when used in a
    ``require()`` statement, so you can use the same path in either
-   case.  Similarly ``@mathjax/src/components/src`` maps either to the
+   case.  Similarly ``@mathjax/src/components/js`` maps either to the
    ``components/mjs`` or ``components/cjs`` directory based on whether
    ``import`` or ``require()`` is used.
 

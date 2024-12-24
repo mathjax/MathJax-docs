@@ -167,7 +167,7 @@ using the argument as the text of the element.
    ``@mathjax/src/js`` to the MathJax ``mjs`` directory when used in
    an ``import`` command, and to the ``cjs`` directory when used in a
    ``require()`` statement, so you can use the same path in either
-   case.  Similarly ``@mathjax/src/components/src`` maps either to the
+   case.  Similarly ``@mathjax/src/components/js`` maps either to the
    ``components/mjs`` or ``components/cjs`` directory based on whether
    ``import`` or ``require()`` is used.
    
@@ -184,9 +184,9 @@ following:
      "webpack": {
        "name": "mml",
        "libs": [
-         "components/src/core/lib",
-         "components/src/startup/lib",
-         "components/src/input/tex-base/lib"
+         "components/js/core/lib",
+         "components/js/startup/lib",
+         "components/js/input/tex-base/lib"
        ],
        "dist": "."
      }
