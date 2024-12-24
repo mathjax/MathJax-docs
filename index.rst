@@ -21,7 +21,6 @@ screen to access the version 2 documentation if you need it.
 .. _toc-basics:
 .. toctree::
     :caption: The Basics
-    :name: basics
     :maxdepth: 1
 
     What is MathJax?                  <basic/mathjax>
@@ -32,8 +31,7 @@ screen to access the version 2 documentation if you need it.
     
 .. _toc-mathjax-web:
 .. toctree::
-   :caption: Including MathJax in a Web Page
-   :name: browser-components
+   :caption: MathJax in Web Pages
    :maxdepth: 1
     
     Getting Started with Components   <web/start>
@@ -50,10 +48,13 @@ screen to access the version 2 documentation if you need it.
 .. _toc-mathjax-node:
 .. toctree::
    :caption: MathJax in Node Applications
-   :name: server-nodejs
-   :maxdepth: 2
+   :maxdepth: 1
 
    Getting Started with Node          <server/start>
+   Experimenting with MathJax         <server/main>
+   Using MathJax Components           <server/components>
+   Using Components Synchronously     <server/preload>
+   Linking to MathJax Directly        <server/direct>
    The DOM Adaptor                    <server/adaptor>
    Examples in Node                   <server/examples>
 
@@ -81,7 +82,6 @@ screen to access the version 2 documentation if you need it.
 .. _toc-configuration-options:
 .. toctree::
     :caption: Configuration Options
-    :name: configuration-options
     :maxdepth: 2
 
     Configuring MathJax               <options/index>
@@ -89,7 +89,6 @@ screen to access the version 2 documentation if you need it.
 .. _toc-advanced-topics:
 .. toctree::
     :caption: Advanced topics
-    :name: advanced-topics
     :maxdepth: 1
 
     MathJax in Dynamic Content        <advanced/typeset>
@@ -100,7 +99,6 @@ screen to access the version 2 documentation if you need it.
 .. _toc-miscellaneous:
 .. toctree::
     :caption: Miscellaneous
-    :name: miscellaneous
     :maxdepth: 1
 
     MathJax FAQ                       <misc/faq>
@@ -110,7 +108,6 @@ screen to access the version 2 documentation if you need it.
 .. _toc-mathjax-updates:
 .. toctree::
     :caption: MathJax Updates
-    :name: mathjax-updates
     :maxdepth: 2
     :titlesonly:
 
