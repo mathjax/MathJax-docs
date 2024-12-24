@@ -54,7 +54,7 @@ may need to take that into account in the rest of your code.  See also
    need to operate asynchronously even if the TeX *doesn't* include
    ``\require`` or any auto-loaded extensions, as the output itself
    could need extra font data files to be loaded.  Thus in version 4,
-   it is always best to use the promise-based command, described
+   it is always best to use the promise-based commands, as described
    below.
 
 The second method, :js:meth:`MathJax.typesetPromise()`, performs the
