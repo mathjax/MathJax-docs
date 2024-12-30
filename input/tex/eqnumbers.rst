@@ -7,7 +7,7 @@ Automatic Equation Numbering
 The TeX input processing in MathJax can be configured to add equation
 numbers to displayed equations automatically.  This functionality is
 turned off by default, but it is easy to configure MathJax to produce
-automatic equation numbers by adding:
+automatic equation numbers by using
 
 .. code-block:: javascript
 
@@ -68,10 +68,10 @@ that references can come before the corresponding formula as well as
 after them.
 
 You can configure the way that numbers are displayed and how the
-references to them by including the ``tagformat`` extension, and
-setting options within the ``tagformat`` block of your ``tex``
-configuration.  See the :ref:`tex-tagformat` extension for more
-details.
+references to them are displayed by including the ``tagformat``
+extension, and setting options within the :data:`tagformat` block of your
+:data:`tex` configuration.  See the :ref:`tex-tagformat` extension for
+more details.
 
 If you are using automatic equation numbering and modifying the page
 dynamically, you can run into problems due to duplicate labels. See

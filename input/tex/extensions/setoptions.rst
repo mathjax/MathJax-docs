@@ -11,11 +11,11 @@ the TeX input jax itself, from within a TeX expression.
 .. describe:: \setOptions[package]{options}
 
     Sets the options for `package` to the ones given in `options`.
-    Here, `options` is a collection of space-separated option names
-    (to be set to ``true``) or `option=value` declarations, where the
-    given option will get the specified value.  If the value contains
-    spaces, it can be enclosed in braces, which will not become part
-    of the value.
+    Here, `options` is a collection of space- or comma-separated
+    option names (to be set to ``true``) or `option=value`
+    declarations, where the given option will get the specified value.
+    If the value contains spaces or commas, it can be enclosed in
+    braces, which will not become part of the value.
 
 For example:
 
@@ -28,11 +28,42 @@ For example:
    
    \[
      \setOptions{tagSide=right}
-     e^{\pi 1} + 1 = 0 \tag{2}
+     e^{\pi i} + 1 = 0 \tag{2}
    \]
 
 would typeset the first expression with its tag on the left, and the
 second (and subsequent) expressions with tags on the right.
+
+.. raw:: html
+
+    <p style="background-color: #DDD; padding: 1em 0; text-align: center">
+    <iframe style='width: 20em; height: 6em; background-color: white' srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>MathJax setoptions Examples</title>
+      <script>
+      MathJax = {
+        loader: {load: ["[tex]/setoptions"]},
+        tex: {packages: {"[+]": ["setoptions"]}}
+      }
+      </script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js">
+      </script>
+      </head>
+      <body>
+      \[
+        \setOptions{tagSide=left}
+        E = mc^2 \tag{1}
+      \]
+      \[
+        \setOptions{tagSide=right}
+        e^{\pi i} + 1 = 0 \tag{2}
+      \]
+      </body>
+      </html>
+    '></iframe>
+    </p>
 
 To change a package setting, use the package name as an optional
 bracket argument:
@@ -45,23 +76,51 @@ bracket argument:
      \setOptions[physics]{arrowdel=false}
    \]
 
-Here the gradient symbol with have an arrow, but subsequent ones will not.
+Here the gradient symbol will have an arrow, but subsequent ones will not.
+
+.. raw:: html
+
+    <p style="background-color: #DDD; padding: 1em 0; text-align: center">
+    <iframe style='width: 20em; height: 4em; background-color: white' srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>MathJax setoptions Examples</title>
+      <script>
+      MathJax = {
+        loader: {load: ["[tex]/setoptions", "[tex]/physics"]},
+        tex: {packages: {"[+]": ["setoptions", "physics"]}}
+      }
+      </script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js">
+      </script>
+      </head>
+      <body>
+      \[
+        \setOptions[physics]{arrowdel=true}
+        \grad
+        \setOptions[physics]{arrowdel=false}
+      \]
+      </body>
+      </html>
+    '></iframe>
+    </p>
 
 Note that any changes made by ``\setOptions`` are global, so will
-affect all the following expressions.  If you want a local change,
-you will need to set the value back to its original one explicitly.
+affect all the following expressions.  If you want a local change, you
+will need to set the value back to its original one explicitly, as in
+the example above.
 
 
 Because changing the option settings can cause adverse consequences,
-and so could be misused in a setting where users are provided the TeX
-content for your site, the `setoptions` package is not autoloaded,
-it does not appear in the list of all packages, and it can not be
-loaded with ``\require{}``.  You must include it in the package list
-explicitly if you want to allow its use.
+and so could be misused in a setting where users are providing the TeX
+content for your site, the `setoptions` package is not autoloaded, and
+it can not be loaded with ``\require{}``.  You must include it in the
+package list explicitly if you want to allow its use.
 
 To load the `setoptions` extension, add ``'[tex]/setoptions'`` to the
-``load`` array of the ``loader`` block of your MathJax configuration, and add
-``'setoptions'`` to the ``packages`` array of the ``tex`` block.
+:data:`load` array of the :data:`loader` block of your MathJax configuration, and add
+``'setoptions'`` to the :data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -70,7 +129,6 @@ To load the `setoptions` extension, add ``'[tex]/setoptions'`` to the
      tex: {packages: {'[+]': ['centernot']}}
    };
 
-
 -----
 
 .. _tex-setoptions-require:
@@ -78,7 +136,7 @@ To load the `setoptions` extension, add ``'[tex]/setoptions'`` to the
 The \require command with setoptions
 ------------------------------------
 
-If the `require` package is enabled, `setoptions` modifies
+If the :ref:`tex-require` package is enabled, `setoptions` modifies
 ``\require`` to allow passing of options for the required package (and
 makes the original ``\require`` macro available as ``\Require``).  So
 the new syntax is:
@@ -86,7 +144,7 @@ the new syntax is:
 .. describe:: \require[options]{package}
 
 where `options` is a list of options in the same format as used by
-``\setOptions``, and ``package`` is the name of the extension to load.
+``\setOptions``, and :data:`package` is the name of the extension to load.
 This command is equivalent to:
 
 .. code-block:: latex
@@ -101,17 +159,15 @@ For example:
 
    \require[harrowsize=3em]{amscd}
 
-would load the `amscd` extension and then set its ``harrowsize``
-option to ``3em``.
+would load the :ref:`tex-amscd` extension and then set its
+``harrowsize`` option to ``3em``.
 
 Note that the same rules apply to which options can be set for which
 package as those that govern ``\setOptions`` itself.
 
-
 -----
 
 .. _tex-setoptions-options:
-
 
 setoptions Options
 ------------------
@@ -159,7 +215,6 @@ following values:
     }
   };
 
-
 .. _tex-setoptions-filterPackage:
 .. describe:: filterPackage: SetOptionsUtil.filterPackage
 
@@ -169,9 +224,12 @@ following values:
    package allows its options to be configured and false otherwise.
    The default is to first check that the named package exists, then
    check if the package is explicitly allowed by its entry in the
-   ``allowOptions`` property being either ``true`` or a list of the
-   ``allowOptions`` property. The entry can either be ``true``, allowing all options of the package to be set, or a list of the options that are allowed to be set. If the entry is
-   explicitly ``false`` or the ``allowPackageDefault`` option is
+   ``allowOptions`` configuration option. That entry can either be
+   ``true``, allowing all options of the package to be set, or a list
+   of the options that are allowed to be set, or ``false`` to mean
+   that no options can be set for that package.  If the package is not
+   in the ``allowOptions`` list, then the value of the
+   ``allowPackageDefault`` option is used.  If that value is not
    ``false``, an error is issued.  You can supply your own function to
    process the package names in another way if you wish.
 
@@ -184,22 +242,23 @@ following values:
    true if that option can be set for that package, and false
    otherwise.  The default is to check if the option is listed
    explicitly in the list of options for the given package in the
-   ``allowOptions``. If the value is explicitly false, or if it is
-   not listed and the ``allowOptionDefault`` is false, then produce an
-   error. Otherwise check that the option actually exists for the
-   package, and report an error if not, otherwise allow the option to
-   be set.  You can supply your own function to process the option
-   names in another way if you wish.
+   ``allowOptions`` list. If the value is explicitly ``false``, or if
+   it is not listed and the ``allowOptionDefault`` is ``false``, then
+   produce an error. Otherwise check that the option actually exists
+   for the package, and report an error if not, otherwise allow the
+   option to be set.  You can supply your own function to process the
+   option names in another way if you wish.
 
 .. _tex-setoptions-filterValue:
 .. describe:: filterValue: SetOptionsUtil.filterValue
 
-   This is a function that is called to check the value provided for a
-   given option is allowed.  It is passed the TeX parser, the package
-   name, the option name, and the new option value as its arguments,
-   and it returns the value to be used for the option.  The default is
-   simply to return the value it is given, but you can use this to
-   alter the value, or to produce an error if the value is not valid.
+   This is a function that is called to check whether the value
+   provided for a given option is allowed.  It is passed the TeX
+   parser, the package name, the option name, and the new option value
+   as its arguments, and it returns the value to be used for the
+   option.  The default is simply to return the value it is given, but
+   you can use this to alter the value, or to produce an error if the
+   value is not valid.
 
 .. _tex-setoptions-allowPackageDefault:
 .. describe:: allowPackageDefault: true
@@ -240,9 +299,7 @@ following values:
               
 -----
 
-
 .. _tex-setoptions-commands:
-
 
 setoptions Commands
 -------------------

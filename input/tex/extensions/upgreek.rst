@@ -4,17 +4,20 @@
 upgreek
 #######
 
-The `upgreek` extension implements the ``upgreek`` style package from LaTeX. It
-provides upright Greek characters for both lower and upper cases.  See the `CTAN
-page <https://www.ctan.org/pkg/upgreek>`__ for more information and
-documentation of `upgreek`.
+The `upgreek` extension implements the ``upgreek`` style package from
+LaTeX. It provides upright Greek characters for both lower and upper
+cases.  See the `upgreek CTAN page
+<https://www.ctan.org/pkg/upgreek>`__ for more information and
+documentation.
 
-Note, that the extension does not implement the font selection options from the
-LaTeX package.
+Note, that the extension does not implement the font selection options
+from the LaTeX package.
 
-This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `upgreek` extension, add ``'[tex]/upgreek'`` to the ``load`` array of the ``loader`` block of your
-MathJax configuration, and add ``'upgreek'`` to the ``packages`` array of the ``tex`` block.
+This package is not autoloaded, so you must request it explicitly if
+you want to use it.  To load the `upgreek` extension, add
+``'[tex]/upgreek'`` to the :data:`load` array of the :data:`loader` block of
+your MathJax configuration, and add ``'upgreek'`` to the :data:`packages`
+array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -23,8 +26,8 @@ MathJax configuration, and add ``'upgreek'`` to the ``packages`` array of the ``
      tex: {packages: {'[+]': ['upgreek']}}
    };
 
-
-You can configure the `autoload` extension to load `upgreek` via
+You can configure the :ref:`tex-autoload` extension to load `upgreek`
+via
 
 .. code-block:: javascript
 
@@ -42,16 +45,13 @@ You can configure the `autoload` extension to load `upgreek` via
      }
    };
 
-
 Alternatively, use ``\require{upgreek}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
+dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
 
 -----
 
-
 .. _tex-upgreek-commands:
-
 
 upgreek Commands
 ----------------

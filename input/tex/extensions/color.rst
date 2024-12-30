@@ -7,14 +7,14 @@ color
 The `color` extension defines the ``\color`` macro as in the LaTeX
 `color` package, along with ``\colorbox``, ``\fcolorbox``, and
 ``\definecolor``.  It declares the standard set of colors (`Apricot`,
-`Aquamarine`, `Bittersweet`, and so on), and provides the RGB, rgb,
-and grey-scale color spaces in addition to named colors.
+`Aquamarine`, `Bittersweet`, and so on), and provides the `RGB`,
+`rgb`, and `grey-scale` color spaces in addition to named colors.
 
-This extension is loaded automatically when the `autoload` extension
-is used.  To load the `color` extension explicitly, add
-``'[tex]/color'`` to the ``load`` array of the ``loader`` block of
-your MathJax configuration, and add ``'color'`` to the ``packages``
-array of the ``tex`` block.
+This extension is loaded automatically when the :ref:`tex-autoload`
+extension is used.  To load the `color` extension explicitly, add
+``'[tex]/color'`` to the :data:`load` array of the :data:`loader`
+block of your MathJax configuration, and add ``'color'`` to the
+:data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -24,7 +24,7 @@ array of the ``tex`` block.
    };
 
 Alternatively, use ``\require{color}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
+dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
 
 .. note::
@@ -52,7 +52,6 @@ extension is loaded.
    extension instead.
 
 -----
-
 
 .. _tex-color-options:
 
@@ -87,9 +86,7 @@ following values:
 
 -----
 
-
 .. _tex-color-commands:
-
 
 color Commands
 --------------

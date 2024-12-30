@@ -4,10 +4,10 @@
 bbox
 ####
 
-The `bbox` extension defines a new macro for adding background colors,
-borders, and padding to your math expressions.
+The `bbox` extension defines a non-standard macro for adding
+background colors, borders, and padding to your math expressions.
 
-.. describe:: \\bbox[options]{math}
+.. describe:: \bbox[options]{math}
 
     puts a bounding box around ``math`` using the provided ``options``.
     The options can be one of the following:
@@ -26,14 +26,43 @@ Here are some examples:
     \bbox[red]{x+y}      % a red box behind x+y
     \bbox[2pt]{x+1}      % an invisible box around x+y with 2pt of extra space
     \bbox[red,2pt]{x+1}  % a red box around x+y with 2pt of extra space
-    \bbox[5px, border: 2px solid red]
+    \bbox[5px, border: 2px solid red]{x+1}
                          % a 2px red border around the math 5px away
 
-This extension is loaded automatically when the `autoload` extension
-is used.  To load the `bbox` extension explicitly, add
-``'[tex]/bbox'`` to the ``load`` array of the ``loader`` block of
-your MathJax configuration, and add ``'bbox'`` to the ``packages``
-array of the ``tex`` block.
+.. raw:: html
+
+    <p>These render as follows:</p>
+    <p style="background-color: #DDD; padding: 1em 0; text-align: center">
+    <iframe style='width: 20em; height: 8em; background-color: white' srcdoc='
+      <!DOCTYPE html>
+      <html>
+      <head>
+      <title>MathJax bbox Examples</title>
+      <script>
+      MathJax = {
+        loader: {load: ["[tex]/bbox"]},
+        tex: {packages: {"[+]": ["bbox"]}}
+      }
+      </script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
+      </script>
+      </head>
+      <body>
+      \(\bbox[red]{x+y}\)<br/>
+      \(\bbox[2pt]{x+1}\)<br/>
+      \(\bbox[red,2pt]{x+1}\)<br/>
+      \(\bbox[5px, border: 2px solid red]{x+1}\)
+      </body>
+      </html>
+    '></iframe>
+    </p>
+
+
+This extension is loaded automatically when the :ref:`tex-autoload`
+extension is used.  To load the `bbox` extension explicitly, add
+``'[tex]/bbox'`` to the :data:`load` array of the :data:`loader` block
+of your MathJax configuration, and add ``'bbox'`` to the
+:data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -43,14 +72,12 @@ array of the ``tex`` block.
    };
 
 Alternatively, use ``\require{bbox}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
+dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
 
 -----
 
-
 .. _tex-bbox-commands:
-
 
 bbox Commands
 -------------

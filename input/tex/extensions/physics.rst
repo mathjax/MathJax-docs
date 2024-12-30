@@ -6,7 +6,7 @@ physics
 
 The `physics` extension implements much of the LaTeX `physics package
 <https://ctan.org/pkg/physics?lang=en>`_, which defines simple, yet
-flexible macros for typesetting equations via:
+flexible, macros for typesetting equations via:
 
 * Automatic bracing
 * Vector notation
@@ -23,8 +23,9 @@ for the LaTeX package for more information.
 This package is not autoloaded, due to the fact that it redefines many
 standard macros, so you must request it explicitly if you want to use
 it.  To load the `physics` extension, add ``'[tex]/physics'`` to the
-``load`` array of the ``loader`` block of your MathJax configuration,
-and add ``'physics'`` to the ``packages`` array of the ``tex`` block.
+:data:`load` array of the :data:`loader` block of your MathJax
+configuration, and add `'physics'`` to the :data:`packages` array of
+the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -34,20 +35,18 @@ and add ``'physics'`` to the ``packages`` array of the ``tex`` block.
    };
 
 Alternatively, use ``\require{physics}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
-package is loaded.
+dynamically from within the math on the page, if the :ref:`tex-require`
+extension is loaded.
 
 -----
 
-
 .. _tex-physics-options:
-
 
 physics Options
 ---------------
 
-Adding the `physics` extension to the ``packages`` array defines an
-``physics`` sub-block of the ``tex`` configuration block with the
+Adding the `physics` extension to the :data:`packages` array defines an
+:data:`physics` sub-block of the :data:`tex` configuration block with the
 following values:
 
 .. code-block:: javascript
@@ -65,23 +64,21 @@ following values:
 .. _tex-physics-italicdiff:
 .. describe:: italicdiff: false
 
-This corresponds to the ``italicdiff`` option of the `physics` LaTeX package to
-use italic form for the `d` in the ``\differential`` and ``\derivative```
-commands.
+   This corresponds to the ``italicdiff`` option of the `physics` LaTeX package to
+   use italic form for the `d` in the ``\differential`` and ``\derivative``
+   commands.
 
 .. _tex-physics-arrowdel:
 .. describe:: arrowdel: false
 
-This corresponds to the ``arrowdel`` option of the `physics` LaTeX package to
-use vector notation over the nabla symbol.
+   This corresponds to the ``arrowdel`` option of the `physics` LaTeX package to
+   use vector notation over the nabla symbol.
 
 Note, that the `physics` extension does not implement the `notrig` option.
 
 -----
 
-
 .. _tex-physics-commands:
-
 
 physics Commands
 ----------------

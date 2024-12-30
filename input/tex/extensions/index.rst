@@ -13,6 +13,8 @@ The main extensions are described below:
    ams
    amscd
    autoload
+   bbm
+   bboldx
    bbox
    boldsymbol
    braket
@@ -24,6 +26,7 @@ The main extensions are described below:
    colortbl
    colorv2
    configmacros
+   dsfont
    empheq
    enclose
    extpfeil
@@ -38,9 +41,11 @@ The main extensions are described below:
    require
    setoptions
    tagformat
+   texhtml
    textcomp
    textmacros
    unicode
+   units
    upgreek
    verb
 
@@ -54,7 +59,7 @@ These extensions have not yet been ported to version 3:
    begingroup
    mediawiki-texvc
 
-See the :ref:`custom-extension` section for how to create your own TeX
+See the section on :ref:`custom-extension` for how to create your own TeX
 extension.
 
 |-----|

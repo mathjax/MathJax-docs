@@ -10,10 +10,11 @@ material.  See the :ref:`tex-differences` section for how text-mode is
 handled without this extension.
 
 This extension is not loaded automatically, and can't be loaded via
-the `autoload` extension.  To load the `textmacros` extension, add
-``'[tex]/textmacros'`` to the ``load`` array of the ``loader`` block
-of your MathJax configuration, and add ``'textmacros'`` to the
-``packages`` array of the ``tex`` block.
+the :ref:`tex-autoload` extension.  To load the `textmacros`
+extension, add ``'[tex]/textmacros'`` to the :data:`load` array of the
+:data:`loader` block of your MathJax configuration, and add
+``'textmacros'`` to the :data:`packages` array of the :data:`tex`
+block.
 
 .. code-block:: javascript
 
@@ -23,17 +24,19 @@ of your MathJax configuration, and add ``'textmacros'`` to the
    };
 
 Alternatively, use ``\require{textmacros}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
-package is loaded.
+dynamically from within the math on the page, if the :ref:`tex-require`
+extension is loaded.
 
 Available Macros:
 =================
 
 The macros available in text mode with this extension are listed
 below.  In addition, any macro that is defined via ``\def`` or
-``\newcommand`` or in the ``macros`` section of the ``tex``
+``\newcommand`` or in the :data:`macros` section of the :data:`tex`
 configuration block will also be processed if they only contain macros
-from the list below.
+from the list below.  Some extensions (e.g., the :ref:`tex-bboldx` and
+:ref:`tex-textcomp` packages) add more macros to this list when they
+are loaded.
 
 .. raw:: html
 
@@ -101,7 +104,11 @@ Text Accents
 
    * - ``\'``
      - acute accent
+   * - ``\’``
+     - acute accent
    * - ``\```
+     - grave accent
+   * - ``\‘``
      - grave accent
    * - ``\^``
      - circumflex accent
@@ -117,6 +124,8 @@ Text Accents
      - breve accent
    * - ``\v``
      - caron accent
+   * - ``\underline``
+     - underlined text
 
 
 Font Control
@@ -128,6 +137,8 @@ Font Control
      - emphasized text
    * - ``\rm``
      - roman text
+   * - ``\mit``
+     - math italic text
    * - ``\oldstyle``
      - oldstyle numerals
    * - ``\cal``
@@ -136,16 +147,18 @@ Font Control
      - italic text
    * - ``\bf``
      - bold text
-   * - ``\scr``
-     - script text
-   * - ``\frak``
-     - Fraktur text
    * - ``\sf``
      - sans-serif text
    * - ``\tt``
      - typewriter text
+   * - ``\frak``
+     - Fraktur text
    * - ``\Bbb``
      - blackboard-bold text
+   * - ``\textnormal``
+     - normal text
+   * - ``\textup``
+     - upright text
    * - ``\textrm``
      - roman text
    * - ``\textit``
@@ -166,7 +179,7 @@ Size Control
    * - ``\tiny``
      - very tiny size
    * - ``\Tiny``
-     - tiny size
+     - tiny size (non-standard)
    * - ``\scriptsize``
      - size of super- and subscripts
    * - ``\small``
@@ -196,6 +209,12 @@ Special Characters
      - ‡
    * - ``\S``
      - §
+   * - ``\AA``
+     - Å
+   * - ``\ldots``
+     - ellipses
+   * - ``\vdots``
+     - three vertical dots
 
 
 Spacing Commands
@@ -229,12 +248,14 @@ Spacing Commands
      - horizontal space (of a given size)
    * - ``\kern``
      - kern (by a given size)
+   * - ``\mspace``
+     - horizontal space (of a given size)    
    * - ``\rule``
      - line of a given width and height
    * - ``\Rule``
-     - box with given dimensions
+     - box with given dimensions (non-standard)
    * - ``\Space``
-     - space with given dimensions
+     - space with given dimensions (non-standard)
 
 
 Color Commands
@@ -263,10 +284,25 @@ HTML Commands
      - specify CSS styles
    * - ``\class``
      - specify CSS class
+   * - ``\data``
+     - specify data attribute
    * - ``\cssId``
      - specify CSS id
+
+
+Character Creation
+------------------
+
+.. list-table::
+
+   * - ``\char``
+     - character from unicode value
+   * - ``\U``
+     - character from unicode value
    * - ``\unicode``
      - character from unicode value
+   * - ``\mmlToken``
+     - create MathML token element
 
 
 Equation Numbers
@@ -279,6 +315,25 @@ Equation Numbers
    * - ``\eqref``
      -  cite a labeled equation with parentheses
 
+
+Bounding Box Macros
+-------------------
+
+.. list-table::
+
+   * - ``\llap``
+     - overlap on the left
+   * - ``\rlap``
+     - overlap on the right
+   * - ``\phantom``
+     - empty space of the size of given math
+   * - ``\vphantom``
+     - 0-width box with height of given math
+   * - ``\vphantom``
+     - 0-height box with width of given math
+   * - ``\smash``
+     - math with zero height and depth
+
 -----
 
 Additional Packages
@@ -286,15 +341,16 @@ Additional Packages
 
 You can configure the `textmacros` extension to use additional
 packages, just as you can specify additional math TeX packages.
-Normally, these should be pckages designed for text mode, but it is
-possible to load some of the regular TeX packages as text macros.  For example
+Normally, these should be packages designed for text mode, but it is
+possible to load some of the regular TeX packages as text macros.  For
+example
 
 .. code:: javascript
 
    MathJax = {
      loader: {load: ['[tex]/textmacros', '[tex]/bbox']},
      tex: {
-       packages: {'[+]': {'textmacros'}},
+       packages: {'[+]': ['textmacros', 'bbox']},
        textmacros: {
          packages: {'[+]': ['bbox']}
        }
@@ -305,5 +361,6 @@ would make the :ref:`tex-bbox` extension available in text mode, so
 you could use ``\bbox`` inside ``\text{}``, for example.  Not all
 math-mode extensions are appropriate for textmode, but some can be
 usefully employed in text mode.
+
 
 |-----|

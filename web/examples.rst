@@ -19,6 +19,8 @@ In addition, there are examples within this documentation:
 * :ref:`Updating previously typeset content <typeset-clear>`
 * :ref:`Looking up the math on the page <get-math-items>`
 * :ref:`Loading MathJax only on pages with math <load-for-math>`
+* :ref:`Configuring TeX Macros at Startup <tex-startup-macros>`
+* :ref:`Running TeX Code at Startup <tex-ready-macros>`
 
 ..
 

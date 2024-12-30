@@ -4,21 +4,32 @@
 autoload
 ########
 
-The `autoload` extension predefines all the macros from the extensions
+The `autoload` extension predefines macros from some of the extensions
 that haven't been loaded already so that they automatically load the
-needed extension when they are first used, with the exception of the
-:ref:`tex-physics` package, since it redefines standard macros, and
-the :ref:`tex-ams` package, due to the large number of macros it contains.
+needed extension when the macro is first used.  Some exceptions are
+the :ref:`tex-physics` package, since it redefines standard macros,
+and the :ref:`tex-ams` package, due to the large number of macros it
+contains, and the fact that it is already included in most of the
+combined components.
+
+.. warning::
+
+   Because the number of available macros is growing, new TeX
+   extensions are not being added to `autoload` as they are developed,
+   and the `autoload` extension may be phased out in the future.
+   Extensions that are **not** auto-loaded include: `ams`, `bbm`,
+   `bboldx`, `cases`, `centernot`, `colortbl`, `dsfont`, `empheq`,
+   `mathtools`, `physics`, `require`, `setoptions`, `textcomp`,
+   `textmacros`, `units`, and `upgreek`.
 
 The `autoload` extension is loaded in all the components that include
 the TeX input jax, other than ``input/tex-base``.  That means that the
-TeX input jax essentially has access to all the extensions, even if
-they aren't loaded initially, and you should never have to use
-``\require`` or load other extensions (except `physics`) explicitly
-unless you want to.
+TeX input jax has access to many of the TeX extensions, even if they
+aren't loaded initially, and you should rarely have to use
+``\require`` or load other extensions explicitly unless you want to.
 
 You can control which extensions `autoload` will load using the
-``autoload`` object in the ``tex`` block of your MathJax
+:data:`autoload` object in the :data:`tex` block of your MathJax
 configuration.  This object contains `key: value` pairs where the
 `key` is the name of an extension, and `value` is an array listing the
 macro names that cause that extension to be loaded.  If environments
@@ -56,13 +67,13 @@ array.  E.g.,
      }
    };
 
-says that the `verb` extension will not be autoloaded.
+says that the :ref:`tex-verb` extension will not be autoloaded.
 
 .. note::
    
    The `autoload` extension defines ``\color`` to be the one from the
    :ref:`tex-color` extension (the LaTeX-compatible one rather than
-   the non-standard MathJax version).  If you wish to use the
+   the non-standard MathJax v2 version).  If you wish to use the
    non-standard version-2 ``\color`` macro from the :ref:`tex-colorv2`
    extension instead, use the following:
 
@@ -77,13 +88,12 @@ says that the `verb` extension will not be autoloaded.
         }
       };
 
-
-This extension is already loaded in all the components that
+The `autoload` extension is already loaded in all the components that
 include the TeX input jax, other than ``input/tex-base``.  To load the
 `autoload` extension explicitly (when using ``input/tex-base`` for
-example), add ``'[tex]/autoload'`` to the ``load`` array of the
-``loader`` block of your MathJax configuration, and add
-``'autoload'`` to the ``packages`` array of the ``tex`` block.
+example), add ``'[tex]/autoload'`` to the :data:`load` array of the
+:data:`loader` block of your MathJax configuration, and add
+``'autoload'`` to the :data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -92,10 +102,10 @@ example), add ``'[tex]/autoload'`` to the ``load`` array of the
      tex: {packages: {'[+]': ['autoload']}}
    };
 
-Since the `autoload` extension is included in the combined
-components that contain the TeX input jax, it will already be in
-the package list.  In that case, if you want to disable it, you can
-remove it:
+Since the `autoload` extension is included in the combined components
+that contain the TeX input jax, it will already be in the package list
+for those components.  In that case, if you want to disable it, you
+can remove it:
 
 .. code-block:: javascript
 
@@ -110,8 +120,8 @@ remove it:
 autoload Options
 ----------------
 
-Adding the `autoload` extension to the ``packages`` array defines an
-``autoload`` sub-block to the ``tex`` configuration block.  This block
+Adding the `autoload` extension to the :data:`packages` array defines an
+:data:`autoload` sub-block to the :data:`tex` configuration block.  This block
 contains `key: value` pairs where the `key` is a TeX package name, and
 the `value` is an array of macros that cause that package to be loaded,
 or an array consisting of two arrays, the first giving names of macros
@@ -129,23 +139,48 @@ The default autoload definitions are the following:
          amscd: [[], ['CD']],
          bbox: ['bbox'],
          boldsymbol: ['boldsymbol'],
-         braket: ['bra', 'ket', 'braket', 'set', 'Bra', 'Ket', 'Braket', 'Set', 'ketbra', 'Ketbra'],
+         braket: [
+           'bra',
+           'ket',
+           'braket',
+           'set',
+           'Bra',
+           'Ket',
+           'Braket',
+           'Set',
+           'ketbra',
+           'Ketbra',
+         ],
+         bussproofs: [[], ['prooftree']],
          cancel: ['cancel', 'bcancel', 'xcancel', 'cancelto'],
          color: ['color', 'definecolor', 'textcolor', 'colorbox', 'fcolorbox'],
          enclose: ['enclose'],
-         extpfeil: ['xtwoheadrightarrow', 'xtwoheadleftarrow', 'xmapsto',
-                    'xlongequal', 'xtofrom', 'Newextarrow'],
-         html: ['href', 'class', 'style', 'cssId'],
+         extpfeil: [
+           'xtwoheadrightarrow',
+           'xtwoheadleftarrow',
+           'xmapsto',
+           'xlongequal',
+           'xtofrom',
+           'Newextarrow',
+         ],
+         html: ['data', 'href', 'class', 'style', 'cssId'],
          mhchem: ['ce', 'pu'],
-         newcommand: ['newcommand', 'renewcommand', 'newenvironment', 'renewenvironment', 'def', 'let'],
-         unicode: ['unicode'],
-         verb: ['verb']
+         newcommand: [
+           'newcommand',
+           'renewcommand',
+           'newenvironment',
+           'renewenvironment',
+           'def',
+           'let',
+         ],
+         unicode: ['unicode', 'U', 'char'],
+         verb: ['verb'],
        }
      }
    };
 
 To prevent an extension from autoloading, set its value to an empty
-array.  E.g., to not autoload the `color` extension, use
+array.  E.g., to not autoload the :ref:`tex-color` extension, use
 
 .. code-block:: javascript
 
