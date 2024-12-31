@@ -79,7 +79,7 @@ mhchem Commands
 ---------------
 
 The `mhchem` extension implements the following macros:
-``\ce``, ``\longleftrightarrows``, ``\longLeftrightharpoons``, ``\longrightleftharpoons``, ``\longRightleftharpoons``, ``\pu``, ``\tripledash``, ``\xleftarrow``, ``\xleftrightarrow``, ``\xLeftrightharpoons``, ``\xrightarrow``, ``\xrightleftharpoons``, ``\xRightleftharpoons``
+``\ce``, ``\longleftrightarrows``, ``\longLeftrightharpoons``, ``\longrightleftharpoons``, ``\longRightleftharpoons``, ``\pu``, ``\tripledash``, ``\xleftrightarrow``, ``\xLeftrightharpoons``, ``\xrightleftharpoons``, ``\xRightleftharpoons``
 
 
 |-----|
