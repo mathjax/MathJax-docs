@@ -55,7 +55,7 @@ columns more natural.
       <html>
       <head>
       <title>MathJax Line-breaking Examples</title>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
       </head>
       <body>
       \begin{align}
@@ -289,7 +289,7 @@ by 2em, when used in a context where line-breaking is in effect.
       <html>
       <head>
       <title>MathJax Line-breaking Examples</title>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
       </head>
       <body>
       \begin{indentalign}[0em][2em]{l}
@@ -330,7 +330,7 @@ align on its bottom line.
       <html>
       <head>
       <title>MathJax Line-breaking Examples</title>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/mml-chtml.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/mml-chtml.js"></script>
       </head>
       <body>
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
@@ -447,7 +447,7 @@ several right-aligned lines.
       <html>
       <head>
       <title>MathJax Line-breaking Examples</title>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/mml-chtml.js"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/mml-chtml.js"></script>
       </head>
       <body>
         <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
