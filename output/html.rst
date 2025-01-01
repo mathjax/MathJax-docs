@@ -17,10 +17,10 @@ and ``NativeMML`` processors produced different output for different
 browsers and user environments.)
 
 The CommonHTML output uses web-based fonts so that users don't have to
-have math fonts installed on their computers, but will use locally
-installed ones if they are available. It currently only supports
-MathJax's default TeX fonts (see the :ref:`font-support` section for
-more information).
+have math fonts installed on their computers. Version 3 only supports
+MathJax's limited TeX fonts, but version 4 introduces almost a dozen
+addition font options.  See the :ref:`font-support` section for more
+information on what fonts are available and how to select them.
 
 See :ref:`chtml-options` for information about the options that
 control the CommonHTML output.

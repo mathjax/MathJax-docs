@@ -8,11 +8,19 @@ Extensive browser support is an important goal for MathJax; at the
 same time, MathJax does require a certain minimum level of browser
 functionality.  While MathJax version 2 went to great lengths to
 remain compatible with early versions of most browsers (even back to
-IE6), MathJax version 3 relies on more modern browser features, and so
-older browsers are no longer supported.
+IE6), MathJax version 3 and above relies on more modern browser
+features, and so older browsers are no longer supported.
 
 The CommonHTML and SVG output supports all modern browsers (Chrome, Safari,
 Firefox, Edge), and most mobile browsers.
+
+.. warning::
+
+   While MathJax v3 still supported Internet Explorer version 11,
+   MathJax v4 no longer supports any version of Internet Explorer.
+   While IE may be able to handle some MathJax expressions, we no
+   longer do any testing in IE, and make no accommodations to get
+   MathJax to work with IE.
 
 Please `file issues on GitHub
 <https://github.com/mathjax/MathJax/issues>`__ if you notice
@@ -33,39 +41,13 @@ webpage is displayed on a mobile device.
 
 Incorrect or missing viewport information can confuse MathJax's layout
 process, leading to very small font sizes. We recommend that you use
-standard values such as the following:
+standard values such as the following
 
 .. code-block:: html
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+at the top of the ``<head>`` section of your HTML pages.
 
-.. _ie-emulation-modes:
-
-Internet Explorer Emulation modes
-=================================
-
-Internet Explorer provides so-called emulation modes for backward
-compatibility to its legacy versions. These emulation modes have been
-deprecated since Internet Explorer 11, cf. `Microsoft documentation
-<https://msdn.microsoft.com/en-us/library/jj676915.aspx>`_.
-
-MathJax is fastest when in the standards mode of each IE version, so
-it is best to force the highest mode possible. That can be
-accomplished by adding
-
-.. code-block:: html
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-at the top of the ``<head>`` section of your HTML documents.
-
-.. note::
-
-  This line must come at the beginning of the ``<head>``, before
-  any stylesheets, scripts, or other content are loaded.
-
-Note that versions of IE prior to 11 are no longer supported in
-MathJax version 3.
 
 |-----|
