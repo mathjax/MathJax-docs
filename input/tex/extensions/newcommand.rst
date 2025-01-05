@@ -38,7 +38,7 @@ Alternatively, use ``\require{newcommand}`` in a TeX expression to load it
 dynamically from within the math on the page, if the `require`
 package is loaded.
 
-Since the `nnewcommand` extension is included in the combined
+Since the `newcommand` extension is included in the combined
 components that contain the TeX input jax, it may already be in
 the package list.  In that case, if you want to disable it, you can
 remove it:
