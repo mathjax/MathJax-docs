@@ -353,14 +353,7 @@ The following terms were discussed above:
 .. js:attribute:: MathJax.startup.promise
 
                   A promise that resolves when MathJax completes its
-                  initially typesetting.  If you use the
-                  :js:meth:`MathJax.typesetPromise()` function, or any
-                  of the promise-based conversion functions, they wait
-                  for this promise to resolve before performing their
-                  action, and then set this promise to one that
-                  resolves when their typesetting or conversion action
-                  is complete.
-
+                  initially typesetting.
 
 
 |-----|

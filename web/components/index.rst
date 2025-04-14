@@ -11,18 +11,17 @@ common code so that you don't download the same thing more than once,
 while still making it possible to only download the parts that you
 need.  There are individual components for the various input and
 output processors in MathJax, for the individual TeX extensions, for
-the contextual menu, for the various font selections, and for other
-specialized pieces, such as the MathJax contextual menu and the
-assistive technology support.  These can be mixed and matched in
-whatever combinations you need.
+the various font selections, and for other specialized pieces, such as
+the MathJax contextual menu and the assistive technology support.
+These can be mixed and matched in whatever combinations you need.
 
 There are some obvious combinations of components; for example, TeX
 input together with SVG output, or MathML input with CommonHTML
 output.  MathJax provides a number of these common combinations as
-complete packages that contain everything you need to run mathjax in
-your page in a single file, though you can also configure additional
-extensions to be loaded as well, and MathJax may autoload other
-components when they are needed.
+complete packages that contain almost everything you need to run
+mathjax in your page in a single file, though you can also configure
+additional extensions to be loaded as well, and MathJax may autoload
+other components when they are needed.
 
 .. note::
 

@@ -36,7 +36,7 @@ To include MathJax in your project, use the command
 This will install MathJax in ``node_modules/mathjax`` subdirectory of
 your current directory.
 
-If you need access to the source code, as well.  Then use
+If you need access to the source code, as well, then instead use
 
 .. code-block:: shell
 
@@ -73,17 +73,17 @@ command
 This will install a copy of MathJax in the ``mathjax`` directory.
 
 If you need access to the source code as well as the webpacked
-components, then use
+components, then instead use
 
 .. code-block:: shell
 
    git clone https://github.com/mathjax/MathJax-src.git mathjax
 
-which will install the source code for MathJax in the
-``mathjax`` sub-directory of your current directory.  You will need to
-compile the typescript source files and build the component files by
-hand, as they are not part of the repository itself.  To do this, do
-the following:
+which will install the source code for MathJax in the ``mathjax``
+sub-directory of your current directory.  In this case, you will need
+to compile the typescript source files and build the component files
+by hand, as they are not part of the repository itself.  To do this,
+do the following:
 
 .. code-block:: shell
 
@@ -135,8 +135,8 @@ to build just the ``cjs`` versions.
 
 .. _serve-files:
 
-Make the Files Available
-========================
+Making the Files Available
+==========================
 
 Once you have acquired the MathJax files by one of the methods
 described above, you need to make the proper files available on your

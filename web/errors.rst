@@ -18,13 +18,12 @@ When the TeX input jax encounters a syntax error or other problem with
 the TeX code that it is typesetting, it usually replaces the TeX with
 an error message (in red on a yellow background) to inform you of the
 problem.  The :ref:`tex-noundefined` and :ref:`tex-noerrors`
-extensions modify that behavior, however.  The first prevents error
-messages when an undefined macro is used (it displays the undefined
-macro name in red as an indication of the problem), while the second
-prevents error messages entirely, and simply displays the original TeX
-code inside an outline box.  Note that the :ref:`tex-noundefined`
-extension is included in the :ref:`combined components
-<combined-components>`.
+extensions modify that behavior.  The first prevents error messages
+when an undefined macro is used (it displays the undefined macro name
+in red as an indication of the problem), while the second prevents
+error messages entirely, and simply displays the original TeX code
+inside an outline box.  Note that the :ref:`tex-noundefined` extension
+is included in the :ref:`combined components <combined-components>`.
 
 .. _tex-parse-errors:
 
@@ -76,9 +75,9 @@ formatting the error.  Alternatively, you could use
    MathJax = {
      tex: {
        formatError(jax, error) {
-         const node = jax.parseOptions.nodeFactory.create('error', 'Error!');
-         node.attributes.set('title', error.message);
-         return node;
+         const factory = jax.parseOptions.nodeFactory;
+         const text = factory.create('token', 'mtext', {}, 'Error!');
+         return factory.create('node', 'merror', [mtext], {title: error.message});
        }
      }
    }
@@ -292,6 +291,22 @@ typesetting errors.
                          failed to process.
    :param Error error: The Error object containing the error message
                        for the problem that occurred.
+
+For example
+
+.. code-block:: javascript
+
+   MathJax = {
+     options: {
+       typesetError(document, math, error) {
+         console.log(`Error: "${error.message}" in`, '\n', math.math);
+         document.typesetError(math, error);
+       }
+     }
+   }
+
+will print the error message and offending TeX or MathML string to the
+console, and then call the default ``typesetError()`` function.
 
 
 |-----|

@@ -10,6 +10,8 @@ convert it into another form (either MathML, or one of the output
 formats that MathJax supports).  This was difficult to do in MathJax
 version 2, but easy to do in current versions of MathJax.
 
+(add something about inserting the math into the document's math list)
+
 -----
 
 .. _conversion-methods:
@@ -19,9 +21,8 @@ Conversion Methods
 
 When MathJax starts up, it creates methods for converting from the
 input format(s) to the output format(s) that you have loaded, and to
-MathML format.  Depending on the input and output formats that you
-have loaded, you will get the corresponding functions from the list
-below:
+MathML format.  Based on those input and output formats, you will get
+the corresponding functions from the list below:
 
 .. js:function:: MathJax.tex2chtml(math[,options])
                  MathJax.tex2chtmlPromise(math[,options])
@@ -51,9 +52,9 @@ below:
             string, or a promise that returns one of these and that is
             resolved when the result is ready.
 
-For example, if you have loaded the MathML input jax
-and the SVG output jax (say by using the ``mml-svg`` component), then
-MathJax will create the methods above that involve ``mathml`` and ``svg``.
+For example, if you have loaded the MathML input jax and the SVG
+output jax (say by using the ``mml-svg`` component), then MathJax will
+create the methods above that involve both ``mathml`` and ``svg``.
 
 The functions with names containing ``chtml`` or ``svg`` produce DOM
 elements as the results of the conversion, with the promise version
@@ -70,6 +71,21 @@ Note that you may need to run
 
 in order to update the CSS needed for the output, especially for CHTML
 output.
+
+.. warning::
+   
+   If you do insert the result of a conversion function into the page,
+   note that it will not have the MathJax contextual menu attached,
+   and it will not become part of the list of math expressions that
+   MathJax knows about in the page.  That means that it will not be
+   updated if a user changes menu settings that would require the math
+   to be rerendered (e.g., if the renderer is changed, or if assistive
+   settings like whether to use Braille output are changed).  For
+   these reasons, it is better to insert the original math string into
+   the page and use :js:meth:`MathJax.typeset()` or
+   :js:meth:`MathJax.typesetPromise()` to typeset the contents of the
+   DOM element containing the math rather than convert it by hand and
+   then inserting the result into the page.
 
 The functions that convert to MathML produce serialized MathML strings
 automatically, rather than DOM elements.  You can use the browser's
@@ -92,26 +108,25 @@ synchronously and return the converted form immediately.
 
 .. warning::
 
-   In version 4, the promise-based conversion functions wait for
-   :js:data:`MathJax.startup.promise` before performing the
-   conversion, and reset this value to the promise these conversion
-   functions create.  The version 3 documentation recommended using
-   and setting :js:data:`MathJax.startup.promise` yourself to make
-   sure typeset calls were serialized; if you included that code
-   pattern in your v3 work-flow, you should remove it, otherwise you
-   will likely cause a circular dependency where the typesetting will
-   wait for the promise to be resolved, but it can't resolve until the
-   typesetting completes.
+   In version 4, the promise-based conversion functions wait for any
+   previously pending typeset or conversion operations to complete
+   before performing their own conversion.  The version 3
+   documentation recommended using and setting
+   :js:data:`MathJax.startup.promise` to make sure typeset calls were
+   serialized; if you included that code pattern in your v3 work-flow,
+   you should remove it, as that is now being handled by the
+   conversion functions internally.
 
 Note that the synchronous functions only work if the math you typeset
 doesn't require MathJax to load any extensions or data files (e.g.,
 TeX input that uses ``\require`` or macros that are autoloaded from an
-extension).  If a file needs to be loaded, MathJax with throw a
-``retry`` error, which will prevent the conversion from completing.
-In that case, you should either switch to the promise-based versions
-of the conversion function you are using, or preload the needed
-component or data files.  See the :ref:`retry-error` section for more
-details.
+extension, or output that requires additional font data to be
+obtained).  If a file needs to be loaded, MathJax with throw a
+``MathJax retry`` error, which will prevent the conversion from
+completing.  In that case, you should either switch to the
+promise-based versions of the conversion function you are using, or
+preload the needed component or data files.  See the
+:ref:`retry-error` section for more details.
 
 .. warning::
 
@@ -123,8 +138,7 @@ details.
    need to operate asynchronously even if the TeX *doesn't* include
    ``\require`` or any auto-loaded extensions, as the output itself
    could need extra font data files to be loaded.  Thus in version 4,
-   it is always best to use the promise-based command, described
-   below.
+   it is always best to use the promise-based commands.
 
 -----
 
@@ -157,7 +171,8 @@ included are:
   resulting conversion.  Default is 1.
 * :attr:`family`, a font family name to be used for ``mtext`` and
   ``merror`` elements when their fonts are set to be inherited (via
-  the :attr:`mtextInheritFont` or :attr:`merrorInheritFont`).
+  the :attr:`mtextInheritFont` or :attr:`merrorInheritFont`
+  configuration options).
 
 For example,
 
@@ -184,11 +199,11 @@ sets :data:`text` to be the serialized HTML string for the expression.
 Obtaining the Output Metrics
 ============================
 
-Since the :attr:`em`, :attr:`ex`, and :attr:`containerWidth` all
-depend on the location where the math will be placed in the document
-(they are values based on the surrounding text font and the container
-elements width), MathJax provides a method for obtaining these values
-from a given DOM element.
+Since the :attr:`em`, :attr:`ex`, :attr:`containerWidth`, and
+:attr:`family` properties all depend on the location where the math
+will be placed in the document (they are values based on the
+surrounding text font and the container element's width), MathJax
+provides a method for obtaining these values from a given DOM element.
 
 .. js:function:: MathJax.getMetricsFor(node, display)
 
@@ -210,6 +225,8 @@ do something like
    let options = MathJax.getMetricsFor(node, true);
    let html = MathJax.tex2svg('\\sqrt{x^2+1}', options);
    node.appendChild(html);
+   MathJax.startup.document.reset();
+   MathJax.startup.document.updateDocument();
 
 in order to get the correct metrics for the (eventual) location of the
 math that is being converted.  Of course, it would be easier to simply
@@ -277,9 +294,10 @@ Creating Stand-Alone SVG Images
 
 If you are using the SVG output jax to produce stand-alone SVG files,
 then you should set the ``fontCache`` value in the ``svg`` section of
-your MathJax configuration to be ``local``.  If set to ``global``,
-then there will be a common global cache created for all the character
-paths used in the expressions you typeset.  To clear that cache, use
+your MathJax configuration to be ``local`` or ``none``.  If set to
+``global``, then there will be a common global cache created for all
+the character paths used in the expressions you typeset.  To clear
+that cache, use
 
 .. js:function::  MathJax.startup.output.clearFontCache()
 

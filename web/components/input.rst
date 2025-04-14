@@ -30,17 +30,17 @@ several possible trade-offs between file size and feature
 completeness.  See the :ref:`tex-input` section for details about the
 TeX input processor.
 
-When you include one of the TeX input components, MathJax will define
-functions to convert TeX strings into the output format that has been
-loaded and into the MathML format.  See the :ref:`convert-math`
-section for details.
-
 .. note::
 
    As the number of TeX extensions available in MathJax has grown, and
    with the availability of third-party extensions, it is impractical
    to include all of them in one components.  Thus the
    `input/tex-full` extension has been dropped from version 4.
+
+When you include one of the TeX input components, MathJax will define
+functions to convert TeX strings into the output format that has been
+loaded and into the MathML format.  See the :ref:`convert-math`
+section for details.
 
 
 input/tex

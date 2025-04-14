@@ -104,7 +104,8 @@ ui/menu
 The `ui/menu` component implements the MathJax contextual menu, which
 allows you to obtain the MathML or original format of the mathematics,
 change parameters about the output renderer, control accessibility
-features, and so on.
+features, and so on.  The menu extension is included in all the
+combined components provided by MathJax.
 
 See the :ref:`menu-options` section for information about
 configuring this component.
@@ -121,6 +122,9 @@ The `adaptors/liteDOM` component implements an alternative to the
 browser DOM that can be used to parse HTML pages outside of a
 browser.  This can be used in Node applications that don't have access
 to a browser DOM, or in webworkers that can't access the document DOM.
+
+See the :ref:`node-DOM-adaptor` section for more information about DOM
+adaptors in MathJax.
 
 -----
 

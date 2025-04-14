@@ -24,10 +24,11 @@ described below:
 * :ref:`mml-svg-nofont-component`
 
 The combined components include everything needed to run MathJax in
-your web pages.  Each includes at least one input processor, an output
-processor, the data needed for the mathjax-newcm font, the contextual
-menu code, the assistive tools, and the :ref:`startup-component`
-component.
+your web pages (though some TeX extensions and additional font data
+may be loaded dynamically as needed).  Each includes at least one
+input processor, an output processor, the basic data needed for the
+mathjax-newcm font, the contextual menu code, the assistive tools, and
+the :ref:`startup-component` component.
 
 Unlike the other components, these combined components should be
 loaded directly via a ``<script>`` tag, not through the
@@ -59,12 +60,13 @@ to load the `tex-chtml` component, for example.
 tex-chtml
 =========
 
-The `tex-chtml` component loads the :ref:`input/tex <tex-component>`
-component and the :ref:`output/chtml <chtml-component>` configured to
-use the ``mathjax-newcm`` font, along with the contextual menu
-component, the assistive tools, and the startup component.
+The `tex-chtml` component includes the :ref:`input/tex <tex-component>`
+component and the :ref:`output/chtml <chtml-component>` component
+configured to use the ``mathjax-newcm`` font, along with the
+contextual menu component, the assistive tools, and the startup
+component.
 
-The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
+The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
 :ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
@@ -78,12 +80,13 @@ will be loaded automatically when needed, or you can use the
 tex-svg
 =======
 
-The `tex-svg` component loads the :ref:`input/tex <tex-component>`
-component and the :ref:`output/svg <svg-component>` configured to use
-the ``mathjax-newcm`` font, along with the contextual menu component,
-the assistive tools, and the startup component.
+The `tex-svg` component includes the :ref:`input/tex <tex-component>`
+component and the :ref:`output/svg <svg-component>` component
+configured to use the ``mathjax-newcm`` font, along with the
+contextual menu component, the assistive tools, and the startup
+component.
 
-The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
+The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
 :ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
@@ -97,13 +100,13 @@ will be loaded automatically when needed, or you can use the
 tex-mml-chtml
 =============
 
-The `tex-mml-chtml` component loads the :ref:`input/tex
+The `tex-mml-chtml` component includes the :ref:`input/tex
 <tex-component>` and :ref:`mathml-component` components and the
-:ref:`output/chtml <chtml-component>` configured to use the
+:ref:`output/chtml <chtml-component>` component configured to use the
 ``mathjax-newcm`` font, along with the contextual menu component, the
 assistive tools, and the startup component.
 
-The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
+The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
 :ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
@@ -117,13 +120,13 @@ will be loaded automatically when needed, or you can use the
 tex-mml-svg
 ===========
 
-The `tex-mml-svg` component loads the :ref:`input/tex <tex-component>`
+The `tex-mml-svg` component includes the :ref:`input/tex <tex-component>`
 and :ref:`mathml-component` components and the :ref:`output/svg
-<svg-component>` configured to use the ``mathjax-newcm`` font, along
-with the contextual menu component, the assistive tools, and the
-startup component.
+<svg-component>` component configured to use the ``mathjax-newcm``
+font, along with the contextual menu component, the assistive tools,
+and the startup component.
 
-The `input/tex` component loads the :ref:`tex-ams`, :ref:`tex-newcommand`,
+The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
 :ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
 :ref:`tex-noundefined` extensions, which means that most other extensions
 will be loaded automatically when needed, or you can use the
@@ -137,10 +140,10 @@ will be loaded automatically when needed, or you can use the
 mml-chtml
 =========
 
-The `mml-chtml` component loads the :ref:`mathml-component` component
-and the :ref:`output/chtml <chtml-component>` configured to use the
-``mathjax-newcm`` font, along with the contextual menu component, the
-assistive tools, and the startup component.
+The `mml-chtml` component includes the :ref:`mathml-component` component
+and the :ref:`output/chtml <chtml-component>` component configured to
+use the ``mathjax-newcm`` font, along with the contextual menu
+component, the assistive tools, and the startup component.
 
 -----
 
@@ -150,8 +153,8 @@ assistive tools, and the startup component.
 mml-svg
 =======
 
-The `mml-svg` component loads the :ref:`mathml-component` component
-and the :ref:`output/svg <svg-component>` configured to use the
+The `mml-svg` component includes the :ref:`mathml-component` component
+and the :ref:`output/svg <svg-component>` component configured to use the
 ``mathjax-newcm`` font, along with the contextual menu component, the
 assistive tools, and the startup component.
 

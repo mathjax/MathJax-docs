@@ -4,10 +4,11 @@
 Accessibility Components
 ########################
 
-Currently, there are three components designed specifically to support
+Currently, there are five components designed specifically to support
 assistive technology.
 
 * :ref:`semantic-enrich-component`
+* :ref:`speech-component`
 * :ref:`explorer-component`
 * :ref:`complexity-component`
 * :ref:`assistive-mml-component`
@@ -28,13 +29,21 @@ configuration.  For example:
 
 to load the `semantic-enrich` extension.
 
-The `semantic-enrich` and `explorer` components are part of all the
-:ref:`combined components <combined-components>`, so if you are using
-one of the those, you don't need to load these assistive extensions
-yourself.
+The `semantic-enrich`, `speech`, and `explorer` components are part of
+all the :ref:`combined components <combined-components>`, so if you
+are using one of the those, you don't need to load these assistive
+extensions yourself.
 
-If you are using the `ui/menu` component (included in all the combined
-components), there are menu items that will cause these assistive
+.. note::
+
+   In v3, the `semantic-enrich` extension included both the semantic
+   enrichment and the speech generation features of MathJax.  In v4,
+   these functions are now accomplished by two distinct extensions,
+   with the speech functionality being split off into a separate
+   `speech` extension.
+
+If you are not using a combined component, by are using the `ui/menu`
+component, there are menu items that will cause these assistive
 extensions to be loaded dynamically, so you don't need to load them
 explicitly in that case.
 
@@ -58,14 +67,38 @@ explicitly in that case.
 a11y/semantic-enrich
 ====================
 
-The `semantic-enrich` component connects MathJax with the `Speech
+The `semantic-enrich` component connects MathJax with the `Speech Rule
+Engine <https://github.com/zorkow/speech-rule-engine>`_, which allows
+MathJax to analyze the mathematics that it processes and add
+attributes that represent the semantic structure of the mathematics.
+The underlying MathML for each expression may be modified to better
+represent that structure, improving line-breaking and speech
+generation for the mathematics produced by MathJax.
+
+See the :ref:`semantic-enrich-options` section for information about
+configuring this component.
+
+-----
+
+
+.. _speech-component:
+
+a11y/speech
+===========
+
+The `speech` component connects MathJax with the `Speech
 Rule Engine <https://github.com/zorkow/speech-rule-engine>`_, which
 allows MathJax to generate speech strings for the mathematics that it
 processes.  These can be attached to the output for use by screen
 readers, or for use with the :ref:`explorer-component` component
 described below.
 
-See the :ref:`semantic-enrich-options` section for information about
+The speech component uses web-workers to do the speech computations
+(which can be time-consuming) in a separate thread so that it doesn't
+interfere with the responsiveness of your web pageor slow down the
+display of the typeset math in your page.
+
+See the :ref:`speech-options` section for information about
 configuring this component.
 
 -----
@@ -78,9 +111,9 @@ a11y/explorer
 
 The `explorer` component allows readers to explore a mathematical
 expression interactively.  When an expression is focused by tabbing to
-it, a reader can "enter" the expression by pressing shift-space on the
-keyboard.  Clicking on a typeset expression will also enter the
-explorer at the character that is clicked.
+it, the expression can be explored usign the arrow keys, as described
+below.  Clicking on a typeset expression will also enter the explorer
+at the character that is clicked.
 
 Once the explorer is activated, the arrow keys move the reader through
 the expression: down moves to more detail by selecting the first
@@ -122,8 +155,8 @@ The `assistive-mml` component embeds visually hidden MathML alongside
 MathJax's visual rendering while hiding the visual rendering from
 assistive technology (AT) such as screenreaders. This allows most
 MathML-enabled screenreaders to read out the underlying
-mathematics. It's important to note that Presentation MathML is
-usually not expressive enough to voice the mathematics properly in all
+mathematics. It's important to note that Presentation MathML in not
+expressive enough to voice the mathematics properly in all
 circumstances, which is why screenreaders have to rely on heuristics
 to analyze the MathML semantically.  See the
 :ref:`screenreader-support` section for more details about screen
@@ -134,11 +167,13 @@ configuring this component.
 
 .. note::
 
-   In MathJax v2 and v2, the `assistive-mml` extension was loaded an
-   enabled by default.  In v4, however, the `explorer` component has
+   In MathJax v2 and v3, the `assistive-mml` extension was loaded an
+   enabled by default, but in v4, the `explorer` component has
    replaced it as the default assistive tool.  The explorer can be
-   disable, however, and the assistive MathML re-enabled using the
-   MathJax contexutal menu on any typeset expression.
+   disabled, however, and the assistive MathML re-enabled using the
+   MathJax contexutal menu on any typeset expression, and page
+   author's can override the defaults in their MatghJax configuration
+   objects, if they so desire.
 
 
 |-----|

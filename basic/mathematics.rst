@@ -348,7 +348,7 @@ Here is a complete sample page containing AsciiMath notation:
 
 Here we are loading the input and output components separately rather
 than using a combined configuration file.  Since the ``output/chtml``
-components does not have a font configured with it, we need to specify
+component does not have a font configured with it, we need to specify
 the font explicitly in the ``output`` section of the MathJax
 configuration.  It is also possible to load a combined component like
 :file:`tex-chtml.js` rather than :file:`startup.js` and include
