@@ -45,6 +45,9 @@ not be able to be auto-loaded, as those actions are asynchronous.
    could need extra font data files to be loaded.  Thus in version 4,
    it is always best to use the promise-based commands, when possible.
 
+   The eamples below show how to pre-load the needed font data so that
+   you can still work synchronously even with the larger v4 fonts.
+
 -----
 
 .. _preload-basics:
@@ -77,8 +80,8 @@ All the examples begin with the following lines:
    import {MathJax} from '@mathjax/src/js/components/global.js';
    import {insert} from '@mathjax/src/js/util/Options.js';
    import '@mathjax/src/js/components/startup.js';
-   import '@mathjax/src/components/cjs/core/core.js';
-   import '@mathjax/src/components/cjs/adaptors/liteDOM/liteDOM.js';
+   import '@mathjax/src/components/js/core/core.js';
+   import '@mathjax/src/components/js/adaptors/liteDOM/liteDOM.js';
 
 (or the equivalent using ``require()``).  The first line sets up the
 global :js:data:`MathJax` variable, handling any existing
@@ -100,10 +103,10 @@ Next we load the TeX components that we plan to use:
 
 .. code-block:: javascript
 
-   import '@mathjax/src/components/cjs/input/tex-base/tex-base.js';
-   import '@mathjax/src/components/cjs/input/tex/extensions/ams/ams.js';
-   import '@mathjax/src/components/cjs/input/tex/extensions/newcommand/newcommand.js';
-   import '@mathjax/src/components/cjs/input/tex/extensions/color/color.js';
+   import '@mathjax/src/components/js/input/tex-base/tex-base.js';
+   import '@mathjax/src/components/js/input/tex/extensions/ams/ams.js';
+   import '@mathjax/src/components/js/input/tex/extensions/newcommand/newcommand.js';
+   import '@mathjax/src/components/js/input/tex/extensions/color/color.js';
 
 In this case, we use the `tex-base` component, which only includes the
 `base` configuration, whereas the :ref:`tex-component` component
@@ -160,7 +163,8 @@ This is the outline that is illustrated in the examples below. They
 include variations on this theme that show how to handle fonts
 synchronously in several different ways.  There is also an example
 that handles speech generation, though that requires one asynchronous
-step.
+step, and only creates speech for the top-level element of the
+resulting expression.
 
 -----
 
@@ -169,8 +173,8 @@ step.
 Using the MathJax-TeX font
 ==========================
 
-This example uses the ``mathjax-tex`` font, which is the original font
-set used by MathJax v2 and v3.  Because this font has limited
+This example uses the ``mathjax-tex`` font, which is the original
+font-set used by MathJax v2 and v3.  Because this font has limited
 character coverage it is *not* broken into multiple pieces, so you
 don't have to worry about dynamically loaded font data, so preloading
 the TeX extensions is all you have to worry about in order to be able
@@ -243,7 +247,7 @@ Note that you will need to use ``npm`` or ``pnpm`` to install the
 Using the MathJax-NewCM font
 ============================
 
-This example uses the default fonr for MathJax v4, the
+This example uses the default font for MathJax v4, the
 ``mathjax-newcm`` font, which is based on the New Computer Modern
 font.  Because ``mathjax-newcm`` has extensive character coverage, it
 is broken into a number of separate files that are loaded dynamically
@@ -257,8 +261,12 @@ loads the calligraphic characters, but you could include additional
 ``import`` commands to load other ranges of characters.  These files
 can be found in the
 ``node_modules/@mathjax/mathjax-tex-font/mjs/chtml/dynamic``
-directory.  The ``mathjax-tex-font`` package should be installed
-automatically when you install the ``@mathjax/src`` npm package.
+directory.
+
+The ``mathjax-tex-font`` package should be installed automatically
+when you install the ``@mathjax/src`` npm package, so you shouldn't
+need to install it by hand, as you did for the ``mathjax-tex`` font in
+the previous example.
 
 The lines that are required for this that differ from the outline
 given above are highlighted below.
@@ -422,7 +430,7 @@ to know which ones you will need.  Note, however, that that can be a
 large number of files, with a large amount of data, much of which
 likely will never be used.  This can increase the startup time for
 your application, so you may want to use the techniqwue of
-individually loaded only the files you actually need.
+individually loading only the files you actually need.
 
 In an ES module, one could use
 
@@ -447,11 +455,11 @@ Loading All Font Data using Import
 In the previous example, we took advantage of ``require()`` to make
 the :js:meth:`loadDynamicFilesSync()` method available to load all the
 font data before processing any math.  Although ES modules (using
-``import`` and ``export``) don't have a ``require()``, it is possible
-to define one that can be used to load CommonJS modules.  MathJax
-provides a file that does that for you, so you don't need to know the
-details of how that works.  This is done in line 12 below, which is
-the only new line added to the CommonJS example above.
+``import`` and ``export``) don't have a ``require()`` command, it is
+possible to define one that can be used to load CommonJS modules.
+MathJax provides a file that does that for you, so you don't need to
+know the details of how that works.  This is done in line 12 below,
+which is the only new line added to the CommonJS example above.
 
 In order for this to work, you need to use the CommonJS versions of
 all the MathJax modules.  That is done by changing the ``js`` directory
@@ -550,27 +558,32 @@ operations, but once that one promise is resolved, you can work
 synchronously from there.
 
 Since SRE uses ``require()`` to load its dependencies when it is used
-in `node`, we include the :file:`components/require.mjs` file to make
+in node, we include the :file:`components/require.mjs` file to make
 that available from our ES module.
 
 Lines 7 through 13 are the import commands needed to load SRE and
 other needed modules.
 
-Lines 48 through 52 give the asynchronous code that must be used to
+Lines 47 through 68 define a function that adds a speech string to the
+root node of the internal MathML tree, and then adds a
+``renderAction`` to the document options that performs the
+:meth:`addSpeech()` action.  The ``aria-label`` attribute will be
+included in the DOM elements generated by MathJax later in the
+conversion step.
+
+Lines 70 through 75 give the asynchronous code that must be used to
 get SRE up and running before typesetting can be done synchronously.
-This waits for SRE to set itself up, passing it the directory where
-its map files are found, does the MathJax startup function, and then
-performs one asynchronous conversion, which allows SRE to initializes
-some internal structures.  Without this last step, the first
-expression that is typeset would require asynchronous handling (it
-would throw a `MathJax retry` error).
+This waits for SRE to set itself up, passing it the locale and
+modality needed for the languge specified as the second command-line
+argument to this script, then waits for SRE to be ready before startup
+up MathJax.
 
 You may need to use ``npm`` or ``pnpm`` to install the
 ``speech-rule-engine`` npm module, if it isn't already installed.
 
 .. code-block:: javascript
    :linenos:
-   :emphasize-lines: 7-13, 47-54
+   :emphasize-lines: 7-13, 47-68, 70-75
 
    import {MathJax} from '@mathjax/src/js/components/global.js';
    import {insert} from '@mathjax/src/js/util/Options.js';
@@ -579,12 +592,12 @@ You may need to use ``npm`` or ``pnpm`` to install the
    import '@mathjax/src/components/js/adaptors/liteDOM/liteDOM.js';
 
    //
-   // Load SRE code
+   // Load code for SRE
    //
-   import path from 'path';
    import '@mathjax/src/components/require.mjs';
    import '@mathjax/src/components/js/a11y/semantic-enrich/semantic-enrich.js';
-   import {setupEngine} from '@mathjax/src/js/a11y/sre.js';
+   import {setupEngine, sreReady, toSpeech} from '@mathjax/src/js/a11y/sre.js';
+   import {STATE} from '@mathjax/src/js/core/MathItem.js';
 
    //
    // Load the TeX components that we want to use
@@ -619,13 +632,39 @@ You may need to use ``npm`` or ``pnpm`` to install the
    }, false);
 
    //
-   // Start up SRE and MathJax, and do an initial typeset
-   //   so that SRE's GeneratorPool gets initialized.
+   // Add a speech string to the root math element
    //
-   await setupEngine({
-     json: path.dirname(require.resolve('speech-rule-engine/lib/mathmaps/base.json')),
-   }).then(() => MathJax.config.startup.ready())
-     .then(() => MathJax.tex2chtmlPromise(''));
+   function addSpeech(item) {
+     const speech = toSpeech(MathJax.startup.toMML(item.root));
+     item.root.attributes.set('aria-label', speech);
+   }
+
+   //
+   // Add a render action that computes the speech
+   //
+   insert(MathJax.config, {
+     options: {
+       renderActions: {
+         addSpeech: [
+           STATE.COMPILED + 10,
+           (doc) => {for (const item of doc.math) addSpeech(item)},
+           (item, doc) => addSpeech(item)
+         ]
+       }
+     }
+   }, false);
+
+   //
+   // Start up SRE
+   //
+   const locale = process.argv[3] || 'en';
+   const modality = locale === 'nemeth' || locale === 'euro' ? 'braille' : 'speech';
+   await setupEngine({modality, locale}).then(() => sreReady());
+   
+   //
+   // Start up MathJax
+   //
+   MathJax.config.startup.ready();
 
    //
    // Activate the dynamic font files
@@ -641,41 +680,16 @@ You may need to use ``npm`` or ``pnpm`` to install the
    const adaptor = MathJax.startup.adaptor;
    console.log(adaptor.outerHTML(MathJax.tex2chtml(math)));
 
-If you want to generate speech in a different languagae, or different
-Braille code, you can specify that in the :js:data:`sre` section of
-the :js:meth:`options` section of the MathJax configuration object.
-For example, you can change lines 41 through 45 to
-
-.. code-block:: javascript
-
-   insert(MathJax.config, {
-     tex: {
-       packages: {'[+]': ['ams', 'newcommand', 'color']}
-     },
-     options: {
-       sre: {
-         locale: 'de',
-         braille: 'euro'
-       }
-     }
-   }, false);
-
-to switch to German speech translations, with Euro-Braille output included.
-
-To disable speech or Braille output, add ``enableSpeech: false`` or
-``enableBraille: false`` to the :js:data:`options` section of the
-configuration.
-
-Finally, if you don't want to, or can't, use ``await``, you can add
-one more ``then()`` clause whose function starts up the main code for
-your application instead.
+If you don't want to, or can't, use ``await``, you can add one more
+``then()`` clause whose function starts up the main code for your
+application instead.
 
 
 -----
 
 More examples are available in the `MathJax node demos
 <https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__
-for using MathJax from a `node` application.  in particular, see the
+for using MathJax from a node application.  In particular, see the
 `preloading examples
 <https://github.com/mathjax/MathJax-demos-node/tree/master/preload#preloaded-component-examples>`__
 for illustrations of how to load MathJax components by hand in a

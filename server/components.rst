@@ -23,7 +23,8 @@ need to use promises or the ``await`` command to mediate the flow of
 your program, particularly program startup. Once MathJax's components
 are loaded, however, you can call the non-promise-based functions, but
 should use the promise-based ones if you want to support autoloading
-of extensions or the ``\require`` macro in TeX input.
+of extensions, the ``\require`` macro in TeX input, or the v4 fonts
+with larger character coverage.
 
 .. warning::
 
@@ -154,9 +155,23 @@ and then use
    import './mathjax-config.js';
    import '@mathjax/src/bundle/tex-chtml.js';
    await MathJax.startup.promise;
+   
+   // your code that uses MathJax here
+   
+   MathJax.done();
 
 to load the ``tex-chtml`` combined component with that configuration,
 and wait for MathJax to set itself up.
+
+.. note::
+
+   In MathJax v4, the speech generation is performed in web-workers
+   (in the browser) or worker-threads (in node applicaitons), and once
+   these are started, they will prevent the node application from
+   ending if they are not shut down.  So v4 includes the
+   :js:meth:`MathJax.done()` function that terminates the workers,
+   thus allowing the node program to end.  You should call this when
+   your program is ready to end so that it can shut down properly.
 
 Alternatively, you could do
 
@@ -172,6 +187,10 @@ Alternatively, you could do
    };
    await import('@mathjax/src/bundle/tex-chtml.js');
    await MathJax.startup.promise;
+   
+   // your code that uses MathJax here
+   
+   MathJax.done();
 
 to include the configuration in-line before loading the ``tex-chtml``
 component.
@@ -185,7 +204,7 @@ component.
 
    .. code-block:: javascript
 
-      import '@mathjax/src/components/require.mjs';
+      import '@mathjax/src/bundle/require.mjs';
 
    to your code, you can then use ``require()`` as described in the
    following section.
@@ -199,12 +218,6 @@ The default speech language is English, and the default Braille code
 is Nemeth.  You can use the :js:data:`sre` block of the
 :js:data:`options` section of your MathJax configuration to specify a
 different locale or Braille version, as illustrated below.
-
-Since the speech-rule-engine (SRE) loads its language files using
-:js:meth:`fs.readFile()`, it need the ``mathjax`` path to be an
-absolute path, not a reference to a `node` package.  Fortunately,
-MathJax provides a method for obtaining that path via a function
-called :js:meth:`mjxRoot()`, as shown below.
 
 .. code-block:: javascript
 
@@ -226,6 +239,10 @@ called :js:meth:`mjxRoot()`, as shown below.
 
    await import('@mathjax/src/bundle/tex-chtml.js');
    await MathJax.startup.promise;
+   
+   // your code that uses MathJax here
+   
+   MathJax.done();
 
 which configures MathJax to produce speech strings in German rather
 than English.
@@ -251,12 +268,18 @@ you want to load.  So you can do
      // additional configuration here
    };
    require('@mathjax/src/bundle/tex-chtml.js');
-   MathJax.startup.promise.then(() => {
-     //your MathJax code here
-   });
+   MathJax.startup.promise
+     .then(() => {
+       //your MathJax code here
+     })
+     .catch((err) => console.error(err.message))
+     .then(() => MathJax.done());
+
 
 to configure MathJax for use with the ``tex-chtml`` combined
-component, and then wait for MathJax to start up.
+component, and then wait for MathJax to start up, perform your
+commands (with error trapping), and then shut down MathJax.
+
 
 .. _node-startup-component:
 
@@ -319,14 +342,14 @@ can use that to set the :js:data:`source` field of your MathJax
 configuration.
 
 You can obtain the :file:`source.js` file using
-:file:`@mathjax/src/components/src/source.js`, and it will select the
+:file:`@mathjax/src/components/js/source.js`, and it will select the
 ``mjs`` or ``cjs`` directory depending on whether you use ``import`` or
 ``require()`` to load it.  So for use in ES6 modules, you can do
 
 .. code-block:: javascript
 
-   import {source} from '@mathjax/src/components/src/source.js';
-   import '@mathjax/src/components/require.mjs';  // needed by speech-rule engine
+   import {source} from '@mathjax/src/components/js/source.js';
+   import '@mathjax/src/bundle/require.mjs';  // needed by speech-rule engine
 
    global.MathJax = {
      loader: {
@@ -340,11 +363,15 @@ You can obtain the :file:`source.js` file using
    await import(source['tex-chtml']);
    await MathJax.startup.promise;
 
+   // your code that uses MathJax here
+   
+   MathJax.done();
+
 while for CommonJS modules, you can do
 
 .. code-block:: javascript
 
-   const {source} = require('@mathjax/src/components/src/source.js');
+   const {source} = require('@mathjax/src/components/js/source.js');
 
    MathJax = {
      loader: {
@@ -356,9 +383,13 @@ while for CommonJS modules, you can do
      // additional configuration here
    }
    require(source['tex-chtml']);
-   MathJax.startup.promise.then(() => {
-     //your MathJax code here
-   });
+   MathJax.startup.promise
+     .then(() => {
+       //your MathJax code here
+     })
+     .catch((err) => console.error(err.message))
+     .then(() => MathJax.done());
+
 
 
 -----
@@ -413,8 +444,8 @@ expressions in MathJax.
 
 .. _node-component-example:
 
-Examples of Compents in Node
-============================
+Examples of Components in Node
+==============================
 
 The following combines some of the ideas described above into a
 single, complete example of a command-line tool that takes three
@@ -425,11 +456,9 @@ the Braille format to use.  The last two are optional, and default to
 .. code-block:: javascript
    :linenos:
 
-   import {mjxRoot} from '@mathjax/src/js/components/mjs/root.js';
-   
    global.MathJax = {
      loader: {
-       paths: {mathjax: mjxRoot()},
+       paths: {mathjax: '@mathjax/src/bundle'},
        load: ['adaptors/liteDOM'],
        require: (file) => import(file)
      },
@@ -464,6 +493,8 @@ the Braille format to use.  The last two are optional, and default to
    const math = process.argv[2] || '';
    const svg = await typeset(math);
    console.log(svg);
+
+   MathJax.done();
 
 See the :ref:`stand-alone-svg` section for an example of generating
 SVG images that handles the CSS needed by some expressions in MathJax.

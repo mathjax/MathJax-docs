@@ -58,10 +58,11 @@ This is you first MathJax node program!
 
    .. code-block:: javascript
 
-      await require("@mathjax/src").init({
+      require("@mathjax/src").init({
         loader: {load: ['input/tex']}
-      });
-      console.log(MathJax.tex2mml('x+y'));
+      }).then(() =>
+        console.log(MathJax.tex2mml('x+y'))
+      );
 
    then run this file using
 
@@ -115,7 +116,9 @@ or
 
 .. code-block:: javascript
 
-   await require('@mathjax/src/source').init({...});
+   require('@mathjax/src/source').init({...}).then((MathJax) => {
+      ... // code that uses MathJax here
+   });
 
 when loading MathJax.
 

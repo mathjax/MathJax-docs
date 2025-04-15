@@ -146,7 +146,10 @@ the TeX input jax constructor when it is instantiated later on.  The
 MathJax TeX extensions are in subdirectories of the ``ts/input/tex``
 directory, so you can look there for the configuration files that you
 can load.  See :ref:`extension-list` for more about the TeX
-extensions.
+extensions.  Remember, you must load all the extensions explicitly
+that you plan to use, and the :ref:`tex-autoload` and
+:ref:`tex-require` extensions can't be used, as they rely on the
+component framework.
 
 Since node applications don't have a fully functional DOM (the LiteDOM
 is very minimal), MathJax can't determine the font metrics like the
@@ -283,10 +286,27 @@ container width values defined earlier.
         ``mtext`` or ``merror`` use the surrounding font).  The
         default is an empty string.
 
+   :returns: The DOM node containing the typeset version of the mathematics.
+
+You could provide the :attr:`display`, :attr:`ex`, :attr:`em`, and
+other values from command-line arguments, for example, though we use
+the defaults in these examples.
+
+Note that there is also
+
+.. js:method:: MathDocument.convertPromise(math, [options])
+
+taking the same arguments as :js:meth:`MathDocument.convert()` above,
+and returning a promise that resolves when the conversion is complete,
+passing the generated node as the argument to its :meth:`then()`
+method.  This function handles any asynchronous file loads, like those
+needed for dynamic font ranges.  Some of the examples below use this
+function for that purpose.
+
 Finally, we output a JSON object that contains the serialized HTML
 output along with the CSS stylesheet contents for the expression (this
-will not be a minimal stylesheet, as it includes all the web-font
-definitionsm even if those fonts aren't used, for example).
+will not be a minimal stylesheet, as, for example, it includes all the
+web-font definitions, even if those fonts aren't used).
 
 .. code-block:: javascript
 
@@ -298,7 +318,7 @@ definitionsm even if those fonts aren't used, for example).
      css: adaptor.cssText(chtml.styleSheet(html))
    }));
 
-Some examples generate other output (for example, MathML code, or a complete HTML page).
+Some examples generate other output (for instance, MathML code, or a complete HTML page).
 
 -----
 
@@ -409,7 +429,7 @@ Here, line 9 loads the :js:data:`STATE` variable that is used in line
 63 to stop the conversion process after the LaTeX is compiled into the
 internal MathML format.
 
-Lines 50 through 53 create a MathML serializer using the
+Lines 49 through 53 create a MathML serializer using the
 :js:class:`SerializedMmlVisitor` loaded in line 8.  This is used in
 line 69 to convert the internal MathML to a string form for output.
 
@@ -696,14 +716,14 @@ when most of the data will never be used.
 Instead, we can let MathJax load the data as needed.  Because loading
 the data is asynchronous, this requires that we handle the
 asynchronous nature of those file loads during the conversion process.
-This is done via the :js:func:`mathjax.handleRetriesFor()` function,
-which returns a promise that is resolved when the function that is
-passed to it as an argument completes.  The example below shows how to
-accomplish that.
+This is done via the :js:func:`MathDocument.convertPromise()`
+function, which returns a promise that is resolved when the conversion
+process completes, after handlign any asynchronous font file loading.
+The example below shows how to accomplish that.
 
 .. code-block:: javascript
    :linenos:
-   :emphasize-lines: 37, 50, 64
+   :emphasize-lines: 37, 50, 55, 63
    :caption: tex2chtml-promise.mjs
 
    //
@@ -755,13 +775,12 @@ accomplish that.
    //
    // Typeset the math from the command line
    //
-   mathjax.handleRetriesFor(() => {
-     const node = html.convert(process.argv[2] || '', {
-       display: true,
-       em: EM,
-       ex: EX,
-       containerWidth: WIDTH
-     });
+   html.convertPromise(process.argv[2] || '', {
+     display: true,
+     em: EM,
+     ex: EX,
+     containerWidth: WIDTH
+   }).then((node) => {
      //
      // Generate a JSON object with the CHTML output and needed CSS
      //
@@ -772,30 +791,31 @@ accomplish that.
    }).catch((err) => console.error(err.message));
 
 Here, we remove the :meth:`chtml.font.loadDynamicFiles()` call, and
-place :js:func:`mathjax.handleRetriesFor()` around the code that does
-the conversion, so that if a file needs to be loaded, that will be
-properly handled.  Without this wrapper, the :meth:`html.convert()`
-call could throw a :ref:`MathJax retry <retry-error>` error; it is the
-:js:func:`mathjax.handleRetriesFor()` function that traps and
-processes those errors as part of the handling of asynchronous file
-loads.
+replace :meth:`html.convert()` by :meth:`html.convertPromise()`, so
+that if a font file needs to be loaded, that will be properly handled,
+putting the rest of the code in its :meth:`then()` call.  Without
+this, the :meth:`html.convert()` call could throw a :ref:`MathJax
+retry <retry-error>` error; it is the :meth:`html.convertPromise()`
+function that traps and processes those errors as part of the handling
+of asynchronous file loads.
 
 The other change is that the :meth:`formatError()` function now throws
-the error, which is then trapped by the :meth:`catch()` call following
-the :js:func:`mathjax.handleRetriesFor()` function and reported there.
-One could have used the original :meth:`formatError()`, but this shows
-another approach to handling TeX errors.
+the error it receives, which is then trapped by the :meth:`catch()`
+call following the :meth:`html.convertPromise()` function and reported
+there.  One could have used the original :meth:`formatError()`, but
+this shows another approach to handling TeX errors.
+
 
 .. _direct-tex2chtml-font:
 
 Specifying The Font to Use
 --------------------------
 
-The examples so far have all used the default font, which is
-``mathjax-newcm``, based on the New Computer Modern font.  MathJax v4
-provides a number of other fonts, however (see the :ref:`font-support`
-section for details), and you can use any of these to replace the
-default font.
+The examples so far, other than the first one, have all used the
+default font, which is ``mathjax-newcm``, based on the New Computer
+Modern font.  MathJax v4 provides a number of other fonts, however
+(see the :ref:`font-support` section for details), and you can use any
+of these to replace the default font.
 
 In the example below, we use the ``mathjax-fira`` font, which is a
 sans-serif font.  First, install the font using
@@ -867,13 +887,12 @@ example as indicated in the highlighted lines below.
    //
    // Typeset the math from the command line
    //
-   mathjax.handleRetriesFor(() => {
-     const node = html.convert(process.argv[2] || '', {
-       display: true,
-       em: EM,
-       ex: EX,
-       containerWidth: WIDTH
-     });
+   html.convertPromise(process.argv[2] || '', {
+     display: true,
+     em: EM,
+     ex: EX,
+     containerWidth: WIDTH
+   }).then((node) => {
      //
      // Generate a JSON object with the CHTML output and needed CSS
      //
@@ -932,7 +951,7 @@ the promise-based commands, as illustrated in the example below.
    //
    // Record the pre-loaded component files
    //
-   Loader.preLoad(
+   Loader.preLoaded(
      'loader', 'startup',
      'core',
      'input/tex',
@@ -973,19 +992,18 @@ the promise-based commands, as illustrated in the example below.
    const html = mathjax.document('', {
      InputJax: tex,
      OutputJax: chtml,
-     ...(MathJax.config.options)
+     ...(MathJax.config.options || {})
    });
 
    //
    // Typeset the math from the command line
    //
-   mathjax.handleRetriesFor(() => {
-     const node = html.convert(process.argv[2] || '', {
-       display: true,
-       em: EM,
-       ex: EX,
-       containerWidth: WIDTH
-     });
+   html.convertPromise(process.argv[2] || '', {
+     display: true,
+     em: EM,
+     ex: EX,
+     containerWidth: WIDTH
+   }).then((node) => {
      //
      // Generate a JSON object with the CHTML output and needed CSS
      //
@@ -995,7 +1013,7 @@ the promise-based commands, as illustrated in the example below.
      }));
    }).catch((err) => console.error(err.message));
 
-Here, lines 11 through 18 load the component framework and definition
+Here, lines 10 through 18 load the component framework and definition
 files.  The first two lines obtain the :js:class:`Loader` and
 :js:class:`Package` class definitions, which are the heart of the
 component framework.  The next line initializes the
@@ -1035,16 +1053,16 @@ With these changes, the LaTeX being processed can now use
 So this gives you the best of both worlds: the convenience of MathJax
 components, and the control of direct imports.
 
-If you want to load additional TeX packages, you can import them and
-then push their names onto the :js:data:`tex.packages` array prior to
-instantiating the TeX input jax.  For example
+If you want to preload additional TeX packages, you can import them
+and then push their names onto the :js:data:`tex.packages` array prior
+to instantiating the TeX input jax.  For example
 
 .. code-block:: javascript
 
    import '@mathjax/src/components/js/input/tex/extensions/mathtools/mathtools.js';
    import '@mathjax/src/components/js/input/tex/extensions/physics/physics.js';
    MathJax.config.tex.packages.push('mathtools', 'physics');
-   Loader.preLoad('[tex]/mathtools', '[tex]/physics');
+   Loader.preLoaded('[tex]/mathtools', '[tex]/physics');
    
 could be added at line 19 in order to include the :ref:`tex-mathtools`
 and :ref:`tex-physics` TeX packages.
@@ -1214,10 +1232,6 @@ add a :data:`domain` option to the list passed to
 :func:`setupEngine()` in order to specify which of these rulesets to
 use.  The default is `mathspeak`.
 
-The complete list of options for the ``sre`` block can be
-found in the `Speech-Rule Engine documentation
-<https://github.com/Speech-Rule-Engine/speech-rule-engine?tab=readme-ov-file#options>`__.
-
 
 -----
 
@@ -1230,7 +1244,7 @@ All of the previous examples convert a single mathematical expression
 at a time, but you may wish to preprocess an entire web page, rather
 than individual expressions.  In that case, you would load the page's
 text and use that when creating the math document, and then call
-:meth:`html.render()` rather than :meth:`html.convert()`.
+:meth:`html.renderPromise()` rather than :meth:`html.convertPromise()`.
 
 This is illustrated with the example below, this time using SVG output
 rather than CHTML output.
@@ -1305,7 +1319,7 @@ rather than CHTML output.
    //
    // Wait for the typesetting to finish
    //
-   await mathjax.handleRetriesFor(() => html.render());
+   await html.renderPromise();
 
    //
    // If no math was found on the page, remove the stylesheet and font cache (if any)
@@ -1333,14 +1347,13 @@ Line 8 loads the SVG output jax rather than the CHTML one, and lines
 stored in one place and can be shared among all the expressions on the
 page rather than having individual copies for each expression.  We
 also set up the ex-to-em factor, since we can't measure that directory
-using the LiteDOM in node.  Line 57 uses the SVG output jas that we
+using the LiteDOM in node.  Line 57 uses the SVG output jax that we
 just created rather than the CHTML one from previous examples.
 
 Line 66 is the key change from the previous examples, which now uses
-:meth:`html.render()` to process the entire page, rather than just
-process a single expression.  It is wrapped in
-:js:meth:`mathjax.handleRetriesFor()` so that any font data files will be
-loaded as needed.
+:meth:`html.renderPromise()` to process the entire page, rather than
+just process a single expression.  We use the promise-based function
+so that we handle any font data files that need to be loaded.
 
 Lines 72 to 75 check to see that there is actually math that was
 processed on the page, and if not, it removes the stylesheet and
@@ -1410,7 +1423,7 @@ More Examples
 See the `MathJax node demos
 <https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__
 for additional examples of how to use MathJax from a `node`
-application.  in particular, see the `non-component-based examples
+application.  In particular, see the `non-component-based examples
 <https://github.com/mathjax/MathJax-demos-node/tree/master/direct#non-component-based-examples>`__
 for more illustrations of how to use MathJax modules directly in a
 `node` application, rather than using the pre-packaged components.
