@@ -25,7 +25,7 @@ includes an example of how to do this for the v2-style ``<script
 type="math/tex">`` tags, for example.
 
 The TeX input processor handles conversion of your mathematical
-notation into MathJax's internal format (which is essentially MathML),
+notation into MathJax's internal format, which is essentially MathML,
 and so acts as a TeX to MathML converter.  The TeX input processor
 can also be customized through the use of extensions that define
 additional functionality (see the :ref:`tex-extensions` section).

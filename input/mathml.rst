@@ -9,7 +9,7 @@ looks for ``<math>`` tags within your document and marks them for
 later processing by MathJax, and the second converts the MathML to the
 internal format used by MathJax, where one of MathJax's output
 processors then displays it in the web page.  In MathJax v2, these two
-actions were perfromed by distinc components (the ``mml2jax``
+actions were performed by distinct components (the ``mml2jax``
 preprocessor, and the MathML input jax); in v3 and above, the
 ``mml2jax`` functionality has been folded into the MathML input jax.
 
@@ -82,13 +82,40 @@ use the self-closing form in HTML documents.
 
 If you are working in HTML rather than XHTML, you should not use a
 namespace prefix like ``m:`` or ``mml:`` for your MathML elements.
-That is, you shoud use ``<math>`` rather than ``<m:math>`` or
+That is, you should use ``<math>`` rather than ``<m:math>`` or
 ``<mml:math>``.  This is because HTML5 has deprecated namespaces, so
 they are no longer necessary, and it makes it harder for MathJax to
 identify the math when there are namespaces.  If you properly declare
 the namespace in the ``<html>`` tag, MathJax will be able to find the
 namespaced math tags, but if you don't then MathJax may miss them.
 
+.. _mathml-html-in-token-nodes:
+   
+HTML in MathML token nodes
+==========================
+
+The HTML5 specification allows for mixing HTML nodes inside MathML
+token nodes, and it is a long-standing request for MathJax to
+implement that as well.  Version 4 includes this ability, you can now
+use HTML nodes as children of token nodes, such as ``<mtext>``. Thus
+
+.. code-block:: xml
+
+   <mtext>a button <input type="button" value="Push Me"> to press</mtext>
+
+is allowed, and would produce an ``<mtext>`` element containing a
+button surrounded by some plain text.
+
+Because MathJax does not try to sanitize the HTML in any way, allowing
+HTML in token elements would be a security issue for sites that allow
+user-supplied MathML.  For this reason, the MathML input jax has a new
+option :data:`allowHtmlInTokenNodes` to control whether to allow it,
+and it is ``false`` by default; you have to opt into this new feature
+if you want to use it on your site.
+
+See the :ref:`specifying-htmlHDW` section for information about how
+MathJax determines the size of HTML that is embedded in MathML token
+nodes.
 
 .. _mathml-tags:
 
@@ -178,7 +205,7 @@ the XSLT transform before processing it.
 
 .. _mathml-semantics-annotations:
 
-Semantics and Annotations
+Semantics and annotations
 =========================
 
 Some popular annotation formats like TeX, Maple, or Content MathML are

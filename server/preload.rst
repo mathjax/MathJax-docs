@@ -45,7 +45,7 @@ not be able to be auto-loaded, as those actions are asynchronous.
    could need extra font data files to be loaded.  Thus in version 4,
    it is always best to use the promise-based commands, when possible.
 
-   The eamples below show how to pre-load the needed font data so that
+   The examples below show how to pre-load the needed font data so that
    you can still work synchronously even with the larger v4 fonts.
 
 -----
@@ -574,7 +574,7 @@ conversion step.
 Lines 70 through 75 give the asynchronous code that must be used to
 get SRE up and running before typesetting can be done synchronously.
 This waits for SRE to set itself up, passing it the locale and
-modality needed for the languge specified as the second command-line
+modality needed for the language specified as the second command-line
 argument to this script, then waits for SRE to be ready before startup
 up MathJax.
 

@@ -17,7 +17,9 @@ The macros provided in `textcomp` can be used equally in math and text
 mode.  In order to make them available in text mode, you need to load
 the :ref:`tex-textmacros` extension, and add the ``'textcomp'``
 package to the :data:`packages` array of the :data:`textmacros`
-options of the :data:`tex` block of you configuration, as shown below.
+options of the :data:`tex` block of you configuration.  Note that
+:ref:`tex-textmacros` is already included in the components that
+include ``input/tex``.
 
 This package is not autoloaded, so you must request it explicitly if
 you want to use it.  To load the `textcomp` extension, add
@@ -28,9 +30,8 @@ array of the :data:`tex` block.
 .. code-block:: javascript
 
    window.MathJax = {
-     loader: {load: ['[tex]/textmacros', '[tex]/textcomp']},
+     loader: {load: ['[tex]/textcomp']},
      tex: {packages: {'[+]': ['textmacros']}}
-     textmacros: {packages: {'[+]': ['textcomp']}}
    };
 
 Alternatively, use ``\require{textcomp}`` in a TeX expression to load

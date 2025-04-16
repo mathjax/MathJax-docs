@@ -16,6 +16,7 @@ The main extensions are described below:
    bbm
    bboldx
    bbox
+   begingroup
    boldsymbol
    braket
    bussproofs
@@ -49,14 +50,13 @@ The main extensions are described below:
    upgreek
    verb
 
-These extensions have not yet been ported to version 3:
+These extensions have not been ported to the current version of MathJax:
 
 .. toctree::
    :maxdepth: 1
 
    autobold
    autoload-all
-   begingroup
    mediawiki-texvc
 
 See the section on :ref:`custom-extension` for how to create your own TeX

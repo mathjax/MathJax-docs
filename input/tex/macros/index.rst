@@ -11,9 +11,9 @@ websites, including:
 
 * A basic tutorial is available on the `Mathematics StackExchange
   <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>`__.
-  This is mostly for v2, but the information mostly still applies to
-  v3 and above, though it won't include the features that are new in
-  later versions.
+  This is for v2, but the information mostly still applies to v3 and
+  above, though it won't include the features that are new in later
+  versions.
 
 ..
 
@@ -44,7 +44,7 @@ the components that include the TeX input jax (except for
 ``input/tex-base``, which only includes the base package).  If the
 package name is in italics, then the package is autoloaded by the
 :ref:`tex-autoload` extension, otherwise the extension must be loaded
-expliciutly in your configuration.  If a macro from the base package
+explicitly in your configuration.  If a macro from the base package
 is redefined by an extension, then **base** is included in the second
 column along with the package name that redefines it.
 
@@ -59,7 +59,8 @@ are marked here as being in the *text-base* package.
 
    <style>
    .wy-table-responsive table {width: 100%}
-   .rst-content .wy-table-responsive table code.literal {background: inherit}   </style>
+   .rst-content .wy-table-responsive table code.literal {background: inherit}
+   </style>
 
 
 Symbols

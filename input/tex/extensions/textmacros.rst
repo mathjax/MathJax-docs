@@ -9,9 +9,10 @@ macros within ``\text{}`` and other macros that produce text-mode
 material.  See the :ref:`tex-differences` section for how text-mode is
 handled without this extension.
 
-This extension is not loaded automatically, and can't be loaded via
-the :ref:`tex-autoload` extension.  To load the `textmacros`
-extension, add ``'[tex]/textmacros'`` to the :data:`load` array of the
+This extension is already loaded in all the components that include
+the TeX input jax, other than ``input/tex-base``.  To load the
+`textmacros` extension explicitly (when using ``input/tex-base`` for
+example), add ``'[tex]/textmacros'`` to the :data:`load` array of the
 :data:`loader` block of your MathJax configuration, and add
 ``'textmacros'`` to the :data:`packages` array of the :data:`tex`
 block.
@@ -26,6 +27,18 @@ block.
 Alternatively, use ``\require{textmacros}`` in a TeX expression to load it
 dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
+
+Since the `textmacros` extension is included in the combined
+components that contain the TeX input jax, it may already be in the
+package list. In that case, if you want to disable it, you can remove
+it:
+
+.. code-block:: javascript
+
+   window.MathJax = {
+     tex: {packages: {'[-]': ['textmacros']}}
+   };
+
 
 Available Macros:
 =================

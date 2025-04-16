@@ -179,7 +179,7 @@ conversion actions.  It also returns a promise that resolves when your
 action is complete, just like the promise-based typeset functions do.
 If your action creates a promise, be sure you function returns that
 promise so that :js:meth:`MathJax.whenReady()` will wait for it to
-complete before its own pomise is resolved.
+complete before its own promise is resolved.
 
 The :js:meth:`MathJax.whenReady()` function is analogous to the
 :meth:`MathJax.Hub.Queue()` command in v2.

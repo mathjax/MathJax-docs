@@ -86,13 +86,13 @@ would load the AsciiMath input along side TeX input (and produce CHTML
 output), so you could enter mathematics in either format.
 
 
-.. _asciimath-delimiters:
+.. _asciimath-default-delimiters:
 
 AsciiMath delimiters
 ====================
 
 By default, the AsciiMath processor defines the back-tick
-(`````) as the delimiters for mathematics in AsciiMath format.  It
+(`````) as the delimiter for mathematics in AsciiMath format.  It
 does **not** define ``$...$`` as math delimiters.  That is because
 dollar signs appear too often in non-mathematical settings, which
 could cause some text to be treated as mathematics unexpectedly.  For
@@ -110,7 +110,7 @@ explicitly in your configuration:
         load: ['input/asciimath']
       },
       asciimath: {
-        delimiters: [['$','$'], ['`','`']]
+        delimiters: {'[+]': [['$','$']}
       }
     });
 

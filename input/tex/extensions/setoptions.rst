@@ -48,7 +48,7 @@ second (and subsequent) expressions with tags on the right.
         tex: {packages: {"[+]": ["setoptions"]}}
       }
       </script>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js">
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
       </script>
       </head>
       <body>
@@ -92,7 +92,7 @@ Here the gradient symbol will have an arrow, but subsequent ones will not.
         tex: {packages: {"[+]": ["setoptions", "physics"]}}
       }
       </script>
-      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.7/tex-chtml.js">
+      <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
       </script>
       </head>
       <body>

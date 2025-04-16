@@ -30,7 +30,7 @@ This adds the single dollar signs as additional in-line math delimiters.
 
 You can use ``\$`` to prevent a dollar sign from being treated as a
 math delimiter within the text of your web page; e.g., use "... the
-cost is \$2.50 for the first one, and \$2.00 for each additional one
+cost is \\$2.50 for the first one, and \\$2.00 for each additional one
 ..." to prevent these dollar signs from being used as math delimiters
 in a web page where dollar signs have been configured to be in-line
 delimiters.
@@ -44,16 +44,17 @@ also prevent it from being treated as a math delimiter.  That is,
    <span>$</span>2.00 for each additional one ...
 
 would also prevent the dollar signs from being treated as math
-delimiters.  This is because MathJax does not process TeX expressions
-that include HTML tags, so isolating the dollar sign inside a tag
-prevents it from matching with another dollar sign to enclose
-mathematics.
+delimiters.  This is because MathJax only matches delimiters that
+appear within the same parent element of the HTML page, so isolating
+the dollar sign inside a tag prevents it from matching with another
+dollar sign to delimit a mathematical expression.
 
-On the other hand, in version 4, a new `texhtml` extension provides a
-means of including HTML notation within TeX expressions.  See the
-:ref:`tex-texhtml` page for details.  Note that placing a dollar sign
-with a ``<span>`` would still prevent it from being treated as a
-delimiter, even with the `texhtml` extension.
+In version 3 and below, TeX expressions can not contain HTML elements
+(other than ``<br>``, ``<wbr>``, and comments), but in version 4, a
+new `texhtml` extension provides a means of including HTML notation
+within TeX expressions.  See the :ref:`tex-texhtml` page for details.
+Placing a dollar sign with a ``<span>`` would still prevent it from
+being treated as a delimiter, even with the `texhtml` extension.
 
 Note that, as opposed to true LaTeX, MathJax processes all
 environments when wrapped inside math delimiters, even those like

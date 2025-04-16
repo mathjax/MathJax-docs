@@ -10,13 +10,14 @@ can be used to investigate typeset mathematics on a more granual level
 than the complete expression.
 
 Version 4.0 of MathJax adds significant new features to MathJax,
-including support of selecting one of a number of different fonts to
-use for mathematical typesetting, support for in-line and displayed
-equation line breaking.  See the :ref:`whats-new-in-mathjax` section
-for more details.  MathJax was rewritten from the ground up in v3.0,
-and the usage and configuration in v4 (and v3) is significantly
-different from that of MathJax v2.  Use the menu at the bottom of the
-screen to access the version 2 documentation if you need it.
+including support for selecting one of a number of different fonts to
+use for mathematical typesetting, for in-line and displayed equation
+line breaking, and for HTML within MathML and LaTeX expressions.  See
+the :ref:`whats-new-in-mathjax` section for more details.  MathJax was
+rewritten from the ground up in v3.0, and the usage and configuration
+in v4 (and v3) is significantly different from that of MathJax v2.
+Use the menu at the bottom of the screen to access the version 2
+documentation if you need it.
 
 .. _toc-basics:
 .. toctree::
@@ -66,12 +67,12 @@ screen to access the version 2 documentation if you need it.
    TeX and LaTeX Support              <input/tex/index>
    MathML Support                     <input/mathml>
    AsciiMath Support                  <input/asciimath>
+   HTML in Mathematics                <input/html>
    
 .. _toc-mathjax-output:
 .. toctree::
    :caption: MathJax Output
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 1
 
    Output Formats                     <output/index>
    Lazy Typesetting                   <output/lazy>
@@ -82,7 +83,7 @@ screen to access the version 2 documentation if you need it.
 .. _toc-configuration-options:
 .. toctree::
     :caption: Configuration Options
-    :maxdepth: 2
+    :maxdepth: 1
 
     Configuring MathJax               <options/index>
 

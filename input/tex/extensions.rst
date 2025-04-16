@@ -46,10 +46,10 @@ enable it.
 A number of extensions are already loaded and configured in the
 components that contain the TeX extension.  The ``input/tex``, and the
 combined components containing ``tex``, include the ``ams``,
-``newcommand``, ``noundefined``, ``require``, ``autoload``, and
-``configmacros`` extensions, with most of the other extensions being
-autoloaded as needed.  The ``input/tex-base`` component has no
-extensions loaded, so contains only the base macros.
+``newcommand``, ``noundefined``, ``textmacros``, ``require``,
+``autoload``, and ``configmacros`` extensions, with most of the other
+extensions being autoloaded as needed.  The ``input/tex-base``
+component has no extensions loaded, so contains only the base macros.
 
 .. note::
 
@@ -142,6 +142,10 @@ it with ``[tex]/``, as in:
 
 If the ``color`` macro is autoloaded from within the page, that
 configuration will be used to initialize the extension.
+
+Finally, the `setoptions` extension provides a ``\setOptions`` command
+that can be used to change the options on they fly as the web page is
+being processed.  See the :ref:`tex-setoptions` section for details.
 
 
 |-----|

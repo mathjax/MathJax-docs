@@ -111,7 +111,7 @@ a11y/explorer
 
 The `explorer` component allows readers to explore a mathematical
 expression interactively.  When an expression is focused by tabbing to
-it, the expression can be explored usign the arrow keys, as described
+it, the expression can be explored using the arrow keys, as described
 below.  Clicking on a typeset expression will also enter the explorer
 at the character that is clicked.
 

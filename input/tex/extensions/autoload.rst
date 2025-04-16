@@ -18,9 +18,9 @@ combined components.
    extensions are not being added to `autoload` as they are developed,
    and the `autoload` extension may be phased out in the future.
    Extensions that are **not** auto-loaded include: `ams`, `bbm`,
-   `bboldx`, `cases`, `centernot`, `colortbl`, `dsfont`, `empheq`,
-   `mathtools`, `physics`, `require`, `setoptions`, `textcomp`,
-   `textmacros`, `units`, and `upgreek`.
+   `bboldx`, `begingroup`, `cases`, `centernot`, `colortbl`, `dsfont`,
+   `empheq`, `mathtools`, `physics`, `require`, `setoptions`,
+   `textcomp`, `textmacros`, `units`, and `upgreek`.
 
 The `autoload` extension is loaded in all the components that include
 the TeX input jax, other than ``input/tex-base``.  That means that the

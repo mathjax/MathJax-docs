@@ -166,7 +166,7 @@ and wait for MathJax to set itself up.
 .. note::
 
    In MathJax v4, the speech generation is performed in web-workers
-   (in the browser) or worker-threads (in node applicaitons), and once
+   (in the browser) or worker-threads (in node applications), and once
    these are started, they will prevent the node application from
    ending if they are not shut down.  So v4 includes the
    :js:meth:`MathJax.done()` function that terminates the workers,
