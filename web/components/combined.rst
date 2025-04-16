@@ -66,11 +66,12 @@ configured to use the ``mathjax-newcm`` font, along with the
 contextual menu component, the assistive tools, and the startup
 component.
 
-The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
-:ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which means that most other extensions
-will be loaded automatically when needed, or you can use the
-``\require`` macro to load them explicitly.
+The `input/tex` component includes the :ref:`tex-ams`,
+:ref:`tex-newcommand`, :ref:`tex-require`, :ref:`tex-autoload`,
+:ref:`tex-configmacros`, :ref:`tex-textmacros`, and
+:ref:`tex-noundefined` extensions, which means that most other
+extensions will be loaded automatically when needed, or you can use
+the ``\require`` macro to load them explicitly.
 
 -----
 
@@ -86,11 +87,12 @@ configured to use the ``mathjax-newcm`` font, along with the
 contextual menu component, the assistive tools, and the startup
 component.
 
-The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
-:ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which means that most other extensions
-will be loaded automatically when needed, or you can use the
-``\require`` macro to load them explicitly.
+The `input/tex` component includes the :ref:`tex-ams`,
+:ref:`tex-newcommand`, :ref:`tex-require`, :ref:`tex-autoload`,
+:ref:`tex-configmacros`, :ref:`tex-textmacros`, and
+:ref:`tex-noundefined` extensions, which means that most other
+extensions will be loaded automatically when needed, or you can use
+the ``\require`` macro to load them explicitly.
 
 -----
 
@@ -106,11 +108,12 @@ The `tex-mml-chtml` component includes the :ref:`input/tex
 ``mathjax-newcm`` font, along with the contextual menu component, the
 assistive tools, and the startup component.
 
-The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
-:ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which means that most other extensions
-will be loaded automatically when needed, or you can use the
-``\require`` macro to load them explicitly.
+The `input/tex` component includes the :ref:`tex-ams`,
+:ref:`tex-newcommand`, :ref:`tex-require`, :ref:`tex-autoload`,
+:ref:`tex-configmacros`, :ref:`tex-textmacros`, and
+:ref:`tex-noundefined` extensions, which means that most other
+extensions will be loaded automatically when needed, or you can use
+the ``\require`` macro to load them explicitly.
 
 -----
 
@@ -126,11 +129,12 @@ and :ref:`mathml-component` components and the :ref:`output/svg
 font, along with the contextual menu component, the assistive tools,
 and the startup component.
 
-The `input/tex` component includes the :ref:`tex-ams`, :ref:`tex-newcommand`,
-:ref:`tex-require`, :ref:`tex-autoload`, :ref:`tex-configmacros`, and
-:ref:`tex-noundefined` extensions, which means that most other extensions
-will be loaded automatically when needed, or you can use the
-``\require`` macro to load them explicitly.
+The `input/tex` component includes the :ref:`tex-ams`,
+:ref:`tex-newcommand`, :ref:`tex-require`, :ref:`tex-autoload`,
+:ref:`tex-configmacros`, :ref:`tex-textmacros`, and
+:ref:`tex-noundefined` extensions, which means that most other
+extensions will be loaded automatically when needed, or you can use
+the ``\require`` macro to load them explicitly.
 
 -----
 

@@ -50,12 +50,13 @@ This is the standard TeX input component.  It includes the main
 TeX/LaTeX input parser, along with the base definitions for the most
 common macros and environments.  It also includes the :ref:`tex-ams`,
 :ref:`tex-newcommand`, :ref:`tex-require`, :ref:`tex-autoload`,
-:ref:`tex-configmacros`, and :ref:`tex-noundefined` extensions.  Most
-of the remaining extensions are loaded automatically when needed, or
-you can use ``\require`` to load any of them explicitly.  This will
-cause the extensions to be loaded dynamically, so if you are calling
-MathJax's typesetting or conversion methods yourself, you should use
-the promise-based versions in order to handle that properly.
+:ref:`tex-configmacros`, :ref:`tex-textmacros`, and
+:ref:`tex-noundefined` extensions.  Most of the remaining extensions
+are loaded automatically when needed, or you can use ``\require`` to
+load any of them explicitly.  This will cause the extensions to be
+loaded dynamically, so if you are calling MathJax's typesetting or
+conversion methods yourself, you should use the promise-based versions
+in order to handle that properly.
 
 See the :ref:`tex-options` section for information about
 configuring this component.
