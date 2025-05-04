@@ -10,20 +10,17 @@ all can be configured though a :data:`MathJax` global object that
 specifies the configuration you want to use.  The :data:`MathJax`
 object consists of sub-objects that configure the individual
 components of MathJax.  For example, the :ref:`input/tex <tex-input>`
-component is configured through a ``tex`` block within the
+component is configured through a :data:`tex` block within the
 :data:`MathJax` object, while the :ref:`startup-component` component
-is configured through the ``startup`` block.
+is configured through the :data:`startup` block.
 
 These blocks are JavaScript objects that includes ``name: value``
 pairs giving the names of parameters and their values, with pairs
-separated by commas.  Be careful not to include a comma after the last
-value, however, as some browsers will fail to process the
-configuration if you do.
-
-Some blocks may contain further sub-blocks.  For example, the ``tex``
-block can have a ``macros`` sub-block that pre-defines macros, and a
-``tagformat`` block (when the :ref:`tex-tagformat` component is used)
-to define how equation tags are displayed and handled.
+separated by commas.  Some blocks may contain further sub-blocks.  For
+example, the :data:`tex` block can have a :data:`macros` sub-block
+that pre-defines macros, and a :data:`tagformat` block (when the
+:ref:`tex-tagformat` component is used) to define how equation tags
+are displayed and handled.
 
 For example,
 
@@ -44,7 +41,7 @@ For example,
         tagSide: 'left',
         macros: {
 	  RR: '{\\bf R}',
-	  bold: ['{\\bf #1}',1]
+	  bold: ['{\\bf #1}', 1]
 	},
         tagformat: {
            tag: (n) => '[' + n + ']'
@@ -62,14 +59,14 @@ displayed equations to be typeset to the left (rather than centered),
 defines two macros, and finally set the tagging so that it uses square
 brackets rather than parentheses for equation numbers and tags.
 
-Note the special notation used with the ``packages`` option above.
-The ``packages`` property is an array of extension names, but the
+Note the special notation used with the :data:`packages` option above.
+The :data:`packages` property is an array of extension names, but the
 configuration uses a special object to add to that array rather than
 replace it.  If the option you are setting is an array, and you
 provide an object that has a single properly whose name is ``'[+]'``
 and whose value is an array, then that array will be appended to the
 default value for the option you are setting.  So in the example
-above, the ``'tagformat'`` string is added to the default ``packages``
+above, the ``'tagformat'`` string is added to the default :data:`packages`
 array (without your needing to know what that default value is).
 
 Similarly, if you use an object with a single property whose name is
@@ -81,8 +78,8 @@ example,
 
    packages: {'[-]': ['autoload', 'require']}
 
-would **remove** the `autoload` and `require` packages from the default
-``packages`` array.
+would **remove** the :ref:`tex-autoload` and :ref:`tex-require`
+packages from the default :data:`packages` array.
 
 Finally, you can combine ``'[+]'`` and ``'[-]'`` in one object to do
 both actions.  E.g.,
@@ -91,8 +88,9 @@ both actions.  E.g.,
 
    packages: {'[+]': ['enclose'], '[-]': ['autoload', 'require']}
 
-would remove the `autoload` and `require` packages from the default
-``packages`` array, and add `enclose` to the result.
+would remove the :ref:`tex-autoload` and :ref:`tex-require` packages
+from the default :data:`packages` array, and add the
+:ref:`tex-enclose` package to the result.
 
 -----
 

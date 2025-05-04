@@ -6,10 +6,13 @@ Safe Extension Options
 
 The `ui/safe` component provides a means of filtering the various
 attributes of the mathematics on the page so that certain limitations
-on their content is enforced.  This allows you to prevent
+on their content is enforced.  For example, this allows you to prevent
 ``javascript:`` or ``data:`` URLs from appearing in :attr:`href`
-attributes, for example, which would otherwise cause potential
-security issues.
+attributes that might otherwise cause potential security issues.  This
+extension is designed to support sites that allow users to enter
+mathematics that is viewed by others, as, for example, in a
+question-and-answer website, or a blog with user comments.
+
 
 All mathematics processed by MathJax is converted into an internal
 MathML structure, regardless of its initial format in the page.  The
@@ -17,8 +20,8 @@ MathML structure, regardless of its initial format in the page.  The
 mathematics and checking the attributes of the nodes in the tree to
 maker sure they comply with the restrictions you specify.
 
-To load the `ui/safe` extension, add ``'ui/safe'`` to the ``load``
-array of the ``loader`` block of your MathJax configuration.
+To load the `ui/safe` extension, add ``'ui/safe'`` to the :data:`load`
+array of the :data:`loader` block of your MathJax configuration.
 
 .. code-block:: javascript
 
@@ -44,6 +47,7 @@ The Configuration Block
 .. code-block:: javascript
 
     MathJax = {
+      loader: {load: ['ui/safe']},
       options: {
         safeOptions: {
           allow: {

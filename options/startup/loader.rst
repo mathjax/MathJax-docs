@@ -32,7 +32,9 @@ In the example below, :data:`Loader` represents the
         dependencies: {},                            // arrays of dependencies for each component
         provides: {},                                // components provided by each component
         require: null,                               // function to use for loading components
-        pathFlters: []                               // functions to use to process package names
+        pathFlters: [],                              // functions to use to process package names
+        versionWarnings: true,                       // whether to check components for version compatibility
+                                                     //   with the version of MathJax that is running
       }
     };
 
@@ -58,7 +60,7 @@ Option Descriptions
    loaded successfully.  By default, it simply calls the
    :ref:`startup-component` component's :ref:`ready() <startup-ready>`
    function, if there is one.  You can override this with your own
-   function, can call :meth:`MathJax.loader.defaultReady()` after
+   function, then call :js:meth:`MathJax.loader.defaultReady()` after
    doing whatever startup you need to do.  See also the
    :ref:`loader-component-options` section for how to tie into
    individual components being loaded.
@@ -222,9 +224,9 @@ Option Descriptions
         }
       };
 
-      will load the `input/tex` component, which provides both
-      `input/tex-base` and `[tex]/newcommand`, and then load
-      `[tex]/enclose` before loading your `[tex]/myExtension`.
+   will load the `input/tex` component, which provides both
+   `input/tex-base` and `[tex]/newcommand`, and then load
+   `[tex]/enclose` before loading your `[tex]/myExtension`.
 
 .. _loader-require:
 .. describe:: require: null
@@ -236,11 +238,12 @@ Option Descriptions
    component is loaded, otherwise it should return nothing.  If there
    is an error loading the component, it should throw an error.
 
-   If set ``null``, the default is to insert a ``<script>`` tag into
+   If set to ``null``, the default is to insert a ``<script>`` tag into
    the document that loads the component.
 
-   For use in `node` applications, set this value to ``require``, which
-   will use node's ``require`` command to load components.  E.g.
+   For use in CommonJS `node` applications, you can set this value to
+   ``require``, which will use node's ``require`` command to load
+   components.  E.g.
 
    .. code-block:: javascript
 
@@ -249,6 +252,18 @@ Option Descriptions
           require: require
         }
       };
+
+   For use in ESM `node` applications, you can set this value to
+   use ``import()``, as in
+
+   .. code-block:: javascript
+
+      MathJax = {
+        loader: {
+          require: (file) => import(file)
+        }
+      };
+
 
 .. _loader-pathFilters:
 .. describe:: pathFilters: []
@@ -283,15 +298,22 @@ Option Descriptions
    processing with the `name` now representing the final URL for the
    component.
 
-   There are three default filters: one that replaces `name` with its
+   There are four default filters: one that replaces `name` with its
    value in the ``source`` list, if any; one that normalizes package
    names by adding ``[mathjax]/`` if there is no prefix or protocol
-   already, and adding ``.js`` if there is no extension; and one
-   that replaced prefixes with their values in the ``paths`` list.
-   These have priorities 0, 10, and 20, respectively, and you can use
-   priorities (including negative ones) with your own functions to
+   already; one that replaced prefixes with their values in the
+   ``paths`` list; and one that adds ``.js`` if there is no extension.
+   These have priorities 0, 10, 20, and 30, respectively, and you can
+   use priorities (including negative ones) with your own functions to
    insert them into this list in any location.
 
+.. _loader-versionWarnings:
+.. describe:: versionWarnings: true
+
+   This determines whether a message is issued to the browser console
+   when a component that is loaded was built using a different version
+   of MathJax than the one that is currently running.
+   
 -----
 
 
@@ -340,7 +362,7 @@ the `input/tex` component is either loaded successfully or fails to load.
 
    This is a function that takes no argument and is called when the
    component is loaded, but before the ``ready()`` function is
-   called.  It can be used o do post-processing after the component is
+   called.  It can be used to do post-processing after the component is
    loaded, but before other components are signaled that it is ready.
    For example, it could be used to load other components; e.g., the
    `output/chtml` component can use its configuration to determine

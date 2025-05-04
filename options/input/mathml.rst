@@ -5,12 +5,12 @@ MathML Input Processor Options
 ##############################
 
 The options below control the operation of the :ref:`MathML input
-processor <mathml-input>` that is run when you include
-``'input/mml'`` in the ``load`` array of the ``loader`` block of
-your MathJax configuration, or if you load a combined component that
-includes the MathML input jax.  They are listed with their default
-values.  To set any of these options, include an ``mml`` section in
-your :data:`MathJax` global object.
+processor <mathml-input>` that is run when you include ``'input/mml'``
+in the :data:`load` array of the :data:`loader` block of your MathJax
+configuration, or if you load a combined component that includes the
+MathML input jax.  They are listed with their default values.  To set
+any of these options, include an :data:`mml` section in your
+:data:`MathJax` global object.
 
 -----
 
@@ -23,12 +23,17 @@ The Configuration Block
       mml: {
         parseAs: 'html',                     // or 'xml'
         forceReparse: false,                 // true to serialize and re-parse all MathML
+        allowHtmlInTokenNodes: false,        // True if HTML is allowed in token nodes
+        fixMisplacedChildren: true,          // True if we want to use heuristics to try to fix
+                                             //   problems with the tree based on HTML not handling
+                                             //   self-closing tags properly
         parseError: function (node) {        // function to process parsing errors
           this.error(this.adaptor.textContent(node).replace(/\n.*/g, ''));
         },
         verify: {                            // parameters controlling verification of MathML
           checkArity: true,                  //   check if number of children is correct
           checkAttributes: false,            //   check if attribute names are valid
+          checkMathvariants: true,           //   check for valid mathvariant values
           fullErrors: false,                 //   display full error messages or just error node
           fixMmultiscripts: true,            //   fix unbalanced mmultiscripts
           fixMtables: true                   //   fix incorrect nesting in mtables
@@ -48,7 +53,7 @@ Option Descriptions
    Specifies how MathML strings should be parsed:  as XML or as HTML.
    When set to ``'xml'``, the browser's XML parser is used, which is
    more strict about format (e.g., matching end tags) than the HTML
-   parser, which is the default.  In node application (where the
+   parser, which is the default.  In node applications (where the
    ``liteDOM`` is used), these both use the same parser, which is not
    very strict.
 
@@ -58,6 +63,28 @@ Option Descriptions
    Specifies whether MathJax will serialize and re-parse MathML found
    in the document.  This can be useful if you want to do XML parsing
    of the MathML from an HTML document.
+
+.. _mathml-allowHtmlInTokenNodes:
+.. describe:: allowHtmlInTokenNodes: false
+
+   HTML5 specifies that HTML can be included within token nodes in
+   MathML.  This is now supported in MathJax v4, so you can include
+   images or form inputs, for example, in your mathematical
+   expressions.  Because this HTML is not sanitized in any way by
+   MathJax, it is a potential security risk for sites that allow
+   user-supplied MathML.  For this reason, MathJax includes the
+   :data:`allowHtmlInTokenNodes` option, which is ``false`` by
+   default.  If you want to process HTML in MathML token nodes, set
+   this option to ``true``.  See the :ref:`mathml-html-in-token-nodes`
+   section for more details.
+
+.. _mathml-fixMisplacedChildren:
+.. describe:: fixMisplacedChildren: true
+
+   Specifies whether MathJax should try to fix problems created by
+   improper nesting of MathML tags.  This can be due to a missing or
+   extra close tag, or by using self-closing tags in an HTML document,
+   where some browsers require explicit close tags for MathML.
 
 .. _mathml-parseError:
 .. describe:: parseError: (node) => {...}
@@ -97,7 +124,7 @@ Option Descriptions
       to see if they are valid on the given node (i.e., they have a
       default value, or are one of the standard attributes such as
       :attr:`style`, :attr:`class`, :attr:`id`, :attr:`href`, or a
-      :attr:`data-` attribute.  If an attribute is in error, the node
+      :attr:`data-` attribute).  If an attribute is in error, the node
       is either placed inside an ``<merror>`` node (so that it is
       marked in the output as containing an error), or is replaced by
       an ``<merror>`` containing a full message indicating the bad
@@ -105,6 +132,13 @@ Option Descriptions
 
       Currently only names are checked, not values.  Value
       verification may be added in a future release.
+
+   .. _mathml-verify-checkMathvariant:
+   .. describe:: checkMathvariant: true
+
+      This specifies whether the values for the :attr:`mathvariant`
+      attributes are checked for validity.  If an invalid variant is
+      used, MathJax can crash, so correct variants are important.
 
    .. _mathml-verify-fullErrors:
    .. describe:: fullErrors: false
@@ -146,18 +180,31 @@ for developers include the following:
 .. _mathml-FindMathML:
 .. describe:: FindMathML: null
 
-   The ``FindMathML`` object instance that will override the default
-   one.  This allows you to create a subclass of ``FindMathML`` and
-   pass that to the MathML input jax.  A ``null`` value means use the
-   default ``FindMathML`` class and make a new instance of that.
+   The :data:`FindMathML` object instance that will override the
+   default one.  This allows you to create a subclass of the
+   ``FindMathML`` class, create an instance of it, and pass that to
+   the MathML input jax to use in place of the default one.  A
+   ``null`` value means use the usual ``FindMathML`` class and make a
+   new instance of that.
 
 .. _mathml-MathMLCompile:
 .. describe:: MathMLCompile: null
 
-   The ``MathMLCompile`` object instance that will override the
-   default one.  This allows you to create a subclass of
-   ``MathMLCompile`` and pass that to the MathML input jax.  A
-   ``null`` value means use the default ``MathMLCompile`` class and
-   make a new instance of that.
+   The :data:`MathMLCompile` object instance that will override the
+   default one.  This allows you to create a subclass of the
+   ``MathMLCompile`` class, make an instance of it, and pass that to
+   the MathML input jax to use in place of the default one.  A
+   ``null`` value means use the usual ``MathMLCompile`` class and make
+   a new instance of that.
 
+.. _mathml-MmlFactory:
+.. describe:: MmlFactory: null
+
+   The :data:`MmlFactory` object instance the will override the
+   default one.  This allows you to create a subclass of the
+   ``MmlFactory`` class, make an instance of it, and pass that to the
+   MathML input jax to use in place of the default one.  A ``null``
+   value means use the usual ``MmlFactory`` class and make a new
+   instance of that.
+   
 |-----|

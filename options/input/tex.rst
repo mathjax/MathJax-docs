@@ -5,12 +5,12 @@ TeX Input Processor Options
 ###########################
 
 The options below control the operation of the :ref:`TeX input
-processor <tex-input>` that is run when you include ``'input/tex'``,
-``'input/tex-full'``, or ``'input/tex-base'`` in the ``load`` array of
-the ``loader`` block of your MathJax configuration, or if you load a
-combined component that includes the TeX input jax.  They are listed
-with their default values.  To set any of these options, include a
-``tex`` section in your :data:`MathJax` global object.
+processor <tex-input>` that is run when you include ``'input/tex'`` or
+``'input/tex-base'`` in the :data:`load` array of the :data:`loader`
+block of your MathJax configuration, or if you load a combined
+component that includes the TeX input jax.  They are listed with their
+default values.  To set any of these options, include a :data:`tex`
+section in your :data:`MathJax` global object.
 
 -----
 
@@ -21,30 +21,36 @@ The Configuration Block
 
     MathJax = {
       tex: {
-        packages: ['base'],        // extensions to use
-        inlineMath: [              // start/end delimiter pairs for in-line math
+        packages: ['base'],              // extensions to use
+        inlineMath: [                    // start/end delimiter pairs for in-line math
           ['\\(', '\\)']
         ],
-        displayMath: [             // start/end delimiter pairs for display math
+        displayMath: [                   // start/end delimiter pairs for display math
           ['$$', '$$'],
           ['\\[', '\\]']
         ],
-        processEscapes: true,      // use \$ to produce a literal dollar sign
-        processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
-        processRefs: true,         // process \ref{...} outside of math mode
-        digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
-                                   // pattern for recognizing numbers
-        tags: 'none',              // or 'ams' or 'all'
-        tagSide: 'right',          // side for \tag macros
-        tagIndent: '0.8em',        // amount to indent tags
-        useLabelIds: true,         // use label name rather than tag for ids
-        maxMacros: 10000,          // maximum number of macro substitutions per expression
-        maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
-        baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
+        processEscapes: true,            // use \$ to produce a literal dollar sign
+        processEnvironments: true,       // process \begin{xxx}...\end{xxx} outside math mode
+        processRefs: true,               // process \ref{...} outside of math mode
+        numberPattern:                   // pattern for recognizing numbers
+           /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+        initialDigit: /[0-9.,]/,         // pattern for initial digit or decimal point for a number
+        identifierPattern: /^[a-zA-Z]+/, // pattern for multiLetterIdentifiers in \mathrm, etc.
+        initialLetter: /[a-zA-Z]/,       // pettern for initial letter in identifiers
+        tags: 'none',                    // or 'ams' or 'all'
+        tagSide: 'right',                // side for \tag macros
+        tagIndent: '0.8em',              // amount to indent tags
+        tagAlign: 'baseline',            // The rowalign value to use for tag cells
+        useLabelIds: true,               // use label name rather than tag for ids
+        ignoreDuplicateLabels: false,    // prevent error messages for duplicate label ids?
+        mathStyle: 'TeX',                // one of TeX, ISO, French, or upright
+        maxBuffer: 5 * 1024,             // maximum size for the internal TeX string (5K)
+        maxTemplateSubtitutions: 10000,  // maximum number of array template substitutions
+        baseURL:                         // URL for use with links to tags (when there is a <base> tag in effect)
            (document.getElementsByTagName('base').length === 0) ?
             '' : String(document.location).replace(/#.*$/, '')),
-        formatError:               // function called when TeX syntax errors occur
-            (jax, err) => jax.formatError(err)
+        formatError:                     // function called when TeX syntax errors occur
+           (jax, err) => jax.formatError(err)
       }
     };
 
@@ -53,16 +59,23 @@ Note that some extensions make additional options available.  See the
 
 .. note::
 
-   The default for ``processEscapes`` has changed from
-   ``false`` in version 2 to ``true`` in version 3.
+   The default for :data:`processEscapes` has changed from
+   ``false`` in version 2 to ``true`` in version 3 and above.
 
 .. note::
 
-   Prior to version 3.2, the ``multlineWidth`` option used to be in the
-   main ``tex`` block, but it is now in the ``ams`` sub-block of the
-   ``tex`` block.  Version 3.2 includes code to move the configuration
-   from its old location to its new one, but that
-   backward-compatibility code will be removed in a future version.
+   Prior to version 3.2, the :data:`multlineWidth` option used to be
+   in the main :data:`tex` block, but it is now in the :data:`ams`
+   sub-block of the :data:`tex` block.  Version 3.2 includes code to
+   move the configuration from its old location to its new one, but
+   that backward-compatibility code has been removed in version 4.
+
+.. note::
+
+   The :data:`digits` option has been renamed :data:`numberPattern` in version 4.
+
+Additional options are described in the :ref:`input-common-options`
+section.
 
 -----
 
@@ -75,9 +88,9 @@ Option Descriptions
 
    This array lists the names of the packages that should be
    initialized by the TeX input processor.  The :ref:`input/tex
-   <tex-input>` and :ref:`input/tex-full <tex-input>` components
+   <tex-input>` and :ref:`input/tex-base <tex-input>` components
    automatically add to this list the packages that they load.  If you
-   explicitly load addition tex extensions, you should add them to
+   explicitly load additional tex extensions, you should add them to
    this list.  For example:
 
    .. code-block:: javascript
@@ -124,7 +137,7 @@ Option Descriptions
 
 
 .. _tex-inlineMath:
-.. describe:: inlineMath: [['\\\(','\\\)']]
+.. describe:: inlineMath: [['\\(','\\)']]
 
     This is an array of pairs of strings that are to be used as
     in-line math delimiters.  The first in each pair is the initial
@@ -133,34 +146,47 @@ Option Descriptions
 
     .. code-block:: javascript
 
-        inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+        inlineMath: {'[+]': [['$','$']]}
 
-    would cause MathJax to look for ``$...$`` and ``\(...\)`` as
-    delimiters for in-line mathematics.  (Note that the single dollar
-    signs are not enabled by default because they are used too
-    frequently in normal text, so if you want to use them for math
-    delimiters, you must specify them explicitly.)
+    would add dollar sign delimiters to the default list, causing
+    MathJax to look for ``$...$`` and ``\(...\)`` as delimiters for
+    in-line mathematics.  Note that the single dollar signs are not
+    enabled by default because they are used too frequently in normal
+    text, so if you want to use them for math delimiters, you must
+    specify them explicitly.
 
-    Note that the delimiters can't look like HTML tags (i.e., can't
-    include the less-than sign), as these would be turned into tags by
-    the browser before MathJax has the chance to run.  You can only
-    include text, not tags, as your math delimiters.
+    .. warning::
+
+       The delimiters can't look like HTML tags (i.e., can't include
+       the less-than sign), as these would be turned into tags by the
+       browser before MathJax has the chance to run.  You can only
+       include text, not tags, as your math delimiters.  It is
+       possible, however, to use a custom render action to look for
+       such tags.  The :ref:`v2-api-changes` section includes an
+       example of how to do this for the v2-style ``<script
+       type="math/tex">`` tags.
 
 .. _tex-displayMath:
-.. describe:: displayMath: [ ['$$','$$'], ['\\\[','\\\]'] ]
+.. describe:: displayMath: [ ['$$','$$'], ['\\[','\\]'] ]
 
     This is an array of pairs of strings that are to be used as
     delimiters for displayed equations.  The first in each pair is the
     initial delimiter and the second is the terminal delimiter.  You
     can have as many pairs as you want.
 
-    Note that the delimiters can't look like HTML tags (i.e., can't
-    include the less-than sign), as these would be turned into tags by
-    the browser before MathJax has the chance to run.  You can only
-    include text, not tags, as your math delimiters.
+    .. warning::
+
+       The delimiters can't look like HTML tags (i.e., can't include
+       the less-than sign), as these would be turned into tags by the
+       browser before MathJax has the chance to run.  You can only
+       include text, not tags, as your math delimiters.  It is
+       possible, however, to use a custom render action to look for
+       such tags.  The :ref:`v2-api-changes` section includes an
+       example of how to do this for the v2-style ``<script
+       type="math/tex">`` tags.
 
 .. _tex-processEscapes:
-.. describe:: processEscapes: false
+.. describe:: processEscapes: true
 
     When set to ``true``, you may use ``\$`` to represent a literal
     dollar sign, rather than using it as a math delimiter, and ``\\``
@@ -175,21 +201,24 @@ Option Descriptions
 .. _tex-processRefs:
 .. describe:: processRefs: true
 
-    When set to ``true``, MathJax will process ``\ref{...}`` outside 
-    of math mode.
+    When set to ``true``, MathJax will process ``\ref{...}`` and
+    ``\eqref{}`` macros outside of math mode.
 
 .. _tex-processEnvironments:
 .. describe:: processEnvironments: true
 
-    When ``true``, `tex2jax` looks not only for the in-line and
-    display math delimiters, but also for LaTeX environments 
+    When ``true``, MathJax looks not only for the in-line and display
+    math delimiters, but also for LaTeX environments
     (``\begin{something}...\end{something}``) and marks them for
-    processing by MathJax.  When ``false``, LaTeX environments will
-    not be processed outside of math mode.
-
+    processing by the TeX input jax.  When ``false``, LaTeX
+    environments will not be processed outside of math mode.  Note
+    that *any* environment will be picked up this way, and initiates
+    display-style mathematics, not just those that would do so in
+    LaTeX.
 
 .. _tex-digits:
-.. describe:: digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/
+.. _tex-numberPattern:
+.. describe:: numberPattern: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/
 
    This gives a regular expression that is used to identify numbers
    during the parsing of your TeX expressions.  By default, the
@@ -205,6 +234,36 @@ Option Descriptions
         }
       };
 
+.. _tex-initialDigit:
+.. describe::  initialDigit: /[0-9.,]/
+
+   This gives a regular expression that tells what characters can
+   appear as the first character in a number.  Once one of these
+   characters has been found, the :data:`numberPattern` above is
+   applied to the input string to see if a number is found.
+
+.. _tex-identifierPattern:
+.. describe:: identifierPattern: /^[a-zA-Z]+/
+
+   This gives a regular expression that determines what consistitues a
+   single identifier within one of the macros that specifies a font
+   style, like ``\mathrm{}`` or ``\mathcal{}``, or within
+   ``\operatorname{}``.  A string that matches this pattern will
+   produce a single ``<mi>`` element in the internal MathML
+   representation of your formula.  Thus, ``\operatorname{max}`` will
+   produce ``<mi>max</mi>`` rather than three separate ``<mi>``, one
+   for each letter.
+
+.. _tex-initialLetter:
+.. describe:: initialLetter: /[a-zA-Z]/
+
+   This gives a regular expression that specifies what letters can
+   initiate a multi-letter identifier inside macros like
+   ``\\mathrm{}`` or ``\operatorname()``.  Onces one of these
+   characters has been found, the :data:`identifierPattern` above ks
+   applied to the inoput string to see if a multi-letter identifier is
+   found.
+
 .. _tex-tags:
 .. describe:: tags: 'none'
 
@@ -218,80 +277,121 @@ Option Descriptions
 .. _tex-tagSide:
 .. describe:: tagSide: 'right'
 
-    This specifies the side on which ``\tag{}`` macros will place the
-    tags, and on which automatic equation numbers will appear.  Set it
-    to ``'left'`` to place the tags on the left-hand side.
+   This specifies the side on which ``\tag{}`` macros will place the
+   tags, and on which automatic equation numbers will appear.  Set it
+   to ``'left'`` to place the tags on the left-hand side.
 
 .. _tex-tagIndent:
 .. describe:: tagIndent: "0.8em"
 
-    This is the amount of indentation (from the right or left) for the
-    tags produced by the ``\tag{}`` macro or by automatic equation
-    numbers.
+   This is the amount of indentation (from the right or left) for the
+   tags produced by the ``\tag{}`` macro or by automatic equation
+   numbers.
+
+.. _tex-tagAlign:
+.. describe:: tagAlign: 'baseline'
+
+   This specifies how equation tags should be vertically aligned with
+   equations that include line breaks.  Its value can be
+   ``'baseline'``, ``'top'``, ``'center'``, or ``'bottom'``.  The
+   default is ``baseline``, which is usually the baseline of the top
+   line of the equation.
 
 .. _tex-useLabelIds:
 .. describe:: useLabelIds: true
 
-   This controls whether element IDs for tags use the ``\label`` name
-   or the equation number.  When ``true``, use the label, when
-   ``false``, use the equation number.
+   This controls whether element :attr:`id` attributes for tags use
+   the ``\label`` name or the equation number.  When ``true``, use the
+   label, when ``false``, use the equation number.
 
-.. _tex-maxMacros:
-.. describe:: maxMacros: 10000
+.. _tex-ignoreDuplicateLabels:
+.. describe:: ignoreDuplicateLabels: false
 
-    Because a definition of the form ``\def\x{\x} \x`` would cause MathJax 
-    to loop infinitely, the ``maxMacros`` constant will limit the number of 
-    macro substitutions allowed in any expression processed by MathJax.  
+   Normally, if MathJax typesets two expressions that have the same
+   ``\label``, that will generate an error for the second equation
+   indicating the duplicate label.  Setting this to ``true``, however,
+   will prevent the error message from occurring.  That can be useful
+   in a setting where you have removed the previous equation, such as
+   in an editor where you are retypesetting the same equation when the
+   content is edited.
+
+.. _tex-mathStyle:
+.. describe:: mathStyle: 'TeX'
+
+   This determines how single-letter upper- and lower-case Latin and
+   Greek variable names are typeset.  The value can be ``'TeX'``,
+   ``'ISO'``, ``'French'``, or ``'upright'``, and the result is as
+   describe in the following table:
+
+   +-----------+---------+---------+---------+---------+
+   | mathStyle |  latin  |  Latin  |  greek  |  Greek  |
+   +===========+=========+=========+=========+=========+
+   | TeX       | italic  | italic  | italic  | upright |
+   +-----------+---------+---------+---------+---------+
+   | ISO       | italic  | italic  | italic  | italic  |
+   +-----------+---------+---------+---------+---------+
+   | French    | italic  | upright | upright | upright |
+   +-----------+---------+---------+---------+---------+
+   | upright   | upright | upright | upright | upright |
+   +-----------+---------+---------+---------+---------+
 
 .. _tex-maxBuffer:
 .. describe:: maxBuffer: 5 * 1024
 
-    Because a definition of the form ``\def\x{\x aaa} \x`` would loop 
-    infinitely, and at the same time stack up lots of a's in MathJax's 
-    equation buffer, the ``maxBuffer`` constant is used to limit the size of 
-    the string being processed by MathJax.  It is set to 5KB, which should 
-    be sufficient for any reasonable equation.
+   Because a definition of the form ``\def\x{\x aaa} \x`` would loop
+   infinitely, and at the same time stack up lots of a's in MathJax's
+   equation buffer, the ``maxBuffer`` constant is used to limit the
+   size of the string being processed by MathJax.  It is set to 5KB,
+   which should be sufficient for any reasonable equation.
 
-.. raw:: html
+.. _tex-maxTemplateSubtitutions:
+.. describe:: maxTemplateSubtitutions: 10000
 
-   <style>
-   .rst-content dl.describe > dt:first-child {
-     margin-bottom: 0;
-   }
-   .rst-content dl.describe > dt + dt {
-     margin-top: 0;
-     border-top: none;
-     padding-left: 6em;
-   }
-   .rst-content dl.describe > dt + dd {
-     margin-top: 6px;
-   }
-   </style>
+   In an array environment preable, it is possible to make a column
+   declaration that loops infinitely.  For example,
+   ``\begin{array}{c@{\\}c} a&b \end{array}``
+   would cause MathJax to loop.  This value prevents this from looping
+   infinitely by limiting the number of template substitutions that
+   can be applied to an array.
 
 .. _tex-baseURL:
-.. describe:: baseURL: (document.getElementsByTagName('base').length === 0) ?
-                       '' : String(document.location).replace(/#.*$/, ''))
+.. describe:: baseURL: URL
 
    This is the base URL to use when creating links to tagged equations
    (via ``\ref{}`` or ``\eqref{}``) when there is a ``<base>`` element
    in the document that would affect those links.  You can set this
-   value by hand if MathJax doesn't produce the correct link.
+   value by hand if MathJax doesn't produce the correct link.  By
+   default, it is either the URL for the current document if there is
+   a ``<base>`` element, or an empty string if not.
 
 .. _tex-formatError:
 .. describe:: formatError: (jax, err) => jax.formatError(err)
 
-   This is a function that is called when the TeX input jax reports a
-   syntax or other error in the TeX that it is processing.  The
+   This is a function that is called when the TeX input jax identifies
+   a syntax or other error in the TeX that it is processing.  The
    default is to generate an ``<merror>`` MathML element with the
    message indicating the error that occurred.  You can override the
    function to perform other tasks, like recording the message,
    replacing the message with an alternative message, or throwing the
    error so that MathJax will stop at that point (you can catch the
-   error using promises or a ``try/carch`` block).
+   error using promises or a ``try/carch`` block).  Your function
+   should return the MathML tree that is used for the error, in
+   MathJax's internal format.  The :meth:`jax.mmlFactory.create()`
+   function can be used to create such trees.  For example,
 
+   .. code-block:: javascript
 
-The remaining options are described in the
-:ref:`input-common-options` section.
+      jax.mmlFactory.create('mtext', {mathvariant: 'bold'}, [
+        jax.mmlFactory.text('An error occurred!')
+      ]);
+
+   would create the internal representation for
+
+   .. code-block:: xml
+
+      <mtext mathvariant="bold">
+      An error occurred!
+      </merror>
 
 -----
 
@@ -304,10 +404,11 @@ for developers include the following:
 .. _tex-FindTeX:
 .. describe:: FindTeX: null
 
-   The ``FindTeX`` object instance that will override the default
-   one.  This allows you to create a subclass of ``FindTeX`` and
-   pass that to the TeX input jax.  A ``null`` value means use the
-   default ``FindTeX`` class and make a new instance of that.
+   The ``FindTeX`` object instance that will override the default one.
+   This allows you to create a subclass of the ``FindTeX`` class,
+   create an instance of it, and pass that to the TeX input jax to use
+   instead of the usual one.  A ``null`` value means use the default
+   ``FindTeX`` class and make a new instance of that.
               
 
 -----
@@ -344,14 +445,20 @@ described in the links below:
 * :ref:`tex-ams-options`
 * :ref:`tex-amscd-options`
 * :ref:`tex-autoload-options`
+* :ref:`tex-bbm-options`
+* :ref:`tex-bboldx-options`
+* :ref:`tex-begingroup-options`
 * :ref:`tex-color-options`
 * :ref:`tex-configmacros-options`
+* :ref:`tex-dsfont-options`
 * :ref:`tex-mathtools-options`
 * :ref:`tex-noundefined-options`
 * :ref:`tex-physics-options`
 * :ref:`tex-require-options`
 * :ref:`tex-setoptions-options`
 * :ref:`tex-tagformat-options`
+* :ref:`texhtml Options <tex-texhtml-options>`
+* :ref:`tex-units-options`
 
 -----
 
@@ -368,7 +475,7 @@ of options for the TeX parser, or the options for a given TeX package.
 Because this functionality can have potential adverse consequences on
 a page that allows community members to enter TeX notation, this
 extension is not loaded by default, and can't be loaded by
-`\require{}`.  You must load it and add it to the tex package list
+``\require{}``.  You must load it and add it to the tex package list
 explicitly in order to allow the options to be set.  The extension has
 configuration parameters that allow you to control which packages and
 options can be modified from within a TeX expression, and you may wish
