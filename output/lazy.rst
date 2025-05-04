@@ -34,7 +34,7 @@ configuration as follows:
 This will adjust the typesetting pipeline to implement the
 lazy-typesetting functionality.
 
-Lazy typesetting works best with SVG output, but the CHTML output
+Lazy typesetting works best with SVG output, but the CHTML output is
 nearly as fast. With TeX input, the lazy extension makes sure that
 previous expressions are processed by TeX (though not output to the
 page) so that any macro definitions or automatic equation numbers are

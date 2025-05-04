@@ -6,7 +6,7 @@ MathJax Font Support
 
 MathJax version 4 includes support for a number of new font sets for
 MathJax, and changes the default font to one based on the New Computer
-Modern fonts, which offers support for a much larger range of characters
+Modern fonts, which offer support for a much larger range of characters
 than MathJax's original TeX font set, but is consistent with the
 look-and-feel of the original MathJax TeX fonts.  The new set is
 slightly lighter, so will not seem so bold and will fit in better on
@@ -141,7 +141,7 @@ respectively, when they are added to the :data:`load` array in the
 ``\require`` to load the extension.  They don't actually replace the
 original double-struck characters, but instead, place the new ones in
 a separate *pseudo-variant* used internally by MathJax, so are
-available only through the macros providedx by the corresponding TeX
+available only through the macros provided by the corresponding TeX
 extension.
 
 For ``mathjax-euler``, configure MathJax to load the given extension.
@@ -221,7 +221,7 @@ potentially an asynchronous process, which was not the case in v3.
 
 In version 3, as long as you pre-loaded all the TeX extensions that
 you needed, you could use synchronous calls to
-:js:meth:`MathJax.typeset()`, :js:meth:`MathJax.tex2svg()` or the
+:js:meth:`MathJax.typeset()`, :js:meth:`MathJax.tex2svg()`, or the
 other similar functions.  With the new (larger) dynamic fonts in
 version 4, that is no longer guaranteed to work.  Instead, if you are
 using a font other than ``mathjax-tex``, you should use the
@@ -249,15 +249,10 @@ conversion functions using either ``await`` or the promise's
 .. code-block:: javascript
 
    MathJax = {
-     output: {
-       fontPath: 'https://cdn.jsdelivr.net/npm/@mathjax/%%FONT%%-font',
-     },
      startup: {
        pageReady() {
-         const {mathjax} = MathJax._.mathjax;
          return MathJax.startup.document.outputJax.font
            .loadDynamicFiles()
-           .then(() => mathjax.handleRetriesFor(() => MathJax.startup.document.convert('x')))
            .then(() => MathJax.startup.defaultPageReady());
        }
      }
@@ -265,9 +260,7 @@ conversion functions using either ``await`` or the promise's
 
 you will be able to use synchronous calls once the
 :js:data:`MathJax.startup.promise` resolves, so you will only have to
-handle one asynchronous call and the rest can be synchronous.  (The
-extra :meth:`convert()` call is to get the speech-rule-engine set up,
-if it is loaded.)
+handle one asynchronous call and the rest can be synchronous.
 
 Note, however, that this approach will load a *lot* of font data, and
 this can greatly slow down your initial page processing, especially on
@@ -284,12 +277,8 @@ data files.  Here is a configuration that implements that approach:
 
    MathJax = {
      fontFiles: ['calligraphic'],  // The dynamic font files to load
-     output: {
-       fontPath: 'https://cdn.jsdelivr.net/npm/@mathjax/%%FONT%%-font',
-     },
      startup: {
        pageReady() {
-         const {mathjax} = MathJax._.mathjax;
          const font = MathJax.startup.document.outputJax.font;
          const prefix = font.options.dynamicPrefix;
          const dynamic = font.constructor.dynamicFiles;
@@ -297,7 +286,6 @@ data files.  Here is a configuration that implements that approach:
          return MathJax.loader
            .load(...(files.map((name) => `${prefix}/${name}`)))
            .then(() => files.forEach((name) => dynamic[name].setup(font)))
-           .then(() => mathjax.handleRetriesFor(() => MathJax.startup.document.convert('x')))
            .then(() => MathJax.startup.defaultPageReady());
        }
      }

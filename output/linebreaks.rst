@@ -93,8 +93,9 @@ example.
 
 Note that there is now a new :data:`output` configuration block that
 can be used to provide options that are common to both CHTML and SVG
-output, so that you may have set for your default output jax will stay
-in effect when the user changes renderers via the contextual menu.
+output, so that options you may have set for your default output jax
+will stay in effect when the user changes renderers via the contextual
+menu.
 
 When :data:`displayOverflow` is set to ``linebreak``, the breaking is
 controlled by the settings in the :data:`linebreaks` sub-block of the
@@ -177,8 +178,8 @@ content, and ``!{...}`` for replacing inter-column rules.  Support for
 ``|`` and the non-standard ``:`` are improved so multiple copies of
 ``|`` and ``:`` now produce multiple rules that are close together.
 The ``*{n}{...}`` option for repeating a column declaration `n` times
-is also supported.  Finally, non-standard ``P{...}``, ``M{...}``, and
-``B{...}`` are defined that produce math-mode versions of their
+is also supported.  Finally, non-standard ``P{width}``, ``M{width}``, and
+``B{width}`` are defined that produce math-mode versions of their
 corresponding lower-case counterparts.  The ``\newcolumntype`` macro
 for declaring new column specifications is also available.
 
@@ -227,7 +228,7 @@ macro already in the :ref:`tex-mathtools` package.)
 
 In addition, version 4 introduces a new non-standard ``\breakAlign``
 macro that can be used to set the vertical alignment for the various
-cells, rows, or columns in the alignment.  The format is
+cells, rows, or columns in an alignment.  The format is
 ``\breakAlign{type}{align}``, where ``type`` is one of ``c``, ``r``,
 or ``t``, indicating whether the alignment is for the single cell in
 which it occurs, the row in which it occurs, or for the entire table,
@@ -235,15 +236,15 @@ and ``align`` is one of ``t``, ``c``, ``m``, ``b``, for top, center,
 middle, or bottom.  The difference between ``c`` and ``m`` is that
 ``c`` always centers the cell regardless of line breaks, while ``m``
 only centers if there are line breaks, and otherwise aligns on the
-cell baseline.  When type is ``r`` or ``t``, then ``align`` can be a
+cell baseline.  When ``type`` is ``r`` or ``t``, then ``align`` can be a
 sequence of these letters giving the alignments to use in each entry
 in the row, with the last one being repeated if there are more columns
 than letters.  When type is ``t`` the alignments are applied as row
 alignments to each row in the table.
 
 For example, ``\breakAlign{t}{bt}`` could be used at the beginning of
-an alignment to make the baseline of the bottom row of the first
-column align with that of the top row of the second column.  This is
+an alignment to make the baseline of the bottom line of the first
+column align with that of the top line of the second column.  This is
 the default for `align` environments, as shown in the example above.
 
 When line-breaking is enabled, you may want to have more control over
@@ -398,7 +399,7 @@ Options for ``<mpadded>`` elements
 
 The various line-breaking boxes described above for LaTeX expressions
 are implemented via the MathML ``<mpadded>`` element.  In order to
-facility that, MathJax v4 adds two non-standard attributes to the
+facilitate that, MathJax v4 adds two non-standard attributes to the
 ``mpadded`` element: :attr:`data-overflow` and :attr:`data-align`.
 When :attr:`data-overflow="linebreak"` is used, the contents performs
 line-breaking to the width specified in the element's :attr:`width`
