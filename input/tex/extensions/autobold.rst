@@ -4,6 +4,6 @@
 autobold
 ########
 
-The `autobold` extension is no longer available in MathJax version 3.
+The `autobold` extension is no longer available in MathJax version 3 or later.
 
 |-----|

@@ -66,7 +66,7 @@ Additional Special Characters
 
    * - ``~``
      - non-breaking space
-   * - \`
+   * - :literal:`\``
      - open quote (use two for double quote)
    * - ``'``
      - close quote (use two for double quote)
@@ -261,6 +261,10 @@ Spacing Commands
      - horizontal space (of a given size)
    * - ``\kern``
      - kern (by a given size)
+   * - ``\mkern``
+     - kern (by a given size)
+   * - ``\mskip``
+     - horizontal space (of a given size)    
    * - ``\mspace``
      - horizontal space (of a given size)    
    * - ``\rule``
@@ -340,10 +344,10 @@ Bounding Box Macros
      - overlap on the right
    * - ``\phantom``
      - empty space of the size of given math
+   * - ``\hphantom``
+     - 0-height box with width of given math
    * - ``\vphantom``
      - 0-width box with height of given math
-   * - ``\vphantom``
-     - 0-height box with width of given math
    * - ``\smash``
      - math with zero height and depth
 

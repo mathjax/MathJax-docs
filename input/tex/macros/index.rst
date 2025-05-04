@@ -235,6 +235,10 @@ A
      - physics
    * - ``\approx``
      -
+   * - ``\approxcolon``
+     - mathtools
+   * - ``\Approxcolon``
+     - mathtools
    * - ``\approxeq``
      - **ams**
    * - ``\arccos``
@@ -417,6 +421,12 @@ B
      - **ams**
    * - ``\begin``
      -
+   * - ``\begingroup``
+     - begingroup
+   * - ``\begingroupReset``
+     - begingroup
+   * - ``\begingroupSandbox``
+     - begingroup
    * - ``\beta``
      -
    * - ``\beth``
@@ -675,8 +685,6 @@ C
      - colortbl
    * - ``\celsius``
      - gensymb
-   * - ``\centercolon``
-     - mathtools
    * - ``\centerdot``
      - **ams**
    * - ``\centernot``
@@ -724,6 +732,10 @@ C
    * - ``\colonapprox``
      - mathtools
    * - ``\Colonapprox``
+     - mathtools
+   * - ``\colondash``
+     - mathtools
+   * - ``\Colondash``
      - mathtools
    * - ``\coloneq``
      - mathtools
@@ -821,6 +833,10 @@ D
      - **base**, text-base
    * - ``\daleth``
      - **ams**
+   * - ``\dashcolon``
+     - mathtools
+   * - ``\Dashcolon``
+     - mathtools
    * - ``\dashedLine``
      - *bussproofs*
    * - ``\dashleftarrow``
@@ -850,6 +866,12 @@ D
    * - ``\DeclareMathOperator``
      - **ams**
    * - ``\DeclarePairedDelimiter``
+     - mathtools
+   * - ``\DeclarePairedDelimiters``
+     - mathtools
+   * - ``\DeclarePairedDelimitersX``
+     - mathtools
+   * - ``\DeclarePairedDelimitersXPP``
      - mathtools
    * - ``\DeclarePairedDelimiterX``
      - mathtools
@@ -1045,6 +1067,8 @@ E
      - *enclose*
    * - ``\end``
      -
+   * - ``\endgroup``
+     - begingroup
    * - ``\enspace``
      - **base**, text-base
    * - ``\epsilon``
@@ -1149,6 +1173,8 @@ G
      -
    * - ``\gcd``
      -
+   * - ``\gdef``
+     - begingroup
    * - ``\ge``
      -
    * - ``\genfrac``
@@ -1169,6 +1195,8 @@ G
      - **ams**
    * - ``\gimel``
      - **ams**
+   * - ``\global``
+     - begingroup
    * - ``\gnapprox``
      - **ams**
    * - ``\gneq``
@@ -1519,20 +1547,12 @@ L
      -
    * - ``\longleftrightarrow``
      -
-   * - ``\longleftrightarrows``
-     - *mhchem*
-   * - ``\longLeftrightharpoons``
-     - *mhchem*
    * - ``\longmapsto``
      -
    * - ``\longrightarrow``
      -
    * - ``\Longrightarrow``
      -
-   * - ``\longrightleftharpoons``
-     - *mhchem*
-   * - ``\longRightleftharpoons``
-     - *mhchem*
    * - ``\looparrowleft``
      - **ams**
    * - ``\looparrowright``
@@ -1567,6 +1587,8 @@ M
 .. list-table::
    :widths: 70 30
 
+   * - ``\MakeAboxedCommand``
+     - mathtools
    * - ``\makebox``
      -
    * - ``\maltese``
@@ -1683,6 +1705,46 @@ M
      - **ams**
    * - ``\mel``
      - physics
+   * - ``\mhchemBondDTD``
+     - *mhchem*
+   * - ``\mhchemBondTD``
+     - *mhchem*
+   * - ``\mhchemBondTDD``
+     - *mhchem*
+   * - ``\mhchemleftarrow``
+     - *mhchem*
+   * - ``\mhchemleftrightarrow``
+     - *mhchem*
+   * - ``\mhchemlongleftarrow``
+     - *mhchem*
+   * - ``\mhchemlongleftrightarrow``
+     - *mhchem*
+   * - ``\mhchemlongleftrightarrows``
+     - *mhchem*
+   * - ``\mhchemlongLeftrightharpoons``
+     - *mhchem*
+   * - ``\mhchemlongrightarrow``
+     - *mhchem*
+   * - ``\mhchemlongrightleftharpoons``
+     - *mhchem*
+   * - ``\mhchemlongRightleftharpoons``
+     - *mhchem*
+   * - ``\mhchemrightarrow``
+     - *mhchem*
+   * - ``\mhchemxleftarrow``
+     - *mhchem*
+   * - ``\mhchemxleftrightarrow``
+     - *mhchem*
+   * - ``\mhchemxleftrightarrows``
+     - *mhchem*
+   * - ``\mhchemxLeftrightharpoons``
+     - *mhchem*
+   * - ``\mhchemxrightarrow``
+     - *mhchem*
+   * - ``\mhchemxrightleftharpoons``
+     - *mhchem*
+   * - ``\mhchemxRightleftharpoons``
+     - *mhchem*
    * - ``\mho``
      - **ams**
    * - ``\micro``
@@ -2289,6 +2351,10 @@ S
      -
    * - ``\sim``
      -
+   * - ``\simcolon``
+     - mathtools
+   * - ``\Simcolon``
+     - mathtools
    * - ``\simeq``
      -
    * - ``\sin``
@@ -3217,6 +3283,8 @@ V
      -
    * - ``\vcenter``
      -
+   * - ``\vcentercolon``
+     - mathtools
    * - ``\vdash``
      -
    * - ``\vDash``
@@ -3306,15 +3374,21 @@ X
    * - ``\xleftharpoonup``
      - mathtools
    * - ``\xleftrightarrow``
-     - mathtools, *mhchem*
+     - mathtools
    * - ``\xLeftrightarrow``
      - mathtools
    * - ``\xleftrightharpoons``
      - mathtools
-   * - ``\xLeftrightharpoons``
-     - *mhchem*
    * - ``\xlongequal``
      - *extpfeil*
+   * - ``\xlongleftarrow``
+     - mathtools
+   * - ``\xLongleftarrow``
+     - mathtools
+   * - ``\xlongrightarrow``
+     - mathtools
+   * - ``\xLongrightarrow``
+     - mathtools
    * - ``\xmapsto``
      - *extpfeil*, mathtools
    * - ``\xmat``
@@ -3332,9 +3406,7 @@ X
    * - ``\xrightharpoonup``
      - mathtools
    * - ``\xrightleftharpoons``
-     - mathtools, *mhchem*
-   * - ``\xRightleftharpoons``
-     - *mhchem*
+     - mathtools
    * - ``\xtofrom``
      - *extpfeil*
    * - ``\xtwoheadleftarrow``

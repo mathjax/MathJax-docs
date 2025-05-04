@@ -53,6 +53,47 @@ it:
 
 -----
 
+.. _tex-newcommand-options:
+
+newcommand Options
+------------------
+
+When the `newcommand` extension is added to the :data:`packages` array
+for the :data:`tex` block of your MathJax configuration (as it is in
+all the combined components), two new options are made available in
+the :data:`tex` block:
+
+.. code-block:: javascript
+
+   MathJax = {
+     tex: {
+       maxMacros: 10000,                        // maximum number of macro substitutions per expression
+       protectedMacros: ['begingroupSandbox'],  // macros that can't be redefined
+     }
+   };
+
+.. _tex-maxMacros:
+.. describe:: maxMacros: 10000
+
+   Because a definition of the form ``\def\x{\x} \x`` would cause
+   MathJax to loop infinitely, the ``maxMacros`` constant will limit
+   the number of macro substitutions allowed in any expression
+   processed by MathJax.
+
+.. _tex-protectedMacros:
+.. describe:: protectedMacros: ['begingroupSandbox']
+
+   This array lists the macro names that can't be redefined by
+   ``\let``, ``\def``, ``\newcommand``, or other commands the define
+   TeX control sequences.  For example, in a question-and-answer
+   website where users can enter mathemtical expressions, this
+   protects the listed macro from being overwritten by a user,
+   possibly interfering with another user.  See the
+   :ref:`tex-begingroup` for more on isolating users from one
+   another.
+
+-----
+
 .. _tex-newcommand-commands:
 
 newcommand Commands

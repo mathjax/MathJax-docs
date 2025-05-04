@@ -43,8 +43,9 @@ following values:
   MathJax = {
     tex: {
       mathtools: {
-        multlinegap: '1em',
+        multline-gap: '1em',
         multlined-pos: 'c',
+        multlined-width: '',
         firstline-afterskip: '',
         lastline-preskip: '',
         smallmatrix-align: 'c',
@@ -55,6 +56,7 @@ following values:
         thincolon-dx: '-.04em',
         thincolon-dw: '-.08em',
         use-unicode: false,
+        legacycolonsymbols: false,
         prescript-sub-format: '',
         prescript-sup-format: '',
         prescript-arg-format: '',
@@ -65,15 +67,21 @@ following values:
     }
   };
 
-.. _tex-mathtools-multlinegap:
-.. describe:: multlinegap: '1em'
+.. _tex-mathtools-multline-gap:
+.. describe:: multline-gap: '1em'
 
-   Horizontal space for multlined environments.
+   Horizontal space for multlined environments. Note that in version
+   3, this was :data:`multlinegap` without the dash.
 
 .. _tex-mathtools-multlined-pos:
 .. describe:: multlined-pos: 'c'
 
    Default alignment for multlined environments.
+
+.. _tex-mathtools-multlined-width:
+.. describe:: multlined-width: ''
+
+   The default width for miltlined environments.
 
 .. _tex-mathtools-firstline-afterskip:
 .. describe:: firstline-afterskip: ''
@@ -126,6 +134,14 @@ following values:
    True to use unicode characters rather than multi-character version
    for ``\coloneqq``, etc., when possible.
 
+.. _tex-mathtools-legacycolonsymbols:
+.. describe:: legacycolonsymbols: false
+
+   The 2022 update to the LaTeX mathtools package changed the
+   definitions of ``\coloneq`` and three other related macros.
+   Setting this option to ``true`` will cause MathJax to use the older
+   definitions rather than the ones from 2022 and later.
+
 .. _tex-mathtools-prescript-sub-format:
 .. describe:: prescript-sub-format: ''
 
@@ -165,7 +181,7 @@ mathtools Commands
 ------------------
 
 The `mathtools` extension implements the following macros:
-``\:``, ``\Aboxed``, ``\adjustlimits``, ``\ArrowBetweenLines``, ``\bigtimes``, ``\centercolon``, ``\clap``, ``\colonapprox``, ``\Colonapprox``, ``\coloneq``, ``\Coloneq``, ``\coloneqq``, ``\Coloneqq``, ``\colonsim``, ``\Colonsim``, ``\cramped``, ``\crampedclap``, ``\crampedllap``, ``\crampedrlap``, ``\crampedsubstack``, ``\dblcolon``, ``\DeclarePairedDelimiter``, ``\DeclarePairedDelimiters``, ``\DeclarePairedDelimitersX``, ``\DeclarePairedDelimitersXPP``, ``\DeclarePairedDelimiterX``, ``\DeclarePairedDelimiterXPP``, ``\eqcolon``, ``\Eqcolon``, ``\eqqcolon``, ``\Eqqcolon``, ``\lparen``, ``\mathclap``, ``\mathllap``, ``\mathmakebox``, ``\mathmbox``, ``\mathrlap``, ``\mathtoolsset``, ``\MoveEqLeft``, ``\MTFlushSpaceAbove``, ``\MTFlushSpaceBelow``, ``\MTThinColon``, ``\ndownarrow``, ``\newtagform``, ``\nuparrow``, ``\ordinarycolon``, ``\overbracket``, ``\prescript``, ``\refeq``, ``\renewtagform``, ``\rparen``, ``\shortvdotswithin``, ``\shoveleft``, ``\shoveright``, ``\splitdfrac``, ``\splitfrac``, ``\textclap``, ``\textllap``, ``\textrlap``, ``\underbracket``, ``\usetagform``, ``\vdotswithin``, ``\xhookleftarrow``, ``\xhookrightarrow``, ``\xLeftarrow``, ``\xleftharpoondown``, ``\xleftharpoonup``, ``\xleftrightarrow``, ``\xLeftrightarrow``, ``\xleftrightharpoons``, ``\xmapsto``, ``\xmathstrut``, ``\xRightarrow``, ``\xrightharpoondown``, ``\xrightharpoonup``, ``\xrightleftharpoons``
+``\:``, ``\Aboxed``, ``\adjustlimits``, ``\approxcolon``, ``\Approxcolon``, ``\ArrowBetweenLines``, ``\bigtimes``, ``\clap``, ``\colonapprox``, ``\Colonapprox``, ``\colondash``, ``\Colondash``, ``\coloneq``, ``\Coloneq``, ``\coloneqq``, ``\Coloneqq``, ``\colonsim``, ``\Colonsim``, ``\cramped``, ``\crampedclap``, ``\crampedllap``, ``\crampedrlap``, ``\crampedsubstack``, ``\dashcolon``, ``\Dashcolon``, ``\dblcolon``, ``\DeclarePairedDelimiter``, ``\DeclarePairedDelimiters``, ``\DeclarePairedDelimitersX``, ``\DeclarePairedDelimitersXPP``, ``\DeclarePairedDelimiterX``, ``\DeclarePairedDelimiterXPP``, ``\eqcolon``, ``\Eqcolon``, ``\eqqcolon``, ``\Eqqcolon``, ``\lparen``, ``\MakeAboxedCommand``, ``\mathclap``, ``\mathllap``, ``\mathmakebox``, ``\mathmbox``, ``\mathrlap``, ``\mathtoolsset``, ``\MoveEqLeft``, ``\MTFlushSpaceAbove``, ``\MTFlushSpaceBelow``, ``\MTThinColon``, ``\ndownarrow``, ``\newtagform``, ``\nuparrow``, ``\ordinarycolon``, ``\overbracket``, ``\prescript``, ``\refeq``, ``\renewtagform``, ``\rparen``, ``\shortvdotswithin``, ``\shoveleft``, ``\shoveright``, ``\simcolon``, ``\Simcolon``, ``\splitdfrac``, ``\splitfrac``, ``\textclap``, ``\textllap``, ``\textrlap``, ``\underbracket``, ``\usetagform``, ``\vcentercolon``, ``\vdotswithin``, ``\xhookleftarrow``, ``\xhookrightarrow``, ``\xLeftarrow``, ``\xleftharpoondown``, ``\xleftharpoonup``, ``\xleftrightarrow``, ``\xLeftrightarrow``, ``\xleftrightharpoons``, ``\xlongleftarrow``, ``\xLongleftarrow``, ``\xlongrightarrow``, ``\xLongrightarrow``, ``\xmapsto``, ``\xmathstrut``, ``\xRightarrow``, ``\xrightharpoondown``, ``\xrightharpoonup``, ``\xrightleftharpoons``
 
 And the following environments:
 ``bmatrix*``, ``Bmatrix*``, ``bsmallmatrix*``, ``Bsmallmatrix*``, ``bsmallmatrix``, ``Bsmallmatrix``, ``cases*``, ``crampedsubarray``, ``dcases*``, ``dcases``, ``drcases*``, ``drcases``, ``lgathered``, ``matrix*``, ``multlined``, ``pmatrix*``, ``psmallmatrix*``, ``psmallmatrix``, ``rcases*``, ``rcases``, ``rgathered``, ``smallmatrix*``, ``spreadlines``, ``vmatrix*``, ``Vmatrix*``, ``vsmallmatrix*``, ``Vsmallmatrix*``, ``vsmallmatrix``, ``Vsmallmatrix``

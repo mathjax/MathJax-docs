@@ -73,6 +73,7 @@ you want to use it.  To load the `texhtml` extension explicitly, add
 block of your MathJax configuration, and add ``'texhtml'`` to the
 :data:`packages` array of the :data:`tex` block.
 
+.. _tex-texhtml-options:
 
 .. code-block:: javascript
 
