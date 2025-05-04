@@ -596,7 +596,7 @@ You may need to use ``npm`` or ``pnpm`` to install the
    //
    import '@mathjax/src/components/require.mjs';
    import '@mathjax/src/components/js/a11y/semantic-enrich/semantic-enrich.js';
-   import {setupEngine, sreReady, toSpeech} from '@mathjax/src/js/a11y/sre.js';
+   import {setupEngine, engineReady, toSpeech} from 'speech-rule-engine/js/common/system.js';
    import {STATE} from '@mathjax/src/js/core/MathItem.js';
 
    //
@@ -659,7 +659,7 @@ You may need to use ``npm`` or ``pnpm`` to install the
    //
    const locale = process.argv[3] || 'en';
    const modality = locale === 'nemeth' || locale === 'euro' ? 'braille' : 'speech';
-   await setupEngine({modality, locale}).then(() => sreReady());
+   await setupEngine({modality, locale}).then(() => engineReady());
    
    //
    // Start up MathJax

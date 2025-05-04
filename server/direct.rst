@@ -1101,7 +1101,7 @@ above, with the changes highlighted.
    // Import the speech-rule-engine
    //
    import '@mathjax/src/components/require.mjs';
-   import {setupEngine, sreReady, toSpeech} from '@mathjax/src/js/a11y/sre.js';
+   import {setupEngine, engineReady, toSpeech} from 'speech-rule-engine/js/common/system.js';
 
    //
    // Import the needed TeX packages
@@ -1163,7 +1163,7 @@ above, with the changes highlighted.
    //
    const locale = process.argv[3] || 'en';
    const modality = locale === 'nemeth' || locale === 'euro' ? 'braille' : 'speech';
-   await setupEngine({locale, modality}).then(() => sreReady());
+   await setupEngine({locale, modality}).then(() => engineReady());
 
    //
    // Produce the speech for the converted MathML
