@@ -82,17 +82,11 @@ expression that defines the macros, as in the following example:
        ready() {
          MathJax.startup.defaultReady();
          const {STATE} = MathJax._.core.MathItem;
-         MathJax.startup.document.convert(
-           String.raw`
-             \newcommand{\RR}{\mathbf{R}}
-             \newcommand{\bold}[1]{\mathbf{#1}}
-             \let\star=\ast
-           `,
-           {
-             format: 'TeX',
-             end: STATE.COMPILED
-           }
-         );
+         MathJax.tex2mml(String.raw`
+           \newcommand{\RR}{\mathbf{R}}
+           \newcommand{\bold}[1]{\mathbf{#1}}
+           \let\star=\ast
+         `);
        }
      }
    };
@@ -118,10 +112,7 @@ then include that in the :js:meth:`ready()` call.  For example,
            MathJax.startup.defaultReady();
            const {STATE} = MathJax._.core.MathItem;
            const defs = document.querySelector('script[type="text/x-tex-macros"]');
-           MathJax.startup.document.convert(
-             defs?.textContent || '',
-             {format: 'TeX', end: STATE.COMPILED}
-           );
+           MathJax.tex2mml(defs?.textContent || '');
          }
        }
      };

@@ -43,6 +43,7 @@ documentation if you need it.
     Typesetting Mathematics           <web/typeset>
     Converting Math Strings           <web/convert>
     Detecting Typeset Errors          <web/errors>
+    The "MathJax Retry" Error         <web/retry>
     Hosting Your Own Copy of MathJax  <web/hosting>
     Examples in a Browser             <web/examples>
 
@@ -92,9 +93,9 @@ documentation if you need it.
     :caption: Advanced topics
     :maxdepth: 1
 
-    MathJax in Dynamic Content        <advanced/typeset>
-    Making a Custom Build of MathJax  <advanced/webpack>
-    The MathJax Processing Model      <advanced/model>
+    MathJax in Dynamic Content           <advanced/typeset>
+    Making a Custom Build of MathJax     <advanced/webpack>
+    The MathJax Processing Model         <advanced/model>
     Synchronizing Your Code with MathJax <advanced/synchronize>
 
 .. _toc-miscellaneous:
@@ -112,6 +113,7 @@ documentation if you need it.
     :maxdepth: 2
     :titlesonly:
 
+    Upgrading from Version 3.x        <upgrading/v3>
     Upgrading from Version 2.x        <upgrading/v2>
     What's New in MathJax             <upgrading/index>
 

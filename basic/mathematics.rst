@@ -118,10 +118,11 @@ details on TeX extensions that are available.
 MathML input
 ------------
 
-For mathematics written in MathML notation, you mark your mathematics
-using standard ``<math>`` tags, where ``<math display="block">``
-represents displayed mathematics and ``<math display="inline">`` or
-just ``<math>`` represents in-line mathematics.
+For mathematics written in `MathML notation
+<https://developer.mozilla.org/en-US/docs/Web/MathML>`__, you mark
+your mathematics using standard ``<math>`` tags, where ``<math
+display="block">`` represents displayed mathematics and ``<math
+display="inline">`` or just ``<math>`` represents in-line mathematics.
 
 MathML notation will work with MathJax in HTML files, not just XHTML
 files, even in older browsers, and the web page need not be served

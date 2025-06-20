@@ -50,6 +50,21 @@ In addition, there are examples within this documentation:
 
 ..
 
+* :ref:`A renderAction for tooltips <renderaction-tooltip>`
+* :ref:`A renderAction to collapse complex subexpressions <renderaction-collapse>`
+* :ref:`A renderAction to use tags for math delimiters <renderaction-findtags>`
+
+..
+
+* :ref:`Allowing spaces in numbers <filter-number-space>`
+* :ref:`Converting Unicode full-width characters to ASCII equivalents <filter-fullwidth>`
+* :ref:`Converting Unicode numeric superscripts to TeX ones <filter-number-scripts>`
+* :ref:`Converting SVG size from ex to px units <filter-svg-size>`
+* :ref:`An Autobold extension replacement <filter-autobold>`
+* :ref:`Convert mathvariant text to Unicode equivalents <filter-mathvariant>`
+
+..
+
 * :ref:`Backward Compatibility for TeX input <v2-compatibility-example>`
 * :ref:`Locating MathJax v2 math script tags <math-script-example>`
 

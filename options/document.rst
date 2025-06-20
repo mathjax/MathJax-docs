@@ -162,11 +162,11 @@ Option Descriptions
    :meth:`MathJax.startup.document.render()` call), and the various
    conversion functions, such as :meth:`MathJax.tex2svg()` (and their
    underlying :meth:`MathJax.startup.document.convert()` call), and
-   the promise-based versions of these functions.  The structure of the
-   object is ``name: value`` pairs separated by commas, where the
-   ``name`` gives an identifier for each action, and the ``value`` is
-   an array consisting of a number and zero, one, or two functions,
-   followed optionally by a boolean value.
+   during the promise-based versions of all these functions.  The
+   structure of the object is ``name: value`` pairs separated by
+   commas, where the ``name`` gives an identifier for each action, and
+   the ``value`` is an array consisting of a number and zero, one, or
+   two functions, followed optionally by a boolean value.
 
    The number gives the priority of the action (lower numbers are
    executed first when the actions are performed).  The first function
@@ -213,8 +213,8 @@ Option Descriptions
    ``typeset``, and ``update``.  These find the math in the document,
    call the input jax on the math that was located, obtain the metric
    information for the location of the math, call the output jax to
-   convert the internal format to the output format, and insert the output
-   into the document.
+   convert the internal format to the output format, and insert the
+   output into the document.
 
    You can add your own actions by adding new named actions to the
    ``renderActions`` object, or override existing ones by re-using an
@@ -226,6 +226,9 @@ Option Descriptions
    the list.  For example, the :ref:`menu-component` component inserts
    an action to add the menu event handlers to the math after it is
    inserted into the page.
+
+   See the :ref:`sync-renderActions` section for more information and
+   examples.
 
 -----
 

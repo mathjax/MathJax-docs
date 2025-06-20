@@ -141,6 +141,24 @@ accidentally turn it on again.  Finally, the ``assistiveMml`` render
 action is disabled, since it will never be activated (overkill
 perhaps, but no need to run the usual code for nothing).
 
+Note that MathJax's internal MathML is based on the MathML3
+specification.  Most browsers that support MathML implement
+MathML-Core (which was developed several years after MathJax was
+initially written).  The MathML-Core specification is more limited
+than MathML3, and does not support all the features that MathJax uses.
+For example, it does not include the :attr:`mathvariant` attribute in
+most cases, and MathJax uses that to implement ``\mathbf``,
+``\mathfrak``, ``\mathbb``, ``\mathcal``, and the other font variants.
+That means that the output generated here may not produce the desired
+variants when the MathML is displayed in a browser.  The
+:ref:`filter-mathvariant` example provides a way to work around that
+shortcoming in MathML-Core.  Other limitations remain, however, such
+as the lack of support for most of the ``mtable`` element's
+attributes, which are used to implement LaTeX's various aligment
+environments, for example.  So while it is possible to produce MathML
+output, the browser's native MathML rendering may not be up to the
+task for displaying it as well as MathJax would.
+
 .. note::
 
    MathJax's version 2 NativeMML output processor worked around

@@ -1071,8 +1071,8 @@ and :ref:`tex-physics` TeX packages.
 
 .. _direct-tex2speech:
 
-Generating Speech Strings
-=========================
+Generating Speech Strings without Typesetting
+=============================================
 
 One of MathJax's most important features is the ability to generate
 speech strings from mathematical notation.  MathJax uses the `Speech
