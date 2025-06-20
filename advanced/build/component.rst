@@ -29,6 +29,8 @@ not, you may need to adjust the locations in the :func:`import`
 commands).
 
 .. code-block:: javascript
+   :caption: custom-mathjax.js
+   :linenos:
 
    import {startup} from '@mathjax/src/components/js/startup/init.js';
    import {Loader} from '@mathjax/src/js/components/loader.js';
@@ -36,7 +38,7 @@ commands).
 
    //
    // Load the components that we want to combine into one component
-   //   (the ones listed in the preLoad() call below)
+   //   (listed in the preLoaded() call below)
    //
    import '@mathjax/src/components/js/core/core.js';
 
@@ -54,12 +56,12 @@ commands).
    //
    // Load speech-generation code
    //
-   import {checkSre} from '@mathjax/src/components/js/a11y/util.js';
+   import '@mathjax/src/components/js/a11y/util.js';
 
    //
    // Mark the components that you have loaded
    //
-   Loader.preLoad(
+   Loader.preLoaded(
      'loader', 'startup',
      'core',
      'input/tex-base',
@@ -71,10 +73,11 @@ commands).
    );
 
    //
-   // Update the configuration's mathjax path and add the loaded TeX packages
+   // Update the configuration's mathjax and sre paths and add the loaded TeX packages
    //
-   MathJax.config.loader.paths.mathjax = 'https://cdn.jsdelivr.net/npm/mathjax@4';
    insert(MathJax.config, {
+     loader: {paths: {mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4'}},
+     options: {worker: {path: https://cdn.jsdelivr.net/npm/mathjax@4/sre'}},
      tex: {
        packages: {'[+]': ['ams', 'newcommand', 'configmacros']}
      }
@@ -88,7 +91,7 @@ commands).
    //
    // Do the normal startup operations
    //
-   loadFont(checkSre(startup), true);
+   loadFont(startup, true);
 
 
 This loads the various components that we want to include in the
@@ -120,6 +123,165 @@ usual startup process is included.
    ``components/mjs`` or ``components/cjs`` directory based on whether
    ``import`` or ``require()`` is used.
 
+Line 25 causes the accessibility tools to be included in this combined
+component. For situations where these are not needed, leaving out
+lines 22 through 25 would mean that they would not be bundled into
+this component; but because the `ui/menu` component is included, its
+default menu settings would cause the accessibility components to be
+loaded individually at run time.  To prevent that, you would need to
+change lines 46 to 50 to
+
+.. code-block:: javascript
+
+   insert(MathJax.config, {
+     loader: {paths: {mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4'}},
+     tex: {
+       packages: {'[+]': ['ams', 'newcommand', 'configmacros']}
+     },
+     options: {
+       enableSpeech: false,
+       enableBraille: false,
+       menuOptions: {
+         settings: {
+           enrich: false,
+         }
+       }
+     },
+   }, false);
+
+This turns off semantic enrichment, and disables speech and Braille
+generation.
+
+Lines 45 and 56 hard codes the path to the location where MathJax
+components are stored and where to get the webworker code for speech
+generation; these would override those settings if they were part
+of the MathJax configuration set by the page that loads this combined
+component.  Similarly, the accessibility settings in the code snipped
+above would override any settings made in the web page, and the three
+TeX packages would always be included, even if the MathJax
+configuration from the apge explicitly removed them.  This is because
+the changes made by the ``insert()`` command are made *after* the page
+configuration is moved to :data:`MathJax.config` (which occurs during
+the first ``import`` at line 1), so these override the page settings.
+
+It is possible to not overwrite these values, though it requires an
+extra configuration file that you import before the other ``import``
+commands.  (In the case where you are using ``require()`` rather than
+``import``, you can put this code above the first `require()` in
+`custom-mathjax.js` rather than using a separate file.)
+
+If you create the file ``custom-mathjax-config.js`` given below:
+
+.. code-block:: javascript
+   :caption: custom-mathjax-config.js
+   :linenos:
+
+   import {insert} from '@mathjax/src/js/util/Options.js';
+
+   const GLOBAL = typeof window === 'undefined' ? global : window;
+
+   GLOBAL.MathJax = insert({
+     loader: {
+       paths: {
+         mathjax: 'https://cdn.jsdelivr.net/npm/@mathjax@4',
+       }
+     },
+     tex: {
+       packages: ['base', 'ams', 'newcommand', 'configmacros'],
+     },
+     //
+     // Uncomment this options block if you are NOT including the
+     // accessibility extensions in the combined component.
+     //
+     /*
+     options: {
+       enableSpeech: false,
+       enableBraille: false,
+       menuOptions: {
+         settings: {
+           enrich: false,
+         }
+       },
+     },
+     */
+   }, GLOBAL.MathJax || {}, false);
+
+Here, we obtain the :meth:`insert()` function from the
+``util/Options`` file, which combines user configurations with default
+ones, and use it to set the global :data:`MathJax` configuration
+variable to our default configuration with the user's :data:`MathJax`
+values, if any, merged in.  We don't have to set the
+:data:`worker.path` in this case, since it is determined from the
+``mathjax`` path that we have already set.  (We needed to do it above
+because the worker path was set using the original default value of
+the ``mathjax`` path, not the new on at line 45.)
+
+If you are removing the accessibility extensions from the combined
+component (by not importing ``components/js/a11y/util.js``), uncomment
+the :data:`options` block of the configuration to prevent the menu
+extension from loading them individually at run time.
+
+Once this file is created, import it before any other imports, and
+remove the original lines 41 to 50, along with the import command that
+obtains the ``insert`` function.  That should leave you with the following:
+
+.. code-block:: javascript
+   :caption: custom-mathjax.js
+   :linenos:
+
+   import './custom-mathjax-config.js';
+   import {startup} from '@mathjax/src/components/js/startup/init.js';
+   import {Loader} from '@mathjax/src/js/components/loader.js';
+
+   //
+   // Load the components that we want to combine into one component
+   //   (listed in the preLoaded() call below)
+   //
+   import '@mathjax/src/components/js/core/core.js';
+
+   import '@mathjax/src/components/js/input/tex-base/tex-base.js';
+   import '@mathjax/src/components/js/input/tex/extensions/ams/ams.js';
+   import '@mathjax/src/components/js/input/tex/extensions/newcommand/newcommand.js';
+   import '@mathjax/src/components/js/input/tex/extensions/configmacros/configmacros.js';
+   import '@mathjax/src/components/js/ui/menu/menu.js';
+
+   //
+   // Load the output jax and the code for loading its font
+   //
+   import {loadFont} from '@mathjax/src/components/js/output/svg/svg.js';
+
+   //
+   // Load speech-generation code
+   //
+   import '@mathjax/src/components/js/a11y/util.js';
+
+   //
+   // Mark the components that you have loaded
+   //
+   Loader.preLoaded(
+     'loader', 'startup',
+     'core',
+     'input/tex-base',
+     '[tex]/ams',
+     '[tex]/newcommand',
+     '[tex]/configmacros',
+     'output/svg',
+     'ui/menu'
+   );
+
+   //
+   // Mark the MathJax version being used for this combined configuration
+   //
+   Loader.saveVersion('custom-mathjax.js');
+
+   //
+   // Do the normal startup operations
+   //
+   loadFont(startup, true);
+
+This will allow the page that loads your combined configuration file
+to have full control over the MathJax configuration.
+
 
 The Component Configuration File
 ================================
@@ -128,6 +290,7 @@ Next, create a file ``config.json`` that includes the
 following:
 
 .. code-block:: json
+   :caption: config.json
 
    {
      "webpack": {
@@ -151,7 +314,7 @@ called automatically by the commands in the following section.
 Building the Component
 ======================
 
-Once these two files are ready, you are ready to build the component.
+Once these files are created, you are ready to build the component.
 First, make sure that you have obtained the needed tools as described
 in :ref:`getting-ready` above.  Then you should be able to use the
 command
@@ -188,38 +351,5 @@ MathJax on your pages.  Just add
 to your page and you should be in business (adjust the URL to point to
 wherever you have placed the ``custom-mathjax.min.js`` file).
 
-
-Configuring the Component
-=========================
-
-Note that you can still include a  ``MathJax = {...}`` definition in
-your web page before loading this custom MathJax build if you want to
-customize the configuration for a specific page.  You could also
-include configuration within the component itself, as we did for the
-TeX ``packages`` array.  This will override any page-provided
-configuration, however, so if you want to provide non-standard
-defaults that can still be overridden in the page, use
-
-.. code-block:: javascript
-
-   MathJax.config = insert({
-     // your default options here
-   }, MathJax.config, false);
-
-right after the :js:meth:`insert()` call that sets the TeX
-``packages`` value.  This will update the TeX packages, and then merge
-the user's configuration options into your defaults and set
-:js:data:`MathJax.config` to the combined options.  For example, you
-could set the default font via
-
-.. code-block:: javascript
-
-   MathJax.config = insert({
-     output: {
-       font: 'mathjax-fira'
-     }
-   }, MathJax.config, false);
-
-and the page could still override that in its own configuration.
 
 |-----|

@@ -25,24 +25,25 @@ Create the custom MathJax file named ``mathjax-speech.js`` containing
 the following:
 
 .. code-block:: javascript
+   :caption: mathjax-speech.js
+   :linenos:
 
    //
    //  Load the desired components
    //
    import {mathjax} from '@mathjax/src/js/mathjax.js';                        // MathJax core
    import {TeX} from '@mathjax/src/js/input/tex.js';                          // TeX input
-   import {Sre} from '@mathjax/src/js/a11y/sre.js';                           // Speech generation
    import {browserAdaptor} from '@mathjax/src/js/adaptors/browserAdaptor.js'; // browser DOM
    import {RegisterHTMLHandler} from '@mathjax/src/js/handlers/html.js';      // the HTML handler
    import {STATE} from '@mathjax/src/js/core/MathItem.js';                    // the various states
    import {SerializedMmlVisitor} from '@mathjax/src/js/core/MmlTree/SerializedMmlVisitor.js';
+   import * as Sre from 'speech-rule-engine/js/common/system.js';             // Speech generation
 
    //
    //  Load the needed TeX extensions
    //
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/configmacros/ConfigMacrosConfiguration.js';
 
    //
    //  Register the HTML handler with the browser adaptor
@@ -54,7 +55,7 @@ the following:
    //
    const html = mathjax.document('', {
      InputJax: new TeX({
-       packages: ['base', 'ams', 'newcommand', 'configmacros']
+       packages: ['base', 'ams', 'newcommand']
      })
    });
 
@@ -87,7 +88,7 @@ the following:
      //  A function to convert TeX/LaTeX to a speech string
      //
      tex2speech(tex, display = true) {
-       return this.Sre.sreReady().then(() => {
+       return this.Sre.engineReady().then(() => {
          return mathjax.handleRetriesFor(() => 
            this.toMML(html.convert(tex, {format: 'TeX', end: STATE.COMPILED, display}))
          )
@@ -104,7 +105,7 @@ the following:
    // Perform ready function, if there is one
    //
    if (CONFIG.ready) {
-     Sre.sreReady().then(CONFIG.ready);
+     Sre.engineReady().then(CONFIG.ready);
    }
 
 Unlike the component-based example in the :ref:`custom-component`
@@ -149,6 +150,7 @@ Next, create a file ``config.json`` that includes the
 following:
 
 .. code-block:: json
+   :caption: config.json
 
    {
      "webpack": {
@@ -262,7 +264,7 @@ The speech-generation software can produce strings in a variety of
 languages, or in Braille notation, and this custom build of MathJax
 allows you to specify which language to use, or set other parameters
 of the speech-rule engine (SRE).  This is done by setting the
-:js:data:`MathJax` variable to a configuration that includes an ``sre`` block
+:js:data:`MathJax` variable to a configuration that includes an :data:`sre` block
 with the properties you want to customize.  For example:
 
 .. code-block:: javascript
@@ -276,7 +278,7 @@ with the properties you want to customize.  For example:
 would tell the SRE to produce speech strings in the French language
 rather than English.
 
-The complete list of options for the ``sre`` block can be found in the
+The complete list of options for the :data:`sre` block can be found in the
 `Speech-Rule Engine documentation
 <https://github.com/Speech-Rule-Engine/speech-rule-engine?tab=readme-ov-file#options>`__.
 

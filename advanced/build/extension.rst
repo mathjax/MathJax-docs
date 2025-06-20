@@ -10,8 +10,8 @@ component.  The main difference is that the extension may rely on
 other components, so you need to tell the build system about that so
 that it doesn't include the code from those other components.  You
 also don't load the extension file directly (like you do the combined
-component above), but instead include it in the ``load`` array of the
-``loader`` configuration block, and MathJax loads it itself, as
+component above), but instead include it in the :data:`load` array of the
+:data:`loader` configuration block, and MathJax loads it itself, as
 discussed below.
 
 For this example, we make a custom TeX extension that defines new TeX
@@ -40,6 +40,8 @@ After downloading a copy of MathJax as described in the section on
 containing the following text:
 
 .. code-block:: javascript
+   :caption: mml.js
+   :linenos:
 
    import {HandlerType, ConfigurationType} from '@mathjax/src/js/input/tex/HandlerTypes.js';
    import {Configuration}  from '@mathjax/src/js/input/tex/Configuration.js';
@@ -66,12 +68,7 @@ containing the following text:
    /**
     * Allowed attributes on any token element other than the ones with default values
     */
-   const ALLOWED = {
-     style: true,
-     href: true,
-     id: true,
-     class: true
-   };
+   const ALLOWED = new Set(['style', 'href', 'id', 'class']);
 
    /**
     * Parse a string as a set of attribute="value" pairs.
@@ -83,7 +80,7 @@ containing the following text:
        while ((match = text.match(/^\s*((?:data-)?[a-z][-a-z]*)\s*=\s*(?:"([^"]*)"|(.*?))(?:\s+|,\s*|$)/i))) {
          const name = match[1];
          const value = match[2] || match[3];
-         if (Object.hasOwn(type.defaults, name) || Object.hasOwn(ALLOWED, name) || name.substr(0,5) === 'data-') {
+         if (Object.hasOwn(type.defaults, name) || ALLOWED.has(name) || name.substr(0,5) === 'data-') {
            attr[name] = replaceUnicode(value);
          } else {
            throw new TexError('BadAttribute', 'Unknown attribute "%1"', name);
@@ -140,11 +137,11 @@ macros through a ``CommandMap`` named ``mmlMap`` that is defined just
 above it. That command map defines five macros described at the
 beginning of this section, each of which is tied to a function named
 ``mmlToken`` defined previously and the name of the MathML token
-element to create.  The ``mmlToken`` method is the one that is called
-by the TeX parser when the ``\mi`` and other macros are called; it
-gets the argument to the macro from the TeX string, and any optional
-attributes, and creates the MathML element with those attributes,
-using the argument as the text of the element.
+element to create.  The ``mmlToken`` function is the one that is
+called by the TeX parser when the ``\mi`` and other macros are called;
+it gets the argument to the macro from the TeX string, and any
+optional attributes, and creates the MathML element with those
+attributes, using the argument as the text of the element.
 
 .. note::
 
@@ -179,6 +176,7 @@ Next, create a file ``config.json`` that includes the
 following:
 
 .. code-block:: json
+   :caption: config.json
 
    {
      "webpack": {
@@ -221,8 +219,8 @@ command
 to process your custom build.  You should end up with a file
 ``mml.min.js`` in the directory with the other files.  If
 you put this on your web server, you can load it as a component by
-putting it in the ``load`` array of the ``loader`` block of your
-configuration, as descrinbed below.
+putting it in the :data:`load` array of the :data:`loader` block of your
+configuration, as described in the next section.
 
 .. note::
 
@@ -251,20 +249,20 @@ location where the main MathJax file was loaded (e.g., the file
 ``tex-svg.js``, or ``startup.js``).
 
 You can define your own prefix to point to the location of your
-extensions by using the ``paths`` object in the ``loader`` block of
-your configuration.  In our case (see code below), we add a ``custom``
-prefix, and have it point to the URL of our extension (in this case,
-the same directory as the HTML file that loads it, represented by the
-URL ``.``).  We use the ``custom`` prefix to specify
-``[custom]/mml.min.js`` in the ``load`` array so that our extension
-will be loaded.
+extensions by using the :data:`paths` object in the :data:`loader`
+block of your configuration.  In our case (see code below), we add a
+``custom`` prefix, and have it point to the URL of our extension (in
+this case, the same directory as the HTML file that loads it,
+represented by the URL ``.``).  We use the ``custom`` prefix to
+specify ``[custom]/mml.min.js`` in the :data:`load` array so that our
+extension will be loaded.
 
-Finally, we add the ``mml`` extension to the ``packages`` array in the
-``tex`` block of our configuration via the special notation ``{'[+]':
-[...]}`` that tells MathJax to append the given array to the existing
-``packages`` array that is already in the configuration by default.
-So this uses all the packages that were already specified, plus our
-new ``mml`` package that is defined in our extension.
+Finally, we add the ``mml`` extension to the :data:`packages` array in
+the :data:`tex` block of our configuration via the special notation
+``{'[+]': [...]}`` that tells MathJax to append the given array to the
+existing :data:`packages` array that is already in the configuration by
+default.  So this uses all the packages that were already specified,
+plus our new ``mml`` package that is defined in our extension.
 
 The configuration and loading of MathJax now looks something like this:
 

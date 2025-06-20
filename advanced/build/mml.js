@@ -23,12 +23,7 @@ function classORD(node) {
 /**
  * Allowed attributes on any token element other than the ones with default values
  */
-const ALLOWED = {
-  style: true,
-  href: true,
-  id: true,
-  class: true
-};
+const ALLOWED = new Set(['style', 'href', 'id', 'class']);
 
 /**
  * Parse a string as a set of attribute="value" pairs.
@@ -40,7 +35,7 @@ function parseAttributes(text, type) {
     while ((match = text.match(/^\s*((?:data-)?[a-z][-a-z]*)\s*=\s*(?:"([^"]*)"|(.*?))(?:\s+|,\s*|$)/i))) {
       const name = match[1];
       const value = match[2] || match[3];
-      if (Object.hasOwn(type.defaults, name) || Object.hasOwn(ALLOWED, name) || name.substr(0,5) === 'data-') {
+      if (Object.hasOwn(type.defaults, name) || ALLOWED.has(name) || name.substr(0,5) === 'data-') {
         attr[name] = replaceUnicode(value);
       } else {
         throw new TexError('BadAttribute', 'Unknown attribute "%1"', name);

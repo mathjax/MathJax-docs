@@ -32,13 +32,16 @@ that includes your own project code as well as MathJax.
 Getting Things Ready
 ====================
 
-Your first step is to download a copy of MathJax via ``npm`` or
-``git``, as described in the section on :ref:`obtain-mathjax`.
+Your first step is to download a copy of MathJax via ``npm``,
+``pnpm``, or ``git``, as described in the section on
+:ref:`obtain-mathjax`.
 
-* If you use ``npm``, you will want to install the ``@mathjax/src``
-  package rather than the ``mathjax`` package, since the former
-  includes all the source code, in both its original and compiled
-  forms, along with the webpacked components.
+* If you use ``npm`` or ``pnpm``, you may want to install the
+  ``@mathjax/src`` package rather than the ``mathjax`` package, since
+  the former includes all the source code, in both its original and
+  compiled forms, along with the webpacked components.  If you are
+  only going to use the webpacked components, then installing the
+  ``mathjax`` package will be sufficient.
 
 ..
 
@@ -62,8 +65,8 @@ code using ``webpack``.  Use the commands
 to install ``webpack`` and its needed libraries.  Once this is done,
 you should be able to make the components described below.  The
 building instructions assume you used ``npm`` to acquire MathJax; if
-you used ``git``, then you will need to remove
-``node_modules/@mathjax/src`` from the paths that include them.
+you used ``git``, then you will need to change
+``node_modules/@mathjax/src`` in the paths that include them.
 
 -----
 
