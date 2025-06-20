@@ -51,7 +51,7 @@ themselves are loaded.  That is controlled by the menu settings:
    at once.
 
 
-In version 3, the accessibilty tools were off and the assistive MathML
+In version 3, the accessibility tools were off and the assistive MathML
 was on by default, meaning users had to enable to explorer by hand if
 they wanted to use it.  In version 4, the reverse is true: the
 accessibility extensions are included and enabled in all the combined
@@ -620,7 +620,7 @@ configuration.
    included and enabled by default.  Users who prefer the assistive
    MathML can turn off the semantic enrichment (which will disable the
    other tools), and turn on the assistive MathML using the MathJax
-   contextual menu (in the `Options` submenu in the Accessibilty
+   contextual menu (in the `Options` submenu in the Accessibility
    section of the main menu.
 
 The Configuration Block

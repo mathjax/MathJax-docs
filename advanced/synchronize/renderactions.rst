@@ -26,7 +26,7 @@ The :data:`renderActions` configuration object consists of one or more
 ``name: value`` pairs (separated by commas), where the :data:`name`
 gives an identifier for the action, and the :data:`value` is an array
 consisting of a number followed by zero, one, or two functions, and
-an optional boolean, as described bellow.
+an optional boolean, as described below.
 
 The number gives the priority of the action in relation to the other
 actions that are already defined.  The functions for the lowest
@@ -334,7 +334,7 @@ document, and checks that they have only one child that is a text
 element.  If so, it creates a new :data:`MathItem` object with the
 node's text content, using the TeX input jax, and marked as a display
 expression if the tag was ``dtex``.  It then makes a new empty text
-node and replaces the origianl node with that, then hooks the
+node and replaces the original node with that, then hooks the
 :data:`MathItem` to the empty text node.  Finally, it pushes the new
 :data:`MathItem` onto the document's math list.
 

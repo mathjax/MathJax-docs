@@ -223,7 +223,7 @@ those measurements to `px` units instead.
 
 We use an output jax post-filter to modify the ``svg`` element's
 attributes, taking advantage of the output jax's :meth:`fixed()`
-method to obtain a limited number of decimal palces.  The width and
+method to obtain a limited number of decimal places.  The width and
 height are determined from the :attr:`viewBox` attribute, whose values
 correspond to ``em`` units in the SVG output.
 

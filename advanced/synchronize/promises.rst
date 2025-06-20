@@ -56,7 +56,7 @@ actions that have already been queued.  This is described in more
 detail in the :ref:`typeset-async` section.
 
 All of these promise-based functions return a promise that completes
-when the typesetting or convertion actions have completed.  You can
+when the typesetting or conversion actions have completed.  You can
 use that promise to synchronize your own code that relies on the
 results of those actions with the MathJax calls that produce those
 results.  That can be done by using a ``.then()`` clause on the

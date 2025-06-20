@@ -5,7 +5,7 @@ Synchronizing your code with MathJax
 ####################################
 
 MathJax provides several mecahnisms for synchronizing your code with
-the actions taken by MathJax, including funciton that return promises,
+the actions taken by MathJax, including function that return promises,
 a processing queue to which you can add your own actions, filter
 queues for the input and output jax that allow you to run functions
 before or after they process the math, and configuration options that

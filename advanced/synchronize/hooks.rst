@@ -19,14 +19,14 @@ number of mechanisms for hookin into its actions.  The first is the
 :ref:`loader.ready() <loader-ready>` and :ref:`loader.failed()
 <loader-failed>` functions in the :data:`loader` block of your MathJax
 configuration.  The first is called when the loader has loaded all the
-components you ahve requested and is ready to call the startup
+components you have requested and is ready to call the startup
 component to set up MathJax and do the initial typesetting.  You can
 replace it with your own function, and can call
 :js:meth:`MathJax.loader.defaultReady()` to perform the usual startup.
 
 The :meth:`failed()` function is called if any of the components
 causes an error, and is passed the :data:`Error` object containing the
-error (with an extra :data:`package` property inidicating the name of
+error (with an extra :data:`package` property indicating the name of
 the package that caused the error, if known).  You can use this method
 to obtain a full error stacktrace, for example, or to log load errors,
 or process them in some other way.
@@ -65,7 +65,7 @@ continue.
 
 .. note::
 
-   MathJax uses the :meth:`checkReady()` mecahnism internally (to load
+   MathJax uses the :meth:`checkReady()` mechanism internally (to load
    the font data when an output jax is loaded, for example), and so
    you may need to be a bit careful in setting this options for some
    packages.

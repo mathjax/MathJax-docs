@@ -9,7 +9,7 @@ documents available within this documentation.
 
 * :ref:`node-components`
 
-  * :ref:`A Complete Example (wtih Speech) <node-component-example>`
+  * :ref:`A Complete Example (with Speech) <node-component-example>`
 
 * :ref:`node-preload`
   

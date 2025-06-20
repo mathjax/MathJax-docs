@@ -154,7 +154,7 @@ variants when the MathML is displayed in a browser.  The
 :ref:`filter-mathvariant` example provides a way to work around that
 shortcoming in MathML-Core.  Other limitations remain, however, such
 as the lack of support for most of the ``mtable`` element's
-attributes, which are used to implement LaTeX's various aligment
+attributes, which are used to implement LaTeX's various alignment
 environments, for example.  So while it is possible to produce MathML
 output, the browser's native MathML rendering may not be up to the
 task for displaying it as well as MathJax would.

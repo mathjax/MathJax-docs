@@ -259,7 +259,7 @@ Option Descriptions
 
    This gives a regular expression that specifies what letters can
    initiate a multi-letter identifier inside macros like
-   ``\\mathrm{}`` or ``\operatorname()``.  Onces one of these
+   ``\\mathrm{}`` or ``\operatorname()``.  Once one of these
    characters has been found, the :data:`identifierPattern` above ks
    applied to the inoput string to see if a multi-letter identifier is
    found.

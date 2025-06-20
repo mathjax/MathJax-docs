@@ -30,7 +30,7 @@ SVG paths, not characters in a font, they can't be copied and pasted,
 as the output of the CommonHTML processor can.
 
 The SVG output component (:ref:`svg-component`) is included in all
-the :ref:`combined-components` that include `svg` in thier hames.
+the :ref:`combined-components` that include `svg` in their names.
 You can also load it explicitly by including ``output/svg`` in the
 :data:`load` array of the :data:`loader` block of your MathJax
 configuration.

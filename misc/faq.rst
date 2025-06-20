@@ -117,7 +117,7 @@ Some mobile browsers change the page's font size after the page is
 loaded.  Since MathJax tries to match the font size, of that happens
 after MathJax has run, it can mean that the math fonts are not the
 right size (usually they are too small).  You can prevent the browser
-from changin the font size by using the following ``<meta>`` tag in
+from changing the font size by using the following ``<meta>`` tag in
 the ``<head>`` section of your web page:
 
 .. code-block:: html

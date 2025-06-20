@@ -23,7 +23,7 @@ additional font options.  See the :ref:`font-support` section for more
 information on what fonts are available and how to select them.
 
 The CHTML output component (:ref:`chtml-component`) is included in all
-the :ref:`combined-components` that include `chtml` in thier hames.
+the :ref:`combined-components` that include `chtml` in their names.
 You can also load it explicitly by including ``output/chtml`` in the
 :data:`load` array of the :data:`loader` block of your MathJax
 configuration.

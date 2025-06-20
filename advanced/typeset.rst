@@ -151,10 +151,10 @@ them with other content.  Then call
 If your input format is LaTeX, then the new content will have access
 to any macro definitions or labels that were defined in any previous
 content, and automatic equation numbering will continue with the next
-number ,even if you remove equations with earlier nummbers.  In an
+number, even if you remove equations with earlier numbers.  In an
 editor setting, where the same content is typeset over and over, this
-can lead to errors about multiply-defined labels, incorrect aplication
-of macros before they are suposed to be defined, and equation numbers
+can lead to errors about multiply-defined labels, incorrect application
+of macros before they are supposed to be defined, and equation numbers
 going up on each re-rendering.
 
 To overcome these problems, you can use the
@@ -372,12 +372,12 @@ updates are requested while MathJax is running.
 Line 66 tells MathJax to forget about any mathematics that was
 previously typeset in the preview area.  Without this, MathJax's list
 of typeet math would grow with each character typed, as it holds onto
-all the pervious copies of the math that it had typeset in the past.
+all the previous copies of the math that it had typeset in the past.
 This call must come before the DOM is changed, so that MathJax can
 tell which math is inside the material being removed.
 
 Line 71 tells MathJax to forget about any `\label` commands that it
-has processed in the past and to reset autmatic equation numbering to
+has processed in the past and to reset automatic equation numbering to
 start at 1 again.  Line 72 tells MathJax to throw away any macro
 definitions from the previous preview and start fresh.  (This doesn't
 remove any macros defined by auto-loaded extensions or ones loaded

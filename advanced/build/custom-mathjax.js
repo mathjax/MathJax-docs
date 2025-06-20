@@ -16,7 +16,7 @@ import '@mathjax/src/components/js/input/tex/extensions/configmacros/configmacro
 import '@mathjax/src/components/js/ui/menu/menu.js';
 
 //
-// Load the output jax and the code for laoding its font
+// Load the output jax and the code for loading its font
 //
 import {loadFont} from '@mathjax/src/components/js/output/svg/svg.js';
 
