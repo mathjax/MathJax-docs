@@ -78,8 +78,8 @@ has the given `priority`.  The `identifier` is the key in the
 :data:`renderAction` object for the action with the given priority.
 Some states are for reference only and do not have associated actions;
 e.g., ``CONVERT`` and ``RERENDER`` are only used to tell where a
-:js:meth:`MathDocument.convert()` or
-:js:meth:`MathDocument.rerender()` action should start in the list of
+:js:meth:`mathDocument.convert()` or
+:js:meth:`mathDocument.rerender()` action should start in the list of
 render actions, while ``UNPROCESSED`` and ``LAST`` mark the usual
 start and end of the processing list, though values outside that range
 are allowed.
@@ -138,17 +138,17 @@ existing :data:`STATE`, possibly value plus (or minus) a given number.
 Following the priority in the action's definition array should be
 zero, one, or two functions.  The first is called whenever the page is
 typeset via a call to :js:meth:`MathJax.typeset()`,
-:js:meth:`MathDocument.render()` or
-:js:meth:`MathDocument.rerender()`, or their promise-based versions,
+:js:meth:`mathDocument.render()` or
+:js:meth:`mathDocument.rerender()`, or their promise-based versions,
 and is passed the :data:`MathDocument` object in which it is running.
 Usually this function will loop through the :data:`MathItem` objects
-stored in the :data:`MathDocument.math` list and perform its action on
+stored in the :data:`mathDocument.math` list and perform its action on
 each of those individually.
 
 The second function is called whenever a math expression is updated
 individually via its :meth:`rerender()` method (e.g., when a
 subexpression is collapsed, or a toggle item is toggled, or the speech
-ruleset is changed), or during a :js:meth:`MathDocument.convert()`
+ruleset is changed), or during a :js:meth:`mathDocument.convert()`
 call is made, or any of the conversion functions based on it (e.g.,
 :js:meth:`MathJax.tex2svg()`), or any of the promise-based versions of
 this is called.  The function for this action is called with two

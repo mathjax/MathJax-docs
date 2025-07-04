@@ -251,7 +251,7 @@ displayed equation rather than in-line (though you could make that a
 command-line argument as well), and uses the em- and ex-sizes and
 container width values defined earlier.  
 
-.. js:method:: MathDocument.convert(math, [options])
+.. js:method:: mathDocument.convert(math, [options])
 
    :param string math:  The TeX, MathML, or AsciiMath expression to be
                         converted.
@@ -294,9 +294,9 @@ the defaults in these examples.
 
 Note that there is also
 
-.. js:method:: MathDocument.convertPromise(math, [options])
+.. js:method:: mathDocument.convertPromise(math, [options])
 
-taking the same arguments as :js:meth:`MathDocument.convert()` above,
+taking the same arguments as :js:meth:`mathDocument.convert()` above,
 and returning a promise that resolves when the conversion is complete,
 passing the generated node as the argument to its :meth:`then()`
 method.  This function handles any asynchronous file loads, like those
@@ -716,7 +716,7 @@ when most of the data will never be used.
 Instead, we can let MathJax load the data as needed.  Because loading
 the data is asynchronous, this requires that we handle the
 asynchronous nature of those file loads during the conversion process.
-This is done via the :js:func:`MathDocument.convertPromise()`
+This is done via the :js:func:`mathDocument.convertPromise()`
 function, which returns a promise that is resolved when the conversion
 process completes, after handlign any asynchronous font file loading.
 The example below shows how to accomplish that.

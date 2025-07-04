@@ -32,6 +32,7 @@ documents available within this documentation.
   * :ref:`direct-tex2speech`
   * :ref:`direct-tex2svg-page`
 
+* :ref:`Replacement for Sre.toSpeech() <v4-breaking-speech>`
 
 -----
 

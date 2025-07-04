@@ -467,7 +467,12 @@ the Braille format to use.  The last two are optional, and default to
          locale: process.argv[3] || 'en',
          braille: process.argv[4] || 'nemeth'
        }
-     }
+     },
+     output: {
+       linebreaks: {
+         inline: false,
+       }
+     },
      // additional configuration here
    };
 

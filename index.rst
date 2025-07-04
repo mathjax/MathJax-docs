@@ -111,7 +111,6 @@ documentation if you need it.
 .. toctree::
     :caption: MathJax Updates
     :maxdepth: 2
-    :titlesonly:
 
     Upgrading from Version 3.x        <upgrading/v3>
     Upgrading from Version 2.x        <upgrading/v2>

@@ -34,10 +34,10 @@ remaining eight are discussed in the :ref:`convert-math` section.
 For node applications that use direct access to the
 MathJax modules, there are
 
-* :js:meth:`MathDocument.convertPromise()`
-* :js:meth:`MathDocument.renderPromise()`
-* :js:meth:`MathDocument.rerenderPromise()`
-* :js:meth:`MathDocument.whenReady()`
+* :js:meth:`mathDocument.convertPromise()`
+* :js:meth:`mathDocument.renderPromise()`
+* :js:meth:`mathDocument.rerenderPromise()`
+* :js:meth:`mathDocument.whenReady()`
 * :js:meth:`mathjax.handleRetriesFor()`
 
 as methods of the :data:`MathDocument` instance produced by a
@@ -49,7 +49,7 @@ first list above.  The second underlies the
 :js:meth:`MathJax.typesetPromise()` call, and the third is used to
 rerender the output without re-running the input processor (e.g., when
 the output jax changes, or if the speech or explorer settings are
-changed in the MathJax menu).  The :js:meth:`MathDocument.whenReady()`
+changed in the MathJax menu).  The :js:meth:`mathDocument.whenReady()`
 method is called by :js:meth:`MathJax.whenReady()`, and can be used to
 queue actions for MathJax to perform when it has finished any pending
 actions that have already been queued.  This is described in more
