@@ -36,12 +36,12 @@ with the following values:
 .. code-block:: javascript
 
    tagformat: {
-      number: (n) => n.toString(),
-      tag: (tag) => '(' + tag + ')',
-      ref: '', // means use the tag function
-      id: (id) => 'mjx-eqn:' + id.replace(/\s/g, '_'),
-      url: (id, base) => base + '#' + encodeURIComponent(id),
-    }
+     number: (n) => n.toString(),
+     tag: (tag) => '(' + tag + ')',
+     ref: '', // means use the tag function
+     id: (id) => 'mjx-eqn:' + id.replace(/\s/g, '_'),
+     url: (id, base) => base + '#' + encodeURIComponent(id),
+   }
 
 .. describe:: number: (n) => n.toString()
 
@@ -94,9 +94,9 @@ automatic equation numbers generated when the ``tags`` option in the
       tex: {
         tags: 'ams',
         tagformat: {
-	  number: (n) => MathJax.config.section + '.' + n,
+          number: (n) => MathJax.config.section + '.' + n,
           id: (tag) => 'eqn-id:' + tag
-	},
+        },
         packages: {'[+]': ['tagformat']}
       },
       loader: {load: ['[tex]/tagformat']},
@@ -143,7 +143,7 @@ possibility:
             nextSection: 'NextSection',
             setSection: 'SetSection',
           }, {
-            NextSection(parser, name) {
+            NextSection(parser, _name) {
               MathJax.config.section++;
               parser.tags.counter = parser.tags.allCounter = 0;
             },
@@ -161,7 +161,13 @@ possibility:
     };
 
 Of course, you will want to merge this configuration in with the rest
-of your configuration options.
+of your configuration options.  You also will need to load the new
+``sections`` configuration by adding it to your package list loaded
+into the TeX input jax.
+
+.. code-block:: javascript
+
+   {packages: {'[+]': ['tagformat', 'sections']}}
 
 .. warning::
 
