@@ -12,6 +12,12 @@ be used in the new renderer without needing additional configuration.
 The individual :data:`chtml` and :data:`svg` blocks then should only
 include options that are specific to those output formats.
 
+
+.. _v4-CHTML:
+
+CHTML Improvements
+==================
+
 An important improvement has been made in v4 to the way the CHTML
 output renderer handles stretchy delimiters.  In the past, the CHTML
 output would use CSS transforms to stretch the extender to the needed
@@ -40,6 +46,12 @@ includes a work-around that should help with the alignment in
 where the characters
 are grouped into a single MathML element.
 
+
+.. _v4-SVG:
+
+SVG Improvements
+================
+
 The SVG output jax has two new configuration options.  The first is
 :data:`svg.blacker`, which is a number that indicates the stroke width
 (in thousandths of an em) to use for the character paths.  Because
@@ -64,6 +76,12 @@ characters to form a single glyph will be handled properly.  So use
 ``\text{}`` around such characters to allow them to combine properly.
 Note that this was already being done for CHTML output, so this brings
 the two in line with each other.
+
+
+.. _v4-assisitve-mml:
+
+Assistive MathML Size
+=====================
 
 In the past, the hidden MathML that is produced by the
 :ref:`assistive-mml-component` extension could be rendered by the

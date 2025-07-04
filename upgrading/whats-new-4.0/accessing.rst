@@ -81,6 +81,10 @@ and if you want a different font, a command like
 to get the latest `mathjax-stx2` font package.  The other fonts can be
 obtained similarly.
 
+In your code, you will need to change any references to the
+``mathjax-full`` package to ``@mathjax/src``, and any references to
+``mathjax-[fontname]-font`` to ``@mathjax/mathjax-[fontname]-font``.
+
 
 .. _v4-browser-fonts:
 
