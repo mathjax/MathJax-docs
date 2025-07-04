@@ -2,6 +2,11 @@
     color: inherit;
     font-size: 85%;
     border: none;
-    background: #F0F0F0;
-    padding: 2px 3px 1px;
+    background: #E8E8E8;
+    padding: 2px 3px;
+    border-radius: .33em;
+}
+
+.toctree-l1 > ul {
+    margin-top: 3px ! important;
 }
