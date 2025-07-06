@@ -7,11 +7,15 @@ Accessibility Components
 Currently, there are five components designed specifically to support
 assistive technology.
 
+|btight|
+
 * :ref:`semantic-enrich-component`
 * :ref:`speech-component`
 * :ref:`explorer-component`
 * :ref:`complexity-component`
 * :ref:`assistive-mml-component`
+
+|etight|
 
 To load one of these components, include the component name in the
 :attr:`load` array of the :attr:`loader` block of your MathJax

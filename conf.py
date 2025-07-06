@@ -88,6 +88,23 @@ rst_prolog = """
 .. |-----| raw:: html
 
    <hr>
+
+.. |bkey| raw:: html
+
+   <kbd>
+
+.. |ekey| raw:: html
+
+   </kbd>
+
+.. |btight| raw:: html
+
+   <div class="tight">
+
+.. |etight| raw:: html
+
+   </div>
+
 """
 #
 # /DPVC

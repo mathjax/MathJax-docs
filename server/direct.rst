@@ -328,6 +328,8 @@ The Examples
 In the examples below, the highlighted lines are the ones that differ
 from the explanations above, or from previous examples.
 
+|btight|
+
 * :ref:`direct-tex2mml`
 * :ref:`direct-tex2chtml`
 
@@ -338,6 +340,8 @@ from the explanations above, or from previous examples.
 * :ref:`direct-tex2chtml-mixed`
 * :ref:`direct-tex2speech`
 * :ref:`direct-tex2svg-page`
+
+|etight|
 
 -----
 

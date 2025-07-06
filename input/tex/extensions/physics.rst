@@ -8,6 +8,8 @@ The `physics` extension implements much of the LaTeX `physics package
 <https://ctan.org/pkg/physics?lang=en>`_, which defines simple, yet
 flexible, macros for typesetting equations via:
 
+|btight|
+
 * Automatic bracing
 * Vector notation
 * Derivatives
@@ -15,6 +17,8 @@ flexible, macros for typesetting equations via:
 * Matrix macros
 * Additional trig functions and other convenient operators
 * Flat fractions and other useful miscellaneous math macros
+
+|etight|
 
 See the `documentation
 <http://mirrors.ctan.org/macros/latex/contrib/physics/physics.pdf>`_

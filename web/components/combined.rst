@@ -7,6 +7,8 @@ Combined Components
 Currently there are twelve combined components, whose contents are
 described below:
 
+|btight|
+
 * :ref:`tex-chtml-component`
 * :ref:`tex-svg-component`
 * :ref:`tex-mml-chtml-component`
@@ -22,6 +24,8 @@ described below:
 * :ref:`tex-mml-svg-nofont-component`
 * :ref:`mml-chtml-nofont-component`
 * :ref:`mml-svg-nofont-component`
+
+|etight|
 
 The combined components include everything needed to run MathJax in
 your web pages (though some TeX extensions and additional font data

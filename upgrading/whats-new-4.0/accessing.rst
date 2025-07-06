@@ -12,12 +12,16 @@ MathJax version 4.0 can be accessed via CDN as
 
 using any one of the :ref:`combined components <combined-components>`:
 
+|btight|
+
 * ``tex-html.js``
 * ``tex-svg.js``
 * ``tex-mml-chtml.js``
 * ``tex-mml-svg.js``
 * ``mml-html.js``
 * ``mml-svg.js``
+
+|etight|
 
 Note that the ``/es5`` directory is no longer needed in the URL.  See
 the :ref:`v4-es6-modules` section for more details on this change.

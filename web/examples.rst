@@ -12,6 +12,8 @@ run.
 
 In addition, there are examples within this documentation:
 
+|btight|
+
 * :ref:`Configuring MathJax using an external script <local-configuration-file>`
 * :ref:`Configuring and loading MathJax using one local file <config-loads-mathjax>`
 * :ref:`Synchronizing with MathJax using promises <typeset-async>`
@@ -67,6 +69,8 @@ In addition, there are examples within this documentation:
 
 * :ref:`Backward Compatibility for TeX input <v2-compatibility-example>`
 * :ref:`Locating MathJax v2 math script tags <math-script-example>`
+
+|etight|
 
 
 |-----|

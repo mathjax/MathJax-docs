@@ -7,8 +7,12 @@ Output Components
 Currently there are two MathJax output formats, each packaged into
 its own component.
 
+|btight|
+
 * :ref:`chtml-component`
 * :ref:`svg-component`
+
+|etight|
 
 These are described in more detail below.
 

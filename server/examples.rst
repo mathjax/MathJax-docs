@@ -41,6 +41,8 @@ In addition, the `MathJax Node Demos
 repository includes numerous examples of how to use MathJax from a
 `node` application.  These are categorized into several groups
 
+|btight|
+
 * `Examples using MathJax components the simplest way
   <https://github.com/mathjax/MathJax-demos-node/tree/master/simple#simple-component-examples>`__
 * `Examples using MathJax components via the startup module
@@ -50,7 +52,11 @@ repository includes numerous examples of how to use MathJax from a
 * `Examples using MathJax modules directly
   <https://github.com/mathjax/MathJax-demos-node/tree/master/direct#non-component-based-examples>`__.
 
+|etight|
+
 There are also several other kinds of example:
+
+|btight|
 
 * `Examples using MathJax with the jsDOM library
   <https://github.com/mathjax/MathJax-demos-node/tree/master/jsdom#mathjax-in-jsdom>`__
@@ -58,5 +64,8 @@ There are also several other kinds of example:
   <https://github.com/mathjax/MathJax-demos-node/tree/master/puppeteer#mathjax-in-puppeteer>`__
 * `Examples using MathJax to generate speech text
   <https://github.com/mathjax/MathJax-demos-node/tree/master/speech#speech-generation>`__
+
+|etight|
+
 
 |-----|

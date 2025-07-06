@@ -9,11 +9,15 @@ assistive technology, such as screen readers.  See the
 :ref:`accessibility-components` page for more details.  The options
 that control these extensions are listed below.
 
+|btight|
+
 * :ref:`semantic-enrich-options`
 * :ref:`speech-options`
 * :ref:`complexity-options`
 * :ref:`explorer-options`
 * :ref:`assistive-mml-options`
+
+|etight|
 
 Because the accessibility extensions are controlled by the settings of
 the MathJax contextual menu, when the :ref:`menu-component` is loaded,

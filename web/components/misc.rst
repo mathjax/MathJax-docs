@@ -7,6 +7,8 @@ Miscellaneous Components
 There are several miscellaneous components that don't fit into other
 categories.  These are:
 
+|btight|
+
 * :ref:`startup-component`
 * :ref:`safe-component`
 * :ref:`lazy-component`
@@ -14,6 +16,8 @@ categories.  These are:
 * :ref:`litedom-component`
 * :ref:`core-component`
 * :ref:`loader-component`
+
+|etight|
 
 They are described in more detail below.
 

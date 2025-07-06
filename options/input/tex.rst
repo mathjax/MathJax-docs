@@ -442,6 +442,8 @@ macros for use in TeX espressions:
 The options for the various TeX packages (that have options) are
 described in the links below:
 
+|btight|
+
 * :ref:`tex-ams-options`
 * :ref:`tex-amscd-options`
 * :ref:`tex-autoload-options`
@@ -459,6 +461,8 @@ described in the links below:
 * :ref:`tex-tagformat-options`
 * :ref:`texhtml Options <tex-texhtml-options>`
 * :ref:`tex-units-options`
+
+|etight|
 
 -----
 

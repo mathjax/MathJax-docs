@@ -43,8 +43,6 @@ Your first step is to download a copy of MathJax via ``npm``,
   only going to use the webpacked components, then installing the
   ``mathjax`` package will be sufficient.
 
-..
-
 * If you use ``git``, be sure to run the commands to compile and make
   the components, as listed in :ref:`mathjax-git`.
 
@@ -88,13 +86,9 @@ There are several kinds of components you could build:
 * A **combined component** that brings together several other
   components (the ``tex-chtml`` component is a combined component)
 
-..
-
 * An **extension component** that contains what is needed for one
   feature and can be loaded along with other components to add
   that feature to MathJax.
-
-..
 
 * A **custom build** of MathJax that uses only the pieces of MathJax
   that you need for a specialized setting.

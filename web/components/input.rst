@@ -8,9 +8,13 @@ Input Components
 Currently there are three MathJax input formats, each packaged into
 its own component.
 
+|btight|
+
 * :ref:`tex-component`
 * :ref:`mathml-component`
 * :ref:`asciimath-component`
+
+|etight|
 
 These are described in more detail below.  See the
 :ref:`input-options` section for details about configuring these

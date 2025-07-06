@@ -15,15 +15,11 @@ websites, including:
   above, though it won't include the features that are new in later
   versions.
 
-..
-
 * More complete details, with examples and explanations, are available
   at Carol Fisher's `TeX Commands Available in MathJax
   <http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`_
   page.  These were written for MathJax v2, but most of the
   information is still correct for v3 and above.
-
-..
 
 * The `LaTeX Wikibook <https://en.wikibooks.org/wiki/LaTeX>`__
   sections in `Mathematics

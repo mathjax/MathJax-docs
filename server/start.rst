@@ -36,9 +36,17 @@ links below to find out more about how to use MathJax in that way.
 
 -----
 
+The Details
+===========
+
+|btight|
+
 * :ref:`Experimenting with MathJax     <node-main>`
 * :ref:`Using MathJax Components       <node-components>`
 * :ref:`Using Components Synchronously <node-preload>`
 * :ref:`Linking to MathJax Directly    <node-direct>`
+
+|etight|
+
 
 |-----|

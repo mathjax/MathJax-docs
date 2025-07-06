@@ -100,12 +100,16 @@ the latest available version upon release.
 
 The following are some of the CDNs that offer MathJax:
 
+|btight|
+
 - `jsdelivr.com <https://jsdelivr.com>`__  [latest or specific version] (recommended)
 - `unpkg.com <https://unpkg.com/>`__ [latest or specific version]
 - `cdnjs.com <https://cdnjs.com>`__
 - `raw.githack.com <http://raw.githack.com>`__
 - `cdn.statically.io <http://cdn.statically.io>`__
- 
+
+|etight|
+
 
 To jump start using ``jsdelivr``, you accomplish the first two steps by putting
 

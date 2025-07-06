@@ -168,8 +168,6 @@ release:
   speech-rule-engine or the :attr:`data-latex` attributes in MathML
   and SVG output in the `Show Math As` and `Copy to Clipboard` menus.
 
-..
-
 * :data:`mathml.verify.checkMathvariants`, which controls whether the
   MathML input jax will check that :attr:`mathvariant` attribute
   values are valid math variants and report an error if not.  Invalid
