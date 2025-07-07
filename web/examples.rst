@@ -1,8 +1,8 @@
 .. _web-examples:
 
-#####################
-Examples in a Browser
-#####################
+################################
+Examples of MathJax in a Browser
+################################
 
 There are a number of example files in the `MathJax web demo repository
 <https://github.com/mathjax/MathJax-demos-web>`__ (see the `list of demos

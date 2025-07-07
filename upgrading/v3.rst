@@ -48,7 +48,7 @@ There are a number of changes to the TeX input jax and its extensions
 that may affect existing content.  For example, the
 :ref:`tex-textmacros` extension is no by default in the :ref:`combined
 components <combined-components>`, which has implecations for
-``\text{}`` and othe text-mode macros if they contain text that will
+``\text{}`` and other text-mode macros if they contain text that will
 now be considered as macro references that where ignored in the past.
 There are also changes to the :ref:`tex-mathtools` extension, and to
 several other extensions.  See the :ref:`v4-tex-improvements` section
