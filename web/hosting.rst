@@ -164,8 +164,8 @@ or something like ``assets/mathjax`` in your application directory.
 
 .. _link-files:
 
-Linking to you Your Copy of MathJax
-===================================
+Linking to Your Copy of MathJax
+===============================
 
 You can include MathJax in your web page by putting
 
@@ -203,6 +203,72 @@ to load MathJax in your page.  For example, your page could look like
     </html>
 
 -----
+
+.. _obtaining-fonts:
+
+Obtaining the Needed Fonts
+==========================
+
+In version 3, there was only one font (``mathjax-tex``) and it was
+bundled with MathJax itself, so there when you installed MathJax, you
+also git that font.  That is no longer the case with version 4, since
+there is a choice of fonts, and they are made available in separate
+pacakges.  Installing MathJax via ``npm`` or ``pnpm`` will get you the
+default ``mathjax-mnewcm`` font, but if you plan to use a different
+font and have that served from your server, you will need to load its
+font package as well.  E.g.,
+
+.. code-block:: shell
+
+   pnpm install @mathjax/mathjax-stix2-font@4
+
+to install the `mathjax-stix2` font.
+
+You will need to move the ``node_modules/@mathjax/mathjax-stix2-font``
+directory to a suitable location on your server, as you have the
+MathJax files themselves.
+
+In order to use the font you have loaded, you will need to configure
+MathJax to tell it the font you need, and where the font fils are
+located on your server.  For example:
+
+.. code-block:: js
+
+   MathJax = {
+     output: {
+       font: 'mathjax-stix2',
+       fontPath: '<path-to-mathjax-stix2-font>',
+     }
+   };
+
+where ``<path-to-mathjax-stix2-font>`` is the URL for where you have
+places the ``@mathjax/mathjax-stix2-font`` folder.
+
+In this case, your page might look like
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            ...
+            <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-stix2',
+                  fontPath: '/mathjax-strix2-font',
+                }
+              };
+            </script>
+            <script defer src="/mathjax/tex-chtml.js"></script>
+        </head>
+        <body>
+            ...
+        </body>
+    </html>
+
+
+_____
 
 .. _same-origin-policy:
 
@@ -273,5 +339,56 @@ having to worry about these issues.
 For web servers other than Apache, you will need to consult the
 server's documentation to determine how to specify the needed header
 line for fonts on your system.
+
+-----
+
+.. _using-locally:
+
+Using MathJax Locally
+=====================
+
+You can use MathJax locally without a connection to the internet by
+following the basic outline above, and using ``file://`` URLs to
+access your local files.  Note, however, that some browsers have
+additional cross-origin restrictions for ``file://`` URLs, and that
+may limit where you can place the MathJax files and font files.
+
+In that case, you may need to run a local webserver for MathJax and
+its files.  For example, if you have ``python`` installed, and have
+placed the ``mathjax`` and ``mathjax-newcm-font`` files in a directory
+called ``assets``, then if do
+
+.. code-block:: shell
+
+   cd assets
+   python -M http.server 8000
+
+and configure your page like
+
+.. code-block:: html
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            ...
+            <script>
+              MathJax = {
+                output: {
+                  font: 'mathjax-stix2',
+                  fontPath: 'http://localhost:8000/mathjax-strix2-font',
+                }
+              };
+            </script>
+            <script defer src="http://localhost:8000/mathjax/tex-chtml.js"></script>
+        </head>
+        <body>
+            ...
+        </body>
+    </html>
+
+then you should be able to load this file using a ``file://`` URL and
+have MathJax served from the local pyhton server without the need for
+any access to the internet.
+
 
 |-----|
