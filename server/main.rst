@@ -31,7 +31,8 @@ Create a file named :file:`test-mathjax.mjs` containing the following:
 
    import {init} from "@mathjax/src";
    await init({loader: {load: ['input/tex']}});
-   console.log(MathJax.tex2mml('x+y'));
+   const mml = (await MathJax.tex2mmlPromise('x+y'));
+   console.log(mml);
 
 then run this file from the command line using
 
@@ -60,9 +61,8 @@ This is you first MathJax node program!
 
       require("@mathjax/src").init({
         loader: {load: ['input/tex']}
-      }).then(() =>
-        console.log(MathJax.tex2mml('x+y'))
-      );
+      }).then(() => MathJax.tex2mmlPromise('x+y'))
+        .then((mml) => console.log(mml));
 
    then run this file using
 
@@ -79,8 +79,10 @@ needed components and is ready to process mathematics, at which point
 the global :js:data:`MathJax` variable will be set up for use.
 
 In the program above, we use the ``await`` command to wait for that
-promise to resolve, and then call :js:meth:`MathJax.tex2mml()` to
-convert a TeX or LaTeX expression into the corresponding MathML tree.
+promise to resolve, and then wait for the
+:js:meth:`MathJax.tex2mmlPromise()` call to convert a TeX or LaTeX
+expression into the corresponding MathML tree.  The result is then
+printed.
 
 Once you have initialized MathJax, you should be able to use MathJax
 in much the same way as you would in a browser.  Note, however, that
