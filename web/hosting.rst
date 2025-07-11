@@ -354,14 +354,14 @@ additional cross-origin restrictions for ``file://`` URLs, and that
 may limit where you can place the MathJax files and font files.
 
 In that case, you may need to run a local webserver for MathJax and
-its files.  For example, if you have ``python`` installed, and have
-placed the ``mathjax`` and ``mathjax-newcm-font`` files in a directory
-called ``assets``, then if do
+its files.  For example, if you have placed the ``mathjax`` and
+``mathjax-newcm-font`` files in a directory called ``assets``, then if
+do
 
 .. code-block:: shell
 
    cd assets
-   python -M http.server 8000
+   node serve --cors
 
 and configure your page like
 
@@ -375,11 +375,11 @@ and configure your page like
               MathJax = {
                 output: {
                   font: 'mathjax-stix2',
-                  fontPath: 'http://localhost:8000/mathjax-strix2-font',
+                  fontPath: 'http://localhost:3000/mathjax-strix2-font',
                 }
               };
             </script>
-            <script defer src="http://localhost:8000/mathjax/tex-chtml.js"></script>
+            <script defer src="http://localhost:3000/mathjax/tex-chtml.js"></script>
         </head>
         <body>
             ...
@@ -388,7 +388,7 @@ and configure your page like
 
 then you should be able to load this file using a ``file://`` URL and
 have MathJax served from the local pyhton server without the need for
-any access to the internet.
+any access to the internet. 
 
 
 |-----|
