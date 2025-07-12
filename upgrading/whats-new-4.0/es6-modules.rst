@@ -165,15 +165,15 @@ In order to get the source versions in ``@mathjax/src``, use
 
 .. code-block:: js
                 
-   require('@mathjax/src/source').init(...)
+   const MathJax = require('@mathjax/src/source');
 
 or
 
 .. code-block:: js
 
-   import {init} from '@mathjax/src/source'
+   import MathJax  from '@mathjax/src/source';
 
-and then call ``init(...)``.  These load
+and then call ``MathJax.init(...)``.  These load
 ``components/mjs/node-main/node-main.mjs`` or
 ``components/cjs/node-main/node-main.cjs``, respectively.
 

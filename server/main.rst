@@ -29,8 +29,8 @@ Create a file named :file:`test-mathjax.mjs` containing the following:
 
 .. code-block:: javascript
 
-   import {init} from "@mathjax/src";
-   await init({loader: {load: ['input/tex']}});
+   import MathJax from "@mathjax/src";
+   await MathJax.init({loader: {load: ['input/tex']}});
    const mml = (await MathJax.tex2mmlPromise('x+y'));
    console.log(mml);
 
@@ -59,7 +59,8 @@ This is you first MathJax node program!
 
    .. code-block:: javascript
 
-      require("@mathjax/src").init({
+      const MathJax = require("@mathjax/src");
+      MathJax.init({
         loader: {load: ['input/tex']}
       }).then(() => MathJax.tex2mmlPromise('x+y'))
         .then((mml) => console.log(mml));
@@ -112,15 +113,13 @@ To do so, use either
 
 .. code-block:: javascript
 
-   import {init} from '@mathjax/src/source';
+   import MathJax from '@mathjax/src/source';
 
 or
 
 .. code-block:: javascript
 
-   require('@mathjax/src/source').init({...}).then((MathJax) => {
-      ... // code that uses MathJax here
-   });
+   const MathJax = require('@mathjax/src/source');
 
 when loading MathJax.
 
