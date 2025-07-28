@@ -271,7 +271,7 @@ use of the :attr:`mathvariant` attribute on the internal MathML token
 elements to their Unicode equivalents in the Mathematical
 Alphanumerics block.  Because MathML-Core (the version of MathML
 implemented in most browsers) does not include support for
-:attr:`mathvariant` (except as :attr:`mathvariant="normal" on
+:attr:`mathvariant` (except as :attr:`mathvariant="normal"` on
 single-character ``mi`` elements to prevent the automatic
 italicization of the character), this may be useful for cases where
 you want to produce MathML expressions for use with a browser's native

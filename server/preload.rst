@@ -449,8 +449,8 @@ the loading is complete.
 
 .. _preload-import-cjs:
 
-Loading All Font Data using Import
-==================================
+Loading All Font Data Synchronously
+===================================
 
 In the previous example, we took advantage of ``require()`` to make
 the :js:meth:`loadDynamicFilesSync()` method available to load all the

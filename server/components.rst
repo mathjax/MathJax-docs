@@ -221,11 +221,9 @@ different locale or Braille version, as illustrated below.
 
 .. code-block:: javascript
 
-   import {mjxRoot} from '@mathjax/src/js/components/mjs/root.js';
-
    global.MathJax = {
      loader: {
-       paths: {mathjax: mjxRoot()},
+       paths: {mathjax: '@mathjax/src/bundle'},
        load: ['adaptors/liteDOM'],
        require: (file) => import(file)
      },
