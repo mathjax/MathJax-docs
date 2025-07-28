@@ -56,6 +56,8 @@ The options are given here with their default values.
         font: '',                      // the font component to load
         fontPath: FONTPATH,            // The path to the font definitions
         htmlHDW: 'auto',               // 'use', 'force', or 'ignore' data-mjx-hdw attributes
+        preFilters: [],                // A list of pre-filters to add to the output jax
+        postFilters: [],               // A list of post-filters to add to the output jax
       }
     };
 
@@ -308,6 +310,45 @@ Option Descriptions
    See :ref:`specifying-htmlHDW` for more information, and for a tool
    for computing the values to use for the :attr:`data-mjx-hdw`
    attributes.
+
+.. _output-preFilters:
+.. describe:: preFilters: []
+
+   This specifies a list of functions to run as pre-filters for the
+   output jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the ``mjx-container`` DOM node for the math (empty at this
+   point).  The pre-filters are executed when the output jax is asked
+   to typeset an expression, but before typesetting has occurred.  The
+   pre-filters can be used to adjust the internal MathML before any
+   output is produced; the math item's :data:`root` property holds the
+   internal structure.
+
+   See the :ref:`sync-filters` section for examples of pre-filters.
+
+.. _output-postFilters:
+.. describe:: postFilters: []
+
+   This specifies a list of functions to run as post-filters for the
+   TeX input jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the ``mjx-container`` DOM node for the math.  The
+   pre-filters are executed when the output jax has completed
+   typesetting the expression into DOM elements, but before other
+   actions involving the DOM tree for the expression (such as adding
+   event handlers, adding speech, inserting it into the page, etc.)
+   have occurred.  The ``mjx-container`` now holds the DOM tree for
+   the typeset math.
+
+   See the :ref:`sync-filters` section for examples of post-filters.
 
 -----
 

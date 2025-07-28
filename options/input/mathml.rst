@@ -37,7 +37,10 @@ The Configuration Block
           fullErrors: false,                 //   display full error messages or just error node
           fixMmultiscripts: true,            //   fix unbalanced mmultiscripts
           fixMtables: true                   //   fix incorrect nesting in mtables
-        }
+        },
+        preFilters: [],                      // A list of pre-filters to add to the MathML input jax
+        mmlFilters: [],                      // A list of mathml-filters to add to the MathML input jax
+        postFilters: [],                     // A list of post-filters to add to the MathML input jax
       }
     };
 
@@ -166,6 +169,59 @@ Option Descriptions
       an ``<mtable>`` placed around it automatically, and an
       ``<mtable>`` containing an ``<mi>`` as a direct child node will
       have an ``<mtr>`` and ``<mtd>`` inserted around the ``<mi>``.
+
+.. _mathml-preFilters:
+.. describe:: preFilters: []
+
+   This specifies a list of functions to run as pre-filters for the
+   MathML input jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the serialized MathML string to be parsed.  The pre-filters
+   are executed only when the MathML input jax is asked to process a
+   mathml string (such as when :js:meth:`MathJax.mathml2svg()` is
+   called), or when the :ref:`forceReparse <mathml-forceReparse>`
+   option is set.  When the MathML is taken directly from a document
+   DOM, it is already parsed, and so is not a serialized MathML
+   string.
+   
+   See the :ref:`sync-filters` section for examples of pre-filters.
+
+.. _mathml-mmlFilters:
+.. describe:: mmlFilters: []
+
+   This specifies a list of functions to run as MathML-filters for the
+   MathML input jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the MathML DOM elements for the expression.  The
+   MathML-filters are executed just before the MathML input jax
+   converts the DOM elements into MathJax's internal format.  This can
+   be used to manipualte the expression before it is processed.
+ 
+.. _mathml-postFilters:
+.. describe:: postFilters: []
+
+   This specifies a list of functions to run as post-filters for the
+   MathML input jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the root of the internal representaton of the MathML tree
+   (the internal form of the top-level ``<math>`` node).  The
+   post-filters are executed when the MathML input jax has finished
+   converting it to the intermal MathML format, but before the
+   MathItem's :data:`root` property is set.
+
+   See the :ref:`sync-filters` section for examples of post-filters.
 
 
 -----

@@ -9,16 +9,25 @@ pre- and post-filters associated with MathJax's input and output jax.
 These are prioritized lists of functions that run either before or
 after the jax processes a :data:`MathItem`, and they can be used to
 pre-process or post-process MathJax's compiling and typesetting
-functions.  Input jax have both pre- and post-filters, but output jax
-have only post-filters; pre-filtering can be done by an input jax
-post-filter, if needed.
+functions.  Input and output jax have both pre- and post-filters, and
+the MathML input jax has an extra set of filters for the parsed MathML
+as well.
 
-To add a pre- or post-filter to an input jax use
+When using :ref:`Mathjax Components framework <web-components>`, you
+can use the MathJax configuration object to specify input and output
+jax filters.  The :data:`preFilter` and :data:`postFilter`
+configuration options in the :data:`tex`, :data:`mathml`,
+:data:`output`, :data:`chtml`, or :data:`svg` blocks allow you to
+specify arrays of filters (or filters together with their priorities).
+See the :ref:`configuring-mathjax` section for details.
+
+When using direct access to the MathJax modules in node applications,
+to add a pre- or post-filter to an input jax use
 
 .. js:function:: InputJax.preFilters.add(fn, priority)
                  InputJax.postFilters.add(fn, priority)
 
-   :param (arg) => boolean|void: The filter function to be called.
+   :param (arg)=>boolean|void: The filter function to be called.
                                  The :data:`arg` argument is an object
                                  with three keys: :data:`math`,
                                  :data:`document`, and :data:`data`.
@@ -35,7 +44,8 @@ To add a pre- or post-filter to an input jax use
                     functions anywhere in the filter list.
 
 For the TeX input jax, the :data:`data` item is the
-:data:`ParseOptions` object for the input jax.
+:data:`ParseOptions` object for the input jax, which holds
+configuration data about the TeX input jax.
 
 For the MathML input jax, the pre-filter only runs in the case that
 the MathML is a serialized MathML string, as it is when converting a
@@ -54,14 +64,15 @@ input jax converts the MathML into MathJax's internal format.  The
 The AsciiMath input jax does not currently execute any pre- or
 post-filters.
 
-For an output jax, the post-filters can be added via
+For an output jax, the pre- and post-filters can be added via
 
-.. js:function:: OutputJax.postFilters.add(fn, priority)
+.. js:function:: OutputJax.preFilters.add(fn, priority)
+                 OutputJax.postFilters.add(fn, priority)
 
 with arguments as above.  In this case, the :data:`data` is the
 ``mjx-container`` node in which the output DOM elements have been
 placed.  This will become the :data:`MathItem.typesetRoot` value, but
-it has not yet been set when the post-filters run.
+it has not yet been set when the filters run.
 
 In an application that is using MathJax Components, the input jax can
 be obtained from :data:`MathJax.startup.document.inputJax.tex` or
@@ -73,6 +84,7 @@ to them; if not, then they can be obtained from the
 :data:`MathDocument` instance returned by
 :js:meth:`mathjax.document()` by using that in place of
 :data:`MathJax.startup.document` above.
+
 
 -----
 
@@ -90,20 +102,17 @@ displayed as ``12345``.
 
    MathJax = {
      tex: {
-       numberPattern: /^(?:[0-9]+(?:(?: +|\{,\})[0-9]+)*(?:\.[0-9]*)?|\.[0-9]+)/
-     },
-     startup: {
-       ready() {
-         MathJax.startup.defaultReady();
-         MathJax.startup.document.inputJax.tex.postFilters.add(({data}) => {
+       numberPattern: /^(?:[0-9]+(?:(?: +|\{,\})[0-9]+)*(?:\.[0-9]*)?|\.[0-9]+)/,
+       postFilters: [
+         ({data}) => {
            for (const mn of data.getList('mn')) {
              const textNode = mn.childNodes[0];
              textNode.text = textNode.text.replace(/ /g, '');
            }
-         });
-       }
-     }
-   }
+         }
+       ],
+     },
+   };
 
 We set the :data:`numberPattern` option to allow spaces within the
 number, and then use a post-filter to remove the spaces from the text
@@ -123,18 +132,15 @@ to better quality output.
 .. code-block:: js
 
    MathJax = {
-     startup: {
-       ready() {
-         MathJax.startup.defaultReady();
-         MathJax.startup.document.inputJax.tex.preFilters.add(
-           ({math}) => {
-             math.math = math.math.replace(/[\uFF01-\uFF5E]/g,
-               (c) => String.fromCodePoint(c.codePointAt(0) - 0xFF00 + 0x20));
-           }
-         );
-       }
+     tex: {
+       preFilters: [
+         ({math}) => {
+           math.math = math.math.replace(/[\uFF01-\uFF5E]/g,
+             (c) => String.fromCodePoint(c.codePointAt(0) - 0xFF00 + 0x20));
+         }
+       ]
      }
-   }
+   };
 
 This uses a pre-filter to replace characters in the full-width range
 by an equivalent one in the usual ASCII character range.  This will
@@ -155,31 +161,25 @@ and subscripts.
 .. code-block:: js
 
    MathJax = {
-     startup: {
-       ready() {
-         //
-         // Do usual setup
-         //
-         MathJax.startup.defaultReady();
-         //
-         // The pseudoscript numbers 0 through 9, and a pattern for plus-or-minus a number
-         //
-         const scripts = '\u2070\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077\u2078\u2079';
-         const scriptRE = /([\u207A\u207B])?([\u2070\u00B9\u00B2\u00B3\u2074-\u2079]+)/g;
-         //
-         //  Add a TeX prefilter to convert pseudoscript numbers to actual superscripts
-         //
-         MathJax.startup.document.inputJax.tex.preFilters.add(({math}) => {
-           math.math = math.math.replace(scriptRE, (match, pm, n) => {
-             const N = n.split('').map(c => scripts.indexOf(c));  // convert digits
+     //
+     // The pseudoscript numbers 0 through 9, and a pattern for plus-or-minus a number
+     //
+     scripts: '\u2070\u00B9\u00B2\u00B3\u2074\u2075\u2076\u2077\u2078\u2079',
+     scriptRE: /([\u207A\u207B])?([\u2070\u00B9\u00B2\u00B3\u2074-\u2079]+)/g,
+
+     tex: {
+       preFilters: [
+         ({math}) => {
+           math.math = math.math.replace(MathJax.config.scriptRE, (match, pm, n) => {
+             const N = n.split('').map(c => MathJax.config.scripts.indexOf(c));  // convert digits
              pm === '\u207A' && N.unshift('+');     // add plus, if given
              pm === '\u207B' && N.unshift('-');     // add minus, if given
              return '^{' + N.join('') + '}';        // make it an actual power
            });
-         });
-       }
+         }
+       ]
      }
-   }
+   };
 
 This uses a TeX input jax pre-filter to scan the TeX expression for
 Unicode superscript numerals, with optional plus or minus signs, and
@@ -204,22 +204,21 @@ those measurements to `px` units instead.
 .. code-block:: js
 
    MathJax = {
-     startup: {
-       ready() {
-         MathJax.startup.defaultReady();
-         const fixed = MathJax.startup.document.outputJax.fixed;
-         MathJax.startup.document.outputJax.postFilters.add(({data}) => {
+     svg: {
+       postFilters: [
+         ({data}) => {
+           const fixed = MathJax.startup.document.outputJax.fixed;
            const svg = data.querySelector('svg');
            if (svg?.hasAttribute('viewBox')) {
              const [ , , w, h] = svg.getAttribute('viewBox').split(/ /);
-             const em = document.outputJax.pxPerEm / 1000;
+             const em = MathJax.startup.document.outputJax.pxPerEm / 1000;
              svg.setAttribute('width', fixed(w * em) + 'px');
              svg.setAttribute('height', fixed(h * em) + 'px');
            }
-         });
-       }
+         }
+       ]
      }
-   }
+   };
 
 We use an output jax post-filter to modify the ``svg`` element's
 attributes, taking advantage of the output jax's :meth:`fixed()`
@@ -239,18 +238,18 @@ This configuration implements a substitute for the v2 `autobold` extension.
 .. code-block:: js
 
    MathJax = {
-     startup: {
-       ready() {
-         MathJax.startup.defaultReady();
-         MathJax.startup.document.inputJax.tex.preFilters.add(({math}) => {
+     tex: {
+       preFilters: [
+         ({math}) => {
            const styles = window.getComputedStyle(math.start.node.parentNode);
-           if (styles.fontWeight >= 700) {
+           if (styles.fontWeight >= 700 && !math.inputData.bolded) {
              math.math = '\\boldsymbol{' + math.math + '}';
+             math.inputData.bolded = true;
            }
-         });
-       }
+         }
+       ]
      }
-   }
+   };
 
 It uses a TeX input jax pre-filter that tests if the parent element of
 the math string has CSS with ``font-weight`` of 700 or more (the
@@ -258,6 +257,12 @@ usual ``bold`` value), and if so, it wraps the TeX code in
 ``\boldsymbol{...}`` to make it bold.  Note, however, that if the
 expression itself includes bold notation, that does not become extra
 bold, so may not be distinguishable from the rest of the expression.
+
+We track the fact that bolding has been added using the
+:data:`inputData` object of the :data:`math` object.  That way, if the
+expression needs to be reparsed (e.g., for a ``\require`` command, or
+other dynamic data being loaded), we won't add ``\boldsymbol`` more
+than once.
 
 -----
 
@@ -330,6 +335,23 @@ browsers that implement MathML-Core.
              0x6F: 0x2134,
            }, '\uFE00'],
            '-tex-bold-calligraphic': [0, 0x1D4D0, 0x1D4EA, 0, 0, {}, '\uFE00'],
+           '-tex-mathit': [0, 0x1D434, 0x1D44E, 0x1D6E2, 0x1D6FC, {0x68: 0x210E}],
+         };
+         //
+         // Styles to use for characters that can't be translated.
+         //
+         const variantStyles = {
+           bold: 'font-weight: bold',
+           italic: 'font-style: italic',
+           'bold-italic': 'font-weight; bold; font-style: italic',
+           'script': 'font-family: cursive',
+           'bold-script': 'font-family: cursive; font-weight: bold',
+           'sans-serif': 'font-family: sans-serif',
+           'bold-sans-serif': 'font-family: sans-serif; font-weight: bold',
+           'sans-serif-italic': 'font-family: sans-serif; font-style: italic',
+           'sans-serif-bold-italic': 'font-family: sans-serif; font-weight: bold; font-style: italic',
+           'monospace': 'font-family: monospace',
+           '-tex-mathit': 'font-style: italic',
          };
          //
          //  The filter function
@@ -362,10 +384,19 @@ browsers that implement MathML-Core.
              //
              //  Convert the text of the child nodes
              //
+             let converted = true;
              for (const child of node.childNodes) {
                if (child.isKind('text')) {
-                 convertText(child, start, remap, modifier);
+                 converted &= convertText(child, start, remap, modifier);
                }
+             }
+             //
+             // If not all characters were converted, add styles, if possible,
+             // but not when it would already be in italics.
+             //
+             if (!converted &&
+                 !(['italic', '-tex-mathit'].includes(variant) && text.length === 1 && node.isKind('mi'))) {
+               addStyles(node, variant);
              }
            });
          }
@@ -380,6 +411,7 @@ browsers that implement MathML-Core.
            //
            //  Loop through the characters in the text
            //
+           let converted = 0;
            for (let i = 0; i < text.length; i++) {
              let C = text[i].codePointAt(0);
              //
@@ -395,9 +427,11 @@ browsers that implement MathML-Core.
                //
                if (map[C]) {
                  text[i] = String.fromCodePoint(map[C] - m + start[j]) + modifier;
+                 converted++;
                  break;
                } else if (remap[C] || C <= M) {
                  text[i] = String.fromCodePoint(remap[C] || C - m + start[j]) + modifier;
+                 converted++;
                  break;
                }
              }
@@ -406,9 +440,26 @@ browsers that implement MathML-Core.
            //  Put back the modified text content
            //
            node.setText(text.join(''));
+           //
+           // Return true if all characters were converted, false otherwise.
+           //
+           return converted === text.length;
          }
          //
-         //  Add the input post-filters
+         // Add styles when conversion isn't possible.
+         //
+         function addStyles(node, variant) {
+           let styles = variantStyles[variant];
+           if (styles) {
+             if (node.attributes.hasExplicit(styles)) {
+               styles = node.attributes.get('style') + ' ' + styles;
+             }
+             node.attributes.set('style', styles);
+           }
+         }
+
+         //
+         //  Add the post-filters to all input jax
          //
          MathJax.startup.defaultReady();
          for (jax of MathJax.startup.document.inputJax) {
@@ -416,7 +467,7 @@ browsers that implement MathML-Core.
          }
        }
      }
-   }
+   };
 
 This example adds a post-filter to each of the input jax that are
 loaded (so it will work with both the MathML input as well as TeX
@@ -425,12 +476,16 @@ elements with :attr:`mathvariant` attributes, and then converts the
 content of the child text nodes of those token nodes to use the proper
 Unicode values for any alphabetic, numeric, or Greek characters that
 can be represented using the Mathematical Alphanumeric and Letterlike
-Symbols blocks.
+Symbols blocks.  If any characters can't be converted to something in
+these blocks, we use a :attr:`style` attribute, when possible, to
+simulate the proper output.
 
 The :data:`ranges` variable gives the character ranges that will be
-converted, and the :data:`variants` object gives the data needed to
-make those ranges to the various Mathematical Alphanumerics characters
-for the different :attr:`mathvariant` values.
+converted, the :data:`variants` object gives the data needed to make
+those ranges to the various Mathematical Alphanumerics characters for
+the different :attr:`mathvariant` values, and the
+:data:`variantStyles` object to hold the styles that need to be
+applied for each variant.
 
 The special ``-tex-calligraphic`` and ``-tex-bold-calligraphic``
 variants are used internally in MathJax to produce the Chancery
@@ -444,7 +499,9 @@ for the TeX calligraphic variants.  You may wish to add U+FE01 to the
 script variants to explicitly request the Roundhand versions as well.
 Note, however, that not all fonts support these variant specifiers, so
 you may get the same characters in both cases, and which you get will
-depend on the font.
+depend on the font.  Some browsers may also show unknown character
+glyphs for these select codes when they don't understand how to
+process them.
 
 
 |-----|

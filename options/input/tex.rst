@@ -50,7 +50,9 @@ The Configuration Block
            (document.getElementsByTagName('base').length === 0) ?
             '' : String(document.location).replace(/#.*$/, '')),
         formatError:                     // function called when TeX syntax errors occur
-           (jax, err) => jax.formatError(err)
+           (jax, err) => jax.formatError(err),
+        preFilters: [],                  // A list of pre-filters to add to the TeX input jax
+        postFilters: [],                 // A list of post-filters to add to the TeX input jax
       }
     };
 
@@ -392,6 +394,44 @@ Option Descriptions
       <mtext mathvariant="bold">
       An error occurred!
       </merror>
+
+.. _tex-preFilters:
+.. describe:: preFilters: []
+
+   This specifies a list of functions to run as pre-filters for the
+   TeX input jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the :data:`ParseOptions` object that holds the details of
+   the input jax configuration.  The pre-filters are executed when the
+   TeX input jax is asked to parse a TeX expression, and before the
+   TeX string is processed, so you can use a pre-filter to adjust the
+   TeX string prior to it being parsed.  The math item's :data:`math`
+   property is the original TeX string.
+
+   See the :ref:`sync-filters` section for examples of pre-filters.
+
+.. _tex-postFilters:
+.. describe:: postFilters: []
+
+   This specifies a list of functions to run as post-filters for the
+   TeX input jax.  Each entry is either a function, or an array
+   consisting of a function followed by a number, which is the
+   priority of the pre-filter (lower priorities run first).  The
+   functions are passed an object with three properties: :data:`math`,
+   giving the :data:`MathItem` being processed, :data:`document`
+   giving the :data:`MathDocument` for the math item, and :data:`data`
+   giving the :data:`ParseOptions` object that holds the details of
+   the input jax configuration.  The post-filters are executed when
+   the TeX input jax has finished parsing the TeX expression and has
+   converted it to the intermal MathML format.  The math item's
+   :data:`root` property holds the root of the parsed MathML tree (the
+   internal representation of the ``<math>`` element).
+
+   See the :ref:`sync-filters` section for examples of post-filters.
 
 -----
 
