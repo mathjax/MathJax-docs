@@ -215,7 +215,7 @@ Option Descriptions
    functions are passed an object with three properties: :data:`math`,
    giving the :data:`MathItem` being processed, :data:`document`
    giving the :data:`MathDocument` for the math item, and :data:`data`
-   giving the root of the internal representaton of the MathML tree
+   giving the root of the internal representation of the MathML tree
    (the internal form of the top-level ``<math>`` node).  The
    post-filters are executed when the MathML input jax has finished
    converting it to the intermal MathML format, but before the
