@@ -76,7 +76,7 @@ to know how an expression should be pronounced.
 The `Speech` sub-menu includes an option for `Auto Voicing` the
 expression as it is navigated.  When this is selected, the expression
 will be read by the browser's speech synthesis API, rather than a
-screen reader, and the terms will be highlightes as they are read.
+screen reader, and the terms will be highlights as they are read.
 This is useful, for example, for dyslexic users who benefit from the
 synchronized highlighting.
 

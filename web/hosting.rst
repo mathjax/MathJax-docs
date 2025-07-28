@@ -213,7 +213,7 @@ In version 3, there was only one font (``mathjax-tex``) and it was
 bundled with MathJax itself, so there when you installed MathJax, you
 also git that font.  That is no longer the case with version 4, since
 there is a choice of fonts, and they are made available in separate
-pacakges.  Installing MathJax via ``npm`` or ``pnpm`` will get you the
+packages.  Installing MathJax via ``npm`` or ``pnpm`` will get you the
 default ``mathjax-mnewcm`` font, but if you plan to use a different
 font and have that served from your server, you will need to load its
 font package as well.  E.g.,
@@ -229,7 +229,7 @@ directory to a suitable location on your server, as you have the
 MathJax files themselves.
 
 In order to use the font you have loaded, you will need to configure
-MathJax to tell it the font you need, and where the font fils are
+MathJax to tell it the font you need, and where the font files are
 located on your server.  For example:
 
 .. code-block:: js
@@ -387,8 +387,8 @@ and configure your page like
     </html>
 
 then you should be able to load this file using a ``file://`` URL and
-have MathJax served from the local pyhton server without the need for
-any access to the internet. 
+have MathJax served from the local server without the need for any
+access to the internet.
 
 
 |-----|
