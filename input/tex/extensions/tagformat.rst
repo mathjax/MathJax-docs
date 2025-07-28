@@ -93,28 +93,27 @@ automatic equation numbers generated when the ``tags`` option in the
       section: 1,
       tex: {
         tags: 'ams',
+        packages: {'[+]': ['tagformat']},
         tagformat: {
           number: (n) => MathJax.config.section + '.' + n,
           id: (tag) => 'eqn-id:' + tag
         },
-        packages: {'[+]': ['tagformat']}
-      },
-      loader: {load: ['[tex]/tagformat']},
-      startup: {
-        ready() {
-          MathJax.startup.defaultReady();
-          MathJax.startup.input.tex.preFilters.add(({math}) => {
+        preFilters: [
+          ({math}) => {
             if (math.inputData.recompile) {
               MathJax.config.section = math.inputData.recompile.section;
             }
-          });
-          MathJax.startup.input.tex.postFilters.add(({math}) => {
+          }
+        ],
+        postFilters: [
+          ({math}) => {
             if (math.inputData.recompile) {
               math.inputData.recompile.section = MathJax.config.section;
             }
-          });
-        }
-      }
+          }
+        ]
+      },
+      loader: {load: ['[tex]/tagformat']},
     };
 
 This arranges for automatic equation numbers to be of the form
@@ -204,7 +203,21 @@ Here is a complete example HTML document:
        tagformat: {
          number: (n) => MathJax.config.section + '.' + n,
          id: (tag) => 'eqn-id:' + tag
-       }
+       },
+       preFilters: [
+         ({math}) => {
+           if (math.inputData.recompile) {
+             MathJax.config.section = math.inputData.recompile.section;
+           }
+         }
+       ],
+       postFilters: [
+         ({math}) => {
+           if (math.inputData.recompile) {
+             math.inputData.recompile.section = MathJax.config.section;
+           }
+         }
+       ]
      },
      loader: {load: ['[tex]/tagformat']},
      startup: {
@@ -225,16 +238,6 @@ Here is a complete example HTML document:
            'sections', {handler: {macro: ['sections']}}
          );
          MathJax.startup.defaultReady();
-         MathJax.startup.input.tex.preFilters.add(({math}) => {
-           if (math.inputData.recompile) {
-             MathJax.config.section = math.inputData.recompile.section;
-           }
-         });
-         MathJax.startup.input.tex.postFilters.add(({math}) => {
-           if (math.inputData.recompile) {
-             math.inputData.recompile.section = MathJax.config.section;
-           }
-         });
        }
      }
    };</script>
@@ -307,7 +310,21 @@ Here is a complete example HTML document:
            tagformat: {
              number: (n) => MathJax.config.section + "." + n,
              id: (tag) => "eqn-id:" + tag
-           }
+           },
+           preFilters: [
+             ({math}) => {
+               if (math.inputData.recompile) {
+                 MathJax.config.section = math.inputData.recompile.section;
+               }
+             }
+           ],
+           postFilters: [
+             ({math}) => {
+               if (math.inputData.recompile) {
+                 math.inputData.recompile.section = MathJax.config.section;
+               }
+             }
+           ]
          },
          loader: {load: ["[tex]/tagformat"]},
          startup: {
@@ -328,16 +345,6 @@ Here is a complete example HTML document:
                "sections", {handler: {macro: ["sections"]}}
              );
              MathJax.startup.defaultReady();
-             MathJax.startup.input.tex.preFilters.add(({math}) => {
-               if (math.inputData.recompile) {
-                 MathJax.config.section = math.inputData.recompile.section;
-               }
-             });
-             MathJax.startup.input.tex.postFilters.add(({math}) => {
-               if (math.inputData.recompile) {
-                 math.inputData.recompile.section = MathJax.config.section;
-               }
-             });
            }
          }
        };</script>
