@@ -39,33 +39,21 @@ documents available within this documentation.
 In addition, the `MathJax Node Demos
 <https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__
 repository includes numerous examples of how to use MathJax from a
-`node` application.  These are categorized into several groups
+`node` application.  There are examples using modern ESM modules, and
+others using the oilder CommonJS format.  These are each grouped into
+several categories that illustrate four different ways to access the
+MathJax code.  The main examples use MathJax's LiteDOM implementation,
+but there are also some examples using other DOM replacements.
 
 |btight|
 
-* `Examples using MathJax components the simplest way
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/simple#simple-component-examples>`__
-* `Examples using MathJax components via the startup module
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/component#component-based-examples>`__
-* `Examples using MathJax components loaded by hand
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/preload#preloaded-component-examples>`__
-* `Examples using MathJax modules directly
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/direct#non-component-based-examples>`__.
+* `Using MathJax components in ESM modules
+  <https://github.com/mathjax/MathJax-demos-node/tree/master/mjs>`__
+* `Using MathJax components in CJS modules
+  <https://github.com/mathjax/MathJax-demos-node/tree/master/cjs>`__
+* `Using MathJax with alternative DOM implementations
+  <https://github.com/mathjax/MathJax-demos-node/tree/master/dom>`__
 
 |etight|
-
-There are also several other kinds of example:
-
-|btight|
-
-* `Examples using MathJax with the jsDOM library
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/jsdom#mathjax-in-jsdom>`__
-* `Examples using MathJax with headless Chrome using puppeteer
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/puppeteer#mathjax-in-puppeteer>`__
-* `Examples using MathJax to generate speech text
-  <https://github.com/mathjax/MathJax-demos-node/tree/master/speech#speech-generation>`__
-
-|etight|
-
 
 |-----|

@@ -110,10 +110,14 @@ documentation if you need it.
 .. _toc-mathjax-updates:
 .. toctree::
     :caption: MathJax Updates
-    :maxdepth: 2
+    :maxdepth: 1
 
     Upgrading from Version 3.x        <upgrading/v3>
     Upgrading from Version 2.x        <upgrading/v2>
+
+.. toctree::
+    :maxdepth: 2
+
     What's New in MathJax             <upgrading/index>
 
 ------
