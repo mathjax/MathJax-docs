@@ -96,7 +96,7 @@ Advanced Keys
     possible. The speech-text is regenerated to match.
 
 |bkey| Home |ekey|
-    Jump directly to the top-most level of expression.
+    Jump directly to the top-most level of the expression.
 
 -----
 
@@ -173,5 +173,10 @@ is focused, but in some situations that may not occur automatically.
 In that case, you will have to enter focus mode manually in order to
 use the explorer.  How this is done depends on the screen reader, so
 consult its documentation for details.
+
+Once the focus mode is started, you may need to exit focus mode
+manually when you are done exploring the expression.  How that is done
+depends on the screen reader, so consult the reader's documentation
+for details on how to accomplish that.
 
 |-----|

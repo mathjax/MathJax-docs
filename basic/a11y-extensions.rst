@@ -9,7 +9,7 @@ MathJax offers accessibility support via its own built-in extensions
 that provide a choice of support options as well as a high degree of
 personalization.  The extensions can be activated either via the
 context menu, which itself is fully accessible, or a page author can
-control the default settings using the Mathjax configuration object.
+control the default settings using the MathJax configuration object.
 When the menu component is available, configuration should be done
 using the :ref:`MathJax menu options <menu-options>`, otherwise use
 the :ref:`accessibility options <accessibility-options>`.
@@ -84,18 +84,18 @@ the |bkey| S |ekey| key.
 There are a number of different rule sets that can be chosen for
 translating math to text, where each can have a number of different
 preferences for how a particular expression is spoken.  By default,
-MathJax uses `ClearSpeak`, however, the `Speech` sub-menu allows
-also provides the `MathSpeak` option.
+MathJax uses `ClearSpeak`, however, the `Speech` sub-menu also
+provides the `MathSpeak` option.
 
-Each rule set has several different preference settings; three in the
-case of MathSpeak, for example, which primarily influence the length
-of produced text. ClearSpeak,
-on the other hand, has a large number of preferences that allow very
-fine-tuned control over how different types of expressions are
-spoken. The MathJax menu allows a smart choice of preferences by only
-displaying the preferences that are relevant for the sub-expression
-that is currently selected.  The `Select Preferences` option opens a
-selection box for all possible ClearSpeak preference choices.
+Each rule set has several different preference settings --- three in
+the case of MathSpeak, for example, which primarily influence the
+length of the speech text that it produces. ClearSpeak, on the other
+hand, has a large number of preferences that allow very fine-tuned
+control over how different types of expressions are spoken. The
+MathJax menu allows a smart choice of preferences by only displaying
+the preferences that are relevant for the sub-expression that is
+currently selected.  The `Select Preferences` option opens a selection
+box for all possible ClearSpeak preference choices.
 
 Some rule-set and preference settings can be controlled by keyboard
 commands. This allows the user to have the same expression read in
@@ -116,8 +116,8 @@ underlying LaTeX expressions, when available, as is currently being
 taught in gradeschools in a number of European countries.
 
 In addition to voicing the sub-expressions during exploration, the
-explorer allows for queries on sub-expression, such as getting
-positional information with respect to the context, as well as
+explorer allows queries on sub-expressions, such as getting positional
+information with respect to the context, as well as obtaining
 summaries of the sub-expression currently being explored.  See the
 :ref:`explorer-commands` section for details.
    
@@ -130,7 +130,7 @@ Highlighting
 During interactive exploration, the sub-expression that is being
 explorered is automatically highlighted, by default with a blue
 background color. The highlighting can be customized by changing
-`Background` or `Foreground` colors in in the `Highlight` sub-menu of
+`Background` or `Foreground` colors in the `Highlight` sub-menu of
 the `Explorer` section of the MathJax contextual menu.  In addition,
 the opacity of both `Background` and `Foreground` can be adjusted by
 two slider bars underneath the respective sub-menus.
@@ -185,7 +185,7 @@ hovering over it with the mouse pointer. The choices here are:
   is dependent on the context of a sub-expression in the overall expression.
 * `Prefix`
   is information pertaining to the position of a
-  sub-expression. Examples are ``'exponent'``, ``'radicand'``, etc. These would
+  sub-expression. Examples are ``exponent``, ``radicand``, etc. These would
   also be spoken during interactive exploration.
               
 For more details on all of these concepts, see also the documentation of the
@@ -213,7 +213,7 @@ return the expression to its original form.  Collapsible expressions
 can also be discovered using some of the highlighting features, as
 described above.
 
-The ability to collapse sub-expressinos is controlled by the
+The ability to collapse sub-expressions is controlled by the
 `Collapsible Math` setting in the `Options` sub-menu of the MathJax
 contextual menu.  This feature is off by default, but can be selected
 by the user, or the default can be changed by the page author using
