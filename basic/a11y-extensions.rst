@@ -76,20 +76,20 @@ to know how an expression should be pronounced.
 The `Speech` sub-menu includes an option for `Auto Voicing` the
 expression as it is navigated.  When this is selected, the expression
 will be read by the browser's speech synthesis API, rather than a
-screen reader, and the terms will be highlights as they are read.
+screen reader, and the terms will be highlighted as they are read.
 This is useful, for example, for dyslexic users who benefit from the
-synchronized highlighting.
+synchronized highlighting. `Auto Voicing` can also be toggled using
+the |bkey| S |ekey| key.
 
 There are a number of different rule sets that can be chosen for
 translating math to text, where each can have a number of different
 preferences for how a particular expression is spoken.  By default,
-MathJax uses the `ClearSpeak`, however, the `Speech` sub-menu allows
+MathJax uses `ClearSpeak`, however, the `Speech` sub-menu allows
 also provides the `MathSpeak` option.
 
 Each rule set has several different preference settings; three in the
 case of MathSpeak, for example, which primarily influence the length
-of produced text.  `ClearSpeak
-<https://docs.wiris.com/en/mathtype/mathtype_desktop/accessibility/clearspeak>`__,
+of produced text. ClearSpeak,
 on the other hand, has a large number of preferences that allow very
 fine-tuned control over how different types of expressions are
 spoken. The MathJax menu allows a smart choice of preferences by only
