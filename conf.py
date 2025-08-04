@@ -227,7 +227,7 @@ htmlhelp_basename = 'MathJaxdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'MathJax.tex', u'MathJax Documentation',
-   u'Davide Cervone, Volker Sorge, Peter Krautzberger, Robert Miner', 'manual'),
+   u'Davide Cervone, Volker Sorge', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
