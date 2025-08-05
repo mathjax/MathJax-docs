@@ -104,7 +104,7 @@ pygments_style = 'sphinx'
 #
 rst_prolog = """.. attention::
     `Version 4 <https://docs.mathjax.org/en/latest/index.html>`_ is now the current version of MathJax.
-    This document is for version 1.
+    This document is for version 1.1.
 """
 #
 # /DPVC
