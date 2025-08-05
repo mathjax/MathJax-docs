@@ -76,13 +76,13 @@ them when it runs its main typesetting pass.
 
 For example, 
 
-.. code-block:: html
+.. code-block:: xml
 
     <script type="math/tex">x+\sqrt{1-x^2}</script>
 
 represents an in-line equation in TeX notation, and 
 
-.. code-block:: html
+.. code-block:: xml
 
     <script type="math/tex; mode=display">
       \sum_{n=1}^\infty {1\over n^2} = {\pi^2\over 6}
@@ -92,7 +92,7 @@ is a displayed TeX equation.
 
 Alternatively, using MathML notation, you could use
 
-.. code-block:: html
+.. code-block:: xml
 
     <script type="math/mml">
       <math>
@@ -111,7 +111,7 @@ Alternatively, using MathML notation, you could use
 
 for in-line math, or
 
-.. code-block:: html
+.. code-block:: xml
 
     <script type="math/mml">
       <math display="block">
