@@ -1,0 +1,39 @@
+.rst-content code.literal {
+    color: inherit;
+    font-size: 85%;
+    border: none;
+    background: #E8E8E8;
+    padding: 2px 3px;
+    border-radius: .33em;
+}
+
+.toctree-l1 > ul {
+    margin-top: 3px ! important;
+}
+
+.toctree-l2 > ul {
+    margin-top: 0 ! important;
+    margin-bottom: 3px ! important;
+}
+
+ul.simple > li {
+    margin-bottom: 10px;
+}
+
+div.tight > ul.simple > li {
+    margin-bottom: 0;
+}
+
+kbd  {
+    display: inline-block;
+    padding: 3px 5px ! important;
+    font-size: 80% ! important;
+    line-height: 10px ! important;
+    color: #444d56 ! important;
+    vertical-align: middle ! important;
+    background-color: #fafbfc ! important;
+    border: solid 1.5px #c6cbd1 ! important;
+    border-bottom-color: #959da5 ! important;
+    border-radius: 3px ! important;
+    box-shadow: inset -.5px -1px 0 #959da5 ! important;
+}
