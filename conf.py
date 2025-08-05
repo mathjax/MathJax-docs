@@ -13,6 +13,17 @@
 
 import sys, os
 
+### DPVC -- from https://about.readthedocs.com/blog/2024/07/addons-by-default/
+# Define the canonical URL if you are using a custom domain on Read the Docs
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    if "html_context" not in globals():
+        html_context = {}
+    html_context["READTHEDOCS"] = True
+### /DPVC
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -28,7 +39,7 @@ extensions = []
 #templates_path = ['_templates']
 
 # The suffix of source filenames.
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext'}
 
 # The encoding of source files.
 #source_encoding = 'utf-8'
@@ -38,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'MathJax'
-copyright = u'2019 The MathJax Consortium'
+copyright = u'2019-2025 MathJax, Inc.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -199,7 +210,7 @@ htmlhelp_basename = 'MathJaxdoc'
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
   ('index', 'MathJax.tex', u'MathJax Documentation',
-   u'Davide Cervone, Volker Sorge, Peter Krautzberger, Robert Miner', 'manual'),
+   u'Davide Cervone, Volker Sorge, 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
