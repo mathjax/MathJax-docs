@@ -198,8 +198,8 @@ htmlhelp_basename = 'MathJaxdoc'
 # DPVC: Add warning about new version
 #
 rst_prolog = """.. attention::
-    `Version 3 <https://docs.mathjax.org/en/latest/index.html>`_ is now the current version of MathJax.
-    This document is for version 1.
+    `Version 4 <https://docs.mathjax.org/en/latest/index.html>`_ is now the current version of MathJax.
+    This document is for version 1.0.
 """
 #
 # /DPVC
