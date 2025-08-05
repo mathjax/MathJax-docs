@@ -54,7 +54,7 @@ MathJax Scoped NPM Packages
 
 With version 4, MathJax has moved to scoped packages for the source
 and font npm packages.  The ``mathjax-full`` package is now
-``@mathjax/scr``, and the font packages are
+``@mathjax/src``, and the font packages are
 ``@mathjax/mathjax-stix2-font``, ``@mathjax/mathjax-fira-font``, and
 so on.  Future extensions and other packages will be in the
 ``@mathjax`` scope as well.  The only exception is that the
