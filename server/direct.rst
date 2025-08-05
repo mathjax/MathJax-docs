@@ -137,7 +137,7 @@ Most of the examples also load a number of TeX extensions:
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
 Here, we load the `base`, :ref:`tex-ams`, :ref:`tex-newcommand`, and
 :ref:`tex-noundefined` extensions.  The names of these packages are
