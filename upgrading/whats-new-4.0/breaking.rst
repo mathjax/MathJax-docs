@@ -116,7 +116,7 @@ this approach:
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes and container width to use during the conversion

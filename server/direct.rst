@@ -375,7 +375,7 @@ corresponding MathML one.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes and container width to use during the conversion
@@ -527,7 +527,7 @@ ranges.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes and container width to use during the conversion
@@ -629,7 +629,7 @@ previous example highlighted.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes and container width to use during the conversion
@@ -746,7 +746,7 @@ The example below shows how to accomplish that.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes and container width to use during the conversion
@@ -852,7 +852,7 @@ example as indicated in the highlighted lines below.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // Import the desired font
@@ -1113,7 +1113,7 @@ above, with the changes highlighted.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes and container width to use during the conversion
@@ -1276,7 +1276,7 @@ rather than CHTML output.
    import '@mathjax/src/js/input/tex/base/BaseConfiguration.js';
    import '@mathjax/src/js/input/tex/ams/AmsConfiguration.js';
    import '@mathjax/src/js/input/tex/newcommand/NewcommandConfiguration.js';
-   import '@mathjax/src/js/input/tex/noundefined/NoundefinedConfiguration.js';
+   import '@mathjax/src/js/input/tex/noundefined/NoUndefinedConfiguration.js';
 
    //
    // The em and ex sizes to use during the conversion
