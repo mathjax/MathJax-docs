@@ -37,3 +37,7 @@ kbd  {
     border-radius: 3px ! important;
     box-shadow: inset -.5px -1px 0 #959da5 ! important;
 }
+
+button.theme-switcher {
+    bottom: 5.4em;
+}
