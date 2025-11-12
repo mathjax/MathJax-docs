@@ -8,6 +8,8 @@ Version 3.2 includes a number of new features, as well as bug fixes
 for several issues with version 3.1.  The new features are described
 below.
 
+|btight|
+
 * :ref:`v3.2-lazy-typesetting`
 * :ref:`v3.2-css-updates`
 * :ref:`v3.2-tex-packages`
@@ -19,6 +21,7 @@ below.
 
 * :ref:`v3.2-breaking`
 
+|etight|
 
 See also the `release notes
 <https://github.com/mathjax/MathJax-src/releases/tag/3.2.0#bugs>`__
@@ -128,14 +131,10 @@ In addition to these new packages, some of the older packages have been updated:
   option block, it will be moved to the ``ams`` block, but that
   backward-compatibility code will be removed in a future release.
 
-..
-
 * The `physics` package now implements all macros, even those that are
   not officially documented, but are nevertheless available in LaTeX.
   In addition, it now implements the ``italicdiff`` and ``arrowdel``
   options.
-
-..
 
 * The following macros have been added to the indicated package:
     * ``\overunderset`` (ams) — a combination of ``\overset`` and ``\underset``.
@@ -214,8 +213,6 @@ In addition to the major features listed above, there are some minor new feature
   can be processed within text mode.  See the :ref:`tex-textmacros`
   documentation for details.
 
-..
-
 * Processing of raw Unicode characters in TeX input has been improved.
   In the past, nearly all non-ASCII characters would be placed within
   an ``<mo>`` element, which is not always the best tag to use.  In
@@ -226,8 +223,6 @@ In addition to the major features listed above, there are some minor new feature
   than ``<mo>&#x03B1;</mo>`` as in earlier versions.  This should
   provide better results, though perhaps still not perfect in all
   cases.
-
-..
 
 * In the past, errors in the MathJax configuration options (such as an
   unknown option) would produce a fatal error and MathJax would not
@@ -241,8 +236,6 @@ In addition to the major features listed above, there are some minor new feature
   be called when there is an option error so that you can more easily
   trap such errors and handle them yourself.  See the :ref:`startup-options`
   for more details.
-
-..
 
 * The component loader uses a set of filters to convert a component
   specification (like ``[tex]/physics``) to the full URL for loading the

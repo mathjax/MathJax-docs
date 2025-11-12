@@ -4,10 +4,10 @@
 Document Options
 ################
 
-The options below control the operation of the ``MathDocument`` object
+The options below control the operation of the :data:`MathDocument` object
 created by MathJax to process the mathematics in your web page.  They
 are listed with their default values.  To set any of these options,
-include an ``options`` section in your :data:`MathJax` global object.
+include an :data:`options` section in your :data:`MathJax` global object.
 
 -----
 
@@ -19,16 +19,16 @@ The Configuration Block
     MathJax = {
       options: {
         skipHtmlTags: [            //  HTML tags that won't be searched for math
-            'script', 'noscript', 'style', 'textarea', 'pre',
-            'code', 'annotation', 'annotation-xml'
+            'script', 'noscript', 'style', 'textarea', 'pre', 'code',
+            'math', 'select', 'option', 'mjx-container'],
         ],
         includeHtmlTags: {         //  HTML tags that can appear within math
             br: '\n', wbr: '', '#comment': ''
         },
-        ignoreHtmlClass: 'tex2jax_ignore',    //  class that marks tags not to search
-        processHtmlClass: 'tex2jax_process',  //  class that marks tags that should be searched
-        compileError: function (doc, math, err) {doc.compileError(math, err)},
-        typesetError: function (doc, math, err) {doc.typesetError(math, err)},
+        ignoreHtmlClass: 'mathjax_ignore',    //  class that marks tags not to search
+        processHtmlClass: 'mathjax_process',  //  class that marks tags that should be searched
+        compileError: (doc, math, err) => doc.compileError(math, err),
+        typesetError: (doc, math, err) => doc.typesetError(math, err),
         renderActions: {...}
       }
     };
@@ -43,25 +43,25 @@ Option Descriptions
 
    <style>
    .rst-content dl.describe > dt:first-child {
-     margin-bottom: 0;
+     margin-bottom: 0 ! important;
    }
    .rst-content dl.describe > dt + dt {
-     margin-top: 0;
-     border-top: none;
-     padding-left: 6em;
+     margin-top: 0 ! important;
+     border-top: none ! important;
+     padding-left: 5em ! important;
    }
    .rst-content dl.describe > dt + dd {
-     margin-top: 6px;
+     margin-top: 6px ! important;
    }
    </style>
 
 
 .. _skipHtmlTags:
 .. describe:: skipHtmlTags: ['script', 'noscript', 'style', 'textarea',
-                         'pre', 'code', 'annotation', 'annotation-xml']
+            'pre', 'code', 'math', 'select', 'option', 'mjx-container']
 
     This array lists the names of the tags whose contents should not
-    be processed by MathJaX (other than to look for ignore/process
+    be processed by MathJax (other than to look for ignore/process
     classes as listed below).  You can add to (or remove from) this
     list to prevent MathJax from processing mathematics in specific
     contexts.  E.g.,
@@ -80,6 +80,12 @@ Option Descriptions
    expression, and what text to replace them by within the math.  The
    default is to allow ``<br>``, which becomes a newline, and ``<wbr>``
    and HTML comments, which are removed entirely.
+
+   The value associate with a tag is either a string, which replaces
+   the tag in the math string, or a function of the form ``(node,
+   adaptor) => string`` that takes two arguments, the DOM node
+   matching the given tag and the current DOM adaptor, and returns the
+   replacement string for the DOM node in the math string.
 
 .. _ignoreHtmlClass:
 .. describe:: ignoreHtmlClass: 'mathjax_ignore'
@@ -120,7 +126,7 @@ Option Descriptions
     which matches ``class`` followed by either a ``1`` or a ``2``.
 
 .. _document-compileError:
-.. describe:: compileError: function (doc, math, err) {doc.compileError(math, err)}
+.. describe:: compileError: (doc, math, err) => doc.compileError(math, err)
 
    This is the function called whenever there is an uncaught error
    while an input jax is running (i.e., during the document's
@@ -135,7 +141,7 @@ Option Descriptions
    errors in the input processors.
 
 .. _document-typesetError:
-.. describe:: typesetError: function (doc, math, err) {doc.typesetError(math, err)}
+.. describe:: typesetError: (doc, math, err) => doc.typesetError(math, err)
 
    This is the function called whenever there is an uncaught error
    while an output jax is running (i.e., during the document's
@@ -155,11 +161,12 @@ Option Descriptions
    :meth:`MathJax.typeset()` (and its underlying
    :meth:`MathJax.startup.document.render()` call), and the various
    conversion functions, such as :meth:`MathJax.tex2svg()` (and their
-   underlying :meth:`MathJax.startup.document.convert()` call).  The
+   underlying :meth:`MathJax.startup.document.convert()` call), and
+   during the promise-based versions of all these functions.  The
    structure of the object is ``name: value`` pairs separated by
    commas, where the ``name`` gives an identifier for each action, and
-   the ``value`` is an array consisting of a number and zero, one, or two
-   functions, followed optionally by a boolean value.
+   the ``value`` is an array consisting of a number and zero, one, or
+   two functions, followed optionally by a boolean value.
 
    The number gives the priority of the action (lower numbers are
    executed first when the actions are performed).  The first function
@@ -190,10 +197,10 @@ Option Descriptions
 
    specifies two actions, the first called ``compile`` that uses the
    :meth:`compile()` method of the ``MathDocument`` and ``MathItem``,
-   and the second called ``metrics`` that uses the :meth:`getMetric()`
+   and the second called ``metrics`` that uses the :meth:`getMetrics()`
    call for the ``MathDocument`` when the document is rendered, but
    does nothing during a :meth:`rerender()` or :meth:`convert()` call
-   or an individual ``MathItem``.
+   on an individual ``MathItem``.
 
    If the first function is given explicitly, it should take one
    argument, the ``MathDocument`` on which it is running.  If the
@@ -203,16 +210,14 @@ Option Descriptions
 
    The default value includes actions for the main calls needed to
    perform rendering of math: ``find``, ``compile``, ``metrics``,
-   ``typeset``, ``update``, and ``reset``.  These find the math in the
-   document, call the input jax on the math that was located, obtain
-   the metric information for the location of the math, call the
-   output jax to convert the internal format to the output format,
-   insert the output into the document, and finally reset the internal
-   flags so that a subsequent typesetting action will process
-   properly.
+   ``typeset``, and ``update``.  These find the math in the document,
+   call the input jax on the math that was located, obtain the metric
+   information for the location of the math, call the output jax to
+   convert the internal format to the output format, and insert the
+   output into the document.
 
    You can add your own actions by adding new named actions to the
-   ``renderActions`` object, or override existing ones by re-using an
+   ``renderActions`` object, or override existing ones by reusing an
    existing name from above.  See the :ref:`mathml-output` section for
    an example of doing this.  The priority number tells where in the
    list your actions will be performed.
@@ -222,6 +227,9 @@ Option Descriptions
    an action to add the menu event handlers to the math after it is
    inserted into the page.
 
+   See the :ref:`sync-renderActions` section for more information and
+   examples.
+
 -----
 
 Developer Options
@@ -230,31 +238,31 @@ Developer Options
 .. _document-OutputJax:
 .. describe:: OutputJax: null
 
-   The ``OutputJax`` object instance to use for this
-   ``MathDocument``.  If you are using MathJax components, the
-   :ref:`startup-component` component will create this automatically.
-   If you are writing a Node application accessing MathJax code
-   directly, you will need to create the output jax yourself and pass
-   it to the document through this option.
+   The ``OutputJax`` object instance to use for this ``MathDocument``.
+   If you are using MathJax components, the :ref:`startup-component`
+   component will create this automatically.  If you are writing a
+   Node application accessing MathJax code directly, you will need to
+   create the output jax instance yourself and pass it to the document
+   through this option.
 
 .. _document-InputJax:
 .. describe:: InputJax: null
 
-   The ``InputJax`` object instance to use for this
-   ``MathDocument``.  If you are using MathJax components, the
-   :ref:`startup-component` component will create this automatically.
-   If you are writing a Node application accessing MathJax code
-   directly, you will need to create the input jax yourself and pass
-   it to the document through this option.
+   The ``InputJax`` object instance to use for this ``MathDocument``.
+   If you are using MathJax components, the :ref:`startup-component`
+   component will create this automatically.  If you are writing a
+   Node application accessing MathJax code directly, you will need to
+   create the input jax instance yourself and pass it to the document
+   through this option.
 
 .. _document-MmlFactory:
 .. describe:: MmlFactory: null
 
    The ``MmlFactory`` object instance to use for creating the internal
-   MathML objects. This allows you to create a subclass of
-   ``MmlFactory`` and pass that to the document.  A ``null`` value
-   means use the default ``MmlFactory`` class and make a new instance
-   of that.
+   MathML objects. This allows you to create a subclass of the
+   ``MmlFactory`` class and pass that to the document to use in place
+   of the usual one.  A ``null`` value means use the default
+   ``MmlFactory`` class and make a new instance of that.
 
 .. _document-MathList:
 .. describe:: MathList: DefaultMathList
@@ -275,8 +283,5 @@ Developer Options
    example, the HTML handler uses ``HTMLMathItem`` objects for this
    option.
    
------
+|-----|
 
-.. raw:: html
-
-   <span></span>

@@ -6,11 +6,15 @@ CommonHTML Output Processor Options
 
 The options below control the operation of the :ref:`CommonHTML output
 processor <html-output>` that is run when you include
-``'output/chtml'`` in the ``load`` array of the ``loader`` block of
-your MathJax configuration, or if you load a combined component that
-includes the CommonHTML output jax.  They are listed with their default
-values.  To set any of these options, include a ``chtml`` section in
-your :data:`MathJax` global object.
+``'output/chtml'`` in the :data:`load` array of the :data:`loader`
+block of your MathJax configuration, or if you load a combined
+component that includes the CommonHTML output jax.  They are listed
+with their default values.  To set any of these options, include a
+:data:`chtml` section in your :data:`MathJax` global object.
+
+In addition to the options listed below, you can also include any of
+the options from the :data:`output` block listed in the
+:ref:`output-options` section.
 
 -----
 
@@ -21,18 +25,10 @@ The Configuration Block
 
     MathJax = {
       chtml: {
-        scale: 1,                      // global scaling factor for all expressions
-        minScale: .5,                  // smallest scaling factor to use
-        mtextInheritFont: false,       // true to make mtext elements use surrounding font
-        merrorInheritFont: true,       // true to make merror text use surrounding font
-        mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
-        skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
-        exFactor: .5,                  // default size of ex in em units
-        displayAlign: 'center',        // default for indentalign when set to 'auto'
-        displayIndent: '0',            // default for indentshift when set to 'auto'
-        matchFontHeight: true,         // true to match ex-height of surrounding font
-        fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2',   // The URL where the fonts are found
-        adaptiveCSS: true              // true means only produce CSS that is used in the processed equations
+        mathcFontHeight: true,  // True to scale the math to match the ex-height of the surrounding font
+        fontURL: URL,           // The URL where the fonts are found
+        dynamicPrefix: URL,     // The URL where dynamic ranges of the font data are located
+        adaptiveCSS: true,      // true means only produce CSS that is used in the processed equations
       }
     };
 
@@ -50,19 +46,45 @@ Option Descriptions
    surrounding fonts.  This makes the math match the surroundings
    better, but if the surrounding font does not have its ex-height set
    properly (and not all fonts do), it can cause the math to *not*
-   match the surrounding text.  While this will make the lower-case
-   letters match the surrounding fonts, the upper case letters may not
-   match (that would require the font height and ex-height to have the
-   same ratio in the surrounding text as in the math fonts, which is
-   unlikely).
+   match the surrounding text.
+
+   While a ``true`` value will make the lower-case letters match the
+   surrounding fonts, the upper case letters may not match (that would
+   require the font height and ex-height to have the same ratio in the
+   surrounding text as in the math fonts, which is unlikely).
 
 .. _chtml-fontURL:
-.. describe:: fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2'
+.. describe:: fontURL: URL
 
-   This is the URL to the location where the MathJax fonts are
-   stored.  In the default, ``[mathjax]`` is replaced by the location
-   from which you have loaded MathJax.  You should include a complete
-   URL to the location of the fonts you want to use.
+   This is the URL to the location where the MathJax fonts are stored.
+   The ``URL`` is set up by the default font to point to its CDN
+   location.  For the ``mathjax-newcm`` font, the ``URL`` would be set
+   to
+   ``https://cdn.jsdelivr.net/npm/@mathjax/mathjax-newcm-font/chtml/woff2``,
+   for example.
+
+   While v3 included the fonts as part of the MathJax distribution, in
+   v4, the fonts are in separate npm packages.  Each font sets up its
+   own location when it is loaded, and the default is to take the
+   fonts from ``cdn.jsdelivr.net``.  If you are serving your own copy
+   of MathJax, you may want to include your own copy of the fonts, and
+   so may need to set this value accordingly.
+
+
+.. _chtml-dynamicPrefix:
+.. describe:: dynamicPrefix: URL
+
+   This is the location where MathJax should look for font data that
+   has to be loaded dynamically.  The ``URL`` is set up by the default
+   font to point to its CDN location.  For the ``mathjax-newcm`` font,
+   the ``URL`` would be set to ``[mathjax-newcm]/chtml/dynamic``, for
+   example, with the ``[mathjax-newcm]`` path being set to the CDN
+   location.
+
+   Version 3 included all the font data in one file, but in v4, where
+   the fonts include much greater character coverage, the fonts are
+   broken into several smaller pieces that are loaded only when
+   needed.
 
 .. _chtml-adaptiveCSS:
 .. describe:: adaptiveCSS: true

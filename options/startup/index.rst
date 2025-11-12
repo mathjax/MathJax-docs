@@ -4,7 +4,7 @@
 Startup and Loader Options
 ##########################
 
-MathJax's components system is based on two tools that handler loading
+MathJax's components system is based on two tools that handle loading
 the various components and setting up the objects and methods needed
 to use the loaded components.  They both use options to control their
 actions, as described below.
@@ -22,11 +22,13 @@ you want loaded, and alter that object to include the methods and
 objects that they set up.  The initial value of :data:`MathJax` is
 saved as :attr:`MathJax.config`, and other properties are added to
 :data:`MathJax` depending on the components that get loaded.  For
-example, the `startup` component adds :meth:`MathJax.startup`, which
+example, the `startup` component adds :data:`MathJax.startup`, which
 contains the objects that the `startup` module creates, like the input
 and output jax, the math document object, the DOM adaptor, and so on.
-See the :ref:`MathJax API <mathjax-api>` documentation for more
-information.
+
+..
+    See the :ref:`MathJax API <mathjax-api>` documentation for more
+    information.
 
 The :data:`MathJax` variable can also contain configuration blocks
 intended for individual components when they are loaded.  For example,

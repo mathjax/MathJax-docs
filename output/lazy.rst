@@ -10,7 +10,7 @@ performance of pages with large numbers of equations. It implements a
 comes into view.  This means that expressions will not be typeset when
 they are not visible, and your readers will not have to wait for the
 entire document to typeset, speeding up their initial view of the
-page. Furthermore, any expressions that are never seen will not be
+page. Furthermore, any expressions that are never seen will never be
 typeset, saving the processing time that would normally have been
 spent on those expressions.
 
@@ -34,18 +34,17 @@ configuration as follows:
 This will adjust the typesetting pipeline to implement the
 lazy-typesetting functionality.
 
-Lazy typesetting works best with SVG output, but changes with the way
-the CommonHTML output handles its stylesheet updates make the CHTML
-output nearly as fast. With TeX input, the lazy extension makes sure
-that previous expressions are processed by TeX (though not output to
-the page) so that any macro definitions or automatic equation numbers
-are in place when the visible expressions are processed. Currently,
+Lazy typesetting works best with SVG output, but the CHTML output is
+nearly as fast. With TeX input, the lazy extension makes sure that
+previous expressions are processed by TeX (though not output to the
+page) so that any macro definitions or automatic equation numbers are
+in place when the visible expressions are processed. Currently,
 documents that contain ``\ref`` or ``\eqref`` links may not yet work
 properly, since target equations may not have been typeset, and so the
 link location may not be marked in the document. In particular,
-forward references are unlikely to work, and backward references will
-work only if the target expression has already been typeset. We hope
-to improve this situation in a future release.
+forward references are unlikely to work if the target expression has
+not already been typeset. We hope to improve this situation in a
+future release.
 
 
 .. _lazy-options:
@@ -53,7 +52,7 @@ to improve this situation in a future release.
 Lazy Typesetting Options
 ------------------------
 
-Adding the `ui/lazy` extension to the `loader.load` array adds the
+Adding the `ui/lazy` extension to the :data:`loader.load` array adds the
 following options to the MathJax configuration:
 
 .. code-block:: javascript

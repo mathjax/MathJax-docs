@@ -7,7 +7,7 @@ Startup Options
 The `startup` component is responsible for creating the objects needed
 by MathJax to perform the mathematical typesetting of your pages, and
 for setting up the methods you may need to call in order to do that.
-It is configured using the ``startup`` block in your configuration
+It is configured using the :data:`startup` block in your configuration
 object.
 
 -----
@@ -24,11 +24,11 @@ In the example below, :data:`Startup` represents the
       startup: {
         elements: null,          // The elements to typeset (default is document body)
         typeset: true,           // Perform initial typeset?
-        ready: Startup.defaultReady.bind(Startup),          // Called when components are loaded
-        pageReady: Startup.defaultPageReady.bind(Startup),  // Called when MathJax and page are ready
+        ready: Startup.defaultReady,          // Called when components are loaded
+        pageReady: Startup.defaultPageReady,  // Called when MathJax and page are ready
         document: document,      // The document (or fragment or string) to work in
-        invalidOption: 'warn',   // Are invalid options fatal or produce an error?
-        optionError: OPTIONS.optionError,  // Function used to report invalid options
+        invalidOption: 'fatal',  // Are invalid options fatal or produce an error?
+        optionError: Startup.defaultOptionError,  // Function used to report invalid options
         input: [],               // The names of the input jax to use from among those loaded
         output: null,            // The name for the output jax to use from among those loaded
         handler: null,           // The name of the handler to register from among those loaded
@@ -53,10 +53,13 @@ Option Descriptions
 .. describe:: typeset: true
 
    This determines whether the initial typesetting action should be
-   performed when the page is ready.
+   performed when the page is ready.  Setting it to ``false`` means
+   MathJax will not typeset automatically; you will have to call
+   :js:meth:`MathJax.typesetPromise()` or a similar function yourself
+   when you want the math to be processed.
 
 .. _startup-ready:
-.. describe:: ready: MathJax.startup.defaultReady.bind(Startup)
+.. describe:: ready: MathJax.startup.defaultReady
 
    This is a function that is called when MathJax is loaded and ready
    to go.  It is called by the :ref:`loader-component` when all the
@@ -66,17 +69,17 @@ Option Descriptions
    if you want to modify the setup process; see :ref:`startup-action`
    for more details.  Note that this function may be called before the
    page is complete, so unless you are modifying the objects created
-   by the `startup` module, replacing :meth:`pageReady()` may be the
+   by the `startup` module, configuring :meth:`pageReady()` may be the
    better choice.
 
 .. _startup-pageReady:
-.. describe:: pageReady: MathJax.startup.defaultPageReady.bind(Startup)
+.. describe:: pageReady: MathJax.startup.defaultPageReady
 
    This is a function that is called when MathJax is ready to go and
    the page is ready to be processed.  The default action is to
    perform the initial typesetting of the page and return the promise
-   that resolves what that is complete, but you can override it to do
-   whatever you would like, though you should return the promise from
+   that resolves when that is complete, but you can override it to do
+   whatever you would like.  You should return the promise from
    the :meth:`MathJax.startup.defaultPageReady()` function if you call
    it.  See :ref:`startup-action` for more details and examples of how
    to do this.
@@ -90,7 +93,7 @@ Option Descriptions
    variable, it is an empty HTML document.
 
 .. _startup-invalidOption:
-.. describe:: invalidOption: 'warn'   // or 'fatal'
+.. describe:: invalidOption: 'fatal'   // or 'warn'
 
    This determines whether an invalid option will cause a fatal error
    (when set to ``'fatal'``) that stops MathJax from running, or a
@@ -99,7 +102,7 @@ Option Descriptions
    now allows control over that behavior.
 
 .. _startup-optionError:
-.. describe:: optionError: OPTIONS.optionError
+.. describe:: optionError: Startup.defaultOptionError
 
    This option gives a function that is called whenever there is an
    invalid option provided by the user.  It takes two string
@@ -139,10 +142,11 @@ Option Descriptions
 .. _startup-adaptor:
 .. describe:: adaptor: null
 
-   This is the name of the DOM adaptor that you want to use, from
-   among the ones that have been loaded.  By default the components
-   load the ``browser`` adaptor, but you can load the ``liteDOM``
-   adaptor for use in `node` applications; if you do, it will set this
-   value so that it will be used automatically.
+   This is the name of the :ref:`DOM adaptor <node-DOM-adaptor>` that
+   you want to use, from among the ones that have been loaded.  By
+   default the components load the ``browser`` adaptor, but you can
+   load the ``liteDOM`` adaptor for use in `node` applications; if you
+   do, it will set this value so that it will be used automatically.
+   There are several other DOM adapotors for use in `node`, as well.
 
 |-----|

@@ -11,8 +11,9 @@ MathJax, and the second is what converts the AsciiMath notation into
 MathJax's internal format, where one of MathJax's output processors
 then displays it in the web page.  In MathJax version 2, these were
 separated into distinct components (the ``asciimath2jax`` preprocessor
-and the AsciiMath input jax), but in version 3, the ``asciimath2jax``
-functions have been folded into the AsciiMath input jax.
+and the AsciiMath input jax), but in version 3 and above, the
+``asciimath2jax`` functions have been folded into the AsciiMath input
+jax.
 
 The AsciiMath input jax actually includes a copy of ``ASCIIMathML.js``
 itself (see the `AsciiMath home page <http://asciimath.org>`__ for
@@ -42,18 +43,18 @@ on how to customize the action of the AsciiMath input jax.
 Loading the AsciiMath Component
 ===============================
 
-The AsciiMath input jax has not yet been fully ported to version 3.
-Instead, the AsciiMath component uses the version 2 AsciiMath
+The AsciiMath input jax has not yet been fully ported to version 3
+or 4.  Instead, the AsciiMath component uses the version 2 AsciiMath
 input jax together with some of the legacy version 2 code patched into
 the version 3 framework.  This is less efficient, and somewhat larger,
-than a pure version-3 solution would be, and it can complicate
-the configuration process.  A full version-3 port of AsciiMath is
-planned for a future release.
+than a pure version-3 solution would be, and it can complicate the
+configuration process.  A full version-3 port of AsciiMath is planned
+for a future release.
 
 Because AsciiMath hasn't been fully ported to version 3, none of the
 combined components include it.  So in order to use AsciiMath
 notation, you will need to configure MathJax to load it yourself by
-adding ``input/asciimath`` to the ``load`` array in the ``loader``
+adding ``input/asciimath`` to the :data:`load` array in the :data:`loader`
 block of your MathJax configuration.  For example,
 
 .. code-block:: html
@@ -63,21 +64,35 @@ block of your MathJax configuration.  For example,
      loader: {load: ['input/asciimath', 'output/chtml', 'ui/menu']},
    };
    </script>
-   <script type="text/javascript" id="MathJax-script" async
-     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js">
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/startup.js">
    </script>
 
 would load the AsciiMath input jax, the CommonHTML output jax, and the
 contextual menu component.
 
+It is also possible to load the AsciiMath input processor in addition to other input formats.  For example,
 
-.. _asciimath-delimiters:
+.. code-block:: html
+
+   <script>
+   MathJax = {
+     loader: {load: ['input/asciimath']},
+   };
+   </script>
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
+   </script>
+
+would load the AsciiMath input along side TeX input (and produce CHTML
+output), so you could enter mathematics in either format.
+
+
+.. _asciimath-default-delimiters:
 
 AsciiMath delimiters
 ====================
 
 By default, the AsciiMath processor defines the back-tick
-(`````) as the delimiters for mathematics in AsciiMath format.  It
+(`````) as the delimiter for mathematics in AsciiMath format.  It
 does **not** define ``$...$`` as math delimiters.  That is because
 dollar signs appear too often in non-mathematical settings, which
 could cause some text to be treated as mathematics unexpectedly.  For
@@ -95,7 +110,7 @@ explicitly in your configuration:
         load: ['input/asciimath']
       },
       asciimath: {
-        delimiters: [['$','$'], ['`','`']]
+        delimiters: {'[+]': [['$','$']}
       }
     });
 
@@ -106,6 +121,57 @@ notation.
 
 See the :ref:`asciimath-options` page, for additional configuration
 parameters that you can specify for the AsciiMath input processor.
+
+.. _asciimath-display-mode:
+
+AsciiMath Inline and Display Modes
+==================================
+
+Normally, AsciiMath produces output that is in-line math but typeset
+with display-style rules.  That means you need to use HTML tags to
+make a displayed equation be centered on a separate line.  That is how
+AsciiMath is designed.  It is possible, however, to configure
+MathJax's version of AsciiMath to allow for both in-line and displayed
+equations, just like in TeX.
+
+Here is a configuratino that does that:
+
+.. code-block:: html
+
+    <script>
+    MathJax = {
+      loader: {load: ['input/asciimath', 'output/chtml']},
+      output: {
+        font: 'mathjax-modern'
+      },
+      asciimath: {
+        delimiters: [['``','``'], ['`','`']]
+      },
+      startup: {
+        ready() {
+          const {AsciiMath} = MathJax._.input.asciimath_ts;
+          Object.assign(AsciiMath.prototype, {
+            _compile: AsciiMath.prototype.compile,
+            compile(math, document) {
+              math.display = (math.start?.delim === '``');
+              const result = this._compile(math, document);
+              const mstyle = result.childNodes[0].childNodes.pop();
+              mstyle.childNodes.forEach(child => result.appendChild(child));
+              if (math.display) {
+                result.attributes.set('display', 'block');
+              }
+              return result;
+            }
+          });
+          MathJax.startup.defaultReady();
+        }
+      }
+    };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@4/startup.js"></script>
+
+This overrides the AsciiMath :meth:`compile()` method to properly
+handle the two different delimiters.
 
 
 .. _asciimath-in-html:

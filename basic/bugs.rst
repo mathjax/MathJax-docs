@@ -34,14 +34,32 @@ To report a problem, please follow these steps:
    anyone else has come across the problem before.
    
 -  Found a real and new problem? Please report it to the `MathJax issue
-   tracker <https://github.com/mathjax/MathJax/issues>`__ including the
-   following information:
+   tracker <https://github.com/mathjax/MathJax/issues>`__ by filling
+   out the issue template.  **Do not just erase the template** and
+   write a free-form report.  The information requested in the
+   template may be crucial to diagnosing your problem, and without it,
+   we may not be able to give you a meaningful response.  Be sure to
+   include the following information:
 
    -  A detailed description of the problem. What exactly is not working
       as you expected? What do you see?
       
    -  The MathJax version you are working with, your operating system,
       and full browser information including all version information.
+
+   -  The MathJax configuration you are using, and the MathJax
+      component you are loading (e.g., :file:`tex-chtml.js`).
+
+   -  If a particular expression is not displaying properly, then please
+      include the original LaTeX, MathML, or AsciiMath version of the
+      expression as text (that can be copied), as well as a screen
+      snapshot of the result you are seeing in your browser.
+
+   -  If you are making calls to the MathJax API, how and when are you
+      doing so?  It would help to include a code snippet with the
+      actual calls you are making.  Because the timing of such calls
+      is often at issue, the surrounding code may also be important to
+      include.
       
    -  If at all possible, a pointer to a webpage that is publicly
       available and exhibits the problem. This makes sure that we can

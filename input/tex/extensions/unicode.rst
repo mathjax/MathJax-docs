@@ -4,11 +4,37 @@
 unicode
 #######
 
-The `unicode` extension implements a (non-standard) ``\unicode{}``
-macro that allows arbitrary unicode code points to be entered in your
-mathematics.  You can specify the height and depth of the character
-(the width is determined by the browser), and the default font from
-which to take the character.
+The `unicode` extension implements several macros for generating
+character from their unicode code points: the standard ``\char``
+control sequence, plus the non-standard ``\U{}`` and ``\unicode{}``
+macros.
+
+.. note::
+
+   The ``\U`` and ``\char`` commands are new in version 4.
+
+The ``\char`` command must be followed by a number giving the unicode
+code point for the desired character.  As in actual TeX, that number
+can be in hexadecimal if preceded by a quotation mark (``"``), or
+octal if preceded by a single quote (``'``), or by a base-10 number,
+or by a backtick (:literal:`\``) followed by a character or
+single-character control sequence.  For example,
+
+.. code-block:: latex
+
+   \char65
+   \char"41
+   \char'101
+   \char`A
+   \char`\A
+
+all produce the letter A.
+
+The ``\unicode`` command takes an argument that is either a base-10
+number or a hexadecimal number preceded by an ``x``.  You can specify
+the height and depth of the character (the width is determined by the
+browser), and the default font from which to take the character, using
+optional bracketed arguments.
 
 Examples:
 
@@ -38,8 +64,17 @@ the default font list for unknown characters if not.
    ``\unicode`` characters if one wasn't given explicitly.  This has
    not been implemented in version 3.
 
-This extension is loaded automatically when the `autoload` extension
-is used.  To load the `unicode` extension explicitly, add
+Finally, the ``\U`` command takes an argument that is a hexadecimal
+number giving the unicode code point for the desired character.
+Unlike ``\char`` and ``\unicode``, the resulting character is inserted
+back into the TeX input string and processed by the TeX interpreter,
+so ``\U{5C}sum`` would be equivalent to ``\sum`` since the backslash
+is U+005C.
+
+-----
+
+This extension is loaded automatically when the :ref:`tex-autoload`
+extension is used.  To load the `unicode` extension explicitly, add
 ``'[tex]/unicode'`` to the ``load`` array of the ``loader`` block of
 your MathJax configuration, and add ``'unicode'`` to the ``packages``
 array of the ``tex`` block.
@@ -51,21 +86,19 @@ array of the ``tex`` block.
      tex: {packages: {'[+]': ['unicode']}}
    };
 
-Alternatively, use ``\require{unicode}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
-extension is loaded.
+Alternatively, use ``\require{unicode}`` in a TeX expression to load
+it dynamically from within the math on the page, if the
+:ref:`tex-require` extension is loaded.
 
 -----
 
-
 .. _tex-unicode-commands:
-
 
 unicode Commands
 ----------------
 
 The `unicode` extension implements the following macros:
-``\unicode``
+``\char``, ``\U``, ``\unicode``
 
 
 |-----|
