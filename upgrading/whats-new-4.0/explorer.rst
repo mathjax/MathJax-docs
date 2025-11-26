@@ -118,7 +118,7 @@ above, the following are improvements found in v4:
 
 * The explorer now handles expressions with line breaks better.
 
-* There are new text heuristics to distinguishe genuine text elements
+* There are new text heuristics to distinguish genuine text elements
   from expressions that only use text to enforce font changes to
   ``roman`` or ``mathvariant=normal``.
 

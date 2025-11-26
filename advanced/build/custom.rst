@@ -283,7 +283,7 @@ The complete list of options for the :data:`sre` block can be found in the
 <https://github.com/Speech-Rule-Engine/speech-rule-engine?tab=readme-ov-file#options>`__.
 
 Here is a complete page that converts a math expression into Nemeth
-Beaille.
+Braille.
 
 .. code-block:: html
 

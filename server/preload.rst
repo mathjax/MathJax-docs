@@ -255,7 +255,7 @@ when needed.  That means producing output that uses ``mathjax-newcm``
 can be asynchronous, as some character data may need to be loaded from
 additional files.
 
-To use this font synchornousely, you need to pre-load the font data
+To use this font synchronously, you need to pre-load the font data
 files for the characters that you expect to need.  The example below
 loads the calligraphic characters, but you could include additional
 ``import`` commands to load other ranges of characters.  These files
@@ -429,7 +429,7 @@ This example loads **all** the dynamic font files, so you don't have
 to know which ones you will need.  Note, however, that that can be a
 large number of files, with a large amount of data, much of which
 likely will never be used.  This can increase the startup time for
-your application, so you may want to use the techniqwue of
+your application, so you may want to use the technique of
 individually loading only the files you actually need.
 
 In an ES module, one could use

@@ -17,7 +17,7 @@ Interface
 * Fix problem with opening the "Show Math As" window in WebKit (affected Chrome 18, and Safari 5.1.7).
 * Use MathJax message area rather than window status line for ``maction`` with ``actiontype='statusline'`` to avoid security restrictions in some browsers.
 * Fix issue where zoom box for math that has been wrapped to the beginning of a line would be positioned at the end of the previous line.
-* Fix a problem where IE would try to typset the page before it was completely available, causing it to not typeset all the math on the page (or in some cases *any* of the math).
+* Fix a problem where IE would try to typeset the page before it was completely available, causing it to not typeset all the math on the page (or in some cases *any* of the math).
 * Allow decimal scale values in the dialog for setting the scale.
 * Fix SVG output so that setting the scale will rescale the existing mathematics.
 * Add close button to About box and don't make clicking box close it (only clicking button).

@@ -32,7 +32,7 @@ In the example below, :data:`Loader` represents the
         dependencies: {},                            // arrays of dependencies for each component
         provides: {},                                // components provided by each component
         require: null,                               // function to use for loading components
-        pathFlters: [],                              // functions to use to process package names
+        pathFilters: [],                              // functions to use to process package names
         versionWarnings: true,                       // whether to check components for version compatibility
                                                      //   with the version of MathJax that is running
       }

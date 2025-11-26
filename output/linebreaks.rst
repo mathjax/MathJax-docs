@@ -48,7 +48,7 @@ columns more natural.
 
 .. raw:: html
 
-    <p>This is illustraated in the example below:</p>
+    <p>This is illustrated in the example below:</p>
     <p style="background-color: #DDD; padding: 1em 0; text-align: center">
     <iframe style='width: 25em; height: 7em; background-color: white' srcdoc='
       <!DOCTYPE html>
@@ -305,7 +305,7 @@ by 2em, when used in a context where line-breaking is in effect.
 
 -----
 
-.. _mathml-linbreaking:
+.. _mathml-linebreaking:
 
 Breaking and Alignment in MathML
 ================================
@@ -313,7 +313,7 @@ Breaking and Alignment in MathML
 Control of line-breaking and alignment like that in TeX can be
 accomplished in MathML input using the new :attr:`data-break-align`
 attribute on the ``mtable``, ``mtr``, or ``mlabeledtr`` elements, or
-the :attr:`data-vertial-align` attribute for ``mtd`` elements.  These
+the :attr:`data-vertical-align` attribute for ``mtd`` elements.  These
 can have values of ``top``, ``center``, ``middle``, or ``bottom``
 (repeated and space-separated for tables and rows).
 

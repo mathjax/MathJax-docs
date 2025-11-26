@@ -109,7 +109,7 @@ in memory and a corresponding decrease in performance over time.
 To deal with changing content, MathJax provides a function that tells
 it to forget about math that it has previously typeset:
 
-.. js:function:: MathJax.typsetClear(elements)
+.. js:function:: MathJax.typesetClear(elements)
 
    :param HTMLElement[] elements: An optional array of HTML elements
                                   whose typeset math is to be
@@ -200,8 +200,8 @@ on every change the the input area.  This example uses the HTML that
 the user enters, updates an output area using that, and calls MathJax
 to process the expressions it contains.  Of course, in practice, you
 would want to sanitize the user input to prevent the user from
-entering maliceous code, so this is just the bare-bones version meant
-to highlight how to handle the MathJax update portion of the erditor
+entering malicious code, so this is just the bare-bones version meant
+to highlight how to handle the MathJax update portion of the editor
 tasks.
 
 The details are discussed after the code listing below.
@@ -371,7 +371,7 @@ updates are requested while MathJax is running.
 
 Line 66 tells MathJax to forget about any mathematics that was
 previously typeset in the preview area.  Without this, MathJax's list
-of typeet math would grow with each character typed, as it holds onto
+of typeset math would grow with each character typed, as it holds onto
 all the previous copies of the math that it had typeset in the past.
 This call must come before the DOM is changed, so that MathJax can
 tell which math is inside the material being removed.

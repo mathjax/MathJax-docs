@@ -21,7 +21,7 @@ that control these extensions are listed below.
 
 Because the accessibility extensions are controlled by the settings of
 the MathJax contextual menu, when the :ref:`menu-component` is loaded,
-you use the :ref:`menu-options` to determie whether they are
+you use the :ref:`menu-options` to determine whether they are
 enabled or not.  There are settings below that can be used to
 *disable* the extensions, in case they are loaded automatically, but
 these are not the settings that control whether the extensions
@@ -45,7 +45,7 @@ themselves are loaded.  That is controlled by the menu settings:
 
 .. note::
 
-   The :data:`exlorer` option has been removed in v4, and is replaced
+   The :data:`explorer` option has been removed in v4, and is replaced
    by the :data:`speech` and :data:`braille` options, which determine
    whether the explorer is active (either one will activate the
    explorer).  The semantic-enrichment is controlled by the new
@@ -126,7 +126,7 @@ Option Descriptions
    (unenriched) MathML will be used for the output of the expression.
    You can override the default behavior by providing a function that
    does whatever you want, such as recording the error, or replacing
-   the original MathML with alterntiave MathML containing an error
+   the original MathML with alternative MathML containing an error
    message.
 
 .. note::
@@ -412,7 +412,7 @@ Speech Options
 
    Determines whether Braille output is produced.  By default, Braille
    is computed for every expression on the page, and will be sent to a
-   Braille oputput device when the page is read, or when the explorer
+   Braille output device when the page is read, or when the explorer
    is started.
 
 .. _explorer-subtitles:
@@ -618,7 +618,7 @@ configuration.
 
 .. note::
    
-   In version 3, the `assisitive-mml` extension was included in all
+   In version 3, the `assistive-mml` extension was included in all
    the combined components, and was active by default.  That is no
    longer the case in v4, where the other accessibility tools are
    included and enabled by default.  Users who prefer the assistive
@@ -641,10 +641,10 @@ The Configuration Block
 Option Descriptions
 -------------------
 
-.. _assisitiveMml-enableAssistiveMml:
+.. _assistiveMml-enableAssistiveMml:
 .. describe:: enableAssistiveMml: false
 
-   This setting controls whether the `assisitve-mml` extension is to
+   This setting controls whether the `assistive-mml` extension is to
    run or not when it is loaded.  The value is controlled
    automatically by the settings of the context menu, so when the menu
    component is present, you should use those to control whether

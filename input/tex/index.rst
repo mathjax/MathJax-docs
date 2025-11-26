@@ -33,7 +33,7 @@ additional functionality (see the :ref:`tex-extensions` section).
 Note that MathJax's TeX input processor is *not* actual LaTeX, it is
 an implementation of a subset of the LaTeX macros in javascript in a
 browser.  Not all LaTeX macros and control sequences are available,
-and there are some differences in how MathJax interprests some
+and there are some differences in how MathJax interprets some
 expressions, as described in the first link below.  Not all LaTeX
 packages are available in MathJax; see the sections on extension
 below.

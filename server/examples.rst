@@ -40,7 +40,7 @@ In addition, the `MathJax Node Demos
 <https://github.com/mathjax/MathJax-demos-node#MathJax-demos-node>`__
 repository includes numerous examples of how to use MathJax from a
 `node` application.  There are examples using modern ESM modules, and
-others using the oilder CommonJS format.  These are each grouped into
+others using the older CommonJS format.  These are each grouped into
 several categories that illustrate four different ways to access the
 MathJax code.  The main examples use MathJax's LiteDOM implementation,
 but there are also some examples using other DOM replacements.

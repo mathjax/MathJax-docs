@@ -72,7 +72,7 @@ Noundefined Package Options
 The ``noundefined`` package now has configuration options similar to
 the ones available in the ones available in version 2.  These include
 the ability to set the text color, background color, and size of the
-text to use for disoplaying undefined macro names within TeX formulas.
+text to use for displaying undefined macro names within TeX formulas.
 See the :ref:`noundefined options <tex-noundefined-options>` for
 details.
 
@@ -202,7 +202,7 @@ New API for Clearing Typeset Content
 ====================================
 
 If you are dynamically adding and removing content from your page, you
-need to tell MathJax abiout what you are doing so that it can typeset
+need to tell MathJax about what you are doing so that it can typeset
 any new mathematics, and forget about any old typeset mathematics that
 you have removed.  In version 3.0, the :meth:`MathJax.typesetClear()`
 method could be used to tell MathJax to forget about *all* the
@@ -221,7 +221,7 @@ New API for Getting Math within a Container
 
 MathJax keeps track of the math that you have typeset using a list of
 objects called `MathItems`.  These store the original math string, the
-locatino of the math in the document, the input jax used to process
+location of the math in the document, the input jax used to process
 it, and so on.  In the past, you had access to these through a list
 stored in the `MathDocument` object stored at :attr:`MathJax.startup.document`, 
 but it was not easy to get access to the individual MathItems in a

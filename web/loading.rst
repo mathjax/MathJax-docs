@@ -25,7 +25,7 @@ the ``jsdelivr`` CDN.
    for obtaining the MathJax.  This is no longer the case for
    version 4.
 
-The example above takes advantage of the feature of ``jsdeliver`` that
+The example above takes advantage of the feature of ``jsdelivr`` that
 allows you to get the latest version using the ``mathjax@4`` notation.
 To obtain a specific version, you would use a tag like
 
@@ -120,7 +120,7 @@ components.  For example
      }
    };
    </script>
-   <script defe src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js">
    </script>
 
 would load the version-2-compatible ``\color`` macro, inform TeX to

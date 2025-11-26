@@ -112,7 +112,7 @@ Some extensions add new render actions.  These include
    * - ENRICHED
      - 30
      - enrich
-     - a11y/sementic-enrich
+     - a11y/semantic-enrich
    * - ATTACHSPEECH
      - 210
      - attachSpeech
@@ -220,7 +220,7 @@ original TeX notation as a tooltip on the MathJax output:
                MathJax.config.addTooltip(item);
              }
            },
-           (math, doc) => MathJax.config.addTootip(math),
+           (math, doc) => MathJax.config.addTooltip(math),
          ]
        }
      },
@@ -328,7 +328,7 @@ display style TeX expressions.
      }
    };
 
-Thius render action replaces the usual ``find`` action with one
+This render action replaces the usual ``find`` action with one
 that looks for all the ``<tex>`` and ``<dtex>`` elements in the
 document, and checks that they have only one child that is a text
 element.  If so, it creates a new :data:`MathItem` object with the

@@ -6,7 +6,7 @@ The DOM Adaptor
 
 Because node applications don't have access to a built-in Document
 Object Model (DOM), like browsers do, node applications must use an
-alternative to a native DOM.  There are a naumber of node packages
+alternative to a native DOM.  There are a number of node packages
 that offer DOM substitutes, such as `jsDOM` and `linkedom`.  These
 libraries generally provide implementations of the browser DOM in
 javascript that include more functionality than is required by MathJax

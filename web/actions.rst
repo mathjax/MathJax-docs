@@ -316,7 +316,7 @@ The following terms were discussed above:
 
                This is the function called when MathJax has loaded the
                needed components and is ready to start setting up the
-               objects needed for typsetting the document.  You can
+               objects needed for typesetting the document.  You can
                override it in the ``startup`` section of the
                :js:data:`MathJax` configuration object in order to
                perform customization when MathJax loads, or to set up
@@ -338,7 +338,7 @@ The following terms were discussed above:
                your own processing, or to set up actions to perform
                after the initial typesetting is complete.
 
-   :returns: A promise that resoloves when the actions taken by your
+   :returns: A promise that resolves when the actions taken by your
              function is complete.
 
 .. js:method:: MathJax.startup.defaultPageReady()

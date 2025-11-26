@@ -159,7 +159,7 @@ of the MathJax configuration set by the page that loads this combined
 component.  Similarly, the accessibility settings in the code snipped
 above would override any settings made in the web page, and the three
 TeX packages would always be included, even if the MathJax
-configuration from the apge explicitly removed them.  This is because
+configuration from the page explicitly removed them.  This is because
 the changes made by the ``insert()`` command are made *after* the page
 configuration is moved to :data:`MathJax.config` (which occurs during
 the first ``import`` at line 1), so these override the page settings.

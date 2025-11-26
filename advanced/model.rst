@@ -20,7 +20,7 @@ processors are called `jax`, and are described in more detail
 below.
 
 When MathJax runs, it looks through the page for special markers that
-delimitindicate mathematics; for each such marker, it locates an
+delimit/indicate mathematics; for each such marker, it locates an
 appropriate input jax, which it uses to convert the mathematics into
 an internal form (a MathML tree as javascript objects), and then calls
 an output jax to transform the internal format into HTML content that
@@ -34,7 +34,7 @@ for page authors to write by hand.  Many sites prefer to use a more
 natural input format like LaTeX or AsciiMath, especially when the
 sites allow readers to enter comments or post questions and answers.
 In this case, the mathematics is regular text within the page, and the
-author must indicate what parts of the text are methematics by using
+author must indicate what parts of the text are mathematics by using
 special `delimiters` to mark the start and of the expressions within
 the text.  For example, LaTeX expressions may be delimited by
 ``\(...\)`` for in-line expressions, and ``\[...\]`` or ``$$...$$``

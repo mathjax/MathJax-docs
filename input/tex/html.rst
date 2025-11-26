@@ -85,7 +85,7 @@ Since Markdown is applied to the page first, it may convert your
 subscript markers into italics (inserting ``<i>`` or ``<em>`` tags
 into your mathematics, which will cause MathJax to ignore the math).
 If expressions with two or more subscripts aren't being displayed
-properly, and especially if you see the interveneing text appearing in
+properly, and especially if you see the intervening text appearing in
 italics, that is a good sign that Markdown is processing the
 underscores before MathJax runs.
 

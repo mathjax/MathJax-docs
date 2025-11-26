@@ -147,6 +147,6 @@ Option Descriptions
    default the components load the ``browser`` adaptor, but you can
    load the ``liteDOM`` adaptor for use in `node` applications; if you
    do, it will set this value so that it will be used automatically.
-   There are several other DOM adapotors for use in `node`, as well.
+   There are several other DOM adaptors for use in `node`, as well.
 
 |-----|

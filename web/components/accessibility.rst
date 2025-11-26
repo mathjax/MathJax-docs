@@ -99,7 +99,7 @@ described below.
 
 The speech component uses web-workers to do the speech computations
 (which can be time-consuming) in a separate thread so that it doesn't
-interfere with the responsiveness of your web pageor slow down the
+interfere with the responsiveness of your web page or slow down the
 display of the typeset math in your page.
 
 See the :ref:`speech-options` section for information about
@@ -175,8 +175,8 @@ configuring this component.
    enabled by default, but in v4, the `explorer` component has
    replaced it as the default assistive tool.  The explorer can be
    disabled, however, and the assistive MathML re-enabled using the
-   MathJax contexutal menu on any typeset expression, and page
-   author's can override the defaults in their MatghJax configuration
+   MathJax contextual menu on any typeset expression, and page
+   author's can override the defaults in their MathJax configuration
    objects, if they so desire.
 
 

@@ -291,7 +291,7 @@ within the ``<mpadded>`` container.
 Control over the alignment of cells with line breaking within an
 ``mtable`` can be accomplished in MathML input using the new
 :attr:`data-break-align` attribute on the ``mtable``, ``mtr``, or
-``mlabeledtr`` elements, or the :attr:`data-vertial-align` attribute
+``mlabeledtr`` elements, or the :attr:`data-vertical-align` attribute
 for ``mtd`` elements.  These can have values of ``top``, ``center``,
 ``middle``, or ``bottom`` (repeated and space-separated for tables and
 rows).  The difference between ``center`` and ``middle`` is that

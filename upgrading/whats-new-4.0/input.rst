@@ -84,7 +84,7 @@ E.g., ``\char"61`` produces ``<mi>a</mi>`` internally.
 A new non-standard macro ``\U`` is now available for inserting a
 Unicode character into the TeX input string to be processed as though
 it had been in the input stream originally.  It takes on argument,
-which is the Unicode code point in hexadeciaml notation.  For example,
+which is the Unicode code point in hexadecimal notation.  For example,
 ``\U{229E}`` would produce the character U+229E, a plus sign in a
 square.  Note in particular that these macros can be used in the
 second argument to ``\mmlToken``, as in ``\mmlToken{mi}{\U{213C}}``.
@@ -322,7 +322,7 @@ pattern tells MathJax when to apply the number pattern.  This makes it
 easier to change the number pattern to include other formats, like
 Persian numerals, for example.
 
-Similarlty, a new :data:`tex.initialLetter` pattern has been added
+Similarly, a new :data:`tex.initialLetter` pattern has been added
 that is used to trigger when the the identifier pattern is used.  This
 make using accented characters or other non-Latin characters for
 multi-letter identifiers easier to configure.
