@@ -269,8 +269,8 @@ Option Descriptions
    This specifies the font to use from among the fonts available in
    MathJax, either as a name like ``mathjax-stix2`` or as a path to
    the font npm package, like
-   ``https://cdn.jsdelivr.net/npm/@mathjax/mathjax-stix2@4`` for
-   in-browser use, or ``@mathjax/mathjax-stix2`` for use in node.
+   ``https://cdn.jsdelivr.net/npm/@mathjax/mathjax-stix2-font@4`` for
+   in-browser use, or ``@mathjax/mathjax-stix2-font`` for use in node.
 
    See the :ref:`font-support` section for more details about the
    fonts available and how to use them.
