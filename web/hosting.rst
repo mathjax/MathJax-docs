@@ -375,7 +375,7 @@ and configure your page like
               MathJax = {
                 output: {
                   font: 'mathjax-stix2',
-                  fontPath: 'http://localhost:3000/mathjax-strix2-font',
+                  fontPath: 'http://localhost:3000/mathjax-stix2-font',
                 }
               };
             </script>

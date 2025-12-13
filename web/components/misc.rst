@@ -38,7 +38,7 @@ directly via a ``<script>`` tag, as in
 
 .. code-block:: html
 
-   <script defer src="https://cdn.jsdelivr.net/npm/mathjax4/startup.js"></script>
+   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/startup.js"></script>
 
 This is the component that manages the global :js:data:`MathJax` object.
 It is responsible for creating the needed objects (like the input and

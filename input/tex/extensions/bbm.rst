@@ -29,7 +29,7 @@ This extension defines the following commands:
    Specifies whether the use the bold or normal versions of the bbm
    fonts.  If ``name`` is ``bold``, the bold versions are used;
    anything else indicates the normal versions.  This is a global
-   setting, whise default is given by the :data:`bbm.bold`` setting
+   setting, whose default is given by the :data:`bbm.bold`` setting
    described :ref:`below <tex-bbm-options>`.
 
 .. raw:: html
