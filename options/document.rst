@@ -212,7 +212,7 @@ Option Descriptions
    properly.
 
    You can add your own actions by adding new named actions to the
-   ``renderActions`` object, or override existing ones by re-using an
+   ``renderActions`` object, or override existing ones by reusing an
    existing name from above.  See the :ref:`mathml-output` section for
    an example of doing this.  The priority number tells where in the
    list your actions will be performed.
