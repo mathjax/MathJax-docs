@@ -48,7 +48,7 @@ The Configuration Block
         maxTemplateSubtitutions: 10000,  // maximum number of array template substitutions
         baseURL:                         // URL for use with links to tags (when there is a <base> tag in effect)
            (document.getElementsByTagName('base').length === 0) ?
-            '' : String(document.location).replace(/#.*$/, '')),
+            '' : String(document.location).replace(/#.*$/, ''),
         formatError:                     // function called when TeX syntax errors occur
            (jax, err) => jax.formatError(err),
         preFilters: [],                  // A list of pre-filters to add to the TeX input jax
