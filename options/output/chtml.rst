@@ -25,7 +25,7 @@ The Configuration Block
 
     MathJax = {
       chtml: {
-        mathcFontHeight: true,  // True to scale the math to match the ex-height of the surrounding font
+        matchFontHeight: true,  // True to scale the math to match the ex-height of the surrounding font
         fontURL: URL,           // The URL where the fonts are found
         dynamicPrefix: URL,     // The URL where dynamic ranges of the font data are located
         adaptiveCSS: true,      // true means only produce CSS that is used in the processed equations
