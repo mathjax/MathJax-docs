@@ -7,6 +7,8 @@ What's New in MathJax v3.1
 Version 3.1 includes a number of new features, as well as bug fixes
 for several issues with version 3.0.  These are described below.
 
+|btight|
+
 * :ref:`v3.1-tex-package-name-changes`
 * :ref:`v3.1-tex-format-error`
 * :ref:`v3.1-tex-noundefined-options`
@@ -21,6 +23,8 @@ for several issues with version 3.0.  These are described below.
 * :ref:`v3.1-sreReady`
 * :ref:`v3.1-liteDOM`
 * :ref:`v3.1-demos`
+
+|etight|
 
 ------
 

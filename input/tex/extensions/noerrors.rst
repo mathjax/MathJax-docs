@@ -17,11 +17,13 @@ displayed and shows the original TeX code instead.
    
    In version 2, this extension was included in all the combined
    configuration files that contain the TeX input jax, but in MathJax
-   version 3, you must load it explicitly if you want to use it.
+   version 3 and above, you must load it explicitly if you want to use
+   it.
 
 To load the `noerrors` extension, add ``'[tex]/noerrors'`` to the
-``load`` array of the ``loader`` block of your MathJax configuration,
-and add ``'noerrors'`` to the ``packages`` array of the ``tex`` block.
+:data:`load` array of the :data:`loader` block of your MathJax
+configuration, and add ``'noerrors'`` to the :data:`packages` array of
+the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -29,7 +31,6 @@ and add ``'noerrors'`` to the ``packages`` array of the ``tex`` block.
      loader: {load: ['[tex]/noerrors']},
      tex: {packages: {'[+]': ['noerrors']}}
    };
-
 
 
 |-----|

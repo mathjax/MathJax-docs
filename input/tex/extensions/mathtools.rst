@@ -4,16 +4,17 @@
 mathtools
 #########
 
+The `mathtools` extension implements the ``mathtools`` style package
+from LaTeX. The package provides a number of tools for advanced
+mathematical typesetting. See the `mathtools CTAN page
+<https://www.ctan.org/pkg/mathtools>`__ for more information and
+documentation.
 
-The `mathtools` extension implements the ``mathtools`` style package from
-LaTeX. The package provides a number of tools for advanced mathematical
-typesetting. See the `CTAN page <https://www.ctan.org/pkg/mathtools>`__ for
-more information and documentation of `mathtools`.
-
-This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `mathtools` extension, add ``'[tex]/mathtools'`` to the ``load`` array of the ``loader`` block of your
-MathJax configuration, and add ``'mathtools'`` to the ``packages`` array of the ``tex`` block.
-
+This package is not autoloaded, so you must request it explicitly if
+you want to use it.  To load the `mathtools` extension, add
+``'[tex]/mathtools'`` to the :data:`load` array of the :data:`loader`
+block of your MathJax configuration, and add ``'mathtools'`` to the
+:data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -22,17 +23,13 @@ MathJax configuration, and add ``'mathtools'`` to the ``packages`` array of the 
      tex: {packages: {'[+]': ['mathtools']}}
    };
 
-
-
-Alternatively, use ``\require{mathtools}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
+Alternatively, use ``\require{mathtools}`` in a TeX expression to load
+it dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
 
 -----
 
-
 .. _tex-mathtools-options:
-
 
 mathtools Options
 -----------------
@@ -46,8 +43,9 @@ following values:
   MathJax = {
     tex: {
       mathtools: {
-        multlinegap: '1em',
+        multline-gap: '1em',
         multlined-pos: 'c',
+        multlined-width: '',
         firstline-afterskip: '',
         lastline-preskip: '',
         smallmatrix-align: 'c',
@@ -58,6 +56,7 @@ following values:
         thincolon-dx: '-.04em',
         thincolon-dw: '-.08em',
         use-unicode: false,
+        legacycolonsymbols: false,
         prescript-sub-format: '',
         prescript-sup-format: '',
         prescript-arg-format: '',
@@ -68,108 +67,121 @@ following values:
     }
   };
 
+.. _tex-mathtools-multline-gap:
+.. describe:: multline-gap: '1em'
 
-.. _tex-mathtools-multlinegap:
-.. describe:: multlinegap: '1em'
-
-Horizontal space for multlined environments.
+   Horizontal space for multlined environments. Note that in version
+   3, this was :data:`multlinegap` without the dash.
 
 .. _tex-mathtools-multlined-pos:
 .. describe:: multlined-pos: 'c'
 
-Default alignment for multlined environments.
+   Default alignment for multlined environments.
+
+.. _tex-mathtools-multlined-width:
+.. describe:: multlined-width: ''
+
+   The default width for miltlined environments.
 
 .. _tex-mathtools-firstline-afterskip:
 .. describe:: firstline-afterskip: ''
 
-Space for first line of multlined (overrides multlinegap).
+   Space for first line of multlined (overrides multlinegap).
 
 .. _tex-mathtools-lastline-preskip:
 .. describe:: lastline-preskip: ''
 
-Space for last line of multlined (overrides multlinegap).
+   Space for last line of multlined (overrides multlinegap).
 
 .. _tex-mathtools-smallmatrix-align:
 .. describe:: smallmatrix-align: 'c'
 
-Default alignment for smallmatrix environments.
+   Default alignment for smallmatrix environments.
 
 .. _tex-mathtools-shortvdotsadjustabove:
 .. describe:: shortvdotsadjustabove: '.2em'
 
-Space to remove above ``\shortvdots``.
+   Space to remove above ``\shortvdots``.
 
 .. _tex-mathtools-shortvdotsadjustbelow:
 .. describe:: shortvdotsadjustbelow: '.2em'
 
-Space to remove below ``\shortvdots``.
+   Space to remove below ``\shortvdots``.
 
 .. _tex-mathtools-centercolon:
 .. describe:: centercolon: false
 
-True to have colon automatically centered.
+   True to have colon automatically centered.
 
 .. _tex-mathtools-centercolon-offset:
 .. describe:: centercolon-offset: '.04em'
 
-Vertical adjustment for centered colons.
+   Vertical adjustment for centered colons.
 
 .. _tex-mathtools-thincolon-dx:
 .. describe:: thincolon-dx: '-.04em'
 
-Horizontal adjustment for thin colons (e.g., ``\coloneqq``).
+   Horizontal adjustment for thin colons (e.g., ``\coloneqq``).
 
 .. _tex-mathtools-thincolon-dw:
 .. describe:: thincolon-dw: '-.08em'
 
-Width adjustment for thin colons.
+   Width adjustment for thin colons.
 
 .. _tex-mathtools-use-unicode:
 .. describe:: use-unicode: false
 
-True to use unicode characters rather than multi-character version for ``\coloneqq``, etc., when possible.
+   True to use unicode characters rather than multi-character version
+   for ``\coloneqq``, etc., when possible.
+
+.. _tex-mathtools-legacycolonsymbols:
+.. describe:: legacycolonsymbols: false
+
+   The 2022 update to the LaTeX mathtools package changed the
+   definitions of ``\coloneq`` and three other related macros.
+   Setting this option to ``true`` will cause MathJax to use the older
+   definitions rather than the ones from 2022 and later.
 
 .. _tex-mathtools-prescript-sub-format:
 .. describe:: prescript-sub-format: ''
 
-Format for ``\prescript`` subscript.
+   Format for ``\prescript`` subscript.
 
 .. _tex-mathtools-prescript-sup-format:
 .. describe:: prescript-sup-format: ''
 
-Format for ``\prescript`` superscript.
+   Format for ``\prescript`` superscript.
 
 .. _tex-mathtools-prescript-arg-format:
 .. describe:: prescript-arg-format: ''
 
-Format for ``\prescript`` base.
+   Format for ``\prescript`` base.
 
 .. _tex-mathtools-allow-mathtoolsset:
 .. describe:: allow-mathtoolsset: true
 
-True to allow ``\mathtoolsset`` to change settings.
+   True to allow ``\mathtoolsset`` to change settings.
 
 .. _tex-mathtools-pairedDelimiters:
 .. describe:: pairedDelimiters: {}
 
-Predefined paired delimiters of the form ``name: [left, right, body, argcount, pre, post]``.
+   Predefined paired delimiters of the form ``name: [left, right,
+   body, argcount, pre, post]``.
 
 .. _tex-mathtools-tagforms:
 .. describe:: tagforms: {}
 
-Tag form definitions of the form ``name: [left, right, format]``.
+   Tag form definitions of the form ``name: [left, right, format]``.
 
 -----
 
-
 .. _tex-mathtools-commands:
-
 
 mathtools Commands
 ------------------
 
 The `mathtools` extension implements the following macros:
-``\:``, ``\Aboxed``, ``\adjustlimits``, ``\ArrowBetweenLines``, ``\bigtimes``, ``\centercolon``, ``\clap``, ``\colonapprox``, ``\Colonapprox``, ``\coloneq``, ``\Coloneq``, ``\coloneqq``, ``\Coloneqq``, ``\colonsim``, ``\Colonsim``, ``\cramped``, ``\crampedclap``, ``\crampedllap``, ``\crampedrlap``, ``\crampedsubstack``, ``\dblcolon``, ``\DeclarePairedDelimiters``, ``\DeclarePairedDelimitersX``, ``\DeclarePairedDelimitersXPP``, ``\eqcolon``, ``\Eqcolon``, ``\eqqcolon``, ``\Eqqcolon``, ``\lparen``, ``\mathclap``, ``\mathllap``, ``\mathmakebox``, ``\mathmbox``, ``\mathrlap``, ``\mathtoolsset``, ``\MoveEqLeft``, ``\MTFlushSpaceAbove``, ``\MTFlushSpaceBelow``, ``\MTThinColon``, ``\ndownarrow``, ``\newtagform``, ``\nuparrow``, ``\ordinarycolon``, ``\overbracket``, ``\prescript``, ``\refeq``, ``\renewtagform``, ``\rparen``, ``\shortvdotswithin``, ``\shoveleft``, ``\shoveright``, ``\splitdfrac``, ``\splitfrac``, ``\textclap``, ``\textllap``, ``\textrlap``, ``\underbracket``, ``\usetagform``, ``\vdotswithin``, ``\xhookleftarrow``, ``\xhookrightarrow``, ``\xLeftarrow``, ``\xleftharpoondown``, ``\xleftharpoonup``, ``\xleftrightarrow``, ``\xLeftrightarrow``, ``\xleftrightharpoons``, ``\xmapsto``, ``\xmathstrut``, ``\xRightarrow``, ``\xrightharpoondown``, ``\xrightharpoonup``, ``\xrightleftharpoons``
+``\:``, ``\Aboxed``, ``\adjustlimits``, ``\approxcolon``, ``\Approxcolon``, ``\ArrowBetweenLines``, ``\bigtimes``, ``\clap``, ``\colonapprox``, ``\Colonapprox``, ``\colondash``, ``\Colondash``, ``\coloneq``, ``\Coloneq``, ``\coloneqq``, ``\Coloneqq``, ``\colonsim``, ``\Colonsim``, ``\cramped``, ``\crampedclap``, ``\crampedllap``, ``\crampedrlap``, ``\crampedsubstack``, ``\dashcolon``, ``\Dashcolon``, ``\dblcolon``, ``\DeclarePairedDelimiter``, ``\DeclarePairedDelimiters``, ``\DeclarePairedDelimitersX``, ``\DeclarePairedDelimitersXPP``, ``\DeclarePairedDelimiterX``, ``\DeclarePairedDelimiterXPP``, ``\eqcolon``, ``\Eqcolon``, ``\eqqcolon``, ``\Eqqcolon``, ``\lparen``, ``\MakeAboxedCommand``, ``\mathclap``, ``\mathllap``, ``\mathmakebox``, ``\mathmbox``, ``\mathrlap``, ``\mathtoolsset``, ``\MoveEqLeft``, ``\MTFlushSpaceAbove``, ``\MTFlushSpaceBelow``, ``\MTThinColon``, ``\ndownarrow``, ``\newtagform``, ``\nuparrow``, ``\ordinarycolon``, ``\overbracket``, ``\prescript``, ``\refeq``, ``\renewtagform``, ``\rparen``, ``\shortvdotswithin``, ``\shoveleft``, ``\shoveright``, ``\simcolon``, ``\Simcolon``, ``\splitdfrac``, ``\splitfrac``, ``\textclap``, ``\textllap``, ``\textrlap``, ``\underbracket``, ``\usetagform``, ``\vcentercolon``, ``\vdotswithin``, ``\xhookleftarrow``, ``\xhookrightarrow``, ``\xLeftarrow``, ``\xleftharpoondown``, ``\xleftharpoonup``, ``\xleftrightarrow``, ``\xLeftrightarrow``, ``\xleftrightharpoons``, ``\xlongleftarrow``, ``\xLongleftarrow``, ``\xlongrightarrow``, ``\xLongrightarrow``, ``\xmapsto``, ``\xmathstrut``, ``\xRightarrow``, ``\xrightharpoondown``, ``\xrightharpoonup``, ``\xrightleftharpoons``
 
 And the following environments:
 ``bmatrix*``, ``Bmatrix*``, ``bsmallmatrix*``, ``Bsmallmatrix*``, ``bsmallmatrix``, ``Bsmallmatrix``, ``cases*``, ``crampedsubarray``, ``dcases*``, ``dcases``, ``drcases*``, ``drcases``, ``lgathered``, ``matrix*``, ``multlined``, ``pmatrix*``, ``psmallmatrix*``, ``psmallmatrix``, ``rcases*``, ``rcases``, ``rgathered``, ``smallmatrix*``, ``spreadlines``, ``vmatrix*``, ``Vmatrix*``, ``vsmallmatrix*``, ``Vsmallmatrix*``, ``vsmallmatrix``, ``Vsmallmatrix``

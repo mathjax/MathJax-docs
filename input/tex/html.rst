@@ -13,13 +13,19 @@ Keep in mind that your mathematics is part of an HTML document, so you
 need to be aware of the special characters used by HTML as part of its
 markup.  There cannot be HTML tags within the math delimiters (other
 than ``<br>``, ``<wbr>``, and HTML comments) as TeX-formatted math
-does not include HTML tags.  Also, since the mathematics is initially
-given as text in the page, you need to be careful that your
-mathematics doesn't look like HTML tags to the browser, which parses
-the page before MathJax gets to see it.  In particular, that means
-that you have to be careful about things like less-than and
-greater-than signs (``<`` and ``>``), and ampersands (``&``), which
-have special meaning to web browsers.  For example,
+does not include HTML tags.
+
+New in version 4, however, is a `texhtml` extension that allows you to
+embed HTML tags within a TeX expression.  This allows you to include
+form input elements or images in your mathematics, for example.  See
+the :ref:`tex-texhtml` page for more details.
+
+Since the mathematics is initially given as text in the page, you need
+to be careful that your mathematics doesn't look like HTML tags to the
+browser, which parses the page before MathJax gets to see it.  In
+particular, that means that you have to be careful about things like
+less-than and greater-than signs (``<`` and ``>``), and ampersands
+(``&``), which have special meaning to web browsers.  For example,
 
 .. code-block:: latex
 
@@ -73,10 +79,15 @@ commands that are interpreted before the HTML page is created.  For
 example, many blogs and wikis use formats like Markdown to allow you
 to create the content of your pages.  In Markdown, the underscore is
 used to indicate italics, and this usage will conflict with MathJax's
-use of the underscore to indicate a subscript.  Since Markdown is
-applied to the page first, it may convert your subscript markers into
-italics (inserting ``<i>`` or ``<em>`` tags into your mathematics,
-which will cause MathJax to ignore the math).
+use of the underscore to indicate a subscript.
+
+Since Markdown is applied to the page first, it may convert your
+subscript markers into italics (inserting ``<i>`` or ``<em>`` tags
+into your mathematics, which will cause MathJax to ignore the math).
+If expressions with two or more subscripts aren't being displayed
+properly, and especially if you see the interveneing text appearing in
+italics, that is a good sign that Markdown is processing the
+underscores before MathJax runs.
 
 Such systems need to be told not to modify the mathematics that
 appears between math delimiters.  That usually involves modifying the
@@ -101,12 +112,27 @@ used to mark verbatim text, so
     ... we have `\(x_1 = 132\)` and `\(x_2 = 370\)` and so ...
 
 may be able to protect the underscores from being processed by
-Markdown.
+Markdown.  Note, however, that this may put the TeX expression and its
+delimiters inside a ``<code>`` tag in the page, and MathJax usually
+ignores the contents of those.  In that case, you will need to
+configure MathJax to not skip ``<code>`` tags.  For example, use
 
-Alternatively, some content-management systems use the backslash
-(``\``) as a special character for "escaping" other characters, and
-you may be able to use that to prevent it from converting underscores
-to italics.  That is, you might be able to use
+.. code-block:: js
+
+   window.MathJax = {
+     options: {
+       skipHtmlTags: {'[-]': ['code']}
+     }
+   };
+
+to remove the ``<code>`` tag from the list of those that are skipped
+when looking for math delimiters.
+
+Alternatively, some content-management systems, including those based
+on Markdown, use the backslash (``\``) as a special character for
+"escaping" other characters, and you may be able to use that to
+prevent it from converting underscores to italics.  That is, you might
+be able to use
 
 .. code-block:: latex
 

@@ -6,7 +6,7 @@ What is MathJax?
 
 MathJax is an open-source JavaScript display engine for LaTeX, MathML,
 and AsciiMath notation that works in all modern browsers.  It was
-designed with the goal of consolidating the recent advances in web
+designed with the goal of consolidating advances in web
 technologies into a single, definitive, math-on-the-web platform
 supporting the major browsers and operating systems, including those
 on mobile devices.  It requires no setup on the part of the user (no
@@ -20,7 +20,7 @@ MathJax uses web-based fonts to produce high-quality typesetting that
 scales and prints at full resolution, unlike mathematics included as
 bitmapped images.  With MathJax, mathematics is text-based rather than
 image-based, and so it is available for search engines, meaning that
-your equations can be searchable, just like the text of your pages.
+your equations can be searchable just like the text of your pages.
 MathJax allows page authors to write formulas using TeX and LaTeX
 notation, `MathML <http://www.w3.org/TR/MathML3>`__ (a World Wide Web
 Consortium standard for representing mathematics in XML format), or
@@ -42,16 +42,21 @@ MathJax is modular, so it can load components only when necessary, and
 can be extended to include new capabilities as needed.  MathJax is
 highly configurable, allowing authors to customize it for the special
 requirements of their web sites.  Unlike earlier versions of MathJax,
-version 3 can be packaged into a single file, or included as part of
-larger bundles for those sites that manage their javascript assets in
-that way.
+version 3 and above can be packaged into a single file, or included as
+part of larger bundles for those sites that manage their javascript
+assets in that way.
 
 Finally, MathJax has a rich application programming interface (API)
 that can be used to make the mathematics on your web pages interactive
-and dynamic.  Version 3 has been rewritten in ES6 using Typescript (a
-version of javascript that includes type-checking and the ability to
-transpile to ES5).  It was designed to be used as easily on a server
-(as part of a ``node.js`` application) as it is in a browser.  This makes
+and dynamic.  Although version 2 was written directly in javascript,
+versions 3 and 4 are rewritten using Typescript (a version of
+javascript that includes type-checking and the ability to transpile to
+ES6 or ES5 versions of javascript).  While version 3 was provided as
+CommonJS modules using ES5, version 4 comes packaged as ES Modules
+using ES6 as well CommonJS modules in ES5 format.
+
+Since version 3, MathJax can be used as easily on a server (as part of
+a ``node.js`` application) as it is in a browser.  This makes
 pre-processing of web pages containing mathematics much easier than
 with version 2, so web sites can perform all the math processing once
 up front, rather than having the browser do it each time the page is

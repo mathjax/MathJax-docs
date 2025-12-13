@@ -6,11 +6,15 @@ SVG Output Processor Options
 
 The options below control the operation of the :ref:`SVG output
 processor <svg-output>` that is run when you include ``'output/svg'``
-in the ``load`` array of the ``loader`` block of your MathJax
+in the :data:`load` array of the :data:`loader` block of your MathJax
 configuration, or if you load a combined component that includes the
 CommonHTML output jax.  They are listed with their default values.  To
-set any of these options, include an ``svg`` section in your
+set any of these options, include an :data:`svg` section in your
 :data:`MathJax` global object.
+
+In addition to the options listed below, you can also include any of
+the options from the :data:`output` block listed in the
+:ref:`output-options` section.
 
 -----
 
@@ -21,27 +25,30 @@ The Configuration Block
 
     MathJax = {
       svg: {
-        scale: 1,                      // global scaling factor for all expressions
-        minScale: .5,                  // smallest scaling factor to use
-        mtextInheritFont: false,       // true to make mtext elements use surrounding font
-        merrorInheritFont: true,       // true to make merror text use surrounding font
-        mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
-        skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
-        exFactor: .5,                  // default size of ex in em units
-        displayAlign: 'center',        // default for indentalign when set to 'auto'
-        displayIndent: '0',            // default for indentshift when set to 'auto'
-        fontCache: 'local',            // or 'global' or 'none'
-        localID: null,                 // ID to use for local font cache (for single equation processing)
-        internalSpeechTitles: true,    // insert <title> tags with speech content
-        titleID: 0                     // initial id number to use for aria-labeledby titles
+        blacker: 3,           // the stroke-width to use for SVG character paths
+        fontCache: 'local',   // or 'global' or 'none'
+        useXlink: true,       // true to include xlink namespace for <use> hrefs, false to not
       }
     };
+
+.. note::
+
+   The :data:`internalSpeechTitles` attriibute from v3 has been removed in v4.
 
 -----
 
 
 Option Descriptions
 ===================
+
+.. _svg-blacker:
+.. describe:: blacker: 3
+
+   This specifies the stroke-width to use for SVG character paths in
+   units that are 1/1000 of an em.  Enlarging this makes the
+   characters a bit bolder, but can also cause them to render poorly,
+   as some details may begin to overlap and become unreadable.  You
+   probably don't want to go above 20 or so.
 
 .. _svg-fontCache:
 .. describe:: fontCache: 'local'
@@ -61,15 +68,17 @@ Option Descriptions
    page.  When set to ``'none'``, no caching is done and explicit paths
    are used for every character in the expression.
 
-.. describe:: internalSpeechTitles: true
+.. _svg-useXlink:
+.. describe:: useXlink: true
 
-   This tells the SVG output jax whether to put speech text into
-   ``<title>`` elements within the SVG (when set to ``'true'``), or to
-   use an ``aria-label`` attribute instead.  Neither of these control
-   whether speech strings are generated (that is handled by the
-   :ref:`semantic-enrich-options` settings); this setting only tells
-   what to do with a speech string when it has been generated or
-   included as an attribute on the root MathML element.
+   When a font cache is used, MathJax employs ``<use>`` tags to access
+   the character path definitions.  Traditionally, the :attr:`href`
+   attributes that reference the path IDs are required to be in the
+   ``xlink`` namespace, and so appear as :attr:`xlink:href`.  HTML5
+   has deprecated namespaces, so in HTML pages, they should appear as
+   plain :attr:`href` attributes instead.  The ``useXlink`` attribute
+   determines whether the ``xlink`` namespace should be included in
+   the :attr:`href` attributes or not.
 
 
 The remaining options are described in the
@@ -93,13 +102,5 @@ for developers include the following:
    restarted between equations.  If set to ``null``, no prefix is
    used.
 
-.. _svg-titleID:
-.. describe:: titleID: 0
-
-   This gives the initial number used to make unique ``<title>`` ids
-   when :attr:`internalSpeechTitles` is ``true``.  This is useful if
-   you need to process multiple equations by hand and want to generate
-   unique ids for each equation, even if MathJax is restarted between
-   equations.
 
 |-----|

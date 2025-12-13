@@ -35,6 +35,8 @@ v2 will continue to be maintained as we work to move more features
 into version 3, but MathJax v2 likely will not see much further
 development, just maintenance, once MathJax v3 is fully converted.
 
+|btight|
+
 * :ref:`v2-configuration-changes`
 * :ref:`v2-loading-changes`
 * :ref:`v2-api-changes`
@@ -44,6 +46,8 @@ development, just maintenance, once MathJax v3 is fully converted.
 * :ref:`v2-contextual-menu-changes`
 * :ref:`v2-mathjax-node`
 * :ref:`v2-compatibility-example`
+
+|etight|
 
 -----
 
@@ -146,8 +150,8 @@ section for more details on how to accomplish this.
 Changes in the MathJax API
 ==========================
 
-Because the internals have been completely redesigned, its :ref:`API
-<api>` has changed, and so if you have been calling MathJax functions,
+Because the internals have been completely redesigned, its API
+has changed, and so if you have been calling MathJax functions,
 or have modified MathJax internals by augmenting the existing MathJax
 objects, that code will no longer work with version 3, and will have
 to be modified.  Some of the more important changes are discussed
@@ -158,8 +162,6 @@ below.
   functions.  In fact, the :attr:`MathJax.Hub` has been removed
   entirely.
 
-..
-
 * The queues, signals, and callbacks that are central to version 2
   have been replaced by ES6 promises in version 3.  In particular, you
   can use :attr:`MathJax.startup.promise` as a replacement for
@@ -168,16 +170,12 @@ below.
   for code that may make it possible for you to use your version 2
   code in version 3.
 
-..
-
 * The :meth:`MathJax.Hub.Register.StartupHook()` and other related
   hooks have been replaced by ``ready()`` functions in the
   :ref:`loader-component` component.  So code that relies on these
   hooks to alter MathJax need to be reworked.  The
   :ref:`startup-actions` section shows some mechanisms that can be
   used for this.
-
-..
 
 * Version 2 configurations could include an :meth:`Augment` block that
   could be used to add (or override) methods and data in the main
@@ -189,8 +187,6 @@ below.
   the :ref:`startup-actions` section for some ideas on how this can be
   done.
 
-..
-
 * The ``Augment`` configuration blocks and :meth:`StartupHooks()`
   function described above could be used in version 2 to extend
   MathJax's capabilities, and in particular, to extend the TeX input
@@ -198,8 +194,6 @@ below.
   mechanisms are not available in version 3; instead, TeX extensions
   are more formalized in version 3.  See the :ref:`custom-component`
   section for an example of how this can be done.
-
-..
 
 .. _math-script-example:
 
@@ -329,34 +323,22 @@ Some other changes include:
 * The `autoload-all` extension has been rename `autoload`, and is more
   flexible and configurable than the original.
 
-..
-
 * There are two new extensions, :ref:`tex-braket` and
   :ref:`tex-physics`.
-
-..
 
 * The configuration options for controlling the format of equation
   numbers have been moved to an extension; see the
   :ref:`tex-tagformat` documentation for details.
 
-..
-
 * The ``useMathMLspacing`` options for the various input jax have been
   moved to the output jax instead, as the ``mathmlSpacing`` option.
-
-..
 
 * The ``processEscapes`` option for the `tex2jax` preprocessor (now
   for the TeX input jax) had a default value of ``false`` in version 2,
   but has default value ``true`` in version 3.
 
-..
-
 * The functionality of the `MathChoice` extension has been moved to
   the base TeX package.
-
-..
 
 * The non-standard ``UPDIAGONALARROW`` and ``ARROW`` notations have
   been removed from the ``menclose`` element.  These have been
@@ -448,15 +430,11 @@ redesign of MathJax version 3.  These are described below.
   have the options for equation chunking (that controlled how many
   equations to process between screen updates.
 
-..
-
 * Similarly, since the page updating is done all at once, there is no
   need for the math preview versions that were displayed while the
   equations where being typeset.  So the `fast-preview` extension and
   `PreviewHTML` output jax have been removed, along with the
   configuration options for them.
-
-..
 
 * The `PlainSource` output jax has not be ported to version 3, though
   it may be in the future; it can be handled in other ways in
@@ -464,12 +442,8 @@ redesign of MathJax version 3.  These are described below.
   from version 3, though it is not hard to :ref:`implement a
   replacement <NativeMML>` if you want.
 
-..
-
 * The `autobold` TeX extension is no longer available in version 3,
   and is unlikely to be ported in the future.
-
-..
 
 * The `mhchem` TeX extension in version 2 came in two forms:  the
   original extension that didn't match the LaTeX implementation
@@ -478,51 +452,35 @@ redesign of MathJax version 3.  These are described below.
   selected by a configuration option.  This is no longer possible in
   version 3 (the legacy version is no longer provided).
 
-..
-
 * The `handle-floats` extension for HTML output has been removed, as
   its functionality is now part of the standard CommonHTML output.
-
-..
 
 * The `jsMath2jax` preprocessor has been dropped.  This was used to
   help bridge jsMath users to MathJax, but since it has been a decade
   since MathJax was introduced, the need for jsMath conversion should
   be very small at this point.
 
-..
-
 * The `MatchWebFonts` extension is no longer available.  This was
   sometimes needed for HTML-CSS output, which relied on the fonts
   being in place when it ran.  The CommonHTML output is less
   susceptible to font issues, and this is no longer necessary.
 
-..
-
 * The `FontWarnings` extension is no longer available, since it was
   for the HTML-CSS output jax, which is not part of MathJax
   version 3.
 
-..
-
 * The `HelpDialog` extension is not included in version 3.  Its
   functionality is incorporated into the :ref:`menu-component`
   directly.
-
-..
 
 * The `toMathML` extension is no longer provided in version 3.
   Instead, you can use :meth:`MathJax.startup.toMML()` if you are
   using MathJax components, or can use the ``SerializedMMLVisitor``
   object if you are calling MathJax modules directly.
 
-..
-
 * The configuration blocks no longer allow the ``style`` option that
   were available in version 2.  Instead, you should use CSS
   stylesheets and CSS style files directly.
-
-..
 
 * Synchronization with MathJax in version 2 was handled via queues,
   signals, and callbacks.  In version 3, these have been replaced by
@@ -545,8 +503,6 @@ important ones are the following.
   version 3.  This is a key feature to be included in a future
   release.
 
-..
-
 * The MathJax v3 output jax currently only support one font, the
   MathJax TeX fonts.  Improved font support is an important goal for
   version 3, and this is one of the next features to be addressed.  We
@@ -555,19 +511,13 @@ important ones are the following.
   tools used for creating the necessary font data available for use in
   porting your own fonts for use with MathJax.
 
-..
-
 * The localization mechanism available in version 2 has not yet been
   incorporated into version 3, so currently MathJax v3 is available
   only in English.  This is an important feature that will be added to
   MathJax v3 in a future release.
 
-..
-
 * The `begingroup` and `mediawiki-texvc` TeX extensions haven't been
   ported to version 3 yet, but should be in the future.
-
-..
 
 * The `auto-collapse` assistive extension is not yet available for
   version 3.  If there is enough interest, that will also be ported to
@@ -637,9 +587,11 @@ adjustments to the configuration to allow for that.  This should make
 it much easier to use MathJax on a server, as it will work the same
 there as for your web-based applications.  It is also possible to link
 to MathJax at a lower level and access the MathJax modules directly.
-See the section on :ref:`using MathJax in node <node-start>`, and the
-:ref:`MathJax API <mathjax-api>` for more information on these
-possibilities.
+
+..
+    See the section on :ref:`using MathJax in node <node-start>`, and the
+    :ref:`MathJax API <mathjax-api>` for more information on these
+    possibilities.
 
 -----
 
@@ -722,7 +674,7 @@ If your website uses the MathJax API to queue typeset calls via
    MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
 
 for example, these calls will need to be converted to use the
-:ref:`MathJax 3 API <api>`.  You may be able to use the following code
+MathJax 3 API.  You may be able to use the following code
 to patch into MathJax version 3, which provides implementations for
 :meth:`MathJax.Hub.Typeset()`, and :meth:`MathJax.Hub.Queue()`.  It
 also flags usages of :meth:`MathJax.Hub.Register.StartupHook()` and

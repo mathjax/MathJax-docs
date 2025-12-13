@@ -8,6 +8,11 @@ Articles and Presentations
 Articles
 ========
 
+-  `MathJax: The present and the future <https://www.ams.org/journals/notices/202010/rnoti-p1623.pdf>`__
+   by Davide Cervone and Volker Sorge, *MathJax*, *2020*
+-  `Adaptable accessibility features for mathematics on the web
+   (W4A 2019) <https://dl.acm.org/doi/abs/10.1145/3315002.3317567>`__
+   by Davide Cervone and Volker Sorge, *MathJax*, *2019*
 -  `Towards Universal Rendering in MathJax (W4A 2016)
    <https://dl.acm.org/doi/10.1145/2899475.2899494>`__
    by Davide Cervone, Peter Krautzberger, Volker Sorge, *MathJax*, *2016*

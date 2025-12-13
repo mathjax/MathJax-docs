@@ -11,9 +11,9 @@ to use the `CD` environment.
 
 This extension is loaded automatically when the `autoload` extension
 is used.  To load the `amscd` extension explicitly, add
-``'[tex]/amscd'`` to the ``load`` array of the ``loader`` block of
-your MathJax configuration, and add ``'amscd'`` to the ``packages``
-array of the ``tex`` block.
+``'[tex]/amscd'`` to the :data:`load` array of the :data:`loader`
+block of your MathJax configuration, and add ``'amscd'`` to the
+:data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -23,19 +23,18 @@ array of the ``tex`` block.
    };
 
 Alternatively, use ``\require{amscd}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
+dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
 
 -----
-
 
 .. _tex-amscd-options:
 
 amscd Options
 -------------
 
-Adding the `amscd` extension to the ``packages`` array defines an
-``amscd`` sub-block of the ``tex`` configuration block with the
+Adding the `amscd` extension to the :data:`packages` array defines an
+:data:`amscd` sub-block of the :data:`tex` configuration block with the
 following values:
 
 .. code-block:: javascript
@@ -85,12 +84,9 @@ following values:
    space between rows, so setting this to ``true`` can improve the
    look of the diagram.)
 
-
 -----
 
-
 .. _tex-amscd-commands:
-
 
 amscd Commands
 --------------

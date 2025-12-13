@@ -14,7 +14,12 @@ The MathJax Badges
 
 .. raw:: html
 
-      <table>
+      <style>
+      .badges tr td:first-child {
+        padding-right: 2em;
+      }
+      </style>
+      <table class="badges">
       <thead>
       <tr>
       <td>Badge</td>
@@ -88,7 +93,7 @@ The MathJax Logo
 
 .. raw:: html
 
-      <table>
+      <table class="badges">
       <tr>
       <td>
       <a href="https://www.mathjax.org"><br />
@@ -118,8 +123,7 @@ open to requests for different versions.
    -  `96x20 <https://www.mathjax.org/badge/logo2.png>`__
    -  `60x20 <https://www.mathjax.org/badge/mj_logo_60x20.png>`__
    -  `60x12 <https://www.mathjax.org/badge/mj_logo_60x12.png>`__
-   -  `60x12 <https://www.mathjax.org/badge/logo_60x12.gif>`__
-      (gif)
+
 
 Rules
 =====

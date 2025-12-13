@@ -4,27 +4,25 @@
 Synchronizing your code with MathJax
 ####################################
 
-**This page is under construction**
+MathJax provides several mecahnisms for synchronizing your code with
+the actions taken by MathJax, including function that return promises,
+a processing queue to which you can add your own actions, filter
+queues for the input and output jax that allow you to run functions
+before or after they process the math, and configuration options that
+allow you to perform actions at startup when MathJax is ready to
+process math.  All of these give you the ability to hook into
+MathJax's workflow, as described in the sections below.
 
-MathJax version 2 used `queues`, `callbacks`, and `signals` as a means
-of coordinating your code with the actions of MathJax.  Version 3 uses
-the more modern tool know as a `promise
-<https://developers.google.com/web/fundamentals/primers/promises>`__
-to synchronize your code with MathJax.
-See the :ref:`typeset-async` section for examples of typesetting using
-promises.
+-----
 
-In addition to promises, MathJax version 3 introduces
-a :ref:`renderActions <document-renderactions>` configuration option
-that provides a means of linking into MathJax's processing pipeline.
-This is a priorities list of functions to call during processing,
-which includes the default actions of finding the math in the page,
-compiling it into the internal format, getting font metrics for the
-surrounding text, typesetting the mathematics, inserting the math into
-the page, adding menu actions, and so on.  You can insert your own
-functions into this chain to add more functionality, or even remove
-the existing steps to trim down what MathJax does.
+.. toctree::
+   :caption: Synchronization Methods
+   :maxdepth: 1
+   :titlesonly:
 
-More information will be coming to this section in the future.
+   synchronize/promises
+   synchronize/renderactions
+   synchronize/filters
+   synchronize/hooks
 
 |-----|

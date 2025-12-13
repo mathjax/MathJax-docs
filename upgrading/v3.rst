@@ -1,0 +1,62 @@
+.. _upgrade-v3:
+
+#######################
+Upgrading from v3 to v4
+#######################
+
+Because version 3 was a complete rewrite of MathJax, the API had major
+changes from version 2 to version 3, making that upgrade one that
+could require significant work.  That is not the case for upgrading
+from v3 to v4.  The API for v4 is largely the same as v3, with most
+changes being additions rather than changes.
+
+There are many new features in v4.  See the :ref:`whats-new-4.0`
+section for complete details.  There are some breaking changes, which
+are outlined in the :ref:`v4-breaking-changes` section.
+
+For those who are using MathJax in web pages by just configuring and
+loading MathJax without calling its API directly, you may not have to
+make any changes other than changing the URL to load version 4.
+
+If you are calling the MathJax API, then you may need to change to
+using the promise-based calls like :js:meth:`MathJax.typesetPromise()`
+rather than the synchronous ones like :js:meth:`MathJax.typeset()`.
+See the :ref:`v4-promises` section for details and suggestions for how
+to proceed.
+
+MathJax v4 now produces ES6 modules rather than the older ES5 CommonJS
+modules of v3.  This means has lead to changes in the MathJax source
+directories and the build tools that are used to compile and pack
+MathJax and its extensions.  See the sections on
+:ref:`v4-es6-modules`, :ref:`v4-api-modules`, and
+:ref:`v4-build-tools` for more information.
+
+There are significant changes to how MathJax handles speech generation
+in v4.  See the :ref:`Explorer Technical Details
+<v4-explorer-details>` and :ref:`v4-breaking-speech` sections for more
+information on these changes and how to address them.
+
+If you have written extensions or other customizations for MathJax,
+then there are changes that you may need to take into account.  See
+the :ref:`v4-breaking-changes` section for more details about these.
+There are also many more examples available here for both the
+web-based and node-based applications of MathJax.  See
+:ref:`web-examples` and :ref:`node-examples` for lists of the most
+important ones.
+
+There are a number of changes to the TeX input jax and its extensions
+that may affect existing content.  For example, the
+:ref:`tex-textmacros` extension is no by default in the :ref:`combined
+components <combined-components>`, which has implecations for
+``\text{}`` and other text-mode macros if they contain text that will
+now be considered as macro references that where ignored in the past.
+There are also changes to the :ref:`tex-mathtools` extension, and to
+several other extensions.  See the :ref:`v4-tex-improvements` section
+for details on this and the other such changes.
+
+The ``all-packages`` extension has been removed, as have the combined
+components ending in ``-full``.  See :ref:`v4-all-packages` for more on this.
+
+
+|-----|
+

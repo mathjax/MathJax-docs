@@ -4,17 +4,21 @@
 gensymb
 #######
 
-The `gensymb` extension implements the ``gensymb`` style package from LaTeX. It
-provides a number of macros for unit notation.  See the `CTAN page
-<https://www.ctan.org/pkg/gensymb>`__ for more information and documentation of
-`gensymb`.
+The `gensymb` extension implements the ``gensymb`` style package from
+LaTeX. It provides a number of macros for unit notation.  See the
+`CTAN page <https://www.ctan.org/pkg/gensymb>`__ for more information
+and documentation for `gensymb`.
 
-Note that not all the characters for this package are yet included in the
-MathJax fonts so output might vary on clients.
+Note that the ``mathjax-tex`` font (the original default font in v2
+and v3) does not include several of these characters, so the output
+will depend on the system fonts available to your reader, and will
+vary from reader to reader.
 
-This package is not autoloaded, so you must request it explicitly if you want to use it.
-To load the `gensymb` extension, add ``'[tex]/gensymb'`` to the ``load`` array of the ``loader`` block of your
-MathJax configuration, and add ``'gensymb'`` to the ``packages`` array of the ``tex`` block.
+This package is not autoloaded, so you must request it explicitly if
+you want to use it.  To load the `gensymb` extension, add
+``'[tex]/gensymb'`` to the :data:`load` array of the :data:`loader`
+block of your MathJax configuration, and add ``'gensymb'`` to the
+:data:`packages` array of the :data:`tex` block.
 
 .. code-block:: javascript
 
@@ -23,8 +27,8 @@ MathJax configuration, and add ``'gensymb'`` to the ``packages`` array of the ``
      tex: {packages: {'[+]': ['gensymb']}}
    };
 
-
-You can configure the `autoload` extension to load `gensymb` via
+You can configure the :ref:`tex-autoload` extension to load `gensymb`
+via
 
 .. code-block:: javascript
 
@@ -36,17 +40,13 @@ You can configure the `autoload` extension to load `gensymb` via
      }
    };
 
-
-
-Alternatively, use ``\require{gensymb}`` in a TeX expression to load it
-dynamically from within the math on the page, if the `require`
+Alternatively, use ``\require{gensymb}`` in a TeX expression to load
+it dynamically from within the math on the page, if the :ref:`tex-require`
 extension is loaded.
 
 -----
 
-
 .. _tex-gensymb-commands:
-
 
 gensymb Commands
 ----------------
