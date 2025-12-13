@@ -25,7 +25,7 @@ IE7 emulation mode is no longer necessary (and indeed is no longer
 recommended).
 
 
-Reduced flickering during typsetting
+Reduced flickering during typesetting
 ====================================
 
 In the past, each expression was displayed as soon as it was typeset,
@@ -39,8 +39,8 @@ HTML-CSS` and `configuration options for SVG` pages for details.
 
 If the page URL includes a hash reference (a link to a particular
 location within the page), MathJax v2.0 will jump to that location
-after the page has finished typsetting.  (Since the size of the page
-may have changed due to the mathematical typsetting, that location may
+after the page has finished typesetting.  (Since the size of the page
+may have changed due to the mathematical typesetting, that location may
 no longer be visible on screen, so MathJax moves there when it is done
 with the initial typesetting.)  You can control this behavior with the
 ``positionToHash`` parameter in the main section of your
@@ -399,8 +399,8 @@ Important changes from previous versions
 
 *  If the page URL includes a hash reference (a link to a particular
    location within the page), MathJax v2.0 will jump to that location
-   after the page has finished typsetting.  Since the size of the page
-   may have changed due to the mathematical typsetting, that location
+   after the page has finished typesetting.  Since the size of the page
+   may have changed due to the mathematical typesetting, that location
    may no longer be visible on screen, so MathJax moves there when it
    is done with the initial typesetting.  You can control this
    behavior with the ``positionToHash`` parameter in the main section

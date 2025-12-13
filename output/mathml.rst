@@ -121,7 +121,7 @@ top and bottom margin.
 
 The :js:meth:`ready()` function is used to create the CSS needed by
 the expression explorer.  This uses a predefined ``style`` element in
-the page and populates it with the CSS defineitions contained in the
+the page and populates it with the CSS definitions contained in the
 MathDocument's `speechStyles` property.
 
 Because there is no actual output jax, the startup component doesn't

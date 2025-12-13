@@ -15,7 +15,7 @@ performed its initial typesetting operation.  These functions and
 promises are described in detail in the :ref:`startup-action` section.
 
 The MathJax :ref:`loader <loader-options>` component also provides a
-number of mechanisms for hookin into its actions.  The first is the
+number of mechanisms for hooking into its actions.  The first is the
 :ref:`loader.ready() <loader-ready>` and :ref:`loader.failed()
 <loader-failed>` functions in the :data:`loader` block of your MathJax
 configuration.  The first is called when the loader has loaded all the

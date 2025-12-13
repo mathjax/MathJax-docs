@@ -128,7 +128,7 @@ Highlighting
 ============
 
 During interactive exploration, the sub-expression that is being
-explorered is automatically highlighted, by default with a blue
+explored is automatically highlighted, by default with a blue
 background color. The highlighting can be customized by changing
 `Background` or `Foreground` colors in the `Highlight` sub-menu of
 the `Explorer` section of the MathJax contextual menu.  In addition,

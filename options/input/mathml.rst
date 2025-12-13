@@ -203,7 +203,7 @@ Option Descriptions
    giving the MathML DOM elements for the expression.  The
    MathML-filters are executed just before the MathML input jax
    converts the DOM elements into MathJax's internal format.  This can
-   be used to manipualte the expression before it is processed.
+   be used to manipulate the expression before it is processed.
  
 .. _mathml-postFilters:
 .. describe:: postFilters: []
@@ -218,7 +218,7 @@ Option Descriptions
    giving the root of the internal representation of the MathML tree
    (the internal form of the top-level ``<math>`` node).  The
    post-filters are executed when the MathML input jax has finished
-   converting it to the intermal MathML format, but before the
+   converting it to the internal MathML format, but before the
    MathItem's :data:`root` property is set.
 
    See the :ref:`sync-filters` section for examples of post-filters.

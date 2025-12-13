@@ -6,7 +6,7 @@ Getting Started with Node
 
 There are several different ways to use MathJax in node applications,
 as described in the links below.  The first is a simple way to get
-started expermineting with MathJax in node, but is not designed to be
+started experimenting with MathJax in node, but is not designed to be
 used in production applications, and can't be used in a browser
 setting.
 

@@ -36,7 +36,7 @@ The Configuration Block
            /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
         initialDigit: /[0-9.,]/,         // pattern for initial digit or decimal point for a number
         identifierPattern: /^[a-zA-Z]+/, // pattern for multiLetterIdentifiers in \mathrm, etc.
-        initialLetter: /[a-zA-Z]/,       // pettern for initial letter in identifiers
+        initialLetter: /[a-zA-Z]/,       // pattern for initial letter in identifiers
         tags: 'none',                    // or 'ams' or 'all'
         tagSide: 'right',                // side for \tag macros
         tagIndent: '0.8em',              // amount to indent tags
@@ -108,7 +108,7 @@ Option Descriptions
    including it in the package list.
 
    You can remove packages from the default list using ``'[-]'``
-   rather than ``[+]``, as in the followiong example:
+   rather than ``[+]``, as in the following example:
 
    .. code-block:: javascript
 
@@ -247,7 +247,7 @@ Option Descriptions
 .. _tex-identifierPattern:
 .. describe:: identifierPattern: /^[a-zA-Z]+/
 
-   This gives a regular expression that determines what consistitues a
+   This gives a regular expression that determines what constitutes a
    single identifier within one of the macros that specifies a font
    style, like ``\mathrm{}`` or ``\mathcal{}``, or within
    ``\operatorname{}``.  A string that matches this pattern will
@@ -263,7 +263,7 @@ Option Descriptions
    initiate a multi-letter identifier inside macros like
    ``\\mathrm{}`` or ``\operatorname()``.  Once one of these
    characters has been found, the :data:`identifierPattern` above ks
-   applied to the inoput string to see if a multi-letter identifier is
+   applied to the input string to see if a multi-letter identifier is
    found.
 
 .. _tex-tags:
@@ -346,10 +346,10 @@ Option Descriptions
    size of the string being processed by MathJax.  It is set to 5KB,
    which should be sufficient for any reasonable equation.
 
-.. _tex-maxTemplateSubtitutions:
-.. describe:: maxTemplateSubtitutions: 10000
+.. _tex-maxTemplateSubstitutions:
+.. describe:: maxTemplateSubstitutions: 10000
 
-   In an array environment preable, it is possible to make a column
+   In an array environment preamble, it is possible to make a column
    declaration that loops infinitely.  For example,
    ``\begin{array}{c@{\\}c} a&b \end{array}``
    would cause MathJax to loop.  This value prevents this from looping
@@ -376,7 +376,7 @@ Option Descriptions
    function to perform other tasks, like recording the message,
    replacing the message with an alternative message, or throwing the
    error so that MathJax will stop at that point (you can catch the
-   error using promises or a ``try/carch`` block).  Your function
+   error using promises or a ``try/catch`` block).  Your function
    should return the MathML tree that is used for the error, in
    MathJax's internal format.  The :meth:`jax.mmlFactory.create()`
    function can be used to create such trees.  For example,
@@ -427,7 +427,7 @@ Option Descriptions
    giving the :data:`ParseOptions` object that holds the details of
    the input jax configuration.  The post-filters are executed when
    the TeX input jax has finished parsing the TeX expression and has
-   converted it to the intermal MathML format.  The math item's
+   converted it to the internal MathML format.  The math item's
    :data:`root` property holds the root of the parsed MathML tree (the
    internal representation of the ``<math>`` element).
 
@@ -467,7 +467,7 @@ available by default.
 
 For example, the :ref:`tex-configmacros` package adds a ``macros``
 block to the ``tex`` configuration block that allows you to pre-define
-macros for use in TeX espressions:
+macros for use in TeX expressions:
 
 .. code-block:: javascript
 

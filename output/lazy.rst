@@ -77,7 +77,7 @@ following options to the MathJax configuration:
 .. describe:: lazyAlwaysTypeset: null
 
    This gives an array of containers whose math expressions should
-   always be typset during the initial typesetting pass, rather than
+   always be typeset during the initial typesetting pass, rather than
    waiting for them to scroll into view.  This may be useful if
    MathJax output appears in diagrams or other layout that must be
    sized and placed during initial page layout.

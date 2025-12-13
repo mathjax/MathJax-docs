@@ -15,7 +15,7 @@ the MathJax modules directly.  This provides the lowest-level access
 to the MathJax code, and while it is more complicated than using
 components, it gives you the greatest control over the details of
 MathJax.  In this approach, you trade off ease of configuration and
-use for more direct and granual command over MathJax's operations.
+use for more direct and granular command over MathJax's operations.
 
 When you import MathJax code directly, the MathJax loader and startup
 modules are not used, and since those underlie the dynamic loading of
@@ -196,7 +196,7 @@ report the error and then stop the program from running.  Since we are
 only going to process one equation in these examples, that makes it
 easy to tell when the TeX input is faulty.
 
-Next, we create a CommomHTML (CHTML) output jax, and configure the URL
+Next, we create a CommonHTML (CHTML) output jax, and configure the URL
 where the font files will be found.  If you are hosting your own copy
 of MathJax, you should replace this URL with the actual URL of where
 you have placed the font files on your server.
@@ -710,7 +710,7 @@ Loading Font Ranges Dynamically
 -------------------------------
 
 In these past two examples, we used
-:meth:`chtml.font.loadDynamciFiles()` to load all the font data, so
+:meth:`chtml.font.loadDynamicFiles()` to load all the font data, so
 that dynamic loading would not need to occur during the conversion
 process.  The font data in MathJax version 4 is much more extensive
 than in v3, due to the more expansive character coverage of the v4
@@ -722,7 +722,7 @@ the data is asynchronous, this requires that we handle the
 asynchronous nature of those file loads during the conversion process.
 This is done via the :js:func:`mathDocument.convertPromise()`
 function, which returns a promise that is resolved when the conversion
-process completes, after handlign any asynchronous font file loading.
+process completes, after handling any asynchronous font file loading.
 The example below shows how to accomplish that.
 
 .. code-block:: javascript

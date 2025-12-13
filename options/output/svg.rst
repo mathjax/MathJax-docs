@@ -33,7 +33,7 @@ The Configuration Block
 
 .. note::
 
-   The :data:`internalSpeechTitles` attriibute from v3 has been removed in v4.
+   The :data:`internalSpeechTitles` attribute from v3 has been removed in v4.
 
 -----
 

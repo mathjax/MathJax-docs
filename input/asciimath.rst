@@ -134,7 +134,7 @@ AsciiMath is designed.  It is possible, however, to configure
 MathJax's version of AsciiMath to allow for both in-line and displayed
 equations, just like in TeX.
 
-Here is a configuratino that does that:
+Here is a configuration that does that:
 
 .. code-block:: html
 

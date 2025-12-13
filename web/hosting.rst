@@ -47,7 +47,7 @@ subdirectory, with the webpacked component files in the
 ``node_modules/@mathjax/src/bundle`` directory.  The Typescript source
 code files are in ``node_modules/@mathjax/src/ts``, and pre-compiled
 versions of this are available in two formats: as ES modules in the
-``node_modules/@mathjax/src/mjs`` directory, and as CommonoJS modules
+``node_modules/@mathjax/src/mjs`` directory, and as CommonJS modules
 in ``node_modules/@mathjax/src/cjs``.  See the :ref:`node-start`
 section for more details about how to use the MathJax source code in
 your own javascript projects.
@@ -214,7 +214,7 @@ bundled with MathJax itself, so there when you installed MathJax, you
 also git that font.  That is no longer the case with version 4, since
 there is a choice of fonts, and they are made available in separate
 packages.  Installing MathJax via ``npm`` or ``pnpm`` will get you the
-default ``mathjax-mnewcm`` font, but if you plan to use a different
+default ``mathjax-newcm`` font, but if you plan to use a different
 font and have that served from your server, you will need to load its
 font package as well.  E.g.,
 
@@ -256,7 +256,7 @@ In this case, your page might look like
               MathJax = {
                 output: {
                   font: 'mathjax-stix2',
-                  fontPath: '/mathjax-strix2-font',
+                  fontPath: '/mathjax-stix2-font',
                 }
               };
             </script>

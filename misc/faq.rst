@@ -253,6 +253,6 @@ with ``\newcommand``, or ``\def``.  An example is
 formula for water when you use the ``\water`` command. The
 ``\renewcommand`` command works as well. You can also store macros in
 the MathJax configuration. For more information, see the
-:ref:`tex-macros` seection.
+:ref:`tex-macros` section.
 
 |-----|

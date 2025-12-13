@@ -173,7 +173,7 @@ coordinated with MathJax's typesetting.  To do this use the command
    :returns: A promise that resolves when your action has completed.
 
 and pass it a function that does the actions you want to have
-symchronized with MathJax's typesetting.  This will perform your
+synchronized with MathJax's typesetting.  This will perform your
 function when MathJax is finished with any pending typeset or
 conversion actions.  It also returns a promise that resolves when your
 action is complete, just like the promise-based typeset functions do.

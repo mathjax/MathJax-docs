@@ -44,7 +44,7 @@ autoloading of extensions as well, and since the ``all-packages``
 extension doesn't include the newer packages, so isn't really "all"
 packages anyway, it has also been removed.  See the section on
 :ref:`v4-all-packages` for more information, and for an example of how
-to implement an ``all-packages`` work-wround.
+to implement an ``all-packages`` work-around.
 
 
 .. _v4-scoped-packages:

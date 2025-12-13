@@ -78,7 +78,7 @@ Note that this was already being done for CHTML output, so this brings
 the two in line with each other.
 
 
-.. _v4-assisitve-mml:
+.. _v4-assistive-mml:
 
 Assistive MathML Size
 =====================
