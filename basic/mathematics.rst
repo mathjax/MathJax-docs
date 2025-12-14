@@ -11,8 +11,8 @@ Putting mathematics in a web page
 =================================
 
 To put mathematics in your web page, you can use TeX and LaTeX
-notation, `MathML <http://www.w3.org/TR/MathML3>`_ notation,
-`AsciiMath <http://asciimath.org/>`__ notation, or a combination of
+notation, `MathML <https://www.w3.org/TR/MathML3>`_ notation,
+`AsciiMath <https://asciimath.org/>`__ notation, or a combination of
 all three within the same page; the MathJax configuration tells
 MathJax which you want to use, and how you plan to indicate the
 mathematics when you are using TeX/LaTeX or AsciiMath notation.  These

@@ -21,7 +21,7 @@ flexible, macros for typesetting equations via:
 |etight|
 
 See the `documentation
-<http://mirrors.ctan.org/macros/latex/contrib/physics/physics.pdf>`_
+<https://mirrors.ctan.org/macros/latex/contrib/physics/physics.pdf>`_
 for the LaTeX package for more information.
 
 This package is not autoloaded, due to the fact that it redefines many

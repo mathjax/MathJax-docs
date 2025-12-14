@@ -16,7 +16,7 @@ and the AsciiMath input jax), but in version 3 and above, the
 jax.
 
 The AsciiMath input jax actually includes a copy of ``ASCIIMathML.js``
-itself (see the `AsciiMath home page <http://asciimath.org>`__ for
+itself (see the `AsciiMath home page <https://asciimath.org>`__ for
 details).  This means that the results of MathJax's AsciiMath
 processing should be the same as using the actual ``ASCIIMathML.js``
 package (at least as far as the MathML that it generates is
@@ -180,7 +180,7 @@ AsciiMath in HTML documents
 ===========================
 
 The AsciiMath syntax is described on the official `AsciiMath homepage
-<http://asciimath.org>`_.
+<https://asciimath.org>`_.
 
 Keep in mind that your mathematics is part of an HTML document, so you
 need to be aware of the special characters used by HTML as part of its

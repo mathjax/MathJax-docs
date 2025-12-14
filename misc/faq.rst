@@ -185,13 +185,13 @@ determination to learn and master the language due to its specialized
 nature and rich vocabulary of symbols. There are various good
 tutorials on the net, but there is no one-size-fits-all best one. A
 good starting point is the `TeX User Group
-<http://www.tug.org/begin.html>`__, or have a look at the `LaTeX Wiki
-book <http://en.wikibooks.org/wiki/LaTeX>`__.  The Mathematics
+<https://www.tug.org/begin.html>`__, or have a look at the `LaTeX Wiki
+book <https://en.wikibooks.org/wiki/LaTeX>`__.  The Mathematics
 StackExchange site has a MathJax-specific `tutorial and quick
 reference <https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference>`__
 that illustrates many of the features of MathJax.
 
-`MathML <http://www.w3.org/Math/>`__ is an XML-based web format for
+`MathML <https://www.w3.org/Math/>`__ is an XML-based web format for
 mathematical expressions. MathML3, the latest version, has been an
 official W3C recommendation since October 2010.  MathML4 is being
 developed, and MathML-Core, a limited version of MathML, is currently
@@ -201,9 +201,9 @@ features that MathJax uses, so it is not sufficient to render
 MathJax's MathML output in some cases.  MathML is widely supported by
 Computer Algebra Systems and can be created with a choice of authoring
 tools, including Microsoft Office with the `MathType
-<http://www.dessci.com/en/products/MathType/>`__ equation editor. A
+<https://www.dessci.com/en/products/MathType/>`__ equation editor. A
 list of software the supports MathML may be found in `The W3C MathML
-software list <http://www.w3.org/Math/wiki/Tools>`__.
+software list <https://www.w3.org/Math/wiki/Tools>`__.
 
 
 .. _faq-report-issue:
@@ -233,8 +233,8 @@ limited amount of its text formatting capabilities.  Most text
 formatting on the web should be done in HTML and CSS, not TeX. If you
 would like to convert full TeX documents into HTML to publish online,
 you should use a TeX to HTML converter like `LaTeXML
-<http://dlmf.nist.gov/LaTeXML/>`__, `Tralics
-<http://www-sop.inria.fr/apics/tralics/>`__, or `tex4ht
+<https://dlmf.nist.gov/LaTeXML/>`__, `Tralics
+<https://www-sop.inria.fr/apics/tralics/>`__, or `tex4ht
 <https://tug.org/tex4ht/>`__, or more general conversion tools like
 `PreTeXT <https://pretextbook.org>`__ or `pandoc
 <https://pandoc.org>`__.  Note that TeX conversion tools may not

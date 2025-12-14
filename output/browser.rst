@@ -26,8 +26,8 @@ Please `file issues on GitHub
 <https://github.com/mathjax/MathJax/issues>`__ if you notice
 inaccuracies or problems.  It may help to add a screenshot; we
 suggest services such as `browsershots.org
-<http://browsershots.org>`__, `saucelabs.com <http://saucelabs.com>`__,
-or `browserstack.com <http://browserstack.com>`__ for obtaining them.
+<https://browsershots.org>`__, `saucelabs.com <https://saucelabs.com>`__,
+or `browserstack.com <https://browserstack.com>`__ for obtaining them.
 
 
 .. _viewport-meta:

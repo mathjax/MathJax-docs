@@ -22,9 +22,9 @@ bitmapped images.  With MathJax, mathematics is text-based rather than
 image-based, and so it is available for search engines, meaning that
 your equations can be searchable just like the text of your pages.
 MathJax allows page authors to write formulas using TeX and LaTeX
-notation, `MathML <http://www.w3.org/TR/MathML3>`__ (a World Wide Web
+notation, `MathML <https://www.w3.org/TR/MathML3>`__ (a World Wide Web
 Consortium standard for representing mathematics in XML format), or
-`AsciiMath <http://asciimath.org/>`__ notation.  MathJax can generate
+`AsciiMath <https://asciimath.org/>`__ notation.  MathJax can generate
 output in several formats, including HTML with CSS styling, or
 scalable vector graphics (SVG) images.
 

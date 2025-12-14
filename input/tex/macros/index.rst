@@ -17,7 +17,7 @@ websites, including:
 
 * More complete details, with examples and explanations, are available
   at Carol Fisher's `TeX Commands Available in MathJax
-  <http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm>`_
+  <https://treeofmath.github.io/tex-commands-in-mathjax/TeXSyntax.htm>`_
   page.  These were written for MathJax v2, but most of the
   information is still correct for v3 and above.
 

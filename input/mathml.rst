@@ -122,7 +122,7 @@ nodes.
 Supported MathML tags
 =====================
 
-MathJax supports the `MathML3.0 <http://www.w3.org/TR/MathML3/>`_
+MathJax supports the `MathML3.0 <https://www.w3.org/TR/MathML3/>`_
 mathematics tags, with some limitations.  The MathML
 support is still under active development, so some tags are not yet
 implemented, and some features are not fully developed, but are
@@ -141,7 +141,7 @@ The deficiencies include:
 - Experimental support for bidirectional mathematics (via the ``mml3`` extension, see below).
 
 See the `results of the MathML3.0 test suite
-<http://www.w3.org/Math/testsuite/results/tests.html>`_ for details.
+<https://www.w3.org/Math/testsuite/results/tests.html>`_ for details.
 
 
 .. _mathml-content-mathml:
@@ -216,7 +216,7 @@ software, such as editors or computational tools.
 MathJax provides access to these annotations through the ``"Show Math
 As"`` menu, via the ``Annotations`` submenu.  See the `MathML
 Annotation Framework
-<http://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_
+<https://www.w3.org/TR/MathML/chapter5.html#mixing.semantic.annotations>`_
 documentation from the W3C, and the :ref:`menu-options` section of
 this document for details.
 

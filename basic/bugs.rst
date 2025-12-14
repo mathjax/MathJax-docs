@@ -14,7 +14,7 @@ To report a problem, please follow these steps:
 
 -  Have you cleared your browser cache, quit your browser, and restarted
    it? If not, please do so first and check if the problem persists.
-   `These instructions <http://www.wikihow.com/Clear-Your-Browser's-Cache>`__
+   `These instructions <https://www.wikihow.com/Clear-Your-Browser's-Cache>`__
    tell you how to clear your cache on the major browsers.
    
 -  Have you turned off other extensions and plugins in your browser, and

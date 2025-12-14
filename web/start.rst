@@ -5,8 +5,8 @@ Getting Started with MathJax Components
 #######################################
 
 MathJax allows you to include mathematics in your web pages, either
-using LaTeX, `MathML <http://www.w3.org/TR/MathML3>`_, or `AsciiMath
-<http://asciimath.org/>`_ notation, and the mathematics will be
+using LaTeX, `MathML <https://www.w3.org/TR/MathML3>`_, or `AsciiMath
+<https://asciimath.org/>`_ notation, and the mathematics will be
 processed using JavaScript to produce HTML or SVG for viewing in any
 modern browser.
 
@@ -105,8 +105,8 @@ The following are some of the CDNs that offer MathJax:
 - `jsdelivr.com <https://jsdelivr.com>`__  [latest or specific version] (recommended)
 - `unpkg.com <https://unpkg.com/>`__ [latest or specific version]
 - `cdnjs.com <https://cdnjs.com>`__
-- `raw.githack.com <http://raw.githack.com>`__
-- `cdn.statically.io <http://cdn.statically.io>`__
+- `raw.githack.com <https://raw.githack.com>`__
+- `cdn.statically.io <https://cdn.statically.io>`__
 
 |etight|
 

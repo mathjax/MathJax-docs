@@ -326,7 +326,7 @@ change the ``Access-Control-Allow-Origin`` line to something like:
 
 .. code-block::
 
-   Header set Access-Control-Allow-Origin "http://www.math.yourcollege.edu"
+   Header set Access-Control-Allow-Origin "https://www.math.yourcollege.edu"
 
 so that only pages at ``www.math.yourcollege.edu`` will be able to
 download the fonts from this site. See the open font library

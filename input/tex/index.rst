@@ -39,7 +39,7 @@ packages are available in MathJax; see the sections on extension
 below.
 
 If you are not familiar with TeX/LaTeX, a good starting point is the
-`LaTeX Wiki book <http://en.wikibooks.org/wiki/LaTeX>`_.
+`LaTeX Wiki book <https://en.wikibooks.org/wiki/LaTeX>`_.
 
 -----
 
