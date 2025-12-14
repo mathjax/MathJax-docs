@@ -125,8 +125,8 @@ To load the `setoptions` extension, add ``'[tex]/setoptions'`` to the
 .. code-block:: javascript
 
    window.MathJax = {
-     loader: {load: ['[tex]/centernot']},
-     tex: {packages: {'[+]': ['centernot']}}
+     loader: {load: ['[tex]/setoptions']},
+     tex: {packages: {'[+]': ['setoptions']}}
    };
 
 -----
