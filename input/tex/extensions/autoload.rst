@@ -134,7 +134,7 @@ The default autoload definitions are the following:
 
    MathJax = {
      tex: {
-       autoload: expandable({
+       autoload: {
          action: ['toggle', 'mathtip', 'texttip'],
          amscd: [[], ['CD']],
          bbox: ['bbox'],
@@ -186,7 +186,7 @@ array.  E.g., to not autoload the :ref:`tex-color` extension, use
 
    MathJax = {
      tex: {
-       autoload: expandable({
+       autoload: {
          color: []
        }
      }
@@ -199,7 +199,7 @@ If you define your own extensions, and they have a prefix other than
 
    MathJax = {
      tex: {
-       autoload: expandable({
+       autoload: {
          '[extensions]/myExtension' : ['myMacro', 'myOtherMacro']
        }
      }

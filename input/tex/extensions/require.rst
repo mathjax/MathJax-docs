@@ -59,14 +59,14 @@ following values:
    MathJax = {
      tex: {
        require: {
-         allow: expandable({
+         allow: {
            base: false,
            autoload: false,
            configmacros: false,
            tagformat: false,
            setoptions: false,
            texhtml: false,
-         }),
+         },
          defaultAllow: true,
          prefix: 'tex'
        }
