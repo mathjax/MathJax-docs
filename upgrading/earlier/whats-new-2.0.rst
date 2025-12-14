@@ -26,7 +26,7 @@ recommended).
 
 
 Reduced flickering during typesetting
-====================================
+=====================================
 
 In the past, each expression was displayed as soon as it was typeset,
 which caused a lot of visual flickering as MathJax processed the page.

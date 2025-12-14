@@ -64,27 +64,50 @@ font via
 
    npm install @mathjax/mathjax-stix2-font
 
-(add ``-font`` to the name of whichever font you want, and obtain it
-from the ``@mathjax`` scope); MathJax should find the font in your
-:file:`node_modules/@mathjax` folder.  It is also possible to
-configure the path to the fonts using the :data:`fontPath` option of
-the :data:`output` block.  This should be set to a string that
-indicates where the font can be found; that string should include
-``%%FONT%%`` in any part of the path where the font name needs to
-appear.  For example,
+(add ``-font`` to the name of whichever font you want, or
+``-font-extension`` for a font extension, and obtain it from the
+``@mathjax`` scope); MathJax should find the font in your
+:file:`node_modules/@mathjax` folder.
+
+By default, MathJax components use the predefined ``fonts`` path to
+locate the fonts.  That is, when the font is specified as
+``mathjax-stix2``, for example, MathJax will use
+``[fonts]/mathjax-stix2-font`` as the path to the font.  This path is
+set to ``https://cdn.jsdelivr.net/npm/@mathjax`` for web applications
+and ``@mathjax`` for node applications.  If you host your own copy of
+MathJax and its fonts, you can set this path to the location where the
+fonts are stored.  For example,
+
+.. code-block:: javascript
+
+    MathJax = {
+      loader: {
+        paths: {
+          font: '/mathjax-fonts',
+      }
+    };
+
+would tell MathJax to obtain fonts from the top-level
+``mathjax-fonts`` directory on the server where web page came from.
+
+It is also possible to configure the path to the fonts using the
+:data:`fontPath` option of the :data:`output` block.  This should be
+set to a string that indicates where the font can be found; that
+string should include ``%%FONT%%`` in any part of the path where the
+font name needs to appear.  For example,
 
 .. code-block:: javascript
 
     MathJax = {
       output: {
-        fontPath: '@mathjax/%%FONT%%-font'
+        fontPath: '[fonts]/%%FONT%%-font'
       }
     };
 
-is the default path in node applications.
+is the default path for MathJax components.
 
-It is also possible to specify an explicit URL as the font name in the
-configuration:
+Finally, you can specify an explicit URL to a font as the font name in
+the configuration:
 
 .. code-block:: javascript
 
@@ -144,15 +167,15 @@ a separate *pseudo-variant* used internally by MathJax, so are
 available only through the macros provided by the corresponding TeX
 extension.
 
-For ``mathjax-euler``, configure MathJax to load the given extension.
-For example,
+For ``mathjax-euler``, configure MathJax to load the given extension
+using the :data:`fontExtensions` array of the :data:`output` block of
+your configuration.  For example,
 
 .. code-block:: javascript
 
    MathJax = {
-     loader: {
-       paths: {font: 'https://cdn.jsdelivr.net/npm/@mathjax'},
-       load: ['[font]/mathjax-euler-font']
+     output: {
+       fontExtensions: ['mathjax-euler']
      }
    };
 

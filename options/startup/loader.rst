@@ -27,7 +27,12 @@ In the example below, :data:`Loader` represents the
         failed: function (error) {                   // function to call if a component fails to load
           console.log(`MathJax(${error.package || '?'}): ${error.message}`);
         },
-        paths: {mathjax: Loader.getRoot()},          // the path prefixes for use in specifying components
+        paths: {                                     // the path prefixes for use in specifying components
+          mathjax: Loader.getRoot(),
+          fonts: (typeof window === 'undefined'
+                   ? '@mathjax'
+                   : 'https:cdn.jsdelivr.net/npm/@mathjax')
+        },
         source: {},                                  // the URLs for components, when defaults aren't right
         dependencies: {},                            // arrays of dependencies for each component
         provides: {},                                // components provided by each component
@@ -75,7 +80,7 @@ Option Descriptions
    section below for how to trap individual component errors.
 
 .. _loader-paths:
-.. describe:: paths: {mathjax: Loader.getRoot()}
+.. describe:: paths: {mathjax: Loader.getRoot(), fonts: ...}
 
    This object links path prefixes to their actual locations.  By
    default, the ``mathjax`` prefix is predefined to be the location
@@ -85,11 +90,22 @@ Option Descriptions
    prefix.  For example, ``input/tex`` will become
    ``[mathjax]/input/jax`` automatically.
 
+   The ``fonts`` path is predefined to point to the location where
+   MathJax will load fonts.  For node applications, it is set to
+   ``@mathjax`` so that fonts are taken from the
+   ``node_modules/@mathjax`` directory.  For web applications, it is
+   set to ``https://cdn.jsdelivr.net/npm/@mathjax`` so that fonts are
+   loaded from that CDN.
+
    When the TeX :ref:`tex-require` extension is loaded, an additional
    ``tex`` path is created in order to be able to load the various TeX
-   extensions.
+   extensions.  Other paths that may be predefined include ``sre`` and
+   ``mathmaps`` for the locations of the speech-rule-engine files,
+   ``mml`` for MathML extensions, and font-specific paths like
+   ``mathjax-newcm`` for the locations of the files needed by the
+   fonts.
 
-   You can define your own prefixes, for example,
+   You can define your own prefixes; for example,
 
    .. code-block:: javascript
 
@@ -100,10 +116,10 @@ Option Descriptions
         }
       };
 
-   which defines a ``custom`` prefix that you can used to access
-   custom extensions.  The URL can even be to a different server than
-   where you loaded the main MathJax code, so you can host your own
-   custom extensions and still use a CDN for the main MathJax code.
+   defines a ``custom`` prefix that you can used to access custom
+   extensions.  The URL can even be to a different server than where
+   you loaded the main MathJax code, so you can host your own custom
+   extensions and still use a CDN for the main MathJax code.
 
    You can define as many different paths as you need.  Note that
    paths can refer to other paths, so you could do
