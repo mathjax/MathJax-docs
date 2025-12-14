@@ -318,18 +318,22 @@ into the SVG image.
      'use[data-c]{stroke-width:3px}'
    ].join('');
    const xmlDeclaration = '<?xml version="1.0" encoding="UTF-8" standalone="no"?>';
+   const SVGXMLNS = 'http://www.w3.org/2000/svg';
 
    async function getSvgImage(math, options = {}) {
      const adaptor = MathJax.startup.adaptor;
      const result = await MathJax.tex2svgPromise(math, options);
-     let svg = adaptor.tags(result, 'svg')[0];
-     svg = (svg.match(/^<svg.*?><defs>/)
-       ? svg.replace(/<defs>/, `<defs><style>${svgCss}</style>`)
-       : svg.replace(/^(<svg.*?>)/, `$1<defs><style>${svgCss}</style></defs>`));
-    svg = svg.replace(/ (?:role|focusable|aria-hidden)=".*?"/g, '')
-             .replace(/"currentColor"/g, '"black"');
-    return xmlDeclaration + '\n' + svg;
-  }   
+     const svg = adaptor.tags(result, 'svg')[0];
+     const defs = adaptor.tags(svg, 'defs')[0] || adaptor.append(svg, adaptor.create('defs'));
+     adaptor.append(defs, adaptor.node('style', {}, [adaptor.text(svgCss)], SVGXMLNS));
+     adaptor.removeAttribute(svg, 'role');
+     adaptor.removeAttribute(svg, 'focusable');
+     adaptor.removeAttribute(svg, 'aria-hidden');
+     const g = adaptor.tags(svg, 'g')[0];
+     adaptor.setAttribute(g, 'stroke', 'black');
+     adaptor.setAttribute(g, 'fill', 'black');
+     return xmlDeclaration + '\n' + adaptor.serializeXML(svg);
+   }
 
 This defines a function :meth:`getSvgImage()` that takes a math string
 and returns a self-contained serialized SVG image of the math.
