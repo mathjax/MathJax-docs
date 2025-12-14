@@ -247,7 +247,7 @@ do this by using the following command:
       restricts the typesetting to the contents of the specified
       container elements.
 
-When called with no arguments, :meth:`MathJax.typesetClear()` tells
+When called with no arguments, :js:meth:`MathJax.typesetClear()` tells
 MathJax to forget about all the math that has been typeset so far.
 Note that the math will remain in the page as typeset math, but
 MathJax will no longer know anything about it.  For example, that
@@ -255,7 +255,7 @@ means that changes to the output renderer or accessibility settings
 will not affect any of the math that was typeset previously.
 
 If you remove math from only a portion of the page, you can call
-:meth:`MathJax.typesetClear()` passing it an array of container
+:js:meth:`MathJax.typesetClear()` passing it an array of container
 elements that will be removed, or CSS selector strings for them, and
 MathJax will forget about the math that is within those containers,
 while remembering the rest of the math on the page.  Note that you
