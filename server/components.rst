@@ -5,7 +5,7 @@ Using MathJax Components in Node
 ################################
 
 It is possible to use MathJax in a node application in essentially the
-same was that it is used in a browser.  In particular, you can load
+same way that it is used in a browser.  In particular, you can load
 MathJax components and configure MathJax using a global
 :js:data:`MathJax` object and load a :ref:`combined component
 <combined-components>` file or the :ref:`startup-component` component
