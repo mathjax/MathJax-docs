@@ -55,6 +55,7 @@ The options are given here with their default values.
         },
         font: '',                      // the font component to load
         fontPath: FONTPATH,            // The path to the font definitions
+        fontExtensions: [],            // The font extensions to load
         htmlHDW: 'auto',               // 'use', 'force', or 'ignore' data-mjx-hdw attributes
         preFilters: [],                // A list of pre-filters to add to the output jax
         postFilters: [],               // A list of post-filters to add to the output jax
@@ -283,6 +284,13 @@ Option Descriptions
    MathJax components for the browser, and ``@mathjax/%%FONT%%-font``
    in node applications.  Any occurrences of ``%%FONT%%`` in the path
    will be replaced by the font name when the font is accessed.
+
+.. _output-fontExtensions:
+.. describe:: fontExtensions: []
+
+   This gives a list of font extensions to load when the output jax is
+   loaded.  For example, setting this to ``['mathjax-euler']`` would
+   load the euler font extension.
 
 .. _output-htmlHDW:
 .. describe:: htmlHDW: 'auto'

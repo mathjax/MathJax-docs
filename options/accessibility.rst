@@ -341,6 +341,7 @@ The Configuration Block
    MathJax = {
      options: {
        enableExplorer: true,                // set to false to disable the explorer
+       enableExplorerHelp: true,            // set to false to disable the help icon and dialog
        a11y: {
          speech: true,                      // switch on speech output
          braille: true,                     // switch on Braille output
@@ -387,6 +388,20 @@ Option Descriptions
    present.  If not, you can use it to disable the explorer if the
    `explorer` component has been loaded automatically and you don't
    need it.
+
+.. _explorer-enableExplorerHelp:
+.. describe:: enableExplorerHelp: true
+
+   This controls whether the small "info" icon is displayed at the
+   upper right-hand corner of an expression when it is focused.
+   Setting it to ``false`` will prevent the icon from appearing, will
+   disable the "press H for help" message from being spoken when an
+   expression is first focused, and disables the help dialog when the
+   "h" key is pressed during expression exploration. This means that
+   users of assistive technology will be unable to obtain help on how
+   to use MathJax's assistive features, so you should not set this to
+   ``false`` if your pages may be viewed by users with accessibility
+   needs.
 
 The :data:`a11y` options are all controlled by the MathJax contextual
 menu, when the menu component is present, so you should use the

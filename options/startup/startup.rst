@@ -32,7 +32,9 @@ In the example below, :data:`Startup` represents the
         input: [],               // The names of the input jax to use from among those loaded
         output: null,            // The name for the output jax to use from among those loaded
         handler: null,           // The name of the handler to register from among those loaded
-        adaptor: null            // The name for the DOM adaptor to use from among those loaded
+        adaptor: null,           // The name for the DOM adaptor to use from among those loaded
+        polyfillHasOwn: true,    // True if a polyfill for Object.hasOwn should be used when
+                                 //   it is not available natively
       }
     };
 
@@ -148,5 +150,15 @@ Option Descriptions
    load the ``liteDOM`` adaptor for use in `node` applications; if you
    do, it will set this value so that it will be used automatically.
    There are several other DOM adaptors for use in `node`, as well.
+
+.. _startup-polyfillHasOwn:
+.. describe:: polyfillHasOwn: true
+
+   This indicates whether MathJax should provide a polyfill for the
+   :meth:`Object.hasOwn()` method when it is not available natively in
+   the browser.  It is defined in all modern browsers, but some
+   browsers that are several years old may not have an implementation
+   for it, so MathJax will provide one when needed unless this option
+   is set to ``false``.
 
 |-----|

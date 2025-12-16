@@ -20,13 +20,13 @@ processors are called `jax`, and are described in more detail
 below.
 
 When MathJax runs, it looks through the page for special markers that
-delimit/indicate mathematics; for each such marker, it locates an
-appropriate input jax, which it uses to convert the mathematics into
-an internal form (a MathML tree as javascript objects), and then calls
-an output jax to transform the internal format into HTML content that
-displays the mathematics within the page.  The page author configures
-MathJax by indicating which input and output jax are to be used, and
-which extensions should be included.
+indicate mathematics; for each such marker, it locates an appropriate
+input jax, which it uses to convert the mathematics into an internal
+form (a MathML tree as javascript objects), and then calls an output
+jax to transform the internal format into HTML content that displays
+the mathematics within the page.  The page author configures MathJax
+by indicating which input and output jax are to be used, and which
+extensions should be included.
 
 While MathML notation is an XML format that consists of tags like
 those that make up the HTML language, it is not a format that is easy

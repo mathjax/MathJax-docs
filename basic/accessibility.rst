@@ -68,11 +68,23 @@ browser/os/screen-reader combinations to ensure that the user
 experience is an seamless as possible.
 
 In version 4, the extensions for generating speech and exploring
-expressions are included an enabled in all the :ref:`combined
+expressions are included and enabled in all the :ref:`combined
 components <combined-components>` so that your pages should be
 accessible to users with screen or Braille readers automatically in
 that case. (In version 3, the user had to activate the accessibility
 features to turn them on.)
+
+.. note::
+
+   Support for tactile Braille output devices varies across screen
+   readers, operative systems, and browsers.  Users of Braille output
+   devices may need to select the "Combine with Speech" option in the
+   MathJax contextual menu's Braille submenu in order to obtain Nemeth
+   or Euro Braille output rather than the speech text on their Braille
+   device (this can also be accomplished by pressing the |bkey| b
+   |ekey| key while exploring an expression interactively).  NVDA
+   users in Windows will want to do this, though JAWS users should be
+   fine with the default settings.
 
 If you are making a custom configuration, you can include ``ui/menu``
 to enable the contextual menu, or you can include any of the
@@ -90,8 +102,8 @@ configure the extensions.
    in the combined components.  That is no longer the case in v4,
    which now uses the speech and explorer components instead.  Users
    can still use the MathJax contextual menu to turn on the hidden
-   MathML and turn off the semantic enrichment that underlies the
-   speech and explorer components if they want to have a similar
+   MathML, which will turn off the speech and Braille generation that
+   underlies the explorer component, if they want to have a similar
    experience to the one from v3.
 
 
@@ -104,16 +116,19 @@ Screen reader support in Mathjax v3 was based on the
 :ref:`assistive-mml-component` component, which embedded a MathML
 representation of each expression that was visually hidden, but
 available to screen readers, in addition to its typeset version that
-was visible for sighted users, but hidden from screen readers.
-The quality of MathML support in screenreaders varies greatly, with
+was visible for sighted users, but hidden from screen readers.  The
+quality of MathML support in screenreaders varies greatly, with
 different levels of MathML feature support, different speech rule
 sets, and different voicing technologies.
 
-This approach only worked with those screen readers that understand
-MathML, and even then, the experience was different depending on the
-screen reader and browser that was being used.  As screen-reader and
-browser versions changed, they sometimes failed to work properly with
-the hidden MathML, and it was difficult to maintain this feature.
+Using hidden MAthML only worked with those screen readers that
+understand MathML, and even then, the experience was different
+depending on the screen reader and browser that was being used.  As
+screen-reader and browser versions changed, they sometimes failed to
+work properly with the hidden MathML; for example, some screen readers
+skip the math entirely when reading the page as a whole, even when
+they voice the math while stepping through the page in smaller units.
+This makes it difficult to maintain this feature.
 
 In version 4, screen reader support is now being handled through the
 :ref:`explorer-component` and :ref:`speech-component` components of

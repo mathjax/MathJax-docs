@@ -106,6 +106,13 @@ Advanced Keys
     without a screen reader.  This mode remains in effect until turned
     off.  It can also be controlled via the MathJax contextual menu.
 
+|bkey| B |ekey|
+    Toggle the "Combine with Speech" menu item, which tells MathJax
+    whether to include the Braille rendering within the
+    :attr:`aria-label` attribute along with the speech text or whether
+    to put it in the :attr:`aria-braillelabel` attribute.  See the
+    notes below.
+
 |bkey| D |ekey|
     Get positional information; i.e., the current level in the
     sub-expression tree as well as collapsibility/expandability of the
@@ -178,5 +185,18 @@ Once the focus mode is started, you may need to exit focus mode
 manually when you are done exploring the expression.  How that is done
 depends on the screen reader, so consult the reader's documentation
 for details on how to accomplish that.
+
+For users of tactile Braille devices, MathJax handles the Braille
+notation using the :attr:`aria-braillelabel` attribute (part of the
+ARIA specification), but not all screen readers process this attribute
+properly.  To help accommodate this limitation, MathJax provides an
+option that will put the Braille into the :attr:`aria-label` attribute
+instead, along with the generated speech, as some screen readers will
+pass the Braille on to the Braille device that way.  NVDA users will
+want to enable this feature, for example.
+
+This feature can be enabled by selecting the "Combine with Speech"
+item in the Braille submenu of the MathJax contextual menu, or by
+pressing the |bkey| b |ekey| key while exploring an expression.
 
 |-----|
