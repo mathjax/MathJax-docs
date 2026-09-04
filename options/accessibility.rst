@@ -620,7 +620,7 @@ pointer. Note, multiple information explorers work well together.
 
 .. _assistive-mml-options:
 
-Assisitve-MML Extension Options
+Assistive-MML Extension Options
 ===============================
 
 This extension adds visually hidden MathML to MathJax's output that
