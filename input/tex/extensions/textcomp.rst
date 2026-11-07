@@ -14,10 +14,9 @@ in math mode as well. See the `textcomp CTAN page
 documentation.
 
 The macros provided in `textcomp` can be used equally in math and text
-mode.  In order to make them available in text mode, you need to load
-the :ref:`tex-textmacros` extension, and add the ``'textcomp'``
-package to the :data:`packages` array of the :data:`textmacros`
-options of the :data:`tex` block of you configuration.  Note that
+mode.  To make them available in text mode, enable both the
+:ref:`tex-textmacros` and `textcomp` extensions; `textcomp` registers
+its text-mode macros with `textmacros` automatically.  Note that
 :ref:`tex-textmacros` is already included in the components that
 include ``input/tex``.
 
@@ -31,7 +30,7 @@ array of the :data:`tex` block.
 
    window.MathJax = {
      loader: {load: ['[tex]/textcomp']},
-     tex: {packages: {'[+]': ['textmacros']}}
+     tex: {packages: {'[+]': ['textmacros', 'textcomp']}}
    };
 
 Alternatively, use ``\require{textcomp}`` in a TeX expression to load
