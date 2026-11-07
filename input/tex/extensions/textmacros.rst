@@ -106,8 +106,21 @@ Quoted Special Characters
      - literal ampersand
    * - ``\#``
      - literal hash mark
+
+
+Line Breaks
+-----------
+
+.. list-table::
+
    * - ``\\``
-     - literal backslash
+     - line break
+
+To produce a literal backslash within ``\text{}``, enable the
+:ref:`tex-textcomp` extension (see its configuration section) and use
+``\textbackslash``.  For example,
+``\text{\textbackslash{}(x\textbackslash{})}`` displays the literal text
+``\(x\)`` without interpreting it as mathematics.
 
 
 Text Accents
